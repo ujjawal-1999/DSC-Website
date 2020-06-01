@@ -3,5 +3,129 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #ffffff;
+  font-family: sans-serif;
+  color: #4d5053;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+}
+
+.nav__logo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 4rem;
+  margin-left: 2rem;
+}
+
+.nav__bar {
+  margin-right: 1rem;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.nav__links {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: 20;
+}
+
+.nav__links:hover {
+  background-color: #123d82;
+  color: #ffffff;
+}
+
+.header {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.header .dsclogo {
+  width: 8rem;
+  border-radius: 100%;
+}
+
+.header .heading__primary {
+  margin: 1rem;
+  font-size: 2rem;
+  color: #4d5053;
+  font-family: "Century Gothic";
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+.header .heading__secondary {
+  font-size: 4rem;
+  margin: 0.5rem;
+  color: #4d5053;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.header .heading__background {
+  background: transparent;
+  font-family: sans-serif;
+  position: absolute;
+  font-size: 18rem;
+  -webkit-transform: rotate(270deg) translateY(80vh);
+          transform: rotate(270deg) translateY(80vh);
+  color: rgba(196, 206, 218, 0.3);
+}
+
+.header .heading__illustration {
+  position: absolute;
+  width: 30rem;
+  top: 30vh;
+  left: 0;
+  background: transparent;
+  opacity: 0.3;
+}
+
+.header .getStarted {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: 20;
+}
+
+.header .getStarted:hover {
+  background-color: #123d82;
+  color: #ffffff;
 }
 /*# sourceMappingURL=index_dashboard.css.map */
