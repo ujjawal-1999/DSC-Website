@@ -1,14 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
-const PORT = process.env.PORT || 3000;
 const path = require('path');
 
 const app = express();
 app.use(express.json());
 
+// using dotenv module for environment
+require("dotenv").config();
+
+const PORT = process.env.PORT || 3000;
 //Mongoose connection
-mongoose.connect(keys.mongo.mongoURL,{
+mongoose.connect(process.env.MONGODB_URL,{
 	useNewUrlParser:true,
     useUnifiedTopology:true,
     useFindAndModify:false,
@@ -29,7 +31,7 @@ app.use(express.static(publicDirectory));
 
 //Test Get response
 app.get('/',(req,res)=>{
-	res.sendStatus(200).json({message:'Server up and running'});
+	res.status(200).json({message:'Server up and running'});
 })
 //Start the server
 app.listen(PORT,()=>{
