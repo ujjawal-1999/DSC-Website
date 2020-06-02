@@ -34,7 +34,18 @@
     overflow-x: scroll;
     height: 100%;
   }
-
+  .row::-webkit-scrollbar {
+    width: 0.7em;
+  }
+   
+  .row::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+  }
+   
+  .row::-webkit-scrollbar-thumb {
+    background-color: var(--navButtons);
+    outline: 1px solid var(--loginButton);
+  }
   .row__inner {
     -webkit-transition: 450ms -webkit-transform;
     transition: 450ms -webkit-transform;
