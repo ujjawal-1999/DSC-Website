@@ -105,6 +105,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .video__background {
+    display: none;
+  }
   .video__secondary {
     font-size: 2rem;
   }
