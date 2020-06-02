@@ -1,26 +1,12 @@
-:root{
-  --page-color:#4d5053;
-  --page-background:#ffffff;
-  --secondary-background:#123d82;
-}
-
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-<<<<<<< HEAD
           box-sizing: border-box;
   background-color: var(--white);
   font-family: sans-serif;
   color: var(--Grey-dark-1);
-=======
-  box-sizing: border-box;
-  background-color: var(--page-background);
-  font-family: sans-serif;
-  color: var(--page-color);
->>>>>>> acc4560d64693f0f068e39ec4531c06c8920ab86
 }
-
 
 .bold {
   font-weight: 700;
@@ -64,13 +50,8 @@
 }
 
 .nav__links:hover {
-<<<<<<< HEAD
   background-color: var(--navButtons);
   color: var(--white);
-=======
-  background-color: var(--secondary-background);
-  color: var(--page-background);
->>>>>>> acc4560d64693f0f068e39ec4531c06c8920ab86
 }
 
 .header {
@@ -99,11 +80,7 @@
 .header .heading__primary {
   margin: 1rem;
   font-size: 2rem;
-<<<<<<< HEAD
   color: var(--Grey-dark-2);
-=======
-  color: var(--page-color);
->>>>>>> acc4560d64693f0f068e39ec4531c06c8920ab86
   font-family: "Century Gothic";
   font-weight: 400;
   letter-spacing: 0.5rem;
@@ -112,11 +89,7 @@
 .header .heading__secondary {
   font-size: 4rem;
   margin: 0.5rem;
-<<<<<<< HEAD
   color: var(--Grey-dark-1);
-=======
-  color: var(--page-color);
->>>>>>> acc4560d64693f0f068e39ec4531c06c8920ab86
   font-family: sans-serif;
   font-weight: 500;
 }
@@ -153,13 +126,8 @@
 }
 
 .header .getStarted:hover {
-<<<<<<< HEAD
   background-color: var(--navButtons);
   color: var(--white);
-=======
-  background-color: var(--secondary-background);
-  color: var(--page-background);
->>>>>>> acc4560d64693f0f068e39ec4531c06c8920ab86
 }
 
 @media screen and (max-width: 600px) {
