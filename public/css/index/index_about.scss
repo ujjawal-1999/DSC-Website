@@ -40,15 +40,19 @@
 
       .background {
         &__image {
-          display: none;
+          // display: none;
+          width:30rem;
         }
       }
 
       .content {
+        padding-bottom: 3rem;
         .heading {
           &__primary {
             padding: 0 3rem 0 3rem;
             margin-top: 1rem;
+            font-size: 2rem;
+            text-align: center;
           }
           &__secondary {
             padding: 0 3rem 0 3rem;
