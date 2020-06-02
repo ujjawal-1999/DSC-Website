@@ -30,3 +30,29 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .main {
+    .about {
+      padding: 4rem;
+      flex-direction: column;
+
+      .background {
+        &__image {
+          width: 20rem;
+        }
+      }
+
+      .content {
+        .heading {
+          &__primary {
+            margin-top: 2rem;
+          }
+          &__secondary {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

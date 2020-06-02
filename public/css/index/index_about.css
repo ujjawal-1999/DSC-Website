@@ -31,4 +31,23 @@
   font-size: 1rem;
   line-height: 2rem;
 }
+
+@media screen and (max-width: 600px) {
+  .main .about {
+    padding: 4rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .about .background__image {
+    width: 20rem;
+  }
+  .main .about .content .heading__primary {
+    margin-top: 2rem;
+  }
+  .main .about .content .heading__secondary {
+    font-size: 1rem;
+  }
+}
 /*# sourceMappingURL=index_about.css.map */

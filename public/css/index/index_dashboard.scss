@@ -41,7 +41,7 @@
 }
 
 .header {
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,5 +101,11 @@
       background-color: #123d82;
       color: #ffffff;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header .heading__background {
+    display: none;
   }
 }
