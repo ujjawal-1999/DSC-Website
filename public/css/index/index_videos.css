@@ -1,0 +1,92 @@
+.video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.video .heading__primary {
+  font-family: "Century Gothic";
+}
+
+.video .heading__secondary {
+  margin-top: 2rem;
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.video .contain {
+  width: 70%;
+}
+
+.video .row {
+  scrollbar-width: none;
+  overflow: scroll;
+  height: 100%;
+}
+
+.video .row__inner {
+  -webkit-transition: 450ms -webkit-transform;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.video .tile {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.video iframe {
+  width: 20rem;
+  height: 15rem;
+}
+
+.video .tile:hover .tile__details {
+  opacity: 1;
+}
+
+.video .tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+.video .row__inner:hover .tile {
+  opacity: 0.3;
+}
+
+.video .row__inner:hover .tile:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.video .tile:hover ~ .tile {
+  -webkit-transform: translate3d(80px, 0, 0);
+          transform: translate3d(80px, 0, 0);
+}
+/*# sourceMappingURL=index_videos.css.map */

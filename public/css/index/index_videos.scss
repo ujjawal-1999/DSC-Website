@@ -1,0 +1,79 @@
+.video {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .heading {
+    &__primary {
+      font-family: "Century Gothic";
+    }
+    &__secondary {
+      margin-top: 2rem;
+      font-weight: 200;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+  }
+
+  .contain {
+    width: 70%;
+  }
+  .row {
+    scrollbar-width: none;
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .row__inner {
+    -webkit-transition: 450ms -webkit-transform;
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    font-size: 0;
+    white-space: nowrap;
+    height: 100%;
+    // margin: 70.3125px 0;
+    padding-bottom: 10px;
+  }
+  .tile {
+    position: relative;
+    display: inline-block;
+    // width: 250px;
+    // height: 140.625px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: 450ms all;
+    transition: 450ms all;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+  }
+  iframe {
+    width: 20rem;
+    height: 15rem;
+  }
+
+  .tile:hover .tile__details {
+    opacity: 1;
+  }
+  .tile__title {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+  }
+
+  .row__inner:hover .tile {
+    opacity: 0.3;
+  }
+  .row__inner:hover .tile:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  .tile:hover ~ .tile {
+    transform: translate3d(80px, 0, 0);
+  }
+}

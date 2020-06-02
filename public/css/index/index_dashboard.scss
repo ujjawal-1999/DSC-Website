@@ -50,19 +50,26 @@
 
   .dsclogo {
     width: 8rem;
+    opacity: 0;
     border-radius: 100%;
+    transform: translateY(-10px);
+    animation: fadeIn 1s forwards;
   }
 
   .heading {
     &__primary {
+      opacity: 0;
       margin: 1rem;
       font-size: 2rem;
       color: var(--Grey-dark-2);
       font-family: "Century Gothic";
       font-weight: 400;
       letter-spacing: 0.5rem;
+      transform: translateY(-10px);
+      animation: fadeIn 1s 1s forwards;
     }
     &__secondary {
+      opacity: 0;
       font-size: 4rem;
       margin: 0.5rem;
       color: var(--Grey-dark-1);
@@ -70,6 +77,8 @@
       font-weight: 500;
       z-index: 20;
       background: transparent;
+      transform: translateY(-10px);
+      animation: fadeIn 1s 0.5s forwards;
     }
 
     &__background {
@@ -93,11 +102,14 @@
   }
 
   .getStarted {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 1s 1.5s forwards;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 1rem 1.4rem 1rem 1.4rem;
     border: 1px solid;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 10px;
+    // font-weight: 900;
     transition: all 0.2s;
     z-index: 20;
     &:hover {

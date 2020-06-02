@@ -74,19 +74,30 @@
 
 .header .dsclogo {
   width: 8rem;
+  opacity: 0;
   border-radius: 100%;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
 }
 
 .header .heading__primary {
+  opacity: 0;
   margin: 1rem;
   font-size: 2rem;
   color: var(--Grey-dark-2);
   font-family: "Century Gothic";
   font-weight: 400;
   letter-spacing: 0.5rem;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: fadeIn 1s 1s forwards;
+          animation: fadeIn 1s 1s forwards;
 }
 
 .header .heading__secondary {
+  opacity: 0;
   font-size: 4rem;
   margin: 0.5rem;
   color: var(--Grey-dark-1);
@@ -94,6 +105,10 @@
   font-weight: 500;
   z-index: 20;
   background: transparent;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: fadeIn 1s 0.5s forwards;
+          animation: fadeIn 1s 0.5s forwards;
 }
 
 .header .heading__background {
@@ -117,11 +132,15 @@
 }
 
 .header .getStarted {
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: fadeIn 1s 1.5s forwards;
+          animation: fadeIn 1s 1.5s forwards;
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 1rem 1.4rem 1rem 1.4rem;
   border: 1px solid;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 10px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;
