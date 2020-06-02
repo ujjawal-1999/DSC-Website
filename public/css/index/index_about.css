@@ -41,13 +41,24 @@
             flex-direction: column;
   }
   .main .about .background__image {
-    width: 20rem;
+    display: none;
   }
   .main .about .content .heading__primary {
-    margin-top: 2rem;
+    padding: 0 3rem 0 3rem;
+    margin-top: 1rem;
   }
   .main .about .content .heading__secondary {
+    padding: 0 3rem 0 3rem;
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main .about .content .heading__primary {
+    padding: 0 5rem 0 5rem;
+  }
+  .main .about .content .heading__secondary {
+    padding: 0 5rem 0 5rem;
   }
 }
 /*# sourceMappingURL=index_about.css.map */

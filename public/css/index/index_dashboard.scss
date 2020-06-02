@@ -68,6 +68,8 @@
       color: var(--Grey-dark-1);
       font-family: sans-serif;
       font-weight: 500;
+      z-index: 20;
+      background: transparent;
     }
 
     &__background {

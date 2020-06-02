@@ -39,17 +39,36 @@
 
       .background {
         &__image {
-          width: 20rem;
+          display: none;
         }
       }
 
       .content {
         .heading {
           &__primary {
-            margin-top: 2rem;
+            padding: 0 3rem 0 3rem;
+            margin-top: 1rem;
           }
           &__secondary {
+            padding: 0 3rem 0 3rem;
             font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main {
+    .about {
+      .content {
+        .heading {
+          &__primary {
+            padding: 0 5rem 0 5rem;
+          }
+          &__secondary {
+            padding: 0 5rem 0 5rem;
           }
         }
       }
