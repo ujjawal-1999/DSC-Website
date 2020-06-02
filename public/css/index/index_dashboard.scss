@@ -9,6 +9,7 @@
 
 .bold {
   font-weight: 700;
+  background: transparent;
 }
 .nav {
   display: flex;
@@ -58,6 +59,7 @@
 
   .heading {
     &__primary {
+      background: transparent;
       opacity: 0;
       margin: 1rem;
       font-size: 2rem;

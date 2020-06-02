@@ -17,7 +17,8 @@
 
       .heading {
         &__primary {
-          font-family: "Century Gothic";
+          font-size: 2rem;
+          font-family: sans-serif !important;
         }
         &__secondary {
           margin-top: 2rem;

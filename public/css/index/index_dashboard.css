@@ -10,6 +10,7 @@
 
 .bold {
   font-weight: 700;
+  background: transparent;
 }
 
 .nav {
@@ -83,6 +84,7 @@
 }
 
 .header .heading__primary {
+  background: transparent;
   opacity: 0;
   margin: 1rem;
   font-size: 2rem;

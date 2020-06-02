@@ -21,7 +21,8 @@
 }
 
 .main .about .content .heading__primary {
-  font-family: "Century Gothic";
+  font-size: 2rem;
+  font-family: sans-serif !important;
 }
 
 .main .about .content .heading__secondary {
