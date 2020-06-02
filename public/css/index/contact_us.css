@@ -1,0 +1,36 @@
+ body{
+     overflow-x: hidden;
+ }
+
+ form{
+    padding :5%;
+    text-align: justify;
+    width: 70%;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    box-shadow: #000;
+}
+
+#contact-us{
+    background-color: #eee;
+}
+
+#contact-us h1{
+    padding-top: 20%;
+}
+
+.container{
+    background-color: #eee;
+}
+
+
+.row{
+    margin-top: 70px;
+}
+
+form button{
+    margin-top: 4%;
+    margin-left: -6%;
+}
+
