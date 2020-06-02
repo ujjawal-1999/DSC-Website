@@ -15,22 +15,34 @@
           align-items: center;
 }
 
+.video__background {
+  position: absolute;
+  width: 60rem;
+  opacity: 0.3;
+}
+
 .video__secondary {
   margin-top: 2rem;
   font-weight: 200;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4rem;
-  line-height: 2rem;
   font-weight: 600;
+}
+
+.video__instruction {
+  font-size: 0.8rem;
+  color: var(--Grey-light-4);
+  margin-top: -5rem;
+  font-weight: 200;
 }
 
 .video .contain {
   width: 70%;
+  z-index: 3;
 }
 
 .video .row {
-  scrollbar-width: none;
-  overflow: scroll;
+  overflow-x: scroll;
   height: 100%;
 }
 
@@ -42,13 +54,18 @@
   font-size: 0;
   white-space: nowrap;
   height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding-bottom: 10px;
 }
 
 .video .tile {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
   position: relative;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 3px;
   font-size: 20px;
   cursor: pointer;
   -webkit-transition: 450ms all;
@@ -77,13 +94,23 @@
 }
 
 .video .row__inner:hover .tile:hover {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 
 .video .tile:hover ~ .tile {
   -webkit-transform: translate3d(80px, 0, 0);
           transform: translate3d(80px, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+  .video__secondary {
+    font-size: 2rem;
+  }
+  .video__instruction {
+    font-size: 0.8rem;
+    margin-top: -5rem;
+  }
 }
 /*# sourceMappingURL=index_videos.css.map */

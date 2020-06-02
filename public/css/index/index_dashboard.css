@@ -40,10 +40,12 @@
 }
 
 .nav__links {
-  margin-right: 1rem;
-  padding: 0.5rem;
+  background: transparent;
+  margin-right: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border: none;
-  font-size: 1rem;
+  border-bottom: 1px solid;
+  border-radius: 2px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;
@@ -115,7 +117,7 @@
 .header .heading__background {
   background: transparent;
   font-family: sans-serif;
-  position: absolute;
+  position: fixed;
   font-size: 18rem;
   -webkit-transform: rotate(270deg) translateY(80vh);
           transform: rotate(270deg) translateY(80vh);

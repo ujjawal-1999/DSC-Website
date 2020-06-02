@@ -42,7 +42,7 @@
             flex-direction: column;
   }
   .main .about .background__image {
-    width: 30rem;
+    display: none;
   }
   .main .about .content {
     padding-bottom: 3rem;
