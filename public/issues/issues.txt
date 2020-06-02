@@ -1,1 +1,25 @@
 Post your issues here
+
+Home Page 
+
+1. Add Navbar
+2. Change Color Scheme
+3. Add Animations
+4. Add Features Section
+5. Add Gallery Section
+6. Add Youtube Videos Section
+7. Add footer
+8. Add Contact Us Section
+9. Establish Nodemail and File Upload for Contact Us Section
+10. Add Announcement Section
+11. Add FAQ Section
+12. Enable Dark Mode Property
+
+Profile Page
+1. Add a profile image Section
+2. Setup file upload for profile image and resume
+3. Add Details.
+4. Add Skills.
+5. ChartJs for showing progress
+6. Rating System
+7. Upload Project Details

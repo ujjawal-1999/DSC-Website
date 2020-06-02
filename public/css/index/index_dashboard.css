@@ -3,7 +3,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: var(--white);
   font-family: sans-serif;
   color: var(--Grey-dark-1);
 }
@@ -122,6 +121,8 @@
   border: 1px solid;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: var(--loginButton);
+  color: var(--white);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;
@@ -135,6 +136,9 @@
 @media screen and (max-width: 600px) {
   .header .heading__background {
     display: none;
+  }
+  .header .heading__illustration {
+    opacity: 0.15;
   }
 }
 /*# sourceMappingURL=index_dashboard.css.map */

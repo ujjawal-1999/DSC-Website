@@ -41,11 +41,16 @@
             flex-direction: column;
   }
   .main .about .background__image {
-    display: none;
+    width: 30rem;
+  }
+  .main .about .content {
+    padding-bottom: 3rem;
   }
   .main .about .content .heading__primary {
     padding: 0 3rem 0 3rem;
     margin-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
   }
   .main .about .content .heading__secondary {
     padding: 0 3rem 0 3rem;
