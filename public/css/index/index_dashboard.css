@@ -7,6 +7,20 @@
   color: var(--Grey-dark-1);
 }
 
+body::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--Grey-dark-3);
+  outline: 1px solid var(--Grey-dark-1);
+}
+
 .bold {
   font-weight: 700;
   background: transparent;
@@ -131,7 +145,6 @@
   top: 30vh;
   left: 0;
   background: transparent;
-  opacity: 0.3;
 }
 
 .header .getStarted {

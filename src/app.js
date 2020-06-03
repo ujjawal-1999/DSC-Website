@@ -29,10 +29,11 @@ app.use(express.urlencoded({extended:true}));
 const publicDirectory = path.join(__dirname,'../public');
 app.use(express.static(publicDirectory));
 
-//Test Get response
-app.get('/',(req,res)=>{
-	res.status(200).json({message:'Server up and running'});
-})
+
+//Routes===========================================
+var indexRoutes = require("./routes/index");
+app.use(indexRoutes);
+
 //Start the server
 app.listen(PORT,()=>{
 	console.log('Server listening on port',PORT);
