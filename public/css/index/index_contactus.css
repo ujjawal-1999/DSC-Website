@@ -1,0 +1,193 @@
+.contact_us {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* ///// inputs /////*/
+}
+
+.contact_us .cu {
+  padding: 3rem;
+  background-color: var(--Grey-light-1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.contact_us progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 20px;
+}
+
+.contact_us .heading__primary {
+  text-align: end;
+  font-size: 3rem;
+}
+
+.contact_us h4 {
+  font-family: "Roboto", sans-serif, "arial";
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--Grey-light-4);
+  line-height: 1.5;
+}
+
+.contact_us input:focus ~ label,
+.contact_us textarea:focus ~ label,
+.contact_us input:valid ~ label,
+.contact_us textarea:valid ~ label {
+  font-size: 0.75em;
+  color: var(--Grey-light-4);
+  top: -5px;
+  -webkit-transition: all 0.225s ease;
+  transition: all 0.225s ease;
+}
+
+.contact_us .inputfile {
+  display: none;
+  cursor: pointer;
+}
+
+.contact_us .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+}
+
+.contact_us .styled-input {
+  float: left;
+  width: 293px;
+  margin: 1rem 0;
+  position: relative;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact_us .styled-input {
+    width: 100%;
+  }
+}
+
+.contact_us .styled-input label {
+  color: var(--Grey-light-4);
+  padding: 1.3rem 30px 1rem 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.contact_us .styled-input.wide {
+  width: 650px;
+  max-width: 100%;
+}
+
+.contact_us input,
+.contact_us textarea {
+  padding: 30px;
+  border: 0;
+  font-size: 1rem;
+  background-color: var(--Grey-light-2);
+  color: var(--Grey-dark-1);
+  border-radius: 4px;
+}
+
+.contact_us .full {
+  width: 100%;
+}
+
+.contact_us input:focus,
+.contact_us textarea:focus {
+  outline: 0;
+}
+
+.contact_us input:focus ~ span,
+.contact_us textarea:focus ~ span {
+  width: 100%;
+  -webkit-transition: all 0.075s ease;
+  transition: all 0.075s ease;
+}
+
+.contact_us .message {
+  min-height: 8em;
+}
+
+.contact_us .input-container {
+  width: 650px;
+  max-width: 100%;
+  margin: 20px auto 25px auto;
+}
+
+.contact_us .submit-btn {
+  padding: 7px 35px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: var(--navButtons);
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.contact_us .submit-btn:hover {
+  background-color: var(--white);
+  color: var(--navButtons);
+}
+
+@media (max-width: 768px) {
+  .contact_us .submit-btn {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .contact_us .input-container {
+    max-width: 30%;
+  }
+  .contact_us input:focus ~ label,
+  .contact_us textarea:focus ~ label,
+  .contact_us input:valid ~ label,
+  .contact_us textarea:valid ~ label {
+    font-size: 0.75em;
+    top: -40px;
+    left: -30px;
+  }
+  .contact_us input,
+  .contact_us textarea {
+    padding: 10px;
+    font-size: 0.5rem;
+  }
+}
+
+.contact_us input[type="checkbox"] + label {
+  color: var(--Grey-light-4);
+  font-style: italic;
+}
+
+.contact_us input[type="checkbox"]:checked + label {
+  color: var(--color-primary);
+  font-style: normal;
+}
+/*# sourceMappingURL=index_contactus.css.map */
