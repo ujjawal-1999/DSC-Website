@@ -6,9 +6,16 @@ const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
 
+//Config Modules
 const checkType = require("../config/checkType");
+
+//Mongoose Schemas
 const Mail = require("../models/Mail");
+
+//Nodemailer Account
 const { contact, contactAdmin } = require("../account/nodemailer");
+
+
 //Route for Homepage
 router.get('/',(req, res)=>{
     res.render("index")

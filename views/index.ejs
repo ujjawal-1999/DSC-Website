@@ -11,21 +11,11 @@
     <link rel="stylesheet" href="/css/index/index_dashboard.css" />
     <link rel="stylesheet" href="/css/index/index_about.css" />
     <link rel="stylesheet" href="/css/index/index_videos.css" />
-    <link rel="stylesheet" href="/css/index/contact_us.css" />
-
+    <link rel="stylesheet" href="/css/index/index_contactus.css" />
+    
+    <link rel="stylesheet" href="/css/index/font-awesome.css">
+    <link rel="stylesheet" href="/css/index/index_faq.css">
     <!-- ######################################################################## -->
-
-    <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script> -->
   </head>
   <body>
     <!--Navbar Starts-->
@@ -93,6 +83,8 @@
           </h2>
         </div>
       </section>
+      <!---About Sections Ends-->
+      <!---Video Gallery Section Starts-->
       <section class="video">
         <img
           src="/img/illustrations/video.png"
@@ -171,34 +163,169 @@
           </div>
         </div>
       </section>
+      <!---Video Gallery Section Ends-->
+      <!---Contact Us Section Starts-->
+      <section class="contact_us">
+        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+
+        <h2 class="heading__primary">
+          Contact Us
+        </h2>
+        <form action="/contact" method="post" id="upload_form" enctype="multipart/form-data">
+          <div class="container">
+            <div class="row">
+              <h4 style="text-align: center;">We'd love to hear from you!</h4>
+            </div>
+            <div class="row input-container">
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input type="text" class="full" name="name" required/>
+                  <label>Name</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input">
+                  <input type="text" class="full" name="email" required/>
+                  <label>Email</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input" style="float: right;">
+                  <input type="text" class="full" name="subject" required />
+                  <label>Subject</label>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input type="text" class="message full" name="message" required />
+                  <label>Message</label>
+                </div>
+              </div>
+              <center>
+                <div class="col-xs-12">
+                  <label for="file" id="lb" class="custom-file-upload"
+                    >Upload a file</label
+                  >
+                  <div class="styled-input wide">
+                    <input
+                      class="inputfile"
+                      type="file"
+                      name="issues"
+                      id="file1"
+                      onchange="uploadFile()"
+                      multiple
+                    /><br />
+                    <center>
+                      <progress
+                        class="progress"
+                        id="progressBar"
+                        value="0"
+                        max="100"
+                        style="width: 300px;"
+                      ></progress>
+                    </center>
+
+                    <h3 id="status" class="status"></h3>
+                    <p id="loaded_n_total" class="loaded_n_total"></p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <button class="btn-lrg submit-btn">Send Message</button>
+                </div>
+              </center>
+            </div>
+          </div>
+        </form>
+      </section>
+      <!---Contact Us Section Ends-->
     </main>
-    <section>
-    <form action="/contact" method="post" enctype="multipart/form-data">
-    
-      <textarea name="message" id="message" required></textarea>
-                    
-           <input name="name" id="name" type="text">
-                    
-           <input name="email" id="email" type="text" required>
-                 
-            <input type="text" id="subject" name="subject" required>
-            <input type="file" id="avatar" name="issues" multiple>
-         <button type="submit" >Send Message </button>
+    <!-- faq starts -->
+    <section class="faq-section bgimage-illustration-faq" id="faq-section">
+      <h1 class="faq-heading">Frequently Asked Questions</h1>
+      <div class="faq-row-container">
+        <div class="row1">
+          <div>
+          </div>
+          <div>
+              <div class="faq-questions">
+                  <div class="row2">
+                      
+                          <button class="faq-btn blue-2 "type="button" data-toggle="collapse" data-target="collapseQuestion1" aria-expanded="false" aria-controls="collapseExample" >
+                              <i class="fas fa-question-circle fa-2x blue-2"></i>
+                           </button>
+                           <b class="faq-question-head" >What is my name lorem ipsum Anim pariatur cliche ?</b>
                   
-                </form>
-              </section>
+                  </div>
+                  <div class="faq-collapse" id="collapseQuestion1">
+                     <div class="faq-card faq-card-body border-blue2">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                  </div>
+                   </div>
+              </div>
+              <div class="faq-questions">
+                 <div class="row-2">
+                  <button class="faq-btn btn-primary bg-blue2" type="button" data-toggle="collapse" data-target="collapseQuestion2" aria-expanded="false" aria-controls="collapseExample">
+                  <i class="fas fa-question-circle fa-2x blue-2"></i>
+               </button>
+               <b class="faq-question-head">What is my name?</b>
+                 </div>
+                  
+                   <div class="faq-collapse" id="collapseQuestion2">
+                     <div class="faq-card faq-card-body border-blue2">
+                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                     </div>
+                   </div>
+              </div>
+              <div class="faq-questions">
+                  <div class="row-2">
+                      <button class="faq-btn btn-primary bg-blue2"type="button" data-toggle="collapse" data-target="collapseQuestion3" aria-expanded="false" aria-controls="collapseExample">
+                          <i class="fas fa-question-circle fa-2x blue-2"></i>
+                       </button>
+                       <b class="faq-question-head">What is my name?</b>
+                  </div>
+                  
+                   <div class="faq-collapse" id="collapseQuestion3">
+                     <div class="faq-card faq-card-body border-blue2">
+                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                     </div>
+                   </div>
+              </div>
+              <div class="faq-questions">
+                <div class="row-2">
+                    <button class="faq-btn btn-primary bg-blue2"type="button" data-toggle="collapse" data-target="collapseQuestion4" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fas fa-question-circle fa-2x blue-2"></i>
+                     </button>
+                     <b class="faq-question-head">What is my name?</b>
+                </div>
+                
+                 <div class="faq-collapse" id="collapseQuestion4">
+                   <div class="faq-card faq-card-body border-blue2">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                   </div>
+                 </div>
+            </div>
+
+    
+ 
+
+          </div>
+          <div style="display: none;">
+          </div>
+      </div>
+      <div class="faq-img">
+        <img src="/img/illustrations/faq.jpg" alt="faq-illustration" class="faq-background">
+      </div>
+      </div>
+      
+      
+
+  </section>
+    <!-- faq ends -->
     <!---Contact Us Section Ends-->
     <footer class="footer"></footer>
-
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script> -->
+    <script src="/js/index_progressbar.js"></script>
+    <script src="/js/index/index_faq.js"></script>
   </body>
 </html>

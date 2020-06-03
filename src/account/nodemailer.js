@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer')
-const keys = require('../config/keys');
+require('dotenv').config();
 
 //for sending to user
 const contact = (data) => {
@@ -8,16 +8,16 @@ var transporter = nodemailer.createTransport({
     port:465,
     secure:true,
     auth: {
-      user: keys.nodemailer.email,           //email id
-      pass: keys.nodemailer.password         //my gmail password
+      user: process.env.NODEMAILER_EMAIL,           //email id
+      pass: process.env.NODEMAILER_PASSWORD         //my gmail password
     }
   });
   
   var mailOptions = {
-    from: keys.nodemailer.email,
+    from: process.env.NODEMAILER_EMAIL,
     to: `${data.email}`,
     subject:`DSC - ${data.subject}`,
-    html:`<p>Hii ${data.name},<br>"your message" - ${data.message} has been recieved and we will solve this issue soon!!</p>`
+    html:`<p>Hii ${data.name},<br>"Your Issue" - ${data.message} has been recieved and we will solve this issue soon!!</p>`
   };
   console.log("mailOptions : " ,mailOptions);
   
@@ -37,14 +37,14 @@ const contactAdmin = (data) => {
     	port:465,
     	secure:true,
       auth: {
-        user:  keys.nodemailer.email,           //email id
-        pass:  keys.nodemailer.password            //my gmail password
+        user:  process.env.NODEMAILER_EMAIL,           //email id
+        pass:  process.env.NODEMAILER_PASSWORD,            //my gmail password
       }
     });
     
     var mailOptions = {
-      from: keys.nodemailer.secondaryMail,
-      to: keys.nodemailer.email,
+      from: process.env.NODEMAILER_SECONDARYEMAIL,
+      to: process.env.NODEMAILER_EMAIL,
       subject:`DSC User Issue Report`,
       html:`A new Report has been issued.<p>Name - ${data.name}</p><p>Email Id - ${data.email}</p><p>Subject - ${data.subject}</p><p>Message - ${data.message}</p><p>Contains Images:${data.img}`};
     console.log("mailOptions : " ,mailOptions);

@@ -11,4 +11,5 @@ DSC Website NITS.
 ### Post /contact route
 1. Run "git pull origin <branch-name>"
 2. Run "npm install" to install all related dependencies
-3. Send a POST request to "/contact".
+3. Add the `NODEMAILER_EMAIL`, `NODEMAILER_PASSWORD`, `NODEMAILER_SECONDARYEMAIL` to the ".env" file present in root directory
+4. Send a POST request to "/contact".
