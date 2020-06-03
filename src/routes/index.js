@@ -7,7 +7,7 @@ const path = require("path");
 const fs = require("fs");
 
 //Config Modules
-const checkType = require("../config/checkType");
+const { checkType } = require("../config/checkType");
 
 //Mongoose Schemas
 const Mail = require("../models/Mail");
@@ -87,7 +87,7 @@ router.post('/contact',async (req,res)=>{
 		})
 	},(avatar)=>{
 		if(avatar.length === 0)
-			res.redirect('/?flag=false&error=only 3 images upto 1MB total size is allowed');
+			res.redirect('/dsc/?flag=false&error=only 3 images upto 1MB total size is allowed');
 		else{
 			console.log(req.body);
 			contact({
@@ -119,11 +119,11 @@ router.post('/contact',async (req,res)=>{
 			newMail.save()
 				.then((result)=>{
 					console.log(result);
-					res.redirect('/?flag=true')
+					res.redirect('/dsc/?flag=true')
 				})
 				.catch((err)=>{
 					console.log(err);
-					res.redirect('/?flag=false');
+					res.redirect('/dsc/?flag=false');
 				});
 			}
 		})

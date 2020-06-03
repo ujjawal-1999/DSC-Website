@@ -23,7 +23,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
             minlength: 8,
-
         },
         phone: {
             type: mongoose.SchemaTypes.Phone
@@ -39,11 +38,11 @@ const userSchema = new Schema(
                 type: String
             }
         ],
-        image: {
-            type: Buffer
+        profileImageLocation: {
+            type: String
         },
-        resume: {
-            type: Buffer
+        resumeLocation: {
+            type: String
         },
         socialLinks: {
                 linkedin: String,
