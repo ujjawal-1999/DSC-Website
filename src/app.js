@@ -32,7 +32,7 @@ app.use(express.static(publicDirectory));
 
 //Routes===========================================
 var indexRoutes = require("./routes/index");
-app.use(indexRoutes);
+app.use('/',indexRoutes);
 
 //Start the server
 app.listen(PORT,()=>{

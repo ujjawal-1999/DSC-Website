@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const mongooseTypePhone = require("mongoose-type-phone");
 const mongooseTypeEmail = require("mongoose-type-email")
-const validator = require("validator")
 
 const Schema = mongoose.Schema;
 
