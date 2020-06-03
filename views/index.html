@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../public/css/index/index_dashboard.css" />
     <link rel="stylesheet" href="../public/css/index/index_about.css" />
     <link rel="stylesheet" href="../public/css/index/index_videos.css" />
-    <link rel="stylesheet" href="../public/css/index/contact_us.css" />
+    <link rel="stylesheet" href="../public/css/index/index_contactus.css" />
 
     <!-- ######################################################################## -->
 
@@ -171,10 +171,83 @@
           </div>
         </div>
       </section>
+      <section class="contact_us">
+        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+
+        <h2 class="heading__primary">
+          Contact Us
+        </h2>
+        <form action="" id="upload_form" enctype="multipart/form-data">
+          <div class="container">
+            <div class="row">
+              <h4 style="text-align: center;">We'd love to hear from you!</h4>
+            </div>
+            <div class="row input-container">
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input type="text" class="full" />
+                  <label>Name</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input">
+                  <input type="text" class="full" />
+                  <label>Email</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input" style="float: right;">
+                  <input type="text" class="full" />
+                  <label>Subject</label>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input type="text" class="message full" />
+                  <label>Message</label>
+                </div>
+              </div>
+              <center>
+                <div class="col-xs-12">
+                  <label for="file" id="lb" class="custom-file-upload"
+                    >Upload a file</label
+                  >
+                  <div class="styled-input wide">
+                    <input
+                      class="inputfile"
+                      type="file"
+                      name="file1"
+                      id="file1"
+                      onchange="uploadFile()"
+                    /><br />
+                    <center>
+                      <progress
+                        class="progress"
+                        id="progressBar"
+                        value="0"
+                        max="100"
+                        style="width: 300px;"
+                      ></progress>
+                    </center>
+
+                    <h3 id="status" class="status"></h3>
+                    <p id="loaded_n_total" class="loaded_n_total"></p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <div class="btn-lrg submit-btn">Send Message</div>
+                </div>
+              </center>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
     <!---Contact Us Section Ends-->
     <footer class="footer"></footer>
-
+    <script src="../public/js/index_progressbar.js"></script>
     <!-- <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
