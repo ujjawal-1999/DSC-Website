@@ -24,21 +24,7 @@ const checkProfileImageType = (file,cb)=>{
 		return cb('Error:Allowed Formats: jpeg/jpg/png');
 }
 
-
-const checkResumeFileType = (file,cb)=>{
-	const allowedTypes = /pdf|doc|docx/
-
-	const extension = allowedTypes.test(path.extname(file.originalname.toLowerCase()));
-
-	const mimeType = allowedTypes.test(file.mimetype);
-	if(mimeType && extension )
-		return cb(null,true);
-	else	
-		return cb('Error:Allowed Formats: pdf|doc|docx');
-}
-
 module.exports = {
 	checkType,
-	checkProfileImageType,
-	checkResumeFileType
+	checkProfileImageType
 }

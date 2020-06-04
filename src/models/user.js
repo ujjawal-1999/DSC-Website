@@ -41,9 +41,6 @@ const userSchema = new Schema(
         profileImageLocation: {
             type: String
         },
-        resumeLocation: {
-            type: String
-        },
         socialLinks: {
                 linkedin: String,
                 github: String

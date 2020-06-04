@@ -8,7 +8,7 @@ const path = require("path");
 const async = require("async");
 //Config Modules
 
-const { checkResumeFileType, checkProfileImageType } = require("../config/checkType");
+const { checkProfileImageType } = require("../config/checkType");
 
 //Setup a test Router for user routes
 router.get('/',(req,res)=>{
@@ -65,14 +65,6 @@ const uploadProfileImage = multer({
 	}
 }).single('profile-image');
 
-//(Resume)
-const uploadResume = multer({
-	storage:storage,
-	limits:{fileSize:1000000},
-	fileFilter:function(req,file,cb){
-		checkResumeFileType(file,cb);
-	}
-}).single('resume');
 
 //Post Route to update Profile Image
 router.post('/profile/upload/:id',async (req,res)=>{
@@ -125,60 +117,6 @@ router.post('/profile/upload/:id',async (req,res)=>{
             .catch(err =>{
                 console.log("profile not updated");             
             })
-            });
-    })
-    .catch(err => {
-        console.log("error",err); 
-    })
-});
-
-//Route to Upload Resume
-router.post('/profile/resumeUpload/:id',async (req,res)=>{
-    const id = req.params.id;
-    let errors = [];
-    var avatar;
-        User.findById({_id:id})
-        .then(user=>{
-            if(!user)
-            {
-                errors.push({msg:'No Records of user found at this moment'})
-                res.send({message:'Error'});
-            }
-            uploadResume(req,res,(err)=>{
-                if(err){
-                    errors.push({message:err});
-                    console.log("Error1",err);
-                    avatar = '';
-                }
-                else{
-                    if(req.file == undefined){
-                        errors.push({msg:'No File Selected'});
-                        console.log("err2",errors);
-                        avatar = undefined;
-                    }
-                    else{
-                        avatar = `/profile/${user._id}/${req.file.filename}`;
-                        console.log("avatar",avatar);
-                    }
-                }
-                if(avatar){
-                    user.resumeLocation = `${avatar}`;
-                } 
-                user.save()
-                .then(user => {
-                    console.log("avatar value",avatar);
-                    if(errors.length==0){
-                        console.log(' Resume Updated!');
-                        res.send({message:'Resume Updated'});
-                    }
-                    else{
-                        console.log("Error: Resume Not Uploaded ");
-                        res.send({message:"Resume Not Updated"});
-                    }
-                })
-                .catch(err =>{
-                    console.log("Resume not updated");             
-                })
             });
     })
     .catch(err => {

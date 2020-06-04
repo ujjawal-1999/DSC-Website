@@ -19,4 +19,3 @@ DSC Website NITS.
 
 #### Post `/dsc/user/profile/:id` Update user profile details
 #### Post `/dsc/user/profile/upload/:id` Update User Profile Image
-#### Post `dsc/user/profile/resumeUpload/:id` Update Resume 
