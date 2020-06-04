@@ -141,6 +141,10 @@
   }
 
   @media (max-width: 768px) {
+    progress[value] {
+      width: 12rem !important;
+    }
+
     .submit-btn {
       width: 100%;
       float: none;

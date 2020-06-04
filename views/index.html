@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Students Club | NIT Silchar</title>
     <!-- ######################################################################## -->
-    <!-- Please try to use 4 different css file for convenience -->
+    <!-- Stylings -->
     <link rel="stylesheet" href="../public/css/index/colors.css" />
     <link rel="stylesheet" href="../public/css/index/index_animation.css" />
     <link rel="stylesheet" href="../public/css/index/index_dashboard.css" />
@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="../public/css/index/index_videos.css" />
     <link rel="stylesheet" href="../public/css/index/index_contactus.css" />
 
-    <link rel="stylesheet" href="../public/css/index/font-awesome.css">
-    <link rel="stylesheet" href="../public/css/index/index_faq.css">
-    <link rel="stylesheet" href="../public/css/index/index_event_schedule.css" />
+    <link rel="stylesheet" href="../public/css/index/font-awesome.css" />
+    <link rel="stylesheet" href="../public/css/index/index_faq.css" />
+    <link
+      rel="stylesheet"
+      href="../public/css/index/index_event_schedule.css"
+    />
     <!-- ######################################################################## -->
-
-
   </head>
   <body>
     <!--Navbar Starts-->
@@ -39,13 +40,6 @@
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
     <header class="header">
-      <h1 class="heading__background">DSC</h1>
-
-      <img
-        src="../public/img/illustrations/dashboards.png"
-        alt=""
-        class="heading__illustration"
-      />
       <img
         src="../public/img/logo/dsc_logo.png"
         alt="DSC_LOGO"
@@ -86,12 +80,32 @@
           </h2>
         </div>
       </section>
+      <section class="about">
+        <div class="content">
+          <h1 class="heading__primary">About DSC</h1>
+          <h2 class="heading__secondary">
+            Developer Student Clubs are university based community groups for
+            students interested in Google developer technologies. Students from
+            all undergraduate or graduate programs with an interest in growing
+            as a developer are welcome. By joining a DSC, students grow their
+            knowledge in a peer-to-peer learning environment and build solutions
+            for local businesses and their community.
+          </h2>
+        </div>
+        <div class="background">
+          <img
+            src="../public/img/illustrations/aboutdsc.jpg"
+            alt=""
+            class="background__image"
+          />
+        </div>
+      </section>
       <section class="video">
-        <img
+        <!-- <img
           src="../public/img/illustrations/video.png"
           alt=""
           class="video__background"
-        />
+        /> -->
         <h1 class="video__secondary">Video Gallery</h1>
         <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
         <div class="contain">
@@ -100,10 +114,11 @@
               <div class="tile">
                 <div class="tile__media">
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/0D5EEKH97NA" 
-                    frameborder="0" 
+                    src="https://www.youtube-nocookie.com/embed/0D5EEKH97NA"
+                    frameborder="0"
                     allow="encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                    allowfullscreen
+                  ></iframe>
                 </div>
               </div>
               <div class="tile">
@@ -239,177 +254,220 @@
       </section>
     </main>
 
+    <!-- ##############################EVENT SCHEDULE#################################### -->
 
-	<!-- ##############################EVENT SCHEDULE#################################### -->
+    <div id="schedule" class="section" style="margin-top: 7%;">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <!-- section title -->
+          <div class="section-title">
+            <h3 class="title">
+              <span>Event</span> <span style="color: #3bb9ff;">Schedule</span>
+            </h3>
+          </div>
+          <!-- /section title -->
 
+          <div class="col-md-8 col-md-offset-2">
+            <div class="events-wrapper">
+              <!-- event -->
+              <div class="event">
+                <div class="event-day">
+                  <div>
+                    <span class="day">7</span>
+                    <span class="year">June, 2020</span>
+                  </div>
+                </div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 8 : 00 AM - 11 : 00 AM
+                  </p>
+                  <br />
+                  <h3 class="event-title">DAY 1</h3>
+                  <p class="cont">
+                    Heloo Helooo font testing&nbsp;<a href="#">here</a> END SEM
+                    IS CANCELLED
+                  </p>
+                </div>
+              </div>
+              <!-- /event -->
 
-	<div id="schedule" class="section" style="margin-top: 7%;">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				<div class="section-title">
-					<h3 class="title"><span>Event</span> <span style="color: #3BB9FF;">Schedule</span></h3>
-				</div>
-				<!-- /section title -->
+              <div class="event">
+                <div class="event-hour"></div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                  </p>
+                  <h3 class="event-title">Day 2</h3>
+                  <p class="cont">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Itaque, vel expedita recusandae impedit,
+                  </p>
+                </div>
+              </div>
 
-				<div class="col-md-8 col-md-offset-2">
+              <!-- /event -->
 
-					<div class="events-wrapper">
-						<!-- event -->
-						<div class="event">
-							<div class="event-day">
-								<div>
-									<span class="day">7</span>
-									<span class="year">June, 2020</span>
-								</div>
-							</div>
-							<div class="event-content">
-								<p class="event-time"><i class="fa fa-clock-o"></i> 8 : 00 AM - 11 : 00 AM</p>
-								<br>
-								<h3 class="event-title">DAY 1</h3>
-								<p class="cont">Heloo Helooo font testing&nbsp;<a href="#"
-										>here</a> END SEM IS
-									CANCELLED</p>
-							</div>
-						</div>
-						<!-- /event -->
+              <div class="event">
+                <div class="event-day">
+                  <div>
+                    <span class="day">7</span>
+                    <span class="year">Nov, 2020</span>
+                  </div>
+                </div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                  </p>
+                  <h3 class="event-title">Day 1</h3>
+                  <p class="cont">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Tenetur inventore explicabo,
+                  </p>
+                </div>
+              </div>
 
-						<div class="event">
-							<div class="event-hour"></div>
-							<div class="event-content">
-								<p class="event-time"><i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM</p>
-								<h3 class="event-title">Day 2</h3>
-								<p class="cont">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, vel
-									expedita recusandae impedit,</p>
-
-							</div>
-						</div>
-
-						<!-- /event -->
-
-
-						<div class="event">
-							<div class="event-day">
-								<div>
-									<span class="day">7</span>
-									<span class="year">Nov, 2020</span>
-								</div>
-							</div>
-							<div class="event-content">
-								<p class="event-time"><i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM</p>
-								<h3 class="event-title">Day 1</h3>
-								<p class="cont">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-									inventore explicabo, </p>
-							</div>
-						</div>
-
-						<!-- event 1-->
-						<div class="event">
-							<div class="event-hour"></div>
-							<div class="event-content">
-								<p class="event-time"><i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM</p>
-								<h3 class="event-title">Day 2</h3>
-								<p class="cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit
-									dicta maxime, </p>
-							</div>
-						</div>
-						<!-- /event1 -->
-
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- ################################/Event Schedule #####################################-->
-
-
-
+              <!-- event 1-->
+              <div class="event">
+                <div class="event-hour"></div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                  </p>
+                  <h3 class="event-title">Day 2</h3>
+                  <p class="cont">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Error suscipit dicta maxime,
+                  </p>
+                </div>
+              </div>
+              <!-- /event1 -->
+            </div>
+          </div>
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- ################################/Event Schedule #####################################-->
 
     <!-- faq starts -->
     <section class="faq-section bgimage-illustration-faq" id="faq-section">
       <h1 class="faq-heading">Frequently Asked Questions</h1>
       <div class="faq-row-container">
         <div class="row1">
+          <div></div>
           <div>
-          </div>
-          <div>
-              <div class="faq-questions">
-                  <div class="row2">
-                      
-                          <button class="faq-btn blue-2 "type="button" data-toggle="collapse" data-target="collapseQuestion1" aria-expanded="false" aria-controls="collapseExample" >
-                              <i class="fas fa-question-circle fa-2x blue-2"></i>
-                           </button>
-                           <b class="faq-question-head" >What is my name lorem ipsum Anim pariatur cliche ?</b>
-                  
-                  </div>
-                  <div class="faq-collapse" id="collapseQuestion1">
-                     <div class="faq-card faq-card-body border-blue2">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                  </div>
-                   </div>
-              </div>
-              <div class="faq-questions">
-                 <div class="row-2">
-                  <button class="faq-btn btn-primary bg-blue2" type="button" data-toggle="collapse" data-target="collapseQuestion2" aria-expanded="false" aria-controls="collapseExample">
+            <div class="faq-questions">
+              <div class="row2">
+                <button
+                  class="faq-btn blue-2"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="collapseQuestion1"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
                   <i class="fas fa-question-circle fa-2x blue-2"></i>
-               </button>
-               <b class="faq-question-head">What is my name?</b>
-                 </div>
-                  
-                   <div class="faq-collapse" id="collapseQuestion2">
-                     <div class="faq-card faq-card-body border-blue2">
-                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                     </div>
-                   </div>
+                </button>
+                <b class="faq-question-head"
+                  >What is my name lorem ipsum Anim pariatur cliche ?</b
+                >
               </div>
-              <div class="faq-questions">
-                  <div class="row-2">
-                      <button class="faq-btn btn-primary bg-blue2"type="button" data-toggle="collapse" data-target="collapseQuestion3" aria-expanded="false" aria-controls="collapseExample">
-                          <i class="fas fa-question-circle fa-2x blue-2"></i>
-                       </button>
-                       <b class="faq-question-head">What is my name?</b>
-                  </div>
-                  
-                   <div class="faq-collapse" id="collapseQuestion3">
-                     <div class="faq-card faq-card-body border-blue2">
-                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                     </div>
-                   </div>
-              </div>
-              <div class="faq-questions">
-                <div class="row-2">
-                    <button class="faq-btn btn-primary bg-blue2"type="button" data-toggle="collapse" data-target="collapseQuestion4" aria-expanded="false" aria-controls="collapseExample">
-                        <i class="fas fa-question-circle fa-2x blue-2"></i>
-                     </button>
-                     <b class="faq-question-head">What is my name?</b>
+              <div class="faq-collapse" id="collapseQuestion1">
+                <div class="faq-card faq-card-body border-blue2">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. Nihil anim keffiyeh
+                  helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident.
                 </div>
-                
-                 <div class="faq-collapse" id="collapseQuestion4">
-                   <div class="faq-card faq-card-body border-blue2">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                   </div>
-                 </div>
+              </div>
             </div>
+            <div class="faq-questions">
+              <div class="row-2">
+                <button
+                  class="faq-btn btn-primary bg-blue2"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="collapseQuestion2"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <i class="fas fa-question-circle fa-2x blue-2"></i>
+                </button>
+                <b class="faq-question-head">What is my name?</b>
+              </div>
 
-    
- 
+              <div class="faq-collapse" id="collapseQuestion2">
+                <div class="faq-card faq-card-body border-blue2">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. Nihil anim keffiyeh
+                  helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident.
+                </div>
+              </div>
+            </div>
+            <div class="faq-questions">
+              <div class="row-2">
+                <button
+                  class="faq-btn btn-primary bg-blue2"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="collapseQuestion3"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <i class="fas fa-question-circle fa-2x blue-2"></i>
+                </button>
+                <b class="faq-question-head">What is my name?</b>
+              </div>
 
+              <div class="faq-collapse" id="collapseQuestion3">
+                <div class="faq-card faq-card-body border-blue2">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. Nihil anim keffiyeh
+                  helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident.
+                </div>
+              </div>
+            </div>
+            <div class="faq-questions">
+              <div class="row-2">
+                <button
+                  class="faq-btn btn-primary bg-blue2"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="collapseQuestion4"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <i class="fas fa-question-circle fa-2x blue-2"></i>
+                </button>
+                <b class="faq-question-head">What is my name?</b>
+              </div>
+
+              <div class="faq-collapse" id="collapseQuestion4">
+                <div class="faq-card faq-card-body border-blue2">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. Nihil anim keffiyeh
+                  helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident.
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="display: none;">
-          </div>
+          <div style="display: none;"></div>
+        </div>
+        <div class="faq-img">
+          <img
+            src="../public/img/illustrations/faq.jpg"
+            alt="faq-illustration"
+            class="faq-background"
+          />
+        </div>
       </div>
-      <div class="faq-img">
-        <img src="../public/img/illustrations/faq.jpg" alt="faq-illustration" class="faq-background">
-      </div>
-      </div>
-      
-      
-
-  </section>
+    </section>
     <!-- faq ends -->
 
     <!---Contact Us Section Ends-->

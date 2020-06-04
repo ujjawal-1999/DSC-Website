@@ -158,6 +158,9 @@
 }
 
 @media (max-width: 768px) {
+  .contact_us progress[value] {
+    width: 12rem !important;
+  }
   .contact_us .submit-btn {
     width: 100%;
     float: none;
