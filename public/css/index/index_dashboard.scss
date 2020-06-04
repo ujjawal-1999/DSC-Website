@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: sans-serif;
   color: var(--Grey-dark-1);
+  // overflow-x: hidden;
+}
+
+section {
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   width: 0.7em;
@@ -142,6 +147,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 600px) {
+  .header {
+    background-image: none;
+  }
   .header .heading__background {
     display: none;
   }

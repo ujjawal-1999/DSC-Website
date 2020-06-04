@@ -7,6 +7,10 @@
   color: var(--Grey-dark-1);
 }
 
+section {
+  overflow-x: hidden;
+}
+
 body::-webkit-scrollbar {
   width: 0.7em;
 }
@@ -174,6 +178,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 600px) {
+  .header {
+    background-image: none;
+  }
   .header .heading__background {
     display: none;
   }
