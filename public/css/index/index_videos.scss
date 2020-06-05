@@ -14,6 +14,24 @@
   //   rgba(255, 255, 255, 0.8)
   // );
 
+  #left-button,
+  #right-button {
+    border: none;
+    width: 5rem;
+    background: transparent;
+    img {
+      opacity: 0.5;
+      width: 5rem;
+      transition: all 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .inv {
+      transform: scaleX(-1);
+    }
+  }
   &__secondary {
     margin-top: -2rem;
     font-weight: 200;
@@ -31,9 +49,11 @@
   .contain {
     width: 70%;
     z-index: 3;
+    display: flex;
   }
   .row {
-    // scrollbar-width: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
     overflow-x: scroll;
     height: 100%;
   }

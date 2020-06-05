@@ -20,6 +20,32 @@
   background-attachment: fixed;
 }
 
+.video #left-button,
+.video #right-button {
+  border: none;
+  width: 5rem;
+  background: transparent;
+}
+
+.video #left-button img,
+.video #right-button img {
+  opacity: 0.5;
+  width: 5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.video #left-button img:hover,
+.video #right-button img:hover {
+  opacity: 1;
+}
+
+.video #left-button .inv,
+.video #right-button .inv {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .video__secondary {
   margin-top: -2rem;
   font-weight: 200;
@@ -38,9 +64,14 @@
 .video .contain {
   width: 70%;
   z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .video .row {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
   overflow-x: scroll;
   height: 100%;
 }

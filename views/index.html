@@ -109,7 +109,10 @@
         <h1 class="video__secondary">Video Gallery</h1>
         <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
         <div class="contain">
-          <div class="row">
+          <button id="left-button">
+            <img src="../public/img/logo/left.svg" alt="" class="" />
+          </button>
+          <div class="row" id="row">
             <div class="row__inner">
               <div class="tile">
                 <div class="tile__media">
@@ -177,6 +180,9 @@
               </div>
             </div>
           </div>
+          <button id="right-button">
+            <img src="../public/img/logo/left.svg" alt="" class="inv" />
+          </button>
         </div>
       </section>
       <section class="contact_us">
@@ -252,227 +258,227 @@
           </div>
         </form>
       </section>
+
+      <!-- ##############################EVENT SCHEDULE#################################### -->
+
+      <div id="schedule" class="section">
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+            <!-- section title -->
+            <div class="section-title">
+              <h3 class="title">
+                <span>Event</span> <span style="color: #3bb9ff;">Schedule</span>
+              </h3>
+            </div>
+            <!-- /section title -->
+
+            <div class="col-md-8 col-md-offset-2">
+              <div class="events-wrapper">
+                <!-- event -->
+                <div class="event">
+                  <div class="event-day">
+                    <div>
+                      <span class="day">7</span>
+                      <span class="year">June, 2020</span>
+                    </div>
+                  </div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 8 : 00 AM - 11 : 00 AM
+                    </p>
+                    <br />
+                    <h3 class="event-title">DAY 1</h3>
+                    <p class="cont">
+                      Heloo Helooo font testing&nbsp;<a href="#">here</a> END
+                      SEM IS CANCELLED
+                    </p>
+                  </div>
+                </div>
+                <!-- /event -->
+
+                <div class="event">
+                  <div class="event-hour"></div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                    </p>
+                    <h3 class="event-title">Day 2</h3>
+                    <p class="cont">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Itaque, vel expedita recusandae impedit,
+                    </p>
+                  </div>
+                </div>
+
+                <!-- /event -->
+
+                <div class="event">
+                  <div class="event-day">
+                    <div>
+                      <span class="day">7</span>
+                      <span class="year">Nov, 2020</span>
+                    </div>
+                  </div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                    </p>
+                    <h3 class="event-title">Day 1</h3>
+                    <p class="cont">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Tenetur inventore explicabo,
+                    </p>
+                  </div>
+                </div>
+
+                <!-- event 1-->
+                <div class="event">
+                  <div class="event-hour"></div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
+                    </p>
+                    <h3 class="event-title">Day 2</h3>
+                    <p class="cont">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Error suscipit dicta maxime,
+                    </p>
+                  </div>
+                </div>
+                <!-- /event1 -->
+              </div>
+            </div>
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /container -->
+      </div>
+      <!-- ################################/Event Schedule #####################################-->
+
+      <!-- faq starts -->
+      <section class="faq-section bgimage-illustration-faq" id="faq-section">
+        <h1 class="faq-heading">Frequently Asked Questions</h1>
+        <div class="faq-row-container">
+          <div class="row1">
+            <div></div>
+            <div>
+              <div class="faq-questions">
+                <div class="row2">
+                  <button
+                    class="faq-btn blue-2"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="collapseQuestion1"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <i class="fas fa-question-circle fa-2x blue-2"></i>
+                  </button>
+                  <b class="faq-question-head"
+                    >What is my name lorem ipsum Anim pariatur cliche ?</b
+                  >
+                </div>
+                <div class="faq-collapse" id="collapseQuestion1">
+                  <div class="faq-card faq-card-body border-blue2">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-questions">
+                <div class="row-2">
+                  <button
+                    class="faq-btn btn-primary bg-blue2"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="collapseQuestion2"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <i class="fas fa-question-circle fa-2x blue-2"></i>
+                  </button>
+                  <b class="faq-question-head">What is my name?</b>
+                </div>
+
+                <div class="faq-collapse" id="collapseQuestion2">
+                  <div class="faq-card faq-card-body border-blue2">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-questions">
+                <div class="row-2">
+                  <button
+                    class="faq-btn btn-primary bg-blue2"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="collapseQuestion3"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <i class="fas fa-question-circle fa-2x blue-2"></i>
+                  </button>
+                  <b class="faq-question-head">What is my name?</b>
+                </div>
+
+                <div class="faq-collapse" id="collapseQuestion3">
+                  <div class="faq-card faq-card-body border-blue2">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-questions">
+                <div class="row-2">
+                  <button
+                    class="faq-btn btn-primary bg-blue2"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="collapseQuestion4"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <i class="fas fa-question-circle fa-2x blue-2"></i>
+                  </button>
+                  <b class="faq-question-head">What is my name?</b>
+                </div>
+
+                <div class="faq-collapse" id="collapseQuestion4">
+                  <div class="faq-card faq-card-body border-blue2">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life
+                    accusamus terry richardson ad squid. Nihil anim keffiyeh
+                    helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display: none;"></div>
+          </div>
+          <div class="faq-img">
+            <img
+              src="../public/img/illustrations/faq.jpg"
+              alt="faq-illustration"
+              class="faq-background"
+            />
+          </div>
+        </div>
+      </section>
     </main>
-
-    <!-- ##############################EVENT SCHEDULE#################################### -->
-
-    <div id="schedule" class="section">
-      <!-- container -->
-      <div class="container">
-        <!-- row -->
-        <div class="row">
-          <!-- section title -->
-          <div class="section-title">
-            <h3 class="title">
-              <span>Event</span> <span style="color: #3bb9ff;">Schedule</span>
-            </h3>
-          </div>
-          <!-- /section title -->
-
-          <div class="col-md-8 col-md-offset-2">
-            <div class="events-wrapper">
-              <!-- event -->
-              <div class="event">
-                <div class="event-day">
-                  <div>
-                    <span class="day">7</span>
-                    <span class="year">June, 2020</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <p class="event-time">
-                    <i class="fa fa-clock-o"></i> 8 : 00 AM - 11 : 00 AM
-                  </p>
-                  <br />
-                  <h3 class="event-title">DAY 1</h3>
-                  <p class="cont">
-                    Heloo Helooo font testing&nbsp;<a href="#">here</a> END SEM
-                    IS CANCELLED
-                  </p>
-                </div>
-              </div>
-              <!-- /event -->
-
-              <div class="event">
-                <div class="event-hour"></div>
-                <div class="event-content">
-                  <p class="event-time">
-                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                  </p>
-                  <h3 class="event-title">Day 2</h3>
-                  <p class="cont">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Itaque, vel expedita recusandae impedit,
-                  </p>
-                </div>
-              </div>
-
-              <!-- /event -->
-
-              <div class="event">
-                <div class="event-day">
-                  <div>
-                    <span class="day">7</span>
-                    <span class="year">Nov, 2020</span>
-                  </div>
-                </div>
-                <div class="event-content">
-                  <p class="event-time">
-                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                  </p>
-                  <h3 class="event-title">Day 1</h3>
-                  <p class="cont">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Tenetur inventore explicabo,
-                  </p>
-                </div>
-              </div>
-
-              <!-- event 1-->
-              <div class="event">
-                <div class="event-hour"></div>
-                <div class="event-content">
-                  <p class="event-time">
-                    <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                  </p>
-                  <h3 class="event-title">Day 2</h3>
-                  <p class="cont">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Error suscipit dicta maxime,
-                  </p>
-                </div>
-              </div>
-              <!-- /event1 -->
-            </div>
-          </div>
-        </div>
-        <!-- /row -->
-      </div>
-      <!-- /container -->
-    </div>
-    <!-- ################################/Event Schedule #####################################-->
-
-    <!-- faq starts -->
-    <section class="faq-section bgimage-illustration-faq" id="faq-section">
-      <h1 class="faq-heading">Frequently Asked Questions</h1>
-      <div class="faq-row-container">
-        <div class="row1">
-          <div></div>
-          <div>
-            <div class="faq-questions">
-              <div class="row2">
-                <button
-                  class="faq-btn blue-2"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="collapseQuestion1"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  <i class="fas fa-question-circle fa-2x blue-2"></i>
-                </button>
-                <b class="faq-question-head"
-                  >What is my name lorem ipsum Anim pariatur cliche ?</b
-                >
-              </div>
-              <div class="faq-collapse" id="collapseQuestion1">
-                <div class="faq-card faq-card-body border-blue2">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident.
-                </div>
-              </div>
-            </div>
-            <div class="faq-questions">
-              <div class="row-2">
-                <button
-                  class="faq-btn btn-primary bg-blue2"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="collapseQuestion2"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  <i class="fas fa-question-circle fa-2x blue-2"></i>
-                </button>
-                <b class="faq-question-head">What is my name?</b>
-              </div>
-
-              <div class="faq-collapse" id="collapseQuestion2">
-                <div class="faq-card faq-card-body border-blue2">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident.
-                </div>
-              </div>
-            </div>
-            <div class="faq-questions">
-              <div class="row-2">
-                <button
-                  class="faq-btn btn-primary bg-blue2"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="collapseQuestion3"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  <i class="fas fa-question-circle fa-2x blue-2"></i>
-                </button>
-                <b class="faq-question-head">What is my name?</b>
-              </div>
-
-              <div class="faq-collapse" id="collapseQuestion3">
-                <div class="faq-card faq-card-body border-blue2">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident.
-                </div>
-              </div>
-            </div>
-            <div class="faq-questions">
-              <div class="row-2">
-                <button
-                  class="faq-btn btn-primary bg-blue2"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="collapseQuestion4"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  <i class="fas fa-question-circle fa-2x blue-2"></i>
-                </button>
-                <b class="faq-question-head">What is my name?</b>
-              </div>
-
-              <div class="faq-collapse" id="collapseQuestion4">
-                <div class="faq-card faq-card-body border-blue2">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. Nihil anim keffiyeh
-                  helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="display: none;"></div>
-        </div>
-        <div class="faq-img">
-          <img
-            src="../public/img/illustrations/faq.jpg"
-            alt="faq-illustration"
-            class="faq-background"
-          />
-        </div>
-      </div>
-    </section>
     <!-- faq ends -->
 
     <!---Contact Us Section Ends-->
     <footer class="footer"></footer>
     <script src="../public/js/index_progressbar.js"></script>
-    <script src="../public/js/index/index_faq.js"></script>
+    <script src="../public/js/index/index.js"></script>
   </body>
 </html>
