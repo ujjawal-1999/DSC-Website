@@ -140,6 +140,26 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+#ScrolltoTop{
+  position:fixed;
+  right:10px;
+  bottom: 10px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background-color: var(--navButtons);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color:var(--white);
+  border:none;
+  outline:none;
+  cursor:pointer;
+  &:active{
+    color:var(--loginButton);
+  }
+  i{
+    color:var(--white);
+  }
+}
 
 @media screen and (max-width: 600px) {
   .header .heading__background {

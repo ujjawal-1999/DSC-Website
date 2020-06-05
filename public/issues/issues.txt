@@ -1,36 +1,37 @@
-Post your issues here
+*****Post your issues here*****
 
-Home Page 
+***Home Page***
 
-1. Add Navbar
-2. Change Color Scheme
-3. Add Animations
-4. Add Features Section
-5. Add Gallery Section
-6. Add Animations To Youtube Videos Section
-7. Add footer
-8. Remove Ajax Content from Contact Us Section
-10. Add Announcement Section
-11. Update FAQ Section
-12. Enable Dark Mode Property
+1. Add Navbar.
+2. Change Color Scheme.
+3. Add Animations.
+4. Add Features Section.
+5. Add Gallery Section.
+6. Add Animations To Youtube Videos Section.
+7. Add footer.
+8. Remove Ajax Content from Contact Us Section.
+10. Add Announcement Section.
+11. Update FAQ Section.
+12. Enable Dark Mode Property.
 
 Profile Page
-1. Add a profile image Section
+1. Add a profile image Section.
 4. Add Skills.
-5. ChartJs for showing progress
-6. Rating System
-7. Upload Project Details
-
+5. ChartJs for showing progress.
+6. Rating System.
+7. Upload Project Details.
 
 
 Profile Page Contents:-
-1. Profile Image Section
+1. Profile Image Section.
 2. Details Display.
-4. Rating and LeaderBoard Score
+4. Rating and LeaderBoard Score.
 5. Showing and adding Skills.
 6. Adding New Projects and displaying all Projects.
 7. Showing Progress using Charts.
-9. All posted blogs and doubts Links 
-10. Contest Participated
+9. All posted blogs and doubts Links.
+10. Contest Participated.
 11. Notifications for new blogs and doubts posted.
 12. Marquee Section showing the latest blogs and doubts by anyone.
+
+Updates and Announcements in Announcement Section
