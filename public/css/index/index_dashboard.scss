@@ -186,7 +186,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
   outline: none;
   cursor: pointer;
-  display: none;
+  // display: none;
   &:active {
     color: var(--loginButton);
   }
