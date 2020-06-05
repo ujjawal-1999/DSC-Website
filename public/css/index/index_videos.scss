@@ -17,11 +17,12 @@
   #left-button,
   #right-button {
     border: none;
-    width: 5rem;
+    width: 3rem;
+    outline:none;
     background: transparent;
     img {
       opacity: 0.5;
-      width: 5rem;
+      width: 3rem;
       transition: all 0.2s;
 
       &:hover {
@@ -47,7 +48,7 @@
   }
 
   .contain {
-    width: 70%;
+    width: 80%;
     z-index: 3;
     display: flex;
   }

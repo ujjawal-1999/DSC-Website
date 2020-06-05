@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="../public/css/index/index_videos.css" />
     <link rel="stylesheet" href="../public/css/index/index_contactus.css" />
 
-    <link rel="stylesheet" href="../public/css/index/font-awesome.css" />
-    <link rel="stylesheet" href="../public/css/index/index_faq.css" />
+    <link rel="stylesheet" href="../public/css/index/font-awesome.css">
+    <link rel="stylesheet" href="../public/css/index/index_faq.css">
+
+    <link rel="stylesheet" href="../public/css/index/index_feature.css">
+    <!-- ######################################################################## -->
     <link
       rel="stylesheet"
       href="../public/css/index/index_event_schedule.css"
@@ -212,80 +215,186 @@
       </section>
       <!---Video Gallery Section Ends-->
 
-      <!---Contact Us Section Starts-->
-      <section class="contact_us">
-        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
-
-        <h2 class="heading__primary intersect">
-          Contact Us
-        </h2>
-        <form action="" id="upload_form" enctype="multipart/form-data">
-          <div class="container">
-            <div class="row">
-              <h4 style="text-align: center;">We'd love to hear from you!</h4>
-            </div>
-            <div class="row input-container">
-              <div class="col-xs-12">
-                <div class="styled-input wide">
-                  <input type="text" class="full" />
-                  <label>Name</label>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="styled-input">
-                  <input type="text" class="full" />
-                  <label>Email</label>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="styled-input" style="float: right;">
-                  <input type="text" class="full" />
-                  <label>Subject</label>
-                </div>
-              </div>
-
-              <div class="col-xs-12">
-                <div class="styled-input wide">
-                  <input type="text" class="message full" />
-                  <label>Message</label>
-                </div>
-              </div>
-              <center>
-                <div class="col-xs-12">
-                  <label for="file" id="lb" class="custom-file-upload"
-                    >Upload a file</label
-                  >
-                  <div class="styled-input wide">
-                    <input
-                      class="inputfile"
-                      type="file"
-                      name="file1"
-                      id="file1"
-                      onchange="uploadFile()"
-                    /><br />
-                    <center>
-                      <progress
-                        class="progress"
-                        id="progressBar"
-                        value="0"
-                        max="100"
-                        style="width: 300px;"
-                      ></progress>
-                    </center>
-
-                    <h3 id="status" class="status"></h3>
-                    <p id="loaded_n_total" class="loaded_n_total"></p>
-                  </div>
-                </div>
-
-                <div class="col-xs-12">
-                  <div class="btn-lrg submit-btn">Send Message</div>
-                </div>
-              </center>
+        <!-- Feature Section -->
+        <section class="features" id="features">
+          <h1 id="feature-main-heading">Features</h1>
+          <div class="feature-black" id="featured-black">
+              <div class="card feature-bg-black feature-card-expanded" id="feature-card-expanded" >
+                  <div><a id="feature-close" ><i class="fas fa-close fa-2x"></i></a></div>
+              <div class="border featureWhite-border"></div>
+              <img  id="image-expanded"src="">
+              <h1 id="heading-expanded"></h1>
+              <p id="para-expanded"></p>
             </div>
           </div>
-        </form>
-      </section>
+      
+          <div class="feature-card-container" id="feature-card-container">
+              <div id="mini-feature-card-container">
+              <div class="feature-card-column feature-column-0" >
+                  <div class="card featureBg-blue2 featured" id="1">
+                    <div class="border featureBlack-border"></div>
+                    <img class="featured-image1"
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg" />
+                    <h1 id="featured-heading1">Hey now, you're an allstar</h1>
+                    <p class="featured-para1">Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit.
+                       Similique, dolorum laboriosam. Molestiae,
+                        hic non. Porro atque error ullam, ipsa,
+                         recusandae quasi quos
+                      consectetur vero aliquam, qui exercitationem
+                       natus consequuntur beatae.</p>
+                  </div>
+                  <div class="card  featureBg-blue1 featured" id="2">
+                    <div class="border featureBlack-border"></div>
+                    <img class="featured-image2" 
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-02.jpg" />
+                    <h1 id="featured-heading2">Hey now, you're a rock star</h1>
+                    <p class="featured-para2">Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit.
+                       Similique, dolorum laboriosam. Molestiae,
+                        hic non. Porro atque error ullam, ipsa,
+                         recusandae quasi quos
+                      consectetur vero aliquam, qui exercitationem
+                       natus consequuntur beatae.</p>
+                  </div>
+                  <div class="card  featureBg-blue featured" id="3">
+                      <div class="border featureBlack-border"></div>
+                      <img class="featured-image3" 
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+                      <h1 id="featured-heading3">Get your game on, go play</h1>
+                      <p class="featured-para3">Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit.
+                         Similique, dolorum laboriosam. Molestiae,
+                          hic non. Porro atque error ullam, ipsa,
+                           recusandae quasi quos
+                        consectetur vero aliquam, qui exercitationem
+                         natus consequuntur beatae.</p>
+                    </div>
+                </div>
+                <div class="feature-card-column feature-column-1 ">
+                  <div class="card  featureBg-blue featured" id="4">
+                    <div class="border featureBlack-border"></div>
+                    <img class="featured-image4"
+                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-03.jpg" />
+                    <h1 id="featured-heading4">Get the show on, get paid</h1>
+                    <p class="featured-para4">Lorem ipsum dolor
+                      sit amet consectetur adipisicing elit.
+                       Similique, dolorum laboriosam. Molestiae,
+                        hic non. Porro atque error ullam, ipsa,
+                         recusandae quasi quos
+                      consectetur vero aliquam, qui exercitationem
+                       natus consequuntur beatae.</p>
+                  </div>
+                  <div class="card  featureBg-blue2  featured" id="5">
+                      <div class="border featureBlack-border"></div>
+                      <img class="featured-image5" 
+                      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+                      <h1 id="featured-heading5">Get your game on, go play</h1>
+                      <p class="featured-para5">Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit.
+                         Similique, dolorum laboriosam. Molestiae,
+                          hic non. Porro atque error ullam, ipsa,
+                           recusandae quasi quos
+                        consectetur vero aliquam, qui exercitationem
+                         natus consequuntur beatae.</p>
+                    </div>
+                    <div class="card  featureBg-blue1 featured" id="6">
+                      <div class="border featureBlack-border"></div>
+                      <img class="featured-image6"
+                       src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+                      <h1 id="featured-heading6">Get your game on, go play</h1>
+                      <p class="featured-para6">Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit.
+                         Similique, dolorum laboriosam. Molestiae,
+                          hic non. Porro atque error ullam, ipsa,
+                           recusandae quasi quos
+                        consectetur vero aliquam, qui exercitationem
+                         natus consequuntur beatae.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </section>
+        <!-- Features End -->
+
+
+
+          <!---Contact Us Section Starts-->
+          <section class="contact_us">
+            <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+    
+            <h2 class="heading__primary">
+              Contact Us
+            </h2>
+            <form action="/dsc/contact" method="post" id="upload_form" enctype="multipart/form-data">
+              <div class="container">
+                <div class="row">
+                  <h4 style="text-align: center;">We'd love to hear from you!</h4>
+                </div>
+                <div class="row input-container">
+                  <div class="col-xs-12">
+                    <div class="styled-input wide">
+                      <input type="text" class="full" name="name" required/>
+                      <label>Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                      <input type="text" class="full" name="email" required/>
+                      <label>Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float: right;">
+                      <input type="text" class="full" name="subject" required />
+                      <label>Subject</label>
+                    </div>
+                  </div>
+    
+                  <div class="col-xs-12">
+                    <div class="styled-input wide">
+                      <input type="text" class="message full" name="message" required />
+                      <label>Message</label>
+                    </div>
+                  </div>
+                  <center>
+                    <div class="col-xs-12">
+                      <label for="file" id="lb" class="custom-file-upload"
+                        >Upload a file</label
+                      >
+                      <div class="styled-input wide">
+                        <input
+                          class="inputfile"
+                          type="file"
+                          name="issues"
+                          id="file1"
+                          onchange="uploadFile()"
+                          multiple
+                        /><br />
+                        <center>
+                          <progress
+                            class="progress"
+                            id="progressBar"
+                            value="0"
+                            max="100"
+                            style="width: 300px;"
+                          ></progress>
+                        </center>
+    
+                        <h3 id="status" class="status"></h3>
+                        <p id="loaded_n_total" class="loaded_n_total"></p>
+                      </div>
+                    </div>
+    
+                    <div class="col-xs-12">
+                      <button class="btn-lrg submit-btn">Send Message</button>
+                    </div>
+                  </center>
+                </div>
+              </div>
+            </form>
+          </section>
+          <!---Contact Us Section Ends-->
 
       <!-- ##############################EVENT SCHEDULE#################################### -->
 
@@ -499,8 +608,10 @@
               class="faq-background"
             />
           </div>
-        </div>
-      </section>
+      </div>
+      </div>
+  </section>
+  
     </main>
     <!-- faq ends -->
 
@@ -508,5 +619,19 @@
     <script src="../public/js/loader.js"></script>
     <script src="../public/js/index/index_progressbar.js"></script>
     <script src="../public/js/index/index.js"></script>
+    <script src="../public/js/index/index_faq.js"></script>
+    <script src="../public/js/index/index_feature.js"></script>
+    <script src="../public/js/index_progressbar.js"></script>
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script> -->
+    
   </body>
 </html>
