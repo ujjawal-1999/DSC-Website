@@ -157,7 +157,7 @@ left: -6%;
 {
   border-color:#fff!important;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .feature-main-heading {
         font-size: 2rem;
       }

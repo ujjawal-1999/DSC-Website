@@ -7,6 +7,14 @@
   color: var(--Grey-dark-1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  overflow-x: hidden;
+}
+
 body::-webkit-scrollbar {
   width: 0.7em;
 }
@@ -33,6 +41,9 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 10vh;
 }
 
@@ -71,7 +82,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header {
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,6 +97,11 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  background-image: url(../../img/illustrations/dashboards.png);
+  background-size: 30rem;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header .dsclogo {
@@ -168,7 +184,35 @@ body::-webkit-scrollbar-thumb {
   color: var(--white);
 }
 
+#ScrolltoTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--navButtons);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: var(--white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+#ScrolltoTop:active {
+  color: var(--loginButton);
+}
+
+#ScrolltoTop i {
+  color: var(--white);
+}
+
 @media screen and (max-width: 600px) {
+  .header {
+    background-image: none;
+  }
   .header .heading__background {
     display: none;
   }

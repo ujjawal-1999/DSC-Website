@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const mongooseTypePhone = require("mongoose-type-phone");
 const mongooseTypeEmail = require("mongoose-type-email")
-const validator = require("validator")
 
 const Schema = mongoose.Schema;
 
@@ -24,7 +23,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
             minlength: 8,
-
         },
         phone: {
             type: mongoose.SchemaTypes.Phone
@@ -40,11 +38,8 @@ const userSchema = new Schema(
                 type: String
             }
         ],
-        image: {
-            type: Buffer
-        },
-        resume: {
-            type: Buffer
+        profileImageLocation: {
+            type: String
         },
         socialLinks: {
                 linkedin: String,
