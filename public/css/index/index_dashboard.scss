@@ -7,6 +7,10 @@
   // overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   overflow-x: hidden;
 }
@@ -30,7 +34,9 @@ body::-webkit-scrollbar-thumb {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 10vh;
+  // margin-top: -5rem;
 
   &__logo {
     align-self: center;
@@ -61,7 +67,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

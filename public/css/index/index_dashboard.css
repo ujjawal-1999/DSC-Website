@@ -7,6 +7,10 @@
   color: var(--Grey-dark-1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   overflow-x: hidden;
 }
@@ -37,6 +41,9 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 10vh;
 }
 
@@ -75,7 +82,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header {
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
