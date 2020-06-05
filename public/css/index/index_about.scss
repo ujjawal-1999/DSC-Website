@@ -1,7 +1,7 @@
 .main {
   .about {
     display: flex;
-    height: 100vh;
+    height: 120vh;
     padding: 3rem;
     justify-content: space-evenly;
     align-items: center;
@@ -67,6 +67,7 @@
 @media screen and (max-width: 400px) {
   .main {
     .about {
+      height: fit-content;
       .content {
         .heading {
           &__primary {
@@ -74,6 +75,23 @@
           }
           &__secondary {
             padding: 0 5rem 0 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .main {
+    .about {
+      .content {
+        .heading {
+          &__primary {
+            padding: 0 5rem 0 5rem;
+          }
+          &__secondary {
+            line-height: 1.4rem;
+            padding: 0 8rem 0 8rem;
           }
         }
       }

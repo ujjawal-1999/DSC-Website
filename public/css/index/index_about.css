@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 120vh;
   padding: 3rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -61,11 +61,26 @@
 }
 
 @media screen and (max-width: 400px) {
+  .main .about {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   .main .about .content .heading__primary {
     padding: 0 5rem 0 5rem;
   }
   .main .about .content .heading__secondary {
     padding: 0 5rem 0 5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .main .about .content .heading__primary {
+    padding: 0 5rem 0 5rem;
+  }
+  .main .about .content .heading__secondary {
+    line-height: 1.4rem;
+    padding: 0 8rem 0 8rem;
   }
 }
 /*# sourceMappingURL=index_about.css.map */
