@@ -191,6 +191,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
   outline: none;
   cursor: pointer;
+  display: none;
 }
 
 #ScrolltoTop:active {

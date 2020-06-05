@@ -54,6 +54,9 @@ lb.addEventListener("mousedown", function () {
 
 
 //Scroll To Top Function
+window.addEventListener('scroll',()=>{
+  document.querySelector("#ScrolltoTop").style.display = 'block';
+});
 const ScrolltoTop = document.querySelector("#ScrolltoTop");
 ScrolltoTop.addEventListener("click",(e)=>{
   e.preventDefault();
