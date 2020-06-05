@@ -51,3 +51,15 @@ lb.addEventListener("mousedown", function () {
   console.log("cankn");
   file.click();
 });
+
+
+//Scroll To Top Function
+const ScrolltoTop = document.querySelector("#ScrolltoTop");
+ScrolltoTop.addEventListener("click",(e)=>{
+  e.preventDefault();
+  window.scrollTo({
+    top:0,
+    left:0,
+    behavior:"smooth"
+  });
+})

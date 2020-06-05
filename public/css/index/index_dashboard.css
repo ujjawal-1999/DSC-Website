@@ -184,6 +184,30 @@ body::-webkit-scrollbar-thumb {
   color: var(--white);
 }
 
+#ScrolltoTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--navButtons);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: var(--white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#ScrolltoTop:active {
+  color: var(--loginButton);
+}
+
+#ScrolltoTop i {
+  color: var(--white);
+}
+
 @media screen and (max-width: 600px) {
   .header {
     background-image: none;
