@@ -108,7 +108,7 @@
     background-color: #fff;
     background-clip: border-box;
     border-width:1px;
-    border-style: solid;
+    border-top-style: solid;
     border-radius: 0.25rem;
   }
   .faq-card-body {
@@ -150,7 +150,6 @@
     {
         display: none;
     }
-
     .faq-row-container
 {
     display: grid;
