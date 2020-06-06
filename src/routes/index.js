@@ -5,6 +5,7 @@ const async = require('async');
 const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
+const User = require('../models/user');
 
 //Config Modules
 const { checkType } = require("../config/checkType");
@@ -17,8 +18,16 @@ const { contact, contactAdmin } = require("../account/nodemailer");
 
 
 //Route for Homepage
-router.get('/',(req, res)=>{
-    res.render("index")
+router.get('/', async(req, res)=>{
+	// res.render("index")
+	const user = await User.find();
+	// console.log(user)
+    res.render('index',{
+		// user:req.user,
+		// message:msg,
+		// flag,
+		users:user
+    });
 })
 
 //Establish Storage for file upload (Contact Us issues)
