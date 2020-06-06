@@ -2,10 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BallBoy Games, Mobile Games, AntenaGames">
     <title>Developer Students Club | NIT Silchar</title>
     <!-- ######################################################################## -->
     <!-- Stylings -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../public/css/index/colors.css" />
     <link rel="stylesheet" href="../public/css/index/index_animation.css" />
     <link rel="stylesheet" href="../public/css/index/index_dashboard.css" />
@@ -22,13 +25,23 @@
       rel="stylesheet"
       href="../public/css/index/index_event_schedule.css"
     />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- ######################################################################## -->
+    <!--jquery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!---Icons Import-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <!--custom fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
   </head>
 
   <body>
@@ -614,73 +627,61 @@
   
     </main>
     <!-- faq ends -->
-
-    <footer class="flex-rw">
-      <ul class="footer-list-top">
-        <li>
-          <h4 class="footer-list-header">About Us</h4>
-        </li>
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor">ABOUT US</a>
-        </li>
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor"
-            >MEET OUR TEAM</a
-          >
-        </li>
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor">EVENTS</a>
-        </li>
-      </ul>
-      <ul class="footer-list-top">
-        <li>
-          <h4 class="footer-list-header">Quick Links</h4>
-        </li>
-  
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor">DISCUSSIONS</a>
-        </li>
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor">CONTESTS</a>
-        </li>
-        <li>
-          <a href="#" class="generic-anchor footer-list-anchor" target="_blank"
-            >LEADER BOARD</a
-          >
-        </li>
-      </ul>
-  
-      <section class="footer-social-section flex-rw">
-        <span class="footer-social-overlap footer-social-connect">
-          CONNECT <span class="footer-social-small">with</span> US
-        </span>
-        <span class="footer-social-overlap footer-social-icons-wrapper">
-          <a
-            href="https://www.facebook.com/"
-            class="generic-anchor"
-            target="_blank"
-            title="Facebook"
-            ><i class="fa fa-facebook"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/"
-            class="generic-anchor"
-            target="_blank"
-            title="Facebook"
-            ><i class="fa fa-linkedin"></i
-          ></a>
-        </span>
-      </section>
-      <section class="footer-bottom-section flex-rw">
-        <div class="footer-bottom-wrapper">
-          <i class="fa fa-copyright"> </i> Google Developers Students Club
-          <address class="footer-address">
-            NIT, Silchar
-          </address>
-          <span class="footer-bottom-rights"> - All Rights Reserved - </span>
-        </div>
-      </section>
+    <!--footer starts-->
+    <footer class="-bg-footer" id="footer">
+      <div class="container-fluid">
+          <div class="row footer-align">
+              <div class="col-md-4 col-sm-4">
+                  <h5>AntenaGames</h5>
+                  <hr class="hr-foot">
+                  <div class="footer-items">
+                      <p class="footer">
+                          AntenaGames is small indie game studio based in Croatia. Founded in 2020, on a mission to make beautiful, fun and popular mobile games. 
+                      </p>
+                      <ul class="social-networks">
+                          <a href="https://www.facebook.com/AntenaGamesPlay/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                          <a href="https://www.pinterest.com/antenagames10/" class="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+                                                                                                       <a href="https://twitter.com/antenagames_com" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                  <h5>Our contact</h5>
+                  <hr class="hr-foot">
+                  <div class="footer-items">
+                      <address>
+                              10 000 Zagreb, Zagreb
+                              <br>
+                              Zagreb, Zagreb
+                              <br>
+                              Croatia
+                              <br>
+                              <i class="fa fa-phone address"></i> www.antenagames.com
+                              <br>
+                              <i class="fa fa-fax address"></i> www.antenagames.com
+                              <br>
+                              <i class="fa fa-envelope address"></i> <a href="http://www.antenagames.com" target="_blank">www.antenagames.com</a>
+                      </address>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                  <h5>Open hours</h5>
+                  <hr class="hr-foot">
+                  <div class="footer-items">
+                      <ul>
+                          <li>Mon-Fri: 08:00-16:00</li>
+                          <li>Sat    : Closed</li>
+                          <li>Sun    : Closed</li> 
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
     </footer>
+    
+    <div class="footer-copyright">
+          <p>&copy 2020 Copyright <a href="http://www.antenagames.com" target="blank"> AntenaGames</a></p>
+    </div>
     <script src="../public/js/loader.js"></script>
     <script src="../public/js/index/index_progressbar.js"></script>
     <script src="../public/js/index/index.js"></script>
