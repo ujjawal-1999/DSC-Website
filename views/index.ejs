@@ -21,15 +21,19 @@
       rel="stylesheet"
       href="/css/index/index_event_schedule.css"
     />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <!-- JQuery for navbar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <body>
+  <body id="bodydiv">
     <!--Navbar Starts-->
-    <nav class="nav">
+    <%-include('partials/navbar')%> 
+    <!-- <nav class="nav">
       <img
         src="/img/logo/DSC_trans.png"
         alt="Logo"
@@ -42,7 +46,7 @@
         <input type="button" class="nav__links" value="Projects" />
         <input type="button" class="nav__links" value="Login" />
       </div>
-    </nav>
+    </nav> -->
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
     <header class="header">
@@ -600,5 +604,14 @@
     <script src="/js/index_progressbar.js"></script>
     <script src="/js/index/index_feature.js"></script>
     <script src="/js/index/index.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script>
+      var bodydiv = document.getElementById('bodydiv');
+      bodydiv.addEventListener('click', closeSearch)
+      function closeSearch(){
+        let search_list1= document.getElementById('search_list1');
+        search_list1.style.display = 'none';
+      }
+    </script>
   </body>
 </html>

@@ -37,7 +37,6 @@ const userRoutes = require("./routes/user");
 app.use('/dsc',indexRoutes);
 app.use('/dsc/user',userRoutes);
 
-
 //Start the server
 app.listen(PORT,()=>{
 	console.log('Server listening on port',PORT);
