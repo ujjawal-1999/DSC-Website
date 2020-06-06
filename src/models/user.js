@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const mongooseTypePhone = require("mongoose-type-phone");
-const mongooseTypeEmail = require("mongoose-type-email")
 
 const Schema = mongoose.Schema;
 
@@ -15,17 +13,14 @@ const userSchema = new Schema(
             unique: true
         },
         email: {
-            type: mongoose.SchemaTypes.Email,
-            unique: true,
-            required: true,
+            type: String,
+            unique: true
         },
         password: {
-            type: String,
-            required: true,
-            minlength: 8,
+            type: String
         },
         phone: {
-            type: mongoose.SchemaTypes.Phone
+            type: String
         },
         bio: {
             type: String

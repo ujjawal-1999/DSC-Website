@@ -29,7 +29,6 @@ app.use(express.urlencoded({extended:true}));
 const publicDirectory = path.join(__dirname,'../public');
 app.use(express.static(publicDirectory));
 
-
 //Routes===========================================
 var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
