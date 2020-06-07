@@ -51,12 +51,6 @@
         <input type="button" class="nav__links" value="Gallery" />
         <input type="button" class="nav__links" value="Team" />
         <input type="button" class="nav__links" value="Projects" />
-        <% if(!user){ %>
-          <a href="/dsc/user/register"><input type="button" class="nav__links" value="Sign In/Log In" /></a>
-        <% }else{ %>
-          <a href="/dsc/user/logout"><input type="button" class="nav__links" value="Log Out" /></a>
-          <input type="button" class="nav__links" value="Signed in as <%=user.name %>" />
-        <% } %>
         
         
       </div>
@@ -76,7 +70,7 @@
       <h1 class="heading__primary" id="heading__primary">
         <span class="bold">NIT</span> Silchar
       </h1>
-      <input type="button" class="getStarted" id="getStarted" value="Login" />
+      <a href="/dsc/user/register"><input type="button" class="getStarted" id="getStarted" value="Login" /></a>
     </header>
       <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>

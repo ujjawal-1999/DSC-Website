@@ -21,8 +21,9 @@ const { contact, contactAdmin } = require("../account/nodemailer");
 router.use(cookieParser());
 
 //Route for Homepage
-router.get('/',(req, res)=>{
+router.get('/',async(req, res)=>{
 	var token = req.cookies.authorization;
+	const finduser = await User.find();
 	if(token)
     {
         jwt.verify(token, process.env.JWT_SECRET,(err,user)=>{
@@ -30,27 +31,26 @@ router.get('/',(req, res)=>{
                 console.log(err);
             else
 				req.user = user;
-            res.render("index",{user:user});
+            res.render("index",{user:user,found:finduser});
         });
     }
     else
-        res.render("index",{user:req.user});
-    
+        res.render("index",{user:req.user,found:finduser});
 
 });
 
 
-router.get('/', async(req, res)=>{
-	// res.render("index")
-	const user = await User.find();
-	// console.log(user)
-    res.render('index',{
-		// user:req.user,
-		// message:msg,
-		// flag,
-		users:user
-    });
-});
+// router.get('/', async(req, res)=>{
+// 	// res.render("index")
+// 	const user = await User.find();
+// 	// console.log(user)
+//     res.render('index',{
+// 		// user:req.user,
+// 		// message:msg,
+// 		// flag,
+// 		users:user
+//     });
+// });
 
 //Establish Storage for file upload (Contact Us issues)
 const storage = multer.diskStorage({
