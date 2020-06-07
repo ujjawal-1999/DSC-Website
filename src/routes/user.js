@@ -12,13 +12,31 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const { check, validationResult } = require('express-validator');
+const flash = require('connect-flash');
+const session = require("express-session");
+
+
 
 //setting up methods
 router.use(bodyParser.json());
-router.use(cookieParser());
+router.use(cookieParser('secret_passcode'));
 router.use(bodyParser.urlencoded({extended:true}));
+router.use(session({
+    secret: "secret_passcode",
+    cookie: {
+      maxAge: 4000000
+    },
+    resave: false,
+    saveUninitialized: false
+  }));
+router.use(flash());
 
 
+router.use((req, res, next) => {
+    res.locals.flashMessages = req.flash();
+    next();
+});
+  
 
 //Config Modules
 
@@ -70,13 +88,15 @@ router.post("/register",
                 });
                 //console.log(token);
                 res.cookie( 'authorization', token,{ maxAge: 24*60*60*1000, httpOnly: false });
+                res.locals.flashMessages = req.flash("success", user.name + " your account is created");
                 res.redirect("/dsc/");
             }).catch(error => {
                 // res.status(500).json({
                 //     error: error
                 // });
-                console.log(error);
-                res.redirect("/dsc/user/register");
+                // console.log(error);
+                res.locals.flashMessages = req.flash("error", "Email already in use try logging in");
+                res.redirect("/dsc/");
             });
         });
     }
@@ -94,17 +114,21 @@ router.post("/login", (req, res, next) => {
         email: req.body.email
     }).then(user => {
         if (!user) {
-            return res.status(401).json({
-                message: "Authentication failed"
-            });
+            // return res.status(401).json({
+            //     message: "Authentication failed"
+            // });
+            req.flash("error","User not found try creating a new account");
+            res.redirect("/dsc/");
         }
         getUser = user;
         return bcrypt.compare(req.body.password, user.password);
     }).then(response => {
         if (!response) {
-            return res.status(401).json({
-                message: "Authentication failed"
-            });
+            // return res.status(401).json({
+            //     message: "Authentication failed"
+            // });
+            req.flash("error","You have entered wrong password");
+            res.redirect("/dsc/");
         }
         var token = jwt.sign({
             name: getUser.name,
@@ -124,12 +148,14 @@ router.post("/login", (req, res, next) => {
         // res.send(getUser);
         // req.user = getUser;
         // console.log(req.user);
+        req.flash("success",getUser.name + " you are logged in")
         res.redirect("/dsc/");
     }).catch(err => {
         // return res.status(401).json({
         //     message: "Authentication failed"
         // });
-        res.redirect("/dsc/user/login");
+        req.flash("error",err);
+        res.redirect("/dsc/");
     });
 });
 
@@ -141,6 +167,7 @@ router.post("/login", (req, res, next) => {
 //get route for logging out user
 router.get("/logout",function(req,res){
     res.clearCookie('authorization');
+    req.flash("success", "You are successfully logged out");
       res.redirect("/dsc/");
   });
 
