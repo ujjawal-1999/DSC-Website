@@ -18,7 +18,7 @@
   #right-button {
     border: none;
     width: 3rem;
-    outline:none;
+    outline: none;
     background: transparent;
     img {
       opacity: 0.5;
@@ -52,23 +52,27 @@
     z-index: 3;
     display: flex;
   }
+
   .row {
+    -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
     overflow-x: scroll;
     height: 100%;
   }
   .row::-webkit-scrollbar {
-    width: 0.7em;
+    width: 0;
+    height: 0;
   }
 
   .row::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+    width: 0;
+    height: 0;
   }
 
   .row::-webkit-scrollbar-thumb {
-    background-color: var(--navButtons);
-    outline: 1px solid var(--loginButton);
+    width: 0;
+    height: 0;
   }
   .row__inner {
     -webkit-transition: 450ms -webkit-transform;
