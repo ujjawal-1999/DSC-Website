@@ -41,7 +41,7 @@
   justify-self: stretch;
 }
 
-#nav-item {
+#dropbtn {
   color: var(--navButtons);
 }
 

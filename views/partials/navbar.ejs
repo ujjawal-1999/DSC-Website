@@ -1,43 +1,65 @@
 <div class="page-wrapper">
     <div class="nav-wrapper">
-        <nav class="navbar">
-            <img src="/assets/images/DSC_trans.png">
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+      <nav class="navbar">
+        <img src="/assets/images/DSC_trans.png" />
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav no-search">
+          <!-- <li class="nav-item"><a href="#">Home</a></li> -->
+          <li class="nav-item">
+            <a href="/dsc/#about" class="nav-items-a">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/#features" class="nav-items-a">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/#schedule" class="nav-items-a">Announcement</a>
+          </li>
+          <!-- <li class="nav-item"><a href="#">Contact Us</a></li> -->
+          <!-- <li class="nav-item"><a href="#">FAQ</a></li> -->
+          <!-- <li class="nav-item"><a href="#">Gallery</a></li> -->
+          <% if(!user){ %>
+          <li class="nav-item">
+            <a href="/dsc/user/register" class="nav-items-a">Log In/Sign Up</a>
+          </li>
+          <% }else{ %>
+          <!-- <li class="nav-item">
+            <a href="/dsc/user/logout" class="nav-items-a">LogOut</a>
+          </li> -->
+          <li class="nav-item">
+            <div class="dropdown">
+              <span id="dropbtn">Signed in as <%= user.name %></span>
+              <div class="dropdown-content">
+                <a href="#" class="">Go To Profile</a>
+                <a href="/dsc/user/logout" class="">LogOut</a>
+              </div>
             </div>
-            <ul class="nav no-search">
-                <!-- <li class="nav-item"><a href="#">Home</a></li> -->
-                <li class="nav-item"><a href="#">About Us</a></li>
-                <li class="nav-item"><a href="#">Features</a></li>
-                <li class="nav-item"><a href="#">Announcement</a></li>
-                <!-- <li class="nav-item"><a href="#">Contact Us</a></li> -->
-                <!-- <li class="nav-item"><a href="#">FAQ</a></li> -->
-                <!-- <li class="nav-item"><a href="#">Gallery</a></li> -->
-                <% if(!user){ %>
-                    <li class="nav-item"><a href="/dsc/user/register">Log In/Sign Up</a></li>
-                <% }else{ %>
-                    <li class="nav-item"><a href="/dsc/user/logout">LogOut</a></li>
-                    <li class="nav-item" id="nav-item">Signed in as <%= user.name %></li>
-                <% } %>
-                
-                
-                <!-- <li class="nav-item"><a href="#">SignUp</a></li> -->
-                <li class="nav-item">
-                    <div class="searchcontainer">
-                        <i class="fas fa-search" id="search-icon"></i>
-                        <input class="search-input" id="search1" type="text" placeholder="Search..">
-                        <div class="search" id="srh1"></div>
-                        <ul class="search-view" id="search_list1">
-                            <% found.forEach((user)=>{  %>
-                                <li class="collection-item2"><a><%= user.name%></a></li>
-                            <% }) %>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-        </nav>
+          </li>
+          <% } %>
+  
+          <!-- <li class="nav-item"><a href="#">SignUp</a></li> -->
+          <li class="nav-item">
+            <div class="searchcontainer">
+              <i class="fas fa-search" id="search-icon"></i>
+              <input
+                class="search-input"
+                id="search1"
+                type="text"
+                placeholder="Search.."
+                autofocus
+              />
+              <div class="search" id="srh1"></div>
+              <ul class="search-view" id="search_list1">
+                <% found.forEach((user)=>{ %>
+                <li class="collection-item2"><a><%= user.name%></a></li>
+                <% }) %>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
-</div>
+  </div>
