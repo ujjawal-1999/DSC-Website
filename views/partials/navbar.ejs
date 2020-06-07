@@ -15,16 +15,22 @@
                 <!-- <li class="nav-item"><a href="#">Contact Us</a></li> -->
                 <!-- <li class="nav-item"><a href="#">FAQ</a></li> -->
                 <!-- <li class="nav-item"><a href="#">Gallery</a></li> -->
-                <li class="nav-item"><a href="#">Log In</a></li>
-                <!-- <li class="nav-item"><a href="#">LogOut</a></li> -->
-                <li class="nav-item"><a href="#">SignUp</a></li>
+                <% if(!user){ %>
+                    <li class="nav-item"><a href="/dsc/user/register">Log In/Sign Up</a></li>
+                <% }else{ %>
+                    <li class="nav-item"><a href="/dsc/user/logout">LogOut</a></li>
+                    <li class="nav-item">Signed in as <%= user.name %></li>
+                <% } %>
+                
+                
+                <!-- <li class="nav-item"><a href="#">SignUp</a></li> -->
                 <li class="nav-item">
                     <div class="searchcontainer">
                         <i class="fas fa-search" id="search-icon"></i>
                         <input class="search-input" id="search1" type="text" placeholder="Search..">
                         <div class="search" id="srh1"></div>
                         <ul class="search-view" id="search_list1">
-                            <% users.forEach((user)=>{  %>
+                            <% found.forEach((user)=>{  %>
                                 <li class="collection-item2"><a><%= user.name%></a></li>
                             <% }) %>
                         </ul>

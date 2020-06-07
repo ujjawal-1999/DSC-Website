@@ -9,9 +9,10 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  // overflow-x: hidden;
+}
 section {
-  overflow-x: hidden;
   overflow-y: visible;
 }
 body::-webkit-scrollbar {

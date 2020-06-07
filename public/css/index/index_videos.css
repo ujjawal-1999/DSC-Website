@@ -71,6 +71,7 @@
 }
 
 .video .row {
+  -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
   overflow-x: scroll;
@@ -78,17 +79,18 @@
 }
 
 .video .row::-webkit-scrollbar {
-  width: 0.7em;
+  width: 0;
+  height: 0;
 }
 
 .video .row::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+  width: 0;
+  height: 0;
 }
 
 .video .row::-webkit-scrollbar-thumb {
-  background-color: var(--navButtons);
-  outline: 1px solid var(--loginButton);
+  width: 0;
+  height: 0;
 }
 
 .video .row__inner {

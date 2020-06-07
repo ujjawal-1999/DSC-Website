@@ -1,11 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
 const fs = require("fs");
 const path = require("path");
 const async = require("async");
+const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const cookieParser = require('cookie-parser');
+const { check, validationResult } = require('express-validator');
+
+//setting up methods
+router.use(bodyParser.json());
+router.use(cookieParser());
+router.use(bodyParser.urlencoded({extended:true}));
+
+
+
 //Config Modules
 
 const { checkProfileImageType } = require("../config/checkType");
@@ -13,7 +27,123 @@ const { checkProfileImageType } = require("../config/checkType");
 //Setup a test Router for user routes
 router.get('/',(req,res)=>{
     res.json({message:'User routes connected'})
+});
+
+
+router.get("/newusermobile",(req,res)=>{
+    res.render("newusermobile");
+});
+
+
+//get route for signup
+router.get("/register",(req,res)=>{
+    res.render("newuser");
 })
+
+//post route for signup
+router.post("/register",
+(req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).jsonp(errors.array());
+    }
+    else {
+        bcrypt.hash(req.body.password, 10).then((hash) => {
+            const user = new User({
+                name: req.body.name,
+                email: req.body.email,
+                password: hash
+            });
+            user.save().then((response) => {
+                // res.status(201).json({
+                //     message: "User successfully created!",
+                //     result: response
+                // });
+                // console.log(user);
+                var token = jwt.sign({
+                    name: user.name,
+                    email: user.email,
+                    userId: user._id
+                }, process.env.JWT_SECRET, {
+                    expiresIn: "1d"
+                });
+                //console.log(token);
+                res.cookie( 'authorization', token,{ maxAge: 24*60*60*1000, httpOnly: false });
+                res.redirect("/dsc/");
+            }).catch(error => {
+                // res.status(500).json({
+                //     error: error
+                // });
+                console.log(error);
+                res.redirect("/dsc/user/register");
+            });
+        });
+    }
+});
+
+//get route for login
+router.get("/login",function(req,res){
+    res.render("newuser");
+});
+
+//post route for login
+router.post("/login", (req, res, next) => {
+    let getUser;
+    User.findOne({
+        email: req.body.email
+    }).then(user => {
+        if (!user) {
+            return res.status(401).json({
+                message: "Authentication failed"
+            });
+        }
+        getUser = user;
+        return bcrypt.compare(req.body.password, user.password);
+    }).then(response => {
+        if (!response) {
+            return res.status(401).json({
+                message: "Authentication failed"
+            });
+        }
+        var token = jwt.sign({
+            name: getUser.name,
+            email: getUser.email,
+            userId: getUser._id
+        },process.env.JWT_SECRET, {
+            expiresIn: "1d"
+        });
+        // console.log(token);
+        res.cookie( 'authorization', token,{ maxAge: 24*60*60*1000, httpOnly: false });
+        // console.log('authorization: ', req.cookies);
+        // res.status(200).json({
+        //     token: token,
+        //     expiresIn: 3600,
+        //     msg: getUser
+        // });
+        // res.send(getUser);
+        // req.user = getUser;
+        // console.log(req.user);
+        res.redirect("/dsc/");
+    }).catch(err => {
+        // return res.status(401).json({
+        //     message: "Authentication failed"
+        // });
+        res.redirect("/dsc/user/login");
+    });
+});
+
+//checking for user
+// router.get("/user",authorization,function(req,res){
+//     res.send(req.user);
+// });
+
+//get route for logging out user
+router.get("/logout",function(req,res){
+    res.clearCookie('authorization');
+      res.redirect("/dsc/");
+  });
+
 
 //Post Route to edit User Profile Details
 router.post('/profile',async (req,res)=>{

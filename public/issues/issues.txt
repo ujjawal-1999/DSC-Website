@@ -3,15 +3,7 @@
 ***Home Page***
 
 1. Add Navbar.
-2. Change Color Scheme.
-3. Add Animations.
-4. Add Features Section.
-5. Add Gallery Section.
-6. Add Animations To Youtube Videos Section.
 7. Add footer.
-8. Remove Ajax Content from Contact Us Section.
-10. Add Announcement Section.
-11. Update FAQ Section.
 12. Enable Dark Mode Property.
 
 Profile Page
@@ -35,3 +27,15 @@ Profile Page Contents:-
 12. Marquee Section showing the latest blogs and doubts by anyone.
 
 Updates and Announcements in Announcement Section
+
+1. Scroll to Top button not working.
+2. Remove Scrollbar from video gallery.
+3. Navbar Overflow in desktop view
+4. Mobile view of Navbar
+5. Adjust Placeholder in the contact form of mobile view
+6. Footer not added
+7. Login/Signup page not added.
+8. Remove unnecessary packages
+9. Check code Structure and Schema
+10. Client side Form validation
+11. 

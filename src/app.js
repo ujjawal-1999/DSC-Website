@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 const path = require('path');
 
 const app = express();
@@ -21,6 +22,9 @@ mongoose.connect(process.env.MONGODB_URL,{
 //Setting EJS view engine
 app.set('view engine','ejs');
 
+//setting jwt 
+app.set('jwtTokenSecret', process.env.JWT_SECRET);
+
 //body parser
 app.use(express.urlencoded({extended:true}));
 
@@ -28,7 +32,6 @@ app.use(express.urlencoded({extended:true}));
 //for static page
 const publicDirectory = path.join(__dirname,'../public');
 app.use(express.static(publicDirectory));
-
 
 //Routes===========================================
 var indexRoutes = require("./routes/index");
