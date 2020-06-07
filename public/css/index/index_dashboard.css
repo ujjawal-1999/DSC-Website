@@ -4,7 +4,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: sans-serif;
-  color: var(--Grey-dark-1);
 }
 
 html {
@@ -321,13 +320,17 @@ body::-webkit-scrollbar-thumb {
 
 
 /* flash message */
+.flash {
+  margin: 0px 20%;
+}
+
 .alert {
-  border: 1px solid black;
+  border: 1px solid;
+  border-radius: 10px;
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 14px; 
-  color: black;
+  padding: 16px; 
   margin-bottom: 0px;
 }
 
@@ -337,10 +340,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 #success {
-  background-color: rgba(209, 250, 211, 0.3);
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
 }
 #error {
-  background-color: rgb(255, 187, 204,0.5);
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
 }
 
 
@@ -348,7 +355,7 @@ body::-webkit-scrollbar-thumb {
 /* The close button */
 .closebtn {
   margin-left: 15px;
-  color: black;
+  color: white;
   font-weight: bold;
   float: right;
   font-size: 22px;
@@ -359,5 +366,5 @@ body::-webkit-scrollbar-thumb {
 
 /* When moving the mouse over the close button */
 .closebtn:hover {
-  color: red;
+  color: black;
 }

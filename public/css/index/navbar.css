@@ -38,6 +38,10 @@
   justify-self: stretch;
 }
 
+#nav-item {
+  color: var(--navButtons);
+}
+
 .nav-item a {
   color: var(--navButtons);
   font-size: 0.9rem;
