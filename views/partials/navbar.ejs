@@ -18,8 +18,8 @@
                 <% if(!user){ %>
                     <li class="nav-item"><a href="/dsc/user/register">Log In/Sign Up</a></li>
                 <% }else{ %>
-                    <li class="nav-item"><a href="/dsc/user/logout">LogOut</a></li>
-                    <li class="nav-item">Signed in as <%= user.name %></li>
+                    <li class="nav-item"><a href="/dsc/user/logout">LogOut</a> | Signed in as <%= user.name %></li>
+                    <!-- <li class="nav-item">Signed in as <%= user.name %></li> -->
                 <% } %>
                 
                 
@@ -27,7 +27,7 @@
                 <li class="nav-item">
                     <div class="searchcontainer">
                         <i class="fas fa-search" id="search-icon"></i>
-                        <input class="search-input" id="search1" type="text" placeholder="Search..">
+                        <input class="search-input" id="search1" type="text" placeholder="Search.." autofocus>
                         <div class="search" id="srh1"></div>
                         <ul class="search-view" id="search_list1">
                             <% found.forEach((user)=>{  %>
