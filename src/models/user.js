@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const mongooseTypePhone = require("mongoose-type-phone");
-const mongooseTypeEmail = require("mongoose-type-email")
+const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
 
@@ -15,17 +14,14 @@ const userSchema = new Schema(
             unique: true
         },
         email: {
-            type: mongoose.SchemaTypes.Email,
-            unique: true,
-            required: true,
+            type: String,
+            unique: true
         },
         password: {
-            type: String,
-            required: true,
-            minlength: 8,
+            type: String
         },
         phone: {
-            type: mongoose.SchemaTypes.Phone
+            type: String
         },
         bio: {
             type: String
@@ -57,5 +53,6 @@ const userSchema = new Schema(
     }
 )
 
-
+userSchema.plugin(uniqueValidator, { message: 'Email already in use.' });
 module.exports = User = mongoose.model("User", userSchema);
+
