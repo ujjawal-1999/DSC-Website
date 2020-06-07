@@ -43,7 +43,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   padding: 0.5em 0.8em 0.5em 0.8em;
-  /* border-bottom: 1.5px solid #01010e; */
+  border-bottom: 1.5px solid #01010e;
   text-decoration: none;
   border-style: 1px solid transparent;
   transition: all 0.2s;
