@@ -1,5 +1,5 @@
 .contact_us {
-  height: 100vh;
+  height: 110vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,7 +58,7 @@
 .contact_us textarea:valid ~ label {
   font-size: 0.75em;
   color: var(--Grey-light-4);
-  top: -5px;
+  top: -2px;
   -webkit-transition: all 0.225s ease;
   transition: all 0.225s ease;
 }
@@ -90,9 +90,8 @@
 
 .contact_us .styled-input label {
   color: var(--Grey-light-4);
-  padding: 1.3rem 30px 1rem 30px;
+  padding: 0.5rem 1rem;
   position: absolute;
-  top: 10px;
   left: 0;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -169,18 +168,10 @@
   .contact_us .input-container {
     max-width: 30%;
   }
-  .contact_us input:focus ~ label,
-  .contact_us textarea:focus ~ label,
-  .contact_us input:valid ~ label,
-  .contact_us textarea:valid ~ label {
-    font-size: 0.75em;
-    top: -40px;
-    left: -30px;
-  }
   .contact_us input,
   .contact_us textarea {
-    padding: 10px;
-    font-size: 0.5rem;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
   }
 }
 
