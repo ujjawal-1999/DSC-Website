@@ -33,14 +33,12 @@ app.use(express.urlencoded({extended:true}));
 const publicDirectory = path.join(__dirname,'../public');
 app.use(express.static(publicDirectory));
 
-
 //Routes===========================================
 var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
 
 app.use('/dsc',indexRoutes);
 app.use('/dsc/user',userRoutes);
-
 
 //Start the server
 app.listen(PORT,()=>{

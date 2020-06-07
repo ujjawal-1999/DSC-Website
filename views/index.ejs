@@ -21,15 +21,26 @@
       rel="stylesheet"
       href="/css/index/index_event_schedule.css"
     />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <!-- JQuery for navbar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
+    <div class="loaderr">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
     <!--Navbar Starts-->
-    <nav class="nav">
+    <%-include('partials/navbar')%> 
+    <!-- <nav class="nav">
       <img
         src="/img/logo/DSC_trans.png"
         alt="Logo"
@@ -49,7 +60,7 @@
         
         
       </div>
-    </nav>
+    </nav> -->
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
     <header class="header">
@@ -57,16 +68,20 @@
         src="/img/logo/dsc_logo.png"
         alt="DSC_LOGO"
         class="dsclogo"
+        id="dsclogo"
       />
-      <h2 class="heading__secondary">
+      <h2 class="heading__secondary intersect" id="heading__secondary">
         Developer Students Club
       </h2>
-      <h1 class="heading__primary"><span class="bold">NIT</span> Silchar</h1>
-      <input type="button" class="getStarted" value="Login" />
-      <button id="ScrolltoTop">
+      <h1 class="heading__primary" id="heading__primary">
+        <span class="bold">NIT</span> Silchar
+      </h1>
+      <input type="button" class="getStarted" id="getStarted" value="Login" />
+    </header>
+      <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>
       </button>
-    </header>
+    
     <!---Dashboard Section Ends-->
     <!--About Us Section Starts-->
     <main class="main">
@@ -79,7 +94,7 @@
           />
         </div>
         <div class="content">
-          <h1 class="heading__primary">About</h1>
+          <h1 class="heading__primary intersect">About</h1>
           <h2 class="heading__secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
             dolorem officiis atque laboriosam quas quaerat quidem eius tempore
@@ -101,7 +116,7 @@
       <!--About DSC Section Starts-->
       <section class="about">
         <div class="content">
-          <h1 class="heading__primary">About DSC</h1>
+          <h1 class="heading__primary intersect">About DSC</h1>
           <h2 class="heading__secondary">
             Developer Student Clubs are university based community groups for
             students interested in Google developer technologies. Students from
@@ -223,14 +238,14 @@
             <!-- Features End -->
         <!-- ##############################EVENT SCHEDULE#################################### -->
 
-        <div id="schedule" class="section">
+        <section id="schedule" class="section">
           <!-- container -->
           <div class="container">
             <!-- row -->
             <div class="row">
               <!-- section title -->
               <div class="section-title">
-                <h3 class="title">
+                <h3 class="title intersect">
                   <span>Event</span> <span style="color: #3bb9ff;">Schedule</span>
                 </h3>
               </div>
@@ -316,7 +331,7 @@
             <!-- /row -->
           </div>
           <!-- /container -->
-        </div>
+        </section>
         <!-- ################################/Event Schedule #####################################-->
 
       <!--Video Gallery Section Starts-->
@@ -326,7 +341,7 @@
           alt=""
           class="video__background"
         /> -->
-        <h1 class="video__secondary">Video Gallery</h1>
+        <h1 class="video__secondary intersect">Video Gallery</h1>
         <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
         <div class="contain">
           <button id="left-button">
@@ -409,7 +424,7 @@
 
  <!-- faq starts -->
  <section class="faq-section bgimage-illustration-faq" id="faq-section">
-  <h1 class="faq-heading">Frequently Asked Questions</h1>
+  <h1 class="faq-heading intersect">Frequently Asked Questions</h1>
   <div class="faq-row-container">
     <div class="row1">
       <div></div>
@@ -531,7 +546,7 @@
           <section class="contact_us">
             <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
     
-            <h2 class="heading__primary">
+            <h2 class="heading__primary intersect">
               Contact Us
             </h2>
             <form action="/dsc/contact" method="post" id="upload_form" enctype="multipart/form-data">
@@ -602,10 +617,21 @@
               </div>
             </form>
           </section>
+    <!-- <%-include('partials/footer')%> -->
     <!---Contact Us Section Ends-->
+    <script src="/js/loader.js"></script>
+    <script src="/js/index/index_progressbar.js"></script>
     <script src="/js/index/index_faq.js"></script>
-    <script src="/js/index_progressbar.js"></script>
     <script src="/js/index/index_feature.js"></script>
     <script src="/js/index/index.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script>
+      var bodydiv = document.getElementById('bodydiv');
+      bodydiv.addEventListener('click', closeSearch)
+      function closeSearch(){
+        let search_list1= document.getElementById('search_list1');
+        search_list1.style.display = 'none';
+      }
+    </script>
   </body>
 </html>

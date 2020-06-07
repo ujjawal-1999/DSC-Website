@@ -55,6 +55,7 @@ window.addEventListener("scroll", () => {
 const ScrolltoTop = document.querySelector("#ScrolltoTop");
 ScrolltoTop.addEventListener("click", (e) => {
   e.preventDefault();
+  window.focus();
   window.scrollTo({
     top: 0,
     left: 0,

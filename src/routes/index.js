@@ -7,6 +7,7 @@ const path = require("path");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
+const User = require('../models/user');
 
 //Config Modules
 const { checkType } = require("../config/checkType");
@@ -39,7 +40,17 @@ router.get('/',(req, res)=>{
 });
 
 
-
+router.get('/', async(req, res)=>{
+	// res.render("index")
+	const user = await User.find();
+	// console.log(user)
+    res.render('index',{
+		// user:req.user,
+		// message:msg,
+		// flag,
+		users:user
+    });
+});
 
 //Establish Storage for file upload (Contact Us issues)
 const storage = multer.diskStorage({

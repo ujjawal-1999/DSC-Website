@@ -1,0 +1,37 @@
+<div class="page-wrapper">
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <img src="/assets/images/DSC_trans.png">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav no-search">
+                <!-- <li class="nav-item"><a href="#">Home</a></li> -->
+                <li class="nav-item"><a href="#">About Us</a></li>
+                <li class="nav-item"><a href="#">Features</a></li>
+                <li class="nav-item"><a href="#">Announcement</a></li>
+                <!-- <li class="nav-item"><a href="#">Contact Us</a></li> -->
+                <!-- <li class="nav-item"><a href="#">FAQ</a></li> -->
+                <!-- <li class="nav-item"><a href="#">Gallery</a></li> -->
+                <li class="nav-item"><a href="/dsc/users/register">Log In</a></li>
+                <li class="nav-item"><a href="/dsc/users/logout">LogOut</a></li>
+                <!-- <li class="nav-item"><a href="#">SignUp</a></li> -->
+                <li class="nav-item">
+                    <div class="searchcontainer">
+                        <i class="fas fa-search" id="search-icon"></i>
+                        <input class="search-input" id="search1" type="text" placeholder="Search..">
+                        <div class="search" id="srh1"></div>
+                        <ul class="search-view" id="search_list1">
+                            <% users.forEach((user)=>{  %>
+                                <li class="collection-item2"><a><%= user.name%></a></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</div>
