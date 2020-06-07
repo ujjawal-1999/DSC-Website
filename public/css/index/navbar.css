@@ -309,7 +309,7 @@ input {
   }
   .navbar {
     position: fixed;
-    width: 100%;
+    width: 100vw;
   }
   .search-input {
     display: block;
