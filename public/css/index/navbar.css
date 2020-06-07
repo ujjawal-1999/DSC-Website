@@ -1,6 +1,8 @@
 .page-wrapper {
   width: 100%;
   height: auto;
+  z-index: 100;
+  /* overflow-x: hidden; */
 }
 
 .nav-wrapper {
@@ -9,7 +11,8 @@
   position: sticky;
   top: 0;
   background-color: #fff;
-  overflow-x: hidden;
+  z-index: 100;
+  /* overflow-x: hidden; */
 }
 
 /* NAVIGATION */
@@ -34,11 +37,11 @@
 .navbar ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-self: stretch;
 }
 
-.nav-item a {
+.nav-item .nav-items-a {
   color: var(--navButtons);
   font-size: 0.9rem;
   font-weight: 400;
@@ -90,7 +93,7 @@
 
 .search-active {
   opacity: 1;
-  z-index: 0;
+  z-index: 1;
 }
 
 input {
@@ -191,10 +194,10 @@ input {
     flex-direction: column;
     position: fixed;
     justify-content: start;
-    top: 55px;
+    top: 70px;
     background-color: white;
     width: 100%;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 70px);
     transform: translate(-101%);
     text-align: center;
     overflow: hidden;
@@ -207,23 +210,24 @@ input {
 
   .navbar li:first-child {
     margin-top: 10px;
-    order: 2;
-  }
-  .navbar li:nth-child(2) {
     order: 3;
   }
-  .navbar li:nth-child(3) {
+  .navbar li:nth-child(2) {
     order: 4;
   }
-  .navbar li:nth-child(4) {
+  .navbar li:nth-child(3) {
     order: 5;
   }
-  .navbar li:nth-child(5) {
-    order: 6;
+  .navbar li:nth-child(4) {
+    order: 2;
   }
-  .navbar li:nth-child(6) {
+  .navbar li:nth-child(5) {
     order: 1;
   }
+  /*
+  .navbar li:nth-child(6) {
+    order: 1;
+  } */
   /* .navbar li:nth-child(7) {
       order: 8;
     }
@@ -253,6 +257,7 @@ input {
 
   .mobile-nav {
     transform: translate(0%) !important;
+    z-index: 100 !important;
   }
 
   #search-icon {
@@ -267,7 +272,32 @@ input {
     transform: translateX(-70px);
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  #search-icon {
+    display: block;
+    transform: translateX(-50px);
+    /* transform: translateY(20px); */
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+  }
+  .search-input {
+    display: block;
+    opacity: 1;
+    border-bottom: 1px solid grey;
+    transform: translateX(-10px);
+    margin-bottom: 30px;
+    top: 12px;
+  }
+  .page-wrapper {
+    overflow-x: hidden;
+  }
+  .nav-wrapper {
+    overflow-x: hidden;
+  }
+}
+/* @media screen and (max-width: 600px) {
   #search-icon {
     display: block;
     transform: translate(80px, 25px);
@@ -279,9 +309,9 @@ input {
     border-bottom: 1px solid grey;
     transform: translateX(-70px);
   }
-}
-@media screen and (max-width: 550px) {
-  /* #search-icon {
+} */
+/* @media screen and (max-width: 550px) {
+  #search-icon {
     display: block;
     transform: translateX(-95px);
   }
@@ -291,10 +321,10 @@ input {
     opacity: 1;
     border-bottom: 1px solid grey;
     transform: translateX(-270px);
-  } */
-}
-@media screen and (max-width: 510px) {
-  /* #search-icon {
+  }
+} */
+/* @media screen and (max-width: 510px) {
+  #search-icon {
     display: block;
     transform: translateX(-125px);
   }
@@ -304,10 +334,10 @@ input {
     opacity: 1;
     border-bottom: 1px solid grey;
     transform: translateX(-250px);
-  } */
-}
-@media screen and (max-width: 410px) {
-  /* #search-icon {
+  }
+} */
+/* @media screen and (max-width: 410px) {
+  #search-icon {
     display: block;
     transform: translateX(-125px);
   }
@@ -317,10 +347,10 @@ input {
     opacity: 1;
     border-bottom: 1px solid grey;
     transform: translateX(-200px);
-  } */
-}
-@media screen and (max-width: 320px) {
-  /* #search-icon {
+  }
+} */
+/* @media screen and (max-width: 320px) {
+  #search-icon {
     display: block;
     transform: translateX(-125px);
   }
@@ -330,10 +360,10 @@ input {
     opacity: 1;
     border-bottom: 1px solid grey;
     transform: translateX(-180px);
-  } */
-}
-@media screen and (max-width: 270px) {
-  /* #search-icon {
+  }
+} */
+/* @media screen and (max-width: 270px) {
+  #search-icon {
     display: block;
     transform: translateX(-115px);
   }
@@ -343,8 +373,8 @@ input {
     opacity: 1;
     border-bottom: 1px solid grey;
     transform: translateX(-150px);
-  } */
-}
+  }
+} */
 #search_list1 {
   display: none;
   margin-top: 20px;
