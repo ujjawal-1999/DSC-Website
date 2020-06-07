@@ -39,24 +39,19 @@
 }
 
 .nav-item a {
-  color: #0b08bb;
+  color: var(--navButtons);
   font-size: 0.9rem;
   font-weight: 400;
-  padding: 0 0.1em;
-  padding-bottom: 0.3em;
-  border-bottom: 2px solid #01010e;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  /* border-bottom: 1.5px solid #01010e; */
   text-decoration: none;
+  border-style: 1px solid transparent;
+  transition: all 0.2s;
 }
 
 .nav-item a:hover {
-  color: white;
-  border-style: solid;
-  background-color: blue;
-  padding: 0.5em 0.8em 0.5em 0.8em;
-  border-bottom: none;
-  transition-property: background-color;
-  transition-duration: 1.5s;
-  transition-timing-function: linear;
+  color: var(--white);
+  background-color: var(--navButtons);
 }
 
 /* SEARCH FUNCTION */
@@ -88,7 +83,6 @@
 .search-input {
   position: absolute;
   /* top: -4px; */
-  right: -125px;
   opacity: 0;
   z-index: -1;
   transition: opacity 0.6s ease;

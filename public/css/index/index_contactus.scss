@@ -1,5 +1,5 @@
 .contact_us {
-  height: 100vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
   textarea:valid ~ label {
     font-size: 0.75em;
     color: var(--Grey-light-4);
-    top: -5px;
+    top: -2px;
     -webkit-transition: all 0.225s ease;
     transition: all 0.225s ease;
   }
@@ -74,9 +74,8 @@
 
   .styled-input label {
     color: var(--Grey-light-4);
-    padding: 1.3rem 30px 1rem 30px;
+    padding: 0.5rem 1rem;
     position: absolute;
-    top: 10px;
     left: 0;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
@@ -156,19 +155,19 @@
       // margin: 20px 0 25px 0;
     }
 
-    input:focus ~ label,
-    textarea:focus ~ label,
-    input:valid ~ label,
-    textarea:valid ~ label {
-      font-size: 0.75em;
-      top: -40px;
-      left: -30px;
-    }
+    // input:focus ~ label,
+    // textarea:focus ~ label,
+    // input:valid ~ label,
+    // textarea:valid ~ label {
+    //   font-size: 0.75em;
+    //   top: 0px;
+    //   left: 0px;
+    // }
 
     input,
     textarea {
-      padding: 10px;
-      font-size: 0.5rem;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
     }
   }
 

@@ -28,7 +28,7 @@ function progressHandler(event) {
 }
 
 function completeHandler(event) {
-  _("status").innerHTML = event.target.responseText;
+  // _("status").innerHTML = event.target.responseText;
   _("progressBar").value = "100";
 }
 
@@ -44,16 +44,15 @@ var file = document.getElementById("file1");
 var lb = document.getElementById("lb");
 
 lb.addEventListener("mousedown", function () {
-  console.log("cankn");
+  // console.log("cankn");
   file.click();
 });
 
 //Scroll To Top Function
 window.addEventListener("scroll", () => {
-  document.querySelector("#ScrolltoTop").style.display = "block";
+  _("ScrolltoTop").style.display = "block";
 });
-const ScrolltoTop = document.querySelector("#ScrolltoTop");
-ScrolltoTop.addEventListener("click", (e) => {
+_("ScrolltoTop").addEventListener("click", (e) => {
   e.preventDefault();
   window.focus();
   window.scrollTo({

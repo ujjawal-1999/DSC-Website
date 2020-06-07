@@ -57,6 +57,25 @@
     </nav> -->
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
+    <div>
+      <% if (flashMessages) { %>
+        <% if (flashMessages.success) { %>
+          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+          <div class="alert" id="success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <%= flashMessages.success %>
+          </div>
+        <% } else if (flashMessages.error) { %>
+          <div class="alert" id="error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <%= flashMessages.error %>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    
+    
+
     <header class="header">
       <img
         src="/img/logo/dsc_logo.png"
@@ -70,7 +89,9 @@
       <h1 class="heading__primary" id="heading__primary">
         <span class="bold">NIT</span> Silchar
       </h1>
+       <% if(!user){ %>
       <a href="/dsc/user/register"><input type="button" class="getStarted" id="getStarted" value="Login" /></a>
+      <% } %> 
     </header>
       <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>
