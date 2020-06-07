@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   z-index: 100;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .nav-wrapper {
@@ -12,6 +12,7 @@
   top: 0;
   background-color: #fff;
   z-index: 100;
+  /* overflow-x: hidden; */
 }
 
 /* NAVIGATION */
@@ -40,12 +41,12 @@
   justify-self: stretch;
 }
 
-.nav-item a {
+.nav-item .nav-items-a {
   color: var(--navButtons);
   font-size: 0.9rem;
   font-weight: 400;
   padding: 0.5em 0.8em 0.5em 0.8em;
-  /* border-bottom: 1.5px solid #01010e; */
+  border-bottom: 1.5px solid #01010e;
   text-decoration: none;
   border-style: 1px solid transparent;
   transition: all 0.2s;
@@ -85,7 +86,6 @@
 .search-input {
   position: absolute;
   /* top: -4px; */
-
   opacity: 0;
   z-index: -1;
   transition: opacity 0.6s ease;
@@ -246,6 +246,7 @@ input {
 
   .navbar li a {
     font-size: 1rem;
+    border-bottom: none;
   }
 
   .menu-toggle,
@@ -284,6 +285,12 @@ input {
     transform: translateX(-10px);
     margin-bottom: 30px;
     top: 12px;
+  }
+  .page-wrapper{
+    overflow-x: hidden;
+  }
+  .nav-wrapper{
+    overflow-x: hidden;
   }
 }
 /* @media screen and (max-width: 600px) {
