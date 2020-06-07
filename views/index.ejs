@@ -32,7 +32,7 @@
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-  <body>
+  <body id="bodydiv">
     <div class="loaderr">
       <div class="spinner">
         <div class="bounce1"></div>
@@ -80,14 +80,14 @@
       <a href="/dsc/user/register"><input type="button" class="getStarted" id="getStarted" value="Login" /></a>
       <% } %> 
     </header>
-      <button id="ScrolltoTop" class="ScrolltoTop">
+      <!-- <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>
-      </button>
+      </button> -->
     
     <!---Dashboard Section Ends-->
     <!--About Us Section Starts-->
     <main class="main">
-      <section class="about">
+      <section class="about" id="about">
         <div class="background">
           <img
             src="/img/illustrations/about.png"
@@ -545,9 +545,24 @@
 </main>
 <!-- faq ends -->
           <!---Contact Us Section Starts-->
-          <section class="contact_us">
+          <section class="contact_us" id="contactus">
             <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
-    
+            <div style="margin-left:30vw;">
+              <% if (flashMessages) { %>
+                <% if (flashMessages.contact_success) { %>
+                  <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+                  <div class="alert" id="success">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <%= flashMessages.contact_success %>
+                  </div>
+                <% } else if (flashMessages.contact_error) { %>
+                  <div class="alert" id="error">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <%= flashMessages.contact_error %>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
             <h2 class="heading__primary intersect">
               Contact Us
             </h2>

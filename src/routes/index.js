@@ -139,8 +139,11 @@ router.post('/contact',async (req,res)=>{
 			}
 		})
 	},(avatar)=>{
-		if(avatar.length === 0)
-			res.redirect('/dsc/?flag=false&error=only 3 images upto 1MB total size is allowed');
+		if(avatar.length === 0){
+			res.locals.flashMessages = req.flash('contact_error',"Error: Only 4 Files upto 1Mb size can be uploaded");
+			res.redirect('/dsc/#contactus');
+		}
+
 		else{
 			console.log(req.body);
 			contact({
@@ -172,11 +175,13 @@ router.post('/contact',async (req,res)=>{
 			newMail.save()
 				.then((result)=>{
 					console.log(result);
-					res.redirect('/dsc/?flag=true')
+					res.locals.flashMessages = req.flash('contact_success',"Your response has been recorded");
+					res.redirect('/dsc/#contactus')
 				})
 				.catch((err)=>{
 					console.log(err);
-					res.redirect('/dsc/?flag=false');
+					res.locals.flashMessages = req.flash('contact_error',"Something went wrong. Please try again");
+					res.redirect('/dsc/#contactus');
 				});
 			}
 		})
