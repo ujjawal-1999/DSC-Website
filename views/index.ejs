@@ -100,7 +100,7 @@
     <!---Dashboard Section Ends-->
     <!--About Us Section Starts-->
     <main class="main">
-      <section class="about">
+      <section class="about" id="about">
         <div class="background">
           <img
             src="/img/illustrations/about.png"
@@ -558,9 +558,24 @@
 </main>
 <!-- faq ends -->
           <!---Contact Us Section Starts-->
-          <section class="contact_us">
+          <section class="contact_us" id="contactus">
             <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
-    
+            <div style="margin-left:30vw;">
+              <% if (flashMessages) { %>
+                <% if (flashMessages.contact_success) { %>
+                  <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+                  <div class="alert" id="success">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <%= flashMessages.contact_success %>
+                  </div>
+                <% } else if (flashMessages.contact_error) { %>
+                  <div class="alert" id="error">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <%= flashMessages.contact_error %>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
             <h2 class="heading__primary intersect">
               Contact Us
             </h2>
