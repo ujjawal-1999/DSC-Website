@@ -72,10 +72,10 @@ router.get('/verify/:id',function(req,res){
                 date2 = new Date();
                 date1 = user.created_at;
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-                var diffhrs = Math.ceil(timeDiff / (1000 * 60));
+                var diffhrs = Math.ceil(timeDiff / (1000 * 60 * 60));
                 console.log(diffhrs);
 
-                if(diffhrs <= 5)
+                if(diffhrs <= 12)
                 {
                     User.findByIdAndUpdate(user._id,{active:true},function(err,user){
                         if(err)
