@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="/css/index/index_faq.css" />
     
     <link rel="stylesheet" href="/css/index/index_feature.css">
+    <link rel="stylesheet" href="/css/index/footer.css">
     <link
       rel="stylesheet"
       href="/css/index/index_event_schedule.css"
     />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
@@ -40,24 +42,9 @@
     </div>
     <!--Navbar Starts-->
     <%-include('partials/navbar')%> 
-    <!-- <nav class="nav">
-      <img
-        src="/img/logo/DSC_trans.png"
-        alt="Logo"
-        class="nav__logo"
-      />
-      <div class="nav__bar">
-        <input type="button" class="nav__links" value="About" />
-        <input type="button" class="nav__links" value="Gallery" />
-        <input type="button" class="nav__links" value="Team" />
-        <input type="button" class="nav__links" value="Projects" />
-        
-        
-      </div>
-    </nav> -->
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
-    <div>
+    <div class="flash">
       <% if (flashMessages) { %>
         <% if (flashMessages.success) { %>
           <!-- <div class="flash success"><%= flashMessages.success %></div> -->
@@ -647,7 +634,10 @@
               </div>
             </form>
           </section>
-    <!-- <%-include('partials/footer')%> -->
+
+
+
+    <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>

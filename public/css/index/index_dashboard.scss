@@ -3,15 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  color: var(--Grey-dark-1);
 }
 
 html {
   scroll-behavior: smooth;
 }
-body {
-  // overflow-x: hidden;
-}
+
 section {
   overflow-y: visible;
 }

@@ -49,6 +49,10 @@ body {
   justify-self: stretch;
 }
 
+#dropbtn {
+  color: var(--navButtons);
+}
+
 .nav-item .nav-items-a {
   color: var(--navButtons);
   font-size: 0.9rem;
