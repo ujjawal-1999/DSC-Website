@@ -85,7 +85,7 @@
 
 @media only screen and (max-width: 768px) {
   .contact_us .styled-input {
-    width: 60%;
+    width: 100%;
   }
   .contact_us .contact_us {
     overflow-x: hidden;
