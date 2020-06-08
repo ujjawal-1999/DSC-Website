@@ -1,7 +1,7 @@
 .main {
   .about {
     display: flex;
-    height: 120vh;
+    height: 100vh;
     padding: 3rem;
     justify-content: space-evenly;
     align-items: center;
@@ -37,6 +37,7 @@
     .about {
       padding: 4rem;
       flex-direction: column;
+      height:80vh;
 
       .background {
         &__image {

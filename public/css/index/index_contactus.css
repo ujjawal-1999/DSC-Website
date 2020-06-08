@@ -13,6 +13,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-x: hidden;
   /* ///// inputs /////*/
 }
 
@@ -84,7 +85,10 @@
 
 @media only screen and (max-width: 768px) {
   .contact_us .styled-input {
-    width: 100%;
+    width: 60%;
+  }
+  .contact_us .contact_us {
+    overflow-x: hidden;
   }
 }
 
@@ -161,12 +165,16 @@
     width: 12rem !important;
   }
   .contact_us .submit-btn {
-    width: 100%;
+    width: 60%;
     float: none;
     text-align: center;
   }
   .contact_us .input-container {
-    max-width: 30%;
+    max-width: 50%;
+  }
+  .contact_us .styled-input.wide {
+    width: 100%;
+    max-width: 100%;
   }
   .contact_us input,
   .contact_us textarea {

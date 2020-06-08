@@ -22,7 +22,7 @@ function progressHandler(event) {
   _("status").style.fontSize = "0.8rem";
   _("status").style.fontWeight = "200";
   _("status").style.marginTop = "1rem";
-
+  _("progressBar").style.opacity = "1";
   _("progressBar").value = Math.round(percent);
   _("status").innerHTML = Math.round(percent) + "% uploaded";
 }
