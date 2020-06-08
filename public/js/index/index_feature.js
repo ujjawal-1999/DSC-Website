@@ -21,6 +21,7 @@ for(i=0;i<featured.length;i++)
          var cardStyle = getComputedStyle(this);
          console.log(cardStyle.backgroundColor);
          featuredBlack.style.backgroundColor=cardStyle.backgroundColor;
+         document.getElementById('feature-close-button').style.color=cardStyle.backgroundColor;
         
          var image = document.getElementsByClassName('featured-image'+id);
          var para = document.getElementsByClassName('featured-para'+id);
@@ -31,6 +32,7 @@ for(i=0;i<featured.length;i++)
         
          var headingExpanded= document.getElementById('heading-expanded');
          headingExpanded.innerHTML = heading.textContent;
+         headingExpanded.style.color=cardStyle.color;
 
          var imageExpanded = document.getElementById('image-expanded');
          imageExpanded.src= image[0].getAttribute('src');

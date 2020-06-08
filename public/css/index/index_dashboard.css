@@ -18,6 +18,12 @@ body::-webkit-scrollbar {
   width: 0.7em;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 .loaderr {
   position: fixed;
   height: 100vh;
@@ -316,10 +322,7 @@ body::-webkit-scrollbar-thumb {
     transform: scale(1);
   }
 }
-/*# sourceMappingURL=index_dashboard.css.map */
 
-
-/* flash message */
 .flash {
   margin: 0px 20%;
 }
@@ -328,15 +331,20 @@ body::-webkit-scrollbar-thumb {
   border: 1px solid;
   border-radius: 10px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding: 16px; 
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
   margin-bottom: 0px;
 }
 
 .alert {
   opacity: 1;
-  transition: opacity 0.6s; /* 600ms to fade out */
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
 }
 
 #success {
@@ -344,15 +352,14 @@ body::-webkit-scrollbar-thumb {
   color: #155724;
   border-color: #c3e6cb;
 }
+
 #error {
   background-color: #f8d7da;
   color: #721c24;
   border-color: #f5c6cb;
 }
 
-
-
-/* The close button */
+/*The Close Button */
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -361,10 +368,11 @@ body::-webkit-scrollbar-thumb {
   font-size: 22px;
   line-height: 20px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-/* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
 }
+/*# sourceMappingURL=index_dashboard.css.map */

@@ -1,3 +1,11 @@
+/* body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+} */
 .page-wrapper {
   width: 100%;
   height: auto;
@@ -321,7 +329,7 @@ input {
     border-bottom: 1px solid grey;
     transform: translateX(-10px);
     margin-bottom: 30px;
-    top: 12px;
+    top: 35px;
   }
   .page-wrapper {
     overflow-x: hidden;
@@ -416,6 +424,12 @@ input {
 }
 .collection-item2 {
   border-bottom: 1px solid grey;
+}
+.collection-item2 a{
+  color: black !important;
+}
+.collection-item2 a:hover{
+  color: white !important;
 }
 @media screen and (max-width: 715px) {
   #search_list1 {

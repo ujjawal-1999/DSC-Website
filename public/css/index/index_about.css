@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 120vh;
+  height: 100vh;
   padding: 3rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -40,6 +40,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 80vh;
   }
   .main .about .background__image {
     display: none;
