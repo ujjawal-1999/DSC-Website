@@ -3,6 +3,8 @@ DSC Website NITS.
 
 ## MASTER BRANCH
 
+`Don't Mess With Master`
+
 ### Routes 
 
 - `/dsc` Routes
