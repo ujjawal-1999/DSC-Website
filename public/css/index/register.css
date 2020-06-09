@@ -302,8 +302,22 @@ a:hover::before{
     left:-10%;
   }
 }
-.forgotPassword{
-	height: 20px;
-	width: 200px;
-	border-radius: 15%;
+
+
+.field-icon {
+    float: right;
+    margin-left: 224px;
+    margin-top: -30px;
+	z-index: 2;
+}
+
+.forget a {
+    height: 20px;
+    width: 200px;
+    border-radius: 0px;
+    margin-top: 22px;
+}
+
+#signup {
+	margin-top: 30px;
 }

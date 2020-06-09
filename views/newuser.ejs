@@ -25,8 +25,9 @@
         <span>or use your email for registration</span>
         <input type="text" name="name" placeholder="Name" required/>
         <input type="email" name="email" placeholder="Email" required />
-        <input type="password" name="password" placeholder="Password" required/>
-        <button>Sign Up</button>
+        <input id="password-field1" type="password" name="password" placeholder="Password" required/>
+        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon" onclick="myFunction1()"></span>
+        <button id="signup">Sign Up</button>
       </form>
     </div>
     <div class="form-container sign-in-container">
@@ -40,8 +41,9 @@
         <span>or use your account</span>
         <input type="text" name="name" placeholder="Name" required/>
         <input type="email" name="email" placeholder="Email" required />
-        <input type="password" name="password" placeholder="Password" required/>
-        <a class="forgotPassword" href="#">Forgot your password?</a>
+        <input id="password-field" type="password" name="password" placeholder="Password" required/>
+        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon" onclick="myFunction()"></span>
+        <div class="forget"><a href="">Forget Password</a></div>
         <button>Sign In</button>
       </form>
     </div>

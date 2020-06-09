@@ -57,6 +57,7 @@ var rand,mailOptions,host,link;
 
 /*------------------Routing Started ------------------------*/
 
+
 router.get('/verify/:id',function(req,res){
 // console.log(req.protocol+":/"+req.get('host'));
 
@@ -72,10 +73,10 @@ router.get('/verify/:id',function(req,res){
                 date2 = new Date();
                 date1 = user.created_at;
                 var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-                var diffhrs = Math.ceil(timeDiff / (1000 * 60 * 60));
+                var diffhrs = Math.ceil(timeDiff / (1000 * 60));
                 console.log(diffhrs);
 
-                if(diffhrs <= 12)
+                if(diffhrs <= 3)
                 {
                     User.findByIdAndUpdate(user._id,{active:true},function(err,user){
                         if(err)
@@ -83,7 +84,8 @@ router.get('/verify/:id',function(req,res){
                         else
                         {
                             console.log("email is verified");
-                            res.end("<h1>Email "+mailOptions.to+" is been Successfully verified");
+                            // res.end("<h1>Email "+mailOptions.to+" is been Successfully verified");
+                            res.render("verify");
                         }
                           
                     });
@@ -96,7 +98,8 @@ router.get('/verify/:id',function(req,res){
                             console.log(err);   
                     });
                     console.log("Link has expired try logging in to get a new link");
-                    res.end("<h1>Link has expired try logging in to get a new link</h1>");
+                    // res.end("<h1>Link has expired try logging in to get a new link</h1>");
+                    res.render("notverified");
                 }
             }
         });
