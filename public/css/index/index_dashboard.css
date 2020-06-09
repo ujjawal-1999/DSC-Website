@@ -255,6 +255,12 @@ body::-webkit-scrollbar-thumb {
   color: var(--white);
 }
 
+@media screen and (max-width: 1110px) {
+  .header {
+    background-image: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .header {
     background-image: none;
