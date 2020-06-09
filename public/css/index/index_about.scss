@@ -32,12 +32,12 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1030px) {
   .main {
     .about {
       padding: 4rem;
       flex-direction: column;
-      height:80vh;
+      height: 80vh;
 
       .background {
         &__image {
