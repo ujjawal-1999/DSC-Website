@@ -22,7 +22,7 @@ Profile Page Contents:-
 6. Adding New Projects and displaying all Projects.
 7. Showing Progress using Charts.
 9. All posted blogs and doubts Links.
-10. Contest Participated.
+10. Contest Participated and Leaderboard.
 11. Notifications for new blogs and doubts posted.
 12. Marquee Section showing the latest blogs and doubts by anyone.
 
