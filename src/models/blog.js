@@ -17,6 +17,10 @@ const blogSchema = new mongoose.Schema({
     },
     ratings:{
         type:Number
+    },
+    slug :{
+        type:String,
+        required:true
     }
 },{timestamps:true})
 
