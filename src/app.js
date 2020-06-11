@@ -39,9 +39,11 @@ app.use(express.static(publicDirectory));
 //Routes===========================================
 var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
+const blogRoutes= require("./routes/blog");
 
 app.use('/dsc',indexRoutes);
 app.use('/dsc/user',userRoutes);
+app.use('/dsc/blog',blogRoutes);
 
 //Start the server
 app.listen(PORT,()=>{
