@@ -33,20 +33,22 @@ router.post('/create', async (req, res)=>{
 			title: blog.title,
 			author: blog.author,
 			body: JSON.parse(blog.body),
+			category: blog.category,
 			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 6)).toLowerCase()
 		})
 		.save((err, saved)=> {
 			if (err) {
-				res.status(400).json({error: "some error occured"});
+				console.log(err)
+				res.status(400).json({error: "Some error occured"});
 				return err;	
 			}
-			console.log('saved: ', saved);
 			res.json(saved);
 		})
 	}
 
 	catch(e) {
-		res.status(400).json({error: "some error occured"})
+		console.log(e)
+		res.status(400).json({error: "Some error occured"})
 		return e;
 	}
 })
