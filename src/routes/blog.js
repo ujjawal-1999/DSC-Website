@@ -4,6 +4,9 @@ const Blog = require('../models/blog')
 var slugify = require('slugify')
 var QuillDeltaToHtmlConverter = require('quill-delta-to-html').QuillDeltaToHtmlConverter;
 
+router.get('/', (req, res)=>{
+    res.render("blogs")
+})
 
 var config = {
 	//include inline styling in the resulting html from delta
