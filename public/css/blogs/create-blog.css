@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: block;
+  overflow: hidden;
+}
+
+form {
+  display: grid;
+  overflow-x: hidden;
+  grid-template-areas:
+    "title publish"
+    "toolbar toolbar"
+    "body body";
+}
+
+form input[type="submit"] {
+  display: block;
+  background-color: var(--loginButton);
+  color: var(--white);
+  border: none;
+  margin: 1em 1em;
+  width: 8em;
+  height: 2em;
+  border-radius: 3px;
+  float: right;
+  grid-area: publish;
+  justify-self: center;
+}
+
+#title {
+  grid-area: title;
+  height: 2em;
+  border: none;
+  font-size: 2em;
+  margin: 0 0.5em;
+  font-weight: 800;
+  width: 50vw;
+}
+
+.ql-container {
+  grid-area: body;
+  height: 85vh;
+  font-size: 1.4em;
+  padding: 0.25em;
+  margin-top: 0;
+}
+.ql-toolbar {
+  grid-area: toolbar;
+  width: 100vw;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  /* top: 100%; */
+  /* top: -750%; */
+}
+
+/* Inline #5 | http://localhost:3000/dsc/blog/create */
+
+.ql-editor.ql-blank {
+  width: 100vw;
+}
+
+#editor {
+  width: 100vw;
+}
+
+@media only screen and (min-width: 656px) {
+  form input[type="submit"] {
+    justify-self: end;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  form {
+    grid-template-areas:
+      "title publish"
+      "body body"
+      "toolbar toolbar";
+  }
+  .ql-toolbar {
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 100vw;
+    z-index: 2;
+  }
+  .ql-container {
+    height: 92vh;
+  }
+}
