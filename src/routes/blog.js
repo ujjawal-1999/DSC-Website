@@ -62,7 +62,7 @@ router.get('/view/:slug', async (req, res)=>{
 
 	catch(e) {
 		res.status(400).json({error: "some error occured"});
-		return e;	
+		return e;
 	}
 })
 
