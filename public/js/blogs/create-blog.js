@@ -22,8 +22,10 @@ var quill = new Quill("#editor", {
 });
 form.onsubmit = function (e) {
   // onsubmit do this first
-  var name = document.querySelector("input[name=body]"); // set name input var
-  name.value = JSON.stringify(quill.getContents()); // populate name input with quill data
-  console.log(name.value);
+  var body = document.querySelector("input[name=body]"); // set name input var
+  var summary = document.querySelector("input[name=summary]"); // set name input var
+  body.value = JSON.stringify(quill.getContents()); // populate name input with quill data
+  summary.value = quill.getText().slice(0, 40);
+  console.log(summary.value);
   return false; // submit form
 };
