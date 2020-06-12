@@ -7,56 +7,127 @@ const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
+var slugify = require('slugify')
+var QuillDeltaToHtmlConverter = require('quill-delta-to-html').QuillDeltaToHtmlConverter;
+
 
 
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended: true}));
 
 router.get('/', function(req, res){
-    res.render('blog');
+    res.render('blogs');
   });
+
+
+
+
+var config = {
+	//include inline styling in the resulting html from delta
+	inlineStyles: false
+};
+
 //Establish Storage for file upload 
 const storage = multer.diskStorage({
 	destination: function(req,file,cb){
 		// console.log(req.body);
-		const newDestination = __dirname+`/../../public/upload/cover/${req.body.email}`;
+		const newDestination = __dirname+`/../../public/upload/cover/`;
 		console.log("New Destination: ", newDestination);
-		var stat = null;
-		try{
-			stat = fs.statSync(newDestination);
-		}
-		catch(err){
-			fs.mkdir(newDestination,{recursive:true},(err)=>{
-				if(err)
-					console.error('New Directory Error: ',err);
-				else
-					console.log('New Directory Success');
-			})
-		}
-		if(stat && !stat.isDirectory())
-			throw new Error('Directory Couldnt be created');
-		cb(null,newDestination);
+		fs.mkdir(newDestination, function(err) {
+			if(err) {
+				console.log(err.stack)
+			} else {
+				callback(null, newDestination);
+			}
+		})
+	
 	},
 	filename:function(req,file,cb){
 		cb(null,file.fieldname + '-' + uuid.v4() + path.extname(file.originalname));
 	}
 });
 
-router.post('/create',authorization,(req,res)=>{
-    const {body,pic} = req.body 
-    if(!body || !pic){
-      return  res.status(422).json({error:"Plase add all the fields"})
+var upload = multer({
+	storage: storage,
+	limits:{fileSize:10000000},
+    fileFilter: function (req, file, callback) {
+        var ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+            return callback(new Error('Only images are allowed'))
+        }
+        callback(null, true)
     }
-    req.user.password = undefined
-    const post = new Post({
-        body,
-        photo:pic,
-        postedBy:req.user
-    })
-    post.save().then(result=>{
-        res.json({post:result})
-    })
-    .catch(err=>{
-        console.log(err)
-    })
 })
-module.exports=router;
+
+
+// form to create blog
+router.get('/create',(req, res)=>{
+
+	res.render('create-blog');
+})
+
+
+
+//route to save blog
+router.post('/create',upload.single('userFile'), async (req, res)=>{
+	if(req.file!=undefined) {
+		console.log(req.file)
+		cover=req.file.path
+	 }else {
+	   cover=false
+	 }
+	try {
+		const blog = req.body;
+		if (!blog) return res.status(400).json({error: "empty query sent"})
+        
+		await new Blog({
+			title: blog.title,
+			author: blog.author,
+			body: JSON.parse(blog.body),
+			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 6)).toLowerCase(),
+			cover:cover
+		})
+		.save((err, saved)=> {
+			if (err) {
+				res.status(400).json({error: "some error occured"});
+				return err;	
+			}
+			console.log('saved: ', saved);
+			res.json(saved);
+		})
+	}
+
+	catch(e) {
+		res.status(400).json({error: "some error occured"})
+		return e;
+	}
+})
+
+
+
+//route to display blog
+router.get('/view/:slug', async (req, res)=>{
+
+	try{
+		//find the corresponding blog in db
+		let slug = req.params.slug
+		if (!slug) return res.status(400).json({error: "empty query sent"})
+
+		const blog = await Blog.findOne({slug});
+		var deltaOps =	blog.body.ops;
+		var converter = new QuillDeltaToHtmlConverter(deltaOps, config);
+		var html = converter.convert();
+
+		//render result page with resulting html
+		res.render('show-blog', { blogContent: html })
+	}
+
+	catch(e) {
+		res.status(400).json({error: "some error occured"})
+		return e;	
+	}
+})
+
+
+//export
+module.exports = router;
