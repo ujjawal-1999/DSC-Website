@@ -21,11 +21,12 @@ html, body{
     --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 
     /*      theme font-family   */
-    --Abel: 'Abel', cursive;
+    /* --Abel: 'Abel', cursive;
     --Anton: 'Anton', cursive;
     --Josefin : 'Josefin', cursive;
     --Lexend: 'Lexend', cursive;
-    --Livvic : 'Livvic', cursive;
+    --Livvic : 'Livvic', cursive; */
+    --blogfont: 'Arial','Sans-serif';
 }
 
 
@@ -47,16 +48,16 @@ ul{
 }
 
 h1{
-    font-family: var(--Lexend);
+    font-family: var(--blogfont);
     font-size: 2.5rem;
 }
 
 h2{
-    font-family: var(--Lexend);
+    font-family: var(--blogfont);
 }
 
 h3{
-    font-family: var(--Abel);
+    font-family: var(--blogfont);
     font-size: 1.3rem;
 }
 
@@ -65,12 +66,12 @@ button.btn{
     border-radius: 2rem;
     padding: 1rem 3rem;
     font-size: 1rem;
-    font-family: var(--Livvic);
+    font-family: var(--blogfont);
     cursor: pointer;
 }
 
 span{
-    font-family: var(--Abel);
+    font-family: var(--blogfont);
 }
 
 .container{
@@ -135,7 +136,7 @@ p{
     padding: 1.6rem 1rem;
     font-size: 1.1rem;
     position: relative;
-    font-family: var(--Abel);
+    font-family: var(--blogfont);
     font-size: 1.1rem;
 }
 
@@ -151,7 +152,7 @@ p{
     font-size: 1.6rem;
     padding: 1rem 0;
     display: block;
-    font-family: var(--Lexend);
+    font-family: var(--blogfont);
     font-size: 1.6rem;
 }
 
@@ -174,6 +175,7 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
+    margin-top: 10px;
     background: url('/assets/blogs/Background-image.png');
     background-size: cover;
     height: 110vh;
@@ -290,12 +292,17 @@ main .site-content .post-content > .post-image, .post-title{
 }
 
 main .site-content .post-content > .post-image .post-info{
-    background: var(--sky);
+    background: var(--post-info-blog);
     padding: 1rem;
     position: absolute;
     bottom: 0%;
     left: 20vw;
     border-radius: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+main .site-content .post-content > .post-image .post-info:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.2s ease-in-out;
 }
 
 main .site-content .post-content > .post-image > div{
@@ -304,6 +311,7 @@ main .site-content .post-content > .post-image > div{
 
 main .site-content .post-content > .post-image .img{
     width: 100%;
+    height: 300px;
     transition: all 1s ease;
 }
 
@@ -316,7 +324,7 @@ main .site-content .post-content > .post-image .post-info span{
 }
 
 main .post-content .post-title a{
-    font-family: var(--Anton);
+    font-family: var(--blogfont);
     font-size: 1.5rem;
 }
 
@@ -336,7 +344,7 @@ main .post-content .post-title a{
     padding: .6rem .9rem;
     border-radius: 2rem;
     margin: 0 .3rem;
-    font-family: var(--Lexend);
+    font-family: var(--blogfont);
 }
 
 .site-content .pagination .pages{
@@ -350,7 +358,7 @@ main .post-content .post-title a{
 /* --------------- Sidebar ----------------------- */
 
 .site-content > .sidebar .category-list{
-    font-family: var(--Livvic);
+    font-family: var(--blogfont);
 }
 
 .site-content > .sidebar .category-list .list-items{
@@ -399,7 +407,7 @@ main .post-content .post-title a{
     width: 80%;
     height: 1.9rem;
     padding: .3rem .5rem;
-    font-family: var(--Lexend);
+    font-family: var(--blogfont);
     font-size: 1rem;
 }
 
@@ -460,7 +468,7 @@ footer.footer .newsletter .form-element input{
     border: none;
     background: transparent;
     color: white;
-    font-family: var(--Josefin);
+    font-family: var(--blogfont);
     font-size: 1rem;
     width: 74%;
 }
@@ -485,7 +493,7 @@ footer.footer .follow div i{
 
 footer.footer .rights{
     justify-content: center;
-    font-family: var(--Josefin);
+    font-family: var(--blogfont);
 }
 
 footer.footer .rights h4 a{
@@ -583,106 +591,106 @@ footer.footer .move-up span:hover{
 }
 
 /*        x      Viewport less then or equal to 520px       x     */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
-/* General Buttons */
-button {
-  width: 130px;
-  height: 40px;
-  background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
-  border: none;
-  border-radius: 5px;
-  position: relative;
-  border-bottom: 4px solid #2b8bc6;
-  color: #fbfbfb;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
-  font-size: 15px;
-  text-align: left;
-  text-indent: 5px;
-  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
-  cursor: pointer;
+fieldset, label { margin: 0; padding: 0; }
+.rating { 
+    border: none;
+    float: left;
+  }
+  
+  .rating > input { display: none; } 
+  .rating > label:before { 
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+  }
+  
+  .rating > .half:before { 
+    content: "\f089";
+    position: absolute;
+  }
+  
+  .rating > label { 
+    color: yellow; 
+   float: right; 
+  }
+  
+  /***** CSS Magic to Highlight Stars on Hover *****/
+  
+  .rating > input:checked ~ label, /* show gold star when clicked */
+  .rating:not(:checked) > label:hover, /* hover current star */
+  .rating:not(:checked) > label:hover ~ label { color: orange;  } /* hover previous stars in list */
+  
+  .rating > input:checked + label:hover, /* hover current star when changing rating */
+  .rating > input:checked ~ label:hover,
+  .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+  .rating > input:checked ~ label:hover ~ label { color: red;  } 
 
-/* Just for presentation */
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-button:active {
-  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
-  top: 1px;
-}
+  /* **********Filter section************ */
+  .filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5fr;
+    margin-top: 20px;
+    font-family: var(--blogfont);
+    margin-left: 100px;
+  }
+  .filter-item{
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .sort-btn{
+      width: 100%;
+      height: 50px;
+      background: var(--sky);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+  }
 
-button:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-top: 20px solid #187dbc;
-  border-bottom: 20px solid #187dbc;
-  border-left: 16px solid transparent;
-  border-right: 20px solid #187dbc;
-  position: absolute;
-  opacity: 0.6;
-  right: 0;
-  top: 0;
-  border-radius: 0 5px 5px 0;
-}
-
-/* Button pointing left */
-
-button.back {
-  text-align: right;
-  padding-right: 12px;
-  box-sizing: border-box;
-}
-button.back:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-top: 20px solid #187dbc;
-  border-bottom: 20px solid #187dbc;
-  border-right: 16px solid transparent;
-  border-left: 20px solid #187dbc;
-  position: absolute;
-  opacity: 0.6;
-  left: 0;
-  top: 0;
-  border-radius: 5px 0 0 5px;
-}
-
-/* Single buttons */
-
-button.site {
-  width: 40px;
-  text-align: center;
-  text-indent: 0;
-}
-button.site:after{
-  display: none;
-}
-
-
-
-
-
-/* Presentation stuff */
-.holder {
-  width: 400px;
-  background: #efefef;
-  padding: 30px 10px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  margin-top: 20px;
-  text-align: center;
-}
-
-h1 {
-  font: 400 16px 'Open Sans';
-  text-transform: uppercase;
-  color: #999;
-  text-shadow: 1px 1px 1px #fff;
-  margin-bottom: 30px;
-}
+  .blog-search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  .blog-searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .blog-searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .blog-searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .blog-wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .inner-footer{
+      padding-bottom: 100px !important;
+  }
+  
