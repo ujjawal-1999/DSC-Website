@@ -94,10 +94,22 @@ function goBack() {
                                 <img src="/assets/blogs/Blog-post/blog1.png" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
-                                <span><i class="fas fa-star text-gray"></i>&nbsp;&nbsp;Rating</span>
-                                <span><i class="fas fa-address-book text-gray"></i>&nbsp;&nbsp;Category</span>
+                              <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
+                              <span>
+                                  <fieldset class="rating">
+                                      <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                      <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                      <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                      <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                      <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                      <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                      <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                      <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                  </fieldset>
+                              </span>
                             </div>
                         </div>
                         <div class="post-title">
@@ -126,24 +138,16 @@ function goBack() {
                             <h2>Category</h2>
                             <ul class="category-list">
                                 <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                                    <a href="#">Software</a>
+                                    <a href="#">Web Development</a>
                                     <span>(05)</span>
                                 </li>
                                 <li class="list-items" data-aos="fade-left" data-aos-delay="200">
-                                    <a href="#">Techonlogy</a>
+                                    <a href="#">Android Development</a>
                                     <span>(02)</span>
                                 </li>
                                 <li class="list-items" data-aos="fade-left" data-aos-delay="300">
-                                    <a href="#">Lifestyle</a>
+                                    <a href="#">UI/UX</a>
                                     <span>(07)</span>
-                                </li>
-                                <li class="list-items" data-aos="fade-left" data-aos-delay="400">
-                                    <a href="#">Shopping</a>
-                                    <span>(01)</span>
-                                </li>
-                                <li class="list-items" data-aos="fade-left" data-aos-delay="500">
-                                    <a href="#">Food</a>
-                                    <span>(08)</span>
                                 </li>
                             </ul>
                         </div>
@@ -155,9 +159,22 @@ function goBack() {
                                         <img src="/assets/blogs/popular-post/m-blog-1.jpg" class="img" alt="blog1">
                                     </div>
                                     <div class="post-info flex-row">
-                                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                            2019</span>
-                                        <span>2 Commets</span>
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                                          <span>
+                                              <fieldset class="rating">
+                                                  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                  <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                  <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                  <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                  <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                  <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                              </fieldset>
+                                          </span>
                                     </div>
                                 </div>
                                 <div class="post-title">
@@ -170,9 +187,50 @@ function goBack() {
                                         <img src="/assets/blogs/popular-post/m-blog-2.jpg" class="img" alt="blog1">
                                     </div>
                                     <div class="post-info flex-row">
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                                          <span>
+                                              <fieldset class="rating">
+                                                  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                  <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                  <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                  <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                  <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                  <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                              </fieldset>
+                                          </span>
+                                    </div>
+                                </div>
+                                <div class="post-title">
+                                    <a href="#">New data recording system to better analyse road accidents</a>
+                                </div>
+                            </div>
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="400">
+                                <div class="post-image">
+                                    <div>
+                                        <img src="/assets/blogs/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+                                    </div>
+                                    <div class="post-info flex-row">
                                         <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
                                             2019</span>
-                                        <span>2 Commets</span>
+                                            <span>
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                </fieldset>
+                                            </span>
                                     </div>
                                 </div>
                                 <div class="post-title">

@@ -566,7 +566,11 @@ footer.footer .move-up span:hover{
 /*              Viewport less then or equal to 520px            */
 
 @media only screen and (max-width: 520px){
+   main .container{
+     margin-top: 80px;
+   }
     main .blog{
+
         height: 125vh;
     }
 
