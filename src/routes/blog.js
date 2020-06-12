@@ -2,13 +2,18 @@ let express = require('express');
 let router	= express.Router();
 const Blog = require('../models/blog')
 var slugify = require('slugify')
+const User = require('../models/user');
 
 
-
-router.get('/', (req, res)=>{
-	res.render("blogs");
+router.get('/', async(req, res)=>{
+	const finduser = await User.find();
+	res.render("blogs",{user:req.user,found:finduser});
 })
 
+router.get('/fullblog', async(req, res)=>{
+	const finduser = await User.find();
+	res.render("fullblog",{user:req.user,found:finduser});
+})
 
 
 // form to create blog
@@ -62,7 +67,7 @@ router.get('/view/:slug', async (req, res)=>{
 
 	catch(e) {
 		res.status(400).json({error: "some error occured"});
-		return e;	
+		return e;
 	}
 })
 
