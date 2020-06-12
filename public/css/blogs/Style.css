@@ -276,6 +276,10 @@ main .site-content{
     display: grid;
     grid-template-columns: 70% 30%;
 }
+main .site-content.single{
+    display: flex;
+
+}
 
 main .post-content{
     width: 100%;

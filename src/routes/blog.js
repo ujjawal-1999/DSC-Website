@@ -10,6 +10,9 @@ router.get('/', async(req, res)=>{
 	res.render("blogs",{user:req.user,found:finduser});
 })
 
+router.get('/fullblog', (req, res)=>{
+	res.render("fullblog");
+})
 
 
 // form to create blog
