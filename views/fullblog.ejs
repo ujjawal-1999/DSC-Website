@@ -11,6 +11,8 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css">
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- --------- Owl-Carousel ------------------->
@@ -22,6 +24,9 @@
 
     <!-- Custom Style   -->
     <link rel="stylesheet" href="/css/fullblog/Style.css">
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/footer.css">
     <script>
 function goBack() {
   window.history.back()
@@ -34,7 +39,7 @@ function goBack() {
 
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
 
-    <nav class="nav">
+    <!-- <nav class="nav">
         <div class="nav-menu flex-row">
             <div class="nav-brand">
                 <a href="#" class="text-gray">Blooger</a>
@@ -70,7 +75,8 @@ function goBack() {
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <%-include('partials/navbar')%>
 
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
@@ -82,7 +88,7 @@ function goBack() {
         <section class="container">
             <div class="site-content">
                 <div class="posts">
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="post-content" data-aos="fade-up" data-aos-delay="200">
                         <div class="post-image">
                             <div>
                                 <img src="/assets/blogs/Blog-post/blog1.png" class="img" alt="blog1">
@@ -143,7 +149,7 @@ function goBack() {
                         </div>
                         <div class="popular-post">
                             <h2>Popular Post</h2>
-                            <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="200">
                                 <div class="post-image">
                                     <div>
                                         <img src="/assets/blogs/popular-post/m-blog-1.jpg" class="img" alt="blog1">
@@ -158,7 +164,7 @@ function goBack() {
                                     <a href="#">New data recording system to better analyse road accidents</a>
                                 </div>
                             </div>
-                            <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="300">
                                 <div class="post-image">
                                     <div>
                                         <img src="/assets/blogs/popular-post/m-blog-2.jpg" class="img" alt="blog1">
@@ -190,7 +196,7 @@ function goBack() {
 
     <!-- --------------------------- Footer ---------------------------------------- -->
 
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <div class="about-us" data-aos="fade-right" data-aos-delay="200">
                 <h2>About us</h2>
@@ -238,7 +244,8 @@ function goBack() {
         <div class="move-up">
             <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
         </div>
-    </footer>
+    </footer> -->
+    <%-include('partials/footer')%>
 
     <!-- -------------x------------- Footer --------------------x------------------- -->
 
@@ -252,7 +259,16 @@ function goBack() {
     <script src="/js/blogs/aos.js"></script>
 
     <!-- Custom Javascript file -->
+    <script src="/js/navbar.js"></script>
     <script src="/js/blogs/main.js"></script>
+    <script>
+        var bodydiv = document.getElementById('bodydiv');
+        bodydiv.addEventListener('click', closeSearch)
+        function closeSearch(){
+            let search_list1= document.getElementById('search_list1');
+            search_list1.style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
