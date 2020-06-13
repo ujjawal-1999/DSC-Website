@@ -12,16 +12,37 @@
     <link rel="stylesheet" href="/css//blogs/create-blog.css" />
   </head>
   <body>
-    <form id="create-form" method="post">
-      <!-- Create the editor container -->
-      <input type="submit" value="Publish" />
-      <input type="text" name="title" id="title" placeholder="Title" />
+    <div class="container">
+      <form id="create-form" method="post">
+        <!-- Create the editor container -->
+        <input type="text" name="title" id="title" placeholder="Title" />
+        <div class="btns">
+          <button type="button" class="btn cancel">Cancel</button>
+          <input type="submit" class="btn publish" value="Publish" />
+        </div>
+        <div class="file-upload-wrapper">
+          <label for="file" class="file-upload-label"
+            >Select Cover Image
+            <input
+              name="file-upload-field"
+              type="file"
+              class="file-upload-field"
+              value=""
+              id="file"
+            />
+          </label>
+          <select name="category" id="category">
+            <option value="Web Dev">Web Dev</option>
+            <option value="Android Dev">Android Dev</option>
+            <option value="Graphic Design">Graphic Design</option>
+          </select>
+        </div>
+        <div id="editor"></div>
 
-      <div id="editor"></div>
-
-      <input type="hidden" name="body" />
-      <input type="hidden" name="summary" />
-    </form>
+        <input type="hidden" name="body" />
+        <input type="hidden" name="summary" />
+      </form>
+    </div>
     <script src="/js/blogs/create-blog.js"></script>
   </body>
 </html>
