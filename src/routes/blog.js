@@ -23,7 +23,10 @@ router.get('/', async (req, res)=>{
     res.render('blogs',{user:req.user,found:finduser});
   });
 
-
+router.get('/fullblog', async(req, res)=>{
+	const finduser = await User.find();
+	res.render("fullblog",{user:req.user,found:finduser});
+})
 
 
 var config = {
@@ -73,13 +76,12 @@ router.get('/create',(req, res)=>{
 
 
 //route to save blog
-router.post('/create',upload.single('userFile'), async (req, res)=>{
-	if(req.file!=undefined) {
-		console.log(req.file)
-		cover=req.file.path
-	 }else {
-	   cover=false
-	 }
+router.post('/create',upload.single('cover'), async (req, res)=>{
+	if(req.file){
+		var cover = req.file.filename
+	} else {
+		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
+	}
 	try {
 		const blog = req.body;
 		console.log(blog)
@@ -124,7 +126,7 @@ router.get('/view/:slug', async (req, res)=>{
 
 	catch(e) {
 		res.status(400).json({error: "some error occured"});
-		return e;	
+		return e;
 	}
 })
 //route to rate a blog

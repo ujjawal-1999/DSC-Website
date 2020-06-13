@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blooger</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/css/blogs/all.css">
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="/css/blogs/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/css/fullblog/Style.css">
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/footer.css">
+    <script>
+function goBack() {
+  window.history.back()
+}
+</script>
+
+</head>
+
+<body>
+
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+    <!-- <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Blooger</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Category</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Archive</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Pages</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav> -->
+    <%-include('partials/navbar')%>
+
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+    <!-- ---------------------- Site Content -------------------------->
+
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="/assets/blogs/Blog-post/blog1.png" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                              <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
+                              <span>
+                                  <fieldset class="rating">
+                                      <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                      <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                      <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                      <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                      <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                      <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                      <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                      <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                  </fieldset>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Why should boys have all the fun? it's the women who are making india an
+                                alcohol-loving contry</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
+                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
+                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
+                                illum similique veniam tempore unde?
+                            </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit consectetur ligula, id dignissim ipsum posuere id. Ut euismod egestas nisi, quis imperdiet metus tempor non. Suspendisse odio dolor, semper eu est et, semper mattis ipsum. Suspendisse molestie cursus dui, vel bibendum est elementum non. Integer eleifend odio tellus. Nulla porttitor felis sit amet velit consequat, id vehicula est porttitor. Sed congue massa sit amet lectus varius laoreet. Proin non condimentum justo, eget ultricies neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed volutpat arcu ac egestas mollis. Nam a sem lacinia, ornare sapien a, cursus nisl. Donec ac massa purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            <p>Cras erat sem, cursus quis lobortis vitae, accumsan a leo. Nulla a neque quis ligula porta accumsan non quis diam. Donec fermentum commodo turpis. Aliquam luctus augue est, a laoreet felis vestibulum quis. Praesent velit sapien, placerat nec lectus quis, suscipit posuere lectus. Pellentesque at est eget est ultricies luctus. Maecenas vel pellentesque ex. Pellentesque nec nisi sed leo consectetur sollicitudin.</p>
+                            <p>Nam vulputate, eros malesuada laoreet tincidunt, lacus est mattis nibh, euismod pellentesque massa odio tempor felis. Pellentesque sit amet orci nec tortor aliquet ornare. Suspendisse ligula nibh, ullamcorper vestibulum orci quis, iaculis mollis velit. Nam aliquam ut metus quis fermentum. Suspendisse egestas lacinia urna eu viverra. Aliquam mauris sem, egestas pretium viverra sed, finibus nec nunc. Proin non condimentum tellus, in porta ligula. Duis non magna magna. Sed cursus quam vel sapien porttitor facilisis. Quisque nisl diam, suscipit et aliquam sit amet, porttitor eu urna. Phasellus vel lorem purus. Etiam non laoreet odio. Fusce tempus elementum porta. Aliquam suscipit dui hendrerit lacus vehicula, eu porta eros blandit.</p>
+                            <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
+                            <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
+                            <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
+
+
+
+                        </div>
+                    </div>
+                    <hr>
+                    </div>
+                    <aside class="sidebar">
+                        <div class="category">
+                            <h2>Category</h2>
+                            <ul class="category-list">
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                    <a href="#">Web Development</a>
+                                    <span>(05)</span>
+                                </li>
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                    <a href="#">Android Development</a>
+                                    <span>(02)</span>
+                                </li>
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                                    <a href="#">UI/UX</a>
+                                    <span>(07)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="popular-post">
+                            <h2>Popular Post</h2>
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                                <div class="post-image">
+                                    <div>
+                                        <img src="/assets/blogs/popular-post/m-blog-1.jpg" class="img" alt="blog1">
+                                    </div>
+                                    <div class="post-info flex-row">
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                                          <span>
+                                              <fieldset class="rating">
+                                                  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                  <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                  <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                  <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                  <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                  <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                              </fieldset>
+                                          </span>
+                                    </div>
+                                </div>
+                                <div class="post-title">
+                                    <a href="#">New data recording system to better analyse road accidents</a>
+                                </div>
+                            </div>
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="300">
+                                <div class="post-image">
+                                    <div>
+                                        <img src="/assets/blogs/popular-post/m-blog-2.jpg" class="img" alt="blog1">
+                                    </div>
+                                    <div class="post-info flex-row">
+                                      <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                          2019</span>
+                                          <span>
+                                              <fieldset class="rating">
+                                                  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                  <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                  <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                  <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                  <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                  <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                              </fieldset>
+                                          </span>
+                                    </div>
+                                </div>
+                                <div class="post-title">
+                                    <a href="#">New data recording system to better analyse road accidents</a>
+                                </div>
+                            </div>
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="400">
+                                <div class="post-image">
+                                    <div>
+                                        <img src="/assets/blogs/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+                                    </div>
+                                    <div class="post-info flex-row">
+                                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                            2019</span>
+                                            <span>
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                </fieldset>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="post-title">
+                                    <a href="#">New data recording system to better analyse road accidents</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+                <button class="back" onclick="goBack()">Back</button>
+
+        </section>
+
+        <!-- -----------x---------- Site Content -------------x------------>
+
+    </main>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <!-- <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia atque nemo ad modi officiis
+                    iure, autem nulla tenetur repellendus.</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Newsletter</h2>
+                <p>Stay update with our latest</p>
+                <div class="form-element">
+                    <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="/assets/blogs/instagram/thumb-card3.png" alt="insta1">
+                    <img src="/assets/blogs/instagram/thumb-card4.png" alt="insta2">
+                    <img src="/assets/blogs/instagram/thumb-card5.png" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="/assets/blogs/instagram/thumb-card6.png" alt="insta4">
+                    <img src="/assets/blogs/instagram/thumb-card7.png" alt="insta5">
+                    <img src="/assets/blogs/instagram/thumb-card8.png" alt="insta6">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow us</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                Copyright ©2019 All rights reserved | made by
+                <a href="www.youtube.com/c/dailytuition" target="_black">Daily Tuition <i class="fab fa-youtube"></i>
+                    Channel</a>
+            </h4>
+        </div>
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer> -->
+    <%-include('partials/footer')%>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="/js/blogs/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="/js/blogs/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="/js/navbar.js"></script>
+    <script src="/js/blogs/main.js"></script>
+    <script>
+        var bodydiv = document.getElementById('bodydiv');
+        bodydiv.addEventListener('click', closeSearch)
+        function closeSearch(){
+            let search_list1= document.getElementById('search_list1');
+            search_list1.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
