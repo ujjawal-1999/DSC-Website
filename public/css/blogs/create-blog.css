@@ -25,7 +25,7 @@ form {
 #title {
   padding-left: 0.2em;
   height: 40px;
-  width: 60%;
+  width: 100%;
   font-size: 2em;
   font-weight: bolder;
   border: none;
@@ -87,7 +87,7 @@ input[type="file"] {
   border: 1px solid #ccc;
 }
 
-/* smaller screens */
+/* larger screens */
 @media only screen and (min-width: 850px) {
   form {
     grid-template-areas:
