@@ -21,11 +21,13 @@ var quill = new Quill("#editor", {
   placeholder: "Body...",
 });
 form.onsubmit = function (e) {
+  e.preventDefault();
   // onsubmit do this first
   var body = document.querySelector("input[name=body]"); // set name input var
   var summary = document.querySelector("input[name=summary]"); // set name input var
-  body.value = JSON.stringify(quill.getContents()); // populate name input with quill data
+  body.value = JSON.stringify(quill.root.innerHTML); // populate name input with quill data
   summary.value = quill.getText().slice(0, 40);
   console.log(summary.value);
-  return false; // submit form
+  document.querySelector('#create-form').submit();
+  // return false; // submit form
 };

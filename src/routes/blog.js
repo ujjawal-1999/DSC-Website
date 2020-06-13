@@ -27,7 +27,7 @@ router.get('/create', (req, res)=>{
 router.post('/create', async (req, res)=>{
 
 	try {
-		const blog = req.body;
+		const blog = req.body; console.log(blog);
 		if (!blog) return res.status(400).json({ error: "empty query sent" });
 
 		await new Blog({
