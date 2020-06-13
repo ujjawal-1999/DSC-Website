@@ -7,16 +7,20 @@ const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-var slugify = require('slugify')
-var QuillDeltaToHtmlConverter = require('quill-delta-to-html').QuillDeltaToHtmlConverter;
+const await=require('await')
+var slugify = require('slugify');
+const User = require("../models/user");
+
+
 
 
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 
-router.get('/', function(req, res){
-    res.render('blogs');
+router.get('/', async (req, res)=>{
+	const finduser=await User.find();
+    res.render('blogs',{user:req.user,found:finduser});
   });
 
 
@@ -78,27 +82,27 @@ router.post('/create',upload.single('userFile'), async (req, res)=>{
 	 }
 	try {
 		const blog = req.body;
+		console.log(blog)
 		if (!blog) return res.status(400).json({error: "empty query sent"})
-        
+
 		await new Blog({
 			title: blog.title,
 			author: blog.author,
-			body: JSON.parse(blog.body),
-			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 6)).toLowerCase(),
+			body: blog.body.toString(),
+			category: blog.category,
+			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 8)).toLowerCase(),
+			summary: blog.summary,
 			cover:cover
+
 		})
 		.save((err, saved)=> {
-			if (err) {
-				res.status(400).json({error: "some error occured"});
-				return err;	
-			}
-			console.log('saved: ', saved);
 			res.json(saved);
 		})
 	}
 
 	catch(e) {
-		res.status(400).json({error: "some error occured"})
+		console.log(e)
+		res.status(400).json({error: "Some error occured"});
 		return e;
 	}
 })
@@ -110,24 +114,32 @@ router.get('/view/:slug', async (req, res)=>{
 
 	try{
 		//find the corresponding blog in db
-		let slug = req.params.slug
-		if (!slug) return res.status(400).json({error: "empty query sent"})
+		let slug = req.params.slug;
+		if (!slug) return res.status(400).json({error: "empty query sent"});
 
-		const blog = await Blog.findOne({slug});
-		var deltaOps =	blog.body.ops;
-		var converter = new QuillDeltaToHtmlConverter(deltaOps, config);
-		var html = converter.convert();
-
+		const blog = await Blog.findOne({ slug });
 		//render result page with resulting html
-		res.render('show-blog', { blogContent: html })
+		res.render('show-blog', { blogContent: blog.body});
 	}
 
 	catch(e) {
-		res.status(400).json({error: "some error occured"})
+		res.status(400).json({error: "some error occured"});
 		return e;	
 	}
 })
-
-
+//route to rate a blog
+router.put('/view/rate',(req,res)=>{
+    Blog.findByIdAndUpdate(req.body.blogId,{
+        $push:{rating:req.user._id}
+    },{
+        new:true
+    }).exec((err,result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }else{
+            res.json(result)
+        }
+    })
+})
 //export
 module.exports = router;

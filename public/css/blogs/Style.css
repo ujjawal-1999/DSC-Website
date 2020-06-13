@@ -38,7 +38,7 @@ a{
 
 .flex-row{
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -99,7 +99,7 @@ p{
     transition: height 1s ease-in-out;
 }
 
-.nav .nav-menu{    
+.nav .nav-menu{
     justify-content: space-between;
 }
 
@@ -174,7 +174,7 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
-    background: url('../assets/Background-image.png');
+    background: url('/assets/blogs/Background-image.png');
     background-size: cover;
     height: 110vh;
     display: flex;
@@ -207,7 +207,7 @@ main .site-title .btn:hover{
 /* --------------- Blog Carousel ------------ */
 
 main .blog{
-    background: url('../assets/Abract01.png');
+    background: url('/assets/blogs/Abract01.png');
     background-repeat: no-repeat;
     background-position: right;
     height: 100vh;
@@ -277,7 +277,7 @@ main .site-content{
 
 main .post-content{
     width: 100%;
-    
+
 }
 
 main .site-content .post-content > .post-image, .post-title{
@@ -346,7 +346,7 @@ main .post-content .post-title a{
 /* --------------- Sidebar ----------------------- */
 
 .site-content > .sidebar .category-list{
-    font-family: var(--Livvic);   
+    font-family: var(--Livvic);
 }
 
 .site-content > .sidebar .category-list .list-items{
