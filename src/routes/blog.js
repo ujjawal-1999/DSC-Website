@@ -90,7 +90,7 @@ router.post('/create',upload.single('cover'), async (req, res)=>{
 		await new Blog({
 			title: blog.title,
 			author: blog.author,
-			body: blog.body.toString(),
+			body: blog.body,
 			category: blog.category,
 			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 8)).toLowerCase(),
 			summary: blog.summary,
@@ -120,8 +120,9 @@ router.get('/view/:slug', async (req, res)=>{
 		if (!slug) return res.status(400).json({error: "empty query sent"});
 
 		const blog = await Blog.findOne({ slug });
+		const finduser = await User.find();
 		//render result page with resulting html
-		res.render('show-blog', { blogContent: blog.body});
+		res.render('show-blog', { blog: blog, user:req.user, found:finduser });
 	}
 
 	catch(e) {
@@ -129,6 +130,9 @@ router.get('/view/:slug', async (req, res)=>{
 		return e;
 	}
 })
+
+
+
 //route to rate a blog
 router.put('/view/rate',(req,res)=>{
     Blog.findByIdAndUpdate(req.body.blogId,{
