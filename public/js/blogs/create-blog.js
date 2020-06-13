@@ -25,7 +25,7 @@ form.onsubmit = function (e) {
   // onsubmit do this first
   var body = document.querySelector("input[name=body]"); // set name input var
   var summary = document.querySelector("input[name=summary]"); // set name input var
-  body.value = JSON.stringify(quill.root.innerHTML); // populate name input with quill data
+  body.value = quill.root.innerHTML; // populate name input with quill data
   summary.value = quill.getText().slice(0, 40);
   console.log(summary.value);
   document.querySelector('#create-form').submit();
