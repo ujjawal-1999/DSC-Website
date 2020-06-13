@@ -519,14 +519,14 @@ footer.footer .move-up span:hover{
 /*              Viewport less then or equal to 1130px            */
 
 @media only screen and (max-width: 1130px){
-    .site-content .post-content > .post-image .post-info{
+   .site-content .post-content > .post-image .post-info{
         left: 2rem !important;
         bottom: 1.2rem !important;
         border-radius: 0% !important;
     }
 
     .site-content .sidebar .popular-post .post-info{
-        display: none !important;
+        height: 12px !important;
     }
 
     footer.footer .container{
@@ -567,12 +567,17 @@ footer.footer .move-up span:hover{
 
 @media only screen and (max-width: 520px){
     main .blog{
-        height: 125vh;
+    height: 125vh;
+
+
     }
 
-    .site-content .post-content > .post-image .post-info{
-        display: none;
-    }
+
+ .site-content .post-content > .post-image .post-info{
+   height: auto;
+   width: auto;
+
+            } */
 
     footer.footer .container > div{
         padding:  1rem .9rem !important;
