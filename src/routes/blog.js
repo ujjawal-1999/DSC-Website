@@ -38,7 +38,7 @@ var config = {
 const storage = multer.diskStorage({
 	destination: function(req,file,cb){
 		// console.log(req.body);
-		const newDestination = __dirname+`/../../public/upload/cover/`;
+		const newDestination = __dirname+`/../../public/upload/cover/${req.body.author}`;
 		console.log("New Destination: ", newDestination);
 		fs.mkdir(newDestination, function(err) {
 			if(err) {
@@ -78,7 +78,7 @@ router.get('/create',(req, res)=>{
 //route to save blog
 router.post('/create',upload.single('cover'), async (req, res)=>{
 	if(req.file){
-		var cover = req.file.filename
+		var cover = req.file.filename;
 	} else {
 		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
 	}

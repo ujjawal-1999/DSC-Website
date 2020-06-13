@@ -78,7 +78,7 @@ router.get('/',async(req, res)=>{
 const storage = multer.diskStorage({
 	destination: function(req,file,cb){
 		// console.log(req.body);
-		const newDestination = __dirname+`/../../public/upload/cover/${req.body.author}`;
+		const newDestination = __dirname+`/../../public/upload/cover/${req.body.email}`;
 		console.log("New Destination: ", newDestination);
 		var stat = null;
 		try{
