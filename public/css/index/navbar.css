@@ -484,12 +484,3 @@ input {
   cursor: pointer;
   font-size: 20px;
 }
-
-/*Resize the wrap to see the search bar change!*/
-.mobile-search .wrap{
-  width: 100%;
-  position: absolute;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
