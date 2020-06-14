@@ -5,11 +5,17 @@
 
         <div class="mobile-search">
             <div class="search">
-              <input type="text" class="searchTerm" placeholder="search...">
+              <input type="text" class="searchTerm" id="search2" placeholder="search...">
               <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
               </button>
             </div>
+            <div class="search" id="srh2"></div>
+            <ul class="search-view" id="search_list2">
+              <% found.forEach((user)=>{ %>
+              <li class="collection-item2"><a><%= user.name%></a></li>
+              <% }) %>
+            </ul>
         </div>
 
         <div class="menu-toggle" id="mobile-menu">
