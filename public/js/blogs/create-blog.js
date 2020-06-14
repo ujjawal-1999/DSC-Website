@@ -28,6 +28,11 @@ form.onsubmit = function (e) {
   body.value = quill.root.innerHTML; // populate name input with quill data
   summary.value = quill.getText().slice(0, 40);
   console.log(summary.value);
-  document.querySelector('#create-form').submit();
+  document.querySelector("#create-form").submit();
   // return false; // submit form
+};
+
+document.getElementById("file").onchange = (e) => {
+  var filename = e.target.files[0].name;
+  document.getElementById("file-label").innerHTML = `${filename} selected`;
 };
