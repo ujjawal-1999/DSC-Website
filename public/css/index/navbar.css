@@ -50,7 +50,7 @@ body {
 .navbar ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-self: stretch;
 }
 
@@ -268,7 +268,7 @@ input {
   .navbar li:nth-child(4) {
     order: 2;
   } */
-  .navbar li:nth-child(5) {
+  .navbar li:nth-child(6) {
     display: none;
   }
   /*
