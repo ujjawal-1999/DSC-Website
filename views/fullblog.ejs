@@ -35,7 +35,7 @@ function goBack() {
 
 </head>
 
-<body>
+<body id="bodydiv">
 
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
 
@@ -96,8 +96,8 @@ function goBack() {
                             <div class="post-info flex-row">
                               <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
                               <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
-                              <span>
-                                  <fieldset class="rating">
+                              <span><i class="fas fa-star"></i>&nbsp;&nbsp;4.5
+                            <!--      <fieldset class="rating">
                                       <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                                       <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                                       <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -108,7 +108,7 @@ function goBack() {
                                       <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
                                       <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                                       <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                  </fieldset>
+                                  </fieldset>-->
                               </span>
                             </div>
                         </div>
@@ -124,15 +124,42 @@ function goBack() {
                             <p>Cras erat sem, cursus quis lobortis vitae, accumsan a leo. Nulla a neque quis ligula porta accumsan non quis diam. Donec fermentum commodo turpis. Aliquam luctus augue est, a laoreet felis vestibulum quis. Praesent velit sapien, placerat nec lectus quis, suscipit posuere lectus. Pellentesque at est eget est ultricies luctus. Maecenas vel pellentesque ex. Pellentesque nec nisi sed leo consectetur sollicitudin.</p>
                             <p>Nam vulputate, eros malesuada laoreet tincidunt, lacus est mattis nibh, euismod pellentesque massa odio tempor felis. Pellentesque sit amet orci nec tortor aliquet ornare. Suspendisse ligula nibh, ullamcorper vestibulum orci quis, iaculis mollis velit. Nam aliquam ut metus quis fermentum. Suspendisse egestas lacinia urna eu viverra. Aliquam mauris sem, egestas pretium viverra sed, finibus nec nunc. Proin non condimentum tellus, in porta ligula. Duis non magna magna. Sed cursus quam vel sapien porttitor facilisis. Quisque nisl diam, suscipit et aliquam sit amet, porttitor eu urna. Phasellus vel lorem purus. Etiam non laoreet odio. Fusce tempus elementum porta. Aliquam suscipit dui hendrerit lacus vehicula, eu porta eros blandit.</p>
                             <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
-                            <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
-                            <p>Curabitur malesuada, mi pulvinar eleifend ornare, lacus eros mollis orci, vitae posuere metus metus eget erat. Duis dignissim consectetur est, eu faucibus nunc feugiat a. Pellentesque porta lacus eros, a tincidunt dolor pretium in. Proin eleifend justo a nulla suscipit, et egestas enim dapibus. Proin vitae magna eu odio feugiat volutpat a vitae sapien. Etiam gravida imperdiet risus sed viverra. Nullam hendrerit scelerisque aliquet. Cras nibh libero, fringilla interdum dui nec, gravida blandit quam. Ut sem dolor, rhoncus vel nibh a, hendrerit sagittis elit. Aliquam tincidunt tincidunt leo vitae fringilla. Donec varius at libero sed ultrices. Etiam dignissim sem at purus pretium, vulputate convallis mauris placerat. Aliquam tincidunt vulputate dapibus. Nunc mi mauris, dictum eget nibh tristique, egestas venenatis erat. Suspendisse potenti.</p>
+
 
 
 
                         </div>
+
+
                     </div>
-                    <hr>
+                    <div>
+                    <div>
+                         <form class="rateit" action="#" method="post">
+                           <div class="sign"><span class="sign__word"><p style="color: orange;weight: 10;font-family: "Josefin Sans", sans-serif;">Loved the content?Make to sure to rate it according to your experience!</p></span><br>
+                           <div class="form-btn">
+                             <fieldset class="rating bcde">
+                                       <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                       <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                       <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                       <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                       <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                       <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                       <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                       <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                       <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                       <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                   </fieldset>
+                                   <a href="#" class='btn2'>Submit</a>
+                           </div>
+                           </div>
+                         </form>
+                        <br>
                     </div>
+
+                    </div>
+
+                    </div>
+
                     <aside class="sidebar">
                         <div class="category">
                             <h2>Category</h2>
@@ -161,8 +188,8 @@ function goBack() {
                                     <div class="post-info flex-row">
                                       <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
                                           2019</span>
-                                          <span>
-                                              <fieldset class="rating">
+                                          <span><i class="fas fa-star"></i>&nbsp;&nbsp;4.5
+                                      <!--        <fieldset class="rating">
                                                   <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                                                   <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                                                   <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -173,7 +200,7 @@ function goBack() {
                                                   <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
                                                   <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                                                   <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                              </fieldset>
+                                              </fieldset> -->
                                           </span>
                                     </div>
                                 </div>
@@ -189,8 +216,8 @@ function goBack() {
                                     <div class="post-info flex-row">
                                       <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
                                           2019</span>
-                                          <span>
-                                              <fieldset class="rating">
+                                          <span><i class="fas fa-star"></i>&nbsp;&nbsp;4.5
+                                      <!--        <fieldset class="rating">
                                                   <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                                                   <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                                                   <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -201,7 +228,7 @@ function goBack() {
                                                   <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
                                                   <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                                                   <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                              </fieldset>
+                                              </fieldset> -->
                                           </span>
                                     </div>
                                 </div>
@@ -217,8 +244,8 @@ function goBack() {
                                     <div class="post-info flex-row">
                                         <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
                                             2019</span>
-                                            <span>
-                                                <fieldset class="rating">
+                                            <span><i class="fas fa-star"></i>&nbsp;&nbsp;4.5
+                                        <!--        <fieldset class="rating">
                                                     <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                                                     <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                                                     <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -229,7 +256,7 @@ function goBack() {
                                                     <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
                                                     <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                                                     <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                </fieldset>
+                                                </fieldset> -->
                                             </span>
                                     </div>
                                 </div>
@@ -241,6 +268,15 @@ function goBack() {
 
                     </aside>
                 </div>
+                <hr style="border-style: none;
+  border-top-style: dotted;
+  border-color: #add8e6;
+  border-width: 8px;
+  height: 0;
+  width: 8%;
+  padding-top: 50px;
+  position: relative;
+  top: 40px;" />
                 <button class="back" onclick="goBack()">Back</button>
 
         </section>
@@ -325,6 +361,8 @@ function goBack() {
         function closeSearch(){
             let search_list1= document.getElementById('search_list1');
             search_list1.style.display = 'none';
+            let search_list2= document.getElementById('search_list2');
+            search_list2.style.display = 'none';
         }
     </script>
 </body>

@@ -296,7 +296,7 @@ main .site-content .post-content > .post-image .post-info{
     padding: 1rem;
     position: absolute;
     bottom: 0%;
-    left: 12vw;
+    left: 15.5vw;
     border-radius: 3rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -526,7 +526,7 @@ footer.footer .move-up span:hover{
     }
 
     .site-content .sidebar .popular-post .post-info{
-        display: none !important;
+        height: 11.5px !important;
     }
 
     footer.footer .container{
@@ -541,6 +541,9 @@ footer.footer .move-up span:hover{
 /*              Viewport less then or equal to 750px            */
 
 @media only screen and (max-width: 750px){
+  main .container{
+    margin-top: 80px;
+  }
     .nav .nav-menu, .nav .nav-items{
         flex-direction: column;
     }
@@ -556,6 +559,7 @@ footer.footer .move-up span:hover{
     footer.footer .container{
         grid-template-columns: repeat(1, 1fr);
     }
+
 
 }
 
@@ -575,7 +579,9 @@ footer.footer .move-up span:hover{
     }
 
     .site-content .post-content > .post-image .post-info{
-        display: none;
+        margin-top: 10px;
+        height: 4.5px;
+        width: 100px;
     }
 
     footer.footer .container > div{
@@ -590,6 +596,36 @@ footer.footer .move-up span:hover{
     nav .toggle-collapse{
         width: 80% !important;
     }
+  main .form-btn{
+  position: absolute;
+  left: 50px;
+    }
+  main .back{
+    position: absolute;
+    left: 50px;
+  }
+  button.back {
+    text-align: right;
+    padding-right: 12px;
+    box-sizing: border-box;
+    position: absolute;
+
+  }
+  button.back:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 20px solid #187dbc;
+    border-bottom: 20px solid #187dbc;
+    border-right: 16px solid transparent;
+    border-left: 20px solid #187dbc;
+    position: absolute;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    border-radius: 5px 0 0 5px;
+  }
 
 }
 
@@ -699,7 +735,53 @@ fieldset, label { margin: 0; padding: 0; }
   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
   /* General Buttons */
-  button {
+  /*  button {
+    width: 130px;
+    height: 40px;
+    background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C *
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #2b8bc6;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+
+  /* Just for presentation *
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }*/
+/*  button :active {
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+    top: 1px;
+  }
+
+  button :after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 20px solid #187dbc;
+    border-bottom: 20px solid #187dbc;
+    border-left: 16px solid transparent;
+    border-right: 20px solid #187dbc;
+    position: absolute;
+    opacity: 0.6;
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;
+  }*/
+
+  /* Button pointing left */
+
+  button.back {
     width: 130px;
     height: 40px;
     background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
@@ -721,34 +803,11 @@ fieldset, label { margin: 0; padding: 0; }
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
-  }
-  button:active {
-    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
-    top: 1px;
-  }
-
-  button:after {
-    content: "";
-    width: 0;
-    height: 0;
-    display: block;
-    border-top: 20px solid #187dbc;
-    border-bottom: 20px solid #187dbc;
-    border-left: 16px solid transparent;
-    border-right: 20px solid #187dbc;
-    position: absolute;
-    opacity: 0.6;
-    right: 0;
-    top: 0;
-    border-radius: 0 5px 5px 0;
-  }
-
-  /* Button pointing left */
-
-  button.back {
     text-align: right;
     padding-right: 12px;
     box-sizing: border-box;
+    position: relative;
+    left: 70px;
   }
   button.back:after {
     content: "";
@@ -799,3 +858,109 @@ fieldset, label { margin: 0; padding: 0; }
     text-shadow: 1px 1px 1px #fff;
     margin-bottom: 30px;
   }
+
+  .ratings {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+
+  .ratings label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .ratings label:last-child {
+    position: static;
+  }
+
+  .ratings label:nth-child(1) {
+    z-index: 5;
+  }
+
+  .ratings label:nth-child(2) {
+    z-index: 4;
+  }
+
+  .ratings label:nth-child(3) {
+    z-index: 3;
+  }
+
+  .ratings label:nth-child(4) {
+    z-index: 2;
+  }
+
+  .ratings label:nth-child(5) {
+    z-index: 1;
+  }
+
+  .ratings label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .ratings label .icon {
+    float: left;
+    color: transparent;
+  }
+
+  .ratings label:last-child .icon {
+    color: #000;
+  }
+
+  .ratings:not(:hover) label input:checked ~ .icon,
+  .ratings:hover label:hover input ~ .icon {
+    color: #FFDF00;
+  }
+
+  .ratings label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #FFDF00;
+  }
+  /* Button */
+  .btn2 {
+    float: left;
+    border: none;
+    padding: 12px 24px;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 30px;
+    background-color: #E0E5EC;
+    box-shadow: 4px 4px 5px #bec3c9, -4px -4px 10px #ffffff;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      box-shadow: 2px 2px 5px #bec3c9, -2px -2px 5px #ffffff;
+    }
+    &:active {
+      box-shadow: inset 2px 2px 3px #bec3c9, inset -2px -2px 3px #ffffff;
+    }
+  }
+}
+.sign__word{
+  position: relative;
+  left: 40px;
+
+}
+
+
+.rateit{
+  align-items: center;
+  text-align: center;
+}
+/*-- Sign Styles --*/
+.form-btn{
+  position: relative;
+  left: 250px;
+}
+.bcde{
+  padding: 10px;
+}

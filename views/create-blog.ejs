@@ -13,7 +13,12 @@
   </head>
   <body>
     <div class="container">
-      <form id="create-form" method="post" enctype="multipart/form-data" action="/dsc/blog/create">
+      <form
+        id="create-form"
+        method="post"
+        enctype="multipart/form-data"
+        action="/dsc/blog/create"
+      >
         <!-- Create the editor container -->
         <input type="text" name="title" id="title" placeholder="Title" />
         <div class="btns">
@@ -22,7 +27,7 @@
         </div>
         <div class="file-upload-wrapper">
           <label for="file" class="file-upload-label"
-            >Select Cover Image
+            ><span id="file-label">Select Cover Image</span>
             <input
               name="cover"
               type="file"
