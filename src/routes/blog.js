@@ -10,6 +10,7 @@ const bodyParser = require("body-parser");
 const await=require('await')
 var slugify = require('slugify');
 const User = require("../models/user");
+const auth=require('../middleware/auth')
 
 
 
@@ -74,7 +75,7 @@ var upload = multer({
 
 
 // form to create blog
-router.get('/create',(req, res)=>{
+router.get('/create',auth,(req, res)=>{
 
 	res.render('create-blog');
 })
@@ -82,7 +83,7 @@ router.get('/create',(req, res)=>{
 
 
 //route to save blog
-router.post('/create',upload.single('cover'), async (req, res)=>{
+router.post('/create',auth,upload.single('cover'), async (req, res)=>{
 	if(req.file){
 		var cover = req.file.filename;
 	} else {
@@ -118,7 +119,7 @@ router.post('/create',upload.single('cover'), async (req, res)=>{
 
 
 //route to display blog
-router.get('/view/:slug', async (req, res)=>{
+router.get('/view/:slug',auth, async (req, res)=>{
 
 	try{
 		//find the corresponding blog in db
@@ -140,7 +141,7 @@ router.get('/view/:slug', async (req, res)=>{
 
 
 //route to rate a blog
-router.put('/view/rate',(req,res)=>{
+router.put('/view/rate',auth,(req,res)=>{
     Blog.findByIdAndUpdate(req.body.blogId,{
         $push:{rating:req.user._id}
     },{
