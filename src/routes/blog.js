@@ -39,7 +39,7 @@ var config = {
 const storage = multer.diskStorage({
 	destination: function(req,file,cb){
 		// console.log(req.body);
-		const newDestination = __dirname+`/../../public/upload/cover/${req.body.author}`;
+		const newDestination = __dirname+`/../../public/upload/cover/${req.user.userId}`;
 		console.log("New Destination: ", newDestination);
 		fs.mkdir(newDestination, function(err) {
 			if(err) {
