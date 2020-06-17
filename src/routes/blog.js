@@ -30,10 +30,10 @@ router.get('/fullblog', async(req, res)=>{
 })
 
 
-var config = {
-	//include inline styling in the resulting html from delta
-	inlineStyles: false
-};
+
+
+
+
 
 //Establish Storage for file upload 
 const storage = multer.diskStorage({
@@ -141,18 +141,24 @@ router.get('/view/:slug',auth, async (req, res)=>{
 
 
 //route to rate a blog
-router.put('/view/rate',auth,(req,res)=>{
-    Blog.findByIdAndUpdate(req.body.blogId,{
-        $push:{rating:req.user._id}
-    },{
-        new:true
-    }).exec((err,result)=>{
-        if(err){
-            return res.status(422).json({error:err})
-        }else{
-            res.json(result)
-        }
-    })
+router.put('/view/rate', auth, async (req,res)=>{
+	try {
+		const { blogId, rating } = req.body
+		console.log(blogId, rating, req.body)
+		const found = await Blog.findById( blogId )
+
+		const currentValue = found.rating.currentValue
+		const totalRatings = found.rating.totalRatings
+		found.rating.totalRatings = totalRatings + 1
+		found.rating.currentValue = ((currentValue * totalRatings) + (parseInt(rating))) / (totalRatings + 1)
+		found.save()
+		console.log(found)
+		res.json(found)
+	}
+	catch(e) {
+		console.log(e)
+		res.status(422).json({error:e})
+	}
 })
 //export
 module.exports = router;
