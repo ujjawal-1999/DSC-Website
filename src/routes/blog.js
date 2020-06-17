@@ -42,28 +42,34 @@ const storage = multer.diskStorage({
 		console.log("New Destination: ", newDestination);
 		fs.mkdir(newDestination, function(err) {
 			if(err) {
-				console.log(err.stack)
+				console.log(err)
 			} else {
-				callback(null, newDestination);
+				cb(null, newDestination);
 			}
 		})
 	
 	},
 	filename:function(req,file,cb){
-		cb(null,file.fieldname + '-' + uuid.v4() + path.extname(file.originalname));
-	}
+		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))	}
 });
 
 var upload = multer({
 	storage: storage,
 	limits:{fileSize:10000000},
-    fileFilter: function (req, file, callback) {
-        var ext = path.extname(file.originalname);
-        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
-            return callback(new Error('Only images are allowed'))
+	fileFilter:(req,file,cb)=>{
+        //allowed extension
+        const filetypes = /jpeg|jpg|png|gif/
+        //check extension
+        const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+        //check mimetype
+        const mimetype = filetypes.test(file.mimetype)
+
+        if(mimetype && extname){
+            cb(null,true)
+        }else{
+            cb("Error: Image only !",false)
         }
-        callback(null, true)
-    }
+      }
 })
 
 
