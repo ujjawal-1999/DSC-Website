@@ -177,7 +177,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 
 //route to rate a blog
-router.put('/view/rate', auth, async (req,res)=>{
+router.put('/rate', auth, async (req,res)=>{
 	try {
 		const { blogId, value } = req.body
 		const userId = req.user.userId
