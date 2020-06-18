@@ -19,9 +19,13 @@ const blogSchema = new mongoose.Schema({
 		type: String,
 		default: 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png'
 	},
-	rating: {
-		currentValue: { type: Number, default: 0 },
-		totalRatings: { type: Number, default: 0 }
+	ratingCount: {
+		type: Number,
+		default: 0
+	},
+	ratingSum: {
+		type: Number,
+		default: 0
 	},
 	category: {
 		type: String,

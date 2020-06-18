@@ -1,15 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const Blog = require("../models/blog");
-const authorization = require("../middleware/auth");
 const multer = require('multer');
-const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const await=require('await')
-var slugify = require('slugify');
+const slugify = require('slugify');
 const User = require("../models/user");
+const Ratings = require("../models/Ratings");
 const auth=require('../middleware/auth')
 
 
@@ -124,12 +122,12 @@ router.get('/view/:slug',auth, async (req, res)=>{
 	try{
 		//find the corresponding blog in db
 		let slug = req.params.slug;
-		if (!slug) return res.status(400).json({error: "empty query sent"});
+		if (!slug) return res.status(400).json({ error: "empty query sent" });
 
 		const blog = await Blog.findOne({ slug });
 		const finduser = await User.find();
-		//render result page with resulting html
-		res.render('show-blog', { blog: blog, user:req.user, found:finduser });
+		//render result page
+		res.render('show-blog', { blog: blog, user: req.user, found: finduser });
 	}
 
 	catch(e) {
@@ -143,22 +141,42 @@ router.get('/view/:slug',auth, async (req, res)=>{
 //route to rate a blog
 router.put('/view/rate', auth, async (req,res)=>{
 	try {
-		const { blogId, rating } = req.body
-		console.log(blogId, rating, req.body)
-		const found = await Blog.findById( blogId )
+		const { blogId, value } = req.body
+		const userId = req.user.userId
+		if (!blogId || !value) {
+			return res.status(422).json({error: "Empty queries received"})
+		}
 
-		const currentValue = found.rating.currentValue
-		const totalRatings = found.rating.totalRatings
-		found.rating.totalRatings = totalRatings + 1
-		found.rating.currentValue = ((currentValue * totalRatings) + (parseInt(rating))) / (totalRatings + 1)
-		found.save()
-		console.log(found)
-		res.json(found)
+		const ratedBefore = await Ratings.findOne({ userId, blogId })
+
+		//if not rated by user previously
+		if (!ratedBefore) {
+			await new Ratings({
+				userId,
+				blogId,
+				value
+			})
+			.save()
+			// apply update to blog schema
+			const update = { $inc: { ratingCount: 1, ratingSum: value }}
+			const updatedBlog = await Blog.findByIdAndUpdate( blogId, update, { new: true })
+			console.log('Rating updated: ', value)
+			return res.json(updatedBlog)
+		}
+		else {
+			//set new value if already rated
+			const update = { $inc: { ratingSum: (value - ratedBefore.value) }}
+			const updatedBlog = await Blog.findByIdAndUpdate( blogId, update, { new: true })
+			ratedBefore.value = value
+			await ratedBefore.save()
+			console.log('Rating updated: ', value)
+			return res.json(updatedBlog)
+		}
 	}
 	catch(e) {
 		console.log(e)
 		res.status(422).json({error:e})
 	}
 })
-//export
+
 module.exports = router;
