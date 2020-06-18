@@ -24,6 +24,7 @@ router.get('/', async (req, res)=>{
 		const finduser = await User.find();
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10)
 		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10)
+		console.log(newBlogs)
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
