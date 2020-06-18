@@ -150,7 +150,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 		const finduser = await User.find();
 		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
-		if (!blog) return res.json({ error: "Wrong Query! This blog doesn't exist" })
+		if (!blog) return res.status(404).json({ error: "Wrong Query! This blog doesn't exist" })
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
