@@ -29,7 +29,7 @@ router.get('/', async (req, res)=>{
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
 			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
 		}
-		console.log(blogsCount)
+		// console.log(blogsCount)
 		//render the blog using template 
 		res.render( 'blogs', {
 			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
@@ -121,7 +121,7 @@ router.post('/create', auth, upload.single('cover'), async (req, res) => {
 	}
 	try {
 		const blog = req.body;
-		console.log(blog)
+		// console.log(blog)
 		if (!blog) return res.status(400).json({error: "empty query sent"})
 
 		await new Blog({
