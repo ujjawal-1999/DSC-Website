@@ -33,8 +33,8 @@ router.get('/', async (req, res)=>{
 		res.render( 'blogs', {
 			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
 			found: finduser,
-			newBlogs: newBlogs,
-			popularBlogs: popularBlogs,
+			newBlogs: newBlogs || [],
+			popularBlogs: popularBlogs || [],
 			blogsCount: blogsCount
 		})
 	}
@@ -150,6 +150,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 		const finduser = await User.find();
 		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
+		if (!blog) return res.json({ error: "Wrong Query! This blog doesn't exist" })
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
@@ -162,7 +163,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 			user: req.user,
 			found: finduser,
 			blog: blog,
-			popularBlogs: popularBlogs,
+			popularBlogs: popularBlogs || [],
 			blogsCount: blogsCount
 		});
 	}
