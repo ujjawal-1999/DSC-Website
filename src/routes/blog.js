@@ -64,14 +64,21 @@ const storage = multer.diskStorage({
 		// console.log(req.body);
 		const newDestination = __dirname+`/../../public/upload/cover/${req.user.userId}`;
 		console.log("New Destination: ", newDestination);
-		fs.mkdir(newDestination, function(err) {
-			if(err) {
-				console.log(err)
-			} else {
-				cb(null, newDestination);
-			}
-		})
-	
+		var stat = null;
+		try{
+			stat = fs.statSync(newDestination);
+		}
+		catch(err){
+			fs.mkdir(newDestination,{recursive:true},(err)=>{
+				if(err)
+					console.error('New Directory Error: ',err);
+				else
+					console.log('New Directory Success');
+			})
+		}
+		if(stat && !stat.isDirectory())
+			throw new Error('Directory Couldnt be created');
+		cb(null,newDestination);
 	},
 	filename:function(req,file,cb){
 		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))	}
@@ -107,7 +114,7 @@ router.get('/create', auth, (req, res) => {
 //route to save blog
 router.post('/create', auth, upload.single('cover'), async (req, res) => {
 	if (req.file) {
-		var cover = req.file.filename;
+		var cover =`/upload/cover/${req.user.userId}/${req.file.filename}`;
 	} else {
 		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
 	}
