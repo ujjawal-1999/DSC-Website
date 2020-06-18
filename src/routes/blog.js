@@ -1,16 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const Blog = require("../models/blog");
-const authorization = require("../middleware/auth");
 const multer = require('multer');
-const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const await=require('await')
-var slugify = require('slugify');
+const slugify = require('slugify');
 const User = require("../models/user");
-const auth=require('../middleware/auth')
+const Ratings = require("../models/Ratings");
+const auth = require('../middleware/auth')
 
 
 
@@ -19,10 +17,35 @@ const auth=require('../middleware/auth')
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 
+// blogs page home (show one full blog along with other new and popular blogs)
+// clicking any blog will redirect to view blog route (/dsc/blog/view/:slug)
 router.get('/', async (req, res)=>{
-	const finduser=await User.find();
-    res.render('blogs',{user:req.user,found:finduser});
-  });
+	try{
+		const finduser = await User.find();
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10)
+		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10)
+		const blogsCount = {
+			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
+			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
+			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
+		}
+		//render the blog using template 
+		res.render( 'blogs', {
+			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
+			found: finduser,
+			newBlogs: newBlogs || [],
+			popularBlogs: popularBlogs || [],
+			blogsCount: blogsCount
+		})
+	}
+
+	catch(e) {
+		res.status(400).json({ error: e });
+		return e;
+	}
+})
+
+
 
 router.get('/fullblog', async(req, res)=>{
 	const finduser = await User.find();
@@ -58,33 +81,32 @@ var upload = multer({
 	storage: storage,
 	limits:{fileSize:10000000},
 	fileFilter:(req,file,cb)=>{
-        //allowed extension
-        const filetypes = /jpeg|jpg|png|gif/
-        //check extension
-        const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
-        //check mimetype
-        const mimetype = filetypes.test(file.mimetype)
+				//allowed extension
+				const filetypes = /jpeg|jpg|png|gif/
+				//check extension
+				const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+				//check mimetype
+				const mimetype = filetypes.test(file.mimetype)
 
-        if(mimetype && extname){
-            cb(null,true)
-        }else{
-            cb("Error: Image only !",false)
-        }
-      }
+				if(mimetype && extname){
+						cb(null,true)
+				}else{
+						cb("Error: Image only !",false)
+				}
+			}
 })
 
 
 // form to create blog
-router.get('/create',auth,(req, res)=>{
-
+router.get('/create', auth, (req, res) => {
 	res.render('create-blog');
 })
 
 
 
 //route to save blog
-router.post('/create',auth,upload.single('cover'), async (req, res)=>{
-	if(req.file){
+router.post('/create', auth, upload.single('cover'), async (req, res) => {
+	if (req.file) {
 		var cover = req.file.filename;
 	} else {
 		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
@@ -119,17 +141,31 @@ router.post('/create',auth,upload.single('cover'), async (req, res)=>{
 
 
 //route to display blog
-router.get('/view/:slug',auth, async (req, res)=>{
+router.get('/view/:slug', auth, async (req, res)=>{
 
 	try{
 		//find the corresponding blog in db
 		let slug = req.params.slug;
-		if (!slug) return res.status(400).json({error: "empty query sent"});
+		if (!slug) return res.status(400).json({ error: "empty query sent" });
 
-		const blog = await Blog.findOne({ slug });
 		const finduser = await User.find();
-		//render result page with resulting html
-		res.render('show-blog', { blog: blog, user:req.user, found:finduser });
+		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
+		if (!blog) return res.status(404).json({ error: "Wrong Query! This blog doesn't exist" })
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
+		const blogsCount = {
+			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
+			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
+			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
+		}
+
+		//render result page
+		res.render('show-blog', {
+			user: req.user,
+			found: finduser,
+			blog: blog,
+			popularBlogs: popularBlogs || [],
+			blogsCount: blogsCount
+		});
 	}
 
 	catch(e) {
@@ -141,24 +177,52 @@ router.get('/view/:slug',auth, async (req, res)=>{
 
 
 //route to rate a blog
-router.put('/view/rate', auth, async (req,res)=>{
+router.put('/rate', auth, async (req,res)=>{
 	try {
-		const { blogId, rating } = req.body
-		console.log(blogId, rating, req.body)
-		const found = await Blog.findById( blogId )
+		const { blogId, value } = req.body
+		const userId = req.user.userId
+		if (!blogId || !value) {
+			return res.status(422).json({error: "Empty queries received"})
+		}
+		value = parseInt(value)
 
-		const currentValue = found.rating.currentValue
-		const totalRatings = found.rating.totalRatings
-		found.rating.totalRatings = totalRatings + 1
-		found.rating.currentValue = ((currentValue * totalRatings) + (parseInt(rating))) / (totalRatings + 1)
-		found.save()
-		console.log(found)
-		res.json(found)
+		const ratedBefore = await Ratings.findOne({ userId, blogId })
+
+		//if not rated by user previously
+		if (!ratedBefore) {
+			await new Ratings({
+				userId,
+				blogId,
+				value
+			})
+			.save()
+			// apply update to blog schema
+			const updatedBlog = await Blog.findById( blogId )
+			updatedBlog.ratingCount+=1
+			updatedBlog.ratingSum+=value
+			updatedBlog.ratingAverage = updatedBlog.ratingSum / updatedBlog.ratingCount
+			await updatedBlog.save()
+
+			console.log('Rating updated: ', value)
+			return res.json(updatedBlog)
+		}
+		else {
+			//set new value if already rated
+			const updatedBlog = await Blog.findById( blogId )
+			updatedBlog.ratingSum += (value - ratedBefore.value)
+			updatedBlog.ratingAverage = updatedBlog.ratingSum / updatedBlog.ratingCount
+			await updatedBlog.save()
+			ratedBefore.value = value
+			await ratedBefore.save()
+
+			console.log('Rating updated: ', value)
+			return res.json(updatedBlog)
+		}
 	}
 	catch(e) {
 		console.log(e)
-		res.status(422).json({error:e})
+		res.status(422).json({ error:e })
 	}
 })
-//export
+
 module.exports = router;
