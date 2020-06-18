@@ -23,13 +23,13 @@ router.get('/', async (req, res)=>{
 	try{
 		const finduser = await User.find();
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10).populate('author')
-		console.log(popularBlogs)
 		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10).populate('author')
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
 			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
 		}
+		console.log(blogsCount)
 		//render the blog using template 
 		res.render( 'blogs', {
 			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
