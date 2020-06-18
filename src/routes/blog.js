@@ -22,8 +22,9 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', async (req, res)=>{
 	try{
 		const finduser = await User.find();
-		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10)
-		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10)
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10).populate('author')
+		console.log(popularBlogs)
+		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10).populate('author')
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
@@ -157,9 +158,8 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 		const finduser = await User.find();
 		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true }).populate('author')
-		console.log(blog)
 		if (!blog) return res.status(404).json({ error: "Wrong Query! This blog doesn't exist" })
-		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5).populate('author')
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
