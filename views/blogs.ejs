@@ -177,7 +177,7 @@
                                 <img src="/assets/blogs/Blog-post/blog1.png" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;ahfjkdfhs</span>
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blog.author.name%></span>
                                 <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
                                 <span><i class="fas fa-star"></i>&nbsp;&nbsp;<%= blog.ratingAverage %>
                                 </span>
@@ -186,7 +186,7 @@
                         <div class="post-title">
                             <a href="#"><%= blog.title %></a>
                             <p><%= blog.summary %></p>
-                            <a href="/view/<%= blog.slug %>"><button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+                            <a href="/dsc/blog/view/<%= blog.slug %>"><button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
                         </div>
                     </div>
                     <% }) %>

@@ -103,8 +103,8 @@ function goBack() {
                                 <img src="<%= blog.cover %>" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
-                              <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
+                              <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blog.author.name %></span>
+                              <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
                               <span>
                                   <fieldset class="rating">
                                       <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>

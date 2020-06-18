@@ -22,9 +22,9 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', async (req, res)=>{
 	try{
 		const finduser = await User.find();
-		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10)
-		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10)
-		console.log(newBlogs)
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10).populate('author')
+		console.log(popularBlogs)
+		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10).populate('author')
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
@@ -63,16 +63,23 @@ router.get('/fullblog', async(req, res)=>{
 const storage = multer.diskStorage({
 	destination: function(req,file,cb){
 		// console.log(req.body);
-		const newDestination = __dirname+`/../../public/upload/cover/${req.body.author}`;
+		const newDestination = __dirname+`/../../public/upload/cover/${req.user.userId}`;
 		console.log("New Destination: ", newDestination);
-		fs.mkdir(newDestination, function(err) {
-			if(err) {
-				console.log(err)
-			} else {
-				cb(null, newDestination);
-			}
-		})
-	
+		var stat = null;
+		try{
+			stat = fs.statSync(newDestination);
+		}
+		catch(err){
+			fs.mkdir(newDestination,{recursive:true},(err)=>{
+				if(err)
+					console.error('New Directory Error: ',err);
+				else
+					console.log('New Directory Success');
+			})
+		}
+		if(stat && !stat.isDirectory())
+			throw new Error('Directory Couldnt be created');
+		cb(null,newDestination);
 	},
 	filename:function(req,file,cb){
 		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))	}
@@ -108,7 +115,7 @@ router.get('/create', auth, (req, res) => {
 //route to save blog
 router.post('/create', auth, upload.single('cover'), async (req, res) => {
 	if (req.file) {
-		var cover = req.file.filename;
+		var cover =`/upload/cover/${req.user.userId}/${req.file.filename}`;
 	} else {
 		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
 	}
@@ -151,9 +158,8 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 		const finduser = await User.find();
 		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true }).populate('author')
-		console.log(blog)
 		if (!blog) return res.status(404).json({ error: "Wrong Query! This blog doesn't exist" })
-		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5).populate('author')
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
