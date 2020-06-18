@@ -22,15 +22,15 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', async (req, res)=>{
 	try{
 		const finduser = await User.find();
-		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
-		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(5)
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10)
+		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10)
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
 			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
 		}
-		//render the blog using template
-		res.render('blogs', {
+		//render the blog using template 
+		res.render( 'blogs', {
 			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
 			found: finduser,
 			newBlogs: newBlogs,
@@ -44,6 +44,8 @@ router.get('/', async (req, res)=>{
 		return e;
 	}
 })
+
+
 
 router.get('/fullblog', async(req, res)=>{
 	const finduser = await User.find();
@@ -96,16 +98,15 @@ var upload = multer({
 
 
 // form to create blog
-router.get('/create',auth,(req, res)=>{
-
+router.get('/create', auth, (req, res) => {
 	res.render('create-blog');
 })
 
 
 
 //route to save blog
-router.post('/create',auth,upload.single('cover'), async (req, res)=>{
-	if(req.file){
+router.post('/create', auth, upload.single('cover'), async (req, res) => {
+	if (req.file) {
 		var cover = req.file.filename;
 	} else {
 		var cover = 'https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png';
