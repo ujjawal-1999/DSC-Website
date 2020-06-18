@@ -20,12 +20,19 @@
         action="/dsc/blog/create"
       >
         <!-- Create the editor container -->
-        <input type="text" name="title" id="title" placeholder="Title" />
+        <input type="text" name="title" id="title" placeholder="Title" required="true" />
+        <input type="hidden" name="body" />
+        <input type="hidden" name="summary" />
         <div class="btns">
           <button type="button" class="btn cancel">Cancel</button>
           <input type="submit" class="btn publish" value="Publish" />
         </div>
         <div class="file-upload-wrapper">
+          <select name="category" id="category">
+            <option value="Web Dev">Web Dev</option>
+            <option value="Android Dev">Android Dev</option>
+            <option value="Graphic Design">Graphic Design</option>
+          </select>
           <label for="file" class="file-upload-label"
             ><span id="file-label">Select Cover Image</span>
             <input
@@ -36,16 +43,9 @@
               id="file"
             />
           </label>
-          <select name="category" id="category">
-            <option value="Web Dev">Web Dev</option>
-            <option value="Android Dev">Android Dev</option>
-            <option value="Graphic Design">Graphic Design</option>
-          </select>
         </div>
         <div id="editor"></div>
 
-        <input type="hidden" name="body" />
-        <input type="hidden" name="summary" />
       </form>
     </div>
     <script src="/js/blogs/create-blog.js"></script>

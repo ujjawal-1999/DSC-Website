@@ -61,7 +61,7 @@ router.get('/fullblog', async(req, res)=>{
 
 //Establish Storage for file upload 
 const storage = multer.diskStorage({
-	destination: function(req,file,cb){
+	destination: function(req, file, cb){
 		// console.log(req.body);
 		const newDestination = __dirname+`/../../public/upload/cover/${req.user.userId}`;
 		console.log("New Destination: ", newDestination);
@@ -81,14 +81,14 @@ const storage = multer.diskStorage({
 			throw new Error('Directory Couldnt be created');
 		cb(null,newDestination);
 	},
-	filename:function(req,file,cb){
+	filename: function(req, file, cb){
 		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))	}
 });
 
 var upload = multer({
 	storage: storage,
 	limits:{fileSize:10000000},
-	fileFilter:(req,file,cb)=>{
+	fileFilter:(req, file, cb)=>{
 				//allowed extension
 				const filetypes = /jpeg|jpg|png|gif/
 				//check extension
@@ -126,13 +126,12 @@ router.post('/create', auth, upload.single('cover'), async (req, res) => {
 
 		await new Blog({
 			title: blog.title,
-			author: req.user.userId,
-			body: blog.body,
-			category: blog.category,
 			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 8)).toLowerCase(),
+			author: req.user.userId,
+			category: blog.category,
+			cover:cover,
 			summary: blog.summary,
-			cover:cover
-
+			body: blog.body,
 		})
 		.save((err, saved)=> {
 			res.json(saved);
