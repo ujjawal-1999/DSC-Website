@@ -124,10 +124,23 @@ router.get('/view/:slug',auth, async (req, res)=>{
 		let slug = req.params.slug;
 		if (!slug) return res.status(400).json({ error: "empty query sent" });
 
-		const blog = await Blog.findOne({ slug });
+		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
 		const finduser = await User.find();
+		const blogsCount = {
+			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
+			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
+			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
+		}
+
 		//render result page
-		res.render('show-blog', { blog: blog, user: req.user, found: finduser });
+		res.render('show-blog', {
+			blog: blog,
+			popularBlogs: popularBlogs,
+			blogsCount: blogsCount,
+			user: req.user,
+			found: finduser
+		});
 	}
 
 	catch(e) {
