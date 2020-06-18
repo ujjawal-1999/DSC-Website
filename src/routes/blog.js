@@ -125,7 +125,7 @@ router.post('/create', auth, upload.single('cover'), async (req, res) => {
 
 		await new Blog({
 			title: blog.title,
-			author: blog.author,
+			author: req.user.userId,
 			body: blog.body,
 			category: blog.category,
 			slug: (slugify(blog.title) + '-' + Math.random().toString(36).substr(2, 8)).toLowerCase(),
@@ -156,7 +156,8 @@ router.get('/view/:slug', auth, async (req, res)=>{
 		if (!slug) return res.status(400).json({ error: "empty query sent" });
 
 		const finduser = await User.find();
-		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
+		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true }).populate('author')
+		console.log(blog)
 		if (!blog) return res.status(404).json({ error: "Wrong Query! This blog doesn't exist" })
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
 		const blogsCount = {
