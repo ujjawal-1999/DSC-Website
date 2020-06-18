@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const slugify = require('slugify');
 const User = require("../models/user");
 const Ratings = require("../models/Ratings");
-const auth=require('../middleware/auth')
+const auth = require('../middleware/auth')
 
 
 
@@ -17,10 +17,33 @@ const auth=require('../middleware/auth')
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 
+// blogs page home (show one full blog along with other new and popular blogs)
+// clicking any blog will redirect to view blog route (/dsc/blog/view/:slug)
 router.get('/', async (req, res)=>{
-	const finduser=await User.find();
-    res.render('blogs',{user:req.user,found:finduser});
-  });
+	try{
+		const finduser = await User.find();
+		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
+		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(5)
+		const blogsCount = {
+			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
+			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
+			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
+		}
+		//render the blog using template
+		res.render('blogs', {
+			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
+			found: finduser,
+			newBlogs: newBlogs,
+			popularBlogs: popularBlogs,
+			blogsCount: blogsCount
+		})
+	}
+
+	catch(e) {
+		res.status(400).json({ error: e });
+		return e;
+	}
+})
 
 router.get('/fullblog', async(req, res)=>{
 	const finduser = await User.find();
@@ -56,19 +79,19 @@ var upload = multer({
 	storage: storage,
 	limits:{fileSize:10000000},
 	fileFilter:(req,file,cb)=>{
-        //allowed extension
-        const filetypes = /jpeg|jpg|png|gif/
-        //check extension
-        const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
-        //check mimetype
-        const mimetype = filetypes.test(file.mimetype)
+				//allowed extension
+				const filetypes = /jpeg|jpg|png|gif/
+				//check extension
+				const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+				//check mimetype
+				const mimetype = filetypes.test(file.mimetype)
 
-        if(mimetype && extname){
-            cb(null,true)
-        }else{
-            cb("Error: Image only !",false)
-        }
-      }
+				if(mimetype && extname){
+						cb(null,true)
+				}else{
+						cb("Error: Image only !",false)
+				}
+			}
 })
 
 
@@ -117,16 +140,16 @@ router.post('/create',auth,upload.single('cover'), async (req, res)=>{
 
 
 //route to display blog
-router.get('/view/:slug',auth, async (req, res)=>{
+router.get('/view/:slug', auth, async (req, res)=>{
 
 	try{
 		//find the corresponding blog in db
 		let slug = req.params.slug;
 		if (!slug) return res.status(400).json({ error: "empty query sent" });
 
+		const finduser = await User.find();
 		const blog = await Blog.findOneAndUpdate({ slug }, { $inc: { views: 1 } }, { new: true });
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(5)
-		const finduser = await User.find();
 		const blogsCount = {
 			webDev: await Blog.countDocuments({ category: 'Web Dev' }),
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
@@ -135,11 +158,11 @@ router.get('/view/:slug',auth, async (req, res)=>{
 
 		//render result page
 		res.render('show-blog', {
+			user: req.user,
+			found: finduser,
 			blog: blog,
 			popularBlogs: popularBlogs,
-			blogsCount: blogsCount,
-			user: req.user,
-			found: finduser
+			blogsCount: blogsCount
 		});
 	}
 
@@ -159,6 +182,7 @@ router.put('/view/rate', auth, async (req,res)=>{
 		if (!blogId || !value) {
 			return res.status(422).json({error: "Empty queries received"})
 		}
+		value = parseInt(value)
 
 		const ratedBefore = await Ratings.findOne({ userId, blogId })
 
@@ -171,24 +195,31 @@ router.put('/view/rate', auth, async (req,res)=>{
 			})
 			.save()
 			// apply update to blog schema
-			const update = { $inc: { ratingCount: 1, ratingSum: value }}
-			const updatedBlog = await Blog.findByIdAndUpdate( blogId, update, { new: true })
+			const updatedBlog = await Blog.findById( blogId )
+			updatedBlog.ratingCount+=1
+			updatedBlog.ratingSum+=value
+			updatedBlog.ratingAverage = updatedBlog.ratingSum / updatedBlog.ratingCount
+			await updatedBlog.save()
+
 			console.log('Rating updated: ', value)
 			return res.json(updatedBlog)
 		}
 		else {
 			//set new value if already rated
-			const update = { $inc: { ratingSum: (value - ratedBefore.value) }}
-			const updatedBlog = await Blog.findByIdAndUpdate( blogId, update, { new: true })
+			const updatedBlog = await Blog.findById( blogId )
+			updatedBlog.ratingSum += (value - ratedBefore.value)
+			updatedBlog.ratingAverage = updatedBlog.ratingSum / updatedBlog.ratingCount
+			await updatedBlog.save()
 			ratedBefore.value = value
 			await ratedBefore.save()
+
 			console.log('Rating updated: ', value)
 			return res.json(updatedBlog)
 		}
 	}
 	catch(e) {
 		console.log(e)
-		res.status(422).json({error:e})
+		res.status(422).json({ error:e })
 	}
 })
 

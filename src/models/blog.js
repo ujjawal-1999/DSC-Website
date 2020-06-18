@@ -27,6 +27,10 @@ const blogSchema = new mongoose.Schema({
 		type: Number,
 		default: 0
 	},
+	ratingAverage: {
+		type: Number,
+		default: 0
+	},
 	category: {
 		type: String,
 		required: true
