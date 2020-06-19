@@ -8,12 +8,13 @@ const bodyParser = require("body-parser");
 const slugify = require('slugify');
 const User = require("../models/user");
 const Ratings = require("../models/Ratings");
-const auth = require('../middleware/auth')
+const auth = require('../middleware/auth');
+const methodOverride = require("method-override");
 
 
 
 
-
+router.use(methodOverride("_method"));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 
@@ -166,7 +167,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 		}
 
 		//render result page
-		res.render('show-blog', {
+		res.render('fullblog', {
 			user: req.user,
 			found: finduser,
 			blog: blog,
@@ -179,14 +180,17 @@ router.get('/view/:slug', auth, async (req, res)=>{
 		res.status(400).json({error: "some error occured"});
 		return e;
 	}
-})
+});
 
 
 
 //route to rate a blog
-router.put('/rate', auth, async (req,res)=>{
+router.put('/rate/:blogid',auth,async (req,res)=>{
 	try {
-		const { blogId, value } = req.body
+		const blogId = req.params.blogid;
+		var value = req.body.rating;
+		console.log(blogId);
+		console.log(value);
 		const userId = req.user.userId
 		if (!blogId || !value) {
 			return res.status(422).json({error: "Empty queries received"})
