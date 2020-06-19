@@ -226,7 +226,9 @@ router.put('/rate/:blogid',auth,async (req,res)=>{
 			await updatedBlog.save()
 
 			console.log('Rating updated: ', value)
-			return res.json(updatedBlog)
+			res.locals.flashMessages = req.flash("success", "Thanks for rating!");
+			res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
+			return
 		}
 		else {
 			//set new value if already rated
@@ -238,7 +240,8 @@ router.put('/rate/:blogid',auth,async (req,res)=>{
 			await ratedBefore.save()
 
 			console.log('Rating updated: ', value)
-			return res.json(updatedBlog)
+			res.locals.flashMessages = req.flash("success", "Thanks for rating!");
+			res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
 		}
 	}
 	catch(e) {
