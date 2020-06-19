@@ -10,6 +10,7 @@ const User = require("../models/user");
 const Ratings = require("../models/Ratings");
 const auth = require('../middleware/auth');
 const methodOverride = require("method-override");
+const jwt = require("jsonwebtoken")
 
 
 
@@ -22,7 +23,16 @@ router.use(bodyParser.urlencoded({extended: true}));
 // clicking any blog will redirect to view blog route (/dsc/blog/view/:slug)
 router.get('/', async (req, res)=>{
 	try{
+		const token = req.cookies.authorization
 		const finduser = await User.find();
+		let user
+		if(token)	{
+			jwt.verify(token, process.env.JWT_SECRET, (err, payload)=>{
+				if(err) console.log(err)
+				else user = payload
+			})
+		}
+
 		const popularBlogs = await Blog.find().sort({ views: -1 }).limit(10).populate('author')
 		const newBlogs = await Blog.find().sort({ createdAt: -1 }).limit(10).populate('author')
 		const blogsCount = {
@@ -30,10 +40,10 @@ router.get('/', async (req, res)=>{
 			androidDev: await Blog.countDocuments({ category: 'Android Dev' }),
 			graphicDesign: await Blog.countDocuments({ category: 'Graphic Design' })
 		}
-		console.log(blogsCount)
+		// console.log(blogsCount)
 		//render the blog using template 
 		res.render( 'blogs', {
-			user: req.user, // it will remail undefines bcz req.user won't exist as we don't use auth middleware here
+			user: user,
 			found: finduser,
 			newBlogs: newBlogs || [],
 			popularBlogs: popularBlogs || [],
@@ -42,7 +52,7 @@ router.get('/', async (req, res)=>{
 	}
 
 	catch(e) {
-		res.status(400).json({ error: e });
+		res.status(400).json({ error: e.message });
 		return e;
 	}
 })
@@ -73,7 +83,7 @@ const storage = multer.diskStorage({
 		catch(err){
 			fs.mkdir(newDestination,{recursive:true},(err)=>{
 				if(err)
-					console.error('New Directory Error: ',err);
+					console.error('New Directory Error: ', err.message);
 				else
 					console.log('New Directory Success');
 			})
@@ -122,7 +132,7 @@ router.post('/create', auth, upload.single('cover'), async (req, res) => {
 	}
 	try {
 		const blog = req.body;
-		console.log(blog)
+		// console.log(blog)
 		if (!blog) return res.status(400).json({error: "empty query sent"})
 
 		await new Blog({
@@ -140,9 +150,9 @@ router.post('/create', auth, upload.single('cover'), async (req, res) => {
 	}
 
 	catch(e) {
-		console.log(e)
+		console.log(e.message)
 		res.status(400).json({error: "Some error occured"});
-		return e;
+		return e
 	}
 })
 
@@ -178,6 +188,7 @@ router.get('/view/:slug', auth, async (req, res)=>{
 
 	catch(e) {
 		res.status(400).json({error: "some error occured"});
+		console.log(e.message)
 		return e;
 	}
 });
@@ -231,8 +242,8 @@ router.put('/rate/:blogid',auth,async (req,res)=>{
 		}
 	}
 	catch(e) {
-		console.log(e)
-		res.status(422).json({ error:e })
+		console.log(e.message)
+		res.status(422).json({ error:e.message })
 	}
 })
 
