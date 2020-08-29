@@ -1,0 +1,456 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 80%;
+  min-height: 80rem;
+  display: flex;
+  margin-top: 10rem;
+  box-shadow: -6px 7px 26px 0px rgba(0, 0, 0, 0.35);
+  flex-direction: column;
+}
+
+.accountbar {
+  padding: 1rem;
+  height: 4rem;
+  background-color: var(--color-Grey-light-1);
+  display: flex;
+  justify-content: space-between;
+
+  &__shortcut {
+    padding: 0 1rem;
+  }
+
+  input {
+    padding: 1rem 2rem !important;
+    border-radius: 1rem !important;
+    border: 1px solid var(--Grey-light-4) !important;
+    width: 10%;
+    transition: all 0.5s ease-in-out !important;
+    background-color: var(--Grey-light-1) !important;
+    &:focus {
+      width: 40%;
+    }
+  }
+
+  img {
+    margin: 0 1rem;
+    width: 30px;
+  }
+}
+
+.accountdetails {
+  display: flex;
+}
+.dashboard {
+  &__navbar {
+    .side-nav {
+      font-size: 1rem;
+      list-style: none;
+
+      &__item {
+        position: relative;
+        transition: all 0.2s 0.2s;
+        color: var(--Grey-dark-1);
+
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+
+        &--active {
+          background-color: var(--color-primary);
+          color: var(--white);
+        }
+      }
+
+      &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transform-origin: center;
+        transition: transform 0.2s, width 0.2s 0.2s;
+      }
+
+      &__item:hover::before {
+        width: 100%;
+        transform: scaleY(1);
+      }
+
+      &__item:hover {
+        color: var(--white);
+      }
+
+      &__link:link,
+      &__link:visited {
+        color: var(--color-Grey-light-1);
+        text-decoration: none;
+        display: block;
+        padding: 1rem 3rem;
+        display: flex;
+        justify-content: start;
+        position: relative;
+        z-index: 10;
+      }
+
+      //   &__icon {
+      //     width: 2rem;
+      //     height: 2rem;
+      //     margin-right: 2rem;
+      //     fill: currentColor;
+      //   }
+    }
+  }
+
+  &__main {
+    background-color: var(--grey-lighter);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .main {
+      &__profileinfo {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        .pictureandbasic {
+          display: flex;
+          align-items: center;
+          padding: 3rem;
+
+          color: var(--Grey-dark-1);
+          img {
+            width: 100%;
+            border-radius: 100%;
+            border: none;
+          }
+
+          .info {
+            padding: 0 4rem;
+            display: flex;
+            flex-direction: column;
+            height: 15rem;
+            justify-content: space-evenly;
+            h2 {
+              font-size: 2rem;
+            }
+            h3 {
+              font-weight: 300;
+              letter-spacing: 0.3rem;
+            }
+          }
+        }
+
+        .branchandyear {
+          height: fit-content;
+          display: flex;
+          justify-content: space-around;
+          padding: 2rem;
+          background-color: var(--greyy-lightest);
+          .collegeinfo {
+            line-height: 1.2rem;
+            width: max-content;
+            display: flex;
+            // justify-content: space-evenly;
+            align-items: center;
+            color: var(--Grey-dark-2);
+            font-size: 0.8rem;
+            border-radius: 50px;
+            border: 1px solid;
+            padding: 0.2rem 1rem;
+            img {
+              width: 2rem;
+              margin: 0.5rem;
+            }
+
+            .batch {
+              text-align: center;
+            }
+          }
+        }
+      }
+      &__detailedinfo {
+        margin: 2rem 0.2rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    padding: 1rem;
+    width: 40%;
+    border: 0.1px solid;
+    border-style: ridge;
+    margin: 1rem;
+    border-color: rgba($color: #000000, $alpha: 0.2);
+    border-radius: 10px;
+    h3 {
+      margin-top: 0.3rem;
+      font-size: 0.7rem;
+      font-weight: 300;
+    }
+    p {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+}
+
+// ///////////////////////////////////////////////////////////////////////////////////
+
+// Responsive
+
+@media (max-width: 966px) {
+  // .dashboard__main .main__profileinfo .pictureandbasic .info {
+  //   width: min-content;
+  // }
+  .dashboard__navbar .side-nav {
+    display: none;
+  }
+  .accountdetails {
+    flex-direction: column;
+  }
+
+  .tab-buttons--left {
+    justify-content: center !important;
+  }
+
+  .dashboard__main .main__profileinfo .branchandyear {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    .collegeinfo {
+      margin: 0.3rem 0;
+      flex-direction: column;
+    }
+  }
+  .dashboard__main .main__profileinfo .pictureandbasic {
+    flex-direction: column;
+  }
+
+  .dashboard__main .main__profileinfo .pictureandbasic .info {
+    text-align: center;
+  }
+}
+
+// ----
+// Module base
+// ----
+.tab-container {
+  margin-bottom: 1.5em;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 30em) {
+    justify-content: center;
+  }
+}
+
+// ----
+// Styling types
+// ----
+
+// Tab Basic
+.tab-buttons--basic {
+  border-bottom: 1px solid #ddd;
+}
+
+// Tab Basic: Link
+.tab-buttons--basic .tab-button {
+  border-bottom: 1px solid transparent;
+}
+
+// Tab Basic: Active
+.tab-buttons--basic .tab-button--is-active {
+  border-color: #08c;
+}
+
+// Tab Boxed
+.tab-buttons--boxed {
+  border-bottom: 1px solid #ddd;
+}
+
+// Tab Boxed: Link
+.tab-buttons--boxed .tab-button {
+  border: 1px solid transparent;
+  border-radius: 0.3em 0.3em 0 0;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &:not(.tab-button--is-active):hover,
+  &:not(.tab-button--is-active):focus {
+    background: #f9f9f9;
+    border-bottom-color: #ddd;
+  }
+}
+
+// Tab Boxed: Active
+.tab-buttons--boxed .tab-button--is-active {
+  background: #fff;
+  border-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+// Tab Toggle
+.tab-buttons--toggle .tab-button-item:not(:first-child) {
+  margin-left: -1px;
+}
+
+// Tab Toggle: Link
+.tab-buttons--toggle .tab-button {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+
+  &:not(.tab-button--is-active):hover,
+  &:not(.tab-button--is-active):focus {
+    background: #f9f9f9;
+  }
+}
+
+// Tab Toggle: Active
+.tab-buttons--toggle .tab-button--is-active {
+  background: mix(#fff, #08c, 90%);
+}
+
+// ----
+// Alignment
+// ----
+@media (min-width: 30em) {
+  .tab-buttons--left {
+    justify-content: flex-start;
+  }
+
+  .tab-buttons--right {
+    justify-content: flex-end;
+  }
+
+  .tab-buttons--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tab-buttons--justify {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tab-buttons--justify .tab-button-item {
+    flex: 1 0 auto;
+  }
+}
+
+// ----
+// Tab button items
+// ----
+.tab-button-item {
+  @media (max-width: 30em) {
+    text-align: center;
+    width: 100%;
+  }
+
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+}
+
+.tab-button {
+  color: #666;
+  display: block;
+  margin-bottom: -1px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.tab-button--is-active {
+  color: #08c;
+}
+
+// ----
+// Tab panels
+// ----
+.tab-panels {
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-radius: 0 0 0.3em 0.3em;
+  position: relative;
+}
+
+.tab-panel {
+  padding: 1em;
+}
+
+.tab-buttons--toggle ~ .tab-panels {
+  border: 1px solid #ddd;
+  border-radius: 0.3em;
+  margin-top: 1em;
+}
+
+.tab-panel--is-disabled {
+  display: none;
+}
+
+.tab-panel--is-active {
+  display: block;
+}
+
+// ----
+// Layout setup
+// ----
+.panel {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 5em 3em;
+
+  &:nth-child(even) {
+    background: #fff;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: -1px;
+  }
+}
+
+// Header and description area
+.panel-header {
+  margin-bottom: 4em;
+  text-align: center;
+}
+
+// Center description on large screens
+@media (min-width: 40em) {
+  .panel-text {
+    margin: auto;
+    max-width: 700px;
+  }
+}
+
+kbd {
+  background: #ddd;
+  border-radius: 0.2em;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
