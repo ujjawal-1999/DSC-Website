@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DSC-Blogs</title>
@@ -72,41 +72,43 @@
         </div>
     </nav> -->
     <%-include('partials/navbar')%>
-    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-    <!----------------------------- Main Site Section ------------------------------>
+        <!----------------------------- Main Site Section ------------------------------>
 
-    <main>
+        <main>
 
-        <!-- ------------- Filter ---------------- -->
+            <!-- ------------- Filter ---------------- -->
 
-        <div class="filter">
-            <div class="sort-by filter-item">
-                Sort By:
-            </div>
-            <div class="newest filter-item">
-                <button class="sort-btn">Newest First</button>
-            </div>
-            <div class="top-rated filter-item">
-                <button class="sort-btn">Top Rated</button>
-            </div>
-            <div class="blog-search filter-item">
-                <div class="blog-wrap">
-                    <div class="blog-search">
-                       <input type="text" class="blog-searchTerm" placeholder="Search by Blog Title...">
-                       <button type="submit" class="blog-searchButton">
-                         <i class="fa fa-search"></i>
-                      </button>
+            <div class="filter">
+                <div class="sort-by filter-item">
+                    Sort By:
+                </div>
+                <div class="newest filter-item">
+                    <button class="sort-btn">Newest First</button>
+                </div>
+                <div class="top-rated filter-item">
+                    <button class="sort-btn">Top Rated</button>
+                </div>
+                <div class="top-rated filter-item">
+                </div>
+                <div class="blog-search filter-item">
+                    <div class="blog-wrap">
+                        <div class="blog-search">
+                            <input type="text" class="blog-searchTerm" placeholder="Search by Blog Title...">
+                            <button type="submit" class="blog-searchButton">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        </div>
                     </div>
-                 </div>
+                </div>
             </div>
-        </div>
 
-        <!-- ----------x------Filter ---------x-------- -->
+            <!-- ----------x------Filter ---------x-------- -->
 
-        <!------------------------ Site Title ---------------------->
+            <!------------------------ Site Title ---------------------->
 
-        <!-- <section class="site-title">
+            <!-- <section class="site-title">
             <div class="site-background" data-aos="fade-up" data-aos-delay="100">
                 <h3>Tours & Travels</h3>
                 <h1>Amazing Place on Earth</h1>
@@ -114,11 +116,11 @@
             </div>
         </section> -->
 
-        <!------------x----------- Site Title ----------x----------->
+            <!------------x----------- Site Title ----------x----------->
 
-        <!-- --------------------- Blog Carousel ----------------- -->
+            <!-- --------------------- Blog Carousel ----------------- -->
 
-        <!-- <section>
+            <!-- <section>
             <div class="blog">
                 <div class="container">
                     <div class="owl-carousel owl-theme blog-post">
@@ -163,35 +165,41 @@
             </div>
         </section> -->
 
-        <!-- ----------x---------- Blog Carousel --------x-------- -->
+            <!-- ----------x---------- Blog Carousel --------x-------- -->
 
-        <!-- ---------------------- Site Content -------------------------->
+            <!-- ---------------------- Site Content -------------------------->
 
-        <section class="container">
-            <div class="site-content">
-                <div class="posts">
-                    <% newBlogs.forEach((blog)=>{ %>
-                    <div class="post-content" data-aos="fade-up" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="<%= blog.cover %>" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blog.author.name%></span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
-                                <span><i class="fas fa-star"></i>&nbsp;&nbsp;<%= blog.ratingAverage %>
+            <section class="container">
+                <div class="site-content">
+                    <div class="posts">
+                        <% newBlogs.forEach((blog)=>{ %>
+                            <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                                <div class="post-image">
+                                    <div>
+                                        <img src="<%= blog.cover %>" class="img" alt="blog1">
+                                    </div>
+                                    <div class="post-info flex-row">
+                                        <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;<%= blog.author.name%></span>
+                                        <span><i
+                                        class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
+                                        <span><i class="fas fa-star"></i>&nbsp;&nbsp;<%= blog.ratingAverage %>
                                 </span>
+                                    </div>
+                                </div>
+                                <div class="post-title">
+                                    <a href="#">
+                                        <%= blog.title %>
+                                    </a>
+                                    <p>
+                                        <%= blog.summary %>
+                                    </p>
+                                    <a href="/dsc/blog/view/<%= blog.slug %>"><button class="btn post-btn">Read More &nbsp; <i
+                                        class="fas fa-arrow-right"></i></button></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#"><%= blog.title %></a>
-                            <p><%= blog.summary %></p>
-                            <a href="/dsc/blog/view/<%= blog.slug %>"><button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
-                        </div>
-                    </div>
-                    <% }) %>
-                    <hr>
-                    <!-- <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                            <% }) %>
+                                <hr>
+                                <!-- <div class="post-content" data-aos="fade-up" data-aos-delay="200">
                         <div class="post-image">
                             <div>
                                 <img src="/assets/blogs/Blog-post/blog2.png" class="img" alt="blog1">
@@ -267,24 +275,24 @@
                         <a href="#" class="pages">3</a>
                         <a href="#"><i class="fas fa-chevron-right"></i></a>
                     </div> -->
-                </div> 
-                <aside class="sidebar">
-                    <div class="category">
-                        <h2>Category</h2>
-                        <ul class="category-list">
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                                <a href="#">Web Development</a>
-                                <span>(<%= blogsCount.webDev %>)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
-                                <a href="#">Android Development</a>
-                                <span>(<%= blogsCount.androidDev %>)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="300">
-                                <a href="#">UI/UX Design</a>
-                                <span>(<%= blogsCount.graphicDesign %>)</span>
-                            </li>
-                            <!-- <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                    </div>
+                    <aside class="sidebar">
+                        <div class="category">
+                            <h2>Category</h2>
+                            <ul class="category-list">
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                    <a href="#">Web Development</a>
+                                    <span>(<%= blogsCount.webDev %>)</span>
+                                </li>
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                    <a href="#">Android Development</a>
+                                    <span>(<%= blogsCount.androidDev %>)</span>
+                                </li>
+                                <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                                    <a href="#">UI/UX Design</a>
+                                    <span>(<%= blogsCount.graphicDesign %>)</span>
+                                </li>
+                                <!-- <li class="list-items" data-aos="fade-left" data-aos-delay="400">
                                 <a href="#">Shopping</a>
                                 <span>(01)</span>
                             </li>
@@ -292,27 +300,30 @@
                                 <a href="#">Food</a>
                                 <span>(08)</span>
                             </li> -->
-                        </ul>
-                    </div>
-                    <div class="popular-post">
-                        <h2>Popular Post</h2>
-                        <% popularBlogs.forEach((blog)=>{ %>
-                        <div class="post-content" data-aos="fade-up" data-aos-delay="200">
-                            <div class="post-image">
-                                <div>
-                                    <img src="<%= blog.cover %>" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
-                                        <span><i class="fas fa-star"></i>&nbsp;&nbsp;<%= blog.ratingAverage %></span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#"><%= blog.title %></a>
-                            </div>
+                            </ul>
                         </div>
-                        <% }) %>
-                        <!-- <div class="post-content" data-aos="fade-up" data-aos-delay="300">
+                        <div class="popular-post">
+                            <h2>Popular Post</h2>
+                            <% popularBlogs.forEach((blog)=>{ %>
+                                <div class="post-content" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="post-image">
+                                        <div>
+                                            <img src="<%= blog.cover %>" class="img" alt="blog1">
+                                        </div>
+                                        <div class="post-info flex-row">
+                                            <span><i
+                                            class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;<%= blog.updatedAt.toLocaleString() %></span>
+                                            <span><i class="fas fa-star"></i>&nbsp;&nbsp;<%= blog.ratingAverage %></span>
+                                        </div>
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            <%= blog.title %>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                    <!-- <div class="post-content" data-aos="fade-up" data-aos-delay="300">
                             <div class="post-image">
                                 <div>
                                     <img src="/assets/blogs/popular-post/m-blog-2.jpg" class="img" alt="blog1">
@@ -376,15 +387,15 @@
                                 <a href="#">New data recording system to better analyse road accidents</a>
                             </div>
                         </div> -->
-                    </div>
-                    <!-- <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                        </div>
+                        <!-- <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
                         <h2>Newsletter</h2>
                         <div class="form-element">
                             <input type="text" class="input-element" placeholder="Email">
                             <button class="btn form-btn">Subscribe</button>
                         </div>
                     </div> -->
-                    <!-- <div class="popular-tags">
+                        <!-- <div class="popular-tags">
                         <h2>Popular Tags</h2>
                         <div class="tags flex-row">
                             <span class="tag" data-aos="flip-up" data-aos-delay="100">Software</span>
@@ -397,20 +408,20 @@
                             <span class="tag" data-aos="flip-up" data-aos-delay="800">project</span>
                         </div>
                     </div> -->
-                </aside>
-            </div>
-        </section>
+                    </aside>
+                </div>
+            </section>
 
-        <!-- -----------x---------- Site Content -------------x------------>
+            <!-- -----------x---------- Site Content -------------x------------>
 
-    </main>
+        </main>
 
-    <!---------------x------------- Main Site Section ---------------x-------------->
+        <!---------------x------------- Main Site Section ---------------x-------------->
 
 
-    <!-- --------------------------- Footer ---------------------------------------- -->
+        <!-- --------------------------- Footer ---------------------------------------- -->
 
-    <!-- <footer class="footer">
+        <!-- <footer class="footer">
         <div class="container">
             <div class="about-us" data-aos="fade-right" data-aos-delay="200">
                 <h2>About us</h2>
@@ -459,33 +470,34 @@
             <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
         </div>
     </footer> -->
-    <%-include('partials/footer')%>
+        <%-include('partials/footer')%>
 
-    <!-- -------------x------------- Footer --------------------x------------------- -->
+            <!-- -------------x------------- Footer --------------------x------------------- -->
 
-    <!-- Jquery Library file -->
-    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+            <!-- Jquery Library file -->
+            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
 
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
+            <!-- --------- Owl-Carousel js ------------------->
+            <script src="/js/blogs/owl.carousel.min.js"></script>
 
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="/js/blogs/aos.js"></script>
+            <!-- ------------ AOS js Library  ------------------------- -->
+            <script src="/js/blogs/aos.js"></script>
 
-    <!-- Custom Javascript file -->
-    <script src="/js/navbar.js"></script>
-    <script src="/js/blogs/main.js"></script>
+            <!-- Custom Javascript file -->
+            <script src="/js/navbar.js"></script>
+            <script src="/js/blogs/main.js"></script>
 
-    <script>
-        var bodydiv = document.getElementById('bodydiv');
-        bodydiv.addEventListener('click', closeSearch)
-        function closeSearch(){
-            let search_list1= document.getElementById('search_list1');
-            search_list1.style.display = 'none';
-            let search_list2= document.getElementById('search_list2');
-            search_list2.style.display = 'none';
-        }
-    </script>
+            <script>
+                var bodydiv = document.getElementById('bodydiv');
+                bodydiv.addEventListener('click', closeSearch)
+
+                function closeSearch() {
+                    let search_list1 = document.getElementById('search_list1');
+                    search_list1.style.display = 'none';
+                    let search_list2 = document.getElementById('search_list2');
+                    search_list2.style.display = 'none';
+                }
+            </script>
 </body>
 
 </html>
