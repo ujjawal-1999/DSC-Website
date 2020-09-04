@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Century Gothic";
+}
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #333;
+}
+section {
+  margin: 10rem 0;
+}
+
+.mainbg {
+  position: absolute;
+  width: 20%;
+  bottom: 0%;
+  left: 0%;
+}
+.mainbg img {
+  z-index: -10;
+}
+
+.mainone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.discoverone {
+  display: flex;
+  font-size: 8rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  padding: 1rem;
+  align-self: baseline;
+  font-style: italic;
+}
+
+.discovertwo {
+  font-family: "Times New Roman", Times, serif;
+
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 25%;
+}
+
+.first {
+  order: 1;
+}
+
+main .banner {
+  font-size: 15rem;
+  opacity: 0.08;
+  font-weight: bolder;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.heading2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #333;
+  position: relative;
+  margin-right: 100vw;
+  transform: rotate(90deg) translateY(-100%);
+}
+
+.heading2::after {
+  content: "";
+  width: 10rem;
+  height: 0.8rem;
+  background-color: #45e19f;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  border-radius: 2rem;
+}
+
+.category_item {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.card_holder {
+  align-self: center;
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 3rem;
+  padding: 6rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .mainone {
+    flex-direction: column;
+    align-content: center;
+  }
+  .discoverone {
+    text-align: center;
+    font-size: 5rem;
+    align-self: center;
+  }
+  .mainbg {
+    pointer-events: none;
+    opacity: 0;
+  }
+  .discovertwo {
+    text-align: center;
+    font-size: 1rem;
+    width: 70%;
+  }
+  .first {
+    order: 0;
+  }
+  .heading2 {
+    margin: 0;
+    font-size: 2rem;
+    transform: rotate(0) translateY(0);
+  }
+  .heading2::after {
+    opacity: 0;
+  }
+  .game {
+    margin: 4rem 0;
+    width: 90%;
+  }
+  section {
+    margin-bottom: 8rem;
+  }
+  .card_holder {
+    padding: 0 0;
+  }
+
+  .game:hover .background {
+    transform: scale(1.1, 1.2) translateY(1%);
+  }
+  .game:hover .rank {
+    transform: translate(35%, -70%);
+  }
+}
