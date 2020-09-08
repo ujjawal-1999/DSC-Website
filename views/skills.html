@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="../public/css/profile/profile_dashboard.css" />
+    <link rel="stylesheet" href="../public/css/index/colors.css" />
+    <script src="https://kit.fontawesome.com/0b8dacacce.js" crossorigin="anonymous"></script>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form input {
+        width: 26em;
+        height: 2.5em;
+        border: 1px solid black;
+        margin-top: 2em;
+        padding-left: 0.6em;
+        }
+
+        form button.btn {
+        width: 28em;
+        height: 2.5em;
+        padding: 0;
+        background: none;
+        margin: 1em;
+        border: 1px solid black;
+        }
+
+        form button.btn:hover {
+        background-color: #2b65ec;
+        }
+        form label {
+        font-size: 1.3em;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+        /* Card */
+        .card{
+        margin: 2rem 4rem;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+        border-radius: 1rem; }
+
+        /** Card Body **/
+        .card-body{
+        background-color: #fff;
+        border-radius: 1rem; 
+        padding: 2rem; }
+
+        .card-body .card_heading{
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        line-height: 1.2; }
+
+        .card-body .card_date{
+        color: #777;
+        font-weight: 350;
+        margin: 0;
+        font-size: 14px; }
+
+        .card-body .card_text{ font-weight: 250; margin: 25px 0; }
+
+        .card-body .badge-list{ 
+        font-size: 22px;
+        font-weight:200;
+        transition: all 350ms ease;
+        color: #333; }
+
+        .card-body .badge{ 
+        cursor: pointer;
+        display: inline-block;   
+        padding-right: 10px; }
+
+        .card-body .badge-like{
+        color: #b71c1c; }
+
+        .card-body .badge-like .fa-heart{
+        padding-right: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../public/css/profile/modal.css" />
+</head>
+
+<body>
+    
+    <div class="container">
+        <section class="accountbar">
+            <input type="text" placeholder="Search" />
+            <div class="accountbar__shortcut">
+                <img class="bell" src="../public/img/logo/user.svg" alt="UserPhoto" />
+                <img class="bell" src="../public/img/logo/bell.svg" alt="Notification Logo" />
+            </div>
+        </section>
+
+        <section class="accountdetails">
+            <section class="dashboard__navbar">
+                <ul class="side-nav">
+                    <li class="side-nav__item side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item side-nav__item--active">
+                        <a href="#" class="side-nav__link">
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <span>Achievements</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <!-- CARD CONTAINER -->
+                <div >
+                    <article class="card">
+                        <div class="card-body">
+                            <h1 class="card_heading">
+                                Project Title
+                            </h1>
+                            <p class="card_date">
+                                Tech Stack - NodeJS,React
+                            </p>    
+                            <p class="card_date">
+                                18 May 2020 - 20 May 2020
+                            </p>
+                            <p class="card_text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eligendi repellat et cumque laborum ipsam blanditiis magnam fuga saepe dolore, eum numquam ea ullam, tempore repudiandae fugit dignissimos voluptatem sit!
+                            </p>
+                    
+                            <div class="badge-list">
+                                <!-- <div class="badge badge-share">
+                                    <i class="fas fa-share-alt-square"></i>
+                                </div> -->
+                                <div class="badge badge-like">
+                                    <i class="fas fa-heart"></i>100
+                                </div>
+                            </div>
+                        </div>   
+                    </article>
+                </div>
+            </section>
+
+        </section>
+    </div>
+
+
+    <button id="modal-btn" class="button">Click Here</button>
+    <button id="modal-btn2" class="button">Click Here</button>
+    <div id="my-modal" class="modal"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add Skill</h2>
+            </div>
+            <div class="modal-body">
+               <form action="" method="POST">
+                   <input type="text" placeholder="Add Skill" name="skill">
+                   <button type="submit" class="btn">Add Skill</button>
+               </form>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+    </div> 
+
+    <div id="my-modal2" class="modal"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close2">&times;</span>
+                <h2>Add Project</h2>
+            </div>
+            <div class="modal-body">
+               <form action="" method="POST">
+                <input type="text" placeholder="Title" name="title">
+                <input type="text" placeholder="Tech Stack" name="techstack">
+                <input type="text" placeholder="Duration" name="duration">
+                <input type="text" placeholder="Github Link" name="link">
+                <input type="text" placeholder="Description" name="description">
+                <button type="submit" class="btn">Add Project</button>
+               </form>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+    </div> 
+
+
+    <script src="../public/js/profile/modal.js"></script>
+</body>
+<script src="../node_modules/a11ytab/dist/a11ytab.js"></script>
+<script src="../public/js/profile/profile.js"></script>
+
+</html>
