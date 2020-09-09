@@ -12,7 +12,7 @@ for(i=0;i<featured.length;i++)
 {
     //adding the click event listner
         featured[i].addEventListener('click',function(){
-          
+         var delay = 100;
          var featuredBlack= document.getElementsByClassName('feature-black')[0];
          featuredBlack.style.display="flex";
          featuredBlack.style.backgroundColor=this.style.backgroundColor;
@@ -41,6 +41,11 @@ for(i=0;i<featured.length;i++)
               document.getElementById('featured-black').scrollIntoView(true);
              
          document.getElementById('feature-card-container').style.display="none";
+            document.getElementById('feature-card-container').className += 'clicked';
          
     })
+}
+
+function animate(){
+    document.getElementById("featured-black").className='feature-black';
 }
