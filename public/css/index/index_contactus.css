@@ -146,7 +146,9 @@
 
 .contact_us .submit-btn {
   padding: 7px 35px;
-  border-radius: 10px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-color: var(--navButtons);
   display: inline-block;
   background-color: var(--navButtons);
   color: var(--white);
@@ -157,6 +159,7 @@
 }
 
 .contact_us .submit-btn:hover {
+  border-color: var(--navButtons);
   background-color: var(--white);
   color: var(--navButtons);
 }

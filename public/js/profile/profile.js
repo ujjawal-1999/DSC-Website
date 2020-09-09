@@ -9,14 +9,7 @@ for (let i = 0; i < tabEl.length; i++) {
     tabPanelBlur: "tab-panel--is-disabled",
     tabFocus: "tab-button--is-active",
     tabBlur: "tab-button--is-disabled",
-    // focusOnLoad: false,
-    // afterFocusFunction: null,
-    // beforeFocusFunction: null,
-    // addEvents: false,
-    // eventAfterFocus: 'a11ytab:afterFocus',
-    // eventBeforeBlur: 'a11ytab:beforeBlur',
-    // hashNavigation: false,
-    // tabToFocus: null,
   });
   tabs.init();
 }
+

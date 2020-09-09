@@ -9,18 +9,6 @@
   </head>
   <body>
     <div class="container">
-      <section class="accountbar">
-        <input type="text" placeholder="Search" />
-        <div class="accountbar__shortcut">
-          <img class="bell" src="../public/img/logo/user.svg" alt="UserPhoto" />
-          <img
-            class="bell"
-            src="../public/img/logo/bell.svg"
-            alt="Notification Logo"
-          />
-        </div>
-      </section>
-
       <section class="accountdetails">
         <section class="dashboard__navbar">
           <ul class="side-nav">
@@ -31,7 +19,7 @@
             </li>
             <li class="side-nav__item side-nav__item">
               <a href="#" class="side-nav__link">
-                <span>Skills</span>
+                <span>Projects</span>
               </a>
             </li>
             <li class="side-nav__item side-nav__item">
@@ -42,33 +30,54 @@
           </ul>
         </section>
         <section class="dashboard__main">
+          <section class="accountbar">
+            <p></p>
+            <!-- <input type="text" placeholder="Search" /> -->
+            <div class="accountbar__shortcut">
+              <img
+                class="bell"
+                src="../public/img/teams_potraits/rdj.jpg"
+                alt="UserPhoto"
+              />
+              <img
+                class="bell"
+                src="../public/img/logo/bell.png"
+                alt="Notification Logo"
+              />
+            </div>
+          </section>
           <section class="main__profileinfo">
             <div class="pictureandbasic">
               <div class="photo">
-                <img src="../public/img/logo/profile.png" alt="" />
+                <img src="../public/img/teams_potraits/rdj.jpg" alt="" />
               </div>
               <div class="info">
-                <h2>Developer's Name</h2>
-                <h3>NIT Silchar</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Unde, ipsa atque est id iusto illum quisquam quos corrupti
-                  ducimus! Illo?
-                </p>
+                <div class="nameandedit">
+                  <h2>Robert D. Junior</h2>
+                  <div class="edit">Edit Profile</div>
+                </div>
+                <h3>
+                  <img class="pin" src="../public/img/logo/pin.svg" /> Avenger's
+                  Tower
+                </h3>
+                <p>Multimillionaire, Playboy, Genius</p>
+                <div class="branchandyear">
+                  <div class="collegeinfo">
+                    <img class="s" src="../public/img/logo/fb.png" alt="" />
+                  </div>
+                  <div class="collegeinfo">
+                    <img class="s" src="../public/img/logo/link.png" alt="" />
+                  </div>
+                  <div class="collegeinfo">
+                    <img
+                      class="s"
+                      src="../public/img/logo/twitter.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="branchandyear">
-              <div class="collegeinfo">
-                <!-- <img src="../public/img/logo/school.svg" alt="" /> -->
-
-                <p class="batch">
-                  Computer Science and Engineering <br />Batch 1997-01
-                </p>
-              </div>
-              <div class="collegeinfo">
-                <!-- <img src="../public/img/logo/project.svg" alt="" /> -->
-                <p>14 Projects</p>
-              </div>
+              <div class="faint">ironMAN</div>
             </div>
           </section>
           <section class="main__detailedinfo">
@@ -81,7 +90,7 @@
                       id="tab01"
                       class="tab-button tab-button--is-active"
                       data-a11ytab-tab
-                      >Details</a
+                      >Timeline</a
                     >
                   </li>
                   <li class="tab-button-item" role="presentation">
@@ -90,7 +99,7 @@
                       id="tab02"
                       class="tab-button"
                       data-a11ytab-tab
-                      >Experience</a
+                      >Badges</a
                     >
                   </li>
                   <li class="tab-button-item" role="presentation">
@@ -99,7 +108,7 @@
                       id="tab03"
                       class="tab-button"
                       data-a11ytab-tab
-                      >Achievements</a
+                      >Experience</a
                     >
                   </li>
                 </ul>
@@ -107,49 +116,100 @@
                   <div id="panel01" class="tab-panel">
                     <div class="cards">
                       <div class="card">
-                        <h3>Details 1</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
+                        <div class="socialactivity">
+                          <img
+                            src="../public/img/teams_potraits/rdj.jpg"
+                            alt=""
+                          />
+                          <div class="sharable">
+                            <p>Share on</p>
+                            <img
+                              class="s"
+                              src="../public/img/logo/fb.png"
+                              alt=""
+                            />
+                            <img
+                              class="s"
+                              src="../public/img/logo/link.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="content">
+                          <h3 class="topic">Title 1</h3>
+                          <p class="place">NIT Silchar</p>
+                          <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde.
+                          </p>
+                          <div class="images">
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                            <img
+                              src="../public/img/profile/example_post.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
                       </div>
                       <div class="card">
-                        <h3>Details 2</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
-                      </div>
-                      <div class="card">
-                        <h3>Details 3</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
-                      </div>
-                      <div class="card">
-                        <h3>Details 3</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
-                      </div>
-                      <div class="card">
-                        <h3>Details 3</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
-                      </div>
-                      <div class="card">
-                        <h3>Details 3</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
+                        <div class="socialactivity">
+                          <img
+                            src="../public/img/teams_potraits/rdj.jpg"
+                            alt=""
+                          />
+                          <div class="sharable">
+                            <p>Share on</p>
+                            <img
+                              class="s"
+                              src="../public/img/logo/fb.png"
+                              alt=""
+                            />
+                            <img
+                              class="s"
+                              src="../public/img/logo/link.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="content">
+                          <h3 class="topic">Title 2</h3>
+                          <p class="place">NIT Silchar</p>
+                          <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
                   <div id="panel02" class="tab-panel">
                     <div class="cards">
                       <div class="card">

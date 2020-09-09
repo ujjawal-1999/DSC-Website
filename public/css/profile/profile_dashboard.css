@@ -16,14 +16,12 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   min-height: 80rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 10rem;
-  -webkit-box-shadow: -6px 7px 26px 0px rgba(0, 0, 0, 0.35);
-          box-shadow: -6px 7px 26px 0px rgba(0, 0, 0, 0.35);
+  margin-top: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -57,18 +55,24 @@ body {
 }
 
 .accountbar input:focus {
-  width: 40%;
+  width: 20%;
 }
 
 .accountbar img {
   margin: 0 1rem;
   width: 30px;
+  border-radius: 100%;
 }
 
 .accountdetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.dashboard__navbar {
+  border-right: 1px solid var(--Grey-light-4);
+  margin-right: 1rem;
 }
 
 .dashboard__navbar .side-nav {
@@ -78,8 +82,8 @@ body {
 
 .dashboard__navbar .side-nav__item {
   position: relative;
-  -webkit-transition: all 0.2s 0.2s;
-  transition: all 0.2s 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: var(--Grey-dark-1);
 }
 
@@ -88,8 +92,9 @@ body {
 }
 
 .dashboard__navbar .side-nav__item--active {
-  background-color: var(--color-primary);
-  color: var(--white);
+  background-color: var(--Grey-light-1);
+  color: var(--loginButton);
+  font-weight: 600;
 }
 
 .dashboard__navbar .side-nav__item::before {
@@ -99,21 +104,17 @@ body {
   left: 0;
   height: 100%;
   width: 3px;
-  background-color: var(--color-primary);
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
+  background-color: var(--loginButton);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
   -webkit-transform-origin: center;
           transform-origin: center;
-  -webkit-transition: width 0.2s 0.2s, -webkit-transform 0.2s;
-  transition: width 0.2s 0.2s, -webkit-transform 0.2s;
-  transition: transform 0.2s, width 0.2s 0.2s;
-  transition: transform 0.2s, width 0.2s 0.2s, -webkit-transform 0.2s;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
 }
 
 .dashboard__navbar .side-nav__item:hover::before {
   width: 100%;
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
 }
 
 .dashboard__navbar .side-nav__item:hover {
@@ -172,7 +173,7 @@ body {
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic img {
-  width: 100%;
+  width: 10rem;
   border-radius: 100%;
   border: none;
 }
@@ -192,13 +193,68 @@ body {
           justify-content: space-evenly;
 }
 
+.dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit .edit {
+  border: 1px solid;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit .edit:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .info .pin {
+  width: 1rem;
+}
+
 .dashboard__main .main__profileinfo .pictureandbasic .info h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  font-family: sans-serif;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .info h2 img {
+  width: 1rem;
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .info h3 {
-  font-weight: 300;
-  letter-spacing: 0.3rem;
+  font-family: sans-serif;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .faint {
+  top: 15rem;
+  right: 0;
+  position: fixed;
+  overflow: hidden;
+  font-size: 15rem;
+  font-family: "Century Gothic";
+  font-weight: 900;
+  opacity: 0.1;
+  letter-spacing: 1rem;
+  z-index: -1;
 }
 
 .dashboard__main .main__profileinfo .branchandyear {
@@ -208,10 +264,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 2rem;
-  background-color: var(--greyy-lightest);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 .dashboard__main .main__profileinfo .branchandyear .collegeinfo {
@@ -227,8 +282,7 @@ body {
           align-items: center;
   color: var(--Grey-dark-2);
   font-size: 0.8rem;
-  border-radius: 50px;
-  border: 1px solid;
+  border: 0.2px;
   padding: 0.2rem 1rem;
 }
 
@@ -237,12 +291,12 @@ body {
   margin: 0.5rem;
 }
 
-.dashboard__main .main__profileinfo .branchandyear .collegeinfo .batch {
+.dashboard__main .main__profileinfo .branchandyear .collegeinfo p {
   text-align: center;
 }
 
 .dashboard__main .main__detailedinfo {
-  margin: 2rem 0.2rem;
+  margin: 2rem 0.1rem;
   height: auto;
 }
 
@@ -252,31 +306,127 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cards .card {
-  padding: 1rem;
-  width: 40%;
-  border: 0.1px solid;
-  border-style: ridge;
+  padding: 2rem;
+  width: 80%;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin: 1rem;
-  border-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: var(--Grey-light-1);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.cards .card h3 {
+.cards .card .socialactivity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0.5rem;
+}
+
+.cards .card .socialactivity img {
+  width: 3rem;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.cards .card .socialactivity img:hover {
+  opacity: 0.5;
+}
+
+.cards .card .socialactivity .sharable {
+  margin-top: 1rem;
+}
+
+.cards .card .socialactivity .sharable p {
+  font-size: 0.8rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  opacity: 0.2;
+}
+
+.cards .card .socialactivity .sharable img {
+  width: 2rem;
+  margin-top: 1rem;
+  border-radius: 100%;
+}
+
+.cards .card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.cards .card .content .topic {
   margin-top: 0.3rem;
-  font-size: 0.7rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.cards .card p {
+.cards .card .content .place {
   margin: 1rem 0;
   font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.cards .card .content .description {
+  font-family: "Times New Roman", Times, serif;
+  width: 95%;
+}
+
+.cards .card .content .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem 0rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cards .card .content .images img {
+  padding: 0.5rem;
+  width: 30%;
+}
+
 @media (max-width: 966px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    position: relative;
+    top: 0;
+    font-size: 2rem;
+  }
+  .cards {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .dashboard__navbar .side-nav {
     display: none;
   }
@@ -293,13 +443,9 @@ body {
   }
   .dashboard__main .main__profileinfo .branchandyear {
     text-align: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .dashboard__main .main__profileinfo .branchandyear .collegeinfo {
     margin: 0.3rem 0;
@@ -316,6 +462,20 @@ body {
   }
   .dashboard__main .main__profileinfo .pictureandbasic .info {
     text-align: center;
+  }
+  .dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .dashboard__main .main__profileinfo .pictureandbasic .info h2 {
+    font-size: 2rem;
+  }
+  .accountbar input {
+    width: 18%;
+    text-align: center;
+    padding: 1rem 0rem !important;
   }
 }
 
@@ -448,10 +608,11 @@ body {
 }
 
 .tab-panels {
-  border: 1px solid #ddd;
   border-top: 0;
   border-radius: 0 0 0.3em 0.3em;
   position: relative;
+  z-index: 1;
+  background-color: var(--white);
 }
 
 .tab-panel {
