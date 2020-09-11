@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ujjawal-1999/DSC-Website#readme",
   "dependencies": {
     "async": "^3.2.0",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "crypto-random-string": "^3.2.0",
