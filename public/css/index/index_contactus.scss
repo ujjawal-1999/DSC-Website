@@ -14,11 +14,15 @@
     border-radius: 10px;
   }
 
+  .progress {
+    transition: all 0.2s;
+  }
+
   progress[value] {
     /* Reset the default appearance */
     -webkit-appearance: none;
     appearance: none;
-    opacity: 1;
+    opacity: 0;
     align-self: center;
     height: 20px;
   }

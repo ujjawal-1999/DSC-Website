@@ -42,6 +42,31 @@ body {
 
 .accountbar__shortcut {
   padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.accountbar .btn-lg {
+  margin: 0rem;
+}
+
+.accountbar .fndp {
+  border: 1px solid;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-right: 3rem;
+}
+
+.accountbar .fndp:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
 }
 
 .accountbar input {
@@ -71,7 +96,6 @@ body {
 }
 
 .dashboard__navbar {
-  border-right: 1px solid var(--Grey-light-4);
   margin-right: 1rem;
 }
 
@@ -245,11 +269,11 @@ body {
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .faint {
-  top: 15rem;
-  right: 0;
+  top: 20rem;
+  right: 30rem;
   position: fixed;
   overflow: hidden;
-  font-size: 15rem;
+  font-size: 10rem;
   font-family: "Century Gothic";
   font-weight: 900;
   opacity: 0.1;
@@ -295,9 +319,136 @@ body {
   text-align: center;
 }
 
+.dashboard__main .main__extras {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .dashboard__main .main__detailedinfo {
   margin: 2rem 0.1rem;
   height: auto;
+}
+
+.contests {
+  width: 25%;
+  background-color: var(--white);
+  padding: 0.9rem;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
+
+.contests h1 {
+  opacity: 0.6;
+}
+
+.contests .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+.contests .container .card {
+  margin: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contests .container .card hr {
+  opacity: 0.1;
+  margin: 1rem 0;
+}
+
+.contests .container .card .stat {
+  opacity: 0.5;
+  letter-spacing: 0.3rem;
+}
+
+.contests .container .card .type {
+  opacity: 0.6;
+  letter-spacing: 0.2rem;
+}
+
+.contests .container .card .topic {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.contests .container .card .details {
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+}
+
+.contests .container .card .timings {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.contests .container .card .timings .time {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.contests .container .card button {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  background-color: transparent;
+}
+
+.contests .container .card button:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
 }
 
 .cards {
@@ -411,21 +562,96 @@ body {
           justify-content: center;
 }
 
-.cards .card .content .images img {
-  padding: 0.5rem;
+.cards .card .content .images .image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 30%;
+  overflow: hidden;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-@media (max-width: 966px) {
-  .dashboard__main .main__profileinfo .pictureandbasic .faint {
-    position: relative;
-    top: 0;
-    font-size: 2rem;
-  }
-  .cards {
+.cards .card .content .images .image-container img {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.cards .card .content .images .image-container img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.modal img {
+  width: 50%;
+}
+
+.modal_open {
+  opacity: 1 !important;
+  pointer-events: all;
+}
+
+@media (max-width: 1300px) {
+  .contests {
+    width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    text-align: center;
+  }
+  .centeraligning {
+    display: none;
+  }
+  .accountbar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .accountbar img {
+    margin: 0;
+  }
+  .resone {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0;
+  }
+  .accountbar .fndp {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: 0 1rem;
+  }
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    position: relative;
+    font-size: 3rem;
+    top: 0;
+    right: 0%;
   }
   .dashboard__navbar .side-nav {
     display: none;

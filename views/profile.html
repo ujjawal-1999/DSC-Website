@@ -8,7 +8,28 @@
     <link rel="stylesheet" href="../public/css/index/colors.css" />
   </head>
   <body>
+    <div class="modal">
+      <img class="fullview" src="" alt="" />
+    </div>
     <div class="container">
+      <section class="accountbar">
+        <p></p>
+        <!-- <img class="navlogo" src="../public/img/logo/dsc_logo.png" alt="" /> -->
+        <!-- <input type="text" placeholder="Search" /> -->
+        <div class="accountbar__shortcut">
+          <div class="fndp">Find People</div>
+          <img
+            class="bell resone"
+            src="../public/img/teams_potraits/rdj.jpg"
+            alt="UserPhoto"
+          />
+          <img
+            class="bell"
+            src="../public/img/logo/bell.png"
+            alt="Notification Logo"
+          />
+        </div>
+      </section>
       <section class="accountdetails">
         <section class="dashboard__navbar">
           <ul class="side-nav">
@@ -30,22 +51,6 @@
           </ul>
         </section>
         <section class="dashboard__main">
-          <section class="accountbar">
-            <p></p>
-            <!-- <input type="text" placeholder="Search" /> -->
-            <div class="accountbar__shortcut">
-              <img
-                class="bell"
-                src="../public/img/teams_potraits/rdj.jpg"
-                alt="UserPhoto"
-              />
-              <img
-                class="bell"
-                src="../public/img/logo/bell.png"
-                alt="Notification Logo"
-              />
-            </div>
-          </section>
           <section class="main__profileinfo">
             <div class="pictureandbasic">
               <div class="photo">
@@ -147,30 +152,54 @@
                             unde.
                           </p>
                           <div class="images">
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
-                            <img
-                              src="../public/img/profile/example_post.png"
-                              alt=""
-                            />
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/example_post.png"
+                                alt=""
+                                data-original="../public/img/profile/example_post.png"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/pl.jpg"
+                                alt=""
+                                data-original="../public/img/profile/pl.jpg"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/land.jpg"
+                                alt=""
+                                data-original="../public/img/profile/land.jpg"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/example_post.png"
+                                data-original="../public/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/example_post.png"
+                                data-original="../public/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="../public/img/profile/example_post.png"
+                                data-original="../public/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -244,9 +273,70 @@
             </div>
           </section>
         </section>
+        <section class="contests">
+          <h1>Contests</h1>
+          <div class="container">
+            <div class="card">
+              <p class="type">Hackathon</p>
+              <hr />
+              <p class="topic">Website Developement</p>
+              <p class="details">
+                Introducing Hack 1 of Microsoft Azure Champions League, a series
+                of three hackathons.
+              </p>
+              <div class="timings">
+                <div class="time">
+                  <p class="stat">START</p>
+                  <p>12 September</p>
+                </div>
+                <div class="time">
+                  <p class="stat">END</p>
+                  <p>22 September</p>
+                </div>
+              </div>
+              <hr />
+              <div class="timings">
+                <button>Register</button> <button>Enter</button>
+              </div>
+            </div>
+            <div class="card">
+              <p class="type">Coding Contest</p>
+              <hr />
+              <p class="topic">C++ Marathon</p>
+              <p class="details">
+                Introducing Hack 1 of Microsoft Azure Champions League, a series
+                of three hackathons.
+              </p>
+              <div class="timings">
+                <div class="time">
+                  <p class="stat">START</p>
+                  <p>12 September</p>
+                </div>
+                <div class="time">
+                  <p class="stat">END</p>
+                  <p>22 September</p>
+                </div>
+              </div>
+              <hr />
+              <div class="timings">
+                <button>Register</button> <button>Enter</button>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   </body>
+  <!-- <script>
+    document.onkeypress = function (e) {
+      e = e || window.event;
+      if (e.keyCode === 13) {
+        document.documentElement.classList.toggle("dark-mode");
+      }
+    };
+  </script> -->
+
   <script src="../node_modules/a11ytab/dist/a11ytab.js"></script>
   <script src="../public/js/profile/profile.js"></script>
+  <script src="../public/js/profile/modal.js"></script>
 </html>
