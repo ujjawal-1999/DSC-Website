@@ -5,12 +5,17 @@
   font-family: sans-serif;
 }
 
+// html {
+//   scroll-behavior: smooth;
+// }
+
 html {
   scroll-behavior: smooth;
 }
 
 section {
   overflow-y: visible;
+  background-color: white;
 }
 body::-webkit-scrollbar {
   width: 0.7em;
@@ -105,6 +110,7 @@ body::-webkit-scrollbar-thumb {
   background-position: bottom left;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin-top: -5rem;
 
   .dsclogo {
     width: 8rem;
@@ -203,6 +209,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .featurecardscontainer {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .header {
     background-image: none;
@@ -212,6 +224,9 @@ body::-webkit-scrollbar-thumb {
   }
   .header .heading__illustration {
     opacity: 0.15;
+  }
+  .heading_primary {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 350) {

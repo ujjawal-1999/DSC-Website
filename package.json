@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ujjawal-1999/DSC-Website#readme",
   "dependencies": {
+    "a11ytab": "^2.0.3",
     "async": "^3.2.0",
     "bcrypt": "^4.0.1",
     "connect-flash": "^0.1.1",
