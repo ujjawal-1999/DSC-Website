@@ -6,13 +6,24 @@
   font-family: sans-serif;
 }
 
+section {
+  background-color: var(--primary-light) !important;
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+  color: var(--Grey-dark-1);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 section {
   overflow-y: visible;
-  background-color: white;
 }
 
 body::-webkit-scrollbar {
@@ -20,6 +31,7 @@ body::-webkit-scrollbar {
 }
 
 body {
+  background-color: var(--primary-light) !important;
   overflow-x: hidden;
 }
 
@@ -157,6 +169,7 @@ body::-webkit-scrollbar-thumb {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: -5rem;
+  background-color: var(--primary-light);
 }
 
 .header .dsclogo {
@@ -213,7 +226,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header .getStarted {
-  background: transparent;
   opacity: 0;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
@@ -226,11 +238,14 @@ body::-webkit-scrollbar-thumb {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;
+  background-color: var(--Grey-dark-1);
+  color: var(--primary-light);
+  border-color: var(--Grey-dark-1);
 }
 
 .header .getStarted:hover {
-  background-color: var(--navButtons);
-  color: var(--white);
+  background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
 }
 
 #ScrolltoTop {

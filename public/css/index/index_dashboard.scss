@@ -5,6 +5,16 @@
   font-family: sans-serif;
 }
 
+section {
+  background-color: var(--primary-light) !important;
+}
+h1,
+h2,
+h3,
+p,
+label {
+  color: var(--Grey-dark-1);
+}
 // html {
 //   scroll-behavior: smooth;
 // }
@@ -15,13 +25,13 @@ html {
 
 section {
   overflow-y: visible;
-  background-color: white;
 }
 body::-webkit-scrollbar {
   width: 0.7em;
 }
 
 body {
+  background-color: var(--primary-light) !important;
   overflow-x: hidden;
 }
 
@@ -111,6 +121,7 @@ body::-webkit-scrollbar-thumb {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: -5rem;
+  background-color: var(--primary-light);
 
   .dsclogo {
     width: 8rem;
@@ -164,7 +175,6 @@ body::-webkit-scrollbar-thumb {
   }
 
   .getStarted {
-    background: transparent;
     opacity: 0;
     transform: translateY(-10px);
     font-family: "Times New Roman", Times, serif;
@@ -175,9 +185,13 @@ body::-webkit-scrollbar-thumb {
     font-size: 1rem;
     transition: all 0.2s;
     z-index: 20;
+    background-color: var(--Grey-dark-1);
+    color: var(--primary-light);
+    border-color: var(--Grey-dark-1);
+
     &:hover {
-      background-color: var(--navButtons);
-      color: var(--white);
+      background-color: var(--primary-light);
+      color: var(--Grey-dark-1);
     }
   }
 }
