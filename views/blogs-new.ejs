@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DSC-Blogs</title>
@@ -29,47 +29,79 @@
     <link rel="stylesheet" href="/css/index/footer.css">
 
 </head>
+
 <body id="">
 
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
-    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-    <!----------------------------- Main Site Section ------------------------------>
-    <main>
-        
-    </main>
+        <!----------------------------- Main Site Section ------------------------------>
+        <main>
+            <div id="card-container">
+                <div class="card-product-image">
+                    <div class="card-prod-img">
+                        <img src="https://images.unsplash.com/photo-1558155001-7e7e8b709e2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt="Omar Dsoky" />
+                    </div>
 
-    <!---------------x------------- Main Site Section ---------------x-------------->
+                </div>
+                <div class="card-product-details">
+                    <div>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum possimus magni facilis tempor
+                        </p>
 
-    <!-- --------------------------- Footer ---------------------------------------- -->
-    <%-include('partials/footer')%>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae fuga tempora ad quidem quis alias autem soluta adipisci aspernatur quo amet repudiandae, quas voluptate velit ipsam aliquam fugiat eveniet!
+                        <div class="card-person">
+                            <div class="card-author">
+                                <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
+                            </div>
+                        </div>
+                        <p>Mrs. Andrew </p>
+                    </div>
+                    <div>
 
-    <!-- -------------x------------- Footer --------------------x------------------- -->
+                        <i class="fa fa-share" style="font-size:24px; float: right;"></i>
+                        <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
+                        <a href="#" style="float: right; margin-right: 20px;">Read More...</a>
 
-    <!-- Jquery Library file -->
-    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+                    </div>
 
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
+                </div>
+            </div>
+        </main>
 
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="/js/blogs/aos.js"></script>
+        <!---------------x------------- Main Site Section ---------------x-------------->
 
-    <!-- Custom Javascript file -->
-    <script src="/js/navbar.js"></script>
-    <script src="/js/blogs/main.js"></script>
+        <!-- --------------------------- Footer ---------------------------------------- -->
+        <%-include('partials/footer')%>
 
-    <script>
-        var bodydiv = document.getElementById('bodydiv');
-        bodydiv.addEventListener('click', closeSearch)
-        function closeSearch(){
-            let search_list1= document.getElementById('search_list1');
-            search_list1.style.display = 'none';
-            let search_list2= document.getElementById('search_list2');
-            search_list2.style.display = 'none';
-        }
-    </script>
+            <!-- -------------x------------- Footer --------------------x------------------- -->
+
+            <!-- Jquery Library file -->
+            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+
+            <!-- --------- Owl-Carousel js ------------------->
+            <script src="/js/blogs/owl.carousel.min.js"></script>
+
+            <!-- ------------ AOS js Library  ------------------------- -->
+            <script src="/js/blogs/aos.js"></script>
+
+            <!-- Custom Javascript file -->
+            <script src="/js/navbar.js"></script>
+            <script src="/js/blogs/main.js"></script>
+
+            <script>
+                var bodydiv = document.getElementById('bodydiv');
+                bodydiv.addEventListener('click', closeSearch)
+
+                function closeSearch() {
+                    let search_list1 = document.getElementById('search_list1');
+                    search_list1.style.display = 'none';
+                    let search_list2 = document.getElementById('search_list2');
+                    search_list2.style.display = 'none';
+                }
+            </script>
 </body>
 
 </html>
