@@ -19,10 +19,8 @@ body::-webkit-scrollbar {
   width: 0.7em;
 }
 
-@media screen and (min-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
+body {
+  overflow-x: hidden;
 }
 
 .loaderr {
@@ -219,10 +217,12 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
+  font-family: "Times New Roman", Times, serif;
   margin-top: 2rem;
-  padding: 1em 1.5rem 1rem 1.5rem;
+  padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;
+  font-size: 1rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;

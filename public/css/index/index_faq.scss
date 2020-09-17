@@ -1,0 +1,105 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../img/illustrations/faq.jpg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 90vh;
+  background-size: 20% auto;
+  .upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    h1 {
+      color: var(--Grey-dark-1);
+      font-size: 4rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: lighter;
+    }
+    form {
+      width: 100%;
+      text-align: center;
+    }
+    input {
+      background: var(--Grey-dark-1);
+      border: 1px solid transparent;
+      border-radius: 50px;
+      width: 30%;
+      height: 4rem;
+      color: var(--greany);
+      font-size: 1.3rem;
+      outline: none;
+      padding: 1rem 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    .sub {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 2rem;
+      background-color: var(--Grey-light-2);
+      padding: 2rem;
+
+      h4 {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 100;
+        font-family: 1rem;
+        color: var(--greany);
+        margin-bottom: 1rem;
+      }
+      .more {
+        opacity: 0.6;
+      }
+      p {
+        cursor: pointer;
+        margin: 0.8rem 0;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: all 0.3s;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .faq-section {
+    background-image: none;
+    height: auto;
+  }
+  .faq-section .upper {
+    height: 20rem;
+  }
+  .faq-section .upper h1 {
+    font-size: 2rem;
+  }
+
+  .faq-section .upper input {
+    width: 90%;
+    font-size: 1rem;
+  }
+  .faq-section .upper h3 {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  .faq-section .lower {
+    flex-wrap: wrap;
+  }
+}
