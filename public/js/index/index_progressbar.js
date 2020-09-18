@@ -16,8 +16,9 @@ function uploadFile() {
 
   ajax.send(formdata);
 }
-
+const progressBar = document.querySelector(".progress");
 function progressHandler(event) {
+  progressBar.style.opacity = 1;
   var percent = (event.loaded / event.total) * 100;
   _("status").style.fontSize = "0.8rem";
   _("status").style.fontWeight = "200";
@@ -29,7 +30,8 @@ function progressHandler(event) {
 
 function completeHandler(event) {
   // _("status").innerHTML = event.target.responseText;
-  _("progressBar").value = "100";
+  progressBar.style.opacity = 0;
+  _("progressBar").value = "Uploaded Successfully";
 }
 
 function errorHandler(event) {

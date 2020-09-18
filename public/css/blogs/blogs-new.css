@@ -83,4 +83,64 @@ p {
 }
 
 
+<<<<<<< HEAD
 /* ------x------- Global Classes -------x-------*/
+=======
+/* ------x------- Global Classes -------x-------*/
+
+/* popular post css */
+
+#popular-post{
+    width:300px;
+    background: #F8F8FF;
+    padding:10px;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+#heading{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.6em;
+    text-align: center;
+    color: #4E4E4E;
+    margin-bottom:10px;
+    letter-spacing: 2px;
+
+}
+.popular-posts .content{
+    justify-content: flex-end;
+}
+.popular-posts{
+    display:flex;
+    margin-bottom: 20px;
+
+}
+.popular-posts .title{
+    font-size: 1.5em;
+    line-height: 0.9em;
+
+}
+.content .intro{
+    color: #717171;
+}
+.content .date{
+    color: #717171;
+    font-size:0.8em;
+}
+.numbering{
+font-style: normal;
+font-weight: bolder;
+font-size: 1.9em;
+margin:10px 15px 10px 5px;
+text-align: justify;
+color: #9A9A9A;
+}
+@media screen and (max-width: 415px){
+    #popular-post{
+        width:100%;
+    }
+    .popular-posts{
+        width:95%;
+    }
+}
+/* Popular posts css ends */
+>>>>>>> ce222d2b458b592bf359aa9289e0ad38977dcf16
