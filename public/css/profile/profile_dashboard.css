@@ -233,24 +233,6 @@ body {
           align-items: center;
 }
 
-.dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit .edit {
-  border: 1px solid;
-  padding: 0.5rem;
-  margin: 1rem;
-  font-size: 0.8rem;
-  font-family: sans-serif;
-  border-radius: 3px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit .edit:hover {
-  cursor: pointer;
-  color: var(--Grey-light-1);
-  background-color: var(--Grey-dark-1);
-  border-color: var(--Grey-dark-1);
-}
-
 .dashboard__main .main__profileinfo .pictureandbasic .info .pin {
   width: 1rem;
 }
@@ -279,6 +261,25 @@ body {
   opacity: 0.1;
   letter-spacing: 1rem;
   z-index: -1;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .edit {
+  text-align: center;
+  border: 1px solid;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dashboard__main .main__profileinfo .pictureandbasic .edit:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
 }
 
 .dashboard__main .main__profileinfo .branchandyear {
@@ -584,36 +585,6 @@ body {
           transform: scale(1.1);
   -webkit-filter: brightness(80%);
           filter: brightness(80%);
-}
-
-.modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  z-index: 11;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.modal img {
-  width: 50%;
-}
-
-.modal_open {
-  opacity: 1 !important;
-  pointer-events: all;
 }
 
 @media (max-width: 1300px) {

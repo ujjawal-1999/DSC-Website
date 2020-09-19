@@ -177,22 +177,6 @@ body {
               flex-direction: row;
               justify-content: center;
               align-items: center;
-
-              .edit {
-                border: 1px solid;
-                padding: 0.5rem;
-                margin: 1rem;
-                font-size: 0.8rem;
-                font-family: sans-serif;
-                border-radius: 3px;
-                transition: all 0.2s;
-                &:hover {
-                  cursor: pointer;
-                  color: var(--Grey-light-1);
-                  background-color: var(--Grey-dark-1);
-                  border-color: var(--Grey-dark-1);
-                }
-              }
             }
 
             .pin {
@@ -222,6 +206,22 @@ body {
             letter-spacing: 1rem;
             z-index: -1;
           }
+          .edit {
+            text-align: center;
+            border: 1px solid;
+            padding: 0.5rem;
+            margin: 1rem;
+            font-size: 0.8rem;
+            font-family: sans-serif;
+            border-radius: 3px;
+            transition: all 0.2s;
+            &:hover {
+              cursor: pointer;
+              color: var(--Grey-light-1);
+              background-color: var(--Grey-dark-1);
+              border-color: var(--Grey-dark-1);
+            }
+          }
         }
 
         .branchandyear {
@@ -231,6 +231,7 @@ body {
           // padding: 2rem;
           // background-color: var(--greyy-lightest);
           // background-color: var(--Grey-light-1);
+
           .collegeinfo {
             line-height: 1.2rem;
             width: max-content;
@@ -445,29 +446,6 @@ body {
 }
 
 //
-
-.modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  z-index: 11;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.2s;
-
-  img {
-    width: 50%;
-  }
-}
-
-.modal_open {
-  opacity: 1 !important;
-  pointer-events: all;
-}
 
 //
 

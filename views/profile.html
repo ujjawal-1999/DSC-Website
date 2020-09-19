@@ -5,19 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <link rel="stylesheet" href="../public/css/profile/profile_dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="../public/css/profile/profile_experience.css"
+    />
     <link rel="stylesheet" href="../public/css/index/colors.css" />
+    <link rel="stylesheet" href="../public/css/profile/modal.css" />
   </head>
   <body>
+    <!-- Edit Profile Modal  -->
+    <div class="editProfileModal" id="editProfileModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo"
+            class="backlogo"
+            src="../public/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Edit your</span> Profile Detail</h2>
+          <br />
+          <p>
+            Please enter you profile details. When completed editing press Done.
+          </p>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="fname">Name</label>
+              <input id="name" type="text" value="Robert" name="Name" />
+            </div>
+            <div class="flexRow">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                value="lwrjvrgnwj@gmail.com"
+                name="Email"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="degree">Degree</label>
+              <input
+                id="degree"
+                type="text"
+                value="Bachelors in Technology"
+                name="Degree"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="branchCode">Branch Code</label>
+              <input
+                id="branchCode"
+                type="text"
+                value="CSE"
+                name="Branch Code"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="branchYear">Branch Year</label>
+              <input
+                id="branchYear"
+                type="text"
+                value="2019-23"
+                name="Branch Year"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="password">Old Password </label>
+              <input
+                id="oldPass"
+                type="text"
+                placeholder="Enter old Password"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="password">New Password </label>
+              <input
+                id="newPass"
+                type="text"
+                placeholder="Enter new Password"
+              />
+            </div>
+
+            <div class="flexRow">
+              <input id="submit" type="submit" value="Cancel" />
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Link you</span> Social Account</h2>
+          <div class="socials">
+            <div class="items blue">
+              <img src="../public/img/logo/fb.png" alt="" />
+              <a href="">Connect to Facebook</a>
+            </div>
+            <div class="items link">
+              <img src="../public/img/logo/link.png" alt="" />
+              <a href="">Connect to Linkedin</a>
+            </div>
+            <div class="items twitter">
+              <img src="../public/img/logo/twitter.png" alt="" />
+              <a href="">Connect to Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Profile Modal  -->
+
+    <!-- Image Viewer Modal  -->
     <div class="modal">
       <img class="fullview" src="" alt="" />
     </div>
+    <!-- Image Viewer Modal  -->
+    <!-- Main Content Starts -->
     <div class="container">
       <section class="accountbar">
         <p></p>
-        <!-- <img class="navlogo" src="../public/img/logo/dsc_logo.png" alt="" /> -->
-        <!-- <input type="text" placeholder="Search" /> -->
         <div class="accountbar__shortcut">
           <div class="fndp">Find People</div>
+          <div class="fndp" id="editbtn">Edit Profile</div>
+          <!-- <div class="edit" id="editbtn" ></div> -->
           <img
             class="bell resone"
             src="../public/img/teams_potraits/rdj.jpg"
@@ -59,12 +180,9 @@
               <div class="info">
                 <div class="nameandedit">
                   <h2>Robert D. Junior</h2>
-                  <div class="edit">Edit Profile</div>
                 </div>
-                <h3>
-                  <img class="pin" src="../public/img/logo/pin.svg" /> Avenger's
-                  Tower
-                </h3>
+                <p>B.Tech | Computer Science and Engineering</p>
+
                 <p>Multimillionaire, Playboy, Genius</p>
                 <div class="branchandyear">
                   <div class="collegeinfo">
@@ -104,7 +222,7 @@
                       id="tab02"
                       class="tab-button"
                       data-a11ytab-tab
-                      >Badges</a
+                      >Experience</a
                     >
                   </li>
                   <li class="tab-button-item" role="presentation">
@@ -113,7 +231,7 @@
                       id="tab03"
                       class="tab-button"
                       data-a11ytab-tab
-                      >Experience</a
+                      >Badges</a
                     >
                   </li>
                 </ul>
@@ -238,25 +356,105 @@
                       </div>
                     </div>
                   </div>
-
                   <div id="panel02" class="tab-panel">
-                    <div class="cards">
-                      <div class="card">
-                        <h3>Experience 1</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
-                      </div>
-                      <div class="card">
-                        <h3>Experience 2</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Minus, adipisci.
-                        </p>
+                    <div class="cards_exp">
+                      <div class="card_exp">
+                        <div class="flexRow">
+                          <p>Your Current Experience</p>
+                          <div class="flexRow">
+                            <p>Want to add more Experience ?</p>
+                            <button class="addExperience" id="addExperience">
+                              Click here
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img
+                              src="../public/img/logo/DSC_logo.png"
+                              alt="company"
+                            />
+                            <h3 class="accordion">
+                              Marketing & Communication Manager<br />
+                              <p>Microsoft</p>
+                            </h3>
+
+                            <div id="mention"><b>&#9899;</b> management</div>
+                            <!--<div class="bookmarks">
+                                   <a>
+                                 <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
+                                 </div>-->
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img
+                              src="../public/img/logo/DSC_logo.png"
+                              alt="company"
+                            />
+
+                            <h3 class="accordion">
+                              Social Media Asistent<br />
+                              <p>Tecneosis,NIT Silchar</p>
+                            </h3>
+
+                            <div id="mention">
+                              <b>&#9899;</b> business development
+                            </div>
+                            <!--<div class="bookmarks">
+                                        <a>
+                                      <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
+                                      </div>-->
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img
+                              src="../public/img/logo/DSC_logo.png"
+                              alt="company"
+                            />
+
+                            <h3 class="accordion">
+                              Marketing Head<br />
+                              <p>Incandescence,NIT Silchar</p>
+                            </h3>
+
+                            <div id="mention">
+                              <b>&#9899;</b> business development
+                            </div>
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+
                   <div id="panel03" class="tab-panel">
                     <div class="cards">
                       <div class="card">
