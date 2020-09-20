@@ -36,8 +36,8 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 90vh;
-  width: 90vw;
+  height: 80vh;
+  width: 70vw;
   opacity: 0;
   pointer-events: none;
   z-index: 50;
@@ -57,7 +57,7 @@
     left: 0%;
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
-    width: 100vw;
+    width: 100%;
     position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -94,6 +94,9 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .edill {
+    display: none;
+  }
 }
 
 .contentEdit {
@@ -116,7 +119,8 @@
 }
 
 .editProfileModal input,
-.editProfileModal textarea {
+.editProfileModal textarea,
+.editProfileModal select {
   border: 2px solid #eeeeee;
   height: 46px;
   margin: 10px 0 0 0;
@@ -130,6 +134,23 @@
   font-weight: 300;
   font-family: sans-serif;
   width: 100%;
+  border-radius: 2px;
+}
+
+.editProfileModal input option,
+.editProfileModal textarea option,
+.editProfileModal select option {
+  border-radius: 2px;
+}
+
+.editProfileModal .fullwidth {
+  height: 46px;
+  width: 100%;
+}
+
+.editProfileModal .fullwidth a {
+  text-decoration: underline;
+  color: #3d589a;
 }
 
 .editProfileModal input[type="checkbox"] {
@@ -201,16 +222,12 @@
   border: 0;
   width: 25%;
   height: 60px;
-  margin: 30px auto 0;
-  background: #eee;
-  color: #333;
+  background: orangered;
+  color: var(--white);
   text-align: center;
-  -webkit-transition: background, color, 0.5s ease 0;
-  transition: background, color, 0.5s ease 0;
   border: 0;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: #333333;
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 300;
@@ -220,8 +237,7 @@
 }
 
 .editProfileModal #submit:hover {
-  background: #dadada;
-  border: 1px #dadada;
+  opacity: 0.8;
 }
 
 .editProfileModal .wrapper {
@@ -237,17 +253,14 @@
 }
 
 .editProfileModal .backPart {
-  width: 10%;
+  width: 5%;
   background-color: white !important;
-  padding: 1rem !important;
+  padding-left: 2rem !important;
 }
 
 .editProfileModal .backPart .backlogo {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .editProfileModal #subscribeBox {
@@ -299,9 +312,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -310,13 +323,15 @@
   font-weight: 600;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  border-radius: 10px;
 }
 
 .editProfileModal .socials .items img {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: none;
+  background-color: var(--white);
 }
 
 .editProfileModal .socials .items a {
@@ -339,5 +354,11 @@
 
 .editProfileModal .socials .twitter {
   background-color: #2ca6e0;
+}
+
+.editProfileModal .edill {
+  width: 80%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 /*# sourceMappingURL=modal.css.map */

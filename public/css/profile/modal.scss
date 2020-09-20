@@ -30,8 +30,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90vh;
-  width: 90vw;
+  height: 80vh;
+  width: 70vw;
   opacity: 0;
   pointer-events: none;
   z-index: 50;
@@ -47,7 +47,7 @@
     top: 0%;
     left: 0%;
     transform: translate(0%, 0%);
-    width: 100vw;
+    width: 100%;
     position: absolute;
     flex-direction: column;
     overflow: auto;
@@ -72,6 +72,9 @@
     justify-content: start;
     align-items: flex-start;
   }
+  .edill {
+    display: none;
+  }
 }
 .contentEdit {
   height: 100%;
@@ -87,7 +90,8 @@
     font-size: 0.8rem;
   }
   input,
-  textarea {
+  textarea,
+  select {
     border: 2px solid #eeeeee;
     height: 46px;
     margin: 10px 0 0 0;
@@ -101,42 +105,22 @@
     font-weight: 300;
     font-family: sans-serif;
     width: 100%;
+    border-radius: 2px;
+    option {
+      border-radius: 2px;
+    }
   }
 
-  // textarea {
-  //   height: 3rem;
-  // }
-  // #name {
-  //   width: 100%;
-  // }
+  .fullwidth {
+    height: 46px;
+    width: 100%;
 
-  // #lname {
-  //   width: 100%;
-  // }
+    a {
+      text-decoration: underline;
+      color: #3d589a;
+    }
+  }
 
-  // #email {
-  //   width: 100%;
-  // }
-
-  // #degree {
-  //   width: 100%;
-  // }
-  // #branchCode {
-  //   width: 100%;
-  // }
-  // #branchYear {
-  //   width: 100%;
-  // }
-  // #hobbies {
-  //   width: 100%;
-  // }
-
-  // #oldPass {
-  //   width: 100%;
-  // }
-  // #newPass {
-  //   width: 100%;
-  // }
   input[type="checkbox"] {
     visibility: hidden;
   }
@@ -209,15 +193,12 @@
     border: 0;
     width: 25%;
     height: 60px;
-    margin: 30px auto 0;
-    background: #eee;
-    color: #333;
+    background: orangered;
+    color: var(--white);
     text-align: center;
-    transition: background, color, 0.5s ease 0;
     border: 0;
     font-size: 1.2em;
     line-height: 1.5em;
-    color: #333333;
     letter-spacing: 0.01em;
     font-style: normal;
     font-weight: 300;
@@ -226,8 +207,7 @@
   }
 
   #submit:hover {
-    background: #dadada;
-    border: 1px #dadada;
+    opacity: 0.8;
   }
   /* Top-level Styling */
 
@@ -243,13 +223,12 @@
 
   /* Div Layout Styling */
   .backPart {
-    width: 10%;
+    width: 5%;
     background-color: white !important;
-    padding: 1rem !important;
+    padding-left: 2rem !important;
     .backlogo {
-      align-self: center;
-      width: 2rem;
-      height: 2rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
   #subscribeBox {
@@ -295,18 +274,20 @@
       height: 3rem;
       width: 20rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       padding: 1rem;
       margin: 1rem 0;
       font-weight: 600;
       transition: all 0.2s;
+      border-radius: 10px;
 
       img {
         width: 30px;
         height: 30px;
-        border-radius: 50%;
+        border-radius: 5px;
         border: none;
+        background-color: var(--white);
       }
       a {
         margin-left: 1rem;
@@ -326,5 +307,10 @@
     .twitter {
       background-color: #2ca6e0;
     }
+  }
+
+  .edill {
+    width: 80%;
+    align-self: flex-end;
   }
 }

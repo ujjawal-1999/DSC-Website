@@ -75,6 +75,7 @@ body {
     // border-right: 1px solid var(--Grey-light-4);
     // border-top: 1px solid var(--Grey-light-4);
     margin-right: 1rem;
+    margin-top: 2rem;
 
     .side-nav {
       font-size: 1rem;
@@ -159,9 +160,12 @@ body {
           padding: 3rem;
           color: var(--Grey-dark-1);
           // background-color: var(--Grey-light-1);
+
+          .photo {
+          }
           img {
             width: 10rem;
-            border-radius: 100%;
+            border-radius: 0.8rem;
             border: none;
           }
 
@@ -246,6 +250,7 @@ body {
             img {
               width: 2rem;
               margin: 0.5rem;
+              border-radius: 0;
             }
 
             p {

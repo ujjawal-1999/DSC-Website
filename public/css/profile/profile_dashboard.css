@@ -97,6 +97,7 @@ body {
 
 .dashboard__navbar {
   margin-right: 1rem;
+  margin-top: 2rem;
 }
 
 .dashboard__navbar .side-nav {
@@ -198,7 +199,7 @@ body {
 
 .dashboard__main .main__profileinfo .pictureandbasic img {
   width: 10rem;
-  border-radius: 100%;
+  border-radius: 0.8rem;
   border: none;
 }
 
@@ -314,6 +315,7 @@ body {
 .dashboard__main .main__profileinfo .branchandyear .collegeinfo img {
   width: 2rem;
   margin: 0.5rem;
+  border-radius: 0;
 }
 
 .dashboard__main .main__profileinfo .branchandyear .collegeinfo p {

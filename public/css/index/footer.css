@@ -37,6 +37,7 @@
 }
 
 .nav_column {
+  flex-wrap: wrap;
   width: 100%;
   padding: 2rem 0;
   justify-content: center;
@@ -107,4 +108,24 @@
 
 .fadedText {
   opacity: 0.6;
+}
+@media screen and (max-width: 700px) {
+  .contentnav {
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav_column {
+    flex-direction: column;
+  }
+  .divider {
+    display: none;
+  }
+  .contentnav {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    margin: 1rem 0;
+  }
 }

@@ -28,11 +28,7 @@
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2><span class="thin">Edit your</span> Profile Detail</h2>
-          <br />
-          <p>
-            Please enter you profile details. When completed editing press Done.
-          </p>
+          <h2><span class="thin">Profile</span> Details</h2>
 
           <form
             class="subscribeForm"
@@ -41,8 +37,45 @@
             enctype="text/plain"
           >
             <div class="flexRow">
-              <label for="fname">Name</label>
+              <label for="name">Name</label>
               <input id="name" type="text" value="Robert" name="Name" />
+            </div>
+            <div class="flexRow">
+              <label for="hname">DSC Handle</label>
+              <input id="hname" type="text" value="ironMan" name="Name" />
+            </div>
+
+            <div class="flexRow">
+              <label for="degree">Degree</label>
+              <select name="Degree" id="degree">
+                <option value="BTECH">Bachelor of Technology</option>
+                <option value="MTECH">Master of Technology</option>
+                <option value="PHD">PHD</option>
+              </select>
+              <!-- <input
+                id="degree"
+                type="text"
+                value="Bachelors in Technology"
+                name="Degree"
+              /> -->
+            </div>
+            <div class="flexRow">
+              <label for="branchCode">Branch</label>
+              <input id="branch" type="text" value="CSE" name="Branch" />
+            </div>
+            <div class="flexRow">
+              <label for="branchYear">Branch Year</label>
+              <select name="Branch Year" id="branchYear">
+                <option value="23">2019-23</option>
+                <option value="22">2018-22</option>
+                <option value="21">2017-21</option>
+              </select>
+              <!-- <input
+                id="branchYear"
+                type="text"
+                value="2019-23"
+                name="Branch Year"
+              /> -->
             </div>
             <div class="flexRow">
               <label for="email">Email</label>
@@ -54,62 +87,35 @@
               />
             </div>
             <div class="flexRow">
-              <label for="degree">Degree</label>
-              <input
-                id="degree"
-                type="text"
-                value="Bachelors in Technology"
-                name="Degree"
-              />
+              <label for="password">Password </label>
+              <div class="flexRow fullwidth">
+                <p>Last Changed 2 months ago</p>
+                <a href="">Change Password</a>
+              </div>
             </div>
-            <div class="flexRow">
-              <label for="branchCode">Branch Code</label>
-              <input
-                id="branchCode"
-                type="text"
-                value="CSE"
-                name="Branch Code"
-              />
-            </div>
-            <div class="flexRow">
-              <label for="branchYear">Branch Year</label>
-              <input
-                id="branchYear"
-                type="text"
-                value="2019-23"
-                name="Branch Year"
-              />
-            </div>
-            <div class="flexRow">
-              <label for="password">Old Password </label>
-              <input
-                id="oldPass"
-                type="text"
-                placeholder="Enter old Password"
-              />
-            </div>
-            <div class="flexRow">
+            <!-- <div class="flexRow">
               <label for="password">New Password </label>
               <input
                 id="newPass"
                 type="text"
                 placeholder="Enter new Password"
               />
-            </div>
-
-            <div class="flexRow">
-              <input id="submit" type="submit" value="Cancel" />
+            </div> -->
+            <br /><br />
+            <div class="flexRow fullwidth">
               <input id="submit" type="submit" value="Save Changes" />
+              <a href="">Deactivae My Account</a>
             </div>
           </form>
         </div>
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2><span class="thin">Link you</span> Social Account</h2>
+          <!-- <h2><span class="thin"></span> Social Account</h2> -->
+
           <div class="socials">
             <div class="items blue">
-              <img src="../public/img/logo/fb.png" alt="" />
+              <img src="../public/img/logo/fbw.jpg " alt="" />
               <a href="">Connect to Facebook</a>
             </div>
             <div class="items link">
@@ -121,6 +127,11 @@
               <a href="">Connect to Twitter</a>
             </div>
           </div>
+          <img
+            class="edill"
+            src="../public/img/illustrations/editing.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -154,7 +165,7 @@
       <section class="accountdetails">
         <section class="dashboard__navbar">
           <ul class="side-nav">
-            <li class="side-nav__item side-nav__item--active">
+            <!-- <li class="side-nav__item side-nav__item--active">
               <a href="#" class="side-nav__link">
                 <span>Home</span>
               </a>
@@ -168,7 +179,7 @@
               <a href="#" class="side-nav__link">
                 <span>Achievements</span>
               </a>
-            </li>
+            </li> -->
           </ul>
         </section>
         <section class="dashboard__main">
