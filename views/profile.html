@@ -14,6 +14,61 @@
   </head>
   <body>
     <!-- Edit Profile Modal  -->
+    <div class="addExperienceModal" id="addExperienceModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo1"
+            class="backlogo1"
+            src="../public/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Add a new </span> Experience</h2>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="pname">Project Name</label>
+              <input id="pname" type="text" name="pname" />
+            </div>
+            <div class="flexRow">
+              <label for="prole">Project Role</label>
+              <input id="prole" type="text" name="prole" />
+            </div>
+            <div class="flexRow">
+              <label for="Duration">Duration</label>
+              <input id="Duration" placeholder="In months" name="Duration" />
+            </div>
+
+            <div class="flexRow">
+              <label for="Status">Status</label>
+              <select name="Status" id="Status">
+                <option value="Ongoing">Ongoing</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="Description">Description</label>
+              <input id="Description" type="text" name="Description" />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="editProfileModal" id="editProfileModal">
       <div class="wrapper backPart">
         <div id="subscribeBox">

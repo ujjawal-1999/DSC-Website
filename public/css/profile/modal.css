@@ -48,11 +48,33 @@
   transition: all 0.5s;
 }
 
+.addExperienceModal {
+  border: 1px solid;
+  background-color: var(--white);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 70vw;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 @media (max-width: 700px) {
-  .editProfileModal .backPart {
+  .editProfileModal,
+  .addExperienceModal .backPart {
     width: 100% !important;
   }
-  .editProfileModal {
+  .editProfileModal,
+  .addExperienceModal {
     top: 0%;
     left: 0%;
     -webkit-transform: translate(0%, 0%);
@@ -71,7 +93,8 @@
     padding: 2rem 0;
     height: auto !important;
   }
-  .editProfileModal #subscribeBox {
+  .editProfileModal,
+  .addExperienceModal #subscribeBox {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -107,20 +130,25 @@
   display: flex;
 }
 
-.editProfileModal {
+.editProfileModal,
+.addExperienceModal {
   /* Top-level Styling */
   /* Div Layout Styling */
   /* Text Styling for h2, p, a */
 }
 
-.editProfileModal label {
+.editProfileModal label,
+.addExperienceModal label {
   width: 25%;
   font-size: 0.8rem;
 }
 
 .editProfileModal input,
 .editProfileModal textarea,
-.editProfileModal select {
+.editProfileModal select,
+.addExperienceModal input,
+.addExperienceModal textarea,
+.addExperienceModal select {
   border: 2px solid #eeeeee;
   height: 46px;
   margin: 10px 0 0 0;
@@ -139,25 +167,32 @@
 
 .editProfileModal input option,
 .editProfileModal textarea option,
-.editProfileModal select option {
+.editProfileModal select option,
+.addExperienceModal input option,
+.addExperienceModal textarea option,
+.addExperienceModal select option {
   border-radius: 2px;
 }
 
-.editProfileModal .fullwidth {
+.editProfileModal .fullwidth,
+.addExperienceModal .fullwidth {
   height: 46px;
   width: 100%;
 }
 
-.editProfileModal .fullwidth a {
+.editProfileModal .fullwidth a,
+.addExperienceModal .fullwidth a {
   text-decoration: underline;
   color: #3d589a;
 }
 
-.editProfileModal input[type="checkbox"] {
+.editProfileModal input[type="checkbox"],
+.addExperienceModal input[type="checkbox"] {
   visibility: hidden;
 }
 
-.editProfileModal #checkbox {
+.editProfileModal #checkbox,
+.addExperienceModal #checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -167,14 +202,16 @@
   height: 20px;
 }
 
-.editProfileModal .customCheck {
+.editProfileModal .customCheck,
+.addExperienceModal .customCheck {
   width: 90%;
   float: left;
   margin-top: 20px;
   position: relative;
 }
 
-.editProfileModal .customCheck label {
+.editProfileModal .customCheck label,
+.addExperienceModal .customCheck label {
   cursor: pointer;
   position: absolute;
   width: 20px;
@@ -185,7 +222,8 @@
   border: 1px solid #ddd;
 }
 
-.editProfileModal .customCheck label:after {
+.editProfileModal .customCheck label:after,
+.addExperienceModal .customCheck label:after {
   opacity: 0.2;
   content: "";
   position: absolute;
@@ -201,15 +239,18 @@
   transform: rotate(-45deg);
 }
 
-.editProfileModal .customCheck label:hover::after {
+.editProfileModal .customCheck label:hover::after,
+.addExperienceModal .customCheck label:hover::after {
   opacity: 0.5;
 }
 
-.editProfileModal .customCheck input[type="checkbox"]:checked + label:after {
+.editProfileModal .customCheck input[type="checkbox"]:checked + label:after,
+.addExperienceModal .customCheck input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
 
-.editProfileModal .robot {
+.editProfileModal .robot,
+.addExperienceModal .robot {
   display: inline-block;
   position: relative;
   width: 60%;
@@ -217,7 +258,8 @@
   line-height: 1em;
 }
 
-.editProfileModal #submit {
+.editProfileModal #submit,
+.addExperienceModal #submit {
   display: block;
   border: 0;
   width: 25%;
@@ -236,11 +278,13 @@
   transition: all 0.2s;
 }
 
-.editProfileModal #submit:hover {
+.editProfileModal #submit:hover,
+.addExperienceModal #submit:hover {
   opacity: 0.8;
 }
 
-.editProfileModal .wrapper {
+.editProfileModal .wrapper,
+.addExperienceModal .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,18 +296,23 @@
   background: #fff;
 }
 
-.editProfileModal .backPart {
+.editProfileModal .backPart,
+.addExperienceModal .backPart {
   width: 5%;
   background-color: white !important;
   padding-left: 2rem !important;
 }
 
-.editProfileModal .backPart .backlogo {
+.editProfileModal .backPart .backlogo,
+.editProfileModal .backPart .backlogo1,
+.addExperienceModal .backPart .backlogo,
+.addExperienceModal .backPart .backlogo1 {
   width: 3rem;
   height: 3rem;
 }
 
-.editProfileModal #subscribeBox {
+.editProfileModal #subscribeBox,
+.addExperienceModal #subscribeBox {
   position: relative;
   margin: 0 auto;
   padding: 10px 0;
@@ -282,20 +331,24 @@
           justify-content: space-between;
 }
 
-.editProfileModal *:focus {
+.editProfileModal *:focus,
+.addExperienceModal *:focus {
   outline: none;
 }
 
-.editProfileModal .subscribeForm {
+.editProfileModal .subscribeForm,
+.addExperienceModal .subscribeForm {
   display: block;
   margin: 20px 0 0 0;
 }
 
-.editProfileModal .thin {
+.editProfileModal .thin,
+.addExperienceModal .thin {
   font-weight: 200;
 }
 
-.editProfileModal .socials {
+.editProfileModal .socials,
+.addExperienceModal .socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,7 +359,8 @@
   height: 30%;
 }
 
-.editProfileModal .socials .items {
+.editProfileModal .socials .items,
+.addExperienceModal .socials .items {
   height: 3rem;
   width: 20rem;
   display: -webkit-box;
@@ -326,7 +380,8 @@
   border-radius: 10px;
 }
 
-.editProfileModal .socials .items img {
+.editProfileModal .socials .items img,
+.addExperienceModal .socials .items img {
   width: 30px;
   height: 30px;
   border-radius: 5px;
@@ -334,29 +389,35 @@
   background-color: var(--white);
 }
 
-.editProfileModal .socials .items a {
+.editProfileModal .socials .items a,
+.addExperienceModal .socials .items a {
   margin-left: 1rem;
   text-decoration: none;
   color: var(--white);
 }
 
-.editProfileModal .socials .items:hover {
+.editProfileModal .socials .items:hover,
+.addExperienceModal .socials .items:hover {
   opacity: 0.9;
 }
 
-.editProfileModal .socials .blue {
+.editProfileModal .socials .blue,
+.addExperienceModal .socials .blue {
   background-color: #3d589a;
 }
 
-.editProfileModal .socials .link {
+.editProfileModal .socials .link,
+.addExperienceModal .socials .link {
   background-color: #0076b4;
 }
 
-.editProfileModal .socials .twitter {
+.editProfileModal .socials .twitter,
+.addExperienceModal .socials .twitter {
   background-color: #2ca6e0;
 }
 
-.editProfileModal .edill {
+.editProfileModal .edill,
+.addExperienceModal .edill {
   width: 80%;
   -ms-flex-item-align: end;
       align-self: flex-end;

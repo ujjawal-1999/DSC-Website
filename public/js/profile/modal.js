@@ -32,5 +32,15 @@ backBtn.addEventListener("click", () => {
 });
 
 // Experience Modal
-// var addExperiencebtn = document.getElementById("addExperience");
-// var editProfileModal = document.getElementById("#editProfileModal");
+var addExperiencebtn = document.getElementById("addExperience");
+var backBtn1 = document.getElementById("backlogo1");
+var addExperienceModal = document.getElementById("addExperienceModal");
+addExperiencebtn.addEventListener("click", () => {
+  // editProfileModal.style.display = "flex";
+  addExperienceModal.style.opacity = "1";
+  addExperienceModal.style.pointerEvents = "all";
+});
+backBtn1.addEventListener("click", () => {
+  addExperienceModal.style.opacity = "0";
+  addExperienceModal.style.pointerEvents = "none";
+});
