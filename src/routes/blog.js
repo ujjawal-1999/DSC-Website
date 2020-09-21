@@ -39,19 +39,19 @@ router.get('/', async(req, res) => {
       views: -1
     }).limit(10).populate('author')
     const newBlogs = await Blog.find().sort({
-      createdAt: -1
-    }).limit(10).populate('author')
-    const blogsCount = {
-        webDev: await Blog.countDocuments({
-          category: 'Web Dev'
-        }),
-        androidDev: await Blog.countDocuments({
-          category: 'Android Dev'
-        }),
-        graphicDesign: await Blog.countDocuments({
-          category: 'Graphic Design'
-        })
-      }
+        createdAt: -1
+      }).limit(10).populate('author')
+      // const blogsCount = {
+      //     webDev: await Blog.countDocuments({
+      //       category: 'Web Dev'
+      //     }),
+      //     androidDev: await Blog.countDocuments({
+      //       category: 'Android Dev'
+      //     }),
+      //     graphicDesign: await Blog.countDocuments({
+      //       category: 'Graphic Design'
+      //     })
+      //   }
       // console.log(blogsCount)
       //render the blog using template 
     res.render('blogs-new', {
@@ -59,7 +59,7 @@ router.get('/', async(req, res) => {
       found: finduser,
       newBlogs: newBlogs || [],
       popularBlogs: popularBlogs || [],
-      blogsCount: blogsCount
+      // blogsCount: blogsCount
     })
   } catch (e) {
     res.status(400).json({
@@ -69,7 +69,30 @@ router.get('/', async(req, res) => {
   }
 })
 
+router.post('/bookmark/:bookmark_id', auth, async(req, res) => {
+  try {
+    let user = req.user;
+    user.bookmarkBlogs.append(bookmark_id);
+    await user.save()
+  } catch (error) {
+    console.log(error)
+    res.statusCode(200)
+    res.send(error)
+  }
 
+})
+
+router.post('/appriciate/:appreciate_id', auth, async(req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.appreciate_id)
+    blog.appreciateCount += 1
+    await blog.save();
+  } catch (error) {
+    console.log(error)
+    res.statusCode(200)
+    res.send(error)
+  }
+})
 
 router.get('/fullblog', async(req, res) => {
   const finduser = await User.find();
