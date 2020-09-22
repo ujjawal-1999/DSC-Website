@@ -2,80 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DSC-Blogs</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="/css/blogs/all.css">
+    <link rel="stylesheet" href="/css/blogs/all.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css" />
 
     <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="/css/blogs/aos.css">
+    <link rel="stylesheet" href="/css/blogs/aos.css" />
 
     <!-- Custom Style   -->
     <link rel="stylesheet" href="/css/index/colors.css" />
-    <link rel="stylesheet" href="/css/blogs/blogs-new.css">
+    <link rel="stylesheet" href="/css/blogs/blogs-new.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
-    <link rel="stylesheet" href="/css/index/footer.css">
-
+    <link rel="stylesheet" href="/css/index/footer.css" />
 </head>
 
 <body id="">
-
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
         <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
         <!----------------------------- Main Site Section ------------------------------>
         <main>
-            <section class='cards'>
-                <% newBlogs.forEach(function(blog){%>
-                    <div class="card-container">
-                        <div class="card-image">
-                            <div class="card-img">
-                                <img src="<%=blog.cover%>" alt="Omar Dsoky" />
-                            </div>
-                        </div>
-                        <div class="card-details">
-                            <div class="card-text">
-                                <h1>
-                                    <%= blog.title%>
-                                </h1>
-                                <p>
-                                    <%- blog.body.substring(0, 300)%>
-                                        <a href="/dsc/blog/view/<%= blog._id%>">... Read more</a>
-                                </p>
-                            </div>
-                            <div class="card-author">
-                                <img src="<%= blog.author.profileImageLocation%>" />
-                                <h3>
-                                    <%= blog.author.name%>
-                                </h3>
-                                <span><%=blog.author.createdAt%> </span>
-                            </div>
-                            <div class='card-buttons'>
-                                <i class="fa fa-share" style="font-size:24px; float: right;"></i>
-                                <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <%})%>
+            <section class="cards">
+                <% var num =0 %>
+                    <% newBlogs.forEach(function(blog){%>
+                        <%if(num == 4)
+        {%>
+                            <% return false %>
+                                <%}%>
+                                    <% num ++ %>
+                                        <div class="card-container">
+                                            <div class="card-image">
+                                                <div class="card-img">
+                                                    <img src="<%=blog.cover%>" alt="Omar Dsoky" />
+                                                </div>
+                                            </div>
+                                            <div class="card-details">
+                                                <div class="card-text">
+                                                    <h1>
+                                                        <%= blog.title%>
+                                                    </h1>
+                                                    <p>
+                                                        <%- blog.body.substring(0, 300)%>
+                                                            <a href="/dsc/blog/view/<%= blog._id%>">... Read more</a>
+                                                    </p>
+                                                </div>
+                                                <div class="card-author">
+                                                    <img src="<%= blog.author.profileImageLocation%>" />
+                                                    <h3>
+                                                        <%= blog.author.name%>
+                                                    </h3>
+                                                    <span><%=blog.author.createdAt%> </span>
+                                                </div>
+                                                <div class="card-buttons">
+                                                    <i class="fa fa-share" style="font-size: 24px; float: right"></i>
+                                                    <i class="fa fa-heart" style="font-size: 24px; float: right; margin-right: 15px"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <%})%>
             </section>
-            <section class='blog-search'>
+            <section class="blog-search">
                 <div class="inner-search">
-                    <div class='blog-search-row'>
+                    <div class="blog-search-row">
                         <input class="blog-search-input" id="search2" type="text" placeholder="Search.." />
-                        <button id='filters'>Filter <i class="fas fa-filter"></i></button>
+                        <button id="filters">Filter <i class="fas fa-filter"></i></button>
                     </div>
                     <ul class="blog-search-results" id="search_list2">
                         <li class="collection-item2"><a>item 1</a></li>
@@ -84,25 +87,28 @@
                     </ul>
                 </div>
             </section>
-            <section class='popular'>
-                <div id="popular-post">
-                    <h2 id="heading"> Popular Posts</h2>
-                    <div>
-                        <hr><br>
-                        <% popularBlogs.forEach(function(blog){%>
-                            <div class="popular-posts">
-                                <div class="numbering"> 01 </div>
-                                <div class="content">
-                                    <span class="title"><%= blog.title%> </span><br>
-                                    <span class="intro"> <%- blog.body.substring(0, 150)%></span><br>
-                                    <span class="date"> 20 sept, 2020 </span>
+            <section class="popular">
+                <% var i=1 %>
+                    <div id="popular-post">
+                        <h2 id="heading">Popular Posts</h2>
+                        <div>
+                            <hr />
+                            <br />
+                            <% popularBlogs.forEach(function(blog){%>
+                                <div class="popular-posts">
+                                    <div class="numbering">
+                                        <%= i++ %>
+                                    </div>
+                                    <div class="content">
+                                        <span class="title"><%= blog.title%> </span><br />
+                                        <span class="intro"> <%- blog.body.substring(0, 150)%></span
+                ><br />
+                <span class="date"> 20 sept, 2020 </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <%})%>
-
-
+                                <%})%>
+                        </div>
                     </div>
-                </div>
             </section>
         </main>
 
@@ -127,14 +133,14 @@
             <script src="/js/blogs/main.js"></script>
 
             <script>
-                var bodydiv = document.getElementById('bodydiv');
-                bodydiv.addEventListener('click', closeSearch)
+                var bodydiv = document.getElementById("bodydiv");
+                bodydiv.addEventListener("click", closeSearch);
 
                 function closeSearch() {
-                    let search_list1 = document.getElementById('search_list1');
-                    search_list1.style.display = 'none';
-                    let search_list2 = document.getElementById('search_list2');
-                    search_list2.style.display = 'none';
+                    let search_list1 = document.getElementById("search_list1");
+                    search_list1.style.display = "none";
+                    let search_list2 = document.getElementById("search_list2");
+                    search_list2.style.display = "none";
                 }
             </script>
 </body>
