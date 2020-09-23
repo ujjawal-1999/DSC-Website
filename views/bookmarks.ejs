@@ -22,85 +22,84 @@
     <link rel="stylesheet" href="/css/blogs/aos.css" />
 
     <!-- Custom Style   -->
-    <link rel="styleseet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/blogs/bookmarks.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-    </he ad>
+</head>
 
-    <body id="">
-        <!--     ----------------------------  Navigation ---------------------------------------------- -->
-        <%-include('partials/navbar')%>
-            <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+<body id="">
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+    <%-include('partials/navbar')%>
+        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-            <!----------------------------- Main Site Section ------------------------------>
-            <main class="main">
-                <h1 class="head">Welcome
-                    <%=user.name%>..Here are your bookmarks</h1>
+        <!----------------------------- Main Site Section ------------------------------>
+        <main class="main">
+            <h1 class="head">Welcome
+                <%=user.name%>..Here are your bookmarks</h1>
 
-                <% bookmarks.forEach(function(blog){%>
-                    <div id="card-container">
-                        <div class="card-product-image">
-                            <div class="card-prod-img">
-                                <img src="<%=blog.image%>" alt="Omar Dsoky" />
-                            </div>
-                        </div>
-                        <div class="card-product-details">
-                            <div>
-                                <p>
-                                    <%=blog.title%>
-                                </p>
-
-                                <%- blog.body.substring(0, 300)%>
-                                    <div class="card-person">
-                                        <div class="card-author">
-                                            <img src="<%= blog.author.profileImageLocation%>" />
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <%=blog.author.name%>
-                                    </p>
-                            </div>
-                            <div>
-
-                                <a href="#" style="float: right; margin-right: 20px">Read More...</a>
-                            </div>
+            <% bookmarks.forEach(function(blog){%>
+                <div id="card-container">
+                    <div class="card-product-image">
+                        <div class="card-prod-img">
+                            <img src="<%=blog.image%>" alt="Omar Dsoky" />
                         </div>
                     </div>
-                    <%})%>
-            </main>
+                    <div class="card-product-details">
+                        <div>
+                            <p>
+                                <%=blog.title%>
+                            </p>
 
-            <!---------------x------------- Main Site Section ---------------x-------------->
+                            <%- blog.body.substring(0, 300)%>
+                                <div class="card-person">
+                                    <div class="card-author">
+                                        <img src="<%= blog.author.profileImageLocation%>" />
+                                    </div>
+                                </div>
+                                <p>
+                                    <%=blog.author.name%>
+                                </p>
+                        </div>
+                        <div>
 
-            <!-- --------------------------- Footer ---------------------------------------- -->
-            <%-include('partials/footer')%>
+                            <a href="#" style="float: right; margin-right: 20px">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+        </main>
+        <!---------------x------------- Main Site Section ---------------x-------------->
 
-                <!-- -------------x------------- Footr --------------------x------------------- -->
+        <!-- --------------------------- Footer ---------------------------------------- -->
+        <%-include('partials/footer')%>
 
-                <!-- Jquery Library file -->
-                <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+            <!-- -------------x------------- Footer --------------------x------------------- -->
 
-                <!-- --------- Owl-Carousel js ------------------->
-                <script src="/js/blogs/owl.carousel.min.js"></script>
+            <!-- Jquery Library file -->
+            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
 
-                <!-- ------------ AOS js Library  ------------------------- -->
-                <script src="/js/blogs/aos.js"></script>
+            <!-- --------- Owl-Carousel js ------------------->
+            <script src="/js/blogs/owl.carousel.min.js"></script>
 
-                <!-- Custom Javascript file -->
-                <script src="/js/navbar.js"></script>
-                <script src="/js/blogs/main.js"></script>
+            <!-- ------------ AOS js Library  ------------------------- -->
+            <script src="/js/blogs/aos.js"></script>
 
-                <script>
-                    var bodydiv = document.getElementById("bodydiv");
-                    bodydiv.addEventListener("click", closeSearch);
+            <!-- Custom Javascript file -->
+            <script src="/js/navbar.js"></script>
+            <script src="/js/blogs/main.js"></script>
 
-                    function closeSearch() {
-                        let search_list1 = document.getElementById("search_list1");
-                        search_list1.style.display = "none";
-                        let search_list2 = document.getElementById("search_list2");
-                        search_list2.style.display = "none";
-                    }
-                </script>
-    </body>
+            <script>
+                var bodydiv = document.getElementById("bodydiv");
+                bodydiv.addEventListener("click", closeSearch);
+
+                function closeSearch() {
+                    let search_list1 = document.getElementById("search_list1");
+                    search_list1.style.display = "none";
+                    let search_list2 = document.getElementById("search_list2");
+                    search_list2.style.display = "none";
+                }
+            </script>
+</body>
 
 </html>
