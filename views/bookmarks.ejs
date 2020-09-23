@@ -22,115 +22,85 @@
     <link rel="stylesheet" href="/css/blogs/aos.css" />
 
     <!-- Custom Style   -->
-    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="styleseet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/blogs/bookmarks.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-</head>
+    </he ad>
 
-<body id="">
-    <!-- ----------------------------  Navigation ---------------------------------------------- -->
-    <%-include('partials/navbar')%>
-        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+    <body id="">
+        <!--     ----------------------------  Navigation ---------------------------------------------- -->
+        <%-include('partials/navbar')%>
+            <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-        <!----------------------------- Main Site Section ------------------------------>
-        <main class="main">
-            <h1 class="head">Your bookmarks</h1>
-            <div id="card-container">
-                <div class="card-product-image">
-                    <div class="card-prod-img">
-                        <img src="https://images.unsplash.com/photo-1558155001-7e7e8b709e2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt="Omar Dsoky" />
-                    </div>
+            <!----------------------------- Main Site Section ------------------------------>
+            <main class="main">
+                <h1 class="head">Welcome
+                    <%=user.name%>..Here are your bookmarks</h1>
 
-                </div>
-                <div class="card-product-details">
-                    <div>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum possimus magni facilis tempor
-                        </p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae fuga tempora ad quidem quis alias autem soluta adipisci aspernatur quo amet repudiandae, quas voluptate velit ipsam aliquam fugiat eveniet!
-                        <div class="card-person">
-                            <div class="card-author">
-                                <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
+                <% bookmarks.forEach(function(blog){%>
+                    <div id="card-container">
+                        <div class="card-product-image">
+                            <div class="card-prod-img">
+                                <img src="<%=blog.image%>" alt="Omar Dsoky" />
                             </div>
                         </div>
-                        <p>Mrs. Andrew </p>
-                    </div>
-                    <div>
+                        <div class="card-product-details">
+                            <div>
+                                <p>
+                                    <%=blog.title%>
+                                </p>
 
-                        <i class="fa fa-share" style="font-size:24px; float: right;"></i>
-                        <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
-                        <a href="#" style="float: right; margin-right: 20px;">Read More...</a>
+                                <%- blog.body.substring(0, 300)%>
+                                    <div class="card-person">
+                                        <div class="card-author">
+                                            <img src="<%= blog.author.profileImageLocation%>" />
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <%=blog.author.name%>
+                                    </p>
+                            </div>
+                            <div>
 
-                    </div>
-
-                </div>
-            </div>
-            <div id="card-container">
-                <div class="card-product-image">
-                    <div class="card-prod-img">
-                        <img src="https://images.unsplash.com/photo-1558155001-7e7e8b709e2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt="Omar Dsoky" />
-                    </div>
-
-                </div>
-                <div class="card-product-details">
-                    <div>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum possimus magni facilis tempor
-                        </p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae fuga tempora ad quidem quis alias autem soluta adipisci aspernatur quo amet repudiandae, quas voluptate velit ipsam aliquam fugiat eveniet!
-                        <div class="card-person">
-                            <div class="card-author">
-                                <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
+                                <a href="#" style="float: right; margin-right: 20px">Read More...</a>
                             </div>
                         </div>
-                        <p>Mrs. Andrew </p>
                     </div>
-                    <div>
+                    <%})%>
+            </main>
 
-                        <i class="fa fa-share" style="font-size:24px; float: right;"></i>
-                        <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
-                        <a href="#" style="float: right; margin-right: 20px;">Read More...</a>
+            <!---------------x------------- Main Site Section ---------------x-------------->
 
-                    </div>
+            <!-- --------------------------- Footer ---------------------------------------- -->
+            <%-include('partials/footer')%>
 
-                </div>
-            </div>
-        </main>
+                <!-- -------------x------------- Footr --------------------x------------------- -->
 
-        <!---------------x------------- Main Site Section ---------------x-------------->
+                <!-- Jquery Library file -->
+                <script src="/js/blogs/Jquery3.4.1.min.js"></script>
 
-        <!-- --------------------------- Footer ---------------------------------------- -->
-        <%-include('partials/footer')%>
+                <!-- --------- Owl-Carousel js ------------------->
+                <script src="/js/blogs/owl.carousel.min.js"></script>
 
-            <!-- -------------x------------- Footer --------------------x------------------- -->
+                <!-- ------------ AOS js Library  ------------------------- -->
+                <script src="/js/blogs/aos.js"></script>
 
-            <!-- Jquery Library file -->
-            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+                <!-- Custom Javascript file -->
+                <script src="/js/navbar.js"></script>
+                <script src="/js/blogs/main.js"></script>
 
-            <!-- --------- Owl-Carousel js ------------------->
-            <script src="/js/blogs/owl.carousel.min.js"></script>
+                <script>
+                    var bodydiv = document.getElementById("bodydiv");
+                    bodydiv.addEventListener("click", closeSearch);
 
-            <!-- ------------ AOS js Library  ------------------------- -->
-            <script src="/js/blogs/aos.js"></script>
+                    function closeSearch() {
+                        let search_list1 = document.getElementById("search_list1");
+                        search_list1.style.display = "none";
+                        let search_list2 = document.getElementById("search_list2");
+                        search_list2.style.display = "none";
+                    }
+                </script>
+                </ body>
 
-            <!-- Custom Javascript file -->
-            <script src="/js/navbar.js"></script>
-            <script src="/js/blogs/main.js"></script>
-
-            <script>
-                var bodydiv = document.getElementById("bodydiv");
-                bodydiv.addEventListener("click", closeSearch);
-
-                function closeSearch() {
-                    let search_list1 = document.getElementById("search_list1");
-                    search_list1.style.display = "none";
-                    let search_list2 = document.getElementById("search_list2");
-                    search_list2.style.display = "none";
-                }
-            </script>
-</body>
-
-</html>
+</html> { { { {}
