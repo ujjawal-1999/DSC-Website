@@ -14,6 +14,14 @@ body {
   display: none;
 }
 
+.forgot {
+  height: 60% !important;
+}
+.mobileheading {
+  display: none;
+  margin-bottom: 2rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -146,14 +154,23 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .mobileheading {
+    display: block;
+  }
   .container div {
     height: auto;
   }
+  .forgot {
+    height: 100vh !important;
+  }
   .container {
-    width: 90%;
+    width: 100%;
     height: 80vh;
+    overflow: scroll;
+    height: 100vh;
   }
   .container div.signup-form {
+    height: auto;
     width: auto;
   }
   .container div.heading-block {
