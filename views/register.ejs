@@ -1,88 +1,78 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/index/new.css">
-        <title>Register</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/index/register.css" />
+    <title>Login/SignUp</title>
+  </head>
 
-                <!-- LOGIN MODULE -->
-                <div class="login">
-                    <div class="wrap">
+  <body>
+    <div class="container">
+      <div class="heading-block">
+        <div>
+          <h1>
+            SignUp
+            <span style="color: #0f1923"></span>
+          </h1>
+        </div>
+      </div>
+      <div class="signup-form">
+        <form action="/dsc/user/signup" method="POST">
+          <label for="codename">Full name</label
+          ><input type="text" name="name" placeholder="Name" required />
+          <label for="email">Email</label
+          ><input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <label for="sidearm">Password</label>
+          <input
+            type="password"
+            id="password-field"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <label for="sidearm">Confirm Password</label>
+          <input
+            type="cpassword"
+            id="cpassword-field"
+            type="password"
+            name="cpassword"
+            placeholder="Retype Password"
+          />
+          <div class="button-box">
+            <div class="button-mask button-mask-slide">
+              <span>SignUp</span>
+            </div>
+          </div>
+        </form>
+        <p>
+          <a href="">Forget Password ?</a><br /><br />
+          or use social account
+        </p>
 
-                        <!-- SLIDER -->
-                        <div class="content">
-                            <!-- LOGO -->
-                            <div class="logo">
-                                <a href="#"><img src="/img/logo/DSC_trans.png" alt=""></a>
-                            </div>
-                            <!-- SLIDESHOW -->
-                            <div id="slideshow">
-                                <div class="one">
-                                    <h2><span>Challenges</span></h2>
-                                    <p>Sign up to attend any of hundreds of weekly challenges.</p>
-                                </div>
-                                <div class="two">
-                                    <h2><span>Learning</span></h2>
-                                    <p>Thousands of instant online classes/tutorials included</p>
-                                </div>
-                                <div class="three">
-                                    <h2><span>Hackathons</span></h2>
-                                    <p>Create your own groups and participate on hackathons that share your interests</p>
-                                </div>
-                                <div class="four">
-                                    <h2><span>SHARING</span></h2>
-                                    <p>Share your works and knowledge with the community on the public showcase section</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- LOGIN FORM -->
-                        <div class="user">
+        <div class="social-login">
+          <a href="#">
+            <img src="/img/logo/fb.png" alt="" />
+            Signup with facebook
+          </a>
+          <a href="#">
+            <img src="/img/logo/Google.png" alt="" />
+            Signup with Google
+          </a>
+        </div>
+      </div>
+    </div>
 
-                            <div class="form-wrap">
-                                <!-- TABS -->
-                                <div class="tabs">
-                                    <h3 class="login-tab"><a class="log-in active" href="#login-tab-content"><span>Login<span></a></h3>
-                                    <h3 class="signup-tab"><a class="sign-up" href="#signup-tab-content"><span>Sign Up</span></a></h3>
-                                </div>
-                                <!-- TABS CONTENT -->
-                                <div class="tabs-content">
-                                    <!-- TABS CONTENT LOGIN -->
-                                    <div id="login-tab-content" class="active">
-                                        <form action="/dsc/user/login" method="POST" class="login-form">
-                                            <input type="text" name="name" class="input" id="user_login" autocomplete="off" placeholder="Name" required/>
-                                            <input type="email" name="email" class="input" id="user_login" autocomplete="off" placeholder="Email" required/>
-                                            <input type="password" name="password" class="input" id="user_pass" autocomplete="off" placeholder="Password" required />
-                                            <img src="/img/logo/eye.png" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" />
-                                            <button>Log In</button>
-                                        </form>
-                                        <div class="help-action">
-                                            <p><a href="/dsc/user/forgotpassword">Forgot your password?</a></p>
-                                        </div>
-                                    </div>
-                                    <!-- TABS CONTENT SIGNUP -->
-                                    <div id="signup-tab-content">
-                                        <form class="signup-form" action="/dsc/user/register" method="POST">
-                                            <input type="text" name="name" class="input" id="user_name" autocomplete="off" placeholder="Username" required/>
-                                            <input type="email" name="email" class="input" id="user_email" autocomplete="off" placeholder="Email" required />
-                                            <input type="password" name="password" class="input" id="password" autocomplete="off" placeholder="Password" required />
-                                            <img src="/img/logo/eye.png" onmouseover="mouseoverPass1();" onmouseout="mouseoutPass1();" />
-                                            <input type="password" name="confirm_password" class="input" id="confirm_password" autocomplete="off" placeholder="Confirm Password" required />
-                                            <img src="/img/logo/eye.png" onmouseover="mouseoverPass2();" onmouseout="mouseoutPass2();" />
-                                            <span id='message'></span>
-                                            <button>Sign Up</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
-         <script src="/js/index/new.js"></script>
-
-    </body>
+    <div class="bg-text-stroke">
+      <span>Welcome to</span>
+      <span>DSC Website</span>
+    </div>
+    <script src="/js/index/register.js"></script>
+  </body>
 </html>
