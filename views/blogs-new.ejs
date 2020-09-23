@@ -68,7 +68,15 @@
                                                 </div>
                                                 <div class="card-buttons">
                                                     <i class="fa fa-share" style="font-size: 24px; float: right"></i>
-                                                    <i class="fa fa-heart" style="font-size: 24px; float: right; margin-right: 15px"></i>
+                                                    <form action='/dsc/blog/bookmark/<%= blog._id %>' method='POST'>
+                                                        <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
+                                                            <% if (user.bookmarkBlogs && user.bookmarkBlogs.includes(blog._id)) {%>
+                                                                <i class="fas fa-bookmark" style="font-size: 24px; float: right; margin-right: 15px"></i>
+                                                            <% } else {%>
+                                                                <i class='far fa-bookmark'  style="font-size: 24px; float: right; margin-right: 15px"></i>
+                                                            <% } %>
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

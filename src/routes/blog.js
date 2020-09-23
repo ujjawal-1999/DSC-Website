@@ -34,6 +34,7 @@ router.get("/", async(req, res) => {
       });
     }
 
+    user = await User.findById(user.userId);
     const popularBlogs = await Blog.find()
       .sort({
         views: -1,
@@ -76,21 +77,17 @@ router.get("/", async(req, res) => {
 
 router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
   try {
-    let user = req.user;
-    user.bookmarkBlogs.append(bookmark_id);
-    await user.save();
-  } catch (error) {
-    console.log(error);
-    res.statusCode(200);
-    res.send(error);
-  }
-});
+    let user = await User.findById(req.user.userId);
+    let bookmarkArr = user.bookmarkBlogs || []
+    if (bookmarkArr.includes(req.params.bookmark_id)) {
+      bookmarkArr.remove(req.params.bookmark_id)
+    } else {
+      bookmarkArr.push(req.params.bookmark_id)
 
-router.post("/appriciate/:appreciate_id", auth, async(req, res) => {
-  try {
-    const blog = await Blog.findById(req.params.appreciate_id);
-    blog.appreciateCount += 1;
-    await blog.save();
+    }
+    user.bookmarkBlogs = bookmarkArr
+    await user.save();
+    res.redirect(req.get('referer'));
   } catch (error) {
     console.log(error);
     res.statusCode(200);
