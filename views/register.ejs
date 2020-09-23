@@ -9,17 +9,17 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="heading-block">
         <div>
-          <h1>
+          <h1 id="label">
             SignUp
             <span style="color: #0f1923"></span>
           </h1>
         </div>
       </div>
-      <div class="signup-form">
-        <form action="/dsc/user/signup" method="POST">
+      <div class="signup-form" id="signupform">
+        <form action="/dsc/user/register" method="POST">
           <label for="codename">Full name</label
           ><input type="text" name="name" placeholder="Name" required />
           <label for="email">Email</label
@@ -47,12 +47,18 @@
           />
           <div class="button-box">
             <div class="button-mask button-mask-slide">
-              <span>SignUp</span>
+              <input type="submit" value="SignUp" id="" />
+            </div>
+          </div>
+          <div class="button-box">
+            <div class="button-mask button-mask-slide" id="switchtologin">
+              <span>Already have an account ? Login</span>
             </div>
           </div>
         </form>
+
         <p>
-          <a href="">Forget Password ?</a><br /><br />
+          <a href="/dsc/user/forgotpassword">Forget Password ?</a><br /><br />
           or use social account
         </p>
 
@@ -67,12 +73,59 @@
           </a>
         </div>
       </div>
+      <div class="signup-form" id="loginform">
+        <form action="/dsc/user/login" method="POST">
+          <label for="email">Email</label
+          ><input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <label for="sidearm">Password</label>
+          <input
+            type="password"
+            id="password-field"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+
+          <div class="button-box">
+            <div class="button-mask button-mask-slide">
+              <input type="submit" value="Login" id="" />
+            </div>
+          </div>
+          <div class="button-box">
+            <div class="button-mask button-mask-slide" id="switchtosignup">
+              <span>Don't have an account ? SignUp</span>
+            </div>
+          </div>
+        </form>
+
+        <p>
+          <a href="/dsc/user/forgotpassword">Forget Password ?</a><br /><br />
+          or use social account
+        </p>
+
+        <div class="social-login">
+          <a href="#">
+            <img src="/img/logo/fb.png" alt="" />
+            Login with facebook
+          </a>
+          <a href="#">
+            <img src="/img/logo/Google.png" alt="" />
+            Login with Google
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="bg-text-stroke">
       <span>Welcome to</span>
       <span>DSC Website</span>
     </div>
-    <script src="/js/index/register.js"></script>
+    <script src="/js/anime.js"></script>
+    <script src="/js/signup-in/register.js"></script>
   </body>
 </html>
