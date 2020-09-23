@@ -110,11 +110,13 @@ router.get("/fullblog", async(req, res) => {
     found: finduser,
   });
 });
-router.get("/bookmarks", async(req, res) => {
+router.get("/bookmarks", auth, async(req, res) => {
   const finduser = await User.find();
+  const bookmarks = await User.find(req.user).populate("bookmarkBlogs");
   res.render("bookmarks", {
     user: req.user,
     found: finduser,
+    bookmarks: bookmarks,
   });
 });
 

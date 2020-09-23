@@ -35,71 +35,40 @@
 
         <!----------------------------- Main Site Section ------------------------------>
         <main class="main">
-            <h1 class="head">Your bookmarks</h1>
-            <div id="card-container">
-                <div class="card-product-image">
-                    <div class="card-prod-img">
-                        <img src="https://images.unsplash.com/photo-1558155001-7e7e8b709e2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt="Omar Dsoky" />
-                    </div>
+            <h1 class="head">Welcome
+                <%=user.name%>..Here are your bookmarks</h1>
 
-                </div>
-                <div class="card-product-details">
-                    <div>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum possimus magni facilis tempor
-                        </p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae fuga tempora ad quidem quis alias autem soluta adipisci aspernatur quo amet repudiandae, quas voluptate velit ipsam aliquam fugiat eveniet!
-                        <div class="card-person">
-                            <div class="card-author">
-                                <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
-                            </div>
+            <% bookmarks.forEach(function(blog){%>
+                <div id="card-container">
+                    <div class="card-product-image">
+                        <div class="card-prod-img">
+                            <img src="<%=blog.image%>" alt="Omar Dsoky" />
                         </div>
-                        <p>Mrs. Andrew </p>
                     </div>
-                    <div>
+                    <div class="card-product-details">
+                        <div>
+                            <p>
+                                <%=blog.title%>
+                            </p>
 
-                        <i class="fa fa-share" style="font-size:24px; float: right;"></i>
-                        <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
-                        <a href="#" style="float: right; margin-right: 20px;">Read More...</a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div id="card-container">
-                <div class="card-product-image">
-                    <div class="card-prod-img">
-                        <img src="https://images.unsplash.com/photo-1558155001-7e7e8b709e2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt="Omar Dsoky" />
-                    </div>
-
-                </div>
-                <div class="card-product-details">
-                    <div>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptatum possimus magni facilis tempor
-                        </p>
-
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae fuga tempora ad quidem quis alias autem soluta adipisci aspernatur quo amet repudiandae, quas voluptate velit ipsam aliquam fugiat eveniet!
-                        <div class="card-person">
-                            <div class="card-author">
-                                <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
-                            </div>
+                            <%- blog.body.substring(0, 300)%>
+                                <div class="card-person">
+                                    <div class="card-author">
+                                        <img src="<%= blog.author.profileImageLocation%>" />
+                                    </div>
+                                </div>
+                                <p>
+                                    <%=blog.author.name%>
+                                </p>
                         </div>
-                        <p>Mrs. Andrew </p>
+                        <div>
+
+                            <a href="#" style="float: right; margin-right: 20px">Read More...</a>
+                        </div>
                     </div>
-                    <div>
-
-                        <i class="fa fa-share" style="font-size:24px; float: right;"></i>
-                        <i class="fa fa-heart" style="font-size:24px; float: right; margin-right: 15px;"></i>
-                        <a href="#" style="float: right; margin-right: 20px;">Read More...</a>
-
-                    </div>
-
                 </div>
-            </div>
+                <%})%>
         </main>
-
         <!---------------x------------- Main Site Section ---------------x-------------->
 
         <!-- --------------------------- Footer ---------------------------------------- -->
