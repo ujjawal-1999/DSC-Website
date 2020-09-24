@@ -230,7 +230,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 600px) {
+  .main .about .content {
+    width: 100% !important;
+  }
   .header {
+    margin-top: 0;
     background-image: none;
   }
   .header .heading__background {
@@ -242,8 +246,11 @@ body::-webkit-scrollbar-thumb {
   .heading_primary {
     font-size: 2rem;
   }
+  .header .heading__secondary {
+    font-size: 2rem;
+  }
 }
-@media screen and (max-width: 350) {
+@media screen and (max-width: 400) {
   .header .heading__secondary {
     font-size: 1rem !important;
   }
@@ -300,7 +307,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .flash {
-  margin: 0px 20%;
+  // margin: 0px 20%;
 }
 
 .alert {

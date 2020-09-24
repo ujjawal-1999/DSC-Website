@@ -10,6 +10,17 @@ body {
   color: #0f1923;
   font: 400 18px/22px "Rajdhani", sans-serif;
 }
+#loginform {
+  display: none;
+}
+
+.forgot {
+  height: 60% !important;
+}
+.mobileheading {
+  display: none;
+  margin-bottom: 2rem;
+}
 
 .container {
   display: flex;
@@ -22,7 +33,7 @@ body {
   transform: translate(-50%, -50%);
   margin: 0;
   width: 50%;
-  height: 70%;
+  height: 90%;
   background-color: rgb(250, 250, 250);
   overflow: hidden;
 }
@@ -71,15 +82,18 @@ body {
 }
 .signup-form form {
   margin: 30px 0;
+  padding: 0 2rem;
 }
 .signup-form form * {
   font-family: "Rajdhani", sans-serif;
 }
 .signup-form label,
 .signup-form .button-box {
-  font-weight: 700;
+  cursor: pointer;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin: 0.5rem 0;
 }
 .signup-form label {
   margin: 8px 0;
@@ -107,40 +121,19 @@ body {
   border: 1px solid;
   transition: all 0.1s;
 }
-.signup-form div.button-box:hover {
-  background-color: #3bb9ff;
-  color: white;
+
+.signup-form input[type="submit"] {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: auto;
+  color: inherit;
 }
 
-/* .signup-form div.button-box .button-mask {
-  cursor: pointer;
-  position: relative;
-  padding: 18px 60px;
-  display: block;
-  overflow: hidden;
-  color: white;
-  background-color: #ff4654;
-  margin: 0rem;
+.signup-form div.button-box:hover {
+  background-color: #3bb9ff;
+  color: white !important;
 }
-.signup-form div.button-box .button-mask:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -5%;
-  width: 130%;
-  height: 100%;
-  background-color: #0f1923;
-  transform: translateX(-100%) skew(-15deg);
-  transition: transform 0.4s ease;
-}
-.signup-form div.button-box .button-mask:hover:before {
-  transform: translateX(0) skew(-15deg);
-}
-.signup-form div.button-box .button-mask span {
-  position: relative;
-  z-index: 1;
-} */
 
 /* Outlined text background */
 .bg-text-stroke {
@@ -161,14 +154,23 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .mobileheading {
+    display: block;
+  }
   .container div {
     height: auto;
   }
+  .forgot {
+    height: 100vh !important;
+  }
   .container {
-    width: 90%;
+    width: 100%;
     height: 80vh;
+    overflow: scroll;
+    height: 100vh;
   }
   .container div.signup-form {
+    height: auto;
     width: auto;
   }
   .container div.heading-block {

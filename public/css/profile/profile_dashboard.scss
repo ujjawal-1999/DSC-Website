@@ -273,8 +273,6 @@ body {
 .contests {
   width: 25%;
   background-color: var(--white);
-  // border-left: 1px solid var(--Grey-light-4);
-  // border-top: 1px solid var(--Grey-light-4);
   padding: 0.9rem;
   font-family: sans-serif;
 
@@ -287,7 +285,6 @@ body {
   .container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     padding: 1rem;
 
     .card {
@@ -298,8 +295,7 @@ body {
       border-radius: 10px;
       padding: 1rem;
       width: 100%;
-      background-color: #f8f9d2;
-      background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+      background-color: #e8f1ff;
       transition: all 0.3s;
 
       hr {
@@ -455,11 +451,18 @@ body {
 // ///////////////////////////////////////////////////////////////////////////////////
 
 // Responsive
+@media (max-width: 600px) {
+  .cards .card .content .images .image-container {
+    width: 100%;
+  }
+}
 
 @media (max-width: 1300px) {
-  // .dashboard__main .main__profileinfo .pictureandbasic .info {
-  //   width: min-content;
-  // }
+  .cards .card {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
   .contests {
     width: 100%;
     justify-content: center;
