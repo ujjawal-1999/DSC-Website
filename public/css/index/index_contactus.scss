@@ -131,23 +131,23 @@
   }
 
   .submit-btn {
-    padding: 7px 35px;
-    border-radius: 3px;
+    transform: translateY(-10px);
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 2rem;
+    padding: 0.8em 1.5rem 0.8em 1.5rem;
     border: 1px solid;
-    border-color: var(--navButtons);
-    display: inline-block;
-    background-color: var(--navButtons);
-    color: var(--white);
-    font-size: 18px;
-    cursor: pointer;
+    border-radius: 2px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    z-index: 20;
+    background-color: var(--Grey-dark-1);
+    color: var(--primary-light);
+    border-color: var(--Grey-dark-1);
 
-    transition: all 300ms;
-  }
-
-  .submit-btn:hover {
-    border-color: var(--navButtons);
-    background-color: var(--white);
-    color: var(--navButtons);
+    &:hover {
+      background-color: var(--primary-light);
+      color: var(--Grey-dark-1);
+    }
   }
 
   @media (max-width: 768px) {

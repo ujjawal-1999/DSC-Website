@@ -1,0 +1,45 @@
+.cards .card .skill-description {
+  margin-right: auto;
+}
+
+.cards .card .skill-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cards .card .skill-time {
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+.cards .card .skill-level {
+  margin-top: auto;
+}
+
+.cards .card .skill-icon {
+  padding-right: 20px;
+}
+.cards .card .skill-icon .icon {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.skill-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#btn {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: ease 0.1s;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#btn:hover{
+  background-color: rgb(73, 73, 238);
+}

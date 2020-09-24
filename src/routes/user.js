@@ -56,6 +56,10 @@ var rand,mailOptions,host,link;
 /*------------------SMTP Over-----------------------------*/
 
 /*------------------Routing Started ------------------------*/
+router.get("/new",(req,res)=>{
+    res.render("register");
+});
+
 
 
 router.get('/verify/:id',function(req,res){
@@ -109,6 +113,58 @@ router.get('/verify/:id',function(req,res){
         res.end("<h1>Request is from unknown source");
     }
 });
+router.get('/verify/forgotpassword/:id',function(req,res){
+    // console.log(req.protocol+":/"+req.get('host'));
+    
+        if((req.protocol+"://"+req.get('host'))==("http://"+host))
+        {
+            console.log("Domain is matched. Information is from Authentic email");
+    
+            User.findById(req.params.id,function(err,user){
+                if(err)
+                    console.log(err);
+                else
+                {
+                    if(user.active)
+                        res.render("changepassword",{user:user});
+                    else
+                    {
+                        User.findByIdAndUpdate(user._id,{active:true},function(err,user){
+                            if(err)
+                                console.log(err);
+                            else
+                            {
+                                console.log("email is verified");
+                                res.render("changepassword",{user:user});
+                            }
+                              
+                        });
+                    }
+                        
+                }
+            });
+        }
+        else
+        {
+            res.end("<h1>Request is from unknown source");
+        }
+    });
+//==============================
+  
+router.post("/changepassword/:id",function(req,res){
+    bcrypt.hash(req.body.password, 10).then((hash) => {
+        User.findByIdAndUpdate(req.params.id,{password:hash},function(err,user)
+        {
+            if(err)
+                console.log(err);
+            else
+            {
+                req.flash("success", "Your password has been reset try logging in");
+                res.redirect("/dsc/");
+            }
+        });
+    });
+});
 
 //==============================
   
@@ -122,15 +178,9 @@ router.get('/',(req,res)=>{
     res.json({message:'User routes connected'})
 });
 
-
-router.get("/newusermobile",(req,res)=>{
-    res.render("newusermobile");
-});
-
-
 //get route for signup
 router.get("/register",(req,res)=>{
-    res.render("newuser");
+    res.render("register");
 })
 
 //post route for signup
@@ -186,7 +236,7 @@ router.post("/register",
 
 //get route for login
 router.get("/login",function(req,res){
-    res.render("newuser");
+    res.render("register");
 });
 
 //post route for login
@@ -263,6 +313,45 @@ router.get("/logout",function(req,res){
     req.flash("success", "You are successfully logged out");
       res.redirect("/dsc/");
   });
+//get route for forget password
+router.get("/forgotpassword",function(req,res){
+    res.render("forgotpassword");
+});
+
+//post route for forgotpassword
+router.post("/forgotpassword",function(req,res){
+    let getUser;
+    User.findOne({
+        email: req.body.email
+    }).then(user => {
+        if (!user) {
+            req.flash("error","User not found try creating a new account");
+            res.redirect("/dsc/");
+        }
+        getUser = user;
+        rand=cryptoRandomString({length: 100, type: 'url-safe'});
+                host=req.get('host');
+                link="http://"+req.get('host')+"/dsc/user/verify/forgotpassword/"+getUser._id+"?tkn="+rand;
+                mailOptions={ 
+                    from: process.env.NODEMAILER_EMAIL,
+                    to: getUser.email,
+                    subject : "Please confirm your Email account",
+                    html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
+                }
+                // console.log(mailOptions);
+                transporter.sendMail(mailOptions, function(error, response){
+                 if(error){
+                        console.log(error);
+                    res.end("error");
+                 }else{
+                        console.log("Message sent: " + response.message);
+                     }
+                });
+            req.flash("success",getUser.name + " we sent you an email to reset your password");
+            res.redirect("/dsc/");  
+        
+    });
+});
 
 
 //Post Route to edit User Profile Details
