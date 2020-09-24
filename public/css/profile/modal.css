@@ -28,7 +28,10 @@
   pointer-events: all;
 }
 
-.editProfileModal {
+.editProfileModal,
+.addSkillsModal,
+.addProjectsModal,
+.addAchievementModal {
   border: 1px solid;
   background-color: var(--white);
   position: fixed;
@@ -70,10 +73,16 @@
 
 @media (max-width: 700px) {
   .editProfileModal,
-  .addExperienceModal .backPart {
+  .addAchievementModal,
+  .addExperienceModal,
+  .addProjectsModal,
+  .addSkillsModal .backPart {
     width: 100% !important;
   }
   .editProfileModal,
+  .addSkillsModal,
+  .addAchievementModal,
+  .addProjectsModal,
   .addExperienceModal {
     top: 0%;
     left: 0%;
@@ -94,7 +103,10 @@
     height: auto !important;
   }
   .editProfileModal,
-  .addExperienceModal #subscribeBox {
+  .addAchievementModal,
+  .addExperienceModal,
+  .addProjectsModal,
+  .addSkillsModal #subscribeBox {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -131,14 +143,20 @@
 }
 
 .editProfileModal,
-.addExperienceModal {
+.addExperienceModal,
+.addProjectsModal,
+.addAchievementModal,
+.addSkillsModal {
   /* Top-level Styling */
   /* Div Layout Styling */
   /* Text Styling for h2, p, a */
 }
 
 .editProfileModal label,
-.addExperienceModal label {
+.addExperienceModal label,
+.addProjectsModal label,
+.addAchievementModal label,
+.addSkillsModal label {
   width: 25%;
   font-size: 0.8rem;
 }
@@ -148,7 +166,16 @@
 .editProfileModal select,
 .addExperienceModal input,
 .addExperienceModal textarea,
-.addExperienceModal select {
+.addExperienceModal select,
+.addProjectsModal input,
+.addProjectsModal textarea,
+.addProjectsModal select,
+.addAchievementModal input,
+.addAchievementModal textarea,
+.addAchievementModal select,
+.addSkillsModal input,
+.addSkillsModal textarea,
+.addSkillsModal select {
   border: 2px solid #eeeeee;
   height: 46px;
   margin: 10px 0 0 0;
@@ -170,29 +197,50 @@
 .editProfileModal select option,
 .addExperienceModal input option,
 .addExperienceModal textarea option,
-.addExperienceModal select option {
+.addExperienceModal select option,
+.addProjectsModal input option,
+.addProjectsModal textarea option,
+.addProjectsModal select option,
+.addAchievementModal input option,
+.addAchievementModal textarea option,
+.addAchievementModal select option,
+.addSkillsModal input option,
+.addSkillsModal textarea option,
+.addSkillsModal select option {
   border-radius: 2px;
 }
 
 .editProfileModal .fullwidth,
-.addExperienceModal .fullwidth {
+.addExperienceModal .fullwidth,
+.addProjectsModal .fullwidth,
+.addAchievementModal .fullwidth,
+.addSkillsModal .fullwidth {
   height: 46px;
   width: 100%;
 }
 
 .editProfileModal .fullwidth a,
-.addExperienceModal .fullwidth a {
+.addExperienceModal .fullwidth a,
+.addProjectsModal .fullwidth a,
+.addAchievementModal .fullwidth a,
+.addSkillsModal .fullwidth a {
   text-decoration: underline;
   color: #3d589a;
 }
 
 .editProfileModal input[type="checkbox"],
-.addExperienceModal input[type="checkbox"] {
+.addExperienceModal input[type="checkbox"],
+.addProjectsModal input[type="checkbox"],
+.addAchievementModal input[type="checkbox"],
+.addSkillsModal input[type="checkbox"] {
   visibility: hidden;
 }
 
 .editProfileModal #checkbox,
-.addExperienceModal #checkbox {
+.addExperienceModal #checkbox,
+.addProjectsModal #checkbox,
+.addAchievementModal #checkbox,
+.addSkillsModal #checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -203,7 +251,10 @@
 }
 
 .editProfileModal .customCheck,
-.addExperienceModal .customCheck {
+.addExperienceModal .customCheck,
+.addProjectsModal .customCheck,
+.addAchievementModal .customCheck,
+.addSkillsModal .customCheck {
   width: 90%;
   float: left;
   margin-top: 20px;
@@ -211,7 +262,10 @@
 }
 
 .editProfileModal .customCheck label,
-.addExperienceModal .customCheck label {
+.addExperienceModal .customCheck label,
+.addProjectsModal .customCheck label,
+.addAchievementModal .customCheck label,
+.addSkillsModal .customCheck label {
   cursor: pointer;
   position: absolute;
   width: 20px;
@@ -223,7 +277,10 @@
 }
 
 .editProfileModal .customCheck label:after,
-.addExperienceModal .customCheck label:after {
+.addExperienceModal .customCheck label:after,
+.addProjectsModal .customCheck label:after,
+.addAchievementModal .customCheck label:after,
+.addSkillsModal .customCheck label:after {
   opacity: 0.2;
   content: "";
   position: absolute;
@@ -240,17 +297,26 @@
 }
 
 .editProfileModal .customCheck label:hover::after,
-.addExperienceModal .customCheck label:hover::after {
+.addExperienceModal .customCheck label:hover::after,
+.addProjectsModal .customCheck label:hover::after,
+.addAchievementModal .customCheck label:hover::after,
+.addSkillsModal .customCheck label:hover::after {
   opacity: 0.5;
 }
 
 .editProfileModal .customCheck input[type="checkbox"]:checked + label:after,
-.addExperienceModal .customCheck input[type="checkbox"]:checked + label:after {
+.addExperienceModal .customCheck input[type="checkbox"]:checked + label:after,
+.addProjectsModal .customCheck input[type="checkbox"]:checked + label:after,
+.addAchievementModal .customCheck input[type="checkbox"]:checked + label:after,
+.addSkillsModal .customCheck input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
 
 .editProfileModal .robot,
-.addExperienceModal .robot {
+.addExperienceModal .robot,
+.addProjectsModal .robot,
+.addAchievementModal .robot,
+.addSkillsModal .robot {
   display: inline-block;
   position: relative;
   width: 60%;
@@ -259,7 +325,10 @@
 }
 
 .editProfileModal #submit,
-.addExperienceModal #submit {
+.addExperienceModal #submit,
+.addProjectsModal #submit,
+.addAchievementModal #submit,
+.addSkillsModal #submit {
   display: block;
   border: 0;
   width: 25%;
@@ -279,12 +348,18 @@
 }
 
 .editProfileModal #submit:hover,
-.addExperienceModal #submit:hover {
+.addExperienceModal #submit:hover,
+.addProjectsModal #submit:hover,
+.addAchievementModal #submit:hover,
+.addSkillsModal #submit:hover {
   opacity: 0.8;
 }
 
 .editProfileModal .wrapper,
-.addExperienceModal .wrapper {
+.addExperienceModal .wrapper,
+.addProjectsModal .wrapper,
+.addAchievementModal .wrapper,
+.addSkillsModal .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,7 +372,10 @@
 }
 
 .editProfileModal .backPart,
-.addExperienceModal .backPart {
+.addExperienceModal .backPart,
+.addProjectsModal .backPart,
+.addAchievementModal .backPart,
+.addSkillsModal .backPart {
   width: 5%;
   background-color: white !important;
   padding-left: 2rem !important;
@@ -306,19 +384,27 @@
 .editProfileModal .backPart .backlogo,
 .editProfileModal .backPart .backlogo1,
 .addExperienceModal .backPart .backlogo,
-.addExperienceModal .backPart .backlogo1 {
+.addExperienceModal .backPart .backlogo1,
+.addProjectsModal .backPart .backlogo,
+.addProjectsModal .backPart .backlogo1,
+.addAchievementModal .backPart .backlogo,
+.addAchievementModal .backPart .backlogo1,
+.addSkillsModal .backPart .backlogo,
+.addSkillsModal .backPart .backlogo1 {
   width: 3rem;
   height: 3rem;
 }
 
 .editProfileModal #subscribeBox,
-.addExperienceModal #subscribeBox {
+.addExperienceModal #subscribeBox,
+.addProjectsModal #subscribeBox,
+.addAchievementModal #subscribeBox,
+.addSkillsModal #subscribeBox {
   position: relative;
   margin: 0 auto;
   padding: 10px 0;
   height: 80%;
   width: 80%;
-  min-width: 325px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,23 +418,35 @@
 }
 
 .editProfileModal *:focus,
-.addExperienceModal *:focus {
+.addExperienceModal *:focus,
+.addProjectsModal *:focus,
+.addAchievementModal *:focus,
+.addSkillsModal *:focus {
   outline: none;
 }
 
 .editProfileModal .subscribeForm,
-.addExperienceModal .subscribeForm {
+.addExperienceModal .subscribeForm,
+.addProjectsModal .subscribeForm,
+.addAchievementModal .subscribeForm,
+.addSkillsModal .subscribeForm {
   display: block;
   margin: 20px 0 0 0;
 }
 
 .editProfileModal .thin,
-.addExperienceModal .thin {
+.addExperienceModal .thin,
+.addProjectsModal .thin,
+.addAchievementModal .thin,
+.addSkillsModal .thin {
   font-weight: 200;
 }
 
 .editProfileModal .socials,
-.addExperienceModal .socials {
+.addExperienceModal .socials,
+.addProjectsModal .socials,
+.addAchievementModal .socials,
+.addSkillsModal .socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -360,8 +458,10 @@
 }
 
 .editProfileModal .socials .items,
-.addExperienceModal .socials .items {
-  height: 3rem;
+.addExperienceModal .socials .items,
+.addProjectsModal .socials .items,
+.addAchievementModal .socials .items,
+.addSkillsModal .socials .items {
   width: 20rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -381,7 +481,10 @@
 }
 
 .editProfileModal .socials .items img,
-.addExperienceModal .socials .items img {
+.addExperienceModal .socials .items img,
+.addProjectsModal .socials .items img,
+.addAchievementModal .socials .items img,
+.addSkillsModal .socials .items img {
   width: 30px;
   height: 30px;
   border-radius: 5px;
@@ -390,34 +493,52 @@
 }
 
 .editProfileModal .socials .items a,
-.addExperienceModal .socials .items a {
+.addExperienceModal .socials .items a,
+.addProjectsModal .socials .items a,
+.addAchievementModal .socials .items a,
+.addSkillsModal .socials .items a {
   margin-left: 1rem;
   text-decoration: none;
   color: var(--white);
 }
 
 .editProfileModal .socials .items:hover,
-.addExperienceModal .socials .items:hover {
+.addExperienceModal .socials .items:hover,
+.addProjectsModal .socials .items:hover,
+.addAchievementModal .socials .items:hover,
+.addSkillsModal .socials .items:hover {
   opacity: 0.9;
 }
 
 .editProfileModal .socials .blue,
-.addExperienceModal .socials .blue {
+.addExperienceModal .socials .blue,
+.addProjectsModal .socials .blue,
+.addAchievementModal .socials .blue,
+.addSkillsModal .socials .blue {
   background-color: #3d589a;
 }
 
 .editProfileModal .socials .link,
-.addExperienceModal .socials .link {
+.addExperienceModal .socials .link,
+.addProjectsModal .socials .link,
+.addAchievementModal .socials .link,
+.addSkillsModal .socials .link {
   background-color: #0076b4;
 }
 
 .editProfileModal .socials .twitter,
-.addExperienceModal .socials .twitter {
+.addExperienceModal .socials .twitter,
+.addProjectsModal .socials .twitter,
+.addAchievementModal .socials .twitter,
+.addSkillsModal .socials .twitter {
   background-color: #2ca6e0;
 }
 
 .editProfileModal .edill,
-.addExperienceModal .edill {
+.addExperienceModal .edill,
+.addProjectsModal .edill,
+.addAchievementModal .edill,
+.addSkillsModal .edill {
   width: 80%;
   -ms-flex-item-align: end;
       align-self: flex-end;

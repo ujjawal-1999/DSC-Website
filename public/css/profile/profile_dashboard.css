@@ -374,8 +374,7 @@ body {
   border-radius: 10px;
   padding: 1rem;
   width: 100%;
-  background-color: #f8f9d2;
-  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  background-color: #e8f1ff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -589,7 +588,17 @@ body {
           filter: brightness(80%);
 }
 
+@media (max-width: 600px) {
+  .cards .card .content .images .image-container {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1300px) {
+  .cards .card {
+    width: 100%;
+    padding: 0.8rem;
+  }
   .contests {
     width: 100%;
     -webkit-box-pack: center;
