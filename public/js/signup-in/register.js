@@ -115,3 +115,42 @@ function login() {
   });
   type = true;
 }
+
+// Validation Logic
+
+function validate() {
+  var ps = document.getElementById("password").value;
+  var cps = document.getElementById("cpassword").value;
+  var signup = document.getElementById("signupform");
+  if (ps == cps) {
+    console.log("true");
+    signup.submit();
+    return true;
+  } else {
+    alert("Password doesn't match");
+    console.log("false");
+    return false;
+  }
+}
+
+function showpasswordsignup() {
+  var ps = document.getElementById("password");
+  var cps = document.getElementById("cpassword");
+
+  if (ps.type === "password") {
+    ps.type = "text";
+    cps.type = "text";
+  } else {
+    ps.type = "password";
+    cps.type = "password";
+  }
+}
+function showpasswordlogin() {
+  var ps = document.getElementById("loginpassword");
+
+  if (ps.type === "password") {
+    ps.type = "text";
+  } else {
+    ps.type = "password";
+  }
+}
