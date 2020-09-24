@@ -33,8 +33,8 @@ router.get("/", async(req, res) => {
         else user = payload;
       });
     }
-
-    user = await User.findById(user.userId);
+    if (user)
+      user = await User.findById(user.userId);
     const popularBlogs = await Blog.find()
       .sort({
         views: -1,
@@ -95,24 +95,13 @@ router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
   }
 });
 
-router.get("/fullblog", async(req, res) => {
-  const finduser = await User.find();
-  res.render("fullblog", {
-    user: req.user,
-    found: finduser,
-  });
-});
-
-router.get("/fullblog", async(req, res) => {
-  const finduser = await User.find();
-  res.render("fullblog", {
-    user: req.user,
-    found: finduser,
-  });
-});
 router.get("/bookmarks", auth, async(req, res) => {
   const finduser = await User.find();
-  const bookmarks = await User.find(req.user).populate("bookmarkBlogs");
+  const user = await User.findById(req.user.userId).populate("bookmarkBlogs");
+  // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
+  const bookmarks = user.bookmarkBlogs
+
+  // console.log(bookmarks[0])
   res.render("bookmarks", {
     user: req.user,
     found: finduser,
@@ -222,7 +211,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
 });
 
 //route to display blog
-router.get("/view/:slug", auth, async(req, res) => {
+router.get("/view/:slug", async(req, res) => {
   try {
     //find the corresponding blog in db
     let slug = req.params.slug;
@@ -262,7 +251,6 @@ router.get("/view/:slug", auth, async(req, res) => {
         category: "Graphic Design",
       }),
     };
-
     //render result page
     res.render("fullblog", {
       user: req.user,

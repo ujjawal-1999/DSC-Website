@@ -56,7 +56,7 @@
                                                     </h1>
                                                     <p>
                                                         <%- blog.body.substring(0, 300)%>
-                                                            <a href="/dsc/blog/view/<%= blog._id%>">... Read more</a>
+                                                            <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
                                                     </p>
                                                 </div>
                                                 <div class="card-author">
@@ -68,6 +68,7 @@
                                                 </div>
                                                 <div class="card-buttons">
                                                     <i class="fa fa-share" style="font-size: 24px; float: right"></i>
+                                                    <% if (user) {%>
                                                     <form action='/dsc/blog/bookmark/<%= blog._id %>' method='POST'>
                                                         <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
                                                             <% if (user.bookmarkBlogs && user.bookmarkBlogs.includes(blog._id)) {%>
@@ -77,6 +78,7 @@
                                                             <% } %>
                                                         </button>
                                                     </form>
+                                                    <% } %>
                                                 </div>
                                             </div>
                                         </div>
