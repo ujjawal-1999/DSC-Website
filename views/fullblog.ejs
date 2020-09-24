@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>DSC-Blogs</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/css/blogs/all.css" />
+  <link rel="stylesheet" href="/css/index/font-awesome.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- --------- Owl-Carousel ------------------->
+  <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css" />
+
+  <!-- ------------ AOS Library ------------------------- -->
+  <link rel="stylesheet" href="/css/blogs/aos.css" />
+
+  <!-- ------------ QuillJS Library ------------------------- -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <!-- Custom Style   -->
+  <link rel="stylesheet" href="/css/index/colors.css" />
+  <link rel="stylesheet" href="/css/blogs/showBlogs.css" />
+  <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+  <link rel="stylesheet" href="/css/index/footer.css" />
+</head>
+
+<body id="">
+  <!-- ----------------------------  Navigation ---------------------------------------------- -->
+  <%-include('partials/navbar')%>
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+    <main class="main">
+      <div class="rectangle-2">
+        <h1>Lorem ipsum dolor sit amett</h1>
+      </div>
+      <div class="author">
+        <div class="card-person">
+          <div class="card-author">
+          <% if(blog.author.profileImageLocation) {%>
+            <img src="<%=blog.author.profileImageLocation%>" />
+          <% } %>
+            <img src="https://www.dogandpony.io/wp-content/uploads/2018/07/photo-1542103749-8ef59b94f47e.jpeg" />
+            <div class="name" style=""><%=blog.author.name%></div>
+          </div>
+          <div class="share" style="margin-top: 12px">
+            <i class="fa fa-share" style="font-size: 24px; float: right"></i>
+            <% if (user) {%>
+              <form action='/dsc/blog/bookmark/<%= blog._id %>' method='POST'>
+                <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
+                            <% if (user.bookmarkBlogs && user.bookmarkBlogs.includes(blog._id)) {%>
+                            <i class="fas fa-bookmark" style="font-size: 24px; float: right; margin-right: 15px"></i>
+                            <% } else {%>
+                            <i class='far fa-bookmark' style="font-size: 24px; float: right; margin-right: 15px"></i>
+                            <% } %>
+                        </button>
+              </form>
+              <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="card-img">
+          <img src="<%=blog.cover%>" alt="Omar Dsoky" />
+          <span clas='category'><%= blog.category %></span>
+        </div>
+        <div id='editor' style="
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    padding-bottom: 30px;
+                ">
+        <%- blog.body %>
+        </div>
+      </div>
+    </main>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+    <%-include('partials/footer')%>
+
+      <!-- -------------x------------- Footer --------------------x------------------- -->
+
+      <!-- Jquery Library file -->
+      <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+
+      <!-- --------- Owl-Carousel js ------------------->
+      <script src="/js/blogs/owl.carousel.min.js"></script>
+
+      <!-- ------------ AOS js Library  ------------------------- -->
+      <script src="/js/blogs/aos.js"></script>
+
+      <!-- Custom Javascript file -->
+      <script src="/js/navbar.js"></script>
+      <script src="/js/blogs/main.js"></script>
+      <script>
+      </script>
+      <script>
+        var bodydiv = document.getElementById("bodydiv");
+        bodydiv.addEventListener("click", closeSearch);
+
+        function closeSearch() {
+          let search_list1 = document.getElementById("search_list1");
+          search_list1.style.display = "none";
+          let search_list2 = document.getElementById("search_list2");
+          search_list2.style.display = "none";
+        }
+      </script>
+      <script src="/js/blogs/fullblog.js"></script>
+
+</body>
+
+</html>
