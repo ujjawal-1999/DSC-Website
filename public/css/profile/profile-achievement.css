@@ -19,10 +19,14 @@
   .accordion {
     font-size: 10px;
   }
-  .panelexp {
-    width: 100%;
-    padding-left: 0rem;
-    padding-top: 1rem;
+ 
+  #date {
+    display:none;
+  }
+}
+@media (max-width:700px) {
+  .tooltip img {
+    display: none;
   }
 }
 .logoandcompany {
@@ -45,11 +49,7 @@
   transition: 0.4s;
 }
 
-#mention {
-}
-#mention b {
-  color: rgb(13, 56, 196) !important;
-}
+
 .row-ach img {
   size: 5px;
   width: 4rem;
