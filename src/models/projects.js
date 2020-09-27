@@ -17,8 +17,9 @@ const projectsSchema = new mongoose.Schema({
         }
     ],
 	author: {
-		 type: ObjectId,
-		 ref: "User",
+		//  type: ObjectId,
+        //  ref: "User",
+        type: String,
 		 required: true
 	},
 	image: {
@@ -31,7 +32,7 @@ const projectsSchema = new mongoose.Schema({
 	},
 	gitRepoLink: {
         type: String,
-        required: true
+        //required: true
     },
     hostLink: {
         type: String
@@ -40,7 +41,7 @@ const projectsSchema = new mongoose.Schema({
         {
             type: ObjectId,
             ref: "User",
-            required: true
+            //required: true
         }
     ],
     projectDevelopers: [

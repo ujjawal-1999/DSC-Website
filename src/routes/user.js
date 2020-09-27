@@ -265,6 +265,7 @@ router.post("/login", (req, res, next) => {
             },process.env.JWT_SECRET, {
                 expiresIn: "1d"
             });
+            console.log(token);
             res.cookie( 'authorization', token,{ maxAge: 24*60*60*1000, httpOnly: false });
         }
         if(getUser.active)
