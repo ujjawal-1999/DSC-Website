@@ -10,7 +10,7 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: var(--primary-light);
   z-index: 100;
   /* overflow-x: hidden; */
 }
@@ -23,7 +23,7 @@
   align-items: center;
   height: 80px;
   /* overflow: hidden; */
-  background: white;
+  background: var(--primary-light);
 }
 
 .navbar img {
@@ -36,35 +36,44 @@
 
 .navbar ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-self: stretch;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 70%;
+  transform: translateX(-50%);
+  /* justify-self: ; */
 }
 
 #dropbtn {
-  color: var(--navButtons);
+  color: var(--Grey-dark-1);
 }
 
 .nav-item .nav-items-a {
-  color: var(--navButtons);
+  display: inline-block;
+  color: var(--Grey-dark-1);
   font-size: 0.9rem;
   font-weight: 400;
+  height: 2rem;
   padding: 0.5em 0.8em 0.5em 0.8em;
+  text-align: center;
+  border-radius: 5px;
+  /* padding: 0.5em 0.8em 0.5em 0.8em; */
   /* border-bottom: 1.5px solid #01010e; */
   text-decoration: none;
   border-style: 1px solid transparent;
   transition: all 0.2s;
 }
 
-.nav-item a:hover {
-  color: var(--white);
-  background-color: var(--navButtons);
+.nav-item:hover {
+  color: var(--Grey-dark-3);
+  background-color: var(--Grey-light-1);
 }
 
 /* SEARCH FUNCTION */
 
 #search-icon {
-  color: #0b08bb;
+  color: var(--Grey-dark-1);
   font-size: 1.5rem;
   margin-left: 15px;
   transition: color 0.3s ease-out;
@@ -102,7 +111,7 @@
 
 input {
   border: 0;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid var(--Grey-light-4);
   border-radius: 0; /* FOR SAFARI */
   outline: 0;
   padding: 5px;
@@ -113,7 +122,7 @@ input {
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: #0b08bb;
+  background-color: var(--Grey-dark-1);
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -195,13 +204,13 @@ input {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--Grey-light-3);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .dropdown-content a {
-  color: black;
+  color: var(--Grey-dark-4);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -225,13 +234,13 @@ input {
     position: fixed;
     justify-content: start;
     top: 70px;
-    background-color: white;
+    background-color: var(--primary-light);
     width: 100%;
     height: calc(100vh - 70px);
-    transform: translate(-101%);
     text-align: center;
     overflow: hidden;
     z-index: 100;
+    transform: translateX(-150%);
   }
   .dropdown.hover-active .dropdown-content {
     display: inline-block;
@@ -289,7 +298,7 @@ input {
   }
 
   .mobile-nav {
-    transform: translate(0%) !important;
+    transform: translate(-50%) !important;
     z-index: 100 !important;
   }
 
