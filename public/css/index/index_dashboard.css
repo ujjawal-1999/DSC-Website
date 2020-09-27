@@ -195,7 +195,7 @@ body::-webkit-scrollbar-thumb {
 
 .header .heading__secondary {
   opacity: 0;
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 0.5rem;
   color: var(--Grey-dark-1);
   font-family: sans-serif;

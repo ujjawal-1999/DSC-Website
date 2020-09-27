@@ -12,4 +12,3 @@ for (let i = 0; i < tabEl.length; i++) {
   });
   tabs.init();
 }
-

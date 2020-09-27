@@ -45,10 +45,14 @@ img {
   -webkit-font-smoothing: antialiased;
 }
 
+.persue {
+  font-size: 1.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
 .game {
   position: relative;
-  width: 16em;
-  height: 22em;
+  width: 20rem;
   cursor: pointer;
   background: #f1f1f1;
   border-radius: var(--br);
@@ -75,7 +79,7 @@ img {
   top: 0rem;
   right: 0;
   z-index: 1000;
-  font-size: 1.125rem;
+  font-size: 0.8rem;
   background: var(--clr-light);
   color: var(--clr-dark);
   padding: 0.5em 0.5em 0.75em;
@@ -113,6 +117,7 @@ img {
 .front .name {
   font-family: "Times New Roman", Times, serif;
   margin: 0.75em 0;
+  font-size: 2rem;
 }
 
 .front .stats {
@@ -219,8 +224,8 @@ img {
 }
 
 .game:hover .rank {
-  -webkit-transform: translate(65%, -70%);
-          transform: translate(65%, -70%);
+  -webkit-transform: translate(75%, -80%);
+          transform: translate(75%, -80%);
 }
 
 .game:hover .front {
@@ -248,6 +253,11 @@ img {
   transition: opacity 150ms linear, -webkit-transform 250ms ease;
   transition: transform 250ms ease, opacity 150ms linear;
   transition: transform 250ms ease, opacity 150ms linear, -webkit-transform 250ms ease;
+}
+
+.game:hover .back .about {
+  -webkit-transform: translateY(3rem);
+          transform: translateY(3rem);
 }
 
 .game:hover .back .streamers {
