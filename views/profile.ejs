@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
     <link rel="stylesheet" href="/css/profile/profile_experience.css" />
     <link rel="stylesheet" href="/css/profile/profile_skills.css" />
-    <link rel="stylesheet" href="/css/profile/modal.css" />
     <link rel="stylesheet" href="/css/profile/profile-achievement.css" />
     <link rel="stylesheet" href="/css/profile/profile_projects.css" />
+    <link rel="stylesheet" href="/css/profile/modal.css" />
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <!-- JQuery for navbar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- Stylings Ends -->
   </head>
   <body>
@@ -479,8 +483,9 @@
                   <h2><%= user.name %></h2>
                 </div>
                 <p>
-                  <% if(user.branch!=null){ %> <%= user.branch %> <% }else{%>
-                  Your profile details are empty.<% }%>
+                  <% if(user.branch!=null){ %> <%= user.degree %> | <%=
+                  user.branch %> <% }else{%> Your profile details are empty.<%
+                  }%>
                 </p>
                 <p>
                   <% if(user.bio!=null){ %> <%= user.bio%> <% }else{%> <% }%>
@@ -1092,8 +1097,10 @@
       </section>
     </div>
   </body>
-  <!-- 
-  <script src="/js/darkmode.js"></script> -->
+  <script src="/js/darkmode.js"></script>
+  <!-- Navbar JS -->
+  <script src="/js/navbar.js"></script>
+  <!-- Navbar JS -->
   <script src="/js/a11ytab.js"></script>
   <script src="/js/profile/profile.js"></script>
   <script src="/js/profile/modal.js"></script>

@@ -222,6 +222,11 @@ body {
           justify-content: space-evenly;
 }
 
+.dashboard__main .main__profileinfo .pictureandbasic .info p {
+  width: 75%;
+  line-height: 1.2rem;
+}
+
 .dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -596,6 +601,10 @@ body {
 }
 
 @media (max-width: 1300px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .info p {
+    width: auto !important;
+    overflow: hidden;
+  }
   .cards .card {
     width: 100%;
     padding: 0.8rem;

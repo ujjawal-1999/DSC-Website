@@ -38,23 +38,30 @@
   list-style: none;
   display: flex;
   position: absolute;
-  top: 0;
+  /* top: 0; */
   left: 50%;
-  width: 70%;
+  width: 80%;
+  align-self: center;
   transform: translateX(-50%);
-  /* justify-self: ; */
+  justify-content: space-around;
+  align-content: center;
 }
 
 #dropbtn {
   color: var(--Grey-dark-1);
 }
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 .nav-item .nav-items-a {
-  display: inline-block;
+  display: block;
   color: var(--Grey-dark-1);
   font-size: 0.9rem;
   font-weight: 400;
-  height: 2rem;
+  height: auto;
   padding: 0.5em 0.8em 0.5em 0.8em;
   text-align: center;
   border-radius: 5px;

@@ -174,7 +174,10 @@ body {
             flex-direction: column;
             height: 15rem;
             justify-content: space-evenly;
-
+            p {
+              width: 75%;
+              line-height: 1.2rem;
+            }
             .nameandedit {
               display: flex;
               flex-direction: row;
@@ -459,6 +462,10 @@ body {
 }
 
 @media (max-width: 1300px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .info p {
+    width: auto !important;
+    overflow: hidden;
+  }
   .cards .card {
     width: 100%;
     padding: 0.8rem;

@@ -385,11 +385,11 @@ router.get("/profile", authorization, async (req, res) => {
     const finduser = await User.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        // if (err) console.log(err);
-        // else req.user = user;
         console.log(req.dbUser);
         res.render("profile", { user: req.dbUser, found: finduser });
       });
+    } else {
+      res.redirect("/dsc/user/register");
     }
   } catch (error) {
     console.error(error);
