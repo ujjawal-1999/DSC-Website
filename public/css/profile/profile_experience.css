@@ -4,8 +4,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+  color: var(--Grey-dark-1);
 }
-
+.flexRow button {
+  color: var(--Grey-dark-1);
+}
 .addExperience {
   background-color: transparent;
   border: none;
@@ -31,6 +34,7 @@
   font-family: Arial, Helvetica, sans-serif;
   padding: 1rem;
   margin: 1rem;
+  color: var(--Grey-dark-1) !important;
 }
 @media (max-width: 822px) {
   .row .column .button {
@@ -53,7 +57,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .row .column h3 {
-  color: rgb(100, 105, 103);
+  color: var(--Grey-dark-1) !important;
   overflow: auto;
 }
 .accordion {
@@ -83,7 +87,7 @@
 }
 
 #mention {
-  color: rgb(27, 26, 26);
+  color: var(--Grey-dark-1) !important;
   background-color: rgba(138, 92, 141, 0.1);
   height: 1.4375rem;
   line-height: 1.4375rem;
@@ -94,7 +98,7 @@
   font-size: 0.7rem;
 }
 #mention b {
-  color: rgb(13, 56, 196) !important;
+  color: var(--Grey-dark-1) !important;
 }
 .row img {
   size: 5px;
@@ -103,7 +107,7 @@
   padding-right: 1rem;
 }
 .card_exp span {
-  color: rgb(158, 157, 157);
+  color: var(--Grey-light-1);
   font-weight: 0.4rem;
   letter-spacing: 4px;
   padding-left: 2rem;

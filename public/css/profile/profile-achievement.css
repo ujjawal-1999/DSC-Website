@@ -6,7 +6,7 @@
   padding: 1rem;
   margin: 1rem;
   background-color: rgba(221, 220, 220, 0.297);
-  border-radius: 6px;
+  border-radius: 100px;
   height: 5rem;
 }
 @media (max-width: 822px) {
@@ -19,12 +19,12 @@
   .accordion {
     font-size: 10px;
   }
- 
+
   #date {
-    display:none;
+    display: none;
   }
 }
-@media (max-width:700px) {
+@media (max-width: 700px) {
   .tooltip img {
     display: none;
   }
@@ -37,7 +37,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .row-ach .column-ach h3 {
-  color: rgb(100, 105, 103);
+  color: var(--Grey-dark-1);
   overflow: auto;
 }
 .tab-ach {
@@ -49,12 +49,13 @@
   transition: 0.4s;
 }
 
-
 .row-ach img {
   size: 5px;
-  width: 4rem;
+  width: 3rem;
   height: 3rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
+  /* padding-right: 1rem; */
+  border-radius: 50%;
 }
 .card_ach span {
   color: rgb(158, 157, 157);
@@ -87,11 +88,11 @@
 }
 .row-ach p {
   font-size: 10px;
-  color: rgb(124, 120, 120);
+  color: var(--Grey-dark-2);
   font-family: Arial, Helvetica, sans-serif;
 }
 #date {
-  color: rgb(6, 30, 107);
+  color: var(--Grey-dark-1);
   height: 1.4375rem;
   line-height: 1rem;
   padding: 0 1.25rem;

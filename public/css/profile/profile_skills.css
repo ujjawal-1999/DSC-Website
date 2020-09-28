@@ -1,3 +1,7 @@
+.cards {
+  color: var(--Grey-dark-1);
+}
+
 .cards .card .skill-description {
   margin-right: auto;
 }
@@ -29,7 +33,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 #btn {
   border: none;
@@ -40,6 +43,6 @@
   text-transform: uppercase;
 }
 
-#btn:hover{
+#btn:hover {
   background-color: rgb(73, 73, 238);
 }

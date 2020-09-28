@@ -8,6 +8,7 @@ body {
   justify-content: center;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-light) !important;
 }
 
 .container {
@@ -42,6 +43,8 @@ body {
     border-radius: 3px;
     transition: all 0.2s;
     margin-right: 3rem;
+    color: var(--Grey-dark-1);
+    background-color: var(--primary-light);
     &:hover {
       cursor: pointer;
       color: var(--Grey-light-1);
@@ -276,7 +279,8 @@ body {
 
 .contests {
   width: 25%;
-  background-color: var(--white);
+  background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
   padding: 0.9rem;
   font-family: sans-serif;
 
@@ -299,7 +303,8 @@ body {
       border-radius: 10px;
       padding: 1rem;
       width: 100%;
-      background-color: #e8f1ff;
+      background-color: var(--Grey-light-1);
+      color: var(--Grey-dark-1);
       transition: all 0.3s;
 
       hr {
@@ -345,7 +350,8 @@ body {
         font-family: sans-serif;
         border-radius: 3px;
         transition: all 0.2s;
-        background-color: transparent;
+        background-color: var(--Grey-light-1);
+        color: var(--Grey-dark-1);
         &:hover {
           cursor: pointer;
           color: var(--Grey-light-1);
@@ -389,6 +395,7 @@ body {
       .sharable {
         margin-top: 1rem;
         p {
+          color: var(--Grey-dark-4) !important;
           font-size: 0.8rem;
           font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
             "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -406,6 +413,8 @@ body {
       display: flex;
       flex-direction: column;
       width: 90%;
+      background-color: var(--Grey-light-1);
+      color: var(--Grey-dark-1);
       .topic {
         margin-top: 0.3rem;
         font-size: 1rem;
@@ -693,7 +702,7 @@ body {
   border-radius: 0 0 0.3em 0.3em;
   position: relative;
   z-index: 1;
-  background-color: var(--white);
+  background-color: var(--primary-light);
 }
 
 .tab-panel {

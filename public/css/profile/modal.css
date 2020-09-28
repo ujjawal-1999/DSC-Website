@@ -17,6 +17,7 @@
   pointer-events: none;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  top: 0;
 }
 
 .modal img {

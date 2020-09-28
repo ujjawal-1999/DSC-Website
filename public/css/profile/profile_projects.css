@@ -1,5 +1,5 @@
 .grid-item {
-  color: black;
+  color: var(--Grey-dark-1);
   font-size: 1em;
   font-weight: 700;
 }
@@ -88,9 +88,11 @@
 }
 
 .item {
-  display: inline-block;
-  /* background: skyblue; */
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 20rem;
   width: 25%;
   max-width: 325px;
   margin: 2em 1em;
@@ -114,15 +116,19 @@
 
 /* Main Body */
 .project-lang {
-  width: 100%;
-  margin-top: 20px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
+  height: 5rem;
+}
+
+.lang {
+  background-color: var(--white);
 }
 .items .item .project-lang .lang .language {
   height: 70px;
+  margin: 0 0.2rem;
 }
 
 .project-name {
@@ -131,6 +137,7 @@
   font-size: 30px;
 }
 .project-name > a {
+  color: var(--Grey-dark-1);
   text-decoration: none;
 }
 .project-role {
