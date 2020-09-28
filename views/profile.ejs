@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <!-- Stylings Starts-->
+    <link rel="stylesheet" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
+    <link rel="stylesheet" href="/css/profile/profile_experience.css" />
+    <link rel="stylesheet" href="/css/profile/profile_skills.css" />
+    <link rel="stylesheet" href="/css/profile/modal.css" />
+    <link rel="stylesheet" href="/css/profile/profile-achievement.css" />
+    <link rel="stylesheet" href="/css/profile/profile_projects.css" />
+    <!-- Stylings Ends -->
+  </head>
+  <body>
+    <%-include('partials/navbar')%>
+    <!-- Edit Expereince Modal  -->
+    <div class="addExperienceModal" id="addExperienceModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo1"
+            class="backlogo1"
+            src="/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Add a new </span> Experience</h2>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="pname">Project Name</label>
+              <input id="pname" type="text" name="pname" />
+            </div>
+            <div class="flexRow">
+              <label for="prole">Project Role</label>
+              <input id="prole" type="text" name="prole" />
+            </div>
+            <div class="flexRow">
+              <label for="Duration">Duration</label>
+              <input id="Duration" placeholder="In months" name="Duration" />
+            </div>
+
+            <div class="flexRow">
+              <label for="Status">Status</label>
+              <select name="Status" id="Status">
+                <option value="Ongoing">Ongoing</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="Description">Description</label>
+              <input id="Description" type="text" name="Description" />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Expereince Modal  -->
+    <!-- Edit Profile Modal  -->
+    <div class="editProfileModal" id="editProfileModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img id="backlogo" class="backlogo" src="/img/logo/bac.png" alt="" />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Profile</span> Details</h2>
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                value="Robert"
+                name="name"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="hname">DSC Handle</label>
+              <input
+                id="hname"
+                type="text"
+                value="ironMan"
+                name="hname"
+                required
+              />
+            </div>
+
+            <div class="flexRow">
+              <label for="degree">Degree</label>
+              <select name="degree" id="degree" required>
+                <option value="BTECH">Bachelor of Technology</option>
+                <option value="MTECH">Master of Technology</option>
+                <option value="PHD">PHD</option>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="branchCode">Branch</label>
+              <input
+                id="branch"
+                type="text"
+                value="CSE"
+                name="branch"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="branchYear">Branch Year</label>
+              <select name="branchYear" id="branchYear" required>
+                <option value="23">2019-23</option>
+                <option value="22">2018-22</option>
+                <option value="21">2017-21</option>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                value="lwrjvrgnwj@gmail.com"
+                name="email"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="password">Password </label>
+              <div class="flexRow fullwidth">
+                <p>Last Changed 2 months ago</p>
+                <a href="">Change Password</a>
+              </div>
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" required />
+              <a href="">Deactivae My Account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <div class="socials">
+            <div class="items blue">
+              <img src="/img/logo/fbw.jpg " alt="" />
+              <a href="">Connect to Facebook</a>
+            </div>
+            <div class="items link">
+              <img src="/img/logo/link.png" alt="" />
+              <a href="">Connect to Linkedin</a>
+            </div>
+            <div class="items twitter">
+              <img src="/img/logo/twitter.png" alt="" />
+              <a href="">Connect to Twitter</a>
+            </div>
+          </div>
+          <img class="edill" src="/img/illustrations/editing.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Edit Profile Modal  -->
+
+    <!-- Image Viewer Modal  -->
+    <div class="modal">
+      <img class="fullview" src="" alt="" />
+    </div>
+    <!-- Image Viewer Modal  -->
+
+    <!-- addSkillsModal Modal  -->
+    <div class="addSkillsModal" id="addSkillsModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo2"
+            class="backlogo1"
+            src="/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Add a new </span> Skills</h2>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="skillname">Skill Name</label>
+              <input id="skillname" type="text" name="skillname" required />
+            </div>
+            <div class="flexRow">
+              <label for="skilllevel">Skill Level</label>
+              <input id="skilllevel" type="text" name="skilllevel" required />
+            </div>
+            <div class="flexRow">
+              <label for="skillsduration">Duration</label>
+              <input
+                id="skillsduration"
+                placeholder="In months"
+                name="skillsduration"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="skilldescription">Description</label>
+              <input
+                id="skilldescription"
+                type="text"
+                name="skilldescription"
+                required
+              />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- addSkillsModal Modal  -->
+
+    <!-- addProjectsModal Modal  -->
+    <div class="addProjectsModal" id="addProjectsModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo3"
+            class="backlogo1"
+            src="/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Add a new </span> Project</h2>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="projectname">Project Name</label>
+              <input id="projectname" type="text" name="projectname" required />
+            </div>
+            <div class="flexRow">
+              <label for="projectrole">Project Role</label>
+              <input id="projectrole" type="text" name="projectrole" required />
+            </div>
+            <div class="flexRow">
+              <label for="startdate">Start Date</label>
+              <input
+                id="startdate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="startdate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="enddate">End Date</label>
+              <input
+                id="enddate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="enddate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="techstack">Techstacks</label>
+              <select name="techstack" id="techstack" required>
+                <option value="NWS">HTML, Vanilla JS</option>
+                <option value="MEN">NodeJs, Mongoose, Express</option>
+                <option value="MERN">ReactJs, Mongoose, Express</option>
+                <option value="MEAN">AngularJs, Mongoose, Express</option>
+                <option value="PWS">Python, DJango, Mongoose</option>
+                <option value="NAS">Java, Firebase</option>
+                <option value="FAS">Flutter, Firebase</option>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="githuburl">Git Hub URL</label>
+              <input
+                id="githuburl"
+                type="text"
+                placeholder="Your Github repository link"
+                name="githuburl"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="projectdescription">Description</label>
+              <input
+                id="projectdescription"
+                type="text"
+                name="projectdescription"
+                required
+              />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- addSkillsModal Modal  -->
+    <!-- addAchievementModal Modal  -->
+    <div class="addAchievementModal" id="addAchievementModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo4"
+            class="backlogo1"
+            src="/img/logo/bac.png"
+            alt=""
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Add a new </span> Achievement</h2>
+
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="flexRow">
+              <label for="achievementname">Achievement Name</label>
+              <input
+                id="achievementname"
+                type="text"
+                name="achievementname"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="achievementnameplatform">Achievement Platform</label>
+              <input
+                id="achievementnameplatform"
+                type="text"
+                name="achievementnameplatform"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="achievementnamedate">Received Date</label>
+              <input
+                id="achievementnamedate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="achievementnamedate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="achievementnameserial">Unique Serial ID</label>
+              <input
+                id="achievementnameserial"
+                type="text"
+                placeholder="This can be any unique value that indicated your Achievement."
+                name="achievementnameserial"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="projectdescription">Description</label>
+              <input
+                id="projectdescription"
+                type="text"
+                name="projectdescription"
+                required
+              />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input id="submit" type="submit" value="Save Changes" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- addAchievementModal Modal  -->
+    <!-- Main Content Starts -->
+    <div class="container">
+      <section class="accountbar">
+        <p></p>
+        <div class="accountbar__shortcut">
+          <div class="fndp">Find People</div>
+          <div class="fndp" id="editbtn">Edit Profile</div>
+          <!-- <div class="edit" id="editbtn" ></div> -->
+          <% if(user.profileImageLocation!=null){ %>
+          <img
+            class="bell resone"
+            src="<%= user.profileImageLocation%>"
+            alt="UserPhoto"
+          />
+          <% }else{%>
+
+          <img
+            class="bell resone"
+            src="/img/logo/profile.png"
+            alt="UserPhoto"
+          />
+          <% }%>
+
+          <img class="bell" src="/img/logo/bell.png" alt="Notification Logo" />
+        </div>
+      </section>
+      <section class="accountdetails">
+        <section class="dashboard__navbar">
+          <ul class="side-nav">
+            <!-- <li class="side-nav__item side-nav__item--active">
+              <a href="#" class="side-nav__link">
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="side-nav__item side-nav__item">
+              <a href="#" class="side-nav__link">
+                <span>Projects</span>
+              </a>
+            </li>
+            <li class="side-nav__item side-nav__item">
+              <a href="#" class="side-nav__link">
+                <span>Achievements</span>
+              </a>
+            </li> -->
+          </ul>
+        </section>
+        <section class="dashboard__main">
+          <section class="main__profileinfo">
+            <div class="pictureandbasic">
+              <div class="photo">
+                <% if(user.profileImageLocation!=null){ %>
+                <img src=" <%= user.profileImageLocation%>" alt="" />
+                <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
+              </div>
+              <div class="info">
+                <div class="nameandedit">
+                  <h2><%= user.name %></h2>
+                </div>
+                <p>
+                  <% if(user.branch!=null){ %> <%= user.branch %> <% }else{%>
+                  Your profile details are empty.<% }%>
+                </p>
+                <p>
+                  <% if(user.bio!=null){ %> <%= user.bio%> <% }else{%> <% }%>
+                </p>
+                <div class="branchandyear">
+                  <div class="collegeinfo">
+                    <% if(user.socialLinks["facebook"]!=null){ %>
+                    <a href='<%= user.socialLinks["facebook"]%>'>
+                      <img class="s" src="/img/logo/fb.png" alt="" />
+                    </a>
+                    <% }else{%>
+
+                    <a href="#">
+                      <img class="s" src="/img/logo/fb.png" alt="" /> </a
+                    ><% }%>
+                  </div>
+                  <div class="collegeinfo">
+                    <% if(user.socialLinks["linkedin"]!=null){ %>
+                    <a href='<%= user.socialLinks["linkedin"]%>'>
+                      <img class="s" src="/img/logo/link.png" alt="" />
+                    </a>
+                    <% }else{%>
+
+                    <a href="#">
+                      <img class="s" src="/img/logo/link.png" alt="" /> </a
+                    ><% }%>
+                  </div>
+                  <div class="collegeinfo">
+                    <% if(user.socialLinks["twitter"]!=null){ %>
+                    <a href='<%= user.socialLinks["twitter"]%>'>
+                      <img class="s" src="/img/logo/twitter.png" alt="" />
+                    </a>
+                    <% }else{%>
+
+                    <a href="#">
+                      <img class="s" src="/img/logo/twitter.png" alt="" /> </a
+                    ><% }%>
+                  </div>
+                </div>
+              </div>
+              <div class="faint">ironMAN</div>
+            </div>
+          </section>
+          <section class="main__detailedinfo">
+            <div class="panel-body">
+              <div class="tab-container">
+                <ul class="tab-buttons tab-buttons--basic tab-buttons--left">
+                  <li class="tab-button-item" role="presentation">
+                    <a
+                      href="#panel01"
+                      id="tab01"
+                      class="tab-button tab-button--is-active"
+                      data-a11ytab-tab
+                      >Timeline</a
+                    >
+                  </li>
+                  <li class="tab-button-item" role="presentation">
+                    <a
+                      href="#panel02"
+                      id="tab02"
+                      class="tab-button"
+                      data-a11ytab-tab
+                      >Experience</a
+                    >
+                  </li>
+                  <li class="tab-button-item" role="presentation">
+                    <a
+                      href="#panel03"
+                      id="tab03"
+                      class="tab-button"
+                      data-a11ytab-tab
+                      >Skills</a
+                    >
+                  </li>
+                  <li class="tab-button-item" role="presentation">
+                    <a
+                      href="#panel04"
+                      id="tab04"
+                      class="tab-button"
+                      data-a11ytab-tab
+                      >Projects</a
+                    >
+                  </li>
+                  <li class="tab-button-item" role="presentation">
+                    <a
+                      href="#panel05"
+                      id="tab05"
+                      class="tab-button"
+                      data-a11ytab-tab
+                    >
+                      Achievements</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-panels">
+                  <div id="panel01" class="tab-panel">
+                    <div class="cards">
+                      <div class="card">
+                        <div class="socialactivity">
+                          <img src="/img/teams_potraits/rdj.jpg" alt="" />
+                          <div class="sharable">
+                            <p>Share on</p>
+                            <img class="s" src="/img/logo/fb.png" alt="" />
+                            <img class="s" src="/img/logo/link.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="content">
+                          <h3 class="topic">Title 1</h3>
+                          <p class="place">NIT Silchar</p>
+                          <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde.
+                          </p>
+                          <div class="images">
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/example_post.png"
+                                alt=""
+                                data-original="/img/profile/example_post.png"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/pl.jpg"
+                                alt=""
+                                data-original="/img/profile/pl.jpg"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/land.jpg"
+                                alt=""
+                                data-original="/img/profile/land.jpg"
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/example_post.png"
+                                data-original="/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/example_post.png"
+                                data-original="/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="image-container">
+                              <img
+                                class="post-images"
+                                src="/img/profile/example_post.png"
+                                data-original="/img/profile/example_post.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="socialactivity">
+                          <img src="/img/teams_potraits/rdj.jpg" alt="" />
+                          <div class="sharable">
+                            <p>Share on</p>
+                            <img class="s" src="/img/logo/fb.png" alt="" />
+                            <img class="s" src="/img/logo/link.png" alt="" />
+                          </div>
+                        </div>
+                        <div class="content">
+                          <h3 class="topic">Title 2</h3>
+                          <p class="place">NIT Silchar</p>
+                          <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde. Quidem non dolor mollitia minima voluptate
+                            necessitatibus tempora amet aliquid reprehenderit
+                            unde.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="panel02" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>EXPERIENCE</h3>
+                      <div class="flexRow">
+                        <p>Want to add more Experience ?</p>
+                        <button class="addExperience" id="addExperience">
+                          Click here
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cards_exp">
+                      <div class="card_exp">
+                        <div class="row">
+                          <div class="column">
+                            <img src="/img/logo/DSC_logo.png" alt="company" />
+                            <h3 class="accordion">
+                              Marketing & Communication Manager<br />
+                              <p>Microsoft</p>
+                            </h3>
+
+                            <div id="mention"><b>&#9899;</b> management</div>
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img src="/img/logo/DSC_logo.png" alt="company" />
+
+                            <h3 class="accordion">
+                              Social Media Asistent<br />
+                              <p>Tecneosis,NIT Silchar</p>
+                            </h3>
+
+                            <div id="mention">
+                              <b>&#9899;</b> business development
+                            </div>
+                            <!--<div class="bookmarks">
+                                        <a>
+                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                      </div>-->
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <img src="/img/logo/DSC_logo.png" alt="company" />
+
+                            <h3 class="accordion">
+                              Marketing Head<br />
+                              <p>Incandescence,NIT Silchar</p>
+                            </h3>
+
+                            <div id="mention">
+                              <b>&#9899;</b> business development
+                            </div>
+                          </div>
+                          <div class="panelexp">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod tempor incididunt
+                              ut labore et dolore magna aliqua. Ut enim ad minim
+                              veniam, quis nostrud exercitation ullamco laboris
+                              nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="panel03" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>SKILLS</h3>
+                      <div class="flexRow">
+                        <p>Want to add more Skills ?</p>
+                        <button class="addExperience" id="addSkills">
+                          Click here
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="card">
+                        <div class="skill-icon">
+                          <img
+                            src="/img/skill-icons/java.png"
+                            alt=""
+                            class="icon"
+                          />
+                        </div>
+                        <div class="skill-description">
+                          <h3 class="skill-name">Java</h3>
+                          <h4 class="skill-time">2 months</h4>
+                        </div>
+                        <p class="skill-level">Beginner</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="panel04" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>PROJECTS</h3>
+                      <div class="flexRow">
+                        <p>Want to showcase more Projects ?</p>
+                        <button class="addExperience" id="addProject">
+                          Click here
+                        </button>
+                      </div>
+                    </div>
+                    <section class="grid-item main">
+                      <div class="items">
+                        <div class="item item1">
+                          <div class="project-lang">
+                            <div class="lang lang1">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/js.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang2">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/css.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang3">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/html-5.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="project-name">
+                            <a href="https://github.com/"
+                              ><h4>DSC Website</h4></a
+                            >
+                          </div>
+                          <div class="project-role">
+                            <h4>Front-End Developer</h4>
+                          </div>
+                          <div class="project-duration">
+                            <h3>Aug 30 - Sept 30</h3>
+                          </div>
+                        </div>
+                        <div class="item item1">
+                          <div class="project-lang">
+                            <div class="lang lang1">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/js.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang2">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/css.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang3">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/html-5.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="project-name">
+                            <a href="https://github.com/"
+                              ><h4>Gymkhana Website</h4></a
+                            >
+                          </div>
+                          <div class="project-role">
+                            <h4>Front-End Developer</h4>
+                          </div>
+                          <div class="project-duration">
+                            <h3>Sept 15 - Oct 30</h3>
+                          </div>
+                        </div>
+                        <div class="item item1">
+                          <div class="project-lang">
+                            <div class="lang lang1">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/node.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang2">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/react.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="lang lang3">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/html-5.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="project-name">
+                            <a href="https://github.com/"
+                              ><h4>E-Cell Website</h4></a
+                            >
+                          </div>
+                          <div class="project-role">
+                            <h4>Back-End Developer</h4>
+                          </div>
+                          <div class="project-duration">
+                            <h3>July 30 - Aug 20</h3>
+                          </div>
+                        </div>
+                        <div class="item item1">
+                          <div class="project-lang">
+                            <div class="lang lang1">
+                              <img
+                                class="language"
+                                src="/img/skill-icons/flutter.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="project-name">
+                            <a href="https://github.com/"
+                              ><h4>Attendance App</h4></a
+                            >
+                          </div>
+                          <div class="project-role">
+                            <h4>Android Developer</h4>
+                          </div>
+                          <div class="project-duration">
+                            <h3>Oct 15 - Nov 20</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div id="panel05" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>ACHIEVEMENTS</h3>
+                      <div class="flexRow">
+                        <p>Want to add more Achievements ?</p>
+                        <button class="addExperience" id="addAchievement">
+                          Click here
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cards_ach">
+                      <div class="card_ach">
+                        <div class="row-ach">
+                          <div class="column-ach">
+                            <img
+                              src="/img/logo/images (92).jpeg"
+                              alt="company"
+                            />
+                            <h3 class="tab-ach">
+                              Gold Badge C++<br />
+                              <p>Hackerrank</p>
+                            </h3>
+                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
+                            <div class="tooltip">
+                              <img src="/img/logo/info.svg" alt="info" />
+                              <span class="tooltiptext"
+                                >Credential ID: 19234567</span
+                              >
+                            </div>
+                            <!--<div class="bookmarks">
+                                   <a>
+                                 <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                 </div>-->
+                          </div>
+                        </div>
+                        <div class="row-ach">
+                          <div class="column-ach">
+                            <img
+                              src="/img/logo/images (92).jpeg"
+                              alt="company"
+                            />
+
+                            <h3 class="tab-ach">
+                              Best Coder<br />
+                              <p>Tecneosis,NIT Silchar</p>
+                            </h3>
+                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
+                            <div class="tooltip">
+                              <img src="/img/logo/info.svg" alt="info" />
+                              <span class="tooltiptext"
+                                >Credential ID: 19234567</span
+                              >
+                            </div>
+                            <!--<div class="bookmarks">
+                                        <a>
+                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                      </div>-->
+                          </div>
+                        </div>
+                        <div class="row-ach">
+                          <div class="column-ach">
+                            <img
+                              src="/img/logo/images (92).jpeg"
+                              alt="company"
+                            />
+
+                            <h3 class="tab-ach">
+                              Gold Medal<br />
+                              <p>Hackathon,NIT Silchar</p>
+                            </h3>
+                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
+                            <div class="tooltip">
+                              <img src="/img/logo/info.svg" alt="info" />
+                              <span class="tooltiptext"
+                                >Credential ID: 19234567</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row-ach">
+                          <div class="column-ach">
+                            <img
+                              src="/img/logo/images (92).jpeg"
+                              alt="company"
+                            />
+
+                            <h3 class="tab-ach">
+                              Second Runner-up<br />
+                              <p>Smart India Hackathon,NIT Silchar</p>
+                            </h3>
+                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
+                            <div class="tooltip">
+                              <img src="/img/logo/info.svg" alt="info" />
+                              <span class="tooltiptext"
+                                >Credential ID: 19234567</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="contests">
+          <h1>Contests</h1>
+          <div class="container">
+            <div class="card">
+              <p class="type">Hackathon</p>
+              <hr />
+              <p class="topic">Website Developement</p>
+              <p class="details">
+                Introducing Hack 1 of Microsoft Azure Champions League, a series
+                of three hackathons.
+              </p>
+              <div class="timings">
+                <div class="time">
+                  <p class="stat">START</p>
+                  <p>12 September</p>
+                </div>
+                <div class="time">
+                  <p class="stat">END</p>
+                  <p>22 September</p>
+                </div>
+              </div>
+              <hr />
+              <div class="timings">
+                <button>Register</button> <button>Enter</button>
+              </div>
+            </div>
+            <div class="card">
+              <p class="type">Coding Contest</p>
+              <hr />
+              <p class="topic">C++ Marathon</p>
+              <p class="details">
+                Introducing Hack 1 of Microsoft Azure Champions League, a series
+                of three hackathons.
+              </p>
+              <div class="timings">
+                <div class="time">
+                  <p class="stat">START</p>
+                  <p>12 September</p>
+                </div>
+                <div class="time">
+                  <p class="stat">END</p>
+                  <p>22 September</p>
+                </div>
+              </div>
+              <hr />
+              <div class="timings">
+                <button>Register</button> <button>Enter</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+  <!-- 
+  <script src="/js/darkmode.js"></script> -->
+  <script src="/js/a11ytab.js"></script>
+  <script src="/js/profile/profile.js"></script>
+  <script src="/js/profile/modal.js"></script>
+</html>
