@@ -8,7 +8,7 @@
         <span class="bar"></span>
       </div>
       <ul class="nav no-search">
-        <!-- <li class="nav-item"><a href="#">Home</a></li> -->
+        <li class="nav-item"><a href="#" class="nav-items-a">Home</a></li>
         <li class="nav-item">
           <a href="/dsc/#about" class="nav-items-a">About Us</a>
         </li>
@@ -18,17 +18,16 @@
         <li class="nav-item">
           <a href="/dsc/#schedule" class="nav-items-a">Announcement</a>
         </li>
-        <!-- <li class="nav-item"><a href="#">Contact Us</a></li> -->
-        <!-- <li class="nav-item"><a href="#">FAQ</a></li> -->
-        <!-- <li class="nav-item"><a href="#">Gallery</a></li> -->
+        <li id="dmodeGLOBAL" class="nav-item">
+          <a href="#" class="nav-items-a">Dark Mode</a>
+        </li>
+
         <% if(!user){ %>
         <li class="nav-item">
           <a href="/dsc/user/register" class="nav-items-a">Log In/Sign Up</a>
         </li>
         <% }else{ %>
-        <!-- <li class="nav-item">
-            <a href="/dsc/user/logout" class="nav-items-a">LogOut</a>
-          </li> -->
+
         <li class="nav-item">
           <div class="dropdown">
             <span id="dropbtn">Signed in as <%= user.name %></span>
@@ -40,7 +39,6 @@
         </li>
         <% } %>
 
-        <!-- <li class="nav-item"><a href="#">SignUp</a></li> -->
         <li class="nav-item">
           <div class="searchcontainer">
             <i class="fas fa-search" id="search-icon"></i>
