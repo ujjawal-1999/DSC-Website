@@ -18,9 +18,9 @@
         <li class="nav-item">
           <a href="/dsc/#schedule" class="nav-items-a">Announcement</a>
         </li>
-        <li id="dmodeGLOBAL" class="nav-item">
+        <!-- <li id="dmodeGLOBAL" class="nav-item">
           <a href="#" class="nav-items-a">Dark Mode</a>
-        </li>
+        </li> -->
 
         <% if(!user){ %>
         <li class="nav-item">
@@ -31,8 +31,22 @@
           <a href="/dsc/user/profile" class="nav-items-a"><%= user.name %></a>
         </li>
         <li class="nav-item">
-          <a href="/dsc/user/logout" class="nav-items-a">Log Out</a>
+          <div class="box">
+            <input
+              class="type-checkbox"
+              id="toogle"
+              type="checkbox"
+              name="name"
+            />
+            <label class="estado" for="toogle">
+              <span class="aprobado">Light</span>
+              <span class="desaprobado">Dark</span>
+            </label>
+          </div>
         </li>
+        <!-- <li class="nav-item">
+          <a href="/dsc/user/logout" class="nav-items-a">Log Out</a>
+        </li> -->
         <!-- <li class="nav-item">
           <div class="dropdown">
             <span id="dropbtn">Signed in as <%= user.name %></span>
@@ -45,24 +59,23 @@
         <% } %>
 
         <li class="nav-item">
-          <div class="searchcontainer">
-            <i class="fas fa-search" id="search-icon"></i>
-            <input
-              class="search-input"
-              id="search1"
-              type="text"
-              placeholder="Search.."
-              autofocus
-            />
-            <div class="search" id="srh1"></div>
-            <ul class="search-view" id="search_list1">
-              <% found.forEach((user)=>{ %>
-              <li class="collection-item2"><a><%= user.name%></a></li>
-              <% }) %>
-            </ul>
-          </div>
+          <input
+            class="search-input"
+            id="search1"
+            type="text"
+            placeholder="Search.."
+            autofocus
+          />
+          <div class="search" id="srh1"></div>
+          <ul class="search-view" id="search_list1">
+            <% found.forEach((user)=>{ %>
+            <li class="collection-item2"><a><%= user.name%></a></li>
+            <% }) %>
+          </ul>
         </li>
       </ul>
     </nav>
   </div>
+
+  <script></script>
 </div>

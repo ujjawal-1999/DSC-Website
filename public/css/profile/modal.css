@@ -40,7 +40,8 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 80vh;
+  height: 90vh;
+  overflow: auto;
   width: 70vw;
   opacity: 0;
   pointer-events: none;
@@ -72,7 +73,7 @@
   transition: all 0.5s;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .editProfileModal,
   .addAchievementModal,
   .addExperienceModal,
@@ -87,8 +88,8 @@
   .addExperienceModal {
     top: 0%;
     left: 0%;
-    -webkit-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 80px);
+            transform: translate(0%, 80px);
     width: 100%;
     position: absolute;
     -webkit-box-orient: vertical;
@@ -160,6 +161,7 @@
 .addSkillsModal label {
   width: 25%;
   font-size: 0.8rem;
+  color: black;
 }
 
 .editProfileModal input,
@@ -332,7 +334,7 @@
 .addSkillsModal #submit {
   display: block;
   border: 0;
-  width: 25%;
+  width: 35%;
   height: 60px;
   background: orangered;
   color: var(--white);

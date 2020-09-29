@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+const Project = require("../models/project");
 const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
@@ -385,7 +386,7 @@ router.get("/profile", authorization, async (req, res) => {
     const finduser = await User.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        console.log(req.dbUser);
+        // console.log(req.dbUser);
         res.render("profile", { user: req.dbUser, found: finduser });
       });
     } else {
@@ -398,18 +399,68 @@ router.get("/profile", authorization, async (req, res) => {
 });
 
 //Post Route to edit User Profile Details
-router.post("/profile", async (req, res) => {
-  const id = "5ed7cfe27cd0ad0860e3604b";
+router.post("/profile", authorization, (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(id, req.body);
-    if (!user) throw new Error("User not found");
-    res.status(200).send("Updated Successfully");
+    const token = req.cookies.authorization;
+    if (token) {
+      var id;
+      jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        id = user.userId;
+      });
+      console.log(req.body);
+      User.findByIdAndUpdate(id, {
+        name: req.body.name,
+        dscHandle: req.body.hname,
+        degree: req.body.degree,
+        branch: req.body.branch,
+        batch: req.body.batchYear,
+        bio: req.body.bio,
+      }).then((result) => {
+        // console.log(result);
+        res.redirect("/dsc/user/profile");
+      });
+    } else {
+      console.log("Token was not found");
+      res.redirect("/dsc");
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send(error);
   }
 });
-
+//Post Route to add new Project
+router.post("/project/:user", async (req, res) => {
+  var title = req.body.projectname;
+  var role = req.body.projectrole;
+  var description = req.body.projectdescription;
+  var newProject = {
+    title: title,
+    role: role,
+    description: description,
+  };
+  User.findById(
+    {
+      _id: req.params.user,
+    },
+    (err, user) => {
+      if (err) {
+        console.log(err);
+      } else {
+        Project.create(newProject, function (err, project) {
+          if (err) {
+            console.log(err);
+          } else {
+            project.save();
+            user.projects.push(project);
+            user.save();
+            console.log(user);
+            res.redirect("/dsc/user/profile");
+          }
+        });
+      }
+    }
+  );
+});
 //Establish Storage for file upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

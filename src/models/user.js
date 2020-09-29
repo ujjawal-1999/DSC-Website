@@ -8,6 +8,9 @@ const userSchema = new Schema(
     name: {
       type: String,
     },
+    dscHandle: {
+      type: String,
+    },
     email: {
       type: String,
       unique: true,
@@ -19,6 +22,9 @@ const userSchema = new Schema(
       type: String,
     },
     degree: {
+      type: String,
+    },
+    batch: {
       type: String,
     },
     active: {

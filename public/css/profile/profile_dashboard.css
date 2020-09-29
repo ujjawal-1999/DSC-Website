@@ -226,7 +226,6 @@ body {
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .info p {
-  width: 75%;
   line-height: 1.2rem;
 }
 
@@ -650,8 +649,9 @@ body {
   }
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
     top: 0;
+    letter-spacing: 0.2rem;
     right: 0%;
   }
   .dashboard__navbar .side-nav {

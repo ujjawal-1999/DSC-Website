@@ -178,7 +178,8 @@ body {
             height: 15rem;
             justify-content: space-evenly;
             p {
-              width: 75%;
+              // width: 75%;
+
               line-height: 1.2rem;
             }
             .nameandedit {
@@ -507,8 +508,9 @@ body {
   }
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
     top: 0;
+    letter-spacing: 0.2rem;
     right: 0%;
   }
 

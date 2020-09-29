@@ -93,16 +93,17 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            enctype="text/plain"
+            action="/dsc/user/profile"
           >
             <div class="flexRow">
               <label for="name">Name</label>
               <input
                 id="name"
                 type="text"
-                value="Robert"
+                value="<%=user.name%>"
                 name="name"
                 required
+                maxlength="20"
               />
             </div>
             <div class="flexRow">
@@ -110,46 +111,66 @@
               <input
                 id="hname"
                 type="text"
-                value="ironMan"
+                value="<% if(user.dscHandle!=null){%><%=user.dscHandle%><%}%>"
                 name="hname"
                 required
+                maxlength="20"
               />
             </div>
 
             <div class="flexRow">
               <label for="degree">Degree</label>
               <select name="degree" id="degree" required>
-                <option value="BTECH">Bachelor of Technology</option>
-                <option value="MTECH">Master of Technology</option>
+                <option value="Bachelor of Technology" selected>
+                  Bachelor of Technology
+                </option>
+                <option value="Master of Technology">
+                  Master of Technology
+                </option>
                 <option value="PHD">PHD</option>
               </select>
             </div>
             <div class="flexRow">
-              <label for="branchCode">Branch</label>
-              <input
-                id="branch"
-                type="text"
-                value="CSE"
-                name="branch"
-                required
-              />
+              <label for="branch">Branch</label>
+              <select name="branch" id="branch" required>
+                <option value="Computer Science and Engineering">CSE</option>
+                <option value="Electrical Engineering">EE</option>
+                <option value="Electronics and Communication Engineering">
+                  ECE
+                </option>
+                <option value="Civil Engineering">CE</option>
+                <option value="Electronics & Instrumentation">ENI</option>
+              </select>
             </div>
             <div class="flexRow">
-              <label for="branchYear">Branch Year</label>
-              <select name="branchYear" id="branchYear" required>
-                <option value="23">2019-23</option>
-                <option value="22">2018-22</option>
-                <option value="21">2017-21</option>
+              <label for="batchYear">Batch Year</label>
+              <select name="batchYear" id="batchYear" required>
+                <option value="2020-24">2020-24</option>
+                <option value="2019-23" selected>2019-23</option>
+                <option value="2018-22">2018-22</option>
+                <option value="2017-21">2017-21</option>
               </select>
+            </div>
+            <div class="flexRow">
+              <label for="bio">Bio</label>
+              <input
+                id="bio"
+                type="text"
+                placeholder="Something about you."
+                name="bio"
+                value="<% if(user.bio!=null){%><%=user.bio%><%}%>"
+                required
+                maxlength="50"
+              />
             </div>
             <div class="flexRow">
               <label for="email">Email</label>
               <input
                 id="email"
                 type="email"
-                value="lwrjvrgnwj@gmail.com"
+                value="<%= user.email %>"
                 name="email"
-                required
+                disabled
               />
             </div>
             <div class="flexRow">
@@ -275,7 +296,7 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            enctype="text/plain"
+            action="/dsc/user/project/<%= user._id %>"
           >
             <div class="flexRow">
               <label for="projectname">Project Name</label>
@@ -328,13 +349,8 @@
               />
             </div>
             <div class="flexRow">
-              <label for="projectdescription">Description</label>
-              <input
-                id="projectdescription"
-                type="text"
-                name="projectdescription"
-                required
-              />
+              <label for="description">Description</label>
+              <input id="description" type="text" name="description" required />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
@@ -429,10 +445,12 @@
       <section class="accountbar">
         <p></p>
         <div class="accountbar__shortcut">
-          <div class="fndp">Find People</div>
           <div class="fndp" id="editbtn">Edit Profile</div>
+          <a href="/dsc/user/logout" style="text-decoration: none">
+            <div class="fndp">Log Out</div></a
+          >
           <!-- <div class="edit" id="editbtn" ></div> -->
-          <% if(user.profileImageLocation!=null){ %>
+          <!-- <% if(user.profileImageLocation!=null){ %>
           <img
             class="bell resone"
             src="<%= user.profileImageLocation%>"
@@ -447,7 +465,7 @@
           />
           <% }%>
 
-          <img class="bell" src="/img/logo/bell.png" alt="Notification Logo" />
+          <img class="bell" src="/img/logo/bell.png" alt="Notification Logo" /> -->
         </div>
       </section>
       <section class="accountdetails">
@@ -483,9 +501,10 @@
                   <h2><%= user.name %></h2>
                 </div>
                 <p>
-                  <% if(user.branch!=null){ %> <%= user.degree %> | <%=
-                  user.branch %> <% }else{%> Your profile details are empty.<%
-                  }%>
+                  <% if(user.branch!=null||user.batch!=null){ %> <%= user.degree
+                  %> | <%= user.batch %> <br />
+                  <%= user.branch %> <% }else{%> Your profile details are
+                  empty.<% }%>
                 </p>
                 <p>
                   <% if(user.bio!=null){ %> <%= user.bio%> <% }else{%> <% }%>
@@ -526,7 +545,9 @@
                   </div>
                 </div>
               </div>
-              <div class="faint">ironMAN</div>
+              <div class="faint">
+                <% if(user.dscHandle!=null){ %> <%= user.dscHandle%> <%}else{}%>
+              </div>
             </div>
           </section>
           <section class="main__detailedinfo">

@@ -79,18 +79,6 @@
 
 /* SEARCH FUNCTION */
 
-#search-icon {
-  color: var(--Grey-dark-1);
-  font-size: 1.5rem;
-  margin-left: 15px;
-  transition: color 0.3s ease-out;
-}
-
-#search-icon:hover {
-  color: #3498db;
-  cursor: pointer;
-}
-
 .search {
   transform: translate(-5%);
   -webkit-transform: translate(-5%);
@@ -103,25 +91,19 @@
   transition: transform 0.7s ease-in-out;
 }
 
-.search-input {
-  position: absolute;
-  /* top: -4px; */
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.6s ease;
-}
-
 .search-active {
   opacity: 1;
   z-index: 1;
 }
 
 input {
-  border: 0;
-  border-left: 1px solid var(--Grey-light-4);
   border-radius: 0; /* FOR SAFARI */
-  outline: 0;
-  padding: 5px;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--Grey-dark-1);
+  color: var(--Grey-light-1);
+  padding: 0.2rem 1rem;
 }
 
 /* MOBILE MENU & ANIMATION */
@@ -256,23 +238,23 @@ input {
   .navbar li {
     padding: 15px;
   }
-
-  .navbar li:first-child {
-    margin-top: 10px;
-    order: 3;
-  }
-  .navbar li:nth-child(2) {
-    order: 4;
-  }
-  .navbar li:nth-child(3) {
-    order: 5;
-  }
-  .navbar li:nth-child(4) {
-    order: 2;
-  }
-  .navbar li:nth-child(5) {
-    order: 1;
-  }
+    /* 
+    .navbar li:first-child {
+      margin-top: 10px;
+      order: 3;
+    }
+    .navbar li:nth-child(2) {
+      order: 4;
+    }
+    .navbar li:nth-child(3) {
+      order: 5;
+    }
+    .navbar li:nth-child(4) {
+      order: 2;
+    }
+    .navbar li:nth-child(5) {
+      order: 1;
+    } */
   /*
   .navbar li:nth-child(6) {
     order: 1;
@@ -321,6 +303,7 @@ input {
     transform: translateX(-70px);
   }
 }
+
 @media screen and (max-width: 700px) {
   #search-icon {
     display: block;
@@ -337,7 +320,7 @@ input {
     border-bottom: 1px solid grey;
     transform: translateX(-10px);
     margin-bottom: 30px;
-    top: 35px;
+    top: 90px;
   }
   .page-wrapper {
     overflow-x: hidden;
@@ -345,6 +328,10 @@ input {
   .nav-wrapper {
     overflow-x: hidden;
   }
+  /* .box {
+    position: absolute;
+    top: 50%;
+  } */
 }
 /* @media screen and (max-width: 600px) {
   #search-icon {
@@ -443,4 +430,109 @@ input {
   #search_list1 {
     transform: translateX(-50vw);
   }
+}
+
+.box {
+  position: relative;
+  align-self: center;
+}
+
+.type-checkbox {
+  display: none;
+}
+.type-checkbox + label {
+  display: block;
+  width: 160px;
+  height: 45px;
+  background-color: white;
+  border-radius: 22px;
+  box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+  transition: all 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+  cursor: pointer;
+  position: relative;
+}
+.type-checkbox + label span {
+  position: absolute;
+  color: inherit;
+
+  font-size: 12px;
+  font-family: "Varela Round", sans-serif;
+}
+.type-checkbox + label span.aprobado {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 2.5em;
+  -webkit-animation: left-check 300ms ease-in-out;
+  animation: left-check 300ms ease-in-out;
+}
+@-webkit-keyframes left-check {
+  0% {
+    opacity: 0;
+    left: 5em;
+  }
+  100% {
+    opacity: 1;
+    left: 2.5em;
+  }
+}
+@keyframes left-check {
+  0% {
+    opacity: 0;
+    left: 5em;
+  }
+  100% {
+    opacity: 1;
+    left: 2.5em;
+  }
+}
+.type-checkbox + label span.desaprobado {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 1.3em;
+  display: none;
+  -webkit-animation: right-check 300ms ease-in-out;
+  animation: right-check 300ms ease-in-out;
+}
+@keyframes left-check {
+  0% {
+    opacity: 0;
+    right: 5em;
+  }
+  100% {
+    opacity: 1;
+    right: 1.3em;
+  }
+}
+.type-checkbox + label:before {
+  display: block;
+  content: "";
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 117px;
+  -webkit-transition: left 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+  transition: left 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
+}
+.type-checkbox:checked + label {
+  color: white;
+
+  background-color: rgb(39, 39, 39);
+}
+.type-checkbox:checked + label span.aprobado {
+  display: none;
+}
+.type-checkbox:checked + label span.desaprobado {
+  display: block;
+}
+.type-checkbox:checked + label:before {
+  left: 8px;
 }
