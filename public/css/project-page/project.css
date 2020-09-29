@@ -1,0 +1,522 @@
+/*List viw css given by arkadeep kashyap*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-left: 4rem;
+ 
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.accountbar {
+  padding: 1rem;
+  height: 4rem;
+  background-color: var(--color-Grey-light-1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.accountbar__shortcut {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.accountbar .btn-lg {
+  margin: 0rem;
+}
+
+.accountbar .fndp {
+  border: 1px solid;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-right: 3rem;
+  
+}
+.fnd:hover {
+  background-color: #3f3232;
+}
+.accountbar .fndp a {
+  text-decoration: none;
+  color: #030303;
+}
+
+.accountbar .fndp:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
+}
+
+.accountbar input {
+  padding: 1rem 2rem !important;
+  border-radius: 1rem !important;
+  border: 1px solid var(--Grey-light-4) !important;
+  width: 10%;
+  -webkit-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+  background-color: var(--Grey-light-1) !important;
+}
+
+.accountbar input:focus {
+  width: 20%;
+}
+
+.accountbar img {
+  margin: 0 1rem;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.accountdetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main-heading {
+ margin-bottom: 10px;
+ border: 2x;
+ border-bottom-color: rgb(126, 126, 126,0.1);
+ border-bottom-style: groove;
+ z-index: 0;
+ border-radius: 7px;
+  
+}
+.main-heading-proj h2 {
+  letter-spacing: 2px;
+  color: #797979;
+  font-weight: lighter;
+  padding-bottom: 2rem;
+}
+
+/* Float four columns side by side */
+.column-proj {
+  float: left;
+  width: 45%;
+  height: 55%;
+  padding: 0 10px;
+  padding-bottom: 3rem;
+  display: -webkit-inline-flex;
+}
+.row-proj {
+  padding-top: 2rem;
+}
+.borderd {
+  padding-top: 2px;
+  border-bottom: 2.5px;
+  border-bottom-color:#082cf8;
+  border-bottom-style: groove;
+  width: 20%;
+  height: 90%;
+  border-radius: 40px;
+  line-height: initial;
+  z-index: 1;
+}
+.sub-heading-proj {
+  display: -webkit-inline-flex;
+}
+.sub-heading-proj button {
+  position: absolute;
+  right: 7rem;
+  cursor: pointer;
+  border: none;
+  color: rgb(41, 158, 255);
+
+}
+.sub-heading-proj p b {
+color: #797979;
+font-weight:lighter ;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column-proj {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card-proj {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ 
+  text-align: left;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 0rem;
+  border-radius: 10px;
+  
+}
+.card-proj:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.397);
+}
+ .card-proj .logo img {
+  position: absolute;
+  width: 7rem;
+  height: 9rem;
+  top: 0;
+  left: 2px;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  transition: transform .2s;
+  padding-top: 2.5rem;
+  padding-right: 9px;
+  padding-left: 4px;
+}
+.content-proj {
+  position: relative;
+  top: 0;
+  bottom: 0;
+   color:#3f3232;
+  transition: left .2s;
+  background: rgba(rgb(109, 108, 108), .6);
+  color: $color_white;
+  padding-left: 120px;
+  width: 100%;
+  font-size: .7rem;
+  padding-bottom: 2rem;
+}
+.content-proj h2 {
+  padding: none;
+  cursor: pointer;
+}
+.content-proj>h2>b:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.297);
+ 
+}
+.content-proj p {
+  color : #797979;
+}
+.base-card {
+  background-color: rgb(228, 227, 227);
+  width:100%;
+  vertical-align: baseline;
+  display: flex;
+  flex-direction: inherit;
+  align-items: stretch;
+  height: 2rem;
+  line-height:55%;
+}
+.base-card p {
+  padding-left: 3rem ;
+  font-size: 0.7rem;
+  
+}
+.ongoing {
+  color:blue;
+} 
+.completed {
+  color: rgb(0, 201, 0);
+}
+.base-card button {
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  bottom: 24px;
+  left: 27rem;
+  height: 1r41m;
+  font-size: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: none;
+}
+.base-card button:hover {
+  background-color: grey;
+}
+@media (max-width: 1300px) {
+  .base-card button {
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    bottom: 23px;
+    left: 75%;
+    height: 1r41m;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border: none;
+  }
+}
+.other-button {
+  position: absolute;
+  right: 7rem;
+  border: none;
+  color: #2f90ff;
+  cursor: pointer;
+}
+.other-button:hover {
+  background-color: #797979;
+  color: #2f90ff;
+  box-shadow: #3f3232;
+}
+}
+/*List viw css given by arkadeep kashyap ends*/
+
+/*Detailview css added by vishal pandey*/
+.detailview{
+    background: white;
+    box-shadow:4px 4px 6px grey;
+    border-radius:20px;
+    position:relative;
+    width:80%;
+    padding:20px 0px;
+    border:0.5px solid grey;
+}
+.project-name{
+    line-height: 0.1em;
+    color:grey;
+}
+.links{
+    color:blue; 
+
+}
+.content-box{
+    margin:40px 0px;
+}
+.description{
+    width:60%;
+    margin:0px 50px;
+}
+.image{
+    text-align: center;
+    width:40%;
+}
+.members-button{
+    background-color:rgb(232, 53, 68);
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    margin:20px 0px;
+}
+@media screen and (min-width: 800px){
+    .content-box{
+        display:flex;
+        justify-content:space-around;
+        margin:40px 0px;
+    }
+    .links{
+        float:right;
+        margin:0px 10px;
+        position:relative;
+        bottom: 50px;
+        right:50px;
+    }
+}
+
+.members-list{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    text-align: center;
+}
+.member-card{
+    position:relative;
+    max-width:250px;
+    background:white;
+    box-shadow: 4px 8px 10px grey;
+    padding:20px;
+    margin:0px 30px;
+}
+.github-link{
+    color:blue;
+    letter-spacing:1px;
+    text-decoration: none;
+}
+@media screen and (max-width: 800px){   
+    .description{
+        width:80%
+    }
+    .image{
+        width:100%;
+    }
+    .detailview{
+        width:100%;
+    }
+}
+.members-button{
+    margin:auto;
+    color:white;
+    padding:15px;
+    background-color:black;
+}
+.members-list{
+  background:skyblue;
+}
+
+/*Detailview css added by vishal pandey ends*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  justify-content: space-evenly;
+  letter-spacing: 2px;
+}
+.flexRow {
+  display: inline-flexbox;
+}
+.modal-content h3 {
+ padding-bottom: 20px;
+ font-weight: lighter;
+ letter-spacing: 2px;
+ color: rgb(38, 155, 83);
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content form {
+  display: inline;
+  
+}
+
+
+
+
+
+/* Input Field CSS */
+.datainput{position:relative;margin:5px 0 20px}
+.datainput p{font-size:12px;background:#eee;display:inline-block;padding:5px 15px;border-radius:.5rem}
+.whatsapp-form textarea{min-height:120px}
+.datainput select{padding:12px 0;color:#555;font-size:14px;width:100%;border:0;border-bottom:1px solid #ddd;outline:none;background:#fff}
+.datainput input,
+.datainput textarea{font-size:15px;padding:15px 0;display:block;width:100%;border:none;border-bottom:1px solid #ddd}
+.datainput input:focus,.datainput textarea:focus{outline:none}
+.datainput label{color:#999;font-size:14px;font-weight:400;position:absolute;pointer-events:none;left:0;top:18px;transition:.2s ease all}
+.datainput input:focus~label,.datainput input:valid~label,.datainput textarea:focus~label,.datainput textarea:valid~label{top:-10px;font-size:14px;color:#21a51f}
+#notif-license span{
+  font-size:40px} 
+#notif-license{
+  display:none;
+  position:fixed
+}
+.bar{ 
+  position:relative;
+  display:block;
+  width:100%;
+}
+
+.bar:before,.bar:after{content:'';height:2px;width:0;bottom:1px;position:absolute;background:#21a51f;transition:.2s ease all}
+.bar:before{left:50%}
+.bar:after{right:50%}
+.datainput input:focus~.bar:before,.datainput input:focus~.bar:after,.datainput textarea:focus~.bar:before,.datainput textarea:focus~.bar:after{width:50%}.indigox{background:#3f51b5}
+.orangex{background:#ff9800}
+.pinkx{background:#e91e63}
+.bluex{background:#2196F3}
+.purplex{background:#9c27b0}
+.redx{background:#F44336}
+.greenx{background:#4CAF50}
+.highlight{position:absolute;height:50%;width:100px;top:25%;left:0;pointer-events:none;opacity:.5}
+.datainput input:focus~.highlight,.datainput textarea:focus~.highlight{animation:inputHighlighter .3s ease}
+.datainput input:focus~label,.datainput input:valid~label,.datainput textarea:focus~label,.datainput textarea:valid~label{top:-10px;font-size:13px;color:#21a51f}
+
+/* Default Whatsapp Form CSS by www.idblanter.com */
+
+ .whatsapp-form a.send_form {
+    color: #fff;
+    background: #21a51f;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: .3rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+#text-info span {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: 700;
+    margin: 15px 0;
+    border-radius: .5rem;
+}
+#text-info span.yes {
+    background: #c6ffc5;
+    color: #0ea904;
+}
+#text-info span.no {
+    background: #ffc5c5;
+    color: #ce0404;
+}
+
+.send_form {
+  padding: 4px;
+  background-color: #194b7a;
+  color: rgb(214, 214, 214);
+  border-radius: 2px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
