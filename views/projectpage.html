@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="../public/css/project-page/project.css" />
+  
+  </head>
+<body>
+  <!-- Main Content Starts -->
+  <div class="container">
+    <section class="accountbar">
+      <p></p>
+      <div class="accountbar__shortcut">
+        <div class="fndp">Find People</div>
+        <div class="fndp" "><a href="../views/profile.html">View Profile</a></div>
+        <!-- <div class="edit" id="editbtn" ></div> -->
+        <img
+          class="bell resone"
+          src="../public/img/teams_potraits/rdj.jpg"
+          alt="UserPhoto"
+        />
+        <img
+          class="bell"
+          src="../public/img/logo/bell.png"
+          alt="Notification Logo"
+        />
+      </div>
+    </section>
+  
+
+    <section class="heading">
+      <div class="main-heading-proj">
+        <h2>PROJECT</h2>
+            <div class="borderd"></div>
+      </div>
+      <div class="sub-heading-proj">
+        <p><b>Ongoing</b></p>
+         <button id="myBtn"> Add </button>
+         <div id="myModal" class="modal">
+    
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add New Project</h3>
+            <form class="NewProject">
+              <div class="datainput">
+                <input class="validate" id="wa_Name" name="Project" required="" type="name" value=''/>
+                <span class="highlight"></span><span class="bar"></span>
+                <label>Project Name</label>
+                </div>
+                <div class="datainput">
+                  <input class="validate" id="wa_lead" name="Projectlead" required="" type="name" value=''/>
+                  <span class="highlight"></span><span class="bar"></span>
+                  <label>Team Lead</label>
+                  </div>
+              <div class="datainput">
+              <input class="validate" id="wa_email" name="email" required="" type="email" value=''/>
+              <span class="highlight"></span><span class="bar"></span>
+              <label>Email Address</label>
+              </div>
+              <div class="datainput">
+              <select id="wa_select">
+                <option hidden='hidden' selected='selected' value='default'>Project Feild</option>
+                <option value="1">Android</option>
+                <option value="2">Web Development</option>
+                <option value="3">Other</option>
+              </select>
+              </div>
+              <div class="datainput">
+              <input class="validate" id="wa_number" name="count" required="" type="number" value=''/>
+              <span class="highlight"></span><span class="bar"></span>
+              <label>Duration(in months)</label>
+              </div>
+              <div class="datainput">
+              <input class="validate" id="wa_url" name="url" required="" type="url" value=''/>
+              <span class="highlight"></span><span class="bar"></span>
+              <label>URL/ GitHub Link</label>
+              <p>https://www.github.com/username/repository</p>
+              </div>
+              <div class="datainput">
+              <textarea id='wa_textarea' placeholder='' maxlength='5000' row='1' required=""></textarea>
+              <span class="highlight"></span><span class="bar"></span>
+              <label>Description</label>
+              </div>
+              <a class="send_form" href="javascript:void" type="submit" title="Send">Submit</a>
+              <div id="text-info"></div>
+              </form>
+              
+          </div>
+       </div>
+    </section>
+
+    <div class="row-proj">
+      <div class="column-proj">
+          <div class="card-proj">
+
+            <div class="logo">
+              <img src="../public/img/Project/logo.png" alt="logo">
+            </div>
+
+            <div class="content-proj">
+              <h2><b>Project title</b></h2>
+              <h6><b>Android</b></h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nemo
+                 officia aperiam. Ea dolor officia voluptates soluta eligendi unde
+                  nostrum! Ab ut aliquid, dignissimos sit molestiae ducimus nihil.
+                   Magnam, nisi!
+              </p>
+            </div>
+
+            <div class="base-card">
+              <p>Status:<b class="ongoing" >Ongoing</b></p>
+              <button onclick="showDetails()"> Details</button>
+            </div>
+
+          </div>
+      </div>
+               
+      <div class="column-proj">
+          <div class="card-proj">
+
+            <div class="logo">
+              <img src="../public/img/Project/logo.png" alt="logo">
+            </div>
+
+            <div class="content-proj">
+              <h2><b>Project title</b></h2>
+              <h6><b>Android</b></h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nemo
+                officia aperiam. Ea dolor officia voluptates soluta eligendi unde
+                nostrum! Ab ut aliquid, dignissimos sit molestiae ducimus nihil.
+                Magnam, nisi!
+              </p>
+            </div>
+
+            <div class="base-card">
+              <p>Status: <b class="ongoing" >Ongoing</b></p>
+              <button> Details</button>
+            </div>
+
+          </div>
+      </div>
+    </div>
+    
+    <div class="details" style="width:80%;margin:auto;display:none;">
+    <!-- Detailview of first one -->
+
+    <section class="heading">
+        <div class="main-heading-proj">
+            <div class="borderd"></div>
+        </div>
+        <div class="sub-heading-proj">
+            
+        </div>
+    </section><br>
+    <div class="detailview">
+        <h1 class="project-name"> &nbsp;&nbsp;&nbsp;&nbsp; PROJECT NAME </h1>
+        <span style="position:relative; left:50px;">
+             Android development <br><br>
+            <a class="links">Host link </a>
+            <a class="links"> Github Link </a>
+         </span>
+
+
+        <div class="content-box">
+             <div class="image">
+                <img src="../public/img/Project/logo.png"  height="150" width="150">
+            </div>
+            <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>  <br><br>
+                <button class="members-button" onclick="toggleMembers()">Members </button>
+            </div>
+        </div>
+        
+
+        <div class="x" style="display: none">
+            <div class="members-list">
+
+                <div class="member-card" style="margin:20px;">
+                    <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
+                    <h3 style="line-height:0;"> Vishal Pandey </h3>
+                    <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud.
+                    </p>
+                    <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
+                    <div style="position:absolute;bottom:0;width:80%;">
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
+                    </div>
+                </div>
+                <div class="member-card" style="margin:20px;">
+                    <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
+                    <h3 style="line-height:0;"> Vishal Pandey </h3>
+                    <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud.
+                    </p>
+                    <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
+                    <div style="position:absolute;bottom:0;width:80%;">
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Details view of first one -->
+    </div><br>
+
+    <section class="heading">
+      <div class="main-heading-proj">
+            <div class="borderd"></div>
+      </div>
+      <div class="sub-heading-proj">
+        <p><b class="Complete" >Completed</b>
+       </div>
+    </section>
+
+                     
+    <div class="row-proj">
+
+      <div class="column-proj">
+          <div class="card-proj">
+
+            <div class="logo">
+              <img src="../public/img/Project/logo.png" alt="logo">
+            </div>
+
+            <div class="content-proj">
+              <h2><b>Project title</b></h2>
+              <h6><b>Android</b></h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nemo
+                officia aperiam. Ea dolor officia voluptates soluta eligendi unde
+                nostrum! Ab ut aliquid, dignissimos sit molestiae ducimus nihil.
+                Magnam, nisi!
+              </p>
+            </div>
+
+            <div class="base-card">
+              <p>Status:<b class="completed" >Completed</b></p>
+              <button> Details</button>
+            </div>
+
+          </div>
+      </div>
+               
+      <div class="column-proj">
+          <div class="card-proj">
+
+            <div class="logo">
+              <img src="../public/img/Project/logo.png" alt="logo">
+            </div>
+
+            <div class="content-proj">
+              <h2><b>Project title</b></h2>
+              <h6><b>Android</b></h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nemo
+                 officia aperiam. Ea dolor officia voluptates soluta eligendi unde
+                  nostrum! Ab ut aliquid, dignissimos sit molestiae ducimus nihil.
+                   Magnam, nisi!
+              </p>
+            </div>
+
+            <div class="base-card">
+              <p>Status:<b class="completed" >Completed</b></p>
+              <button> Details</button>
+            </div>
+
+          </div>
+      </div>
+
+    </div>
+
+   <!-- <button class="other-button">More Options </button> -->
+   
+  </body>
+    <script>
+        function toggleMembers(){
+            elem = document.querySelector('.x');
+            k=elem.style.display=='none'?'block':'none';
+            document.querySelector('.x').style.display=k
+        }
+        function showDetails(){
+            elem = document.querySelector('.details');
+            k=elem.style.display=='none'?'block':'none';
+            document.querySelector('.details').style.display=k
+        }  
+        
+        
+        
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close","send_form")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+$(document).on('click','.send_form', function(){
+var input_blanter = document.getElementById('wa_email');
+
+
+
+
+
+
+if("" != input_blanter.value){
+
+ /* Call Input Form */
+var input_select1 = $("#wa_select :selected").text(),
+    input_name1 = $("#wa_name").val(),
+    input_email1 = $("#wa_email").val(),
+    input_number1 = $("#wa_number").val(),
+    input_url1 = $("#wa_url").val(),
+    input_textarea1 = $("#wa_textarea").val();
+
+var blanter= walink + '?phone=' + phone + '&text=' + walink2 + '%0A%0A' +
+    '*Name* : ' + input_name1 + '%0A' +
+    '*Email Address* : ' + input_email1 + '%0A' +
+    '*Select Option* : ' + input_select1 + '%0A' +
+    '*Input Number* : ' + input_number1 + '%0A' +
+    '*URL/Link* : ' + input_url1 + '%0A' +
+    '*Description* : ' + input_textarea1 + '%0A';
+
+window.open(blanter,'_blank');
+document.getElementById("text-info").innerHTML = '<span class="yes">'+text_yes+'</span>';
+} else {
+document.getElementById("text-info").innerHTML = '<span class="no">'+text_no+'</span>';
+}
+});
+    </script>
+</html>
