@@ -398,6 +398,29 @@ router.get("/profile", authorization, async (req, res) => {
   }
 });
 
+router.post("/skill", authorization, async (req, res) => {
+  try {
+    // console.log(req);
+    // console.log(req.body);
+    const user = req.dbUser;
+    const newSkill = {
+      name: req.body.skillname,
+      level: req.body.skilllevel,
+      duration: req.body.skillduration,
+      description: req.body.skilldescription,
+    };
+
+    user.skills.push(newSkill);
+    // console.log(newSkill);
+    await user.save();
+
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 //Post Route to edit User Profile Details
 router.post("/profile", authorization, (req, res) => {
   try {

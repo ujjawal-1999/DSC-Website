@@ -47,7 +47,10 @@ const userSchema = new Schema(
     },
     skills: [
       {
-        type: String,
+        name: String,
+        level: String,
+        duration: Number,
+        description: String,
       },
     ],
     profileImageLocation: {

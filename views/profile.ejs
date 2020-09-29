@@ -237,7 +237,8 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            enctype="text/plain"
+            
+            action="/dsc/user/skill"
           >
             <div class="flexRow">
               <label for="skillname">Skill Name</label>
@@ -248,11 +249,11 @@
               <input id="skilllevel" type="text" name="skilllevel" required />
             </div>
             <div class="flexRow">
-              <label for="skillsduration">Duration</label>
+              <label for="skillduration">Duration</label>
               <input
                 id="skillsduration"
                 placeholder="In months"
-                name="skillsduration"
+                name="skillduration"
                 required
               />
             </div>
@@ -796,6 +797,7 @@
                       </div>
                     </div>
                     <div class="cards">
+                    <% user.skills.forEach((skill) => {%> 
                       <div class="card">
                         <div class="skill-icon">
                           <img
@@ -805,11 +807,12 @@
                           />
                         </div>
                         <div class="skill-description">
-                          <h3 class="skill-name">Java</h3>
-                          <h4 class="skill-time">2 months</h4>
+                          <h3 class="skill-name"><%= skill.name %></h3>
+                          <h4 class="skill-time"><%= skill.duration %>months</h4>
                         </div>
-                        <p class="skill-level">Beginner</p>
+                        <p class="skill-level"><%= skill.level %></p>
                       </div>
+                    <%})%>
                     </div>
                   </div>
                   <div id="panel04" class="tab-panel">
