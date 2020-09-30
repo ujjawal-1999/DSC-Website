@@ -293,17 +293,15 @@ font-weight:lighter ;
 
 /*Detailview css added by vishal pandey*/
 .detailview{
-    background: white;
-    box-shadow:4px 4px 6px grey;
-    border-radius:20px;
-    position:relative;
-    width:80%;
-    padding:20px 0px;
-    border:0.5px solid grey;
+  background: white;
+  box-shadow:4px 4px 6px grey;
+  border-radius:20px;
+  width:80%;
+  padding:20px 0px;
+  border:0.5px solid grey;
 }
 .project-name{
-    line-height: 0.1em;
-    color:grey;
+  color:grey;
 }
 .links{
     color:blue; 
@@ -517,6 +515,17 @@ font-weight:lighter ;
   font-weight: normal;
   text-decoration: none;
 }
+@media (max-width: 900px;) {
+  .url-link {
+    display: none;
+  }
+}
 
 
 
+@media screen and (max-width: 600px) {
+  .url-link {
+    display: none;
+  }
+  
+}
