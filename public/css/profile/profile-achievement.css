@@ -157,20 +157,34 @@
 }
 .delete-ach img{
   size: 5px;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border: 0px;
- 
+ position: absolute;
+   left: 57rem;
  
 }
 
 .edit-ach img{
   size: 5px;
-  width: 30px;
-  height: 30px;
+  width: 39px;
+  height: 39px;
   border: 0px;
+  position: absolute;
+   left: 55rem;
   
 }
 .delete-ach a {
   background: none;
-  
+}
+.column-ach button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+}
+

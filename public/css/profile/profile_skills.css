@@ -14,6 +14,9 @@
 
 .cards .card .skill-level {
   margin-top: auto;
+  line-height: -7px;
+  position: absolute;
+  right:16rem;
 }
 
 .cards .card .skill-icon {
@@ -45,8 +48,8 @@
 }
 .delete-ski img{
   size: 5px;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border: 0px;
  
  
@@ -54,12 +57,26 @@
 
 .edit-ski img{
   size: 5px;
-  width: 30px;
-  height: 30px;
+  width: 39px;
+  height: 39px;
   border: 0px;
   
 }
 .delete-ski a {
   background: none;
   
+}
+
+.card button img {
+  padding-bottom: 5px;
+}
+.card button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
 }
