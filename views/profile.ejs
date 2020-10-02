@@ -237,7 +237,6 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            
             action="/dsc/user/skill"
           >
             <div class="flexRow">
@@ -297,15 +296,15 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            action="/dsc/user/project/<%= user._id %>"
+            action="/dsc/user/project/personal"
           >
             <div class="flexRow">
               <label for="projectname">Project Name</label>
-              <input id="projectname" type="text" name="projectname" required />
+              <input id="projectname" type="text" name="title" required />
             </div>
             <div class="flexRow">
               <label for="projectrole">Project Role</label>
-              <input id="projectrole" type="text" name="projectrole" required />
+              <input id="projectrole" type="text" name="role" required />
             </div>
             <div class="flexRow">
               <label for="startdate">Start Date</label>
@@ -797,7 +796,7 @@
                       </div>
                     </div>
                     <div class="cards">
-                    <% user.skills.forEach((skill) => {%> 
+                      <% user.skills.forEach((skill) => {%>
                       <div class="card">
                         <div class="skill-icon">
                           <img
@@ -808,11 +807,13 @@
                         </div>
                         <div class="skill-description">
                           <h3 class="skill-name"><%= skill.name %></h3>
-                          <h4 class="skill-time"><%= skill.duration %>months</h4>
+                          <h4 class="skill-time">
+                            <%= skill.duration %>months
+                          </h4>
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
                       </div>
-                    <%})%>
+                      <%})%>
                     </div>
                   </div>
                   <div id="panel04" class="tab-panel">
@@ -827,6 +828,7 @@
                     </div>
                     <section class="grid-item main">
                       <div class="items">
+                        <% user.personalProjects.forEach((project) => {%>
                         <div class="item item1">
                           <div class="project-lang">
                             <div class="lang lang1">
@@ -852,111 +854,15 @@
                             </div>
                           </div>
                           <div class="project-name">
-                            <a href="https://github.com/"
-                              ><h4>DSC Website</h4></a
-                            >
+                            <a href="https://github.com/">
+                              <h4><%= project.title %></h4>
+                            </a>
                           </div>
                           <div class="project-role">
-                            <h4>Front-End Developer</h4>
-                          </div>
-                          <div class="project-duration">
-                            <h3>Aug 30 - Sept 30</h3>
+                            <h4><%= project.role %></h4>
                           </div>
                         </div>
-                        <div class="item item1">
-                          <div class="project-lang">
-                            <div class="lang lang1">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/js.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="lang lang2">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/css.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="lang lang3">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/html-5.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <div class="project-name">
-                            <a href="https://github.com/"
-                              ><h4>Gymkhana Website</h4></a
-                            >
-                          </div>
-                          <div class="project-role">
-                            <h4>Front-End Developer</h4>
-                          </div>
-                          <div class="project-duration">
-                            <h3>Sept 15 - Oct 30</h3>
-                          </div>
-                        </div>
-                        <div class="item item1">
-                          <div class="project-lang">
-                            <div class="lang lang1">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/node.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="lang lang2">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/react.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="lang lang3">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/html-5.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <div class="project-name">
-                            <a href="https://github.com/"
-                              ><h4>E-Cell Website</h4></a
-                            >
-                          </div>
-                          <div class="project-role">
-                            <h4>Back-End Developer</h4>
-                          </div>
-                          <div class="project-duration">
-                            <h3>July 30 - Aug 20</h3>
-                          </div>
-                        </div>
-                        <div class="item item1">
-                          <div class="project-lang">
-                            <div class="lang lang1">
-                              <img
-                                class="language"
-                                src="/img/skill-icons/flutter.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          <div class="project-name">
-                            <a href="https://github.com/"
-                              ><h4>Attendance App</h4></a
-                            >
-                          </div>
-                          <div class="project-role">
-                            <h4>Android Developer</h4>
-                          </div>
-                          <div class="project-duration">
-                            <h3>Oct 15 - Nov 20</h3>
-                          </div>
-                        </div>
+                        <%})%>
                       </div>
                     </section>
                   </div>

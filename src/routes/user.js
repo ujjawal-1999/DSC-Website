@@ -451,6 +451,28 @@ router.post("/profile", authorization, (req, res) => {
     res.status(500).send(error);
   }
 });
+router.post("/project/personal", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    const newProject = {
+      title: req.body.title,
+      description: req.body.description,
+      role: req.body.role,
+      techstack: req.body.techstack,
+      githuburl: req.body.githuburl,
+    };
+
+    user.personalProjects.push(newProject);
+    // console.log(newSkill);
+    await user.save();
+    console.log(user);
+
+    res.redirect("/dsc/user/profile");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
 //Post Route to add new Project
 router.post("/project/:user", async (req, res) => {
   var title = req.body.projectname;

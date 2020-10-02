@@ -62,6 +62,31 @@ const userSchema = new Schema(
       facebook: String,
       twitter: String,
     },
+    personalProjects: [
+      {
+        title: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+        role: {
+          type: String,
+        },
+        startdate: {
+          type: String,
+        },
+        enddate: {
+          type: String,
+        },
+        techstack: {
+          type: String,
+        },
+        githuburl: {
+          type: String,
+        },
+      },
+    ],
     projects: [
       {
         type: Schema.Types.ObjectId,
