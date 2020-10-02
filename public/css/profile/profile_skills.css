@@ -43,3 +43,23 @@
 #btn:hover{
   background-color: rgb(73, 73, 238);
 }
+.delete-ski img{
+  size: 5px;
+  width: 40px;
+  height: 40px;
+  border: 0px;
+ 
+ 
+}
+
+.edit-ski img{
+  size: 5px;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  
+}
+.delete-ski a {
+  background: none;
+  
+}

@@ -91,7 +91,7 @@
   position: absolute;
   right: 2rem;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 #mention b {
   color: rgb(13, 56, 196) !important;
@@ -125,10 +125,41 @@
   overflow: hidden;
 }
 .row h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .row p {
-  font-size: 10px;
+  font-size: 15px;
   color: rgb(124, 120, 120);
   font-family: Arial, Helvetica, sans-serif;
+}
+.flexRow button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+}
+.delete-exp img{
+  size: 5px;
+  width: 40px;
+  height: 40px;
+  border: 0px;
+ 
+ 
+}
+
+.edit-exp img{
+  size: 5px;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  
+}
+.delete-exp a {
+  background: none;
+  
 }

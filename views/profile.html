@@ -19,6 +19,7 @@
       href="../public/css/profile/profile-achievement.css"
     />
     <link rel="stylesheet" href="../public/css/profile/profile_projects.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Stylings Ends -->
   </head>
   <body>
@@ -46,16 +47,32 @@
             enctype="text/plain"
           >
             <div class="flexRow">
-              <label for="pname">Project Name</label>
+              <label for="pname"> Company Name</label>
               <input id="pname" type="text" name="pname" />
             </div>
             <div class="flexRow">
-              <label for="prole">Project Role</label>
+              <label for="prole"> Job Role</label>
               <input id="prole" type="text" name="prole" />
             </div>
             <div class="flexRow">
-              <label for="Duration">Duration</label>
-              <input id="Duration" placeholder="In months" name="Duration" />
+              <label for="startdate">Start Date</label>
+              <input
+                id="startdate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="startdate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="enddate">End Date</label>
+              <input
+                id="enddate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="enddate"
+                
+              />
             </div>
 
             <div class="flexRow">
@@ -416,7 +433,7 @@
                 required
               />
             </div>
-            <div class="flexRow">
+           <!-- <div class="flexRow">
               <label for="projectdescription">Description</label>
               <input
                 id="projectdescription"
@@ -424,7 +441,7 @@
                 name="projectdescription"
                 required
               />
-            </div>
+            </div>-->
             <br /><br />
             <div class="flexRow fullwidth">
               <input id="submit" type="submit" value="Save Changes" />
@@ -682,6 +699,8 @@
                     <div class="flexRow">
                       <h3>EXPERIENCE</h3>
                       <div class="flexRow">
+                        <button ><a class="edit-exp"><img src="../public/img/profile/edit.svg"></a></button>
+                       <button> <a class="delete-exp" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         <p>Want to add more Experience ?</p>
                         <button class="addExperience" id="addExperience">
                           Click here
@@ -691,7 +710,8 @@
                     <div class="cards_exp">
                       <div class="card_exp">
                         <div class="row">
-                          <div class="column">
+                        
+                            <div class="column">
                             <img
                               src="../public/img/logo/DSC_logo.png"
                               alt="company"
@@ -700,8 +720,8 @@
                               Marketing & Communication Manager<br />
                               <p>Microsoft</p>
                             </h3>
-
-                            <div id="mention"><b>&#9899;</b> management</div>
+                        
+                            <div id="mention"><b>&#9899;</b>3-12-2020 - Present</div>
                           </div>
                           <div class="panelexp">
                             <p>
@@ -726,7 +746,7 @@
                             </h3>
 
                             <div id="mention">
-                              <b>&#9899;</b> business development
+                              <b>&#9899;</b> 4-03-2019 - 4-06-2020
                             </div>
                             <!--<div class="bookmarks">
                                         <a>
@@ -756,7 +776,7 @@
                             </h3>
 
                             <div id="mention">
-                              <b>&#9899;</b> business development
+                              <b>&#9899;</b> 3-01-2018 - 4-3-2019
                             </div>
                           </div>
                           <div class="panelexp">
@@ -776,6 +796,8 @@
                     <div class="flexRow">
                       <h3>SKILLS</h3>
                       <div class="flexRow">
+                        <button ><a class="edit-ski"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-ski" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         <p>Want to add more Skills ?</p>
                         <button class="addExperience" id="addSkills">
                           Click here
@@ -803,6 +825,7 @@
                     <div class="flexRow">
                       <h3>PROJECTS</h3>
                       <div class="flexRow">
+                        
                         <p>Want to showcase more Projects ?</p>
                         <button class="addExperience" id="addProject">
                           Click here
@@ -948,6 +971,9 @@
                     <div class="flexRow">
                       <h3>ACHIEVEMENTS</h3>
                       <div class="flexRow">
+                       
+                          <button><a  class="edit-ach"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-ach" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         <p>Want to add more Achievements ?</p>
                         <button class="addExperience" id="addAchievement">
                           Click here
@@ -1116,10 +1142,13 @@
         </section>
       </section>
     </div>
+  
   </body>
 <!-- 
   <script src="../public/js/darkmode.js"></script> -->
   <script src="../public/js/a11ytab.js"></script>
   <script src="../public/js/profile/profile.js"></script>
   <script src="../public/js/profile/modal.js"></script>
+  <script>
+
 </html>
