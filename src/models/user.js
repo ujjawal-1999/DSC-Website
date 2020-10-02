@@ -62,6 +62,40 @@ const userSchema = new Schema(
       facebook: String,
       twitter: String,
     },
+    achievements: [
+      {
+        name: String,
+        platform: String,
+        date: String,
+        serial: Number,
+        description: String,
+      },
+    ],
+    personalProjects: [
+      {
+        title: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+        role: {
+          type: String,
+        },
+        startdate: {
+          type: String,
+        },
+        enddate: {
+          type: String,
+        },
+        techstack: {
+          type: String,
+        },
+        githuburl: {
+          type: String,
+        },
+      },
+    ],
     projects: [
       {
         type: Schema.Types.ObjectId,
