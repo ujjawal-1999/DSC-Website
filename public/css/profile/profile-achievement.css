@@ -6,7 +6,7 @@
   padding: 1rem;
   margin: 1rem;
   background-color: rgba(221, 220, 220, 0.297);
-  border-radius: 6px;
+  border-radius: 4px;
   height: 5rem;
 }
 @media (max-width: 822px) {
@@ -83,10 +83,10 @@
   overflow: hidden;
 }
 .row-ach h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .row-ach p {
-  font-size: 10px;
+  font-size: 15px;
   color: rgb(124, 120, 120);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -144,3 +144,47 @@
     position: relative;
   }
 } */
+.flexRow button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+}
+.delete-ach img{
+  size: 5px;
+  width: 42px;
+  height: 42px;
+  border: 0px;
+ position: absolute;
+   left: 57rem;
+ 
+}
+
+.edit-ach img{
+  size: 5px;
+  width: 39px;
+  height: 39px;
+  border: 0px;
+  position: absolute;
+   left: 55rem;
+  
+}
+.delete-ach a {
+  background: none;
+}
+.column-ach button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+}
+
