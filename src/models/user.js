@@ -62,6 +62,15 @@ const userSchema = new Schema(
       facebook: String,
       twitter: String,
     },
+    achievements: [
+      {
+        name: String,
+        platform: String,
+        date: String,
+        serial: Number,
+        description: String,
+      },
+    ],
     personalProjects: [
       {
         title: {

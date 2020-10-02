@@ -473,6 +473,31 @@ router.post("/project/personal", authorization, async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+//to add new achievement
+router.post("/achievement", authorization, async (req, res) => {
+  try {
+    console.log(req.body);
+    const user = req.dbUser;
+    const newAchievement = {
+      name: req.body.achievementname,
+      platform: req.body.achievementnameplatform,
+      date: req.body.achievementnamedate,
+      serial: req.body.achievementnameserial,
+      description: req.body.projectdescription,
+    };
+
+    user.achievements.push(newAchievement);
+    console.log(newAchievement);
+    await user.save();
+    // console.log(user);
+
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
 //Post Route to add new Project
 router.post("/project/:user", async (req, res) => {
   var title = req.body.projectname;

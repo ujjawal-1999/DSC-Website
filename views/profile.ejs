@@ -38,12 +38,7 @@
         <div id="subscribeBox">
           <h2><span class="thin">Add a new </span> Experience</h2>
 
-          <form
-            class="subscribeForm"
-            name="Subscription Form"
-            method="post"
-            enctype="text/plain"
-          >
+          <form class="subscribeForm" name="Subscription Form" method="post">
             <div class="flexRow">
               <label for="pname">Project Name</label>
               <input id="pname" type="text" name="pname" />
@@ -381,8 +376,8 @@
           <form
             class="subscribeForm"
             name="Subscription Form"
-            method="post"
-            enctype="text/plain"
+            method="POST"
+            action="/dsc/user/achievement"
           >
             <div class="flexRow">
               <label for="achievementname">Achievement Name</label>
@@ -416,7 +411,7 @@
               <label for="achievementnameserial">Unique Serial ID</label>
               <input
                 id="achievementnameserial"
-                type="text"
+                type="number"
                 placeholder="This can be any unique value that indicated your Achievement."
                 name="achievementnameserial"
                 required
@@ -878,6 +873,7 @@
                     </div>
                     <div class="cards_ach">
                       <div class="card_ach">
+                        <% user.achievements.forEach((ach) => {%>
                         <div class="row-ach">
                           <div class="column-ach">
                             <img
@@ -885,86 +881,26 @@
                               alt="company"
                             />
                             <h3 class="tab-ach">
-                              Gold Badge C++<br />
-                              <p>Hackerrank</p>
+                              <%= ach.name %><br />
+                              <p><%= ach.platform%></p>
                             </h3>
-                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
+                            <div id="date">
+                              <b>&#9899;</b>
+                              <%= ach.date%>
+                            </div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
                               <span class="tooltiptext"
-                                >Credential ID: 19234567</span
+                                >Credential ID: <%= ach.serial%></span
                               >
                             </div>
                             <!--<div class="bookmarks">
-                                   <a>
-                                 <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
-                                 </div>-->
+                                     <a>
+                                   <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                   </div>-->
                           </div>
                         </div>
-                        <div class="row-ach">
-                          <div class="column-ach">
-                            <img
-                              src="/img/logo/images (92).jpeg"
-                              alt="company"
-                            />
-
-                            <h3 class="tab-ach">
-                              Best Coder<br />
-                              <p>Tecneosis,NIT Silchar</p>
-                            </h3>
-                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
-                            <div class="tooltip">
-                              <img src="/img/logo/info.svg" alt="info" />
-                              <span class="tooltiptext"
-                                >Credential ID: 19234567</span
-                              >
-                            </div>
-                            <!--<div class="bookmarks">
-                                        <a>
-                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
-                                      </div>-->
-                          </div>
-                        </div>
-                        <div class="row-ach">
-                          <div class="column-ach">
-                            <img
-                              src="/img/logo/images (92).jpeg"
-                              alt="company"
-                            />
-
-                            <h3 class="tab-ach">
-                              Gold Medal<br />
-                              <p>Hackathon,NIT Silchar</p>
-                            </h3>
-                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
-                            <div class="tooltip">
-                              <img src="/img/logo/info.svg" alt="info" />
-                              <span class="tooltiptext"
-                                >Credential ID: 19234567</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row-ach">
-                          <div class="column-ach">
-                            <img
-                              src="/img/logo/images (92).jpeg"
-                              alt="company"
-                            />
-
-                            <h3 class="tab-ach">
-                              Second Runner-up<br />
-                              <p>Smart India Hackathon,NIT Silchar</p>
-                            </h3>
-                            <div id="date"><b>&#9899;</b> 23-June-2020</div>
-                            <div class="tooltip">
-                              <img src="/img/logo/info.svg" alt="info" />
-                              <span class="tooltiptext"
-                                >Credential ID: 19234567</span
-                              >
-                            </div>
-                          </div>
-                        </div>
+                        <%})%>
                       </div>
                     </div>
                   </div>
