@@ -135,7 +135,7 @@
     padding: 1%;
     font-size: 1.2em;
     line-height: 1.5em;
-    color: #333333;
+    color: var(--Grey-light-1) !important;
     letter-spacing: 0.01em;
     font-style: normal;
     font-weight: 300;
@@ -145,6 +145,9 @@
     option {
       border-radius: 2px;
     }
+  }
+  select {
+    color: black !important;
   }
 
   .fullwidth {
