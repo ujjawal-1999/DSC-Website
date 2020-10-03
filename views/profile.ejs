@@ -42,7 +42,7 @@
             class="subscribeForm"
             name="Subscription Form"
             method="post"
-            action='/dsc/user/experience'
+            action="/dsc/user/experience"
           >
             <div class="flexRow">
               <label for="exp_name"> Company Name</label>
@@ -60,6 +60,7 @@
                 placeholder="dd-mm-yy"
                 name="exp_startdate"
                 required
+                
               />
             </div>
             <div class="flexRow">
@@ -69,7 +70,6 @@
                 type="text"
                 placeholder="dd-mm-yy"
                 name="exp_enddate"
-                
               />
             </div>
 
@@ -694,30 +694,40 @@
                     </div>
                     <div class="cards_exp">
                       <div class="card_exp">
-                      <% user.experiences.forEach((experience => { %>
+                        <%
+                        if(user.experiences){user.experiences.forEach((experience=>
+                        { %>
                         <div class="row">
-                        
-                            <div class="column">
+                          <div class="column">
                             <img
                               src="../public/img/logo/DSC_logo.png"
-                              alt="company"
+                              alt="lo"
                             />
                             <h3 class="accordion">
                               <%= experience.role %><br />
                               <p><%= experience.name %></p>
                             </h3>
-                           
-                            <div id="mention"><b>&#9899;</b><%= experience.startdate %> - <%= experience.enddate %></div>
-                            <button ><a class="edit-exp"><img src="/img/profile/edit.svg"></a></button>
-                            <button> <a class="delete-exp" href=""><img src="/img/profile/trash.svg"></a></button>
+
+                            <div id="mention">
+                              <b>&#9899;</b><%= experience.startdate %> - <%=
+                              experience.enddate %>
+                            </div>
+                            <button>
+                              <a class="edit-exp"
+                                ><img src="/img/profile/edit.svg"
+                              /></a>
+                            </button>
+                            <button>
+                              <a class="delete-exp" href=""
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
+                            </button>
                           </div>
                           <div class="panelexp">
-                            <p>
-                              <%= experience.description %>
-                            </p>
+                            <p><%= experience.description %></p>
                           </div>
                         </div>
-                      <% })) %>
+                        <% }))} %>
                       </div>
                     </div>
                   </div>
