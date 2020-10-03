@@ -140,11 +140,12 @@
   color: var(--Grey-dark-1);
   text-decoration: none;
 }
-.git-link {
+.git-link h4 {
   padding-bottom: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
-  color: grey;
+  color: #2aa9df !important;
+}
+.git-link a {
+  text-decoration: none;
 }
 .project-description {
   border-bottom: 2px solid grey;
