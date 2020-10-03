@@ -60,7 +60,6 @@
                 placeholder="dd-mm-yy"
                 name="exp_startdate"
                 required
-                
               />
             </div>
             <div class="flexRow">
@@ -511,6 +510,18 @@
                 <% if(user.profileImageLocation!=null){ %>
                 <img src=" <%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
+
+                <form
+                  action="profile/upload/<%= user.id%>"
+                  method="POST"
+                  class="uploadImageForm"
+                >
+                  <div class="upload-btn-wrapper">
+                    <button class="btn">Change Photo</button>
+                    <input type="file" name="file" id="fileSubmitButton" />
+                    <input type="submit" name="myfile" value="Submit"/>
+                  </div>
+                </form>
               </div>
               <div class="info">
                 <div class="nameandedit">
@@ -879,47 +890,65 @@
             <div class="card">
               <p class="type">Hackathon</p>
               <hr />
-              <p class="topic">Website Developement</p>
+              <p class="topic">Campus 101</p>
               <p class="details">
-                Introducing Hack 1 of Microsoft Azure Champions League, a series
-                of three hackathons.
+                HackerEarth wants to help you bridge this gap by starting off a
+                2 months journey of learning with you - The Campus 101.
               </p>
               <div class="timings">
                 <div class="time">
                   <p class="stat">START</p>
-                  <p>12 September</p>
+                  <p>Nov 06, 2020</p>
                 </div>
                 <div class="time">
                   <p class="stat">END</p>
-                  <p>22 September</p>
+                  <p>Nov 06, 2020</p>
                 </div>
               </div>
               <hr />
               <div class="timings">
-                <button>Register</button> <button>Enter</button>
+                <a
+                  href="https://campus101.hackerearth.com/"
+                  style="text-decoration: none"
+                >
+                  <button onclick="">Register</button>
+                </a>
+                <!-- <a
+                href="https://campus101.hackerearth.com/"
+                style="text-decoration: none"
+              >
+                <button onclick="">Enter</button>
+              </a> -->
               </div>
             </div>
             <div class="card">
-              <p class="type">Coding Contest</p>
+              <p class="type">Hackathon</p>
               <hr />
-              <p class="topic">C++ Marathon</p>
+              <p class="topic">Hackccelerate 2020</p>
               <p class="details">
-                Introducing Hack 1 of Microsoft Azure Champions League, a series
-                of three hackathons.
+                HackerEarth presents Hackccelerate 2020, a 72-hour hackathon
+                that will put your skills to the test! So grab your coffee,
+                snacks, and code your way to deliver an innovative tech product
+                within 72 hours.
               </p>
               <div class="timings">
                 <div class="time">
                   <p class="stat">START</p>
-                  <p>12 September</p>
+                  <p>Oct 15, 2020</p>
                 </div>
                 <div class="time">
                   <p class="stat">END</p>
-                  <p>22 September</p>
+                  <p>Oct 18, 2020</p>
                 </div>
               </div>
               <hr />
               <div class="timings">
-                <button>Register</button> <button>Enter</button>
+                <a
+                  href="https://www.hackerearth.com/challenges/hackathon/hackccelerate-2020/"
+                  style="text-decoration: none"
+                >
+                  <button onclick="">Register</button>
+                </a>
               </div>
             </div>
           </div>

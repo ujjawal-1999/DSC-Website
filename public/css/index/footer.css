@@ -24,7 +24,7 @@
   width: 1px;
   align-self: center;
   height: 13rem;
-  margin: 0 4rem;
+  margin: 0 2rem;
 
   border-right: 2px solid var(--Grey-dark-5);
 }
@@ -37,7 +37,6 @@
 }
 
 .nav_column {
-  flex-wrap: wrap;
   width: 100%;
   padding: 2rem 0;
   justify-content: center;
@@ -53,6 +52,20 @@
   font-weight: 500;
   opacity: 0.6;
   color: var(--Grey-light-1);
+}
+.x {
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 1rem !important;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--primary-light);
+}
+
+.x:hover {
+  opacity: 0.6;
 }
 
 .nav_column a:link,
@@ -104,6 +117,7 @@
   /* height: 12rem; */
   justify-content: space-around;
   align-items: center;
+  margin: 0.5rem 0;
 }
 
 .fadedText {
@@ -115,7 +129,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .nav_column {
     flex-direction: column;
   }

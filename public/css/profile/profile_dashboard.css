@@ -346,6 +346,45 @@ body {
   height: auto;
 }
 
+.photo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.photo img {
+  width: 10rem;
+}
+
+.uploadImageForm {
+  text-align: center;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn {
+  border: none;
+  color: gray;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 .contests {
   width: 25%;
   background-color: var(--primary-light);

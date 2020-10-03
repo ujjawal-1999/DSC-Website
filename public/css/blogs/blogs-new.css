@@ -13,17 +13,9 @@ body {
   --bg-color: #0f0f0f;
   --white: #ffffff;
   --midnight: #104f55;
-  /* gradient color   */
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  /*      theme font-family   */
-  /* --Abel: 'Abel', cursive;
-    --Anton: 'Anton', cursive;
-    --Josefin : 'Josefin', cursive;
-    --Lexend: 'Lexend', cursive;
-    --Livvic : 'Livvic', cursive; */
   --blogfont: "Arial", "Sans-serif";
 }
-
 
 /* ---------------- Global Classes ---------------*/
 
@@ -31,7 +23,9 @@ a {
   text-decoration: none;
   color: var(--text-gray);
 }
-
+/* form{
+  display: none;
+} */
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -45,6 +39,7 @@ ul {
 h1 {
   font-family: var(--blogfont);
   font-size: 2.5rem;
+  color: var(--Grey-dark-1);
 }
 
 h2 {
@@ -73,33 +68,36 @@ span {
   margin: 0 5vw;
 }
 
+section {
+  background-color: var(--primary-light) !important;
+}
+
 .text-gray {
   color: var(--text-gray);
 }
 
 p {
   font-family: var(--Lexend);
-  color: var(--text-light);
+  color: var(--Grey-dark-2);
 }
 
-
 /* ------x------- Global Classes -------x-------*/
-
 
 /* popular post css */
 
 #popular-post {
   width: 25vw;
-  background: #F8F8FF;
-  padding: 10px;
-  font-family: 'Fira Sans', sans-serif;
+  background-color: var(--primary-light) !important;
+  padding: 2rem;
+  font-family: "Fira Sans", sans-serif;
+  border-radius: 20px;
 }
 
 #heading {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 1.6em;
   text-align: center;
-  color: #4E4E4E;
+  color: #4e4e4e;
   margin-bottom: 10px;
   letter-spacing: 2px;
 }
@@ -115,7 +113,7 @@ p {
 
 .popular-posts .title {
   font-size: 1.5em;
-  line-height: 0.9em;
+  line-height: 2em;
 }
 
 .content .intro {
@@ -126,6 +124,9 @@ p {
   color: #717171;
   font-size: 0.8em;
 }
+.content span {
+  color: var(--Grey-dark-1) !important;
+}
 
 .numbering {
   font-style: normal;
@@ -133,7 +134,7 @@ p {
   font-size: 1.9em;
   margin: 10px 15px 10px 5px;
   text-align: justify;
-  color: #9A9A9A;
+  color: #9a9a9a;
 }
 
 @media screen and (max-width: 415px) {
@@ -145,9 +146,7 @@ p {
   }
 }
 
-
 /* Popular posts css ends */
-
 
 /* Cards css */
 
@@ -160,9 +159,10 @@ p {
   padding: 2em;
   justify-content: space-between;
   width: 90%;
+  background-color: var(--Grey-light-1) !important;
 }
 
-.card-container .author>img:nth-child(1) {
+.card-container .author > img:nth-child(1) {
   width: 5em;
   border-radius: 50%;
   height: 5em;
@@ -173,7 +173,7 @@ p {
   margin-bottom: 0;
 }
 
-.card-container .author>h3:nth-child(2) {
+.card-container .author > h3:nth-child(2) {
   margin: 0;
 }
 
@@ -186,14 +186,14 @@ p {
   padding-left: 1%;
 }
 
-@media (min-width:1300px) {
+@media (min-width: 1300px) {
   .card-details {
     padding-right: 2%;
     padding-left: 1%;
   }
 }
 
-@media (max-width:1300px) {
+@media (max-width: 1300px) {
   .card-details {
     padding-right: 1%;
     padding-left: 1%;
@@ -214,20 +214,19 @@ p {
 
 .card-img {
   transition: transform 0.3s ease-in-out;
-  object-fit: contain;
-  object-position: center;
   display: inline-block;
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
-  margin-top: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: inline-block;
+  text-align: center;
 }
 
 .card-img :hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .card-container img {
@@ -249,7 +248,7 @@ p {
 
 .card-details {
   display: grid;
-  grid-template-areas: "text text""author buttons";
+  grid-template-areas: "text text" "author buttons";
 }
 
 .card-text {
@@ -258,11 +257,13 @@ p {
 
 .card-author {
   grid-area: author;
-  align-self: end;
+  justify-self: center;
   padding-bottom: 1em;
+  color: var(--Grey-dark-2);
 }
 
 .card-buttons {
+  color: var(--Grey-dark-1) !important;
   grid-area: buttons;
   align-self: end;
   padding: 1em;
@@ -274,15 +275,21 @@ p {
   padding: 0;
   margin: 0;
 }
-
-.card-author>img:nth-child(1) {
+.card-buttons i {
+  color: var(--Grey-dark-1) !important;
+}
+.card-author > img:nth-child(1) {
   width: 5em;
   height: 5em;
   border-radius: 50%;
+  margin: 1rem;
 }
 
-.card-author>h3:nth-child(2) {
-  margin: 0;
+.card-author > h3:nth-child(2) {
+  margin: 1rem 0;
+}
+.card-author span {
+  margin: 1rem;
 }
 
 @media (max-width: 1300px) {
@@ -296,8 +303,7 @@ p {
   /* width: 25vw; */
   width: 100%;
   justify-self: center;
-  padding-right: 1%;
-  padding-left: 1%;
+  padding: 1rem;
 }
 
 #popular-post .intro {
@@ -309,13 +315,12 @@ section.popular {
   justify-self: end;
 }
 
-
 /* Cards css */
 
 main {
   display: grid;
-  background: #F8F8FF;
-  grid-template-areas: "cards search""cards  popular";
+  background-color: var(--primary-light) !important;
+  grid-template-areas: "cards search" "cards  popular";
   grid-template-columns: 4fr 1fr;
   padding-left: 2%;
   padding-right: 2%;
@@ -330,7 +335,7 @@ section.blog-search {
 }
 
 section.popular {
-  grid-area: popular
+  grid-area: popular;
 }
 
 ul.blog-search-results {
@@ -344,21 +349,21 @@ ul.blog-search-results li {
 }
 
 .blog-search button {
-  background: #1246CD;
+  background: #1246cd;
   height: 3em;
   color: white;
   border-radius: 20px;
   margin: 0;
   padding-left: 1em;
   width: 120px;
-  border: 1px solid #1246CD;
+  border: 1px solid #1246cd;
 }
 
 .blog-search .inner-search {
   margin: 2em;
   padding: 2em;
   border-radius: 40px;
-  background-color: #4478FF;
+  background-color: #4478ff;
   box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
 }
 
@@ -384,13 +389,14 @@ ul.blog-search-results li {
 
 @media (max-width: 1300px) {
   main {
-    grid-template-areas: "search""cards""popular";
+    grid-template-areas: "search" "cards" "popular";
   }
   .popular {
     width: 100%;
   }
   #popular-post {
-    width: 100%;
+    width: 90%;
+    margin-bottom: 3rem;
   }
   .card-image {
     width: 100%;

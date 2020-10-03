@@ -279,6 +279,45 @@ body {
     }
   }
 }
+.photo {
+  // overflow: hidden;
+  width: 10rem;
+  height: 10rem;
+  img {
+    width: 10rem;
+  }
+  &:hover .upload-btn-wrapper {
+    // transform: translateY(-3rem);
+  }
+}
+.uploadImageForm {
+  text-align: center;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.2s;
+  // transform: translateY(-3rem);
+}
+
+.btn {
+  border: none;
+  color: gray;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
 
 .contests {
   width: 25%;
