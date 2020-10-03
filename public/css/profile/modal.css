@@ -186,7 +186,7 @@
   padding: 1%;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: #333333;
+  color: var(--Grey-light-1) !important;
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 300;
@@ -211,6 +211,14 @@
 .addSkillsModal textarea option,
 .addSkillsModal select option {
   border-radius: 2px;
+}
+
+.editProfileModal select,
+.addExperienceModal select,
+.addProjectsModal select,
+.addAchievementModal select,
+.addSkillsModal select {
+  color: black !important;
 }
 
 .editProfileModal .fullwidth,

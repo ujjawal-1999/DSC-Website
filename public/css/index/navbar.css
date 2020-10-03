@@ -238,7 +238,7 @@ input {
   .navbar li {
     padding: 15px;
   }
-    /* 
+  /* 
     .navbar li:first-child {
       margin-top: 10px;
       order: 3;
@@ -460,6 +460,7 @@ input {
   font-family: "Varela Round", sans-serif;
 }
 .type-checkbox + label span.aprobado {
+  color: black;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
