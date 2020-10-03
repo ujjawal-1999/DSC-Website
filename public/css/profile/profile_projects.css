@@ -155,3 +155,35 @@
 .project-duration {
   margin-top: 30px;
 }
+.delete-prj img{
+  size: 5px;
+  width: 40px;
+  height: 40px;
+  border: 0px;
+ 
+ 
+}
+
+.edit-prj img{
+  size: 5px;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  
+}
+.delete-prj a {
+  background: none;
+  
+}
+.item button{
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display : inline-flex;
+  
+  justify-content: space-between;
+
+}
+
