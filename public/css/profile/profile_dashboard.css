@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
 * {
   padding: 0;
   margin: 0;
@@ -582,7 +583,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
+  width: 100%;
   overflow: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -893,5 +894,128 @@ kbd {
           box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+
+.product-image {
+  /* display: inline-block; */
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  float: left;
+  width: 50%;
+  border-radius: 30px;
+  margin: 1rem;
+}
+
+.prod-img {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image:hover .info {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.product-image:hover img {
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+.product-image:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.prod-img :hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.product-details {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 30px;
+  width: 40%;
+  font-family: "Farsan", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .product-details {
+    width: 90%;
+    text-align: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .product-image {
+    width: 90%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 800px) {
+  .product-details {
+    width: 40%;
+    text-align: center;
+    height: -webkit-fill-available;
+    margin-top: 10%;
+  }
+  .product-details p {
+    font-family: "Farsan", "cursive";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+    color: #000000;
+  }
+}
+
+.person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.author {
+  margin-top: 10px;
+  width: 67px;
+  height: 67px;
+}
+
+.author img {
+  border-radius: 50%;
+  height: 67px;
+  width: 67px;
 }
 /*# sourceMappingURL=profile_dashboard.css.map */
