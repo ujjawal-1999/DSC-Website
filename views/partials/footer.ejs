@@ -3,67 +3,65 @@
     <div class="nav_column">
       <div class="contentnav">
         <p class="nav_heading">Navigation</p>
-        <a href="/">Home</a>
-        <a href="/">Features</a>
-        <a href="/">Profile</a>
-        <a href="/">Developers</a>
+        <a href="/dsc">Home</a>
+        <a href="/dsc/#about" class="nav-items-a">About Us</a>
+        <a href="/dsc/projects" class="nav-items-a">Projects</a>
+        <a href="/dsc/#schedule" class="nav-items-a">Announcement</a>
+        <a href="/dsc/blog" class="nav-items-a">Blogs</a>
+        <a href="/dsc/#features">Features</a>
       </div>
+      <% if(user){ %>
       <div class="divider"></div>
       <div class="contentnav">
-        <p class="nav_heading">Profile</p>
-        <a href="/">Dashboard</a>
-        <a href="/">Leaderboards</a>
-        <a href="/">Acheivements</a>
-        <a href="/">Skills</a>
+        <p class="nav_heading">Actions</p>
+        <a href="/dsc/user/profile">Dashboard</a>
+        <a href="/dsc/user/logout">Log Out</a>
+        <!-- <a href="/dsc/user/profile/#panel01">Timeline</a>
+        <a href="/dsc/user/profile/#panel02">Experience</a>
+        <a href="/dsc/user/profile/#panel03">Skills</a>
+        <a href="/dsc/user/profile/#panel04">Projects</a>
+        <a href="/dsc/user/profile/#panel05">Achievement</a> -->
       </div>
-      <div class="contentnav">
-        <p class="nav_heading">Quick Links</p>
-        <a href="/">About us</a>
-        <a href="/">Sign Up</a>
-      </div>
+      <% } %> <% if(!user){ %>
       <div class="contentnav">
         <p class="nav_heading">Actions</p>
-        <a href="/">Log In</a>
-        <a href="/">Log Out</a>
+        <a href="/dsc/user/register">Login / Sign Up</a>
       </div>
+      <% } %>
       <div class="divider"></div>
       <div class="contentnav">
         <p class="nav_heading">Communuty</p>
-        <a href="/">Blog</a>
-        <a href="/">Trendings</a>
-        <a href="/">Follow on Facebook</a>
-        <a href="/">Join our Discord</a>
+        <a href="/dsc/blog" class="nav-items-a">Blogs</a>
+        <!-- <a href="/">Trendings</a> -->
+        <a
+          href="https://dsc.community.dev/national-institute-of-technology-silchar/"
+          >Google Developer's Page</a
+        >
       </div>
       <div class="contentnav">
         <p class="nav_heading">Contact-Us</p>
-        <a href="/">Facebook</a>
-        <a href="/">Official Website</a>
+        <a href="https://www.facebook.com/dscnits">Follow on Facebook</a>
+        <a href="http://www.nits.ac.in/">Visit College Website</a>
       </div>
       <div class="divider"></div>
       <div class="contentnav">
         <p class="nav_heading">Address</p>
-        <a href="/">Google's Developer Club</a>
-        <a href="/"
-          >NIT Silchar, NIT Road, Fakiratilla,<br />
-          Silchar, Assam 788010</a
-        >
-        <a href="/">5432788469</a>
+
+        <p class="x">Google's Developer Club, NIT Silchar</p>
+        <p class="x">
+          NIT Silchar, NIT Road, Fakiratilla,<br />
+          Silchar, Assam 788010
+        </p>
+        <p class="x">5432788469</p>
       </div>
     </div>
   </div>
-  <div class="nav_google" style="flex-direction: column">
-    <div class="box">
-      <input class="type-checkbox" id="toogle" type="checkbox" name="name" />
-      <label class="estado" for="toogle">
-        <span class="aprobado">Light</span>
-        <span class="desaprobado">Dark</span>
-      </label>
-    </div>
-    <p class="nav_heading fadedText">Developers prefer dark mode ! Try it.</p>
+  <div class="nav_google">
+    <img src="/img/logo/nav_banner.png" style="width: 30%" alt="" />
   </div>
   <div class="nav_google">
     <p class="nav_heading fadedText">
-      Copyright © 2020 NIT Silchar. All Rights Reserved.
+      Copyright © 2020 Google. All Rights Reserved.
     </p>
   </div>
 </div>
