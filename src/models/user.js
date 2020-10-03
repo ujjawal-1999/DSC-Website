@@ -118,6 +118,12 @@ const userSchema = new Schema(
         ref: "Blog",
       },
     ],
+    blogs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Blog",
+      },
+    ],
   },
   {
     timestamps: true,
