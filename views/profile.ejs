@@ -38,31 +38,52 @@
         <div id="subscribeBox">
           <h2><span class="thin">Add a new </span> Experience</h2>
 
-          <form class="subscribeForm" name="Subscription Form" method="post">
+          <form
+            class="subscribeForm"
+            name="Subscription Form"
+            method="post"
+            action='/dsc/user/experience'
+          >
             <div class="flexRow">
-              <label for="pname">Project Name</label>
-              <input id="pname" type="text" name="pname" />
+              <label for="exp_name"> Company Name</label>
+              <input id="exp_name" type="text" name="exp_name" />
             </div>
             <div class="flexRow">
-              <label for="prole">Project Role</label>
-              <input id="prole" type="text" name="prole" />
+              <label for="exp_role"> Job Role</label>
+              <input id="exp_role" type="text" name="exp_role" />
             </div>
             <div class="flexRow">
-              <label for="Duration">Duration</label>
-              <input id="Duration" placeholder="In months" name="Duration" />
+              <label for="exp_startdate">Start Date</label>
+              <input
+                id="startdate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="exp_startdate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="exp_enddate">End Date</label>
+              <input
+                id="exp_enddate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="exp_enddate"
+                
+              />
             </div>
 
             <div class="flexRow">
-              <label for="Status">Status</label>
-              <select name="Status" id="Status">
+              <label for="exp_status">Status</label>
+              <select name="exp_status" id="Status">
                 <option value="Ongoing">Ongoing</option>
                 <option value="Scheduled">Scheduled</option>
                 <option value="Completed">Completed</option>
               </select>
             </div>
             <div class="flexRow">
-              <label for="Description">Description</label>
-              <input id="Description" type="text" name="Description" />
+              <label for="exp_description">Description</label>
+              <input id="Description" type="text" name="exp_description" />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
@@ -707,76 +728,30 @@
                     </div>
                     <div class="cards_exp">
                       <div class="card_exp">
+                      <% user.experiences.forEach((experience => { %>
                         <div class="row">
-                          <div class="column">
-                            <img src="/img/logo/DSC_logo.png" alt="company" />
+                        
+                            <div class="column">
+                            <img
+                              src="../public/img/logo/DSC_logo.png"
+                              alt="company"
+                            />
                             <h3 class="accordion">
-                              Marketing & Communication Manager<br />
-                              <p>Microsoft</p>
+                              <%= experience.role %><br />
+                              <p><%= experience.name %></p>
                             </h3>
-
-                            <div id="mention"><b>&#9899;</b> management</div>
+                           
+                            <div id="mention"><b>&#9899;</b><%= experience.startdate %> - <%= experience.enddate %></div>
+                            <button ><a class="edit-exp"><img src="/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-exp" href=""><img src="/img/profile/trash.svg"></a></button>
                           </div>
                           <div class="panelexp">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
+                              <%= experience.description %>
                             </p>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="column">
-                            <img src="/img/logo/DSC_logo.png" alt="company" />
-
-                            <h3 class="accordion">
-                              Social Media Asistent<br />
-                              <p>Tecneosis,NIT Silchar</p>
-                            </h3>
-
-                            <div id="mention">
-                              <b>&#9899;</b> business development
-                            </div>
-                            <!--<div class="bookmarks">
-                                        <a>
-                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
-                                      </div>-->
-                          </div>
-                          <div class="panelexp">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="column">
-                            <img src="/img/logo/DSC_logo.png" alt="company" />
-
-                            <h3 class="accordion">
-                              Marketing Head<br />
-                              <p>Incandescence,NIT Silchar</p>
-                            </h3>
-
-                            <div id="mention">
-                              <b>&#9899;</b> business development
-                            </div>
-                          </div>
-                          <div class="panelexp">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                          </div>
-                        </div>
+                      <% })) %>
                       </div>
                     </div>
                   </div>

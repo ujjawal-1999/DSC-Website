@@ -96,6 +96,16 @@ const userSchema = new Schema(
         },
       },
     ],
+    experiences: [
+      {
+        name: String,
+        role: String,
+        startdate: String,
+        enddate: String,
+        status: String,
+        description: String,
+      },
+    ],
     projects: [
       {
         type: Schema.Types.ObjectId,

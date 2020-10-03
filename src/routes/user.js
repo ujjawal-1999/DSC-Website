@@ -421,6 +421,29 @@ router.post("/skill", authorization, async (req, res) => {
   }
 });
 
+router.post("/experience", authorization, async (req, res) => {
+  try {
+    // console.log("experience route called");
+    const user = req.dbUser;
+    // console.log(req.body);
+    const newExp = {
+      name: req.body.exp_name,
+      role: req.body.exp_role,
+      startdate: req.body.exp_startdate,
+      enddate: req.body.exp_enddate,
+      status: req.body.exp_status,
+      description: req.body.exp_description,
+    };
+    user.experiences.push(newExp);
+    // console.log(newExp);
+    await user.save();
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 //Post Route to edit User Profile Details
 router.post("/profile", authorization, (req, res) => {
   try {
