@@ -96,6 +96,16 @@ const userSchema = new Schema(
         },
       },
     ],
+    experiences: [
+      {
+        name: String,
+        role: String,
+        startdate: String,
+        enddate: String,
+        status: String,
+        description: String,
+      },
+    ],
     projects: [
       {
         type: Schema.Types.ObjectId,
@@ -103,6 +113,12 @@ const userSchema = new Schema(
       },
     ],
     bookmarkBlogs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Blog",
+      },
+    ],
+    blogs: [
       {
         type: Schema.Types.ObjectId,
         ref: "Blog",

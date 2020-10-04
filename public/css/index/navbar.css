@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .page-wrapper {
   width: 100%;
   height: auto;
@@ -28,7 +34,7 @@
 
 .navbar img {
   justify-self: start;
-  margin-left: 20px;
+  margin-left: 50px;
   margin-top: 10px;
   width: 50px;
   height: 50px;
@@ -41,7 +47,9 @@
   /* top: 0; */
   left: 50%;
   width: 80%;
+  height: 10vh;
   align-self: center;
+  align-items: center;
   transform: translateX(-50%);
   justify-content: space-around;
   align-content: center;
@@ -51,9 +59,10 @@
   color: var(--Grey-dark-1);
 }
 .nav-item {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-content: center;
+  align-content: center; */
+  font-family: "Century Gothic" !important;
 }
 
 .nav-item .nav-items-a {
@@ -65,8 +74,6 @@
   padding: 0.5em 0.8em 0.5em 0.8em;
   text-align: center;
   border-radius: 5px;
-  /* padding: 0.5em 0.8em 0.5em 0.8em; */
-  /* border-bottom: 1.5px solid #01010e; */
   text-decoration: none;
   border-style: 1px solid transparent;
   transition: all 0.2s;
@@ -80,6 +87,7 @@
 /* SEARCH FUNCTION */
 
 .search {
+  height: autos;
   transform: translate(-5%);
   -webkit-transform: translate(-5%);
   transition: transform 0.7s ease-in-out;
@@ -214,7 +222,7 @@ input {
 }
 /* Mobile Devices - Phones/Tablets */
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 760px) {
   /* MOBILE NAVIGATION */
 
   .navbar ul {
@@ -238,7 +246,7 @@ input {
   .navbar li {
     padding: 15px;
   }
-    /* 
+  /* 
     .navbar li:first-child {
       margin-top: 10px;
       order: 3;
@@ -304,7 +312,7 @@ input {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   #search-icon {
     display: block;
     transform: translateX(-50px);
@@ -328,10 +336,20 @@ input {
   .nav-wrapper {
     overflow-x: hidden;
   }
-  /* .box {
-    position: absolute;
-    top: 50%;
-  } */
+  #search_list1 {
+    transform: translate(-50%, -50%) !important;
+    display: none;
+    margin-top: 20px;
+    align-items: center;
+    top: 80%!important;
+    right: 50%;
+    width: 90%;
+    height: 50vh;
+    overflow: scroll;
+    background-color: var(--Grey-dark-1);
+    color: var(--Grey-light-1);
+    padding: 2rem;
+  }
 }
 /* @media screen and (max-width: 600px) {
   #search-icon {
@@ -412,37 +430,52 @@ input {
   }
 } */
 #search_list1 {
+  position: absolute;
   display: none;
-  margin-top: 20px;
   align-items: center;
-  width: 100%;
+  width: 90%;
+  height: 50vh;
+  top: 95%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  overflow: scroll;
+  background-color: var(--Grey-light-1);
+  padding: 2rem;
 }
 .collection-item2 {
-  border-bottom: 1px solid grey;
+  padding: 1rem 0;
 }
 .collection-item2 a {
-  color: black !important;
+  color: var(--Grey-dark-1) !important;
 }
 .collection-item2 a:hover {
   color: white !important;
 }
-@media screen and (max-width: 715px) {
+/* @media screen and (max-width: 715px) {
   #search_list1 {
     transform: translateX(-50vw);
   }
-}
+} */
 
 .box {
-  position: relative;
-  align-self: center;
+  position: absolute;
+  top: 18px;
+  right: 18px;
 }
-
+@media screen and (max-width: 715px) {
+  .box {
+    position: absolute;
+    top: 18px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
 .type-checkbox {
   display: none;
 }
 .type-checkbox + label {
   display: block;
-  width: 160px;
+  width: 80px;
   height: 45px;
   background-color: white;
   border-radius: 22px;
@@ -455,15 +488,15 @@ input {
 .type-checkbox + label span {
   position: absolute;
   color: inherit;
-
   font-size: 12px;
   font-family: "Varela Round", sans-serif;
 }
 .type-checkbox + label span.aprobado {
+  color: black;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  left: 2.5em;
+  left: 1em;
   -webkit-animation: left-check 300ms ease-in-out;
   animation: left-check 300ms ease-in-out;
 }
@@ -491,7 +524,7 @@ input {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 1.3em;
+  right: 1em;
   display: none;
   -webkit-animation: right-check 300ms ease-in-out;
   animation: right-check 300ms ease-in-out;
@@ -509,8 +542,8 @@ input {
 .type-checkbox + label:before {
   display: block;
   content: "";
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: white;
   box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.4);
@@ -518,7 +551,7 @@ input {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  left: 117px;
+  left: 40px;
   -webkit-transition: left 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
   transition: left 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
 }

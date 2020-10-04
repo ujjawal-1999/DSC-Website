@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
+
 * {
   padding: 0;
   margin: 0;
@@ -277,6 +279,45 @@ body {
     }
   }
 }
+.photo {
+  // overflow: hidden;
+  width: 10rem;
+  height: 10rem;
+  img {
+    width: 10rem;
+  }
+  &:hover .upload-btn-wrapper {
+    // transform: translateY(-3rem);
+  }
+}
+.uploadImageForm {
+  text-align: center;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.2s;
+  // transform: translateY(-3rem);
+}
+
+// .btn {
+//   border: none;
+//   color: gray;
+//   background-color: white;
+//   padding: 8px 10px;
+//   border-radius: 8px;
+//   font-size: 12px;
+//   font-weight: bold;
+// }
+
+// .upload-btn-wrapper input[type="file"] {
+//   font-size: 100px;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   opacity: 0;
+// }
 
 .contests {
   width: 25%;
@@ -366,7 +407,6 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  // flex-direction: row;
   justify-content: center;
   .card {
     padding: 2rem;
@@ -434,17 +474,19 @@ body {
       .images {
         display: flex;
         flex-wrap: wrap;
+        width: 50%;
         padding: 1rem 0rem;
         justify-content: center;
 
         .image-container {
           display: flex;
-          width: 30%;
+          width: 100%;
           overflow: hidden;
           transition: all 0.2s;
           object-fit: contain;
 
           img {
+            width: 30rem;
             transition: all 0.2s;
 
             &:hover {
@@ -762,4 +804,107 @@ kbd {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+.product-image {
+  /* display: inline-block; */
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  float: left;
+  width: 50%;
+  border-radius: 30px;
+  margin: 1rem;
+}
+
+.prod-img {
+  transition: transform 0.3s ease-in-out;
+  object-fit: contain;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image:hover .info {
+  transform: translateX(0);
+}
+
+.product-image:hover img {
+  transition: all 0.8s ease-out;
+}
+
+.product-image:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.prod-img :hover {
+  transform: scale(1.2);
+}
+
+.product-details {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 30px;
+  width: 40%;
+  font-family: "Farsan", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .product-details {
+    width: 90%;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-image {
+    width: 90%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  @media (min-width: 800px) {
+    .product-details {
+      width: 40%;
+      text-align: center;
+      height: -webkit-fill-available;
+      margin-top: 10%;
+    }
+    .product-details p {
+      font-family: "Farsan", "cursive";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 35px;
+      color: #000000;
+    }
+  }
+}
+
+.person {
+  display: flex;
+  justify-content: center;
+}
+
+.author {
+  margin-top: 10px;
+  width: 67px;
+  height: 67px;
+}
+
+.author img {
+  border-radius: 50%;
+  height: 67px;
+  width: 67px;
 }

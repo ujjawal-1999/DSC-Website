@@ -38,35 +38,70 @@
         <div id="subscribeBox">
           <h2><span class="thin">Add a new </span> Experience</h2>
 
-          <form class="subscribeForm" name="Subscription Form" method="post">
+          <form
+            class="subscribeForm"
+            method="post"
+            action="/dsc/user/experience"
+            onsubmit="return addExperienceModalvalidate()"
+            name="addExperienceform"
+          >
             <div class="flexRow">
-              <label for="pname">Project Name</label>
-              <input id="pname" type="text" name="pname" />
+              <label for="exp_name"> Company Name</label>
+              <input id="exp_name" type="text" name="exp_name" maxlength="20" />
             </div>
             <div class="flexRow">
-              <label for="prole">Project Role</label>
-              <input id="prole" type="text" name="prole" />
+              <label for="exp_role"> Job Role</label>
+              <input id="exp_role" type="text" name="exp_role" maxlength="20" />
             </div>
             <div class="flexRow">
-              <label for="Duration">Duration</label>
-              <input id="Duration" placeholder="In months" name="Duration" />
-            </div>
-
-            <div class="flexRow">
-              <label for="Status">Status</label>
-              <select name="Status" id="Status">
+              <label for="exp_status">Status</label>
+              <select
+                name="exp_status"
+                id="exp_status"
+                onchange="statusListener()"
+              >
+                <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
                 <option value="Scheduled">Scheduled</option>
-                <option value="Completed">Completed</option>
               </select>
             </div>
             <div class="flexRow">
-              <label for="Description">Description</label>
-              <input id="Description" type="text" name="Description" />
+              <label for="exp_startdate">Start Date</label>
+              <input
+                id="exp_startdate"
+                type="date"
+                placeholder="dd/mm/yyyy"
+                name="exp_startdate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="exp_enddate">End Date</label>
+              <input
+                id="exp_enddate"
+                placeholder="dd/mm/yyyy"
+                type="date"
+                name="exp_enddate"
+              />
+            </div>
+
+            <div class="flexRow">
+              <label for="exp_description">Description</label>
+              <input
+                id="Description"
+                type="text"
+                name="exp_description"
+                maxlength="50"
+              />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
-              <input id="submit" type="submit" value="Save Changes" />
+              <input
+                id="submit_experience"
+                class="submit"
+                type="submit"
+                value="Save Changes"
+              />
             </div>
           </form>
         </div>
@@ -83,12 +118,58 @@
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2><span class="thin">Profile</span> Details</h2>
+          <h2><span class="thin"></span></h2>
+          <div class="socials">
+            <div class="items">
+              <div class="photo">
+                <% if(user.profileImageLocation!=null){ %>
+                <img src="/upload<%= user.profileImageLocation%>" alt="" />
+                <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
+              </div>
+              <form
+                action="profile/upload/<%=user.id%>"
+                method="post"
+                enctype="multipart/form-data"
+                class="uploadImageForm"
+              >
+                <div class="upload-btn-wrapper">
+                  <input
+                    name="profile-image"
+                    type="file"
+                    class="file-upload-field"
+                    value=""
+                    id="fileSubmitButton"
+                  />
+                  <input
+                    style="width: 100%; color: rgb(238, 238, 238)!important"
+                    type="submit"
+                    class="submit"
+                    value="Submit Photo"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="items link">
+              <img src="/img/logo/link.png" alt="" />
+              <a href="">Connect to Linkedin</a>
+            </div>
+            <div class="items twitter">
+              <img src="/img/logo/twitter.png" alt="" />
+              <a href="">Connect to Twitter</a>
+            </div>
+          </div>
+          <p></p>
+          <!-- <img class="edill" src="/img/illustrations/editing.png" alt="" /> -->
+        </div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
           <form
             class="subscribeForm"
-            name="Subscription Form"
             method="post"
             action="/dsc/user/profile"
+            onsubmit="return editProfileModalvalidate()"
+            name="editprofileform"
           >
             <div class="flexRow">
               <label for="name">Name</label>
@@ -98,7 +179,7 @@
                 value="<%=user.name%>"
                 name="name"
                 required
-                maxlength="20"
+                maxlength="30"
               />
             </div>
             <div class="flexRow">
@@ -171,35 +252,22 @@
             <div class="flexRow">
               <label for="password">Password </label>
               <div class="flexRow fullwidth">
-                <p>Last Changed 2 months ago</p>
+                <!-- <p>Last Changed 2 months ago</p> -->
                 <a href="">Change Password</a>
               </div>
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
-              <input id="submit" type="submit" value="Save Changes" required />
-              <a href="">Deactivae My Account</a>
+              <input
+                id="submit_editprofile"
+                class="submit"
+                type="submit"
+                value="Save Changes"
+                required
+              />
+              <!-- <a href="">Deactivate My Account</a> -->
             </div>
           </form>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div id="subscribeBox">
-          <div class="socials">
-            <div class="items blue">
-              <img src="/img/logo/fbw.jpg " alt="" />
-              <a href="">Connect to Facebook</a>
-            </div>
-            <div class="items link">
-              <img src="/img/logo/link.png" alt="" />
-              <a href="">Connect to Linkedin</a>
-            </div>
-            <div class="items twitter">
-              <img src="/img/logo/twitter.png" alt="" />
-              <a href="">Connect to Twitter</a>
-            </div>
-          </div>
-          <img class="edill" src="/img/illustrations/editing.png" alt="" />
         </div>
       </div>
     </div>
@@ -230,39 +298,58 @@
 
           <form
             class="subscribeForm"
-            name="Subscription Form"
             method="post"
             action="/dsc/user/skill"
+            name="addSkillsForm"
+            onsubmit="return addSkillsModalvalidate()"
           >
             <div class="flexRow">
               <label for="skillname">Skill Name</label>
-              <input id="skillname" type="text" name="skillname" required />
+              <input
+                id="skillname"
+                type="text"
+                name="skillname"
+                maxlength="30"
+                required
+              />
             </div>
             <div class="flexRow">
               <label for="skilllevel">Skill Level</label>
-              <input id="skilllevel" type="text" name="skilllevel" required />
+              <input
+                id="skilllevel"
+                type="text"
+                name="skilllevel"
+                maxlength="20"
+                required
+              />
             </div>
-            <div class="flexRow">
+            <!-- <div class="flexRow">
               <label for="skillduration">Duration</label>
               <input
                 id="skillsduration"
                 placeholder="In months"
                 name="skillduration"
-                required
+                maxlength="5"
               />
-            </div>
+            </div> -->
             <div class="flexRow">
               <label for="skilldescription">Description</label>
               <input
                 id="skilldescription"
                 type="text"
                 name="skilldescription"
+                maxlength="50"
                 required
               />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
-              <input id="submit" type="submit" value="Save Changes" />
+              <input
+                id="submit_skills"
+                class="submit"
+                type="submit"
+                value="Save Changes"
+              />
             </div>
           </form>
         </div>
@@ -285,41 +372,42 @@
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2><span class="thin">Add a new </span> Project</h2>
+          <h2><span class="thin">Add a new </span>Personal Project</h2>
 
           <form
             class="subscribeForm"
-            name="Subscription Form"
             method="post"
             action="/dsc/user/project/personal"
+            name="addProjectForm"
+            onsubmit="return addProjectModalvalidate()"
           >
             <div class="flexRow">
               <label for="projectname">Project Name</label>
-              <input id="projectname" type="text" name="title" required />
+              <input
+                id="projectname"
+                type="text"
+                name="title"
+                required
+                maxlength="30"
+              />
             </div>
             <div class="flexRow">
               <label for="projectrole">Project Role</label>
-              <input id="projectrole" type="text" name="role" required />
+              <input
+                id="projectrole"
+                type="text"
+                name="role"
+                maxlength="30"
+                required
+              />
             </div>
             <div class="flexRow">
               <label for="startdate">Start Date</label>
-              <input
-                id="startdate"
-                type="text"
-                placeholder="dd-mm-yy"
-                name="startdate"
-                required
-              />
+              <input id="startdate" type="date" name="startdate" required />
             </div>
             <div class="flexRow">
               <label for="enddate">End Date</label>
-              <input
-                id="enddate"
-                type="text"
-                placeholder="dd-mm-yy"
-                name="enddate"
-                required
-              />
+              <input id="enddate" type="date" name="enddate" required />
             </div>
             <div class="flexRow">
               <label for="techstack">Techstacks</label>
@@ -345,11 +433,22 @@
             </div>
             <div class="flexRow">
               <label for="description">Description</label>
-              <input id="description" type="text" name="description" required />
+              <input
+                id="description"
+                type="text"
+                name="description"
+                maxlength="60"
+                required
+              />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
-              <input id="submit" type="submit" value="Save Changes" />
+              <input
+                id="submit_project"
+                class="submit"
+                type="submit"
+                value="Save Changes"
+              />
             </div>
           </form>
         </div>
@@ -375,9 +474,10 @@
 
           <form
             class="subscribeForm"
-            name="Subscription Form"
             method="POST"
             action="/dsc/user/achievement"
+            onsubmit="return addAchievementModalvalidate()"
+            name="addAchievementForm"
           >
             <div class="flexRow">
               <label for="achievementname">Achievement Name</label>
@@ -385,6 +485,7 @@
                 id="achievementname"
                 type="text"
                 name="achievementname"
+                maxlength="30"
                 required
               />
             </div>
@@ -394,6 +495,7 @@
                 id="achievementnameplatform"
                 type="text"
                 name="achievementnameplatform"
+                maxlength="30"
                 required
               />
             </div>
@@ -401,19 +503,19 @@
               <label for="achievementnamedate">Received Date</label>
               <input
                 id="achievementnamedate"
-                type="text"
-                placeholder="dd-mm-yy"
+                type="date"
                 name="achievementnamedate"
                 required
               />
             </div>
             <div class="flexRow">
-              <label for="achievementnameserial">Unique Serial ID</label>
+              <label for="achievementnameserial">Unique Serial Number</label>
               <input
                 id="achievementnameserial"
                 type="number"
-                placeholder="This can be any unique value that indicated your Achievement."
+                placeholder="This can be any Unique Number that indicates your Achievement."
                 name="achievementnameserial"
+                maxlength="30"
                 required
               />
             </div>
@@ -423,12 +525,18 @@
                 id="projectdescription"
                 type="text"
                 name="projectdescription"
+                maxlength="50"
                 required
               />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
-              <input id="submit" type="submit" value="Save Changes" />
+              <input
+                id="submit_achievement"
+                class="submit"
+                type="submit"
+                value="Save Changes"
+              />
             </div>
           </form>
         </div>
@@ -488,7 +596,7 @@
             <div class="pictureandbasic">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img src=" <%= user.profileImageLocation%>" alt="" />
+                <img src="/upload<%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <div class="info">
@@ -599,100 +707,40 @@
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
                     <div class="cards">
+                      <% myblogs.forEach(function(blog){%>
                       <div class="card">
                         <div class="socialactivity">
-                          <img src="/img/teams_potraits/rdj.jpg" alt="" />
-                          <div class="sharable">
+                          <% if(user.profileImageLocation!=null){ %>
+                          <img
+                            src="/upload<%= user.profileImageLocation%>"
+                            alt=""
+                          />
+                          <% }else{%>
+                          <img src="/img/logo/profile.png" alt="" /> <% }%>
+                          <!-- <div class="sharable">
                             <p>Share on</p>
                             <img class="s" src="/img/logo/fb.png" alt="" />
                             <img class="s" src="/img/logo/link.png" alt="" />
-                          </div>
+                          </div> -->
                         </div>
                         <div class="content">
-                          <h3 class="topic">Title 1</h3>
-                          <p class="place">NIT Silchar</p>
+                          <h3 class="topic"><%= blog.title %></h3>
+                          <p class="place"></p>
                           <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quidem non dolor mollitia minima voluptate
-                            necessitatibus tempora amet aliquid reprehenderit
-                            unde. Quidem non dolor mollitia minima voluptate
-                            necessitatibus tempora amet aliquid reprehenderit
-                            unde.
+                            <%- blog.body.substring(0, 300)%>
+                            <a href="/dsc/blog/view/<%= blog.slug%>"
+                              >... Read more</a
+                            >
                           </p>
                           <div class="images">
                             <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/example_post.png"
-                                alt=""
-                                data-original="/img/profile/example_post.png"
-                              />
-                            </div>
-                            <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/pl.jpg"
-                                alt=""
-                                data-original="/img/profile/pl.jpg"
-                              />
-                            </div>
-                            <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/land.jpg"
-                                alt=""
-                                data-original="/img/profile/land.jpg"
-                              />
-                            </div>
-                            <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/example_post.png"
-                                data-original="/img/profile/example_post.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/example_post.png"
-                                data-original="/img/profile/example_post.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="image-container">
-                              <img
-                                class="post-images"
-                                src="/img/profile/example_post.png"
-                                data-original="/img/profile/example_post.png"
-                                alt=""
-                              />
+                              <img class="post-images" src="<%= blog.cover%>""
+                              alt="" data-original="<%= blog.cover%>"" />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="card">
-                        <div class="socialactivity">
-                          <img src="/img/teams_potraits/rdj.jpg" alt="" />
-                          <div class="sharable">
-                            <p>Share on</p>
-                            <img class="s" src="/img/logo/fb.png" alt="" />
-                            <img class="s" src="/img/logo/link.png" alt="" />
-                          </div>
-                        </div>
-                        <div class="content">
-                          <h3 class="topic">Title 2</h3>
-                          <p class="place">NIT Silchar</p>
-                          <p class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quidem non dolor mollitia minima voluptate
-                            necessitatibus tempora amet aliquid reprehenderit
-                            unde. Quidem non dolor mollitia minima voluptate
-                            necessitatibus tempora amet aliquid reprehenderit
-                            unde.
-                          </p>
-                        </div>
-                      </div>
+                      <%})%>
                     </div>
                   </div>
                   <div id="panel02" class="tab-panel">
@@ -707,76 +755,40 @@
                     </div>
                     <div class="cards_exp">
                       <div class="card_exp">
+                        <%
+                        if(user.experiences){user.experiences.forEach((experience=>
+                        { %>
                         <div class="row">
                           <div class="column">
-                            <img src="/img/logo/experience-default.png" alt="company" />
+                            <img
+                              src="/img/logo/experience-default.png"
+                              alt="lo"
+                            />
                             <h3 class="accordion">
-                              Marketing & Communication Manager<br />
-                              <p>Microsoft</p>
-                            </h3>
-
-                            <div id="mention"><b>&#9899;</b> management</div>
-                          </div>
-                          <div class="panelexp">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="column">
-                            <img src="/img/logo/experience-default.png" alt="company" />
-
-                            <h3 class="accordion">
-                              Social Media Asistent<br />
-                              <p>Tecneosis,NIT Silchar</p>
+                              <%= experience.role %><br />
+                              <p><%= experience.name %></p>
                             </h3>
 
                             <div id="mention">
-                              <b>&#9899;</b> business development
+                              <b>&#9899;</b><%= experience.startdate %> - <%=
+                              experience.enddate %>
                             </div>
-                            <!--<div class="bookmarks">
-                                        <a>
-                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
-                                      </div>-->
+                            <button>
+                              <a class="edit-exp"
+                                ><img src="/img/profile/edit.svg"
+                              /></a>
+                            </button>
+                            <button>
+                              <a class="delete-exp" href=""
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
+                            </button>
                           </div>
                           <div class="panelexp">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
+                            <p><%= experience.description %></p>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="column">
-                            <img src="/img/logo/experience-default.png" alt="company" />
-
-                            <h3 class="accordion">
-                              Marketing Head<br />
-                              <p>Incandescence,NIT Silchar</p>
-                            </h3>
-
-                            <div id="mention">
-                              <b>&#9899;</b> business development
-                            </div>
-                          </div>
-                          <div class="panelexp">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur
-                              adipisicing elit, sed do eiusmod tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                          </div>
-                        </div>
+                        <% }))} %>
                       </div>
                     </div>
                   </div>
@@ -802,9 +814,7 @@
                         </div>
                         <div class="skill-description">
                           <h3 class="skill-name"><%= skill.name %></h3>
-                          <h4 class="skill-time">
-                            <%= skill.duration %>months
-                          </h4>
+                          <h4 class="skill-time"><%= skill.description%></h4>
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
                       </div>
@@ -838,10 +848,17 @@
                               <h4><%= project.title %></h4>
                           </div>
                           <div class="git-link">
-                            <a href="https://github.com/" add target="_blank"><h4>View on Github</h4></a>
+                            <a href="https://github.com/" add target="_blank"
+                              ><h4>View on Github</h4></a
+                            >
                           </div>
                           <div class="project-description">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, omnis! Magni hic suscipit quos asperiores quis ducimus cumque aliquam illum?</p>
+                            <p>
+                              Lorem ipsum dolor, sit amet consectetur
+                              adipisicing elit. Placeat, omnis! Magni hic
+                              suscipit quos asperiores quis ducimus cumque
+                              aliquam illum?
+                            </p>
                           </div>
                           <div class="project-duration">
                             <h3>Aug 30 - Sept 30</h3>
@@ -905,47 +922,65 @@
             <div class="card">
               <p class="type">Hackathon</p>
               <hr />
-              <p class="topic">Website Developement</p>
+              <p class="topic">Campus 101</p>
               <p class="details">
-                Introducing Hack 1 of Microsoft Azure Champions League, a series
-                of three hackathons.
+                HackerEarth wants to help you bridge this gap by starting off a
+                2 months journey of learning with you - The Campus 101.
               </p>
               <div class="timings">
                 <div class="time">
                   <p class="stat">START</p>
-                  <p>12 September</p>
+                  <p>Nov 06, 2020</p>
                 </div>
                 <div class="time">
                   <p class="stat">END</p>
-                  <p>22 September</p>
+                  <p>Nov 06, 2020</p>
                 </div>
               </div>
               <hr />
               <div class="timings">
-                <button>Register</button> <button>Enter</button>
+                <a
+                  href="https://campus101.hackerearth.com/"
+                  style="text-decoration: none"
+                >
+                  <button onclick="">Register</button>
+                </a>
+                <!-- <a
+                href="https://campus101.hackerearth.com/"
+                style="text-decoration: none"
+              >
+                <button onclick="">Enter</button>
+              </a> -->
               </div>
             </div>
             <div class="card">
-              <p class="type">Coding Contest</p>
+              <p class="type">Hackathon</p>
               <hr />
-              <p class="topic">C++ Marathon</p>
+              <p class="topic">Hackccelerate 2020</p>
               <p class="details">
-                Introducing Hack 1 of Microsoft Azure Champions League, a series
-                of three hackathons.
+                HackerEarth presents Hackccelerate 2020, a 72-hour hackathon
+                that will put your skills to the test! So grab your coffee,
+                snacks, and code your way to deliver an innovative tech product
+                within 72 hours.
               </p>
               <div class="timings">
                 <div class="time">
                   <p class="stat">START</p>
-                  <p>12 September</p>
+                  <p>Oct 15, 2020</p>
                 </div>
                 <div class="time">
                   <p class="stat">END</p>
-                  <p>22 September</p>
+                  <p>Oct 18, 2020</p>
                 </div>
               </div>
               <hr />
               <div class="timings">
-                <button>Register</button> <button>Enter</button>
+                <a
+                  href="https://www.hackerearth.com/challenges/hackathon/hackccelerate-2020/"
+                  style="text-decoration: none"
+                >
+                  <button onclick="">Register</button>
+                </a>
               </div>
             </div>
           </div>

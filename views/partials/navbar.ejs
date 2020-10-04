@@ -1,7 +1,14 @@
 <div class="page-wrapper">
   <div class="nav-wrapper">
     <nav class="navbar">
-      <img src="/assets/images/DSC_trans.png" />
+      <div class="box">
+        <input class="type-checkbox" id="toogle" type="checkbox" name="name" />
+        <label class="estado" for="toogle">
+          <span class="aprobado">Light</span>
+          <span class="desaprobado">Dark</span>
+        </label>
+      </div>
+      <img src="/img/logo/DSC-trans-new.png" />
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -13,10 +20,10 @@
           <a href="/dsc/#about" class="nav-items-a">About Us</a>
         </li>
         <li class="nav-item">
-          <a href="/dsc/#features" class="nav-items-a">Features</a>
+          <a href="/dsc/projects" class="nav-items-a">Projects</a>
         </li>
         <li class="nav-item">
-          <a href="/dsc/#schedule" class="nav-items-a">Announcement</a>
+          <a href="/dsc/#schedule" class="nav-items-a">Events</a>
         </li>
         <li class="nav-item">
           <a href="/dsc/blog" class="nav-items-a">Blogs</a>
@@ -30,20 +37,8 @@
         </li>
         <% }else{ %>
         <li class="nav-item">
-          <a href="/dsc/user/profile" class="nav-items-a"><%= user.name %></a>
+          <a href="/dsc/user/profile" class="nav-items-a"><%=user.name%></a>
         </li>
-        <!-- <li class="nav-item">
-          <a href="/dsc/user/logout" class="nav-items-a">Log Out</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <div class="dropdown">
-            <span id="dropbtn">Signed in as <%= user.name %></span>
-            <div class="dropdown-content">
-              <a href="/dsc/user/profile" class="">Go To Profile</a>
-              <a href="/dsc/user/logout" class="">LogOut</a>
-            </div>
-          </div>
-        </li> -->
         <% } %>
 
         <li class="nav-item">

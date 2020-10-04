@@ -154,6 +154,7 @@ router.post("/changepassword/:id", function (req, res) {
 //Config Modules
 
 const { checkProfileImageType } = require("../config/checkType");
+const blog = require("../models/blog");
 
 //Setup a test Router for user routes
 router.get("/", (req, res) => {
@@ -384,10 +385,21 @@ router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
     const finduser = await User.find();
+    const userBlog = await blog.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        // console.log(req.dbUser);
-        res.render("profile", { user: req.dbUser, found: finduser });
+        var timelineBlogs = [];
+        userBlog.forEach((blog) => {
+          if (blog.author == req.dbUser.id) {
+            timelineBlogs.push(blog);
+          }
+        });
+        // console.log(timelineBlogs);
+        res.render("profile", {
+          user: req.dbUser,
+          myblogs: timelineBlogs,
+          found: finduser,
+        });
       });
     } else {
       res.redirect("/dsc/user/register");
@@ -414,6 +426,29 @@ router.post("/skill", authorization, async (req, res) => {
     // console.log(newSkill);
     await user.save();
 
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.post("/experience", authorization, async (req, res) => {
+  try {
+    // console.log("experience route called");
+    const user = req.dbUser;
+    // console.log(req.body);
+    const newExp = {
+      name: req.body.exp_name,
+      role: req.body.exp_role,
+      startdate: req.body.exp_startdate,
+      enddate: req.body.exp_enddate,
+      status: req.body.exp_status,
+      description: req.body.exp_description,
+    };
+    user.experiences.push(newExp);
+    // console.log(newExp);
+    await user.save();
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -559,19 +594,20 @@ const storage = multer.diskStorage({
 });
 //(Profile Image)
 
-const uploadProfileImage = multer({
+var uploadProfileImage = multer({
   storage: storage,
-  limits: { fileSize: 1000000 },
+  limits: { fileSize: 10000000 },
   fileFilter: function (req, file, cb) {
     checkProfileImageType(file, cb);
   },
 }).single("profile-image");
 
 //Post Route to update Profile Image
-router.post("/profile/upload/:id", async (req, res) => {
+router.post("/profile/upload/:id", uploadProfileImage, async (req, res) => {
   const id = req.params.id;
   let errors = [];
   let avatar;
+  console.log(req.file);
   User.findById({ _id: id })
     .then((user) => {
       if (!user) {
@@ -604,10 +640,10 @@ router.post("/profile/upload/:id", async (req, res) => {
             console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
-              res.send({ message: "Profile Image Updated" });
+              res.redirect("/dsc/user/profile");
             } else {
               console.log(" Profile not Updated!");
-              res.send({ message: "Profile Image not Updated" });
+              res.redirect("/dsc/user/profile");
             }
           })
           .catch((err) => {
