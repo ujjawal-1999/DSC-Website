@@ -53,6 +53,7 @@ router.get('/',async(req, res)=>{
                 console.log(err);
             else
 				req.user = user;
+				console.log(user);
             res.render("index",{user:user,found:finduser});
         });
     }

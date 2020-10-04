@@ -22,7 +22,7 @@ router.use(
 
 // blogs page home (show one full blog along with other new and popular blogs)
 // clicking any blog will redirect to view blog route (/dsc/blog/view/:slug)
-router.get("/", async(req, res) => {
+router.get("/", async (req, res) => {
   try {
     const token = req.cookies.authorization;
     const finduser = await User.find();
@@ -33,8 +33,7 @@ router.get("/", async(req, res) => {
         else user = payload;
       });
     }
-    if (user)
-      user = await User.findById(user.userId);
+    if (user) user = await User.findById(user.userId);
     const popularBlogs = await Blog.find()
       .sort({
         views: -1,
@@ -75,19 +74,18 @@ router.get("/", async(req, res) => {
   }
 });
 
-router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
+router.post("/bookmark/:bookmark_id", auth, async (req, res) => {
   try {
     let user = await User.findById(req.user.userId);
-    let bookmarkArr = user.bookmarkBlogs || []
+    let bookmarkArr = user.bookmarkBlogs || [];
     if (bookmarkArr.includes(req.params.bookmark_id)) {
-      bookmarkArr.remove(req.params.bookmark_id)
+      bookmarkArr.remove(req.params.bookmark_id);
     } else {
-      bookmarkArr.push(req.params.bookmark_id)
-
+      bookmarkArr.push(req.params.bookmark_id);
     }
-    user.bookmarkBlogs = bookmarkArr
+    user.bookmarkBlogs = bookmarkArr;
     await user.save();
-    res.redirect(req.get('referer'));
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.statusCode(200);
@@ -95,11 +93,11 @@ router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
   }
 });
 
-router.get("/bookmarks", auth, async(req, res) => {
+router.get("/bookmarks", auth, async (req, res) => {
   const finduser = await User.find();
   const user = await User.findById(req.user.userId).populate("bookmarkBlogs");
   // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
-  const bookmarks = user.bookmarkBlogs
+  const bookmarks = user.bookmarkBlogs;
 
   // console.log(bookmarks[0])
   res.render("bookmarks", {
@@ -111,7 +109,7 @@ router.get("/bookmarks", auth, async(req, res) => {
 
 //Establish Storage for file upload
 const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
+  destination: function (req, file, cb) {
     // console.log(req.body);
     const newDestination =
       __dirname + `/../../public/upload/cover/${req.user.userId}`;
@@ -121,7 +119,8 @@ const storage = multer.diskStorage({
       stat = fs.statSync(newDestination);
     } catch (err) {
       fs.mkdir(
-        newDestination, {
+        newDestination,
+        {
           recursive: true,
         },
         (err) => {
@@ -134,7 +133,7 @@ const storage = multer.diskStorage({
       throw new Error("Directory Couldnt be created");
     cb(null, newDestination);
   },
-  filename: function(req, file, cb) {
+  filename: function (req, file, cb) {
     cb(
       null,
       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
@@ -171,7 +170,7 @@ router.get("/create", auth, (req, res) => {
 });
 
 //route to save blog
-router.post("/create", auth, upload.single("cover"), async(req, res) => {
+router.post("/create", auth, upload.single("cover"), async (req, res) => {
   if (req.file) {
     var cover = `/upload/cover/${req.user.userId}/${req.file.filename}`;
   } else {
@@ -186,7 +185,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
         error: "empty query sent",
       });
 
-    await new Blog({
+    const saved = await new Blog({
       title: blog.title,
       slug: (
         slugify(blog.title) +
@@ -198,9 +197,14 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
       cover: cover,
       summary: blog.summary,
       body: blog.body,
-    }).save((err, saved) => {
-      res.json(saved);
-    });
+    }).save();
+    if (req.dbUser.blogs) {
+      req.dbUser.blogs.push(saved);
+    } else {
+      req.dbUser.blogs = [saved];
+    }
+    await dbUser.save();
+    res.redirect("/dsc/blog");
   } catch (e) {
     console.log(e.message);
     res.status(400).json({
@@ -211,7 +215,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
 });
 
 //route to display blog
-router.get("/view/:slug", async(req, res) => {
+router.get("/view/:slug", async (req, res) => {
   try {
     //find the corresponding blog in db
     let slug = req.params.slug;
@@ -221,15 +225,19 @@ router.get("/view/:slug", async(req, res) => {
       });
 
     const finduser = await User.find();
-    const blog = await Blog.findOneAndUpdate({
-      slug,
-    }, {
-      $inc: {
-        views: 1,
+    const blog = await Blog.findOneAndUpdate(
+      {
+        slug,
       },
-    }, {
-      new: true,
-    }).populate("author");
+      {
+        $inc: {
+          views: 1,
+        },
+      },
+      {
+        new: true,
+      }
+    ).populate("author");
     if (!blog)
       return res.status(404).json({
         error: "Wrong Query! This blog doesn't exist",
@@ -269,7 +277,7 @@ router.get("/view/:slug", async(req, res) => {
 });
 
 //route to rate a blog
-router.put("/rate/:blogid", auth, async(req, res) => {
+router.put("/rate/:blogid", auth, async (req, res) => {
   try {
     const blogId = req.params.blogid;
     var value = req.body.rating;
