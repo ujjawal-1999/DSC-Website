@@ -14,11 +14,15 @@
     border-radius: 10px;
   }
 
+  .progress {
+    transition: all 0.2s;
+  }
+
   progress[value] {
     /* Reset the default appearance */
     -webkit-appearance: none;
     appearance: none;
-    opacity: 1;
+    opacity: 0;
     align-self: center;
     height: 20px;
   }
@@ -71,7 +75,7 @@
     .styled-input {
       width: 100%;
     }
-    .contact_us{
+    .contact_us {
       overflow-x: hidden;
     }
   }
@@ -127,20 +131,23 @@
   }
 
   .submit-btn {
-    padding: 7px 35px;
-    border-radius: 10px;
-    display: inline-block;
-    background-color: var(--navButtons);
-    color: var(--white);
-    font-size: 18px;
-    cursor: pointer;
+    transform: translateY(-10px);
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 2rem;
+    padding: 0.8em 1.5rem 0.8em 1.5rem;
+    border: 1px solid;
+    border-radius: 2px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    z-index: 20;
+    background-color: var(--Grey-dark-1);
+    color: var(--primary-light);
+    border-color: var(--Grey-dark-1);
 
-    transition: all 300ms;
-  }
-
-  .submit-btn:hover {
-    background-color: var(--white);
-    color: var(--navButtons);
+    &:hover {
+      background-color: var(--primary-light);
+      color: var(--Grey-dark-1);
+    }
   }
 
   @media (max-width: 768px) {
@@ -158,8 +165,8 @@
       max-width: 50%;
       // margin: 20px 0 25px 0;
     }
-    .styled-input.wide{
-      width:100%;
+    .styled-input.wide {
+      width: 100%;
       max-width: 100%;
     }
 

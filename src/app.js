@@ -14,36 +14,42 @@ require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
 //Mongoose connection
-mongoose.connect(process.env.MONGODB_URL,{
-	useNewUrlParser:true,
-    useUnifiedTopology:true,
-    useFindAndModify:false,
-    useCreateIndex:true
-}).then(()=>console.log('Connected to mongo server'))
-	.catch(err => console.error(err));
+mongoose.connect(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  }).then(() => console.log('Connected to mongo server'))
+  .catch(err => console.error(err));
 
 //Setting EJS view engine
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
 //setting jwt 
 app.set('jwtTokenSecret', process.env.JWT_SECRET);
 
 //body parser
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({
+  extended: true
+}));
 
 //Setup for rendering static pages
 //for static page
-const publicDirectory = path.join(__dirname,'../public');
+const publicDirectory = path.join(__dirname, '../public');
 app.use(express.static(publicDirectory));
 
 //Routes===========================================
 var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
+const blogRoutes = require("./routes/blog");
+const ProjectRoutes = require("./routes/project");
 
-app.use('/dsc',indexRoutes);
-app.use('/dsc/user',userRoutes);
+app.use('/dsc', indexRoutes);
+app.use('/dsc/user', userRoutes);
+app.use('/dsc/blog', blogRoutes);
+app.use('/dsc/project', ProjectRoutes);
 
 //Start the server
-app.listen(PORT,()=>{
-	console.log('Server listening on port',PORT);
+app.listen(PORT, () => {
+  console.log('Server listening on port', PORT);
 })

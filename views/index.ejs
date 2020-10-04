@@ -15,20 +15,22 @@
 
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
     <link rel="stylesheet" href="/css/index/index_faq.css" />
-    
-    <link rel="stylesheet" href="/css/index/index_feature.css">
-    <link rel="stylesheet" href="/css/index/footer.css">
+
+    <link rel="stylesheet" href="/css/index/index_feature.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link
       rel="stylesheet"
-      href="/css/index/index_event_schedule.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
@@ -41,27 +43,31 @@
       </div>
     </div>
     <!--Navbar Starts-->
-    <%-include('partials/navbar')%> 
+    <%-include('partials/navbar')%>
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
     <div class="flash">
-      <% if (flashMessages) { %>
-        <% if (flashMessages.success) { %>
-          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
-          <div class="alert" id="success">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <%= flashMessages.success %>
-          </div>
-        <% } else if (flashMessages.error) { %>
-          <div class="alert" id="error">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <%= flashMessages.error %>
-          </div>
-        <% } %>
-      <% } %>
+      <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+      <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+      <div class="alert" id="success">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <%= flashMessages.success %>
+      </div>
+      <% } else if (flashMessages.error) { %>
+      <div class="alert" id="error">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <%= flashMessages.error %>
+      </div>
+      <% } %> <% } %>
     </div>
-    
-    
 
     <header class="header">
       <img
@@ -71,19 +77,25 @@
         id="dsclogo"
       />
       <h2 class="heading__secondary intersect" id="heading__secondary">
-        Developer Students Club
+        Developer Students Clubs
       </h2>
       <h1 class="heading__primary" id="heading__primary">
         <span class="bold">NIT</span> Silchar
       </h1>
-       <% if(!user){ %>
-      <a href="/dsc/user/register"><input type="button" class="getStarted" id="getStarted" value="Login" /></a>
-      <% } %> 
+      <% if(!user){ %>
+      <a href="/dsc/user/register"
+        ><input
+          type="button"
+          class="getStarted"
+          id="getStarted"
+          value="Get Started"
+      /></a>
+      <% } %>
     </header>
-      <!-- <button id="ScrolltoTop" class="ScrolltoTop">
+    <!-- <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>
       </button> -->
-    
+
     <!---Dashboard Section Ends-->
     <!--About Us Section Starts-->
     <main class="main">
@@ -96,21 +108,16 @@
           />
         </div>
         <div class="content">
-          <h1 class="heading__primary intersect">About</h1>
-          <h2 class="heading__secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            dolorem officiis atque laboriosam quas quaerat quidem eius tempore
-            corporis fugiat! Perferendis totam quos illo! Sed voluptatem
-            necessitatibus ipsa mollitia ducimus rem exercitationem minima.
-            Nulla rerum quam, soluta sed corrupti sint quisquam architecto modi
-            blanditiis eos repudiandae, itaque provident enim nemo? Facere
-            labore voluptatem natus sequi magni nostrum adipisci quo nam maxime!
-            Cumque delectus magni adipisci quae atque alias provident aliquam
-            pariatur quam laboriosam! Aliquid pariatur deleniti sunt,
-            necessitatibus sapiente perferendis illum nam libero iusto
-            exercitationem ab saepe fuga eveniet dolores id amet praesentium
-            accusantium iste asperiores, beatae autem velit repudiandae?
-          </h2>
+          <h1 class="heading__primary intersect">About Us</h1>
+          <h3 class="heading__secondary">
+            Developer Student Club (DSC) NITS is a community where developers meet and share their knowledge, and work with several Google developer resources and products.
+The DSC NITS website is open for all student developers, who wish to improve their skills. Each user has separate profile page, where one can add his/her skills, projects and accomplishments. Doubts can be cleared with the help of doubt forums and blogs posted by other developers.<br>
+
+Users will receive badges based on their contributions to the club and the community. Developers can view each other's profiles on the website and select developers for one's project. One can also participate in any on going project with other developers by raising hand.<br>
+
+The website also contains the schedules and details of the various previous and upcoming DSC events and hackathons organised within the college and all over India.
+The DSC NITS website, built "by the developers, of the developers and for the developers" , is a great platform for a better developer community and development of the society.
+          </h3>
         </div>
       </section>
       <!--About Us Section Ends-->
@@ -119,14 +126,14 @@
       <section class="about">
         <div class="content">
           <h1 class="heading__primary intersect">About DSC</h1>
-          <h2 class="heading__secondary">
-            Developer Student Clubs are university based community groups for
-            students interested in Google developer technologies. Students from
-            all undergraduate or graduate programs with an interest in growing
-            as a developer are welcome. By joining a DSC, students grow their
-            knowledge in a peer-to-peer learning environment and build solutions
-            for local businesses and their community.
-          </h2>
+          <h3 class="heading__secondary">
+            “DESIGN, DEVELOP and DEPLOY “, this is the mantra that the developers at DSC NIT Silchar follows.
+DSC NIT Silchar is under Developer Students Club, which is a worldwide developers community initiated by Google.
+Our DSC prioritizes solving real life problems that we as part of a society face in our daily lives.
+Solving such problems brings opportunities for the budding developer communities to showcase their talents and, improve and gain new skillsets. 
+Our members and moderators are skilled as Designers and, Web and Android developers.
+DSC NITS is not bounded to NITS itself. Our main aim is to empower developers of North-East India and also to have a national and international presence.
+          </h3>
         </div>
         <div class="background">
           <img
@@ -137,217 +144,255 @@
         </div>
       </section>
       <!--About DSC Section Ends-->
-             <!-- Feature Section -->
-             <section class="features" id="features">
-          
-              <h1 id="feature-main-heading">Features</h1>
-              <div class="feature-black" id="featured-black">
-                <div><a id="feature-close" ><i class="fas fa-close fa-2x" id="feature-close-button"></i></a></div>
-                <div class=" feature-card-expanded" id="feature-card-expanded" >
-              <!-- <div class="border featureWhite-border"></div> -->
-            <div  id="image-expanded-holder">
-              <img  id="image-expanded"src="">
-            </div> 
-            <div>
-              <h1 id="heading-expanded"></h1>
-              <p id="para-expanded"></p>
-            </div>
-              
-            </div>
-              </div>
-          
-              <div class="feature-card-container" id="feature-card-container">
-                  <div id="mini-feature-card-container">
-                  <div class="feature-card-column feature-column-0" >
-                      <div class="card featureBg-blue2 featured" id="1">
-                        <div class="border featureBlack-border"></div>
-                        <img class="featured-image1"
-                        src="/img/illustrations/about.png" />
-                        <h1 id="featured-heading1">Hey now, you're an allstar</h1>
-                        <p class="featured-para1">Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit.
-                           Similique, dolorum laboriosam. Molestiae,
-                            hic non. Porro atque error ullam, ipsa,
-                             recusandae quasi quos
-                          consectetur vero aliquam, qui exercitationem
-                           natus consequuntur beatae.</p>
-                      </div>
-                      <div class="card  featureBg-blue1 featured" id="2">
-                        <div class="border featureBlack-border"></div>
-                        <img class="featured-image2" 
-                        src="/img/illustrations/about.png" />
-                        <h1 id="featured-heading2">Hey now, you're a rock star</h1>
-                        <p class="featured-para2">Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit.
-                           Similique, dolorum laboriosam. Molestiae,
-                            hic non. Porro atque error ullam, ipsa,
-                             recusandae quasi quos
-                          consectetur vero aliquam, qui exercitationem
-                           natus consequuntur beatae.</p>
-                      </div>
-                      <div class="card  featureBg-blue featured" id="3">
-                          <div class="border featureBlack-border"></div>
-                          <img class="featured-image3" 
-                          src="/img/illustrations/about.png" />
-                          <h1 id="featured-heading3">Get your game on, go play</h1>
-                          <p class="featured-para3">Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit.
-                             Similique, dolorum laboriosam. Molestiae,
-                              hic non. Porro atque error ullam, ipsa,
-                               recusandae quasi quos
-                            consectetur vero aliquam, qui exercitationem
-                             natus consequuntur beatae.</p>
-                        </div>
-                    </div>
-                    <div class="feature-card-column feature-column-1 ">
-                      <div class="card  featureBg-blue featured" id="4">
-                        <div class="border featureBlack-border"></div>
-                        <img class="featured-image4"
-                         src="/img/illustrations/about.png" />
-                        <h1 id="featured-heading4">Get the show on, get paid</h1>
-                        <p class="featured-para4">Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit.
-                           Similique, dolorum laboriosam. Molestiae,
-                            hic non. Porro atque error ullam, ipsa,
-                             recusandae quasi quos
-                          consectetur vero aliquam, qui exercitationem
-                           natus consequuntur beatae.</p>
-                      </div>
-                      <div class="card  featureBg-blue2  featured" id="5">
-                          <div class="border featureBlack-border"></div>
-                          <img class="featured-image5" 
-                          src="/img/illustrations/about.png" />
-                          <h1 id="featured-heading5">Get your game on, go play</h1>
-                          <p class="featured-para5">Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit.
-                             Similique, dolorum laboriosam. Molestiae,
-                              hic non. Porro atque error ullam, ipsa,
-                               recusandae quasi quos
-                            consectetur vero aliquam, qui exercitationem
-                             natus consequuntur beatae.</p>
-                        </div>
-                        <div class="card  featureBg-blue1 featured" id="6">
-                          <div class="border featureBlack-border"></div>
-                          <img class="featured-image6"
-                           src="/img/illustrations/about.png" />
-                          <h1 id="featured-heading6">Get your game on, go play</h1>
-                          <p class="featured-para6">Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit.
-                             Similique, dolorum laboriosam. Molestiae,
-                              hic non. Porro atque error ullam, ipsa,
-                               recusandae quasi quos
-                            consectetur vero aliquam, qui exercitationem
-                             natus consequuntur beatae0
-                             Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit.
-                             Similique, dolorum laboriosam. Molestiae,
-                              hic non. Porro atque error ullam, ipsa,
-                               recusandae quasi quos
-                            consectetur vero aliquam, qui exercitationem
-                             natus consequuntur beatae..</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-              </section>
-            <!-- Features End -->
-        <!-- ##############################EVENT SCHEDULE#################################### -->
+      <!-- Feature Section -->
+      <!-- <section class="features" id="features">
+        <h1 class="heading_primary">Features</h1>
+        <div class="featurecardscontainer">
+          <div class="containerf">
+            <div class="column">
 
-        <section id="schedule" class="section">
-          <!-- container -->
-          <div class="container">
-            <!-- row -->
-            <div class="row">
-              <!-- section title -->
-              <div class="section-title">
-                <h3 class="title intersect">
-                  <span>Event</span> <span style="color: #3bb9ff;">Schedule</span>
-                </h3>
-              </div>
-              <!-- /section title -->
-  
-              <div class="col-md-8 col-md-offset-2">
-                <div class="events-wrapper">
-                  <!-- event -->
-                  <div class="event">
-                    <div class="event-day">
-                      <div>
-                        <span class="day">7</span>
-                        <span class="year">June, 2020</span>
-                      </div>
-                    </div>
-                    <div class="event-content">
-                      <p class="event-time">
-                        <i class="fa fa-clock-o"></i> 8 : 00 AM - 11 : 00 AM
-                      </p>
-                      <br />
-                      <h3 class="event-title">DAY 1</h3>
-                      <p class="cont">
-                        Heloo Helooo font testing&nbsp;<a href="#">here</a> END
-                        SEM IS CANCELLED
-                      </p>
-                    </div>
+              <div class="post-module">
+                <div class="thumbnail">
+                  <div class="date">
+                    <div class="day">27</div>
+                    <div class="month">Mar</div>
                   </div>
-                  <!-- /event -->
-  
-                  <div class="event">
-                    <div class="event-hour"></div>
-                    <div class="event-content">
-                      <p class="event-time">
-                        <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                      </p>
-                      <h3 class="event-title">Day 2</h3>
-                      <p class="cont">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Itaque, vel expedita recusandae impedit,
-                      </p>
-                    </div>
+                  <img
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <div class="category">Photos</div>
+                  <h1 class="title">City Lights in New York</h1>
+                  <h2 class="sub_title">The city that never sleeps.</h2>
+                  <p class="description">
+                    New York, the largest city in the U.S., is an architectural
+                    marvel with plenty of historic monuments, magnificent
+                    buildings and countless dazzling skyscrapers.
+                  </p>
+                  <div class="post-meta">
+                    <span class="timestamp"
+                      ><i class="fa fa-clock-">o</i> 6 mins ago</span
+                    ><span class="comments"
+                      ><i class="fa fa-comments"></i
+                      ><a href="#">39 comments</a></span
+                    >
                   </div>
-  
-                  <!-- /event -->
-  
-                  <div class="event">
-                    <div class="event-day">
-                      <div>
-                        <span class="day">7</span>
-                        <span class="year">Nov, 2020</span>
-                      </div>
-                    </div>
-                    <div class="event-content">
-                      <p class="event-time">
-                        <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                      </p>
-                      <h3 class="event-title">Day 1</h3>
-                      <p class="cont">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Tenetur inventore explicabo,
-                      </p>
-                    </div>
-                  </div>
-  
-                  <!-- event 1-->
-                  <div class="event">
-                    <div class="event-hour"></div>
-                    <div class="event-content">
-                      <p class="event-time">
-                        <i class="fa fa-clock-o"></i> 5 : 30 PM - 7 : 30 PM
-                      </p>
-                      <h3 class="event-title">Day 2</h3>
-                      <p class="cont">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Error suscipit dicta maxime,
-                      </p>
-                    </div>
-                  </div>
-                  <!-- /event1 -->
                 </div>
               </div>
             </div>
-            <!-- /row -->
           </div>
-          <!-- /container -->
-        </section>
-        <!-- ################################/Event Schedule #####################################-->
+          <div class="containerf">
+
+            <div class="column">
+
+              <div class="post-module">
+
+                <div class="thumbnail">
+                  <div class="date">
+                    <div class="day">27</div>
+                    <div class="month">Mar</div>
+                  </div>
+                  <img
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <div class="category">Photos</div>
+                  <h1 class="title">City Lights in New York</h1>
+                  <h2 class="sub_title">The city that never sleeps.</h2>
+                  <p class="description">
+                    New York, the largest city in the U.S., is an architectural
+                    marvel with plenty of historic monuments, magnificent
+                    buildings and countless dazzling skyscrapers.
+                  </p>
+                  <div class="post-meta">
+                    <span class="timestamp"
+                      ><i class="fa fa-clock-">o</i> 6 mins ago</span
+                    ><span class="comments"
+                      ><i class="fa fa-comments"></i
+                      ><a href="#">39 comments</a></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="containerf">
+
+            <div class="column">
+
+              <div class="post-module">
+
+                <div class="thumbnail">
+                  <div class="date">
+                    <div class="day">27</div>
+                    <div class="month">Mar</div>
+                  </div>
+                  <img
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <div class="category">Photos</div>
+                  <h1 class="title">City Lights in New York</h1>
+                  <h2 class="sub_title">The city that never sleeps.</h2>
+                  <p class="description">
+                    New York, the largest city in the U.S., is an architectural
+                    marvel with plenty of historic monuments, magnificent
+                    buildings and countless dazzling skyscrapers.
+                  </p>
+                  <div class="post-meta">
+                    <span class="timestamp"
+                      ><i class="fa fa-clock-">o</i> 6 mins ago</span
+                    ><span class="comments"
+                      ><i class="fa fa-comments"></i
+                      ><a href="#">39 comments</a></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="containerf">
+
+            <div class="column">
+
+              <div class="post-module">
+
+                <div class="thumbnail">
+                  <div class="date">
+                    <div class="day">27</div>
+                    <div class="month">Mar</div>
+                  </div>
+                  <img
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+                  />
+                </div>
+
+                <div class="post-content">
+                  <div class="category">Photos</div>
+                  <h1 class="title">City Lights in New York</h1>
+                  <h2 class="sub_title">The city that never sleeps.</h2>
+                  <p class="description">
+                    New York, the largest city in the U.S., is an architectural
+                    marvel with plenty of historic monuments, magnificent
+                    buildings and countless dazzling skyscrapers.
+                  </p>
+                  <div class="post-meta">
+                    <span class="timestamp"
+                      ><i class="fa fa-clock-">o</i> 6 mins ago</span
+                    ><span class="comments"
+                      ><i class="fa fa-comments"></i
+                      ><a href="#">39 comments</a></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- Features End -->
+      <!-- ##############################EVENT SCHEDULE#################################### -->
+
+      <section id="schedule" class="section">
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+            <!-- section title -->
+            <div class="section-title">
+              <h3 class="title intersect">
+                <span>Event</span> <span style="color: #3bb9ff">Schedule</span>
+              </h3>
+            </div>
+            <!-- /section title -->
+
+            <div class="col-md-8 col-md-offset-2">
+              <div class="events-wrapper">
+                <!-- event -->
+                <div class="event">
+                  <div class="event-day">
+                    <div>
+                      <span class="day">1</span>
+                      <span class="year">October, 2020</span>
+                    </div>
+                  </div>
+                  <div class="event-content">
+                  	<h3 class="event-time">30 days of Google Cloud</h3>
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 1st Oct 2020
+                    </p>
+                    <br />
+                    <h3 class="event-title">Start Day</h3>
+                    <p class="cont">
+                      <h3 class="event-time"> Start of the quest at Qwiklabs </h3>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <!-- /event -->
+
+                <div class="event">
+                  <div class="event-hour"></div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 5th Nov, 2020
+                    </p>
+                    <h3 class="event-title">End day</h3>
+                    <p class="cont">
+                     	Last Day to complete the quest to be eligible for goodies.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- /event -->
+
+                <div class="event">
+                  <div class="event-day">
+                    <div>
+                      <span class="day">31</span>
+                      <span class="year">Oct, 2020</span>
+                    </div>
+                  </div>
+                  <div class="event-content">
+                  	<h3 class="event-title"> Amazon Web Services Workshop</h3>
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 31st Oct 2020
+                    </p>
+                    <h3 class="event-title">Day 1</h3>
+                    <p class="cont">
+                      Introduction to AWS Cloud Platform
+                    </p>
+                  </div>
+                </div>
+
+                <!-- event 1-->
+                <div class="event">
+                  <div class="event-hour"></div>
+                  <div class="event-content">
+                    <p class="event-time">
+                      <i class="fa fa-clock-o"></i> 1st Nov, 2020
+                    </p>
+                    <h3 class="event-title">Day 2</h3>
+                    <p class="cont">
+                      Hands-on Tutorial for AWS
+                    </p>
+                  </div>
+                </div>
+                <!-- /event1 -->
+              </div>
+            </div>
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /container -->
+      </section>
+      <!-- ################################/Event Schedule #####################################-->
 
       <!--Video Gallery Section Starts-->
       <section class="video">
@@ -437,221 +482,156 @@
       </section>
       <!---Video Gallery Section Ends-->
 
- <!-- faq starts -->
- <section class="faq-section bgimage-illustration-faq" id="faq-section">
-  <h1 class="faq-heading intersect">Frequently Asked Questions</h1>
-  <div class="faq-row-container">
-    <div class="row1">
-      <div></div>
-      <div>
-        <div class="faq-questions">
-          <div class="row2">
-            <button
-              class="faq-btn blue-2"
-              type="button"
-              data-toggle="collapse"
-              data-target="collapseQuestion1"
-              aria-expanded="false"
-              aria-controls="collapseExample"
-            >
-              <i class="fas fa-question-circle fa-2x blue-2"></i>
-            </button>
-            <b class="faq-question-head"
-              >What is my name lorem ipsum Anim pariatur cliche ?</b
-            >
+      <!-- faq starts -->
+      <section class="faq-section" id="faq-section">
+        <div class="upper">
+          <h1>How can we help you ?</h1>
+<!--           <form action="">
+            <input
+              type="text"
+              class="faqinput"
+              placeholder="Type keywords to find answers"
+            />
+          </form> -->
+          <h3>
+            You can also browse the topics below to find what you are looking
+            for.
+          </h3>
+        </div>
+        <div class="lower">
+          <div class="sub">
+            <h4>General</h4>
+            <br />
+            <p>About forwarding limits</p>
+            <p>About forwarding limits</p>
+            <p class="more">View all questions</p>
           </div>
-          <div class="faq-collapse" id="collapseQuestion1">
-            <div class="faq-card faq-card-body border-blue2">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt
-              sapiente ea proident.
-            </div>
+          <div class="sub">
+            <h4>Contests</h4>
+            <br />
+            <p>About forwarding limits</p>
+            <p>About forwarding limits</p>
+            <p class="more">View all questions</p>
+          </div>
+          <div class="sub">
+            <h4>Teams</h4>
+            <br />
+            <p>About forwarding limits</p>
+            <p>About forwarding limits</p>
+            <p class="more">View all questions</p>
           </div>
         </div>
-        <div class="faq-questions">
-          <div class="row-2">
-            <button
-              class="faq-btn btn-primary bg-blue2"
-              type="button"
-              data-toggle="collapse"
-              data-target="collapseQuestion2"
-              aria-expanded="false"
-              aria-controls="collapseExample"
+      </section>
+
+      <!-- faq ends -->
+      <!---Contact Us Section Starts-->
+      <section class="contact_us" id="contactus">
+        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+        <div style="margin-left: 30vw">
+          <% if (flashMessages) { %> <% if (flashMessages.contact_success) { %>
+          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+          <div class="alert" id="success">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
             >
-              <i class="fas fa-question-circle fa-2x blue-2"></i>
-            </button>
-            <b class="faq-question-head">What is my name?</b>
+            <%= flashMessages.contact_success %>
           </div>
-
-          <div class="faq-collapse" id="collapseQuestion2">
-            <div class="faq-card faq-card-body border-blue2">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt
-              sapiente ea proident.
-            </div>
-          </div>
-        </div>
-        <div class="faq-questions">
-          <div class="row-2">
-            <button
-              class="faq-btn btn-primary bg-blue2"
-              type="button"
-              data-toggle="collapse"
-              data-target="collapseQuestion3"
-              aria-expanded="false"
-              aria-controls="collapseExample"
+          <% } else if (flashMessages.contact_error) { %>
+          <div class="alert" id="error">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
             >
-              <i class="fas fa-question-circle fa-2x blue-2"></i>
-            </button>
-            <b class="faq-question-head">What is my name?</b>
+            <%= flashMessages.contact_error %>
           </div>
-
-          <div class="faq-collapse" id="collapseQuestion3">
-            <div class="faq-card faq-card-body border-blue2">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt
-              sapiente ea proident.
-            </div>
-          </div>
+          <% } %> <% } %>
         </div>
-        <div class="faq-questions">
-          <div class="row-2">
-            <button
-              class="faq-btn btn-primary bg-blue2"
-              type="button"
-              data-toggle="collapse"
-              data-target="collapseQuestion4"
-              aria-expanded="false"
-              aria-controls="collapseExample"
-            >
-              <i class="fas fa-question-circle fa-2x blue-2"></i>
-            </button>
-            <b class="faq-question-head">What is my name?</b>
-          </div>
-
-          <div class="faq-collapse" id="collapseQuestion4">
-            <div class="faq-card faq-card-body border-blue2">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt
-              sapiente ea proident.
+        <h2 class="heading__primary intersect">Contact Us</h2>
+        <form
+          action="/dsc/contact"
+          method="post"
+          id="upload_form"
+          enctype="multipart/form-data"
+        >
+          <div class="container">
+            <div class="row">
+              <h4 style="text-align: center">We'd love to hear from you!</h4>
             </div>
-          </div>
-        </div>
-      </div>
-      <div style="display: none;"></div>
-    </div>
-    <div class="faq-img">
-      <img
-        src="/img/illustrations/faq.jpg"
-        alt="faq-illustration"
-        class="faq-background"
-      />
-    </div>
-</div>
-</div>
-</section>
-
-</main>
-<!-- faq ends -->
-          <!---Contact Us Section Starts-->
-          <section class="contact_us" id="contactus">
-            <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
-            <div style="margin-left:30vw;">
-              <% if (flashMessages) { %>
-                <% if (flashMessages.contact_success) { %>
-                  <!-- <div class="flash success"><%= flashMessages.success %></div> -->
-                  <div class="alert" id="success">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    <%= flashMessages.contact_success %>
-                  </div>
-                <% } else if (flashMessages.contact_error) { %>
-                  <div class="alert" id="error">
-                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    <%= flashMessages.contact_error %>
-                  </div>
-                <% } %>
-              <% } %>
-            </div>
-            <h2 class="heading__primary intersect">
-              Contact Us
-            </h2>
-            <form action="/dsc/contact" method="post" id="upload_form" enctype="multipart/form-data">
-              <div class="container">
-                <div class="row">
-                  <h4 style="text-align: center;">We'd love to hear from you!</h4>
-                </div>
-                <div class="row input-container">
-                  <div class="col-xs-12">
-                    <div class="styled-input wide">
-                      <input type="text" class="full" name="name" required/>
-                      <label>Name</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="styled-input">
-                      <input type="text" class="full" name="email" required/>
-                      <label>Email</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="styled-input" style="float: right;">
-                      <input type="text" class="full" name="subject" required />
-                      <label>Subject</label>
-                    </div>
-                  </div>
-    
-                  <div class="col-xs-12">
-                    <div class="styled-input wide">
-                      <input type="text" class="message full" name="message" required />
-                      <label>Message</label>
-                    </div>
-                  </div>
-                  <center>
-                    <div class="col-xs-12">
-                      <label for="file" id="lb" class="custom-file-upload"
-                        >Upload a file</label
-                      >
-                      <div class="styled-input wide">
-                        <input
-                          class="inputfile"
-                          type="file"
-                          name="issues"
-                          id="file1"
-                          onchange="uploadFile()"
-                          multiple
-                        /><br />
-                        <center>
-                          <progress
-                            class="progress"
-                            id="progressBar"
-                            value="0"
-                            max="100"
-                            style="width: 300px;"
-                          ></progress>
-                        </center>
-    
-                        <h3 id="status" class="status"></h3>
-                        <p id="loaded_n_total" class="loaded_n_total"></p>
-                      </div>
-                    </div>
-    
-                    <div class="col-xs-12">
-                      <button class="btn-lrg submit-btn">Send Message</button>
-                    </div>
-                  </center>
+            <div class="row input-container">
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input type="text" class="full" name="name" required />
+                  <label>Name</label>
                 </div>
               </div>
-            </form>
-          </section>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input">
+                  <input type="text" class="full" name="email" required />
+                  <label>Email</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="styled-input" style="float: right">
+                  <input type="text" class="full" name="subject" required />
+                  <label>Subject</label>
+                </div>
+              </div>
 
+              <div class="col-xs-12">
+                <div class="styled-input wide">
+                  <input
+                    type="text"
+                    class="message full"
+                    name="message"
+                    required
+                  />
+                  <label>Message</label>
+                </div>
+              </div>
+              <center>
+                <div class="col-xs-12">
+                  <label for="file" id="lb" class="custom-file-upload"
+                    >Upload a file</label
+                  >
+                  <div class="styled-input wide">
+                    <input
+                      class="inputfile"
+                      type="file"
+                      name="issues"
+                      id="file1"
+                      onchange="uploadFile()"
+                      multiple
+                    /><br />
+                    <center>
+                      <progress
+                        class="progress"
+                        id="progressBar"
+                        value="0"
+                        max="100"
+                        style="width: 300px"
+                      ></progress>
+                    </center>
 
+                    <h3 id="status" class="status"></h3>
+                    <p id="loaded_n_total" class="loaded_n_total"></p>
+                  </div>
+                </div>
 
+                <div class="col-xs-12">
+                  <button class="btn-lrg submit-btn">Send Message</button>
+                </div>
+              </center>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
     <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->
+    <script src="/js/darkmode.js"></script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>
     <script src="/js/index/index_faq.js"></script>
@@ -659,12 +639,14 @@
     <script src="/js/index/index.js"></script>
     <script src="/js/navbar.js"></script>
     <script>
-      var bodydiv = document.getElementById('bodydiv');
-      bodydiv.addEventListener('click', closeSearch)
-      function closeSearch(){
-        let search_list1= document.getElementById('search_list1');
-        search_list1.style.display = 'none';
-      }
+      // var bodydiv = document.getElementById("bodydiv");
+      // bodydiv.addEventListener("click", closeSearch);
+      // function closeSearch() {
+      //   let search_list1 = document.getElementById("search_list1");
+      //   search_list1.style.display = "none";
+      //   let search_list2 = document.getElementById("search_list2");
+      //   search_list2.style.display = "none";
+      // }
     </script>
   </body>
 </html>

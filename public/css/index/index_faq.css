@@ -1,164 +1,143 @@
-.bg-blue1{
-    background-color: #3BB9FF;
-}
-.bg-blue2
-{ 
-    background-color:#2B65EC;
-}
-.bg-blue
-{
-    background-color:blue;
-}
-.blue-2
-{
-    color:#2B65EC;
-}
-.border-blue2{
-    border-color: #2B65EC;
-}
-.black
-{
-    color:#000;
-}
-.white
- {
-     color: white;
- }
-.bg-white
-{
-    background-color: #fff;
-}
-.faq-section
-{
-    
-    font-family: Arial, Helvetica, sans-serif;
-}
-.faq-questions{
-    padding:5px;
-}
-.faq-heading
-{
-    text-align: center;
-    padding:5px;
-    margin-top: 2rem;
-    font-weight: 200;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3rem;
-    font-weight: 600;
+.faq-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url(../../img/illustrations/faq.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 90vh;
+  background-size: 20% auto;
 }
 
-.faq-card
-{
-    background:transparent;
-}
-.faq-question-head
-{
-    font-size:1rem;
-    padding:2px;
-    padding-top:15px;
-}
-.faq-row-container
-{
-    padding-top:10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.faq-background
-{
-    /*background-image: url('../../img/illustrations/faq.jpg');
-    background-position:bottom right;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto 80vh;*/
-    height:35rem;
-    z-index:9999999;
-
-}
-.row1
-{
-    display:grid;
-    grid-template-columns: 1fr 4fr 1fr;
-}
-.row2{
-    display:grid;
-    grid-template-columns: 1fr 20fr;
-}
-.faq-questions button{
-    width:50px;
-    height:50px;
+.faq-section .upper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40%;
 }
 
-  
-  .faq-collapse {
-     padding-top:5px;
-     opacity:0.8;
-    max-height:0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+.faq-section .upper h1 {
+  color: var(--Grey-dark-1);
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.faq-section .upper h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.faq-section .upper form {
+  width: 100%;
+  text-align: center;
+}
+
+.faq-section .upper input {
+  background: var(--Grey-dark-1);
+  border: 1px solid transparent;
+  border-radius: 50px;
+  width: 30%;
+  height: 4rem;
+  color: var(--greany);
+  font-size: 1.3rem;
+  outline: none;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.faq-section .lower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60%;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.faq-section .lower .sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 2rem;
+  background-color: var(--Grey-light-2);
+  padding: 2rem;
+}
+
+.faq-section .lower .sub h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-family: 1rem;
+  color: var(--greany);
+  margin-bottom: 1rem;
+}
+
+.faq-section .lower .sub .more {
+  opacity: 0.6;
+}
+
+.faq-section .lower .sub p {
+  cursor: pointer;
+  margin: 0.8rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.faq-section .lower .sub p:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .faq-section {
+    background-image: none;
+    height: auto;
   }
-  .faq-card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border-width:1px;
-    border-top-style: solid;
-    border-radius: 0.25rem;
+  .faq-section .upper {
+    height: 20rem;
   }
-  .faq-card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem;
- 
+  .faq-section .upper h1 {
+    font-size: 2rem;
   }
-  .faq-btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
+  .faq-section .upper input {
+    width: 90%;
     font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    background-color: transparent;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-   .faq-btn:focus, .faq-btn.focus {
-    outline: 0;
-    transform:rotate(180deg);
-  } 
-  
-  @media screen and (max-width: 800px) {
-    
-    .faq-heading {
-      font-size: 2rem;
-    }
-    .faq-img
-    {
-        display: none;
-    }
-    .faq-row-container
-{
-    display: grid;
-    grid-template-columns: 1fr;
+  .faq-section .upper h3 {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  .faq-section .lower {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
-  }
-  @media screen and (max-width: 400px) {
-    
-    .faq-heading {
-      font-size: 1.2rem;
-    }
-  }
+/*# sourceMappingURL=index_faq.css.map */

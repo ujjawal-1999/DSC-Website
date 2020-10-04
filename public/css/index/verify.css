@@ -1,66 +1,107 @@
-a{
-    background-color: #9fe8fa;
-  }
-  a:hover {
-background:black;
-color: #ecfcff;
-}
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 body {
-width: 100%;
-height: 100%;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color:#ecfbfc;
 }
-
 .card {
-    background-color: #9fe8fa; 
-    width: 720px; 
-    height: 530px; 
-    padding:40px 0; 
-    margin:0 auto; 
-    font-family: Gothan, Lato, Arial, sans-serif; 
-    font-size: 13px; 
-    line-height: 16px
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  position: relative;
+}
+.card h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+.card .title {
+  padding: 1rem;
+  text-align: right;
+  color: #0052D4;
+  font-weight: bold;
+  font-size: 12px;
+}
+.card .desc {
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+}
+.card .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.card img {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto;
 }
 
-.inner-card {
-    background-color: #ecfcff; 
-    border-radius: 3px; 
-    margin: 0 auto; 
-    width: 560px; 
-    height: 483px; 
-    padding: 20px;
+.img-avatar img{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  border: 6px solid white;
+  background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+  top: 15px;
+  left: 85px;
 }
 
-.verify-logo img {
-    width: 230px;
-     height: 230px;
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-.content {
-    padding:30px 30px 29px;
-    margin: 0px auto; 
-    text-align: center;
+.title-total {
+  padding: 2.5em 1.5em 1.5em 1.5em;
 }
 
-.content p {
-    font-size: 20px; 
-    color: #1f3c88; 
-    font-weight: 300;
-    font-family:Verdana, Geneva, Tahoma, sans-serif; 
-    line-height: 24px;
+path {
+  fill: white;
 }
 
-.button {
-    margin: 40px;
+.img-portada {
+  width: 100%;
 }
 
-.button a{
+.portada {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #65C7F7;
+  /* background-image: url("https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg");
+  background-position: bottom center; */
+  background-size: cover;
+}
+
+button {
+
+  font-size: 20px;
+ border: none;
+ background: none;
+  color: #8bc34a;
+  cursor: pointer;
+  transition:.5s;
+  
+}
+
+button a{
     padding: 12px; 
     text-align: center; 
-    border: #1f3c88 1px solid;
+    border: #0052D4 1px solid;
     border-radius: 45px;
-    width: 300px; 
-    color: #1f3c88; 
+    width: 100px; 
+    color: #0052D4; 
     text-decoration: none; 
     text-transform: uppercase; 
     font-weight: bold; 
@@ -70,42 +111,7 @@ height: 100%;
     margin: 0 auto;
 }
 
-.button a:hover{
+button a:hover{
     color: #fff; 
-}
-
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    body{
-        width: 100%;
-        height: 100%;
-    }
-
-    .card{
-        width: 100%;
-        height: 400px;
-        margin: 20% 0px;
-    }
-
-    .inner-card{
-        width: 80%;
-        height: 400px;
-        padding: 0px 0px;
-    }
-
-    .content {
-        padding: 8px 0px;
-    }
-
-    .verify-logo img {
-        width: 180px;
-        height: 180px;
-        margin: 8px 0px;
-    }
-
-    .button a {
-        width: 225px;
-  }
-
+    background-color: #035aa6;
 }

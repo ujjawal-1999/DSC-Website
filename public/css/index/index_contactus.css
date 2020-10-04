@@ -29,12 +29,17 @@
   border-radius: 10px;
 }
 
+.contact_us .progress {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .contact_us progress[value] {
   /* Reset the default appearance */
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-  opacity: 1;
+  opacity: 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -145,20 +150,25 @@
 }
 
 .contact_us .submit-btn {
-  padding: 7px 35px;
-  border-radius: 10px;
-  display: inline-block;
-  background-color: var(--navButtons);
-  color: var(--white);
-  font-size: 18px;
-  cursor: pointer;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 2rem;
+  padding: 0.8em 1.5rem 0.8em 1.5rem;
+  border: 1px solid;
+  border-radius: 2px;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: 20;
+  background-color: var(--Grey-dark-1);
+  color: var(--primary-light);
+  border-color: var(--Grey-dark-1);
 }
 
 .contact_us .submit-btn:hover {
-  background-color: var(--white);
-  color: var(--navButtons);
+  background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
 }
 
 @media (max-width: 768px) {

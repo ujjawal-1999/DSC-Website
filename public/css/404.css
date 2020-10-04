@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+/*Variables */
+.left-section .inner-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /*color: #f5f6fa;*/
+}
+
+.container404 {
+  position: relative;
+  /* margin: 0 auto; */
+  width: 85%;
+  padding: 5rem;
+  /* padding-bottom: 25vh; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 9em;
+  line-height: 0.3em;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 1rem #fefefe;
+}
+
+.heading2 {
+  text-align: center;
+  font-size: 4em;
+  padding: 0;
+  text-shadow: 0 0 1rem #fefefe;
+}
+@media (max-width: 770px) {
+  .heading {
+    font-size: 4rem;
+  }
+  .heading2 {
+    font-size: 3rem;
+  }
+}
+.subheading {
+  text-align: center;
+  max-width: 480px;
+  font-size: 1.5em;
+  line-height: 1.15em;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+#home-btn {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px auto;
+  text-decoration: none;
+  width: 300px;
+  transition: 0.5s;
+}
+
+#home-btn:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
