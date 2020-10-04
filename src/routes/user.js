@@ -154,6 +154,7 @@ router.post("/changepassword/:id", function (req, res) {
 //Config Modules
 
 const { checkProfileImageType } = require("../config/checkType");
+const blog = require("../models/blog");
 
 //Setup a test Router for user routes
 router.get("/", (req, res) => {
@@ -384,10 +385,21 @@ router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
     const finduser = await User.find();
+    const userBlog = await blog.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        // console.log(req.dbUser);
-        res.render("profile", { user: req.dbUser, found: finduser });
+        var timelineBlogs = [];
+        userBlog.forEach((blog) => {
+          if (blog.author == req.dbUser.id) {
+            timelineBlogs.push(blog);
+          }
+        });
+        console.log(timelineBlogs);
+        res.render("profile", {
+          user: req.dbUser,
+          myblogs: timelineBlogs,
+          found: finduser,
+        });
       });
     } else {
       res.redirect("/dsc/user/register");

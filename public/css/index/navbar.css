@@ -337,15 +337,17 @@ input {
     overflow-x: hidden;
   }
   #search_list1 {
-    transform: translate(0) !important;
+    transform: translate(-50%, -50%) !important;
     display: none;
     margin-top: 20px;
     align-items: center;
-    top: 50%;
+    top: 80%!important;
+    right: 50%;
     width: 90%;
     height: 50vh;
     overflow: scroll;
     background-color: var(--Grey-dark-1);
+    color: var(--Grey-light-1);
     padding: 2rem;
   }
 }
@@ -437,14 +439,14 @@ input {
   left: 50%;
   /* transform: translate(-50%, -50%); */
   overflow: scroll;
-  background-color: var(--Grey-dark-1);
+  background-color: var(--Grey-light-1);
   padding: 2rem;
 }
 .collection-item2 {
   padding: 1rem 0;
 }
 .collection-item2 a {
-  color: black !important;
+  color: var(--Grey-dark-1) !important;
 }
 .collection-item2 a:hover {
   color: white !important;
