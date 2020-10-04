@@ -239,75 +239,66 @@ router.get("/login", function (req, res) {
 
 //post route for login
 router.post("/login", (req, res, next) => {
-  let getUser;
-  User.findOne({
-    email: req.body.email,
-  })
-    .then((user) => {
-      if (!user) {
-        req.flash("error", "User not found try creating a new account");
-        res.redirect("/dsc/");
-      }
-      getUser = user;
-      return bcrypt.compare(req.body.password, user.password);
-    })
-    .then((response) => {
-      if (!response) {
-        req.flash("error", "You have entered wrong password");
-        res.redirect("/dsc/");
-      }
-      if (getUser.active) {
-        var token = jwt.sign(
-          {
-            name: getUser.name,
-            email: getUser.email,
-            userId: getUser._id,
-          },
-          process.env.JWT_SECRET,
-          {
-            expiresIn: "1d",
-          }
-        );
-        res.cookie("authorization", token, {
-          maxAge: 24 * 60 * 60 * 1000,
-          httpOnly: false,
-        });
-      }
-      if (getUser.active) {
-        req.flash("success", getUser.name + " you are logged in");
-        res.redirect("/dsc/");
-      } else {
-        rand = cryptoRandomString({ length: 100, type: "url-safe" });
-        host = req.get("host");
-        link =
-          "http://" +
-          req.get("host") +
-          "/dsc/user/verify/" +
-          getUser._id +
-          "?tkn=" +
-          rand;
-        mailOptions = {
-          from: process.env.NODEMAILER_EMAIL,
-          to: getUser.email,
-          subject: "Please confirm your Email account",
-          html:
-            "Hello,<br> Please Click on the link to verify your email.<br><a href=" +
-            link +
-            ">Click here to verify</a>",
-        };
-        // console.log(mailOptions);
-        transporter.sendMail(mailOptions, function (error, response) {
-          if (error) {
-            console.log(error);
-            res.end("error");
-          } else {
-            console.log("Message sent: " + response.message);
-          }
-        });
-        req.flash(
-          "error",
-          getUser.name + " your email is not verified we have sent you an email"
-        );
+
+    let getUser;
+    User.findOne({
+        email: req.body.email
+    }).then(user => {
+        if (!user) {
+            req.flash("error","User not found try creating a new account");
+            res.redirect("/dsc/");
+        }
+        getUser = user;
+        return bcrypt.compare(req.body.password, user.password);
+    }).then(response => {
+        if (!response) {
+            req.flash("error","You have entered wrong password");
+            res.redirect("/dsc/");
+        }
+        if(getUser.active)
+        {
+            var token = jwt.sign({
+                name: getUser.name,
+                email: getUser.email,
+                userId: getUser._id
+            },process.env.JWT_SECRET, {
+                expiresIn: "1d"
+            });
+            console.log(token);
+            res.cookie( 'authorization', token,{ maxAge: 24*60*60*1000, httpOnly: false });
+        }
+        if(getUser.active)
+        {
+            req.flash("success",getUser.name + " you are logged in");
+            res.redirect("/dsc/");
+        }
+        else
+        {
+            rand=cryptoRandomString({length: 100, type: 'url-safe'});
+                host=req.get('host');
+                link="http://"+req.get('host')+"/dsc/user/verify/"+getUser._id+"?tkn="+rand;
+                mailOptions={ 
+                    from: process.env.NODEMAILER_EMAIL,
+                    to: getUser.email,
+                    subject : "Please confirm your Email account",
+                    html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>"
+                }
+                // console.log(mailOptions);
+                transporter.sendMail(mailOptions, function(error, response){
+                 if(error){
+                        console.log(error);
+                    res.end("error");
+                 }else{
+                        console.log("Message sent: " + response.message);
+                     }
+                });
+            req.flash("error",getUser.name + " your email is not verified we have sent you an email");
+            res.redirect("/dsc/");
+        }
+        
+    }).catch(err => {
+        req.flash("error",err);
+
         res.redirect("/dsc/");
       }
     })

@@ -5,8 +5,10 @@
 }
 
 body {
+
   padding-left: 4rem;
   font-family: Arial, Helvetica, sans-serif;
+
 }
 .container {
   width: 100%;
@@ -17,8 +19,11 @@ body {
   margin-top: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-      flex-direction: column;
+
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+
 }
 .accountbar {
   padding: 1rem;
@@ -29,7 +34,8 @@ body {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
+
 }
 
 .accountbar__shortcut {
@@ -95,19 +101,24 @@ body {
   display: flex;
 }
 .main-heading {
-   margin-bottom: 10px;
-   border: 2x;
-   border-bottom-color: rgb(126, 126, 126,0.1);
-   border-bottom-style: groove;
-   z-index: 0;
-   border-radius: 7px;
+
+ margin-bottom: 10px;
+ border: 2x;
+ border-bottom-color: rgb(126, 126, 126,0.1);
+ border-bottom-style: groove;
+ z-index: 0;
+ border-radius: 7px;
   
 }
-.main-heading-proj h2 {
+.heading h1 {
+
   letter-spacing: 2px;
   color: #797979;
   font-weight: lighter;
   padding-bottom: 2rem;
+
+  font-size:2rem;
+
 }
 
 /* Float four columns side by side */
@@ -150,14 +161,17 @@ font-weight:lighter ;
 }
 
 /* Remove extra left and right margins, due to padding */
-.row {
-  margin: 0 -5px;
-  display: grid;
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.row-container{
-  
-}
+
 /* Responsive columns */
 @media screen and (max-width: 600px) {
   .column-proj {
@@ -209,7 +223,9 @@ font-weight:lighter ;
   color: $color_white;
   padding-left: 120px;
   width: 100%;
-  font-size: .7rem;
+
+  font-size: .8rem;
+
   padding-bottom: 2rem;
 }
 .content-proj h2 {
@@ -307,10 +323,17 @@ font-weight:lighter ;
 }
 .content-box{
     margin:40px 0px;
+
+    width:100%;
 }
+    
 .description{
     width:60%;
     margin:0px 50px;
+    color: #797979;
+    font-size: 0.9rem;
+    justify-content: space-between;
+
 }
 .image{
     text-align: center;
@@ -347,7 +370,9 @@ font-weight:lighter ;
     justify-content: center;
     text-align: center;
 }
-.member-card{
+
+.member-car{
+
     position:relative;
     max-width:250px;
     background:white;

@@ -59,7 +59,7 @@
 }
 .card_ach span {
   color: rgb(158, 157, 157);
-  font-weight: 0.4rem;
+  font-weight: 0.5rem;
   letter-spacing: 4px;
   padding-left: 2rem;
 }
@@ -87,10 +87,10 @@
   font-size: 1rem;
 }
 .row-ach p {
+
   font-size: 10px;
   color: var(--Grey-dark-2);
   font-size: 15px;
-  /* color: rgb(124, 120, 120); */
   font-family: Arial, Helvetica, sans-serif;
 }
 #date {
@@ -101,7 +101,7 @@
   position: absolute;
   right: 15rem;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding-top: 1rem;
   align-self: start;
 }
