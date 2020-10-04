@@ -118,27 +118,32 @@
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2><span class="thin">Profile</span> Details</h2>
+          <h2><span class="thin"></span></h2>
           <div class="socials">
             <div class="items">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img src="/img/logo/profile.png" alt="" />
+                <img src="/upload<%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <form
-                action="profile/upload/<%= user.id%>"
-                method="POST"
+                action="profile/upload/<%=user.id%>"
+                method="post"
+                enctype="multipart/form-data"
                 class="uploadImageForm"
               >
                 <div class="upload-btn-wrapper">
-                  <button class="btn">Upload Photo</button>
-                  <input type="file" name="file" id="fileSubmitButton" />
                   <input
+                    name="profile-image"
+                    type="file"
+                    class="file-upload-field"
+                    value=""
+                    id="fileSubmitButton"
+                  />
+                  <input
+                    style="width: 100%; color: rgb(238, 238, 238)!important"
                     type="submit"
-                    id="submit_photo"
-                    class="submit_photo"
-                    name="myfile"
+                    class="submit"
                     value="Submit Photo"
                   />
                 </div>
@@ -591,7 +596,7 @@
             <div class="pictureandbasic">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img src=" <%= user.profileImageLocation%>" alt="" />
+                <img src="/upload<%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <div class="info">
@@ -705,7 +710,13 @@
                       <% myblogs.forEach(function(blog){%>
                       <div class="card">
                         <div class="socialactivity">
-                          <img src="<%= user.profileImageLocation%>" alt="" />
+                          <% if(user.profileImageLocation!=null){ %>
+                          <img
+                            src="/upload<%= user.profileImageLocation%>"
+                            alt=""
+                          />
+                          <% }else{%>
+                          <img src="/img/logo/profile.png" alt="" /> <% }%>
                           <!-- <div class="sharable">
                             <p>Share on</p>
                             <img class="s" src="/img/logo/fb.png" alt="" />

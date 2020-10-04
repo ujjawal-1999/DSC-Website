@@ -394,7 +394,7 @@ router.get("/profile", authorization, async (req, res) => {
             timelineBlogs.push(blog);
           }
         });
-        console.log(timelineBlogs);
+        // console.log(timelineBlogs);
         res.render("profile", {
           user: req.dbUser,
           myblogs: timelineBlogs,
@@ -594,19 +594,20 @@ const storage = multer.diskStorage({
 });
 //(Profile Image)
 
-const uploadProfileImage = multer({
+var uploadProfileImage = multer({
   storage: storage,
-  limits: { fileSize: 1000000 },
+  limits: { fileSize: 10000000 },
   fileFilter: function (req, file, cb) {
     checkProfileImageType(file, cb);
   },
 }).single("profile-image");
 
 //Post Route to update Profile Image
-router.post("/profile/upload/:id", async (req, res) => {
+router.post("/profile/upload/:id", uploadProfileImage, async (req, res) => {
   const id = req.params.id;
   let errors = [];
   let avatar;
+  console.log(req.file);
   User.findById({ _id: id })
     .then((user) => {
       if (!user) {
@@ -639,10 +640,10 @@ router.post("/profile/upload/:id", async (req, res) => {
             console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
-              res.send({ message: "Profile Image Updated" });
+              res.redirect("/dsc/user/profile");
             } else {
               console.log(" Profile not Updated!");
-              res.send({ message: "Profile Image not Updated" });
+              res.redirect("/dsc/user/profile");
             }
           })
           .catch((err) => {

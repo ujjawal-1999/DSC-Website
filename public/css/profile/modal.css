@@ -346,7 +346,7 @@
   width: 35%;
   height: 60px;
   background: orangered;
-  color: var(--white);
+  color: white !important;
   text-align: center;
   border: 0;
   font-size: 1.2em;
@@ -452,6 +452,29 @@
 .addAchievementModal .thin,
 .addSkillsModal .thin {
   font-weight: 200;
+}
+
+.editProfileModal .upload-btn-wrapper input,
+.addExperienceModal .upload-btn-wrapper input,
+.addProjectsModal .upload-btn-wrapper input,
+.addAchievementModal .upload-btn-wrapper input,
+.addSkillsModal .upload-btn-wrapper input {
+  color: var(--Grey-light-1);
+}
+
+.editProfileModal .upload-btn-wrapper input[type="file"],
+.addExperienceModal .upload-btn-wrapper input[type="file"],
+.addProjectsModal .upload-btn-wrapper input[type="file"],
+.addAchievementModal .upload-btn-wrapper input[type="file"],
+.addSkillsModal .upload-btn-wrapper input[type="file"] {
+  border: none;
+  font-size: 12px;
+  color: #303030 !important;
+  background-color: #eeeeee;
+  position: relative;
+  height: 100%;
+  opacity: 1;
+  width: 10rem;
 }
 
 .editProfileModal .socials,
@@ -583,5 +606,24 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=modal.css.map */
