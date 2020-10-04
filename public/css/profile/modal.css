@@ -40,7 +40,8 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 90vh;
+  height: 80vh;
+  padding: 2rem;
   overflow: auto;
   width: 70vw;
   opacity: 0;
@@ -116,7 +117,7 @@
   .subscribeForm {
     width: 100%;
   }
-  #submit {
+  .submit {
     width: 100% !important;
   }
   .flexRow {
@@ -335,11 +336,11 @@
   line-height: 1em;
 }
 
-.editProfileModal #submit,
-.addExperienceModal #submit,
-.addProjectsModal #submit,
-.addAchievementModal #submit,
-.addSkillsModal #submit {
+.editProfileModal .submit,
+.addExperienceModal .submit,
+.addProjectsModal .submit,
+.addAchievementModal .submit,
+.addSkillsModal .submit {
   display: block;
   border: 0;
   width: 35%;
@@ -358,11 +359,11 @@
   transition: all 0.2s;
 }
 
-.editProfileModal #submit:hover,
-.addExperienceModal #submit:hover,
-.addProjectsModal #submit:hover,
-.addAchievementModal #submit:hover,
-.addSkillsModal #submit:hover {
+.editProfileModal .submit:hover,
+.addExperienceModal .submit:hover,
+.addProjectsModal .submit:hover,
+.addAchievementModal .submit:hover,
+.addSkillsModal .submit:hover {
   opacity: 0.8;
 }
 
@@ -466,6 +467,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 30%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .editProfileModal .socials .items,
@@ -477,9 +483,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -489,6 +499,33 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   border-radius: 10px;
+}
+
+.editProfileModal .socials .items .submit_photo,
+.addExperienceModal .socials .items .submit_photo,
+.addProjectsModal .socials .items .submit_photo,
+.addAchievementModal .socials .items .submit_photo,
+.addSkillsModal .socials .items .submit_photo {
+  width: 100%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.editProfileModal .socials .items .submit_photo:hover,
+.addExperienceModal .socials .items .submit_photo:hover,
+.addProjectsModal .socials .items .submit_photo:hover,
+.addAchievementModal .socials .items .submit_photo:hover,
+.addSkillsModal .socials .items .submit_photo:hover {
+  opacity: 0.8;
+}
+
+.editProfileModal .socials .items .photo img,
+.addExperienceModal .socials .items .photo img,
+.addProjectsModal .socials .items .photo img,
+.addAchievementModal .socials .items .photo img,
+.addSkillsModal .socials .items .photo img {
+  width: 10rem;
+  height: 10rem;
 }
 
 .editProfileModal .socials .items img,
@@ -511,14 +548,6 @@
   margin-left: 1rem;
   text-decoration: none;
   color: var(--white);
-}
-
-.editProfileModal .socials .items:hover,
-.addExperienceModal .socials .items:hover,
-.addProjectsModal .socials .items:hover,
-.addAchievementModal .socials .items:hover,
-.addSkillsModal .socials .items:hover {
-  opacity: 0.9;
 }
 
 .editProfileModal .socials .blue,
@@ -550,8 +579,9 @@
 .addProjectsModal .edill,
 .addAchievementModal .edill,
 .addSkillsModal .edill {
-  width: 80%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  width: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=modal.css.map */

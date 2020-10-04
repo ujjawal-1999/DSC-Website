@@ -612,6 +612,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 50%;
   padding: 1rem 0rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -631,6 +632,7 @@ body {
 }
 
 .cards .card .content .images .image-container img {
+  width: 30rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }

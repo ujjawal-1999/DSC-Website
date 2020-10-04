@@ -34,7 +34,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90vh;
+  height: 80vh;
+  padding: 2rem;
   overflow: auto;
   width: 70vw;
   opacity: 0;
@@ -96,9 +97,10 @@
   .subscribeForm {
     width: 100%;
   }
-  #submit {
+  .submit {
     width: 100% !important;
   }
+
   .flexRow {
     flex-direction: column;
     justify-content: start;
@@ -227,7 +229,7 @@
     line-height: 1em;
   }
 
-  #submit {
+  .submit {
     display: block;
     border: 0;
     width: 35%;
@@ -245,7 +247,7 @@
     transition: all 0.2s;
   }
 
-  #submit:hover {
+  .submit:hover {
     opacity: 0.8;
   }
   /* Top-level Styling */
@@ -310,17 +312,33 @@
     display: flex;
     flex-direction: column;
     height: 30%;
+    justify-content: space-around;
+    align-items: center;
+
     .items {
       // height: 3rem;
       width: 20rem;
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 1rem;
       margin: 1rem 0;
       font-weight: 600;
       transition: all 0.2s;
       border-radius: 10px;
+
+      .submit_photo {
+        width: 100%;
+        transition: all 0.2s;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .photo img {
+        width: 10rem;
+        height: 10rem;
+      }
 
       img {
         width: 30px;
@@ -334,9 +352,9 @@
         text-decoration: none;
         color: var(--white);
       }
-      &:hover {
-        opacity: 0.9;
-      }
+      // &:hover {
+      //   opacity: 0.9;
+      // }
     }
     .blue {
       background-color: #3d589a;
@@ -350,7 +368,7 @@
   }
 
   .edill {
-    width: 80%;
-    align-self: flex-end;
+    width: 70%;
+    align-self: center;
   }
 }
