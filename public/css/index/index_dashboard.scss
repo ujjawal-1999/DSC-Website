@@ -118,7 +118,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   text-align: center;
   background-image: url(../../img/illustrations/dashboards.png);
-  background-size: 30rem;
+  background-size: 24%;
   background-position: bottom left;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -150,7 +150,7 @@ body::-webkit-scrollbar-thumb {
       margin: 0.5rem;
       color: var(--Grey-dark-1);
       font-family: sans-serif;
-      font-weight: 700;
+      font-weight: 500;
       z-index: 20;
       background: transparent;
       transform: translateY(-10px);
@@ -220,6 +220,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1110px) {
+  .header {
+    background-image: none;
+  }
+}
+@media screen and (max-height: 800px) {
   .header {
     background-image: none;
   }

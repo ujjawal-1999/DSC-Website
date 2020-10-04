@@ -1,3 +1,5 @@
+// const { body } = require("express-validator");
+
 $("#search-icon").click(function () {
   $(".nav").toggleClass("search");
   $(".nav").toggleClass("no-search");
@@ -12,6 +14,18 @@ $(".menu-toggle").click(function () {
 let filterInput2 = document.getElementById("search1");
 let srh2 = document.getElementById("srh1");
 var flag = 1;
+
+window.addEventListener("keydown", (e) => {
+  console.log(document.getElementById("search1").value.length);
+  if (document.getElementById("search1").value.toUpperCase().length == 0) {
+    document.getElementById("search_list1").style.display = "none";
+  }
+
+  if (e.key === "Escape") {
+    document.getElementById("search_list1").style.display = "none";
+  }
+});
+
 srh2.addEventListener("click", () => {
   let ul = document.getElementById("search_list1");
   if (ul.style.display !== "none" || flag == 0) {
@@ -20,7 +34,7 @@ srh2.addEventListener("click", () => {
   }
 });
 //add event listener
-filterInput2.addEventListener("keyup", filternames2);
+filterInput2.addEventListener("keydown", filternames2);
 
 function filternames2() {
   //get value of input
@@ -29,12 +43,13 @@ function filternames2() {
   let ul = document.getElementById("search_list1");
   //get lis from ul
   let li = ul.querySelectorAll("li.collection-item2");
-  ul.style.display = "block";
+  if (filterValue.length > 0) {
+    ul.style.display = "block";
+  }
   //loop through collection item lis
 
   for (let i = 0; i < li.length; i++) {
     let a = li[i].getElementsByTagName("a")[0];
-    console.log(a, filterValue);
     //if matched
 
     if (
@@ -48,8 +63,11 @@ function filternames2() {
   }
 }
 
-var dropBtn = document.getElementById("dropbtn");
-var dropdown = document.getElementsByClassName("dropdown")[0];
-dropBtn.onclick = function () {
-  dropdown.classList.toggle("hover-active");
-};
+// var dropBtn = document.getElementById("dropbtn");
+// var dropdown = document.getElementsByClassName("dropdown")[0];
+// dropBtn.addEventListener(
+//   "click",
+//   (onclick = function () {
+//     dropdown.classList.toggle("hover-active");
+//   })
+// );

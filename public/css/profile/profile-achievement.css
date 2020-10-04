@@ -19,12 +19,12 @@
   .accordion {
     font-size: 10px;
   }
- 
+
   #date {
-    display:none;
+    display: none;
   }
 }
-@media (max-width:700px) {
+@media (max-width: 700px) {
   .tooltip img {
     display: none;
   }
@@ -37,7 +37,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .row-ach .column-ach h3 {
-  color: rgb(100, 105, 103);
+  color: var(--Grey-dark-1);
   overflow: auto;
 }
 .tab-ach {
@@ -49,12 +49,13 @@
   transition: 0.4s;
 }
 
-
 .row-ach img {
   size: 5px;
-  width: 4rem;
+  width: 3rem;
   height: 3rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
+  /* padding-right: 1rem; */
+  border-radius: 50%;
 }
 .card_ach span {
   color: rgb(158, 157, 157);
@@ -86,12 +87,14 @@
   font-size: 1rem;
 }
 .row-ach p {
+  font-size: 10px;
+  color: var(--Grey-dark-2);
   font-size: 15px;
-  color: rgb(124, 120, 120);
+  /* color: rgb(124, 120, 120); */
   font-family: Arial, Helvetica, sans-serif;
 }
 #date {
-  color: rgb(6, 30, 107);
+  color: var(--Grey-dark-1);
   height: 1.4375rem;
   line-height: 1rem;
   padding: 0 1.25rem;
@@ -144,7 +147,7 @@
     position: relative;
   }
 } */
-.flexRow button{
+.flexRow button {
   border: none;
   color: none;
   text-decoration: none;
@@ -153,31 +156,28 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
-
 }
-.delete-ach img{
+.delete-ach img {
   size: 5px;
   width: 42px;
   height: 42px;
   border: 0px;
- position: absolute;
-   left: 57rem;
- 
+  position: absolute;
+  left: 57rem;
 }
 
-.edit-ach img{
+.edit-ach img {
   size: 5px;
   width: 39px;
   height: 39px;
   border: 0px;
   position: absolute;
-   left: 55rem;
-  
+  left: 55rem;
 }
 .delete-ach a {
   background: none;
 }
-.column-ach button{
+.column-ach button {
   border: none;
   color: none;
   text-decoration: none;
@@ -185,6 +185,4 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-
 }
-
