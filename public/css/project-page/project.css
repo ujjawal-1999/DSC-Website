@@ -5,9 +5,12 @@
 }
 
 body {
-  padding-left: 4rem;
+ 
  
   font-family: Arial, Helvetica, sans-serif;
+}
+main {
+  padding-left: 4rem;
 }
 .container {
   width: 100%;
@@ -104,11 +107,12 @@ body {
  border-radius: 7px;
   
 }
-.main-heading-proj h2 {
+.heading h1 {
   letter-spacing: 2px;
   color: #797979;
   font-weight: lighter;
   padding-bottom: 2rem;
+  font-size:2rem;
 }
 
 /* Float four columns side by side */
@@ -211,7 +215,7 @@ font-weight:lighter ;
   color: $color_white;
   padding-left: 120px;
   width: 100%;
-  font-size: .7rem;
+  font-size: .8rem;
   padding-bottom: 2rem;
 }
 .content-proj h2 {
@@ -309,10 +313,15 @@ font-weight:lighter ;
 }
 .content-box{
     margin:40px 0px;
+    width:100%;
 }
+    
 .description{
     width:60%;
     margin:0px 50px;
+    color: #797979;
+    font-size: 0.9rem;
+    justify-content: space-between;
 }
 .image{
     text-align: center;
@@ -349,7 +358,7 @@ font-weight:lighter ;
     justify-content: center;
     text-align: center;
 }
-.member-card{
+.member-car{
     position:relative;
     max-width:250px;
     background:white;
