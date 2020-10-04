@@ -4,8 +4,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+  color: var(--Grey-dark-1);
 }
-
+.flexRow button {
+  color: var(--Grey-dark-1);
+}
 .addExperience {
   background-color: transparent;
   border: none;
@@ -31,6 +34,7 @@
   font-family: Arial, Helvetica, sans-serif;
   padding: 1rem;
   margin: 1rem;
+  color: var(--Grey-dark-1) !important;
 }
 @media (max-width: 822px) {
   .row .column .button {
@@ -53,7 +57,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .row .column h3 {
-  color: rgb(100, 105, 103);
+  color: var(--Grey-dark-1) !important;
   overflow: auto;
 }
 .accordion {
@@ -83,18 +87,20 @@
 }
 
 #mention {
-  color: rgb(27, 26, 26);
+  color: var(--Grey-dark-1) !important;
+  padding-top: 7rem;
+  /* color: rgb(27, 26, 26); */
   background-color: rgba(138, 92, 141, 0.1);
   height: 1.4375rem;
   line-height: 1.4375rem;
   padding: 0 1.25rem;
   position: absolute;
-  right: 2rem;
+  right: 8rem;
   border-radius: 10px;
   font-size: 0.9rem;
 }
 #mention b {
-  color: rgb(13, 56, 196) !important;
+  color: var(--Grey-dark-1) !important;
 }
 .row img {
   size: 5px;
@@ -103,7 +109,7 @@
   padding-right: 1rem;
 }
 .card_exp span {
-  color: rgb(158, 157, 157);
+  color: var(--Grey-light-1);
   font-weight: 0.4rem;
   letter-spacing: 4px;
   padding-left: 2rem;
@@ -125,10 +131,49 @@
   overflow: hidden;
 }
 .row h3 {
-  font-size: 1.2rem;
+
+  font-size: 1rem;
 }
 .row p {
-  font-size: 13px;
+  font-size: 15px;
+
   color: rgb(124, 120, 120);
   font-family: Arial, Helvetica, sans-serif;
+}
+.column button {
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.column button img {
+  padding-bottom: 5rem;
+}
+.delete-exp img {
+  size: 5px;
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  position: absolute;
+  right: 1rem;
+  line-height: 20px;
+  padding-bottom: 6px;
+}
+
+.edit-exp img {
+  size: 5px;
+  width: 43px;
+  height: 43px;
+  border: 0px;
+  position: absolute;
+  right: 4rem;
+  line-height: 20px;
+  padding-bottom: 6px;
+}
+.delete-exp a {
+  background: none;
 }

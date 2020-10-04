@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
+
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +8,9 @@
 body {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-light) !important;
 }
 
 .container {
@@ -41,6 +45,8 @@ body {
     border-radius: 3px;
     transition: all 0.2s;
     margin-right: 3rem;
+    color: var(--Grey-dark-1);
+    background-color: var(--primary-light);
     &:hover {
       cursor: pointer;
       color: var(--Grey-light-1);
@@ -173,11 +179,15 @@ body {
             flex-direction: column;
             height: 15rem;
             justify-content: space-evenly;
+            p {
+              // width: 75%;
 
+              line-height: 1.2rem;
+            }
             .nameandedit {
               display: flex;
               flex-direction: row;
-              justify-content: center;
+              // justify-content: center;
               align-items: center;
             }
 
@@ -269,10 +279,50 @@ body {
     }
   }
 }
+.photo {
+  // overflow: hidden;
+  width: 10rem;
+  height: 10rem;
+  img {
+    width: 10rem;
+  }
+  &:hover .upload-btn-wrapper {
+    // transform: translateY(-3rem);
+  }
+}
+.uploadImageForm {
+  text-align: center;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.2s;
+  // transform: translateY(-3rem);
+}
+
+// .btn {
+//   border: none;
+//   color: gray;
+//   background-color: white;
+//   padding: 8px 10px;
+//   border-radius: 8px;
+//   font-size: 12px;
+//   font-weight: bold;
+// }
+
+// .upload-btn-wrapper input[type="file"] {
+//   font-size: 100px;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   opacity: 0;
+// }
 
 .contests {
   width: 25%;
-  background-color: var(--white);
+  background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
   padding: 0.9rem;
   font-family: sans-serif;
 
@@ -295,7 +345,8 @@ body {
       border-radius: 10px;
       padding: 1rem;
       width: 100%;
-      background-color: #e8f1ff;
+      background-color: var(--Grey-light-1);
+      color: var(--Grey-dark-1);
       transition: all 0.3s;
 
       hr {
@@ -341,7 +392,8 @@ body {
         font-family: sans-serif;
         border-radius: 3px;
         transition: all 0.2s;
-        background-color: transparent;
+        background-color: var(--Grey-light-1);
+        color: var(--Grey-dark-1);
         &:hover {
           cursor: pointer;
           color: var(--Grey-light-1);
@@ -355,7 +407,6 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  // flex-direction: row;
   justify-content: center;
   .card {
     padding: 2rem;
@@ -385,6 +436,7 @@ body {
       .sharable {
         margin-top: 1rem;
         p {
+          color: var(--Grey-dark-4) !important;
           font-size: 0.8rem;
           font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
             "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -402,6 +454,8 @@ body {
       display: flex;
       flex-direction: column;
       width: 90%;
+      background-color: var(--Grey-light-1);
+      color: var(--Grey-dark-1);
       .topic {
         margin-top: 0.3rem;
         font-size: 1rem;
@@ -420,17 +474,19 @@ body {
       .images {
         display: flex;
         flex-wrap: wrap;
+        width: 50%;
         padding: 1rem 0rem;
         justify-content: center;
 
         .image-container {
           display: flex;
-          width: 30%;
+          width: 100%;
           overflow: hidden;
           transition: all 0.2s;
           object-fit: contain;
 
           img {
+            width: 30rem;
             transition: all 0.2s;
 
             &:hover {
@@ -458,6 +514,10 @@ body {
 }
 
 @media (max-width: 1300px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .info p {
+    width: auto !important;
+    overflow: hidden;
+  }
   .cards .card {
     width: 100%;
     padding: 0.8rem;
@@ -490,8 +550,9 @@ body {
   }
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
     top: 0;
+    letter-spacing: 0.2rem;
     right: 0%;
   }
 
@@ -685,7 +746,7 @@ body {
   border-radius: 0 0 0.3em 0.3em;
   position: relative;
   z-index: 1;
-  background-color: var(--white);
+  background-color: var(--primary-light);
 }
 
 .tab-panel {
@@ -743,4 +804,107 @@ kbd {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+.product-image {
+  /* display: inline-block; */
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  float: left;
+  width: 50%;
+  border-radius: 30px;
+  margin: 1rem;
+}
+
+.prod-img {
+  transition: transform 0.3s ease-in-out;
+  object-fit: contain;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image:hover .info {
+  transform: translateX(0);
+}
+
+.product-image:hover img {
+  transition: all 0.8s ease-out;
+}
+
+.product-image:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.prod-img :hover {
+  transform: scale(1.2);
+}
+
+.product-details {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 30px;
+  width: 40%;
+  font-family: "Farsan", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .product-details {
+    width: 90%;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-image {
+    width: 90%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+  @media (min-width: 800px) {
+    .product-details {
+      width: 40%;
+      text-align: center;
+      height: -webkit-fill-available;
+      margin-top: 10%;
+    }
+    .product-details p {
+      font-family: "Farsan", "cursive";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 35px;
+      color: #000000;
+    }
+  }
+}
+
+.person {
+  display: flex;
+  justify-content: center;
+}
+
+.author {
+  margin-top: 10px;
+  width: 67px;
+  height: 67px;
+}
+
+.author img {
+  border-radius: 50%;
+  height: 67px;
+  width: 67px;
 }

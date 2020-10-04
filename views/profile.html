@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <!-- Stylings Starts-->
+    <link rel="stylesheet" href="../public/css/index/navbar.css" />
     <link rel="stylesheet" href="../public/css/index/colors.css" />
     <link rel="stylesheet" href="../public/css/profile/profile_dashboard.css" />
     <link
@@ -18,6 +19,7 @@
       href="../public/css/profile/profile-achievement.css"
     />
     <link rel="stylesheet" href="../public/css/profile/profile_projects.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Stylings Ends -->
   </head>
   <body>
@@ -45,16 +47,32 @@
             enctype="text/plain"
           >
             <div class="flexRow">
-              <label for="pname">Project Name</label>
+              <label for="pname"> Company Name</label>
               <input id="pname" type="text" name="pname" />
             </div>
             <div class="flexRow">
-              <label for="prole">Project Role</label>
+              <label for="prole"> Job Role</label>
               <input id="prole" type="text" name="prole" />
             </div>
             <div class="flexRow">
-              <label for="Duration">Duration</label>
-              <input id="Duration" placeholder="In months" name="Duration" />
+              <label for="startdate">Start Date</label>
+              <input
+                id="startdate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="startdate"
+                required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="enddate">End Date</label>
+              <input
+                id="enddate"
+                type="text"
+                placeholder="dd-mm-yy"
+                name="enddate"
+                
+              />
             </div>
 
             <div class="flexRow">
@@ -415,7 +433,7 @@
                 required
               />
             </div>
-            <div class="flexRow">
+           <!-- <div class="flexRow">
               <label for="projectdescription">Description</label>
               <input
                 id="projectdescription"
@@ -423,7 +441,7 @@
                 name="projectdescription"
                 required
               />
-            </div>
+            </div>-->
             <br /><br />
             <div class="flexRow fullwidth">
               <input id="submit" type="submit" value="Save Changes" />
@@ -681,6 +699,7 @@
                     <div class="flexRow">
                       <h3>EXPERIENCE</h3>
                       <div class="flexRow">
+                        
                         <p>Want to add more Experience ?</p>
                         <button class="addExperience" id="addExperience">
                           Click here
@@ -690,7 +709,8 @@
                     <div class="cards_exp">
                       <div class="card_exp">
                         <div class="row">
-                          <div class="column">
+                        
+                            <div class="column">
                             <img
                               src="../public/img/logo/DSC_logo.png"
                               alt="company"
@@ -699,12 +719,10 @@
                               Marketing & Communication Manager<br />
                               <p>Microsoft</p>
                             </h3>
-
-                            <div id="mention"><b>&#9899;</b> management</div>
-                            <!--<div class="bookmarks">
-                                   <a>
-                                 <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
-                                 </div>-->
+                           
+                            <div id="mention"><b>&#9899;</b>3-12-2020 - Present</div>
+                            <button ><a class="edit-exp"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-exp" href=""><img src="../public/img/profile/trash.svg"></a></button>
                           </div>
                           <div class="panelexp">
                             <p>
@@ -729,11 +747,13 @@
                             </h3>
 
                             <div id="mention">
-                              <b>&#9899;</b> business development
+                              <b>&#9899;</b> 4-03-2019 - 4-06-2020
                             </div>
+                            <button ><a class="edit-exp"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-exp" href=""><img src="../public/img/profile/trash.svg"></a></button>
                             <!--<div class="bookmarks">
                                         <a>
-                                      <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
+                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
                                       </div>-->
                           </div>
                           <div class="panelexp">
@@ -759,8 +779,10 @@
                             </h3>
 
                             <div id="mention">
-                              <b>&#9899;</b> business development
+                              <b>&#9899;</b> 3-01-2018 - 4-3-2019
                             </div>
+                            <button ><a class="edit-exp"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-exp" href=""><img src="../public/img/profile/trash.svg"></a></button>
                           </div>
                           <div class="panelexp">
                             <p>
@@ -779,6 +801,7 @@
                     <div class="flexRow">
                       <h3>SKILLS</h3>
                       <div class="flexRow">
+                  
                         <p>Want to add more Skills ?</p>
                         <button class="addExperience" id="addSkills">
                           Click here
@@ -797,15 +820,20 @@
                         <div class="skill-description">
                           <h3 class="skill-name">Java</h3>
                           <h4 class="skill-time">2 months</h4>
+                         
                         </div>
                         <p class="skill-level">Beginner</p>
+                        <button ><a class="edit-ski"><img src="../public/img/profile/edit.svg"></a></button>
+                        <button> <a class="delete-ski" href=""><img src="../public/img/profile/trash.svg"></a></button>
                       </div>
+                    
                     </div>
                   </div>
                   <div id="panel04" class="tab-panel">
                     <div class="flexRow">
                       <h3>PROJECTS</h3>
                       <div class="flexRow">
+                       
                         <p>Want to showcase more Projects ?</p>
                         <button class="addExperience" id="addProject">
                           Click here
@@ -849,6 +877,8 @@
                           <div class="project-duration">
                             <h3>Aug 30 - Sept 30</h3>
                           </div>
+                          <button ><a class="edit-prj"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-prj" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         </div>
                         <div class="item item1">
                           <div class="project-lang">
@@ -885,6 +915,8 @@
                           <div class="project-duration">
                             <h3>Sept 15 - Oct 30</h3>
                           </div>
+                          <button ><a class="edit-prj"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-prj" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         </div>
                         <div class="item item1">
                           <div class="project-lang">
@@ -921,6 +953,8 @@
                           <div class="project-duration">
                             <h3>July 30 - Aug 20</h3>
                           </div>
+                          <button ><a class="edit-prj"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-prj" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         </div>
                         <div class="item item1">
                           <div class="project-lang">
@@ -943,6 +977,8 @@
                           <div class="project-duration">
                             <h3>Oct 15 - Nov 20</h3>
                           </div>
+                          <button ><a class="edit-prj"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-prj" href=""><img src="../public/img/profile/trash.svg"></a></button>
                         </div>
                       </div>
                     </section>
@@ -979,9 +1015,11 @@
                                 >Credential ID: 19234567</span
                               >
                             </div>
+                            <button><a  class="edit-ach"><img src="../public/img/profile/edit.svg"></a></button>
+                          <button> <a class="delete-ach" href=""><img src="../public/img/profile/trash.svg"></a></button>
                             <!--<div class="bookmarks">
                                    <a>
-                                 <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
+                                 <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
                                  </div>-->
                           </div>
                         </div>
@@ -1006,9 +1044,11 @@
                                 >Credential ID: 19234567</span
                               >
                             </div>
+                            <button ><a class="edit-ach"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-ach" href=""><img src="../public/img/profile/trash.svg"></a></button>
                             <!--<div class="bookmarks">
                                         <a>
-                                      <img  src="../public/assets/images/bookmark.svg" alt="bookmark"></a>
+                                      <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
                                       </div>-->
                           </div>
                         </div>
@@ -1033,6 +1073,8 @@
                                 >Credential ID: 19234567</span
                               >
                             </div>
+                            <button ><a class="edit-ach"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-ach" href=""><img src="../public/img/profile/trash.svg"></a></button>
                           </div>
                         </div>
                         <div class="row-ach">
@@ -1055,7 +1097,10 @@
                               <span class="tooltiptext"
                                 >Credential ID: 19234567</span
                               >
+                             
                             </div>
+                            <button ><a class="edit-ach"><img src="../public/img/profile/edit.svg"></a></button>
+                            <button> <a class="delete-ach" href=""><img src="../public/img/profile/trash.svg"></a></button>
                           </div>
                         </div>
                       </div>
@@ -1119,17 +1164,13 @@
         </section>
       </section>
     </div>
+  
   </body>
-  <!-- <script>
-    document.onkeypress = function (e) {
-      e = e || window.event;
-      if (e.keyCode === 13) {
-        document.documentElement.classList.toggle("dark-mode");
-      }
-    };
-  </script> -->
-
-  <script src="../node_modules/a11ytab/dist/a11ytab.js"></script>
+<!-- 
+  <script src="../public/js/darkmode.js"></script> -->
+  <script src="../public/js/a11ytab.js"></script>
   <script src="../public/js/profile/profile.js"></script>
   <script src="../public/js/profile/modal.js"></script>
+  <script>
+
 </html>

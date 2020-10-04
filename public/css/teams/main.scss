@@ -43,14 +43,14 @@ img {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-
-.persue::before {
+.persue {
+  font-size: 1.5rem !important;
+  margin-top: 0.5rem !important;
 }
-
 .game {
   position: relative;
-  width: 16em;
-  height: 22em;
+  width: 20rem;
+  // height: 22em;
   cursor: pointer;
   background: rgb(241, 241, 241);
   border-radius: var(--br);
@@ -77,7 +77,7 @@ img {
   right: 0;
   z-index: 1000;
   // font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 0.8rem;
   background: var(--clr-light);
   color: var(--clr-dark);
   padding: 0.5em 0.5em 0.75em;
@@ -102,6 +102,7 @@ img {
   .name {
     font-family: "Times New Roman", Times, serif;
     margin: 0.75em 0;
+    font-size: 2rem;
   }
 
   .stats {
@@ -187,7 +188,7 @@ img {
 
 .game:hover {
   .rank {
-    transform: translate(65%, -70%);
+    transform: translate(75%, -80%);
   }
 
   .front {
@@ -210,7 +211,9 @@ img {
   .back {
     opacity: 1;
     transition: transform 250ms ease, opacity 150ms linear;
-
+    .about {
+      transform: translateY(3rem);
+    }
     .streamers {
       width: 100%;
       justify-content: space-between;
@@ -260,5 +263,4 @@ img {
   }
 }
 @media screen and (max-width: 768px) {
-  
 }

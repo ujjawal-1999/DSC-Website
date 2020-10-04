@@ -1,3 +1,7 @@
+.cards {
+  color: var(--Grey-dark-1);
+}
+
 .cards .card .skill-description {
   margin-right: auto;
 }
@@ -14,6 +18,9 @@
 
 .cards .card .skill-level {
   margin-top: auto;
+  line-height: -7px;
+  position: absolute;
+  right: 16rem;
 }
 
 .cards .card .skill-icon {
@@ -29,7 +36,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 #btn {
   border: none;
@@ -40,6 +46,35 @@
   text-transform: uppercase;
 }
 
-#btn:hover{
+#btn:hover {
   background-color: rgb(73, 73, 238);
+}
+.delete-ski img {
+  size: 5px;
+  width: 42px;
+  height: 42px;
+  border: 0px;
+}
+
+.edit-ski img {
+  size: 5px;
+  width: 39px;
+  height: 39px;
+  border: 0px;
+}
+.delete-ski a {
+  background: none;
+}
+
+.card button img {
+  padding-bottom: 5px;
+}
+.card button {
+  border: none;
+  color: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }

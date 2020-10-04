@@ -5,12 +5,10 @@
 }
 
 body {
- 
- 
-  font-family: Arial, Helvetica, sans-serif;
-}
-main {
+
   padding-left: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 .container {
   width: 100%;
@@ -21,8 +19,11 @@ main {
   margin-top: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+
       -ms-flex-direction: column;
           flex-direction: column;
+
+
 }
 .accountbar {
   padding: 1rem;
@@ -32,8 +33,9 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
 }
 
 .accountbar__shortcut {
@@ -99,6 +101,7 @@ main {
   display: flex;
 }
 .main-heading {
+
  margin-bottom: 10px;
  border: 2x;
  border-bottom-color: rgb(126, 126, 126,0.1);
@@ -108,11 +111,14 @@ main {
   
 }
 .heading h1 {
+
   letter-spacing: 2px;
   color: #797979;
   font-weight: lighter;
   padding-bottom: 2rem;
+
   font-size:2rem;
+
 }
 
 /* Float four columns side by side */
@@ -155,6 +161,7 @@ font-weight:lighter ;
 }
 
 /* Remove extra left and right margins, due to padding */
+
 .row {margin: 0 -5px;}
 
 /* Clear floats after the columns */
@@ -163,6 +170,7 @@ font-weight:lighter ;
   display: table;
   clear: both;
 }
+
 
 /* Responsive columns */
 @media screen and (max-width: 600px) {
@@ -215,7 +223,9 @@ font-weight:lighter ;
   color: $color_white;
   padding-left: 120px;
   width: 100%;
+
   font-size: .8rem;
+
   padding-bottom: 2rem;
 }
 .content-proj h2 {
@@ -313,6 +323,7 @@ font-weight:lighter ;
 }
 .content-box{
     margin:40px 0px;
+
     width:100%;
 }
     
@@ -322,6 +333,7 @@ font-weight:lighter ;
     color: #797979;
     font-size: 0.9rem;
     justify-content: space-between;
+
 }
 .image{
     text-align: center;
@@ -358,7 +370,9 @@ font-weight:lighter ;
     justify-content: center;
     text-align: center;
 }
+
 .member-car{
+
     position:relative;
     max-width:250px;
     background:white;

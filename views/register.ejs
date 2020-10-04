@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/css/index/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Login/SignUp</title>
   </head>
 
@@ -20,11 +24,25 @@
       </div>
       <div class="signup-form" id="signupform">
         <h1 class="mobileheading">Sign Up</h1>
-        <form action="/dsc/user/register" method="POST">
+        <form
+          action="/dsc/user/register"
+          method="POST"
+          onsubmit="return validate()"
+          name="signupform"
+          id="signupform"
+        >
           <label for="codename">Full name</label
-          ><input type="text" name="name" placeholder="Name" required />
+          ><input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            minlength="6"
+            maxlength="30"
+          />
           <label for="email">Email</label
           ><input
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
             type="email"
             name="email"
             placeholder="Email Address"
@@ -33,19 +51,38 @@
           <label for="sidearm">Password</label>
           <input
             type="password"
-            id="password-field"
+            id="password"
             type="password"
             name="password"
             placeholder="Password"
+            required
           />
+
           <label for="sidearm">Confirm Password</label>
           <input
             type="password"
-            id="cpassword-field"
+            id="cpassword"
             type="password"
             name="cpassword"
             placeholder="Retype Password"
+            required
           />
+          <br />
+          <div
+            class="flexRow"
+            style="
+              display: flex;
+              align-items: center;
+              height: auto;
+              margin: -18px;
+            "
+          >
+            <input
+              onclick="showpasswordsignup()"
+              type="checkbox"
+              style="width: auto; margin: 0"
+            />&nbsp&nbsp Show Password
+          </div>
           <div class="button-box">
             <div class="button-mask button-mask-slide">
               <input type="submit" value="SignUp" id="" />
@@ -79,6 +116,7 @@
         <form action="/dsc/user/login" method="POST">
           <label for="email">Email</label
           ><input
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
             type="email"
             name="email"
             placeholder="Email Address"
@@ -87,12 +125,28 @@
           <label for="sidearm">Password</label>
           <input
             type="password"
-            id="password-field"
+            id="loginpassword"
             type="password"
             name="password"
             placeholder="Password"
+            required
           />
-
+          <br />
+          <div
+            class="flexRow"
+            style="
+              display: flex;
+              align-items: center;
+              height: auto;
+              margin: -18px;
+            "
+          >
+            <input
+              onclick="showpasswordlogin()"
+              type="checkbox"
+              style="width: auto; margin: 0"
+            />&nbsp&nbsp Show Password
+          </div>
           <div class="button-box">
             <div class="button-mask button-mask-slide">
               <input type="submit" value="Login" id="" />

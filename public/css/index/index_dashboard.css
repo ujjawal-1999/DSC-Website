@@ -20,6 +20,8 @@ label {
 
 html {
   scroll-behavior: smooth;
+  -webkit-transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 section {
@@ -164,7 +166,7 @@ body::-webkit-scrollbar-thumb {
           align-items: center;
   text-align: center;
   background-image: url(../../img/illustrations/dashboards.png);
-  background-size: 30rem;
+  background-size: 24%;
   background-position: bottom left;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -195,7 +197,7 @@ body::-webkit-scrollbar-thumb {
 
 .header .heading__secondary {
   opacity: 0;
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 0.5rem;
   color: var(--Grey-dark-1);
   font-family: sans-serif;
@@ -273,6 +275,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1110px) {
+  .header {
+    background-image: none;
+  }
+}
+
+@media screen and (max-height: 800px) {
   .header {
     background-image: none;
   }

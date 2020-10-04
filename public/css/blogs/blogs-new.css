@@ -1,252 +1,413 @@
 @import url("../public/css/blogs/fonts.css");
 html,
 body {
-    margin: 0%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  margin: 0%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 :root {
-    /*      Theme colors        */
-    --text-gray: #3f4954;
-    --text-light: #686666da;
-    --bg-color: #0f0f0f;
-    --white: #ffffff;
-    --midnight: #104f55;
-    /* gradient color   */
-    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-    /*      theme font-family   */
-    /* --Abel: 'Abel', cursive;
-    --Anton: 'Anton', cursive;
-    --Josefin : 'Josefin', cursive;
-    --Lexend: 'Lexend', cursive;
-    --Livvic : 'Livvic', cursive; */
-    --blogfont: "Arial", "Sans-serif";
+  /*      Theme colors        */
+  --text-gray: #3f4954;
+  --text-light: #686666da;
+  --bg-color: #0f0f0f;
+  --white: #ffffff;
+  --midnight: #104f55;
+  --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  --blogfont: "Arial", "Sans-serif";
 }
-
 
 /* ---------------- Global Classes ---------------*/
 
 a {
-    text-decoration: none;
-    color: var(--text-gray);
+  text-decoration: none;
+  color: var(--text-gray);
 }
-
+/* form{
+  display: none;
+} */
 .flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 h1 {
-    font-family: var(--blogfont);
-    font-size: 2.5rem;
+  font-family: var(--blogfont);
+  font-size: 2.5rem;
+  color: var(--Grey-dark-1);
 }
 
 h2 {
-    font-family: var(--blogfont);
+  font-family: var(--blogfont);
 }
 
 h3 {
-    font-family: var(--blogfont);
-    font-size: 1.3rem;
+  font-family: var(--blogfont);
+  font-size: 1.3rem;
 }
 
 button.btn {
-    border: none;
-    border-radius: 2rem;
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-family: var(--blogfont);
-    cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-family: var(--blogfont);
+  cursor: pointer;
 }
 
 span {
-    font-family: var(--blogfont);
+  font-family: var(--blogfont);
 }
 
 .container {
-    margin: 0 5vw;
+  margin: 0 5vw;
+}
+
+section {
+  background-color: var(--primary-light) !important;
 }
 
 .text-gray {
-    color: var(--text-gray);
+  color: var(--text-gray);
 }
 
 p {
-    font-family: var(--Lexend);
-    color: var(--text-light);
+  font-family: var(--Lexend);
+  color: var(--Grey-dark-2);
 }
-
 
 /* ------x------- Global Classes -------x-------*/
 
-@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
-body {
-    background-attachment: fixed;
-    background-size: cover;
+/* popular post css */
+
+#popular-post {
+  width: 25vw;
+  background-color: var(--primary-light) !important;
+  padding: 2rem;
+  font-family: "Fira Sans", sans-serif;
+  border-radius: 20px;
 }
 
-#card-container {
-    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
-    background: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 5em auto;
-    width: 60%;
-    padding: 10px;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+#heading {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.6em;
+  text-align: center;
+  color: #4e4e4e;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
-.card-person {
-    display: flex;
-    justify-content: center;
+.popular-posts .content {
+  justify-content: flex-end;
 }
 
-.card-product-details {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    padding: 30px;
-    width: 40%;
-    font-family: "Farsan", cursive;
-    font-size: 20px;
+.popular-posts {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-#card-container .card-product-details>p {
-    font-family: "Farsan", cursive;
-    text-align: center;
-    /*  font-size: 20px;*/
-    color: #7d7d7d;
+.popular-posts .title {
+  font-size: 1.5em;
+  line-height: 2em;
 }
 
-
-/* the Button */
-
-.card-btn {
-    transform: translateY(0px);
-    transition: 0.3s linear;
-    background: #49c608;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    color: #eee;
-    padding: 0;
-    margin: 0;
+.content .intro {
+  color: #717171;
 }
 
-.card-btn:hover {
-    transform: translateY(-4px);
+.content .date {
+  color: #717171;
+  font-size: 0.8em;
+}
+.content span {
+  color: var(--Grey-dark-1) !important;
 }
 
-
-/* product image  */
-
-.card-product-image {
-    /* display: inline-block; */
-    position: relative;
-    overflow: hidden;
-    height: 30rem;
-    float: left;
-    width: 50%;
-    border-radius: 30px;
-    margin: 1rem;
+.numbering {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 1.9em;
+  margin: 10px 15px 10px 5px;
+  text-align: justify;
+  color: #9a9a9a;
 }
 
-.card-prod-img {
-    transition: transform 0.3s ease-in-out;
-    object-fit: contain;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
+@media screen and (max-width: 415px) {
+  #popular-post {
     width: 100%;
-    height: 100%;
-    margin-top: 0;
-    object-fit: contain;
-    display: inline-block;
+  }
+  .popular-posts {
+    width: 95%;
+  }
 }
 
-.card-prod-img :hover {
-    transform: scale(1.2);
+/* Popular posts css ends */
+
+/* Cards css */
+
+.card-container {
+  margin: 5em auto;
+  box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
+  border-radius: 45px;
+  display: flex;
+  max-width: 1000px;
+  padding: 2em;
+  justify-content: space-between;
+  width: 90%;
+  background-color: var(--Grey-light-1) !important;
 }
 
-#card-container img {
-    width: 100%;
-    height: 100%;
+.card-container .author > img:nth-child(1) {
+  width: 5em;
+  border-radius: 50%;
+  height: 5em;
 }
 
-.card-product-image:hover .card-info {
-    transform: translateX(0);
+.card-container h1 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.card-product-image:hover img {
-    transition: all 0.8s ease-in-out;
+.card-container .author > h3:nth-child(2) {
+  margin: 0;
 }
 
-.card-product-image:hover img {
-    transform: scale(1.2, 1.2);
+.card-container .card-details {
+  margin-left: 1em;
+}
+
+.card-details {
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+@media (min-width: 1300px) {
+  .card-details {
+    padding-right: 2%;
+    padding-left: 1%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .card-details {
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-top: 2%;
+  }
+}
+
+.card-image {
+  /* display: inline-block; */
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  float: left;
+  width: 250%;
+  border-radius: 30px;
+  /* margin: 1rem; */
+}
+
+.card-img {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: inline-block;
+  text-align: center;
+}
+
+.card-img :hover {
+  transform: scale(1.1);
+}
+
+.card-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image:hover .card-info {
+  transform: translateX(0);
+}
+
+.card-image:hover img {
+  transition: all 0.8s ease-in-out;
+}
+
+.card-image:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.card-details {
+  display: grid;
+  grid-template-areas: "text text" "author buttons";
+}
+
+.card-text {
+  grid-area: text;
 }
 
 .card-author {
-    margin-top: 10px;
-    width: 67px;
-    height: 67px;
+  grid-area: author;
+  justify-self: center;
+  padding-bottom: 1em;
+  color: var(--Grey-dark-2);
 }
 
-.card-author img {
-    border-radius: 50%;
+.card-buttons {
+  color: var(--Grey-dark-1) !important;
+  grid-area: buttons;
+  align-self: end;
+  padding: 1em;
 }
 
-@media (max-width: 800px) {
-    .card-product-details {
-        width: 90%;
-        text-align: center;
-        align-content: center;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    #card-container {
-        flex-direction: column;
-        width: 80%;
-        height: fit-content;
-    }
-    .card-product-image {
-        width: 90%;
-        display: inline-block;
-        border-radius: 10px;
-    }
-    @media (min-width: 800px) {
-        .card-product-details {
-            width: 40%;
-            text-align: center;
-            height: -webkit-fill-available;
-            margin-top: 10%;
-        }
-        #card-container {
-            width: 90%;
-            height: 70vh;
-            display: flex;
-        }
-        .card-product-details p {
-            font-family: "Farsan", "cursive";
-            font-style: normal;
-            font-weight: bold;
-            font-size: 25px;
-            line-height: 35px;
-            color: #000000;
-        }
-    }
+.card-buttons button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.card-buttons i {
+  color: var(--Grey-dark-1) !important;
+}
+.card-author > img:nth-child(1) {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.card-author > h3:nth-child(2) {
+  margin: 1rem 0;
+}
+.card-author span {
+  margin: 1rem;
+}
+
+@media (max-width: 1300px) {
+  .card-container {
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+#popular-post {
+  /* width: 25vw; */
+  width: 100%;
+  justify-self: center;
+  padding: 1rem;
+}
+
+#popular-post .intro {
+  /* width: 25vw; */
+  justify-content: flex-start;
+}
+
+section.popular {
+  justify-self: end;
+}
+
+/* Cards css */
+
+main {
+  display: grid;
+  background-color: var(--primary-light) !important;
+  grid-template-areas: "cards search" "cards  popular";
+  grid-template-columns: 4fr 1fr;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+section.cards {
+  grid-area: cards;
+}
+
+section.blog-search {
+  grid-area: search;
+}
+
+section.popular {
+  grid-area: popular;
+}
+
+ul.blog-search-results {
+  color: white;
+  display: none;
+  list-style-type: none;
+}
+
+ul.blog-search-results li {
+  color: white;
+}
+
+.blog-search button {
+  background: #1246cd;
+  height: 3em;
+  color: white;
+  border-radius: 20px;
+  margin: 0;
+  padding-left: 1em;
+  width: 120px;
+  border: 1px solid #1246cd;
+}
+
+.blog-search .inner-search {
+  margin: 2em;
+  padding: 2em;
+  border-radius: 40px;
+  background-color: #4478ff;
+  box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
+}
+
+.blog-search .fa-filter {
+  color: white;
+}
+
+#search2 {
+  border-radius: 45px;
+  height: 2em;
+  padding-left: 1em;
+}
+
+.blog-search-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#card-container {
+  /* border-radius: 5px; */
+  border-radius: 6%;
+}
+
+@media (max-width: 1300px) {
+  main {
+    grid-template-areas: "search" "cards" "popular";
+  }
+  .popular {
+    width: 100%;
+  }
+  #popular-post {
+    width: 90%;
+    margin-bottom: 3rem;
+  }
+  .card-image {
+    width: 100%;
+  }
+  section.cards {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    margin-top: 4em;
+  }
 }
