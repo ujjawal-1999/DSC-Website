@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
 * {
   padding: 0;
   margin: 0;
@@ -17,6 +18,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary-light) !important;
 }
 
 .container {
@@ -64,6 +66,8 @@ body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   margin-right: 3rem;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
 }
 
 .accountbar .fndp:hover {
@@ -222,6 +226,10 @@ body {
           justify-content: space-evenly;
 }
 
+.dashboard__main .main__profileinfo .pictureandbasic .info p {
+  line-height: 1.2rem;
+}
+
 .dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,9 +238,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -341,9 +346,31 @@ body {
   height: auto;
 }
 
+.photo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.photo img {
+  width: 10rem;
+}
+
+.uploadImageForm {
+  text-align: center;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 .contests {
   width: 25%;
-  background-color: var(--white);
+  background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
   padding: 0.9rem;
   font-family: sans-serif;
   font-size: 0.8rem;
@@ -378,7 +405,8 @@ body {
   border-radius: 10px;
   padding: 1rem;
   width: 100%;
-  background-color: #e8f1ff;
+  background-color: var(--Grey-light-1);
+  color: var(--Grey-dark-1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -447,7 +475,8 @@ body {
   border-radius: 3px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  background-color: transparent;
+  background-color: var(--Grey-light-1);
+  color: var(--Grey-dark-1);
 }
 
 .contests .container .card button:hover {
@@ -517,6 +546,7 @@ body {
 }
 
 .cards .card .socialactivity .sharable p {
+  color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
@@ -537,6 +567,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 90%;
+  background-color: var(--Grey-light-1);
+  color: var(--Grey-dark-1);
 }
 
 .cards .card .content .topic {
@@ -562,6 +594,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 50%;
   padding: 1rem 0rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -572,7 +605,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
+  width: 100%;
   overflow: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -581,6 +614,7 @@ body {
 }
 
 .cards .card .content .images .image-container img {
+  width: 30rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -599,6 +633,10 @@ body {
 }
 
 @media (max-width: 1300px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .info p {
+    width: auto !important;
+    overflow: hidden;
+  }
   .cards .card {
     width: 100%;
     padding: 0.8rem;
@@ -635,8 +673,9 @@ body {
   }
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
     top: 0;
+    letter-spacing: 0.2rem;
     right: 0%;
   }
   .dashboard__navbar .side-nav {
@@ -824,7 +863,7 @@ body {
   border-radius: 0 0 0.3em 0.3em;
   position: relative;
   z-index: 1;
-  background-color: var(--white);
+  background-color: var(--primary-light);
 }
 
 .tab-panel {
@@ -878,5 +917,128 @@ kbd {
           box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
   padding-left: 0.2em;
   padding-right: 0.2em;
+}
+
+.product-image {
+  /* display: inline-block; */
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  float: left;
+  width: 50%;
+  border-radius: 30px;
+  margin: 1rem;
+}
+
+.prod-img {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image:hover .info {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.product-image:hover img {
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+.product-image:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.prod-img :hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.product-details {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 30px;
+  width: 40%;
+  font-family: "Farsan", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .product-details {
+    width: 90%;
+    text-align: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .product-image {
+    width: 90%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 800px) {
+  .product-details {
+    width: 40%;
+    text-align: center;
+    height: -webkit-fill-available;
+    margin-top: 10%;
+  }
+  .product-details p {
+    font-family: "Farsan", "cursive";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+    color: #000000;
+  }
+}
+
+.person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.author {
+  margin-top: 10px;
+  width: 67px;
+  height: 67px;
+}
+
+.author img {
+  border-radius: 50%;
+  height: 67px;
+  width: 67px;
 }
 /*# sourceMappingURL=profile_dashboard.css.map */

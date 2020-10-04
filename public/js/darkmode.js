@@ -1,14 +1,18 @@
 const dmode = document.getElementById("dmodeGLOBAL");
-
+const toogler = document.getElementById("toogle");
+// Initial Settings
 var themestart = localStorage.getItem("theme");
 if (themestart == "Light") {
+  toogler.checked = false;
   setTheme("Dark");
 } else {
+  toogler.checked = true;
   setTheme("Light");
 }
 
-dmode.addEventListener("click", () => {
+toogler.addEventListener("click", () => {
   var theme = localStorage.getItem("theme");
+  console.log(toogler.checked);
   setTheme(theme);
 });
 

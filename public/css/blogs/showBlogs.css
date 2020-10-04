@@ -2,9 +2,13 @@
 @import url("../public/css/blogs/Style.css");
 @import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
 body {
-  background: #e5e5e5;
+  background-color: var(--primary-light) !important;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rectangle-2 {
@@ -13,7 +17,7 @@ body {
   font-family: Product Sans;
   font-style: normal;
   font-weight: bold;
-  color: #000000;
+  color: var(--Grey-dark-1) !important;
   position: relative;
   align-items: center;
   align-content: center;
@@ -40,12 +44,19 @@ body {
 }
 
 .name {
+  color: var(--Grey-dark-1) !important;
   float: right;
 }
 
 main {
-  background: #ffffff;
+  width: 60%;
+  margin: 1rem 0;
+  padding: 2rem 0;
+  background-color: var(--Grey-light-1) !important;
   box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
+}
+i {
+  color: var(--Grey-dark-1);
 }
 
 .content {
@@ -53,7 +64,7 @@ main {
   margin: auto;
   font-family: Product Sans;
   font-style: normal;
-  color: #585858;
+  color: var(--Grey-dark-1) !important;
   font-size: 1.2rem;
 }
 
@@ -90,8 +101,9 @@ main {
 @media (max-width: 800px) {
   .main {
     margin-top: 70px;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
   .name {
     float: none;
@@ -107,7 +119,7 @@ main {
     width: 100%;
   }
   .card-author {
-    margin: 0 auto;
+    margin: 2rem auto;
   }
   .share {
     margin-top: 10px;
@@ -119,7 +131,7 @@ main {
     padding-top: 20px;
   }
   .card-img {
-    height: 50vh;
+    height: auto;
   }
   .author {
     display: flex;
@@ -134,8 +146,7 @@ main {
 
 @media (min-width: 800px) {
   main {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 0;
     padding-right: 2%;
     padding-left: 2%;
   }
