@@ -10,6 +10,11 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
@@ -52,9 +57,8 @@
       <div class="author">
         <div class="card-person">
           <div class="card-author">
-            <% if(blog.author.profileImageLocation) {%>
-            <img src="/upload/<%= blog.author.profileImageLocation%>"" />
-            <% } %>
+            <% if(blog.author.profileImageLocation) {%> <img src="/upload/<%=
+            blog.author.profileImageLocation%>"" /> <% } %>
 
             <div class="name"><%=blog.author.name%></div>
           </div>

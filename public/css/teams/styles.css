@@ -104,7 +104,7 @@ section {
   align-items: center;
 }
 .maindsc {
-  margin-top: -20vh;
+  margin-top: -10rem;
 }
 .discoverone {
   display: flex;
@@ -121,7 +121,7 @@ section {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2rem;
   padding: 1rem;
-  width: 40%;
+  width: 50%;
   align-self: center;
   text-align: center;
 }
@@ -226,6 +226,12 @@ main .banner {
   }
 }
 
+@media screen and (max-height: 750px) {
+  .mainbgdsc {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .mainone {
     flex-direction: column;
@@ -251,7 +257,6 @@ main .banner {
   .mainbgdsc {
     pointer-events: none;
     opacity: 1;
-    width: 50%;
   }
   .maindsc {
     margin-top: 0;
