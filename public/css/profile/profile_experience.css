@@ -150,7 +150,7 @@
   justify-content: space-between;
 }
 
-.column button img {
+#mention button img {
   padding-bottom: 5rem;
 }
 .delete-exp img {

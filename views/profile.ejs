@@ -419,18 +419,6 @@
               />
             </div>
             <div class="flexRow">
-              <label for="prj_status">Status</label>
-              <select
-                name="prj_status"
-                id="prj_status"
-                onchange="statusListenerProject()"
-              >
-                <option value="Completed" selected>Completed</option>
-                <option value="Ongoing">Ongoing</option>
-                <option value="Scheduled">Scheduled</option>
-              </select>
-            </div>
-            <div class="flexRow">
               <label for="startdate">Start Date</label>
               <input id="startdate" type="date" name="startdate" required />
             </div>
@@ -746,22 +734,20 @@
                             alt=""
                           />
                           <% }else{%>
-                          <img src="/img/logo/profile.png" alt="" /> <% }%>
-                          <!-- <div class="sharable">
-                            <p>Share on</p>
-                            <img class="s" src="/img/logo/fb.png" alt="" />
-                            <img class="s" src="/img/logo/link.png" alt="" />
-                          </div> -->
+                          <img src="/img/logo/profile.png" alt="" />
+
+                          <% }%>
+                          <i class="fas fa-eye" style="font-size: 12px" >
+                            <%= blog.views %></i
+                          >
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
-                          <p class="description">
+                          <div class="description">
                             <%- blog.body.substring(0, 300)%>
-                            <a href="/dsc/blog/view/<%= blog.slug%>"
-                              >... Read more</a
-                            >
-                          </p>
+                          </div>
+                          <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
                               <img class="post-images" src="<%= blog.cover%>""
