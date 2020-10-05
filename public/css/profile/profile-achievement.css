@@ -186,3 +186,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width:760px)
+{
+  .cards_ach{
+    padding-left: 0;
+  }
+}

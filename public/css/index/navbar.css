@@ -461,7 +461,7 @@ input {
 
 .box {
   position: absolute;
-  top: 18px;
+  top: 25px;
   right: 18px;
 }
 @media screen and (max-width: 715px) {
