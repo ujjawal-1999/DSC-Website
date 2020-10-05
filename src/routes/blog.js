@@ -96,10 +96,15 @@ router.post("/bookmark/:bookmark_id", auth, async (req, res) => {
 router.get("/bookmarks", auth, async (req, res) => {
   const finduser = await User.find();
   const user = await User.findById(req.user.userId).populate("bookmarkBlogs");
-  // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
-  const bookmarks = user.bookmarkBlogs;
 
-  // console.log(bookmarks[0])
+  // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
+  const bookmarks = await Promise.all(
+    user.bookmarkBlogs.map(async (blog) => {
+      blog.author = await User.findById(blog.author);
+      return blog;
+    })
+  );
+  console.log(bookmarks[0]);
   res.render("bookmarks", {
     user: req.user,
     found: finduser,
