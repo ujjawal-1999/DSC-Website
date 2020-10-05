@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 100%;
-  min-height: 80rem;
+  /* min-height: 80rem; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -548,7 +548,8 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+ "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 
