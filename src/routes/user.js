@@ -162,8 +162,17 @@ router.get("/", (req, res) => {
 });
 
 //get route for signup
-router.get("/register", (req, res) => {
-  res.render("register");
+router.get("/register", async (req, res) => {
+  var token = req.cookies.authorization;
+  const finduser = await User.find();
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      console.log(user);
+      res.render("register", { user: user, found: finduser });
+    });
+  } else res.render("register", { user: req.user, found: finduser });
 });
 
 //post route for signup
@@ -268,6 +277,7 @@ router.post("/login", (req, res, next) => {
             expiresIn: "1d",
           }
         );
+        console.log(token);
         res.cookie("authorization", token, {
           maxAge: 24 * 60 * 60 * 1000,
           httpOnly: false,
@@ -310,10 +320,6 @@ router.post("/login", (req, res, next) => {
         );
         res.redirect("/dsc/");
       }
-    })
-    .catch((err) => {
-      req.flash("error", err);
-      res.redirect("/dsc/");
     });
 });
 

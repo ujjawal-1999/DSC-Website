@@ -4,23 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/css/index/register.css" />
+    <link rel="stylesheet" href="/css/register/register.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+
     <title>Login/SignUp</title>
   </head>
 
   <body>
+    <!--Navbar Starts-->
+    <%-include('partials/navbar')%>
+    <!---Navbar Ends-->
+    <center></center>
     <div class="container" id="container">
       <div class="heading-block">
-        <div>
-          <h1 id="label">
-            SignUp
-            <span style="color: #0f1923"></span>
-          </h1>
-        </div>
+        <h1 id="label">
+          SignUp
+          <span style="color: #0f1923"></span>
+        </h1>
       </div>
       <div class="signup-form" id="signupform">
         <h1 class="mobileheading">Sign Up</h1>
@@ -181,7 +186,10 @@
       <span>Welcome to</span>
       <span>DSC Website</span>
     </div>
-    <script src="/js/anime.js"></script>
-    <script src="/js/signup-in/register.js"></script>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/darkmode.js"></script>
+  <script src="/js/anime.js"></script>
+  <script src="/js/signup-in/register.js"></script>
 </html>
