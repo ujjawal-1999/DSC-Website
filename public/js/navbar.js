@@ -15,6 +15,10 @@ let filterInput2 = document.getElementById("search1");
 let srh2 = document.getElementById("srh1");
 var flag = 1;
 
+document.getElementById("search_list1").addEventListener("click", (e) => {
+  console.log(e.target);
+});
+
 window.addEventListener("keydown", (e) => {
   console.log(document.getElementById("search1").value.length);
   if (document.getElementById("search1").value.toUpperCase().length == 0) {

@@ -104,11 +104,10 @@
 }
 
 input {
-
   border-radius: 0; /* FOR SAFARI */
   height: 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: var(--Grey-dark-1);
   color: var(--Grey-light-1);
   padding: 0.2rem 1rem;
@@ -220,6 +219,11 @@ input {
 #dropbtn {
   cursor: pointer;
 }
+.search-input:focus {
+  border: none;
+  /* border-radius: 50%; */
+}
+
 /* Mobile Devices - Phones/Tablets */
 
 @media only screen and (max-width: 760px) {
@@ -284,7 +288,6 @@ input {
       order: 1;
     } */
 
-
   .navbar li a {
     font-size: 1rem;
     border-bottom: none;
@@ -343,7 +346,7 @@ input {
     display: none;
     margin-top: 20px;
     align-items: center;
-    top: 80%!important;
+    top: 80% !important;
     right: 50%;
     width: 90%;
     height: 50vh;
@@ -446,12 +449,14 @@ input {
 }
 .collection-item2 {
   padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 .collection-item2 a {
   color: var(--Grey-dark-1) !important;
 }
 .collection-item2 a:hover {
-  color: white !important;
+  opacity: 0.9;
 }
 /* @media screen and (max-width: 715px) {
   #search_list1 {
