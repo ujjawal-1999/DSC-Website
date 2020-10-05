@@ -5,39 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
     <link rel="stylesheet" href="/css/project-page/project.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/index/footer.css" />
+   
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/img/logo/dsc_logo.png"
-  />
-  
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- ######################################################################## -->
+
+    <!---Icons Import-->
+    
   </head>
 <body>
   <!-- Main Content Starts -->
-  <div class="container">
-    <section class="accountbar">
-      <p></p>
-      <div class="accountbar__shortcut">
-        <div class="fndp">Find People</div>
-        <div class="fndp" "><a href="../views/profile.html">View Profile</a></div>
-        <!-- <div class="edit" id="editbtn" ></div> -->
-        <img
-          class="bell resone"
-          src="/img/teams_potraits/rdj.jpg"
-          alt="UserPhoto"
-        />
-        <img
-          class="bell"
-          src="/img/logo/bell.png"
-          alt="Notification Logo"
-        />
-      </div>
-    </section>
+ 
+    
   
-
+    <div class="page-wrapper">
+    <div class="nav-wrapper">
+      <nav class="navbar">
+        <div class="box">
+          <input class="type-checkbox" id="toogle" type="checkbox" name="name"   />
+          <label class="estado" for="toogle" onclick="myfunction()">
+            <button onclick="myfunction()"><span class="aprobado">Light</span></button>
+            <button ><span class="desaprobado">Dark</span></button>
+          </label>
+        </div>
+        <img src="/img/logo/DSC-trans-new.png" />
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav no-search">
+          <li class="nav-item"><a href="/dsc" class="nav-items-a">Home</a></li>
+          <li class="nav-item">
+            <a href="/dsc/#about" class="nav-items-a">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/projects" class="nav-items-a">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/#schedule" class="nav-items-a">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/blog" class="nav-items-a">Blogs</a>
+          </li>
+          <!-- <li id="dmodeGLOBAL" class="nav-item">
+            <a href="#" class="nav-items-a">Dark Mode</a>
+          </li> -->
+          <% if(!user){ %>
+          <li class="nav-item">
+            <a href="/dsc/user/register" class="nav-items-a">Log In/Sign Up</a>
+          </li>
+          <% }else{ %>
+          <li class="nav-item">
+            <a href="/dsc/user/profile" class="nav-items-a"><%=user.name%></a>
+          </li>
+          <% } %>
+  
+          <li class="nav-item">
+            <input
+              class="search-input"
+              id="search1"
+              type="text"
+              placeholder="Search.."
+              autofocus
+            />
+            <div class="search" id="srh1"></div>
+            <ul class="search-view" id="search_list1">
+              <% found.forEach((user)=>{ %>
+              <li class="collection-item2"><a><%= user.name%></a></li>
+              <% }) %>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    
+  </div>
+  
+  <main>
+  
+  <!-- Main Content Starts -->
+  <div class="container">
     <section class="heading">
       <div class="main-heading-proj">
-        <h2>PROJECT</h2>
+        <h1>DSC PROJECT</h1>
             <div class="borderd"></div>
       </div>
       <div class="sub-heading-proj">
@@ -176,7 +233,7 @@
   
                   <div class="member-card" style="margin:20px;">
                     <p>● Elvis Rahman<br> ● Kazi Sahariah Rahi <br>● Manzil Hoque </p>
-                     <!-- <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                     <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
                       <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                       <p>
@@ -186,13 +243,13 @@
                       </p>
                       <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                       <div style="position:absolute;bottom:0;width:80%;">
-                          <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                          <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                          <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                          <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                          <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                          <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                       </div>
                   </div>
                   <div class="member-card" style="margin:20px;">
-                      <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                      <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
                       <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                       <p>
@@ -202,9 +259,9 @@
                       </p>
                       <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                       <div style="position:absolute;bottom:0;width:80%;">
-                          <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                          <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                          <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                          <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                          <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                          <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                       </div>-->
                   </div>
               </div>
@@ -298,7 +355,7 @@
 
                 <div class="member-card" style="margin:20px;">
                   <p>● Rahul Kumar Gupta <br>● Anuva Bhattacharjee <br>● Pathikrit Chanda<br> ● Ujjwal Jain </p>
-                   <!-- <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                   <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
                     <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
@@ -308,13 +365,13 @@
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                     </div>
                 </div>
                 <div class="member-card" style="margin:20px;">
-                    <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                    <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
                     <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
@@ -324,9 +381,9 @@
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                     </div>-->
                 </div>
             </div>
@@ -408,7 +465,7 @@
   
                   <div class="member-card" style="margin:20px;">
                     <p>● Yash Srivastav <br>● Trishna Kalita <br>● Srinjoy Dutta </p>
-                     <!--- <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                     <!--- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
                       <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                       <p>
@@ -418,13 +475,13 @@
                       </p>
                       <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                       <div style="position:absolute;bottom:0;width:80%;">
-                          <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                          <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                          <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                          <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                          <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                          <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                       </div>
                   </div>
                   <!--<div class="member-card" style="margin:20px;">
-                      <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                      <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
                       <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                       <p>
@@ -434,9 +491,9 @@
                       </p>
                       <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                       <div style="position:absolute;bottom:0;width:80%;">
-                          <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                          <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                          <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                          <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                          <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                          <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                       </div>-->
                   </div>
               </div>
@@ -533,7 +590,7 @@ The frontend part will be based on React.js because of which we
 
                 <div class="member-card" style="margin:20px;">
                   <p>● Sameer Shrivastava<br> ● Aditya Singh Sisodiya <br>● Nabanita Bania </p>
-                    <!--<img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                    <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
                     <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
@@ -543,13 +600,13 @@ The frontend part will be based on React.js because of which we
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                     </div>
                 </div>
                 <div class="member-card" style="margin:20px;">
-                    <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">
+                    <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
                     <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
@@ -559,9 +616,9 @@ The frontend part will be based on React.js because of which we
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                     </div>-->
                 </div>
             </div>
@@ -648,7 +705,7 @@ The frontend part will be based on React.js because of which we
         <div class="membrs-list">
 
             <div class="member-card" style="margin:20px;">
-                <!--<img src="/img/Project/man.png" style="border-radius: 10px;width:45%">-->
+                <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                
                <!-- <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                 <p>
@@ -658,13 +715,13 @@ The frontend part will be based on React.js because of which we
                 </p>
                 <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                 <div style="position:absolute;bottom:0;width:80%;">
-                    <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                    <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                    <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                    <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                    <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                    <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                 </div>-->
             </div>
             <div class="member-card" style="margin:20px;">
-                <!--<img src="/img/Project/man.png" style="border-radius: 10px;width:45%">-->
+                <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                <p>  ● Ujjawal Jain <br>●  Sameer Shrivastava<br> ●      Aditya Singh Sisodiya<br> ●      Arshita Narayan </p>
                 <!--<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                 <p>
@@ -674,9 +731,9 @@ The frontend part will be based on React.js because of which we
                 </p>
                 <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                 <div style="position:absolute;bottom:0;width:80%;">
-                    <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                    <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                    <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                    <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                    <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                    <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                 </div>-->
             </div>
         </div>
@@ -776,9 +833,9 @@ The frontend part will be based on React.js because of which we
             <div class="membrs-list">
     
                 <div class="member-card" style="margin:20px;">
-                   <!-- <img src="/img/Project/man.png" style="border-radius: 10px;width:45%">-->
+                   <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                    <p> Rishiraj Paul Chowdhury <br>Nandini Agarwal</p> 
-                   <h3 style="line-height:0;"> Rishiraj Paul Chowdhury  </h3>
+                  
                     <!--<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
                         Lem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -787,13 +844,13 @@ The frontend part will be based on React.js because of which we
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                     </div>-->
                 </div>
                 <div class="member-card" style="margin:20px;">
-                    <!--<img src="/img/Project/.png" style="border-radius: 10px;width:45%">-->
+                    <!--<img src="../public/img/Project/.png" style="border-radius: 10px;width:45%">-->
                     <h3 style="line-height:0;">  </h3>
                    <!---<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
@@ -803,19 +860,28 @@ The frontend part will be based on React.js because of which we
                     </p>
                     <a class="github-link" href="https://github.com/vishalpandeyvip"> Github Link </a><br><br><br>
                     <div style="position:absolute;bottom:0;width:80%;">
-                        <img style="border-radius: 10px;margin-right:10px;" src="/img/Project/facebook.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="/img/Project/twitter.png" height="40" width="40">
-                        <a href=""><img style="border-radius: 10px;" src="/img/Project/linkedin.png" height="40" width="40"></a>
+                        <img style="border-radius: 10px;margin-right:10px;" src="../public/img/Project/facebook.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;margin-right:10px;"src="../public/img/Project/twitter.png" height="40" width="40">
+                        <a href=""><img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40"></a>
                     </div>-->
                 </div>
             </div>
         </div>
-    
     </div>
+  </div>
+</div>
    <!-- <button class="other-button">More Options </button> -->
-   
+  
+  
+   </main> 
+  
   </body>
+  <script src="/js/navbar.js"></script>
     <script>
+       function myfunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+         }
         function toggleMembers(){
             elem = document.querySelector('.x1');
             k=elem.style.display=='none'?'block':'none';
