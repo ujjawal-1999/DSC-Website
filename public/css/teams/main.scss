@@ -52,10 +52,12 @@ img {
   width: 20rem;
   // height: 22em;
   cursor: pointer;
-  background: rgb(241, 241, 241);
+  color: var(--Grey-dark-1);
+  background-color: var(--Grey-light-1);
   border-radius: var(--br);
   padding: 20px;
   margin: 2rem;
+  z-index: 2;
 }
 
 .streamers {
@@ -174,13 +176,13 @@ img {
 }
 
 .background {
-  background: #f7f7f7;
+  background-color: var(--Grey-light-1);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: -1;
+
   transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
@@ -235,6 +237,7 @@ img {
   .background {
     transition: var(--transition), opacity 100ms linear;
     opacity: 1;
+    z-index: -1;
     transform: scale(1.35, 1.3) translateY(5%);
   }
 }
