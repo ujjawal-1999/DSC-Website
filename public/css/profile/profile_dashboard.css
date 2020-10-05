@@ -23,7 +23,6 @@ body {
 
 .container {
   width: 100%;
-  min-height: 80rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,6 +489,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 70vw;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -548,7 +548,8 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+ "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 
@@ -636,6 +637,9 @@ body {
   .dashboard__main .main__profileinfo .pictureandbasic .info p {
     width: auto !important;
     overflow: hidden;
+  }
+  .cards{
+    width: 100%;
   }
   .cards .card {
     width: 100%;

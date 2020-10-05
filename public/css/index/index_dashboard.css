@@ -438,7 +438,9 @@ body::-webkit-scrollbar-thumb {
   color: #721c24;
   border-color: #f5c6cb;
 }
-
+#panel101{
+  width: 70%;
+}
 /*The Close Button */
 .closebtn {
   margin-left: 15px;

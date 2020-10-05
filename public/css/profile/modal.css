@@ -353,6 +353,7 @@
   line-height: 1.5em;
   letter-spacing: 0.01em;
   font-style: normal;
+  cursor: pointer;
   font-weight: 300;
   font-family: sans-serif;
   -webkit-transition: all 0.2s;
@@ -403,6 +404,7 @@
 .addAchievementModal .backPart .backlogo1,
 .addSkillsModal .backPart .backlogo,
 .addSkillsModal .backPart .backlogo1 {
+  cursor: pointer;
   width: 3rem;
   height: 3rem;
 }
@@ -472,6 +474,7 @@
   color: #303030 !important;
   background-color: #eeeeee;
   position: relative;
+  cursor: pointer;
   height: 100%;
   opacity: 1;
   width: 10rem;
@@ -540,6 +543,7 @@
 .addAchievementModal .socials .items .submit_photo:hover,
 .addSkillsModal .socials .items .submit_photo:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .editProfileModal .socials .items .photo img,
