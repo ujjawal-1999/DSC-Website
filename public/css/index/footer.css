@@ -7,7 +7,7 @@
 .nav_mainmenu {
   display: flex;
   flex-direction: row;
-  margin: 7vh 0;
+  padding-top: 4vh;
   justify-content: space-around;
   align-items: center;
 }
@@ -117,7 +117,7 @@
   /* height: 12rem; */
   justify-content: space-around;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 0.1rem 0;
 }
 
 .fadedText {

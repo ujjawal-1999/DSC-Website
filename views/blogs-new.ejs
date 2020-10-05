@@ -41,8 +41,7 @@
     <!----------------------------- Main Site Section ------------------------------>
     <main>
       <section class="cards">
-        <% var num =0 %> <% newBlogs.forEach(function(blog){%> <%if(num == 4)
-        {%> <% return false %> <%}%> <% num ++ %>
+        <% var num =0 %> <% newBlogs.forEach(function(blog){%>
         <div class="card-container">
           <div class="card-image">
             <div class="card-img">
@@ -58,7 +57,7 @@
               </p>
             </div>
             <div class="card-author">
-              <img src="<%= blog.author.profileImageLocation%>" />
+              <img src="/upload/<%= blog.author.profileImageLocation%>" />
               <h3><%= blog.author.name%></h3>
               <p><%- blog.author.createdAt.toString().substring(0,16)%></p>
             </div>

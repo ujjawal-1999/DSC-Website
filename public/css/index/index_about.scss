@@ -8,12 +8,12 @@
 
     .background {
       &__image {
-        width: 40rem;
+        width: 35rem;
       }
     }
 
     .content {
-      width: 30rem;
+      width: 35rem;
 
       .heading {
         &__primary {
@@ -26,6 +26,7 @@
           font-family: Arial, Helvetica, sans-serif;
           font-size: 1.2rem;
           line-height: 2rem;
+          opacity: 0.9;
         }
       }
     }
