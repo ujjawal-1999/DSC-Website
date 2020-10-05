@@ -627,3 +627,28 @@
   margin-bottom: 5px;
 }
 /*# sourceMappingURL=modal.css.map */
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding:10px 5px;
+    font-size:1.3em;
+    background:rgb(56, 180, 201);
+    border-radius:3px;
+    color:white;
+    transition:0.4s;
+}
+.custom-file-upload>span{
+  color:black;
+  padding:10px;
+  font-size:1.3em;
+  font-weight: normal;
+}
+.custom-file-upload:hover {
+    border: 1px solid #ccc;
+    background:white;
+    color:black;
+}
+#fileSubmitButton {
+    display: none;
+}

@@ -132,24 +132,29 @@
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <form
+                style="width:100%;padding:0px auto;"
                 action="profile/upload/<%=user.id%>"
                 method="post"
                 enctype="multipart/form-data"
                 class="uploadImageForm"
               >
                 <div class="upload-btn-wrapper">
+
+                <label style="width:200px;"class="custom-file-upload">
                   <input
-                    name="profile-image"
                     type="file"
-                    class="file-upload-field"
+                    name="profile-image"
                     value=""
                     id="fileSubmitButton"
-                  />
+                  >
+                  <span> Change Photo</span>
+                </label>
+
                   <input
-                    style="width: 100%; color: rgb(238, 238, 238)!important"
+                    style="width:200px;height:40px; color: rgb(238, 238, 238)!important"
                     type="submit"
                     class="submit"
-                    value="Submit Photo"
+                    value="Change"
                   />
                 </div>
               </form>
