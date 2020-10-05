@@ -53,7 +53,7 @@
         <div class="card-person">
           <div class="card-author">
             <% if(blog.author.profileImageLocation) {%>
-            <img src="<%=blog.author.profileImageLocation%>" />
+            <img src="/upload/<%= blog.author.profileImageLocation%>"" />
             <% } %>
 
             <div class="name"><%=blog.author.name%></div>
