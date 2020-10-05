@@ -170,15 +170,14 @@ body::-webkit-scrollbar-thumb {
   background-position: bottom left;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin-top: -5rem;
   background-color: var(--primary-light);
 }
 
 .header .dsclogo {
   height: 50%;
   opacity: 0;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
 }
 
 .header .dsclogoMobile {

@@ -569,7 +569,6 @@
 .addAchievementModal .socials .items a,
 .addSkillsModal .socials .items a {
   margin-left: 1rem;
-  padding-top: 10px;
   text-decoration: none;
   color: var(--white);
 }
