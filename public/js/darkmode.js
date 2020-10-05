@@ -12,7 +12,7 @@ if (themestart == "Light") {
 
 toogler.addEventListener("click", () => {
   var theme = localStorage.getItem("theme");
-  console.log(toogler.checked);
+  // console.log(toogler.checked);
   setTheme(theme);
 });
 
