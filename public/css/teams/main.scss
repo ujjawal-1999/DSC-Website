@@ -93,7 +93,7 @@ img {
   flex-direction: column;
 
   .thumbnail {
-    object-fit: contain;
+    object-fit: cover;
     align-self: center;
     height: 10em;
     width: 10em;
