@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="/img/logo/dsc_logo.png"
+  />
     <!-- Stylings Starts-->
     <link rel="stylesheet" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
@@ -127,35 +132,44 @@
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <form
+                style="width:100%;padding:0px auto;"
                 action="profile/upload/<%=user.id%>"
                 method="post"
                 enctype="multipart/form-data"
                 class="uploadImageForm"
               >
                 <div class="upload-btn-wrapper">
+
+                <label style="width:200px;"class="custom-file-upload">
                   <input
-                    name="profile-image"
                     type="file"
-                    class="file-upload-field"
+                    name="profile-image"
                     value=""
                     id="fileSubmitButton"
-                  />
+                  >
+                  <span> Choose Photo</span>
+                </label>
+
                   <input
-                    style="width: 100%; color: rgb(238, 238, 238)!important"
+                    style="width:200px;height:40px; color: rgb(238, 238, 238)!important"
                     type="submit"
                     class="submit"
-                    value="Submit Photo"
+                    value="Upload"
                   />
                 </div>
               </form>
             </div>
             <div class="items link">
-              <img src="/img/logo/link.png" alt="" />
-              <a href="">Connect to Linkedin</a>
+              <nobr style="display:flex;align-items:center;"> 
+                <img src="/img/logo/link.png" alt="" />
+                <a href="">Connect to Linkedin</a>
+              </nobr>
             </div>
-            <div class="items twitter">
-              <img src="/img/logo/twitter.png" alt="" />
-              <a href="">Connect to Twitter</a>
+            <div  class="items twitter">
+              <nobr style="display:flex;align-items:center;">
+                <img src="/img/logo/twitter.png" alt="" />
+                <a href="">Connect to Twitter</a>
+              </nobr>
             </div>
           </div>
           <p></p>

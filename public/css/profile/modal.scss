@@ -60,7 +60,7 @@
   transition: all 0.5s;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px), (max-height: 820px) {
   .editProfileModal,
   .addAchievementModal,
   .addExperienceModal,
@@ -276,8 +276,8 @@
   #subscribeBox {
     position: relative;
     margin: 0 auto;
-    padding: 10px 0;
-    height: 80%;
+    padding: 2rem 0;
+    height: auto !important;
     width: 80%;
     // min-width: 325px;
     display: flex;
@@ -402,20 +402,28 @@
     align-self: center;
   }
 }
-.custom-file-upload-hidden {
-  display: none;
-  visibility: hidden;
-  position: absolute;
-  left: -9999px;
-}
+
 .custom-file-upload {
-  display: block;
-  width: auto;
-  font-size: 16px;
-  margin-top: 30px;
-  //border: 1px solid #ccc;
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-size: 1.3em;
+  background: white;
+  border-radius: 3px;
+  color: black;
+  transition: 0.4s;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+}
+.custom-file-upload > span {
+  color: black;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.custom-file-upload:hover {
+  opacity: 0.8;
+}
+#fileSubmitButton {
+  display: none;
 }

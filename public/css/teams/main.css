@@ -104,8 +104,8 @@ img {
 }
 
 .front .thumbnail {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
