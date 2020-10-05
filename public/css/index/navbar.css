@@ -439,7 +439,8 @@ input {
   display: none;
   align-items: center;
   width: 90%;
-  height: 50vh;
+  max-height: 50vh;
+  height: auto;
   top: 95%;
   left: 50%;
   /* transform: translate(-50%, -50%); */
