@@ -7,7 +7,6 @@ body {
   height: 100vh;
   overflow: scroll;
   overflow-x: hidden;
-  /* border: 10px solid #ff4654; */
   color: #0f1923;
   font: 400 18px/22px "Rajdhani", sans-serif;
 }
@@ -108,6 +107,9 @@ body {
   padding: 0 8px;
   font: 400 18px "Rajdhani", sans-serif;
   opacity: 0.8;
+  background-color: var(--Grey-light-1);
+  color: var(--Grey-dark-1);
+  border-bottom: 0.5px solid;
 }
 .signup-form select {
   width: 95%;
@@ -207,12 +209,12 @@ body {
   text-decoration: none;
   color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px;
+  padding: 8px;
   border-radius: 2px;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  width: 12rem;
+  width: 13rem;
   height: 4rem;
   transition: all 0.2s;
 }

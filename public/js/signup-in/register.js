@@ -9,6 +9,13 @@ var label = document.getElementById("label");
 var signupform = document.getElementById("signupform");
 var loginform = document.getElementById("loginform");
 
+var url = new URL(window.location.href);
+// console.log(url.searchParams.get("type"));
+
+if (url.searchParams.get("type") == "login") {
+  login();
+}
+
 //Animation
 loginswitcher.addEventListener("click", () => {
   login();
@@ -68,7 +75,7 @@ function signup() {
 
 function login() {
   const timeline = anime.timeline({
-    duration: 200,
+    duration: 100,
     easing: "easeInOutExpo",
   });
 
