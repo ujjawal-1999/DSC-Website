@@ -207,12 +207,12 @@ body {
   text-decoration: none;
   color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px;
+  padding: 8px;
   border-radius: 2px;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  width: 12rem;
+  width: 13rem;
   height: 4rem;
   transition: all 0.2s;
 }
