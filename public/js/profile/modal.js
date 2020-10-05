@@ -79,6 +79,10 @@ function addExperienceModalvalidate() {
     alert("Job Role is too short !");
     return false;
   }
+  if (exp_startdate > exp_enddate) {
+    alert("Start Date cannot be ahead of End Date !");
+    return false;
+  }
   if (exp_description.length < 4) {
     alert("Description is too short !");
     return false;
@@ -149,11 +153,26 @@ backBtn3.addEventListener("click", () => {
   addProjectModal.style.opacity = "0";
   addProjectModal.style.pointerEvents = "none";
 });
+function statusListenerProject() {
+  var prj_status = document.forms["addProjectForm"]["prj_status"].value;
+  if (prj_status == "Ongoing") {
+    document.getElementById("enddate").disabled = true;
+    document.getElementById("enddate").type = "text";
+    document.forms["addProjectForm"]["enddate"].value = "Till Now";
+  } else if (prj_status == "Scheduled") {
+    document.getElementById("enddate").disabled = true;
+    document.getElementById("enddate").type = "text";
+    document.forms["addProjectForm"]["enddate"].value = "Till Now";
+  } else {
+    document.getElementById("enddate").disabled = false;
+    document.getElementById("enddate").type = "date";
+  }
+}
 function addProjectModalvalidate() {
   var title = document.forms["addProjectForm"]["title"].value;
   var role = document.forms["addProjectForm"]["role"].value;
-  // var startdate = document.forms["addProjectForm"]["startdate"].value;
-  // var enddate = document.forms["addProjectForm"]["enddate"].value;
+  var startdate = document.forms["addProjectForm"]["startdate"].value;
+  var enddate = document.forms["addProjectForm"]["enddate"].value;
   var githuburl = document.forms["addProjectForm"]["githuburl"].value;
   var description = document.forms["addProjectForm"]["description"].value;
 
@@ -167,6 +186,10 @@ function addProjectModalvalidate() {
   }
   if (skilldescription.length < 4) {
     alert("Description is too short !");
+    return false;
+  }
+  if (startdate > enddate) {
+    alert("Start Date cannot be ahead of End Date !");
     return false;
   }
   if (

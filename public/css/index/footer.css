@@ -3,6 +3,7 @@
   flex-direction: column;
   background-color: var(--Grey-dark-4);
   color: var(--white);
+  width: 100%;
 }
 .nav_mainmenu {
   display: flex;

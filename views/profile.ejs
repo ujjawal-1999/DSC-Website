@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/img/logo/dsc_logo.png"
-  />
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
     <!-- Stylings Starts-->
     <link rel="stylesheet" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
@@ -132,26 +132,29 @@
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
               <form
-                style="width:100%;padding:0px auto;"
+                style="width: 100%; padding: 0px auto"
                 action="profile/upload/<%=user.id%>"
                 method="post"
                 enctype="multipart/form-data"
                 class="uploadImageForm"
               >
                 <div class="upload-btn-wrapper">
+                  <label style="width: 200px" class="custom-file-upload">
+                    <input
+                      type="file"
+                      name="profile-image"
+                      value=""
+                      id="fileSubmitButton"
+                    />
+                    <span> Choose Photo</span>
+                  </label>
 
-                <label style="width:200px;"class="custom-file-upload">
                   <input
-                    type="file"
-                    name="profile-image"
-                    value=""
-                    id="fileSubmitButton"
-                  >
-                  <span> Choose Photo</span>
-                </label>
-
-                  <input
-                    style="width:200px;height:40px; color: rgb(238, 238, 238)!important"
+                    style="
+                      width: 200px;
+                      height: 40px;
+                      color: rgb(238, 238, 238) !important;
+                    "
                     type="submit"
                     class="submit"
                     value="Upload"
@@ -160,13 +163,13 @@
               </form>
             </div>
             <div class="items link">
-              <nobr style="display:flex;align-items:center;"> 
+              <nobr style="display: flex; align-items: center">
                 <img src="/img/logo/link.png" alt="" />
                 <a href="">Connect to Linkedin</a>
               </nobr>
             </div>
-            <div  class="items twitter">
-              <nobr style="display:flex;align-items:center;">
+            <div class="items twitter">
+              <nobr style="display: flex; align-items: center">
                 <img src="/img/logo/twitter.png" alt="" />
                 <a href="">Connect to Twitter</a>
               </nobr>
@@ -423,6 +426,7 @@
               <label for="enddate">End Date</label>
               <input id="enddate" type="date" name="enddate" required />
             </div>
+
             <div class="flexRow">
               <label for="techstack">Techstacks</label>
               <select name="techstack" id="techstack" required>
@@ -730,22 +734,20 @@
                             alt=""
                           />
                           <% }else{%>
-                          <img src="/img/logo/profile.png" alt="" /> <% }%>
-                          <!-- <div class="sharable">
-                            <p>Share on</p>
-                            <img class="s" src="/img/logo/fb.png" alt="" />
-                            <img class="s" src="/img/logo/link.png" alt="" />
-                          </div> -->
+                          <img src="/img/logo/profile.png" alt="" />
+
+                          <% }%>
+                          <i class="fas fa-eye" style="font-size: 12px" >
+                            <%= blog.views %></i
+                          >
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
-                          <p class="description">
+                          <div class="description">
                             <%- blog.body.substring(0, 300)%>
-                            <a href="/dsc/blog/view/<%= blog.slug%>"
-                              >... Read more</a
-                            >
-                          </p>
+                          </div>
+                          <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
                               <img class="post-images" src="<%= blog.cover%>""
@@ -859,7 +861,7 @@
                             </div>
                           </div>
                           <div class="project-name">
-                              <h4><%= project.title %></h4>
+                            <h4><%= project.title %></h4>
                           </div>
                           <div class="git-link">
                             <a href="https://github.com/" add target="_blank"
