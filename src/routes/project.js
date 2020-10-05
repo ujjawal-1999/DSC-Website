@@ -25,8 +25,8 @@ const Coremember = []; //Array of core members
 //Function to Check Core Members
 
 const CorememberAuth = async (token) => {
+  var user = await User.findById(user.id);
   try {
-    let user = await User.findById(user.id);
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else {
@@ -41,7 +41,7 @@ const CorememberAuth = async (token) => {
 };
 
 // get route to the "/dsc/project"
-router.get("/", CorememberAuth, async (req, res) => {
+router.get("/", auth, async (req, res) => {
   // const finduser = await User.find();
   // const projects = await Projects.find().sort(
   //     {createdAt: 'desc'}
