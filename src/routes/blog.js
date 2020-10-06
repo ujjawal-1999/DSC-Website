@@ -110,6 +110,19 @@ router.get("/bookmarks", auth, async (req, res) => {
     bookmarks: bookmarks,
   });
 });
+router.get("/delete/bookmark/:bookmark_id", auth, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.bookmarkBlogs = user.bookmarkBlogs.filter(
+      (bookmark) => !bookmark._id.equals(req.params.bookmark_id)
+    );
+    await user.save();
+    res.redirect("/dsc/blog/bookmarks");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
 
 //Establish Storage for file upload
 const storage = multer.diskStorage({

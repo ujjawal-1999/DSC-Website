@@ -829,7 +829,7 @@
                               <b>&#9899;</b><%= experience.startdate %> - <%=
                               experience.enddate %>
                             </div>
-                            
+
                             <button>
                               <a
                                 class="delete-exp"
@@ -872,7 +872,13 @@
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
                       </div>
-                      <button> <a class="delete-ski" href="/dsc/user/delete/skill/<%= skill._id %>"><img src="/img/profile/trash.svg"></a></button>
+                      <button>
+                        <a
+                          class="delete-ski"
+                          href="/dsc/user/delete/skill/<%= skill._id %>"
+                          ><img src="/img/profile/trash.svg"
+                        /></a>
+                      </button>
                       <%})%>
                     </div>
                   </div>
@@ -890,6 +896,15 @@
                       <div class="items">
                         <% user.personalProjects.forEach((project) => {%>
                         <div class="item item1">
+                          <center>
+                            <button>
+                              <a
+                                class="delete-prj"
+                                href="/dsc/user/delete/project/personal/<%= project._id %>"
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
+                            </button>
+                          </center>
                           <div class="project-lang">
                             <div class="lang lang1">
                               <img
@@ -931,7 +946,7 @@
                             </h3>
                           </div>
                         </div>
-                        <button> <a class="delete-prj" href="/dsc/user/delete/project/personal/<%= project._id %>"><img src="/img/profile/trash.svg"></a></button>
+
                         <%})%>
                       </div>
                     </section>
@@ -973,7 +988,13 @@
                                      <a>
                                    <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
                                    </div>-->
-                                   <button> <a class="delete-ach" href="/dsc/user/delete/achievement/<%= ach._id %>"><img src="/img/profile/trash.svg"></a></button>
+                            <button>
+                              <a
+                                class="delete-ach"
+                                href="/dsc/user/delete/achievement/<%= ach._id %>"
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
+                            </button>
                           </div>
                         </div>
                         <%})%>
