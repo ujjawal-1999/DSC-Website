@@ -161,6 +161,17 @@ router.get("/", (req, res) => {
   res.json({ message: "User routes connected" });
 });
 
+// route to check if the handle is vaild
+router.get("/verify-handle/:handle", async (req, res) => {
+  const handle = req.params.handle.toLowerCase();
+  const found = await User.find({ dscHandle: handle });
+  const valid = /([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/.test(handle);
+  res.json({
+    inUse: found.length !== 0,
+    valid: valid,
+  });
+});
+
 //get route for signup
 router.get("/register", async (req, res) => {
   var token = req.cookies.authorization;
