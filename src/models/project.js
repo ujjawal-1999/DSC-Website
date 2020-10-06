@@ -13,6 +13,10 @@ const projectSchema = new Schema(
     role: {
       type: String,
     },
+    hostLink: {
+        type: String
+    },
+
     startdate: { type: String },
     enddate: { type: String },
     techstack: { type: String },
