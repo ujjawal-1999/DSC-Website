@@ -92,6 +92,11 @@ input[type="file"] {
   word-wrap: anywhere;
 }
 
+button a {
+  color: white;
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 850px) {
   form {
     grid-template-areas: "title title btns" "img img img" "body body body";
