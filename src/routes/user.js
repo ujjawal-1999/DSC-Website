@@ -426,10 +426,10 @@ router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
-    const userBlog = await blog.find();
-    req.dbUser = await (
-      await User.findOne({ dscHandle: req.params.handle })
-    ).populate("blogs");
+    const userBlog = await Blog.find();
+    req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+      .populate("blogs")
+      .execPopulate();
     if (req.dbUser) {
       res.render("public-profile", {
         user: req.dbUser,

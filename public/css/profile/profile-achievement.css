@@ -19,16 +19,12 @@
   .accordion {
     font-size: 10px;
   }
-
-  #date {
-    display: none;
-  }
 }
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .tooltip img {
     display: none;
   }
-}
+} */
 .logoandcompany {
   width: auto;
 }
@@ -87,7 +83,6 @@
   font-size: 1rem;
 }
 .row-ach p {
-
   font-size: 10px;
   color: var(--Grey-dark-2);
   font-size: 15px;
@@ -107,21 +102,19 @@
 }
 
 .tooltip {
-  position: absolute;
-  display: inline-block;
-  height: 1.4375rem;
-  line-height: 1.4375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 1.25rem;
-  right: 10rem;
+  /* right: 10rem; */
   border-radius: 10px;
   font-size: 0.7rem;
   justify-self: flex-end;
 }
 .tooltip img {
   size: 5px;
-  height: 2rem;
+  height: 1rem;
   width: 2rem;
-  padding-top: 1rem;
 }
 
 .tooltip .tooltiptext {
@@ -159,11 +152,8 @@
 }
 .delete-ach img {
   size: 5px;
-  width: 42px;
-  height: 42px;
+  height: 50px;
   border: 0px;
-  position: absolute;
-  left: 57rem;
 }
 
 .edit-ach img {
@@ -187,9 +177,8 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width:760px)
-{
-  .cards_ach{
+@media screen and (max-width: 760px) {
+  .cards_ach {
     padding-left: 0;
   }
 }

@@ -826,28 +826,51 @@
                         if(user.experiences){user.experiences.forEach((experience=>
                         { %>
                         <div class="row">
-                          <div class="column">
-                            <img
-                              src="/img/logo/experience-default.png"
-                              alt="lo"
-                            />
-                            <h3 class="accordion">
-                              <%= experience.role %><br />
-                              <p><%= experience.name %></p>
-                            </h3>
-
-                            <div id="mention">
-                              <b>&#9899;</b><%= experience.startdate %> - <%=
-                              experience.enddate %>
+                          <div
+                            class="column"
+                            style="
+                              width: 100%;
+                              display: flex;
+                              justify-content: space-between;
+                            "
+                          >
+                            <div
+                              style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                              "
+                            >
+                              <img
+                                src="/img/logo/experience-default.png"
+                                alt="lo"
+                              />
+                              <h3 class="accordion">
+                                <%= experience.role %><br />
+                                <p><%= experience.name %></p>
+                              </h3>
                             </div>
 
-                            <button>
+                            <div
+                              style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                              "
+                            >
+                              <div id="mention">
+                                <b>&#9899;</b><%= experience.startdate %> - <%=
+                                experience.enddate %>
+                              </div>
+
                               <a
                                 class="delete-exp"
                                 href="/dsc/user/delete/experience/<%= experience._id %>"
                                 ><img src="/img/profile/trash.svg"
                               /></a>
-                            </button>
+                            </div>
                           </div>
                           <div class="panelexp">
                             <p><%= experience.description %></p>
@@ -882,14 +905,13 @@
                           <h4 class="skill-time"><%= skill.description%></h4>
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
-                      </div>
-                      <button>
                         <a
                           class="delete-ski"
                           href="/dsc/user/delete/skill/<%= skill._id %>"
                           ><img src="/img/profile/trash.svg"
                         /></a>
-                      </button>
+                      </div>
+
                       <%})%>
                     </div>
                   </div>
@@ -907,15 +929,6 @@
                       <div class="items">
                         <% user.personalProjects.forEach((project) => {%>
                         <div class="item item1">
-                          <center>
-                            <button>
-                              <a
-                                class="delete-prj"
-                                href="/dsc/user/delete/project/personal/<%= project._id %>"
-                                ><img src="/img/profile/trash.svg"
-                              /></a>
-                            </button>
-                          </center>
                           <div class="project-lang">
                             <div class="lang lang1">
                               <img
@@ -928,6 +941,9 @@
                           <div class="project-name">
                             <h4><%= project.title %></h4>
                           </div>
+                          <p style="margin: 0.5rem 0">
+                            <%= project.techstack %>
+                          </p>
                           <div class="git-link">
                             <a
                               href="<%= project.githuburl %>"
@@ -943,7 +959,7 @@
                             >
                           </div>
                           <%}%>
-                          <p><%= project.techstack %></p>
+
                           <div
                             class="project-description"
                             style="word-wrap: anywhere"
@@ -956,6 +972,13 @@
                               <%= project.startdate %> to <%= project.enddate %>
                             </h3>
                           </div>
+                          <center>
+                            <a
+                              class="delete-prj"
+                              href="/dsc/user/delete/project/personal/<%= project._id %>"
+                              ><img src="/img/profile/trash.svg"
+                            /></a>
+                          </center>
                         </div>
 
                         <%})%>
@@ -976,36 +999,39 @@
                       <div class="card_ach">
                         <% user.achievements.forEach((ach) => {%>
                         <div class="row-ach">
-                          <div class="column-ach">
-                            <img
-                              src="/img/logo/achievement-default.png"
-                              alt="company"
-                            />
-                            <h3 class="tab-ach">
-                              <%= ach.name %><br />
-                              <p><%= ach.platform%></p>
-                            </h3>
-                            <div id="date">
-                              <b>&#9899;</b>
-                              <%= ach.date%>
+                          <div
+                            class="column-ach"
+                            style="
+                              display: flex;
+                              justify-content: space-between;
+                            "
+                          >
+                            <div style="display: flex; align-items: center">
+                              <img
+                                src="/img/logo/achievement-default.png"
+                                alt="company"
+                              />
+                              <h3 class="tab-ach">
+                                <%= ach.name %><br />
+                                <p><%= ach.platform%></p>
+                              </h3>
                             </div>
+                            <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
                               >
-                            </div>
-                            <!--<div class="bookmarks">
-                                     <a>
-                                   <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
-                                   </div>-->
-                            <button>
                               <a
                                 class="delete-ach"
                                 href="/dsc/user/delete/achievement/<%= ach._id %>"
                                 ><img src="/img/profile/trash.svg"
                               /></a>
-                            </button>
+                            </div>
+                            <!--<div class="bookmarks">
+                                     <a>
+                                   <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                   </div>-->
                           </div>
                         </div>
                         <%})%>
