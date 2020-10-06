@@ -430,7 +430,7 @@ router.get("/public-profile/:id", async (req, res) => {
         }
       });
       // console.log(timelineBlogs);
-      res.render("profile", {
+      res.render("public-profile", {
         user: req.dbUser,
         myblogs: timelineBlogs,
         found: finduser,
