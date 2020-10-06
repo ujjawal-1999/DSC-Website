@@ -360,10 +360,13 @@ ul.blog-search-results li {
 }
 
 .blog-search .inner-search {
+  display: flex;
   margin: 2em;
   padding: 2em;
   border-radius: 40px;
-  background-color: #4478ff;
+  background-color: var(--Grey-light-1);
+  justify-content: space-around;
+  align-content: center;
   box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
 }
 
@@ -371,6 +374,24 @@ ul.blog-search-results li {
   color: white;
 }
 
+.fndp {
+  border: 1px solid;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  border-radius: 3px;
+  width: fit-content;
+  transition: all 0.2s;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
+}
+
+.fndp:hover {
+  cursor: pointer;
+  color: var(--Grey-light-1);
+  background-color: var(--Grey-dark-1);
+  border-color: var(--Grey-dark-1);
+}
 #search2 {
   border-radius: 45px;
   height: 2em;
