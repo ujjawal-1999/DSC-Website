@@ -207,7 +207,7 @@ router.post("/create", auth, upload.single("cover"), async (req, res) => {
     } else {
       req.dbUser.blogs = [saved];
     }
-    await dbUser.save();
+    await req.dbUser.save();
     res.redirect("/dsc/blog");
   } catch (e) {
     console.log(e.message);

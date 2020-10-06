@@ -402,19 +402,13 @@ router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
     const finduser = await User.find();
-    const userBlog = await blog.find();
+    // const userBlog = await blog.find();
     if (token) {
-      jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        var timelineBlogs = [];
-        userBlog.forEach((blog) => {
-          if (blog.author == req.dbUser.id) {
-            timelineBlogs.push(blog);
-          }
-        });
-        // console.log(timelineBlogs);
+      jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
+        await req.dbUser.populate("blogs").execPopulate();
         res.render("profile", {
           user: req.dbUser,
-          myblogs: timelineBlogs,
+          // myblogs: req.dbuser.blogs,
           found: finduser,
         });
       });
@@ -432,20 +426,12 @@ router.get("/public-profile/:handle", async (req, res) => {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
     const userBlog = await blog.find();
-    req.dbUser = await User.findOne({ dscHandle: req.params.handle });
+    req.dbUser = await (
+      await User.findOne({ dscHandle: req.params.handle })
+    ).populate("blogs");
     if (req.dbUser) {
-      var timelineBlogs = [];
-      userBlog.forEach((blog) => {
-        if (blog.author == req.dbUser.id) {
-          timelineBlogs.push(blog);
-        }
-      });
-      // console.log(timelineBlogs);
-      console.log(req.dbUser.dscHandle);
-      console.log(typeof req.dbUser);
       res.render("public-profile", {
         user: req.dbUser,
-        myblogs: timelineBlogs,
         found: finduser,
       });
     } else {
