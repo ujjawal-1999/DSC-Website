@@ -253,6 +253,7 @@
 
   .submit:hover {
     opacity: 0.8;
+    cursor: pointer;
   }
   /* Top-level Styling */
 
@@ -269,6 +270,7 @@
   /* Div Layout Styling */
   .backPart {
     width: 5%;
+   
     background-color: white !important;
     padding-left: 2rem !important;
     .backlogo,
