@@ -467,6 +467,7 @@
                 placeholder="Tech Stack"
                 type="text"
                 name="techstack"
+                maxlength="30"
                 required
               />
             </div>
@@ -474,7 +475,7 @@
               <label for="githuburl">Git Hub URL</label>
               <input
                 id="githuburl"
-                type="text"
+                type="url"
                 placeholder="Your Github repository link"
                 name="githuburl"
                 required
@@ -483,8 +484,8 @@
             <div class="flexRow">
               <label for="hosturl">Hosted URL</label>
               <input
-                id="githuburl"
-                type="text"
+                id="hosturl"
+                type="url"
                 placeholder="Your Hosted  link"
                 name="hosturl"
               />
@@ -782,11 +783,11 @@
                             <i class="fas fa-eye" style="font-size: 12px">
                               <%= blog.views %></i
                             >
-                            <a href="/dsc/user/blog/delete/<%= blog._id %>" style="color: red;">
-                              <i
-                                class="fas fa-trash"
-                                style="font-size: 18px; bac: inherit"
-                              >
+                            <a
+                              href="/dsc/user/blog/delete/<%= blog._id %>"
+                              style="color: red"
+                            >
+                              <i class="fas fa-trash" style="font-size: 18px">
                               </i>
                             </a>
                           </div>
