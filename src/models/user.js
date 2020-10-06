@@ -10,6 +10,7 @@ const userSchema = new Schema(
     },
     dscHandle: {
       type: String,
+      unique: true,
     },
     email: {
       type: String,
