@@ -29,8 +29,8 @@ function progressHandler(event) {
 }
 
 function completeHandler(event) {
-  // _("status").innerHTML = event.target.responseText;
-  progressBar.style.opacity = 0;
+  _("status").innerHTML = event.target.responseText;
+  //progressBar.style.opacity = 0;
   _("progressBar").value = "Uploaded Successfully";
 }
 
