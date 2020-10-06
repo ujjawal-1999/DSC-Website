@@ -104,7 +104,6 @@ router.get("/bookmarks", auth, async (req, res) => {
       return blog;
     })
   );
-  console.log(bookmarks[0]);
   res.render("bookmarks", {
     user: req.user,
     found: finduser,
