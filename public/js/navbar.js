@@ -16,7 +16,10 @@ let srh2 = document.getElementById("srh1");
 var flag = 1;
 
 window.addEventListener("click", (e) => {
-  if (e.target != document.getElementById("search_list1")) {
+  if (
+    e.target != document.getElementById("search_list1") &&
+    e.target != document.getElementById("collection-item2")
+  ) {
     console.log(e.target != document.getElementById("search_list1"));
     document.getElementById("search_list1").style.display = "none";
   }

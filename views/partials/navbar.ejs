@@ -56,7 +56,14 @@
           <div class="search" id="srh1"></div>
           <ul class="search-view" id="search_list1">
             <% found.forEach((user)=>{ %>
-            <li class="collection-item2"><a><%= user.name%></a></li>
+            <li class="collection-item2">
+              <a
+                href="dsc/user/public-profile/<%= user%> "
+                class="usersearch"
+                style="text-decoration: none"
+                ><%= user.name%></a
+              >
+            </li>
             <% }) %>
           </ul>
         </li>
