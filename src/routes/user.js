@@ -537,6 +537,11 @@ router.post("/profile", authorization, (req, res) => {
         branch: req.body.branch,
         batch: req.body.batchYear,
         bio: req.body.bio,
+        socialLinks: {
+          linkedin: req.body.linkedin,
+          twitter: req.body.twitter,
+          facebook: req.body.facebook,
+        },
       }).then((result) => {
         // console.log(result);
         res.redirect("/dsc/user/profile");

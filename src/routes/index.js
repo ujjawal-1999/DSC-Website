@@ -81,6 +81,18 @@ router.get("/members", async (req, res) => {
   } else res.render("dscmemberspage", { user: req.user, found: finduser });
 });
 
+router.get("/dscwebsitedeveloper", async (req, res) => {
+  var token = req.cookies.authorization;
+  const finduser = await User.find();
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      console.log(user);
+      res.render("websitedeveloper", { user: user, found: finduser });
+    });
+  } else res.render("websitedeveloper", { user: req.user, found: finduser });
+});
 //Establish Storage for file upload (Contact Us issues)
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
