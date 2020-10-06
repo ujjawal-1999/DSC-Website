@@ -31,11 +31,12 @@ function editProfileModalvalidate() {
   var name = document.forms["editprofileform"]["name"].value;
   var hname = document.forms["editprofileform"]["hname"].value;
   var bio = document.forms["editprofileform"]["bio"].value;
-
+  var hname = document.forms["editprofileform"]["hname"].value;
   if (name.length < 4) {
     alert("Full Name is too short !");
     return false;
   }
+
   if (hname.length < 4) {
     alert("DSC Handle Name is too short !");
     return false;
@@ -47,6 +48,7 @@ function editProfileModalvalidate() {
 
   return true;
 }
+
 // ###################################################################################
 // Experience Modal
 var addExperiencebtn = document.getElementById("addExperience");

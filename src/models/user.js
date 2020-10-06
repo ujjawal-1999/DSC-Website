@@ -98,6 +98,9 @@ const userSchema = new Schema(
         githuburl: {
           type: String,
         },
+        hosturl: {
+          type: String,
+        },
       },
     ],
     experiences: [

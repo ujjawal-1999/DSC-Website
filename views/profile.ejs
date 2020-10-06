@@ -206,23 +206,7 @@
                 maxlength="30"
               />
             </div>
-            <div class="flexRow">
-              <label for="hname">DSC Handle</label>
-
-              <input
-                id="hname"
-                type="text"
-                value="<% if(user.dscHandle!=null){%><%=user.dscHandle%><%}%>"
-                name="hname"
-                required
-                maxlength="20"
-                onchange="checkuniquedschandle()"
-              />
-            </div>
-            <div class="flexRow" id="">
-              <label for="hname"></label>
-              <label for="hname" id="uniqueness"></label>
-            </div>
+            <hr size="1px" />
             <div class="flexRow">
               <label for="degree">Degree</label>
               <select name="degree" id="degree" required>
@@ -256,6 +240,7 @@
                 <option value="2017-21">2017-21</option>
               </select>
             </div>
+            <hr size="1px" />
             <div class="flexRow">
               <label for="bio">Bio</label>
               <input
@@ -288,7 +273,6 @@
                 value="<% if(user.socialLinks['linkedin']!=null){%><%=user.socialLinks['linkedin']%><%}%>"
                 placeholder="Enter Your Linkedin account URL"
                 name="linkedin"
-                required
                 maxlength="200"
               />
             </div>
@@ -301,11 +285,10 @@
                 value="<% if(user.socialLinks['twitter']!=null){%><%=user.socialLinks['twitter']%><%}%>"
                 placeholder="Enter Your Twitter account URL"
                 name="twitter"
-                required
                 maxlength="200"
               />
             </div>
-
+            <hr size="1px" />
             <div class="flexRow">
               <label for="email">Email</label>
               <input
@@ -479,15 +462,13 @@
 
             <div class="flexRow">
               <label for="techstack">Techstacks</label>
-              <select name="techstack" id="techstack" required>
-                <option value="NWS">HTML, Vanilla JS</option>
-                <option value="MEN">NodeJs, Mongoose, Express</option>
-                <option value="MERN">ReactJs, Mongoose, Express</option>
-                <option value="MEAN">AngularJs, Mongoose, Express</option>
-                <option value="PWS">Python, DJango, Mongoose</option>
-                <option value="NAS">Java, Firebase</option>
-                <option value="FAS">Flutter, Firebase</option>
-              </select>
+              <input
+                id="techstack"
+                placeholder="Tech Stack"
+                type="text"
+                name="techstack"
+                required
+              />
             </div>
             <div class="flexRow">
               <label for="githuburl">Git Hub URL</label>
@@ -497,6 +478,15 @@
                 placeholder="Your Github repository link"
                 name="githuburl"
                 required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="hosturl">Hosted URL</label>
+              <input
+                id="githuburl"
+                type="text"
+                placeholder="Your Hosted  link"
+                name="hosturl"
               />
             </div>
             <div class="flexRow">
@@ -913,20 +903,32 @@
                             <h4><%= project.title %></h4>
                           </div>
                           <div class="git-link">
-                            <a href="https://github.com/" add target="_blank"
+                            <a
+                              href="<%= project.githuburl %>"
+                              add
+                              target="_blank"
                               ><h4>View on Github</h4></a
                             >
                           </div>
-                          <div class="project-description">
-                            <p>
-                              Lorem ipsum dolor, sit amet consectetur
-                              adipisicing elit. Placeat, omnis! Magni hic
-                              suscipit quos asperiores quis ducimus cumque
-                              aliquam illum?
-                            </p>
+                          <%if(project.hosturl){%>
+                          <div class="git-link">
+                            <a href="<%= project.hosturl %>" add target="_blank"
+                              ><h4>Visit Hosted URL</h4></a
+                            >
+                          </div>
+                          <%}%>
+                          <p><%= project.techstack %></p>
+                          <div
+                            class="project-description"
+                            style="word-wrap: anywhere"
+                          >
+                            <br />
+                            <p><%= project.description %></p>
                           </div>
                           <div class="project-duration">
-                            <h3>Aug 30 - Sept 30</h3>
+                            <h3>
+                              <%= project.startdate %> to <%= project.enddate %>
+                            </h3>
                           </div>
                         </div>
                         <button> <a class="delete-prj" href="/dsc/user/delete/project/personal/<%= project._id %>"><img src="/img/profile/trash.svg"></a></button>

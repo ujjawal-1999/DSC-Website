@@ -13,6 +13,11 @@
   transition: all 0.2s;
   top: 0;
 }
+#uniqueness {
+  color: #303030;
+  text-align: center;
+  margin: 0.5rem 0;
+}
 
 .modal img {
   width: 50%;
@@ -270,7 +275,7 @@
   /* Div Layout Styling */
   .backPart {
     width: 5%;
-   
+
     background-color: white !important;
     padding-left: 2rem !important;
     .backlogo,

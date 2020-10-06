@@ -561,6 +561,9 @@ router.post("/project/personal", authorization, async (req, res) => {
       role: req.body.role,
       techstack: req.body.techstack,
       githuburl: req.body.githuburl,
+      startdate: req.body.startdate,
+      enddate: req.body.enddate,
+      hosturl: req.body.hosturl,
     };
 
     user.personalProjects.push(newProject);
