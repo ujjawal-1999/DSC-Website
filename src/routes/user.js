@@ -439,6 +439,20 @@ router.post("/skill", authorization, async (req, res) => {
   }
 });
 
+router.get("/delete/skill/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.skills = user.skills.filter(
+      (skill) => !skill._id.equals(req.params.id)
+    );
+    await user.save();
+    res.status(200).redirect(res.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 router.post("/experience", authorization, async (req, res) => {
   try {
     // console.log("experience route called");
@@ -456,6 +470,20 @@ router.post("/experience", authorization, async (req, res) => {
     // console.log(newExp);
     await user.save();
     res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/delete/experience/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.experiences = user.experiences.filter(
+      (experience) => !experience._id.equals(req.params.id)
+    );
+    await user.save();
+    req.status(200).redirect(res.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -515,6 +543,20 @@ router.post("/project/personal", authorization, async (req, res) => {
   }
 });
 
+router.get("/delete/project/personal/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.personalProjects = user.personalProjects.filter(
+      (proj) => !proj._id.equals(req.params.id)
+    );
+    await user.save();
+    res.status(200).redirect(res.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 //to add new achievement
 router.post("/achievement", authorization, async (req, res) => {
   try {
@@ -534,6 +576,20 @@ router.post("/achievement", authorization, async (req, res) => {
     // console.log(user);
 
     res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/delete/achievement/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.achievements = user.achievements.filter(
+      (achievement) => !achievement._id.equals(req.params.id)
+    );
+    await user.save();
+    res.status(200).redirect(res.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
