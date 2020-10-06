@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/css/register/register.css" />
     <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="/img/logo/dsc_logo.png"
-  />
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -49,7 +49,23 @@
             required
             minlength="6"
             maxlength="30"
+            id="name"
           />
+
+          <label for="hname">DSC Handle</label>
+
+          <input
+            id="hname"
+            type="text"
+            placeholder="Enter a unique DSC handle"
+            name="hname"
+            required
+            maxlength="20"
+            onchange="return checkuniquedschandle()"
+          />
+
+          <p id="uniqueness"></p>
+
           <label for="email">Email</label
           ><input
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -121,7 +137,7 @@
           </a>
         </div>
       </div>
-      
+
       <div class="signup-form" id="loginform">
         <h1 class="mobileheading">Login</h1>
         <form action="/dsc/user/login" method="POST">

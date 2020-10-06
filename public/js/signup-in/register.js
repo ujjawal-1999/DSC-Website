@@ -1,5 +1,6 @@
 var slider = document.querySelector(".heading-block");
 var container = document.getElementById("container");
+var cansubmit = true;
 //Switchers
 var loginswitcher = document.getElementById("switchtologin");
 var switchtosignup = document.getElementById("switchtosignup");
@@ -11,7 +12,6 @@ var loginform = document.getElementById("loginform");
 
 var url = new URL(window.location.href);
 // console.log(url.searchParams.get("type"));
-
 if (url.searchParams.get("type") == "login") {
   login();
 }
@@ -126,18 +126,38 @@ function login() {
 // Validation Logic
 
 function validate() {
+  var name = document.getElementById("name").value;
   var ps = document.getElementById("password").value;
   var cps = document.getElementById("cpassword").value;
   var signup = document.getElementById("signupform");
-  if (ps == cps) {
-    console.log("true");
-    signup.submit();
-    return true;
-  } else {
-    alert("Password doesn't match");
-    console.log("false");
+  var hname = document.getElementById("hname").value;
+
+  // var urlget = "/dsc/user/verify-handle/" + hname;
+  // var response = await fetch(urlget, { method: "GET" });
+  // var res = await response.json();
+
+  if (name.length < 5) {
+    alert("Name is too short !");
     return false;
   }
+
+  if (ps.length < 3) {
+    alert("Password is weak !");
+    return false;
+  }
+  if (ps < 4 && cps < 4) {
+    alert("Password is too short ! ");
+    return false;
+  }
+  if (ps != cps) {
+    alert("Password doesn't match !");
+    return false;
+  }
+  if (cansubmit == false) {
+    alert("Enter a unique DSC Handle");
+    return false;
+  }
+  return true;
 }
 
 function showpasswordsignup() {
@@ -159,5 +179,25 @@ function showpasswordlogin() {
     ps.type = "text";
   } else {
     ps.type = "password";
+  }
+}
+
+async function checkuniquedschandle() {
+  var hname = document.forms["signupform"]["hname"].value;
+  var result = document.getElementById("uniqueness");
+  var urlget = "/dsc/user/verify-handle/" + hname;
+  var response = await fetch(urlget, { method: "GET" });
+  var res = await response.json(); /*  */
+  if (res.inUse == true) {
+    result.style.color = "Red";
+    result.innerHTML = "Already in Use";
+    cansubmit = false;
+    return false;
+  }
+  if (res.inUse == false) {
+    result.style.color = "Green";
+    result.innerHTML = "Handle Available";
+    cansubmit = true;
+    return true;
   }
 }

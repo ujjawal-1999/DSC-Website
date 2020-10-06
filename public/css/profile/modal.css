@@ -20,6 +20,12 @@
   top: 0;
 }
 
+#uniqueness {
+  color: #303030;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
 .modal img {
   width: 50%;
 }
