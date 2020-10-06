@@ -267,6 +267,7 @@ p {
   grid-area: buttons;
   align-self: end;
   padding: 1em;
+  min-width: 10em;
 }
 
 .card-buttons button {

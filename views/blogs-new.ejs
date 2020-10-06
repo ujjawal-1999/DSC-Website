@@ -56,7 +56,7 @@
             <div class="card-text">
               <h1><%= blog.title%></h1>
               <p>
-                <%- blog.body.summary%>
+                <%- blog.summary%>
                 <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
               </p>
             </div>
@@ -137,7 +137,7 @@
               <div class="numbering"><%= i++ %></div>
               <div class="content">
                 <span class="title"><%= blog.title%> </span><br />
-                <span class="intro"> <%- blog.body.summary%></span><br />
+                <span class="intro"> <%- blog.summary%></span><br />
                 <span class="date"> 20 sept, 2020 </span>
               </div>
             </div>
