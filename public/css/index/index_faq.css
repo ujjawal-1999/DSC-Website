@@ -72,6 +72,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -87,9 +89,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  height: 18rem;
   margin: 1rem 2rem;
-  background-color: var(--Grey-light-2);
+  background-color: var(--Grey-light-1);
   padding: 2rem;
+  width: 20%;
+  overflow-y: scroll;
 }
 
 .faq-section .lower .sub h4 {
@@ -110,10 +118,6 @@
   font-family: Arial, Helvetica, sans-serif;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.faq-section .lower .sub p:hover {
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

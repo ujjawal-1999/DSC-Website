@@ -175,7 +175,7 @@
             <div class="items twitter">
               <nobr style="display: flex; align-items: center">
                 <img src="/img/logo/twitter.png" alt="" />
-                <a href=""
+                <a href="#"
                   >Connect to Twitter<br />
                   <span>(Feature Coming Soon)</span></a
                 >
@@ -208,6 +208,7 @@
             </div>
             <div class="flexRow">
               <label for="hname">DSC Handle</label>
+
               <input
                 id="hname"
                 type="text"
@@ -215,9 +216,13 @@
                 name="hname"
                 required
                 maxlength="20"
+                onchange="checkuniquedschandle()"
               />
             </div>
-
+            <div class="flexRow" id="">
+              <label for="hname"></label>
+              <label for="hname" id="uniqueness"></label>
+            </div>
             <div class="flexRow">
               <label for="degree">Degree</label>
               <select name="degree" id="degree" required>
@@ -264,23 +269,37 @@
               />
             </div>
             <div class="flexRow">
-              <label for="bio"> LinkedIn </label>
+              <label for="facebook"> Facebook </label>
               <input
-                id="LinkedIn"
+                id="facebook"
                 type="url"
+                value="<% if(user.socialLinks['facebook']!=null){%><%=user.socialLinks['facebook']%><%}%>"
+                placeholder="Enter Your Facebook account URL"
+                name="facebook"
+                required
+                maxlength="200"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="linkedin"> LinkedIn </label>
+              <input
+                id="linkedin"
+                type="url"
+                value="<% if(user.socialLinks['linkedin']!=null){%><%=user.socialLinks['linkedin']%><%}%>"
                 placeholder="Enter Your Linkedin account URL"
-                name="LinkedIn"
+                name="linkedin"
                 required
                 maxlength="200"
               />
             </div>
 
             <div class="flexRow">
-              <label for="bio"> Twitter </label>
+              <label for="twitter"> Twitter </label>
               <input
-                id="Twitter"
+                id="twitter"
                 type="url"
-                placeholder="Enter Your twitter account URL"
+                value="<% if(user.socialLinks['twitter']!=null){%><%=user.socialLinks['twitter']%><%}%>"
+                placeholder="Enter Your Twitter account URL"
                 name="twitter"
                 required
                 maxlength="200"
@@ -664,7 +683,7 @@
                 <div class="branchandyear">
                   <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
-                    <a href='<%= user.socialLinks["facebook"]%>'>
+                    <a href='<%=user.socialLinks["facebook"]%>'>
                       <img class="s" src="/img/logo/fb.png" alt="" />
                     </a>
                     <% }else{%>
@@ -675,7 +694,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["linkedin"]!=null){ %>
-                    <a href='<%= user.socialLinks["linkedin"]%>'>
+                    <a href='<%=user.socialLinks["linkedin"]%>'>
                       <img class="s" src="/img/logo/link.png" alt="" />
                     </a>
                     <% }else{%>
@@ -686,7 +705,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["twitter"]!=null){ %>
-                    <a href='<%= user.socialLinks["twitter"]%>'>
+                    <a href='<%=user.socialLinks["twitter"]%>'>
                       <img class="s" src="/img/logo/twitter.png" alt="" />
                     </a>
                     <% }else{%>
