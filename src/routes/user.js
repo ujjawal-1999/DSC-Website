@@ -416,12 +416,12 @@ router.get("/profile", authorization, async (req, res) => {
   }
 });
 
-router.get("/public-profile/:id", async (req, res) => {
+router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
     const userBlog = await blog.find();
-    req.dbUser = User.findById(req.params.id);
+    req.dbUser = User.find({ dscHandle: req.params.handle });
     if (req.dbUser) {
       var timelineBlogs = [];
       userBlog.forEach((blog) => {
