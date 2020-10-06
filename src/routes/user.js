@@ -487,7 +487,7 @@ router.get("/delete/skill/:id", authorization, async (req, res) => {
       (skill) => !skill._id.equals(req.params.id)
     );
     await user.save();
-    res.status(200).redirect(res.get("referer"));
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -524,7 +524,7 @@ router.get("/delete/experience/:id", authorization, async (req, res) => {
       (experience) => !experience._id.equals(req.params.id)
     );
     await user.save();
-    req.status(200).redirect(res.get("referer"));
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -591,7 +591,7 @@ router.get("/delete/project/personal/:id", authorization, async (req, res) => {
       (proj) => !proj._id.equals(req.params.id)
     );
     await user.save();
-    res.status(200).redirect(res.get("referer"));
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -630,7 +630,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
       (achievement) => !achievement._id.equals(req.params.id)
     );
     await user.save();
-    res.status(200).redirect(res.get("referer"));
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
