@@ -416,6 +416,34 @@ router.get("/profile", authorization, async (req, res) => {
   }
 });
 
+router.get("/public-profile/:id", async (req, res) => {
+  try {
+    // const token = req.cookies.authorization;
+    const finduser = await User.find();
+    const userBlog = await blog.find();
+    req.dbUser = User.findById(req.params.id);
+    if (req.dbUser) {
+      var timelineBlogs = [];
+      userBlog.forEach((blog) => {
+        if (blog.author == req.dbUser.id) {
+          timelineBlogs.push(blog);
+        }
+      });
+      // console.log(timelineBlogs);
+      res.render("profile", {
+        user: req.dbUser,
+        myblogs: timelineBlogs,
+        found: finduser,
+      });
+    } else {
+      res.redirect("/dsc/404");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
+
 router.post("/skill", authorization, async (req, res) => {
   try {
     // console.log(req);
