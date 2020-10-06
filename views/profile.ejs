@@ -192,17 +192,6 @@
                 maxlength="30"
               />
             </div>
-            <div class="flexRow">
-              <label for="hname">DSC Handle</label>
-              <input
-                id="hname"
-                type="text"
-                value="<% if(user.dscHandle!=null){%><%=user.dscHandle%><%}%>"
-                name="hname"
-                required
-                maxlength="20"
-              />
-            </div>
 
             <div class="flexRow">
               <label for="degree">Degree</label>
@@ -256,8 +245,7 @@
               <input id="LinkedIn" 
                       type="url" 
                       placeholder="Enter Your Linkedin account URL" 
-                      name="LinkedIn" 
-                      required 
+                      name="LinkedIn"
                       maxlength="200" 
               />
             </div>
@@ -271,7 +259,6 @@
                     type="url" 
                     placeholder="Enter Your twitter account URL" 
                     name="twitter" 
-                    required 
                     maxlength="200" />
             </div>
 
@@ -445,18 +432,17 @@
               <label for="enddate">End Date</label>
               <input id="enddate" type="date" name="enddate" required />
             </div>
+
             <div class="flexRow">
               <label for="techstack">Techstacks</label>
-              <select name="techstack" id="techstack" required>
-                <option value="NWS">HTML, Vanilla JS</option>
-                <option value="MEN">NodeJs, Mongoose, Express</option>
-                <option value="MERN">ReactJs, Mongoose, Express</option>
-                <option value="MEAN">AngularJs, Mongoose, Express</option>
-                <option value="PWS">Python, DJango, Mongoose</option>
-                <option value="NAS">Java, Firebase</option>
-                <option value="FAS">Flutter, Firebase</option>
-              </select>
+              <input type="text" name="techstack" max-length="150" required>
             </div>
+
+            <div class="flexRow">
+              <label for="hostLink">Host Link</label>
+              <input type="url" name="hostLink" max-length="150">
+            </div>
+
             <div class="flexRow">
               <label for="githuburl">Git Hub URL</label>
               <input
@@ -544,6 +530,7 @@
                 required
               />
             </div>
+
             <div class="flexRow">
               <label for="achievementnameserial">Unique Serial Number</label>
               <input
@@ -552,9 +539,9 @@
                 placeholder="This can be any Unique Number that indicates your Achievement."
                 name="achievementnameserial"
                 maxlength="30"
-                required
               />
             </div>
+
             <div class="flexRow">
               <label for="projectdescription">Description</label>
               <input
@@ -770,8 +757,8 @@
                           </p>
                           <div class="images">
                             <div class="image-container">
-                              <img class="post-images" src="<%= blog.cover%>""
-                              alt="" data-original="<%= blog.cover%>"" />
+                              <img class="post-images" src="<%= blog.cover%>"
+                              alt="" data-original="<%= blog.cover%>"/>
                             </div>
                           </div>
                         </div>
