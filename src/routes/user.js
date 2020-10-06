@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const Project = require("../models/project");
+const Blog = require("../models/blog");
 const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
@@ -662,6 +663,41 @@ router.post("/project/:user", async (req, res) => {
       }
     }
   );
+});
+
+router.get("/profile", authorization, async (req, res) => {
+  try {
+    const token = req.cookies.authorization;
+    const finduser = await User.find();
+    // const userBlog = await blog.find();
+    if (token) {
+      jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
+        await req.dbUser.populate("blogs").execPopulate();
+        res.render("profile", {
+          user: req.dbUser,
+          // myblogs: req.dbuser.blogs,
+          found: finduser,
+        });
+      });
+    } else {
+      res.redirect("/dsc/user/register");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
+router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
+  try {
+    await Blog.findOneAndDelete({ _id: req.params.blog_id }, (e) => {
+      console.log(e);
+    });
+
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
 });
 //Establish Storage for file upload
 const storage = multer.diskStorage({

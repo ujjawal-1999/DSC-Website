@@ -777,9 +777,19 @@
                           <img src="/img/logo/profile.png" alt="" />
 
                           <% }%>
-                          <i class="fas fa-eye" style="font-size: 12px">
-                            <%= blog.views %></i
-                          >
+
+                          <div>
+                            <i class="fas fa-eye" style="font-size: 12px">
+                              <%= blog.views %></i
+                            >
+                            <a href="/dsc/user/blog/delete/<%= blog._id %>" style="color: red;">
+                              <i
+                                class="fas fa-trash"
+                                style="font-size: 18px; bac: inherit"
+                              >
+                              </i>
+                            </a>
+                          </div>
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
