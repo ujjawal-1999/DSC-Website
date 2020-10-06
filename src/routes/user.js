@@ -421,7 +421,7 @@ router.get("/public-profile/:handle", async (req, res) => {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
     const userBlog = await blog.find();
-    req.dbUser = User.find({ dscHandle: req.params.handle });
+    req.dbUser = await User.findOne({ dscHandle: req.params.handle });
     if (req.dbUser) {
       var timelineBlogs = [];
       userBlog.forEach((blog) => {
@@ -430,6 +430,8 @@ router.get("/public-profile/:handle", async (req, res) => {
         }
       });
       // console.log(timelineBlogs);
+      console.log(req.dbUser.dscHandle);
+      console.log(typeof req.dbUser);
       res.render("public-profile", {
         user: req.dbUser,
         myblogs: timelineBlogs,
