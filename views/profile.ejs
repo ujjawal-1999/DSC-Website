@@ -122,7 +122,7 @@
         <div></div>
       </div>
       <div class="wrapper">
-        <div id="subscribeBox">
+        <div id="subscribeBox" style="justify-content: space-around">
           <h2><span class="thin"></span></h2>
           <div class="socials">
             <div class="items">
@@ -166,18 +166,24 @@
             <div class="items link">
               <nobr style="display: flex; align-items: center">
                 <img src="/img/logo/link.png" alt="" />
-                <a href="">Connect to Linkedin</a>
+                <a href=""
+                  >Connect to Linkedin <br />
+                  <span>(Feature Coming Soon)</span></a
+                >
               </nobr>
             </div>
             <div class="items twitter">
               <nobr style="display: flex; align-items: center">
                 <img src="/img/logo/twitter.png" alt="" />
-                <a href="">Connect to Twitter</a>
+                <a href=""
+                  >Connect to Twitter<br />
+                  <span>(Feature Coming Soon)</span></a
+                >
               </nobr>
             </div>
           </div>
           <p></p>
-          <!-- <img class="edill" src="/img/illustrations/editing.png" alt="" /> -->
+          <img class="edill" src="/img/illustrations/editing.png" alt="" />
         </div>
       </div>
       <div class="wrapper">
@@ -258,29 +264,27 @@
               />
             </div>
             <div class="flexRow">
-              <label for="bio">
-                  LinkedIn
-              </label>
-              <input id="LinkedIn" 
-                      type="url" 
-                      placeholder="Enter Your Linkedin account URL" 
-                      name="LinkedIn" 
-                      required 
-                      maxlength="200" 
+              <label for="bio"> LinkedIn </label>
+              <input
+                id="LinkedIn"
+                type="url"
+                placeholder="Enter Your Linkedin account URL"
+                name="LinkedIn"
+                required
+                maxlength="200"
               />
             </div>
 
             <div class="flexRow">
-                <label for="bio">
-                    Twitter
-                  </label>
-                <input 
-                    id="Twitter" 
-                    type="url" 
-                    placeholder="Enter Your twitter account URL" 
-                    name="twitter" 
-                    required 
-                    maxlength="200" />
+              <label for="bio"> Twitter </label>
+              <input
+                id="Twitter"
+                type="url"
+                placeholder="Enter Your twitter account URL"
+                name="twitter"
+                required
+                maxlength="200"
+              />
             </div>
 
             <div class="flexRow">
@@ -764,7 +768,7 @@
                           <img src="/img/logo/profile.png" alt="" />
 
                           <% }%>
-                          <i class="fas fa-eye" style="font-size: 12px" >
+                          <i class="fas fa-eye" style="font-size: 12px">
                             <%= blog.views %></i
                           >
                         </div>
@@ -822,7 +826,9 @@
                               /></a>
                             </button>
                             <button>
-                              <a class="delete-exp" href="/dsc/user/delete/experience/<%= experience._id %>"
+                              <a
+                                class="delete-exp"
+                                href="/dsc/user/delete/experience/<%= experience._id %>"
                                 ><img src="/img/profile/trash.svg"
                               /></a>
                             </button>

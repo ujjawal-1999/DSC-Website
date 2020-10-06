@@ -102,21 +102,26 @@
         <%})%>
       </section>
       <section class="blog-search">
+        <% if(user){ %>
         <div class="inner-search">
           <div class="blog-search-row">
-            <input
-              class="blog-search-input"
-              id="search2"
-              type="text"
-              placeholder="Search.."
-            />
-            <button id="filters">Filter <i class="fas fa-filter"></i></button>
+            <a href="/dsc/blog/bookmarks" style="text-decoration: none">
+              <div class="fndp">Your Bookmarks</div></a
+            >
           </div>
-          <ul class="blog-search-results" id="search_list2">
-            <li class="collection-item2"><a>item 1</a></li>
-            <li class="collection-item2"><a>item 2</a></li>
-            <li class="collection-item2"><a>item 3</a></li>
-          </ul>
+          <div class="blog-search-row">
+            <a href="/dsc/blog/create" style="text-decoration: none">
+              <div class="fndp">Create Blog</div></a
+            >
+          </div>
+        </div>
+        <% } %>
+        <div class="inner-search">
+          <div class="blog-search-row">
+            <a href="/dsc/user/register?type=login" style="text-decoration: none">
+              <div class="fndp">Login to Add a Blog</div></a
+            >
+          </div>
         </div>
       </section>
       <section class="popular">

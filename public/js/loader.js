@@ -15,6 +15,6 @@ document.onreadystatechange = function () {
       dsc.style.animation = "fadeIn 1s 0.5s forwards";
       nitsilchar.style.animation = "fadeIn 1s 1s forwards";
       get.style.animation = "fadeIn 1s 1.5s forwards";
-    }, 2000);
+    }, 200);
   }
 };
