@@ -11,6 +11,9 @@ const userSchema = new Schema(
     dscHandle: {
       type: String,
       unique: true,
+      lowercase: true,
+      required: true,
+      match: [/([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/, "is invalid"],
     },
     email: {
       type: String,
