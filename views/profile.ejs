@@ -131,6 +131,7 @@
                 <img src="/upload<%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
+
               <form
                 style="width: 100%; padding: 0px auto"
                 action="profile/upload/<%=user.id%>"
@@ -256,6 +257,32 @@
                 maxlength="50"
               />
             </div>
+            <div class="flexRow">
+              <label for="bio">
+                  LinkedIn
+              </label>
+              <input id="LinkedIn" 
+                      type="url" 
+                      placeholder="Enter Your Linkedin account URL" 
+                      name="LinkedIn" 
+                      required 
+                      maxlength="200" 
+              />
+            </div>
+
+            <div class="flexRow">
+                <label for="bio">
+                    Twitter
+                  </label>
+                <input 
+                    id="Twitter" 
+                    type="url" 
+                    placeholder="Enter Your twitter account URL" 
+                    name="twitter" 
+                    required 
+                    maxlength="200" />
+            </div>
+
             <div class="flexRow">
               <label for="email">Email</label>
               <input
