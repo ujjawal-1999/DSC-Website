@@ -21,9 +21,16 @@ background-color: rgb(26, 25, 25);
 .dark-mode  .base-card {
   background-color: rgba(2, 2, 2, 0.2);
 }
+.dark-mode  .base-card p{
+  color: rgb(231, 231, 231);
+}
 .dark-mode  .base-card button {
   background-color: rgb(59, 59, 70);
   color: rgb(125, 125, 126);
+}
+.dark-mode  .base-card button:hover{
+  background-color: white;
+  color: black;
 }
  .dark-mode  .modal-content{
   background-color: rgb(32, 32, 32);
@@ -271,7 +278,7 @@ margin-top: 2rem;
   position: relative;
   top: 0;
   bottom: 0;
-  color:#3f3232;
+  color:var(--black);
   transition: left .2s;
   background: rgba(rgb(109, 108, 108), .6);
   color: $color_white;
@@ -298,9 +305,9 @@ margin-top: 2rem;
  
 }
 .content-proj p {
-  color : black;
+  color :var(--white);
   padding-left: 2px;
-  font-size:1.2em;
+  font-size:1.3em;
 }
 .base-card {
   background-color: rgb(228, 227, 227);
@@ -394,7 +401,7 @@ margin-top: 2rem;
 .description{
     width:60%;
     margin:0px 50px;
-    color: black;
+    color: var(--black);
     word-break: keep-all;
     font-size: 1.2em;
 
