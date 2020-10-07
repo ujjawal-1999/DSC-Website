@@ -42,7 +42,16 @@ const jwt = require("jsonwebtoken");
 
 // get route to the "/dsc/project"
 router.get("/", async (req, res) => {
-  res.render("projectpage")
+  var token = req.cookies.authorization;
+  const finduser = await User.find();
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      res.render("projectpage", { user: user, found: finduser });
+    });
+  } else res.render("projectpage", { user: req.user, found: finduser });
+
   // const finduser = await User.find();
   // const projects = await Projects.find().sort(
   //     {createdAt: 'desc'}

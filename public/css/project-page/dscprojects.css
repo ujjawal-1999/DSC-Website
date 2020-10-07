@@ -1,0 +1,387 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-light) !important;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+main {
+  width: 100%s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  padding: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  z-index: 6;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: var(--Grey-dark-1);
+  line-height: 1;
+  cursor: pointer;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: white;
+  z-index: 5;
+  padding: 80px 50px;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border-radius: 5px;
+}
+
+.contact-form.active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.contact-form .close {
+  color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.cards {
+  margin: 3rem 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
+  width: 40vw;
+  height: 40rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 30px;
+}
+
+.cards .card {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.cards .card-toggle {
+  z-index: 4;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.cards .card-toggle.active {
+  color: white;
+  border-color: white;
+}
+
+.cards .card-content {
+  background-color: var(--Grey-light-1) !important;
+  color: var(--Grey-dark-1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: -webkit-clip-path 1s ease;
+  padding: 75px 0 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.cards .card-content .row {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.cards .card-content .col {
+  width: 50%;
+  height: 100%;
+  display: table-cell;
+  -webkit-transition: 0.2s ease 0.2s;
+  transition: 0.2s ease 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  vertical-align: top;
+}
+
+.cards .card-content .col h2 {
+  font-weight: 300;
+  font-size: 3em;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.cards .card-content .col h2 strong {
+  font-weight: 700;
+  display: block;
+}
+
+.cards .card-content .col img {
+  width: 50%;
+}
+
+.cards .card-content .col.left {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  opacity: 0;
+  padding-left: 50px;
+}
+
+.cards .card-content .col.right {
+  -webkit-transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
+  opacity: 0;
+  padding-left: 30px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.cards .card.active .col {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.cards #overview .card-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  opacity: 1;
+  color: white;
+}
+
+.cards #overview .card-content {
+  background-color: #efefef;
+  -webkit-clip-path: circle(0% at 91.5% 75px);
+          clip-path: circle(0% at 91.5% 75px);
+}
+
+.cards #overview.active .card-toggle {
+  opacity: 0;
+}
+
+.cards #overview.active .card-content {
+  -webkit-clip-path: circle(270% at 91.5% 75px);
+          clip-path: circle(270% at 91.5% 75px);
+}
+
+.cards .fa {
+  color: var(--Grey-dark-1) !important;
+}
+
+.cards #dribbble .card-content,
+.cards #behance .card-content,
+.cards #linkedin .card-content,
+.cards #twitter .card-content {
+  color: var(--Grey-dark-1) !important;
+  padding-right: 1rem;
+}
+
+.cards #dribbble .card-content p,
+.cards #behance .card-content p,
+.cards #linkedin .card-content p,
+.cards #twitter .card-content p {
+  color: var(--Grey-dark-2) !important;
+}
+
+.cards #dribbble .card-content {
+  -webkit-clip-path: circle(0% at 76px 88%);
+  clip-path: circle(0% at 50px 88%);
+}
+
+.cards #dribbble.active .card-content {
+  -webkit-clip-path: circle(270% at 76px 88%);
+  clip-path: circle(270% at 50px 88%);
+}
+
+.cards #behance .card-content {
+  -webkit-clip-path: circle(0% at 150px 88%);
+  clip-path: circle(0% at 150px 88%);
+}
+
+.cards #behance.active .card-content {
+  -webkit-clip-path: circle(270% at 150px 88%);
+  clip-path: circle(270% at 150px 88%);
+}
+
+.cards #linkedin .card-content {
+  -webkit-clip-path: circle(0% at 220px 88%);
+  clip-path: circle(0% at 220px 88%);
+}
+
+.cards #linkedin.active .card-content {
+  -webkit-clip-path: circle(270% at 220px 88%);
+  clip-path: circle(270% at 220px 88%);
+}
+
+.cards #twitter .card-content {
+  -webkit-clip-path: circle(0% at 292px 88%);
+  clip-path: circle(0% at 292px 88%);
+}
+
+.cards #twitter.active .card-content {
+  -webkit-clip-path: circle(270% at 292px 88%);
+  clip-path: circle(270% at 292px 88%);
+}
+
+form .control {
+  position: relative;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+
+form .control label {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+form .control.submit {
+  text-align: right;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+  outline: none;
+  padding: 10px 0;
+}
+
+form .filled label,
+form input:focus + label,
+form textarea:focus + label {
+  top: 0;
+  font-size: 12px;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form input[type="submit"] {
+  width: auto;
+  background-color: #f06292;
+  padding: 10px 40px;
+  color: white;
+  border-radius: 40px;
+}
+
+.zindextozero {
+  z-index: 0;
+}
+
+.zindextoone {
+  z-index: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .cards {
+    -webkit-box-pack: centers;
+        -ms-flex-pack: centers;
+            justify-content: centers;
+    width: 95vw;
+    height: 70vh;
+    padding: 0.5rem;
+  }
+  .cards .card-content .col h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .cards .card-content .col.left {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1.3rem;
+    width: 100%;
+  }
+  .cards .card-content .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cards .card.active .col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .cards .card-content .col img {
+    width: 40%;
+  }
+}
+/*# sourceMappingURL=dscprojects.css.map */
