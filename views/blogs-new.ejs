@@ -70,7 +70,12 @@
               </p>
             </div>
             <div class="card-author">
-              <img src="/upload/<%= blog.author.profileImageLocation%>" />
+              <% if(blog.author.profileImageLocation){ %>
+                <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                <% }else{ %>
+                  <img src="/img/profile/person.png" />
+                <% } %>
+
               <h3 style="width: max-content"><%= blog.author.name%></h3>
               <p><%- blog.author.createdAt.toString().substring(0,16)%></p>
             </div>
@@ -155,7 +160,7 @@
             <div class="popular-posts">
               <div class="numbering"><%= i++ %></div>
               <div class="content">
-                <span class="title"><%= blog.title%> </span><br />
+                <span class="title"><a href="/dsc/blog/view/<%= blog.slug%>"><%= blog.title%></a></span><br />
                 <span class="intro"> <%- blog.summary%></span><br />
                 <span class="date"> 20 sept, 2020 </span>
               </div>

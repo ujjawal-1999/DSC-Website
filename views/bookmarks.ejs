@@ -68,7 +68,11 @@
             <%- blog.summary%>
             <div class="card-person">
               <div class="card-author">
-                <img src="/upload<%= blog.author.profileImageLocation%>" />
+                <% if(blog.author.profileImageLocation){ %>
+                  <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                  <% }else{ %>
+                    <img src="/img/profile/person.png" />
+                  <% } %>
               </div>
             </div>
             <p><%=blog.author.name%></p>
