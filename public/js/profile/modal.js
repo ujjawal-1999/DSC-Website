@@ -104,11 +104,11 @@ function addExperienceModalvalidate() {
   var exp_description =
     document.forms["addExperienceform"]["exp_description"].value;
 
-  if (exp_name.length < 4) {
+  if (exp_name.length == 0) {
     alert("Company Name is too short !");
     return false;
   }
-  if (exp_role.length < 4) {
+  if (exp_role.length == 0) {
     alert("Job Role is too short !");
     return false;
   }
@@ -126,7 +126,6 @@ function addExperienceModalvalidate() {
 function statusListener() {
   var exp_status = document.forms["addExperienceform"]["exp_status"].value;
   if (exp_status === "Ongoing") {
-    console.log("Ongoing")
     document.getElementById("exp_enddate").disabled = true;
     document.getElementById("exp_enddate").type = "text";
     document.forms["addExperienceform"]["exp_enddate"].value = "Till Now";

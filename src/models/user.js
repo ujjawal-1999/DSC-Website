@@ -71,7 +71,7 @@ const userSchema = new Schema(
         name: String,
         platform: String,
         date: String,
-        serial: Number,
+        serial: String,
         description: String,
       },
     ],
