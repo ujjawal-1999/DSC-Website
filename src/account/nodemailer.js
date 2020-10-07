@@ -96,9 +96,20 @@ const signUpMail = (data) => {
 
 // Email to reset password
 const forgotPassword = (data)=>{
-    rand = cryptoRandomString({ length: 100, type: "url-safe" });
-    link = `http://localhost:3000/dsc/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
-    mailOptions = {
+    const rand = cryptoRandomString({ length: 100, type: "url-safe" });
+    const link = `http://localhost:3000/dsc/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.NODEMAILER_EMAIL, //email id
+        pass: process.env.NODEMAILER_PASSWORD, //my gmail password
+      },
+    });
+  
+    const mailOptions = {
       from: process.env.NODEMAILER_EMAIL,
       to: data.email,
       subject: "Reset Password",
