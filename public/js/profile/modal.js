@@ -40,17 +40,17 @@ function editProfileModalvalidate() {
   var bio = document.forms["editprofileform"]["bio"].value;
   var facebook = document.forms["editprofileform"]["facebook"].value;
   var linkedin = document.forms["editprofileform"]["linkedin"].value;
-  var twitter = document.forms["editprofileform"]["twitter"].value;
+  var github = document.forms["editprofileform"]["github"].value;
 
   console.log(facebook.length);
   console.log(linkedin.length);
   console.log(twitter.length);
-  if (name.length < 4) {
+  if (name.length == 0) {
     alert("Full Name is too short !");
     return false;
   }
 
-  if (bio.length < 10) {
+  if (bio.length < 5) {
     alert("Bio must be more than 10 words !");
     return false;
   }
@@ -61,12 +61,7 @@ function editProfileModalvalidate() {
       return false;
     }
   }
-  if (twitter.length != 0) {
-    if (!twitter.match(expression4)) {
-      alert("Invalid Twitter Link Format");
-      return false;
-    }
-  }
+
   if (linkedin.length != 0) {
     if (!linkedin.match(expression3)) {
       alert("Invalid Linkedin Link Format");
@@ -154,11 +149,11 @@ function addSkillsModalvalidate() {
   var skilldescription =
     document.forms["addSkillsForm"]["skilldescription"].value;
 
-  if (skillname.length < 4) {
+  if (skillname.length == 0) {
     alert("Company Name is too short !");
     return false;
   }
-  if (skilllevel.length < 4) {
+  if (skilllevel.length < 2) {
     alert("Job Role is too short !");
     return false;
   }
@@ -206,11 +201,11 @@ function addProjectModalvalidate() {
   var hosturl = document.forms["addProjectForm"]["hosturl"].value;
   var description = document.forms["addProjectForm"]["description"].value;
 
-  if (title.length < 4) {
+  if (title.length == 0) {
     alert("Project Name is too short !");
     return false;
   }
-  if (role.length < 4) {
+  if (role.length == 0) {
     alert("Project Role is too short !");
     return false;
   }
@@ -258,22 +253,19 @@ function addAchievementModalvalidate() {
   var projectdescription =
     document.forms["addAchievementForm"]["projectdescription"].value;
 
-  if (achievementname.length < 4) {
+  if (achievementname.length == 0) {
     alert("Achievement Name is too short !");
     return false;
   }
-  if (achievementnameplatform.length < 4) {
+  if (achievementnameplatform.length == 0) {
     alert("Achievement Platform is too short !");
     return false;
   }
-  if (achievementnameserial.length < 4) {
-    alert("Achievement ID is too short !");
-    return false;
-  }
-  if (projectdescription.length < 4) {
-    alert("Achievement description is too short !");
-    return false;
-  }
+
+  // if (projectdescription.length < 4) {
+  //   alert("Achievement description is too short !");
+  //   return false;
+  // }
   return true;
 }
 // ###################################################################################
