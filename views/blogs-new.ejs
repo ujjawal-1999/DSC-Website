@@ -45,7 +45,16 @@
     <!----------------------------- Main Site Section ------------------------------>
     <main>
       <section class="cards">
-        <% var num =0 %> <% newBlogs.forEach(function(blog){%>
+        <% if(newBlogs.length==0){%>
+
+        <div class="card-container" style="justify-content: center">
+          <div class="card-details">
+            <div class="card-text">
+              <p>Community Blogs will be shown here.</p>
+            </div>
+          </div>
+        </div>
+        <% }%> <% var num =0 %> <% newBlogs.forEach(function(blog){%>
         <div class="card-container">
           <div class="card-image">
             <div class="card-img">
@@ -62,7 +71,7 @@
             </div>
             <div class="card-author">
               <img src="/upload/<%= blog.author.profileImageLocation%>" />
-              <h3><%= blog.author.name%></h3>
+              <h3 style="width: max-content"><%= blog.author.name%></h3>
               <p><%- blog.author.createdAt.toString().substring(0,16)%></p>
             </div>
             <div class="card-buttons">
@@ -118,7 +127,10 @@
         <% }else{ %>
         <div class="inner-search">
           <div class="blog-search-row">
-            <a href="/dsc/user/register?type=login" style="text-decoration: none">
+            <a
+              href="/dsc/user/register?type=login"
+              style="text-decoration: none"
+            >
               <div class="fndp">Login to Add a Blog</div></a
             >
           </div>
@@ -132,7 +144,14 @@
           <div>
             <hr />
             <br />
-            <% popularBlogs.forEach(function(blog){%>
+            <% if(popularBlogs.length==0){%>
+            <div class="popular-posts">
+              <div class="content">
+                <p>Nothing to show.</p>
+              </div>
+            </div>
+
+            <% }%> <% popularBlogs.forEach(function(blog){%>
             <div class="popular-posts">
               <div class="numbering"><%= i++ %></div>
               <div class="content">
