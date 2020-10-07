@@ -367,6 +367,7 @@ main {
   grid-template-columns: 4fr 1fr;
   padding-left: 2%;
   padding-right: 2%;
+  grid-template-rows: fit-content(200px) 1fr;
 }
 
 section.cards {
