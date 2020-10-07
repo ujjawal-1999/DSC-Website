@@ -12,115 +12,116 @@ const { find } = require("../models/user");
 const jwt = require("jsonwebtoken");
 
 //Middleware setup
-router.use(methodOverride("_method"));
-router.use(bodyParser.json());
-router.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+// router.use(methodOverride("_method"));
+// router.use(bodyParser.json());
+// router.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 
-const Coremember = []; //Array of core members
+// const Coremember = []; //Array of core members
 
 //Function to Check Core Members
 
-const CorememberAuth = async (token) => {
-  var user = await User.findById(user.id);
-  try {
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-      if (err) console.log(err);
-      else {
-        findMember = Coremember.find(user);
-        return findMember;
-      }
-      next();
-    });
-  } catch (error) {
-    console.log(err);
-  }
-};
+// const CorememberAuth = async (token) => {
+//   var user = await User.findById(user.id);
+//   try {
+//     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+//       if (err) console.log(err);
+//       else {
+//         findMember = Coremember.find(user);
+//         return findMember;
+//       }
+//       next();
+//     });
+//   } catch (error) {
+//     console.log(err);
+//   }
+// };
 
 // get route to the "/dsc/project"
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
+  res.render("projectpage")
   // const finduser = await User.find();
   // const projects = await Projects.find().sort(
   //     {createdAt: 'desc'}
   // );
   // res.json(projects);
   //res.render('projects' , {projects: projects, user: req.user, found: finduser});
-  var token = req.cookies.authorization;
-  const finduser = await User.find();
-  if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-      if (err) console.log(err);
-      else req.user = user;
-      console.log(user);
-      res.render("projectpage", { user: user, found: finduser });
-    });
-  } else res.render("projectpage", { user: req.user, found: finduser });
+  // var token = req.cookies.authorization;
+  // const finduser = await User.find();
+  // if (token) {
+  //   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  //     if (err) console.log(err);
+  //     else req.user = user;
+  //     console.log(user);
+  //     res.render("projectpage", { user: user, found: finduser });
+  //   });
+  // } else res.render("projectpage", { user: req.user, found: finduser });
 });
 
 // post route for creating new project "/dsc/project/create"
-router.post("/create", async (req, res) => {
-  try {
-    //verifing core members
-    const token = req.cookies.authorization;
-    const findMember = CorememberAuth(token);
+// router.post("/create", async (req, res) => {
+//   try {
+//     //verifing core members
+//     const token = req.cookies.authorization;
+//     const findMember = CorememberAuth(token);
 
-    if (findMember) {
-      const project = req.body;
-      console.log(project);
-      if (!project)
-        return res.status(400).json({
-          error: "Empty req body!",
-        });
-      await new Projects({
-        title: project.title,
-        description: project.description,
-        author: project.author,
-        category: project.category,
-      }).save((err, saved) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(saved);
-        }
-        res.json(saved);
-      });
-    }
-  } catch (e) {
-    console.log(e.message);
-    res.status(400).json({
-      error: "Some error occured",
-    });
-    return e;
-  }
-});
+//     if (findMember) {
+//       const project = req.body;
+//       console.log(project);
+//       if (!project)
+//         return res.status(400).json({
+//           error: "Empty req body!",
+//         });
+//       await new Projects({
+//         title: project.title,
+//         description: project.description,
+//         author: project.author,
+//         category: project.category,
+//       }).save((err, saved) => {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           console.log(saved);
+//         }
+//         res.json(saved);
+//       });
+//     }
+//   } catch (e) {
+//     console.log(e.message);
+//     res.status(400).json({
+//       error: "Some error occured",
+//     });
+//     return e;
+//   }
+// });
 
-// route to edit project "/dsc/project/edit/:id"
-router.post("/edit/:id", auth, async (req, res) => {
-  let projects = await Projects.findById(req.params.id);
-  if (req.body.title) projects.title = req.body.title;
-  if (req.body.description) projects.description = req.body.description;
-  if (req.body.author) projects.author = req.body.author;
-  if (req.body.category) projects.category = req.body.category;
-  try {
-    project = await projects.save();
-    res.json(project);
-  } catch (e) {
-    res.json(e);
-  }
-});
+// // route to edit project "/dsc/project/edit/:id"
+// router.post("/edit/:id", auth, async (req, res) => {
+//   let projects = await Projects.findById(req.params.id);
+//   if (req.body.title) projects.title = req.body.title;
+//   if (req.body.description) projects.description = req.body.description;
+//   if (req.body.author) projects.author = req.body.author;
+//   if (req.body.category) projects.category = req.body.category;
+//   try {
+//     project = await projects.save();
+//     res.json(project);
+//   } catch (e) {
+//     res.json(e);
+//   }
+// });
 
-// route for deleting project "/dsc/project/remove/:id"
-router.delete("/remove/:id", auth, async (req, res) => {
-  try {
-    const project = await Projects.findByIdAndDelete(req.params.id);
-    res.json("Deleted successfully!");
-  } catch (e) {
-    res.json(e);
-  }
-});
+// // route for deleting project "/dsc/project/remove/:id"
+// router.delete("/remove/:id", auth, async (req, res) => {
+//   try {
+//     const project = await Projects.findByIdAndDelete(req.params.id);
+//     res.json("Deleted successfully!");
+//   } catch (e) {
+//     res.json(e);
+//   }
+// });
 
 // get route to /project/new
 

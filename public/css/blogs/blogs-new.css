@@ -23,9 +23,11 @@ a {
   text-decoration: none;
   color: var(--text-gray);
 }
+
 /* form{
   display: none;
 } */
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -44,6 +46,8 @@ h1 {
 
 h2 {
   font-family: var(--blogfont);
+  font-size: 2rem;
+  color: var(--Grey-dark-1);
 }
 
 h3 {
@@ -124,6 +128,7 @@ p {
   color: #717171;
   font-size: 0.8em;
 }
+
 .content span {
   color: var(--Grey-dark-1) !important;
 }
@@ -201,6 +206,12 @@ p {
   }
 }
 
+@media (max-width: 800px) {
+  .card-container {
+    width: 95%;
+  }
+}
+
 .card-image {
   /* display: inline-block; */
   position: relative;
@@ -209,8 +220,8 @@ p {
   float: left;
   width: 250%;
   border-radius: 30px;
-
   /* margin: 1rem; */
+  min-width: 400px;
 }
 
 .card-img {
@@ -278,9 +289,11 @@ p {
   padding: 0;
   margin: 0;
 }
+
 .card-buttons i {
   color: var(--Grey-dark-1) !important;
 }
+
 .card-author > img:nth-child(1) {
   width: 5em;
   height: 5em;
@@ -291,16 +304,43 @@ p {
 .card-author > h3:nth-child(2) {
   margin: 1rem 0;
 }
+
 .card-author span {
   margin: 1rem;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 900px) {
   .card-container {
     flex-direction: column;
-    width: 80%;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 1.3rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  main {
+    margin-top: 0;
+  }
+  .card-text {
+    margin-bottom: 1.2rem;
   }
 }
+
+.card-details {
+  margin-top: 1.2rem;
+}
+
+.card-text p {
+  margin-top: 1.2rem;
+}
+
+/* .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+} */
 
 #popular-post {
   /* width: 25vw; */
@@ -327,6 +367,7 @@ main {
   grid-template-columns: 4fr 1fr;
   padding-left: 2%;
   padding-right: 2%;
+  grid-template-rows: fit-content(200px) 1fr;
 }
 
 section.cards {
@@ -373,6 +414,12 @@ ul.blog-search-results li {
   box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
 }
 
+@media (min-width: 1200px) {
+  .inner-search {
+    width: 100%;
+  }
+}
+
 .blog-search .fa-filter {
   color: white;
 }
@@ -395,6 +442,7 @@ ul.blog-search-results li {
   background-color: var(--Grey-dark-1);
   border-color: var(--Grey-dark-1);
 }
+
 #search2 {
   border-radius: 45px;
   height: 2em;
@@ -424,14 +472,15 @@ ul.blog-search-results li {
   }
   .card-image {
     width: 100%;
+    min-width: unset;
   }
   section.cards {
     width: 100vw;
   }
 }
 
-@media (max-width: 650px) {
-  main {
-    margin-top: 4em;
-  }
-}
+/* @media (max-width: 650px) {
+    main {
+        margin-top: 4em;
+    }
+} */

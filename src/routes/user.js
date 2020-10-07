@@ -224,7 +224,7 @@ router.post("/register", async (req, res, next) => {
 
 // get route for login
 router.get("/login", function (req, res) {
-  res.render("register");
+  res.redirect("/dsc/user/register");
 });
 
 //post route for login
