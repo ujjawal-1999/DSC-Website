@@ -70,7 +70,8 @@ section {
   justify-content: center;
 }
 .lead_card img {
-  width: 80%;
+  /*width: 80%;*/
+  width: 400px;
   border-radius: 50%;
 }
 .firstleadname {
