@@ -242,7 +242,6 @@ router.post("/login", async (req, res, next) => {
     //   return;
     // }
   }
-  console.log("DEBUG LOG:",user);
   if (!user) {
     // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
     req.flash("error", "User not found. Try creating a new account");
