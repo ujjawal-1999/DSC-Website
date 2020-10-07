@@ -779,17 +779,25 @@
 
                           <% }%>
 
-                          <div>
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
                             <i class="fas fa-eye" style="font-size: 12px">
                               <%= blog.views %></i
                             >
-                            <a
+
+                            <!-- <a
                               href="/dsc/user/blog/delete/<%= blog._id %>"
                               style="color: red"
                             >
                               <i class="fas fa-trash" style="font-size: 18px">
                               </i>
-                            </a>
+                            </a> -->
                           </div>
                         </div>
                         <div class="content">
@@ -805,7 +813,11 @@
                               alt="" data-original="<%= blog.cover%>"" />
                             </div>
                           </div>
-                        </div>
+                        </div>     <a
+                        class="delete-exp"
+                        href="/dsc/user/blog/delete/<%= blog._id %>"
+                        ><img src="/img/profile/trash.svg"
+                      /></a>
                       </div>
                       <%})%>
                     </div>
