@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
+    <!-- Stylings Starts-->
+    <link rel="stylesheet" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
+    <link rel="stylesheet" href="/css/profile/profile_experience.css" />
+    <link rel="stylesheet" href="/css/profile/profile_skills.css" />
+    <link rel="stylesheet" href="/css/profile/profile-achievement.css" />
+    <link rel="stylesheet" href="/css/profile/profile_projects.css" />
+    <link rel="stylesheet" href="/css/profile/modal.css" />
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <!-- JQuery for navbar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Stylings Ends -->
+  </head>
+  <body>
+    <%-include('partials/navbar')%>
+    <!-- Edit Expereince Modal  -->
+
+    <div class="container">
+      <section class="dashboard__main">
+        <section class="main__profileinfo">
+          <div class="pictureandbasic">
+            <div class="photo">
+              <% if(user.profileImageLocation!=null){ %>
+              <img src="/upload<%= user.profileImageLocation%>" alt="" />
+              <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
+            </div>
+            <div class="info">
+              <div class="nameandedit">
+                <h2><%= user.name %></h2>
+              </div>
+              <p>
+                <% if(user.branch!=null||user.batch!=null){ %> <%= user.degree
+                %> | <%= user.batch %> <br />
+                <%= user.branch %> <% }else{%> Your profile details are empty.<%
+                }%>
+              </p>
+              <p><% if(user.bio!=null){ %> <%= user.bio%> <% }else{%> <% }%></p>
+              <div class="branchandyear">
+                <div class="collegeinfo">
+                  <% if(user.socialLinks["facebook"]!=null){ %>
+                  <a href='<%= user.socialLinks["facebook"]%>'>
+                    <img class="s" src="/img/logo/fb.png" alt="" />
+                  </a>
+                  <% }else{%>
+                  <a href="#">
+                    <img class="s" src="/img/logo/fb.png" alt="" /> </a
+                  ><% }%>
+                </div>
+                <div class="collegeinfo">
+                  <% if(user.socialLinks["linkedin"]!=null){ %>
+                  <a href='<%= user.socialLinks["linkedin"]%>'>
+                    <img class="s" src="/img/logo/link.png" alt="" />
+                  </a>
+                  <% }else{%>
+                  <a href="#">
+                    <img class="s" src="/img/logo/link.png" alt="" /> </a
+                  ><% }%>
+                </div>
+                <div class="collegeinfo">
+                  <% if(user.socialLinks["twitter"]!=null){ %>
+                  <a href='<%= user.socialLinks["twitter"]%>'>
+                    <img class="s" src="/img/logo/twitter.png" alt="" />
+                  </a>
+                  <% }else{%>
+                  <a href="#">
+                    <img class="s" src="/img/logo/twitter.png" alt="" /> </a
+                  ><% }%>
+                </div>
+              </div>
+            </div>
+            <div class="faint">
+              <% if(user.dscHandle!=null){ %> <%= user.dscHandle%> <%}else{}%>
+            </div>
+          </div>
+        </section>
+        <section class="main__detailedinfo">
+          <div class="panel-body">
+            <div class="tab-container">
+              <ul class="tab-buttons tab-buttons--basic tab-buttons--left">
+                <li class="tab-button-item" role="presentation">
+                  <a
+                    href="#panel01"
+                    id="tab01"
+                    class="tab-button tab-button--is-active"
+                    data-a11ytab-tab
+                    >Timeline</a
+                  >
+                </li>
+                <li class="tab-button-item" role="presentation">
+                  <a
+                    href="#panel02"
+                    id="tab02"
+                    class="tab-button"
+                    data-a11ytab-tab
+                    >Experience</a
+                  >
+                </li>
+                <li class="tab-button-item" role="presentation">
+                  <a
+                    href="#panel03"
+                    id="tab03"
+                    class="tab-button"
+                    data-a11ytab-tab
+                    >Skills</a
+                  >
+                </li>
+                <li class="tab-button-item" role="presentation">
+                  <a
+                    href="#panel04"
+                    id="tab04"
+                    class="tab-button"
+                    data-a11ytab-tab
+                    >Projects</a
+                  >
+                </li>
+                <li class="tab-button-item" role="presentation">
+                  <a
+                    href="#panel05"
+                    id="tab05"
+                    class="tab-button"
+                    data-a11ytab-tab
+                  >
+                    Achievements</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-panels">
+                <div id="panel01" class="tab-panel">
+                  <div class="cards">
+                    <% user.blogs.forEach(function(blog){%>
+                    <div class="card">
+                      <div class="socialactivity">
+                        <% if(user.profileImageLocation!=null){ %>
+                        <img
+                          src="/upload<%= user.profileImageLocation%>"
+                          alt=""
+                        />
+                        <% }else{%>
+                        <img src="/img/logo/profile.png" alt="" />
+
+                        <% }%>
+
+                        <div>
+                          <i class="fas fa-eye" style="font-size: 12px">
+                            <%= blog.views %></i
+                          >
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="topic"><%= blog.title %></h3>
+                        <p class="place"></p>
+                        <div class="description">
+                          <%- blog.body.substring(0, 300)%>
+                        </div>
+                        <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
+                        <div class="images">
+                          <div class="image-container">
+                            <img class="post-images" src="<%= blog.cover%>""
+                            alt="" data-original="<%= blog.cover%>"" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%})%>
+                  </div>
+                </div>
+                <div id="panel02" class="tab-panel">
+                  <div class="flexRow">
+                    <h3>EXPERIENCE</h3>
+                    <!-- <div class="flexRow">
+                        <p>Want to add more Experience ?</p>
+                        <button class="addExperience" id="addExperience">
+                          Click here
+                        </button>
+                      </div> -->
+                  </div>
+                  <div class="cards_exp">
+                    <div class="card_exp">
+                      <%
+                      if(user.experiences){user.experiences.forEach((experience=>
+                      { %>
+                      <div class="row">
+                        <div class="column">
+                          <img
+                            src="/img/logo/experience-default.png"
+                            alt="lo"
+                          />
+                          <h3 class="accordion">
+                            <%= experience.role %><br />
+                            <p><%= experience.name %></p>
+                          </h3>
+                          <div id="mention">
+                            <b>&#9899;</b><%= experience.startdate %> - <%=
+                            experience.enddate %>
+                          </div>
+                          <!-- <button>
+                              <a class="edit-exp"
+                                ><img src="/img/profile/edit.svg"
+                              /></a>
+                            </button>
+                            <button>
+                              <a class="delete-exp" href=""
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
+                            </button> -->
+                        </div>
+                        <div class="panelexp">
+                          <p><%= experience.description %></p>
+                        </div>
+                      </div>
+                      <% }))} %>
+                    </div>
+                  </div>
+                </div>
+                <div id="panel03" class="tab-panel">
+                  <div class="flexRow">
+                    <h3>SKILLS</h3>
+                    <!-- <div class="flexRow">
+                        <p>Want to add more Skills ?</p>
+                        <button class="addExperience" id="addSkills">
+                          Click here
+                        </button>
+                      </div> -->
+                  </div>
+                  <div class="cards">
+                    <% user.skills.forEach((skill) => {%>
+                    <div class="card">
+                      <div class="skill-icon">
+                        <img
+                          src="/img/skill-icons/skill-default.png"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                      <div class="skill-description">
+                        <h3 class="skill-name"><%= skill.name %></h3>
+                        <h4 class="skill-time"><%= skill.description%></h4>
+                      </div>
+                      <p class="skill-level"><%= skill.level %></p>
+                    </div>
+                    <%})%>
+                  </div>
+                </div>
+                <div id="panel04" class="tab-panel">
+                  <div class="flexRow">
+                    <h3>PROJECTS</h3>
+                    <!-- <div class="flexRow">
+                        <p>Want to showcase more Projects ?</p>
+                        <button class="addExperience" id="addProject">
+                          Click here
+                        </button>
+                      </div> -->
+                  </div>
+                  <section class="grid-item main">
+                    <div class="items">
+                      <% user.personalProjects.forEach((project) => {%>
+                      <div class="item item1">
+                        <div class="project-lang">
+                          <div class="lang lang1">
+                            <img
+                              class="language"
+                              src="/img/logo/project-default.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="project-name">
+                          <h4><%= project.title %></h4>
+                        </div>
+                        <div class="git-link">
+                          <a href="https://github.com/" add target="_blank"
+                            ><h4>View on Github</h4></a
+                          >
+                        </div>
+                        <div class="project-description">
+                          <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Placeat, omnis! Magni hic suscipit quos
+                            asperiores quis ducimus cumque aliquam illum?
+                          </p>
+                        </div>
+                        <div class="project-duration">
+                          <h3>Aug 30 - Sept 30</h3>
+                        </div>
+                      </div>
+
+                      <%})%>
+                    </div>
+                  </section>
+                </div>
+                <div id="panel05" class="tab-panel">
+                  <div class="flexRow">
+                    <h3>ACHIEVEMENTS</h3>
+                  </div>
+                  <div class="cards_ach">
+                    <div class="card_ach">
+                      <% user.achievements.forEach((ach) => {%>
+                      <div class="row-ach">
+                        <div
+                          class="column-ach"
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <div style="display: flex; align-items: center">
+                            <img
+                              src="/img/logo/achievement-default.png"
+                              alt="company"
+                            />
+                            <h3 class="tab-ach">
+                              <%= ach.name %><br />
+                              <p><%= ach.platform%></p>
+                            </h3>
+                          </div>
+                          <div id="date"><%= ach.date%></div>
+                          <div class="tooltip">
+                            <img src="/img/logo/info.svg" alt="info" />
+                            <span class="tooltiptext"
+                              >Credential ID: <%= ach.serial%></span
+                            >
+                          </div>
+                          <!--<div class="bookmarks">
+                                     <a>
+                                   <img  src="/assets/images/bookmark.svg" alt="bookmark"></a>
+                                   </div>-->
+                        </div>
+                      </div>
+                      <%})%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <%-include('partials/footer')%>
+  </body>
+  <script src="/js/darkmode.js"></script>
+  <!-- Navbar JS -->
+  <script src="/js/navbar.js"></script>
+  <!-- Navbar JS -->
+  <script src="/js/a11ytab.js"></script>
+  <script src="/js/profile/profile.js"></script>
+  <script src="/js/profile/modal.js"></script>
+</html>

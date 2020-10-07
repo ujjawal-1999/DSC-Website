@@ -4,40 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
-    <link rel="stylesheet" href="../public/css/project-page/project.css" />
-  
+    <link rel="stylesheet" href="/css/project-page/project.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/index/footer.css" />
+   
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- ######################################################################## -->
+
+    <!---Icons Import-->
+    
   </head>
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
+  <!-- Main Content Starts -->
+  
+    <div class="page-wrapper">
+    <div class="nav-wrapper">
+      <nav class="navbar">
+        <div class="box">
+          <input class="type-checkbox" id="toogle" type="checkbox" name="name"   />
+          <label class="estado" for="toogle" onclick="myfunction()">
+            <button onclick="myfunction()"><span class="aprobado">Light</span></button>
+            <button ><span class="desaprobado">Dark</span></button>
+          </label>
+        </div>
+        <img src="/img/logo/DSC-trans-new.png" />
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav no-search">
+          <li class="nav-item"><a href="/dsc" class="nav-items-a">Home</a></li>
+          <li class="nav-item">
+            <a href="/dsc/#about" class="nav-items-a">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/projects" class="nav-items-a">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/#schedule" class="nav-items-a">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsc/blog" class="nav-items-a">Blogs</a>
+          </li>
+          <!-- <li id="dmodeGLOBAL" class="nav-item">
+            <a href="#" class="nav-items-a">Dark Mode</a>
+          </li> -->
+          <% if(!user){ %>
+          <li class="nav-item">
+            <a href="/dsc/user/register" class="nav-items-a">Log In/Sign Up</a>
+          </li>
+          <% }else{ %>
+          <li class="nav-item">
+            <a href="/dsc/user/profile" class="nav-items-a"><%=user.name%></a>
+          </li>
+          <% } %>
+  
+          <li class="nav-item">
+            <input
+              class="search-input"
+              id="search1"
+              type="text"
+              placeholder="Search.."
+              autofocus
+            />
+            <div class="search" id="srh1"></div>
+            <ul class="search-view" id="search_list1">
+              <% found.forEach((user)=>{ %>
+              <li class="collection-item2"><a><%= user.name%></a></li>
+              <% }) %>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    
+  </div>
+  
+  <main>
+  
   <!-- Main Content Starts -->
   <div class="container">
-    <section class="accountbar">
-      <p></p>
-      <div class="accountbar__shortcut">
-        <div class="fndp">Find People</div>
-        <div class="fndp" "><a href="../views/profile.html">View Profile</a></div>
-        <!-- <div class="edit" id="editbtn" ></div> -->
-        <img
-          class="bell resone"
-          src="../public/img/teams_potraits/rdj.jpg"
-          alt="UserPhoto"
-        />
-        <img
-          class="bell"
-          src="../public/img/logo/bell.png"
-          alt="Notification Logo"
-        />
-      </div>
-    </section>
-  
-
     <section class="heading">
       <div class="main-heading-proj">
-        <h2>PROJECT</h2>
+        <h1>DSC PROJECT</h1>
             <div class="borderd"></div>
       </div>
       <div class="sub-heading-proj">
         <p><b>Ongoing</b></p>
-         <button id="myBtn"> Add </button>
+         <!-- <button id="myBtn"> Add </button> -->
          <div id="myModal" class="modal">
     
           <!-- Modal content -->
@@ -62,7 +123,7 @@
               </div>
               <div class="datainput">
               <select id="wa_select">
-                <option hidden='hidden' selected='selected' value='default'>Project Feild</option>
+                <option hidden='hidden' selected='selected' value='default'>Project Field</option>
                 <option value="1">Android</option>
                 <option value="2">Web Development</option>
                 <option value="3">Other</option>
@@ -97,7 +158,7 @@
           <div class="card-proj">
 
             <div class="logo">
-              <img src="../public/img/Project/Easy Exchange Logo.png" alt="logo">
+              <img src="/img/Project/Easy Exchange Logo.png" alt="logo">
             </div>
 
             <div class="content-proj">
@@ -133,7 +194,7 @@
         </section><br>
   
         <div class="detailview">
-            <span style="position:relative; left:50px; display: none;">
+            <span style="display: none;">
         <h1 class="project-name" style="margin-bottom:0;"> </h1>
        <br><br>
         <a class="links"> </a>
@@ -142,7 +203,7 @@
   
           <div class="content-box">
                <div class="image">
-                  <img src="../public/img/Project/Easy Exchange Logo.png"  height="150" width="150">
+                  <img src="/img/Project/Easy Exchange Logo.png"  height="150" width="150">
               </div>
               <div class="description">
                 ● The app will help users to sell, buy, rent, or borrow accessories like books, bicycles, EGD tools, lab coats, etc. at an 
@@ -155,13 +216,17 @@
                  ● This app will also help the students to sell their bicycles,
                  books, and other accessories to their peers easily
                   <br>
-                  <h3>Tech Stacks :<h3>   
-                    <br>● Language​:  Java/Kotlin
-                    <br> ● Software​:  Android Studio 
-                    <br>● Database​:  Firebase
-                    <br> ● Other Applications​: ​GitHub, Git  
-   <br><br>
-                  <button class="members-button" onclick="toggleMembers()">Members </button>
+                  <br>
+                  <div>
+
+                    <h3>Tech Stacks :</h3>   
+                      ● Language​:  Java/Kotlin<br> 
+                      ● Software​:  Android Studio <br>
+                      ● Database​:  Firebase <br> 
+                      ● Other Applications​: ​GitHub, Git  
+                  <br><br>
+
+                  <h3>Members:</h3>
               </div>
           </div>
         </div>
@@ -169,7 +234,9 @@
           <div class="x1" style="display:">
               <div class="membes-list">
   
-                  <div class="member-card" style="margin:20px;">
+                  <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                     <p>● Elvis Rahman<br> ● Kazi Sahariah Rahi <br>● Manzil Hoque </p>
                      <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
@@ -213,7 +280,7 @@
           <div class="card-proj">
 
             <div class="logo">
-              <img src="../public/img/Project/ats.jpg" alt="logo">
+              <img src="/img/Project/ats.jpg" alt="logo">
             </div>
 
             <div class="content-proj">
@@ -250,40 +317,42 @@
       </section><br>
 
      <div class="detailview">
-          <span style="position:relative; left:50px;">
-      <h1 class="project-name" style="margin-bottom:0;"> </h1>
-        <br><br>
-      <a class="links"> </a>
-      <a class="links">  </a>
-   </span>
+          <span>
+              <h1 class="project-name" style="margin-bottom:0;"> </h1>
+                <br><br>
+              <a class="links"></a>
+              <a class="links"></a>
+          </span>
 
         <div class="content-box">
              <div class="image">
-                <img src="../public/img/Project/ats.jpg"  height="150" width="150">
+                <img src="/img/Project/ats.jpg"  height="150" width="150">
             </div>
-            <div class="description">
-              ● Acts as an ​interaction bridge​ between Alumni and the present 
-              students of NIT Silchar. <br>
-              ● It is basically a multi-portal application consisting of the Admin
-               and Alumni Section.<br>
+            <div style="color:black;"class="description">
+                ● Acts as an ​interaction bridge​ between Alumni and the present 
+                  students of NIT Silchar. <br>
+                ● It is basically a multi-portal application consisting of the Admin
+                  and Alumni Section.<br>
                 ● Alumni Section consists of a user page for each registered 
-                Alumni where they can fill their personal as well as professional details.
-                 Moreover, there is a blog section where they can share their views 
-                 and experiences about the present technological needs. 
-                 Alumni will have chat rooms corresponding to their batches 
-                 and branches where they can interact. <br>
-                 ● Moreover, Alumni will get all the information
+                  Alumni where they can fill their personal as well as professional details.
+                  Moreover, there is a blog section where they can share their views 
+                  and experiences about the present technological needs. 
+                  Alumni will have chat rooms corresponding to their batches 
+                  and branches where they can interact. <br>
+                ● Moreover, Alumni will get all the information
                   about the events happening in the college and also,
-                   we will directly be able to invite them. <br>
-                   ● From the Admin Section, we can keep a check 
-                   on all the on-going activities in the application
-                    and admin can send/post important announcements in the Blog sections. 
-              <br>  
+                  we will directly be able to invite them. <br>
+                ● From the Admin Section, we can keep a check 
+                  on all the on-going activities in the application
+                  and admin can send/post important announcements in the Blog sections. 
+                <br>  
+              <br>
+
               <h3>Tech Stacks ​:</h3><br>
-               ● Front-End:​ For User Interface, we are using HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). 
-               <br>● Back-End​: For all the server and networking purposes, we are using NodeJs and ExpressJS as Frameworks and MongoDB as Database. <br>
-              ● Other Applications​: GitHub, Git, Postman. <br><br>
-                <button class="members-button" onclick="toggleMembers()">Members </button>
+               ● Front-End:​ For User Interface, we are using HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript).<br>
+               ● Back-End​: For all the server and networking purposes, we are using NodeJs and ExpressJS as Frameworks and MongoDB as Database. <br>
+               ● Other Applications​: GitHub, Git, Postman. <br><br>
+              <h3>Members:</h3>
             </div>
         </div>
       </div>
@@ -291,7 +360,9 @@
         <div class="x2" style="display:">
             <div class="membrs-list">
 
-                <div class="member-card" style="margin:20px;">
+                <div class="member-card" style="margin-bottom: 20px;
+                    margin-left: 40%;
+                    margin-top: -20px;">
                   <p>● Rahul Kumar Gupta <br>● Anuva Bhattacharjee <br>● Pathikrit Chanda<br> ● Ujjwal Jain </p>
                    <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
@@ -335,7 +406,7 @@
           <div class="card-proj">
 
             <div class="logo">
-              <img src="../public/img/Project/IMG_20201004_163332.jpg" alt="logo">
+              <img src="/img/Project/IMG_20201004_163332.jpg" alt="logo">
             </div>
 
             <div class="content-proj">
@@ -379,7 +450,7 @@
   
           <div class="content-box">
                <div class="image">
-                  <img src="../public/img/Project/IMG_20201004_163332.jpg"  height="150" width="150">
+                  <img src="/img/Project/IMG_20201004_163332.jpg"  height="150" width="150">
               </div>
               <div class="description">
                 There are several clubs in our college and each club          
@@ -391,9 +462,9 @@
                     event should be given priority. This also adversely        
                     affectstheclub.Therefore,wethoughtofbringingallthe         
                  clubs under one roof and develop an app to serve the    
-                        purpose.<br> 
+                        purpose.<br><br> 
                         <h3>Tech Stacks</h3> ​ ​:<br> ● Software:​ Flutter (for cross-platform compatibility). <br>● Database:​ Firebase. <br>● Language:​ Dart  <br><br>
-                  <button class="members-button" onclick="toggleMembers()">Members </button>
+                  <h3>Members:</h3>
               </div>
           </div>
         </div>
@@ -401,7 +472,9 @@
           <div class="x3" style="display:">
               <div class="membrs-list">
   
-                  <div class="member-card" style="margin:20px;">
+                  <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                     <p>● Yash Srivastav <br>● Trishna Kalita <br>● Srinjoy Dutta </p>
                      <!--- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                       <h3 style="line-height:0;"> Vishal Pandey </h3>
@@ -444,7 +517,7 @@
           <div class="card-proj">
 
             <div class="logo">
-              <img src="../public/img/Project/IMG-20201004-WA0012.jpg" alt="logo">
+              <img src="/img/Project/IMG-20201004-WA0012.jpg" alt="logo">
             </div>
 
             <div class="content-proj">
@@ -490,7 +563,7 @@
 
         <div class="content-box">
              <div class="image">
-                <img src="../public/img/Project/IMG-20201004-WA0012.jpg"  height="150" width="150">
+                <img src="/img/Project/IMG-20201004-WA0012.jpg"  height="150" width="150">
             </div>
             <div class="description">
               The project will be a boon for the faculties as well as the             
@@ -502,7 +575,7 @@
                  copy of results every time when they want to apply for an            
                  internship, loan, and others. Thus, this project will be a win-win           
               situation for the administration as well as students of this college. 
-              <br><h3>Tech Stack required :</h3><br> ●  NodeJS <br>●  ReactJS<br> ●  MongoDB<br> ●  Express <br>●  Html <br>●  CSS <br>●  Javascript   <br>
+              <br><br><h3>Tech Stack required :</h3><br> ●  NodeJS <br>●  ReactJS<br> ●  MongoDB<br> ●  Express <br>●  Html <br>●  CSS <br>●  Javascript   <br>
               <h3>Our Implementation </h3><br>
                Creating REST API using Node.js and storing the data in a    
                        NoSQL database (MongoDb) in the backend part. 
@@ -518,7 +591,7 @@ The frontend part will be based on React.js because of which we
                ●  Only authorized student can see his result.<br> <h4>-​ ​Advantages of used tech stack​: </h4>
                ●     Fast Rendering <br>●     Effective Responsiveness<br> ●        ​It boosts productivity and facilitates further maintenance<br> ●     It is SEO friendly.<br> ● It helps to build rich user interfaces and provide code stability
                 <br>
-                <button class="members-button" onclick="toggleMembers()">Members </button>
+                <h3>Members:</h3>
             </div>
         </div>
       </div>
@@ -526,7 +599,9 @@ The frontend part will be based on React.js because of which we
         <div class="x4" style="display:">
             <div class="membrs-list">
 
-                <div class="member-card" style="margin:20px;">
+                <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                   <p>● Sameer Shrivastava<br> ● Aditya Singh Sisodiya <br>● Nabanita Bania </p>
                     <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
@@ -568,7 +643,7 @@ The frontend part will be based on React.js because of which we
       <div class="card-proj">
 
         <div class="logo">
-          <img src="../public/img/Project/medical.png" alt="logo">
+          <img src="/img/Project/medical.png" alt="logo">
         </div>
 
         <div class="content-proj">
@@ -614,7 +689,7 @@ The frontend part will be based on React.js because of which we
 
     <div class="content-box">
          <div class="image">
-            <img src="../public/img/Project/medical.png"  height="150" width="150">
+            <img src="/img/Project/medical.png"  height="150" width="150">
         </div>
         <div class="description">
           In the wake of Covid-19, it has become more important than           ever to have all the medical history and prescriptions handy. 
@@ -628,13 +703,13 @@ The frontend part will be based on React.js because of which we
                              and        
                               prescriptions. Moreover, if he/she grants permission to  
                                    a doctor/hospital, then the same can be done by them.
-                                      <br>
+                                      <br><br>
                                       <h3>Tech Stack</h3> ​<br>
                                        Version Control: ​Github Backend<br> 
                                        MongoDB <br>
                                        Node Js <br>   
                                        ​Html, CSS, JavaScript <brr>Templating Engine:​    EJS   <br><br>
-            <button class="members-button" onclick="toggleMembers5()">Members </button>
+            <h3>Members:</h3>
         </div>
     </div>
   </div>
@@ -642,7 +717,9 @@ The frontend part will be based on React.js because of which we
     <div class="x5" style="display">
         <div class="membrs-list">
 
-            <div class="member-card" style="margin:20px;">
+            <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                 <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                
                <!-- <h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
@@ -658,7 +735,9 @@ The frontend part will be based on React.js because of which we
                     <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                 </div>-->
             </div>
-            <div class="member-card" style="margin:20px;">
+            <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                 <!--<img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                <p>  ● Ujjawal Jain <br>●  Sameer Shrivastava<br> ●      Aditya Singh Sisodiya<br> ●      Arshita Narayan </p>
                 <!--<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
@@ -696,7 +775,7 @@ The frontend part will be based on React.js because of which we
           <div class="card-proj">
 
             <div class="logo">
-              <img src="../public/img/Project/attendo.png" alt="logo">
+              <img src="/img/Project/attendo.png" alt="logo">
             </div>
 
             <div class="content-proj">
@@ -743,7 +822,7 @@ The frontend part will be based on React.js because of which we
     
         <div class="content-box">
              <div class="image">
-                <img src="../public/img/Project/attendo.png"  height="150" width="150">
+                <img src="/img/Project/attendo.png"  height="150" width="150">
             </div>
             <div class="description">
               ● With Attendo, you can keep a check on your attendance status. 
@@ -756,13 +835,13 @@ The frontend part will be based on React.js because of which we
                 fulfill your minimum attendance criteria; stay informed with Attendo.<br>
                  ● Flexible to use app lets you rectify any error that might creep in. <br> 
               ● You can also track the history of the subjects you attended.<br> 
-              
+              <br>
               <h3>Techstack Used:</h3><br>
               ●Retrofit <br>
               ●Firebase<br> 
               ●SQLite (owing to which it works efficiently and data is secured) 
            <br><br>
-                <button class="members-button" onclick="toggleMembers6()">Members </button>
+                <h3>Members:</h3>
             </div>
         </div>
       </div>
@@ -770,10 +849,12 @@ The frontend part will be based on React.js because of which we
         <div class="x6" style="display:">
             <div class="membrs-list">
     
-                <div class="member-card" style="margin:20px;">
+                <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                    <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">-->
                    <p> Rishiraj Paul Chowdhury <br>Nandini Agarwal</p> 
-                   <h3 style="line-height:0;"> Rishiraj Paul Chowdhury  </h3>
+                  
                     <!--<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
                     <p>
                         Lem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -787,7 +868,9 @@ The frontend part will be based on React.js because of which we
                         <img style="border-radius: 10px;" src="../public/img/Project/linkedin.png" height="40" width="40">
                     </div>-->
                 </div>
-                <div class="member-card" style="margin:20px;">
+                <div class="member-card" style="margin-bottom: 20px;
+    margin-left: 40%;
+    margin-top: -20px;">
                     <!--<img src="../public/img/Project/.png" style="border-radius: 10px;width:45%">-->
                     <h3 style="line-height:0;">  </h3>
                    <!---<h4 style="line-height:0;color:orange;"> BACKEND DEVELOPER </h4>
@@ -805,12 +888,21 @@ The frontend part will be based on React.js because of which we
                 </div>
             </div>
         </div>
-    
     </div>
+  </div>
+</div>
    <!-- <button class="other-button">More Options </button> -->
-   
+  
+  
+   </main> 
+  
   </body>
+  <script src="/js/navbar.js"></script>
     <script>
+       function myfunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+         }
         function toggleMembers(){
             elem = document.querySelector('.x1');
             k=elem.style.display=='none'?'block':'none';
@@ -889,10 +981,6 @@ window.onclick = function(event) {
 
 $(document).on('click','.send_form', function(){
 var input_blanter = document.getElementById('wa_email');
-
-
-
-
 
 
 if("" != input_blanter.value){

@@ -5,8 +5,8 @@
 body {
   margin: 0;
   height: 100vh;
-  overflow: hidden;
-  /* border: 10px solid #ff4654; */
+  overflow: scroll;
+  overflow-x: hidden;
   color: #0f1923;
   font: 400 18px/22px "Rajdhani", sans-serif;
 }
@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -60,8 +60,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
-  height: 100%;
-  justify-content: space-around;
+  overflow-y: scroll;
+  /* height: 100%; */
+  /* justify-content: space-around; */
   padding: 1.5rem;
 }
 
@@ -91,20 +92,24 @@ body {
 .signup-form .button-box {
   cursor: pointer;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0.5rem 0;
 }
 .signup-form label {
+  font-size: 12px;
+  width: 100%;
   margin: 8px 0;
 }
 .signup-form input {
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-bottom: 25px;
   padding: 0 8px;
   font: 400 18px "Rajdhani", sans-serif;
   opacity: 0.8;
+  background-color: var(--Grey-light-1);
+  color: var(--Grey-dark-1);
+  border-bottom: 0.5px solid;
 }
 .signup-form select {
   width: 95%;
@@ -145,7 +150,7 @@ body {
   z-index: -1;
 }
 .bg-text-stroke span {
-  font: 700 21rem "Teko", sans-serif;
+  font: 700 "Teko", sans-serif;
   line-height: 0.8;
   text-transform: uppercase;
   -webkit-text-fill-color: rgba(255, 255, 255, 1);
@@ -156,6 +161,7 @@ body {
 @media screen and (max-width: 800px) {
   .mobileheading {
     display: block;
+    text-align: center;
   }
   .container div {
     height: auto;
@@ -170,7 +176,7 @@ body {
     height: 100vh;
   }
   .container div.signup-form {
-    height: auto;
+    height: 100vh;
     width: auto;
   }
   .container div.heading-block {
@@ -181,6 +187,9 @@ body {
   }
   .social-login a {
     width: auto !important;
+  }
+  .container {
+    top: 65%;
   }
 }
 
@@ -200,13 +209,13 @@ body {
   text-decoration: none;
   color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px;
+  padding: 8px;
   border-radius: 2px;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  width: 40%;
-  height: 2rem;
+  width: 13rem;
+  height: 4rem;
   transition: all 0.2s;
 }
 .social-login a:hover {

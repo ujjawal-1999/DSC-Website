@@ -96,15 +96,32 @@ router.post("/bookmark/:bookmark_id", auth, async (req, res) => {
 router.get("/bookmarks", auth, async (req, res) => {
   const finduser = await User.find();
   const user = await User.findById(req.user.userId).populate("bookmarkBlogs");
-  // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
-  const bookmarks = user.bookmarkBlogs;
 
-  // console.log(bookmarks[0])
+  // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
+  const bookmarks = await Promise.all(
+    user.bookmarkBlogs.map(async (blog) => {
+      blog.author = await User.findById(blog.author);
+      return blog;
+    })
+  );
   res.render("bookmarks", {
     user: req.user,
     found: finduser,
     bookmarks: bookmarks,
   });
+});
+router.get("/delete/bookmark/:bookmark_id", auth, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.bookmarkBlogs = user.bookmarkBlogs.filter(
+      (bookmark) => !bookmark._id.equals(req.params.bookmark_id)
+    );
+    await user.save();
+    res.redirect("/dsc/blog/bookmarks");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
 });
 
 //Establish Storage for file upload
@@ -203,7 +220,7 @@ router.post("/create", auth, upload.single("cover"), async (req, res) => {
     } else {
       req.dbUser.blogs = [saved];
     }
-    await dbUser.save();
+    await req.dbUser.save();
     res.redirect("/dsc/blog");
   } catch (e) {
     console.log(e.message);

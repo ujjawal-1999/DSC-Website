@@ -15,7 +15,6 @@ body {
 
 .container {
   width: 100%;
-  min-height: 80rem;
   display: flex;
   margin-top: 1rem;
   // box-shadow: -6px 7px 26px 0px rgba(0, 0, 0, 0.35);
@@ -89,7 +88,7 @@ body {
 
       &__item {
         position: relative;
-        // transition: all 0.2s 0.2s;
+        // : all 0.2s 0.2s;
         transition: all 0.2s;
         color: var(--Grey-dark-1);
 
@@ -456,6 +455,10 @@ body {
       width: 90%;
       background-color: var(--Grey-light-1);
       color: var(--Grey-dark-1);
+      a {
+        color: #08c;
+        margin: 1rem 0;
+      }
       .topic {
         margin-top: 0.3rem;
         font-size: 1rem;
@@ -468,9 +471,16 @@ body {
       }
       .description {
         font-family: "Times New Roman", Times, serif;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
         width: 95%;
       }
-
+      p {
+        font-family: "Times New Roman", Times, serif;
+        width: 95%;
+        word-wrap: anywhere;
+      }
       .images {
         display: flex;
         flex-wrap: wrap;

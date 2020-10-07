@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const Project = require("../models/project");
+const Blog = require("../models/blog");
 const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
@@ -161,9 +162,29 @@ router.get("/", (req, res) => {
   res.json({ message: "User routes connected" });
 });
 
+// route to check if the handle is vaild
+router.get("/verify-handle/:handle", async (req, res) => {
+  const handle = req.params.handle.toLowerCase();
+  const found = await User.find({ dscHandle: handle });
+  const valid = /([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/.test(handle);
+  res.json({
+    inUse: found.length !== 0,
+    valid: valid,
+  });
+});
+
 //get route for signup
-router.get("/register", (req, res) => {
-  res.render("register");
+router.get("/register", async (req, res) => {
+  var token = req.cookies.authorization;
+  const finduser = await User.find();
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      console.log(user);
+      res.render("register", { user: user, found: finduser });
+    });
+  } else res.render("register", { user: req.user, found: finduser });
 });
 
 //post route for signup
@@ -382,24 +403,40 @@ router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
     const finduser = await User.find();
-    const userBlog = await blog.find();
+    // const userBlog = await blog.find();
     if (token) {
-      jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        var timelineBlogs = [];
-        userBlog.forEach((blog) => {
-          if (blog.author == req.dbUser.id) {
-            timelineBlogs.push(blog);
-          }
-        });
-        // console.log(timelineBlogs);
+      jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
+        await req.dbUser.populate("blogs").execPopulate();
         res.render("profile", {
           user: req.dbUser,
-          myblogs: timelineBlogs,
+          // myblogs: req.dbuser.blogs,
           found: finduser,
         });
       });
     } else {
       res.redirect("/dsc/user/register");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/public-profile/:handle", async (req, res) => {
+  try {
+    // const token = req.cookies.authorization;
+    const finduser = await User.find();
+    const userBlog = await Blog.find();
+    req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+      .populate("blogs")
+      .execPopulate();
+    if (req.dbUser) {
+      res.render("public-profile", {
+        user: req.dbUser,
+        found: finduser,
+      });
+    } else {
+      res.redirect("/dsc/404");
     }
   } catch (error) {
     console.error(error);
@@ -430,6 +467,20 @@ router.post("/skill", authorization, async (req, res) => {
   }
 });
 
+router.get("/delete/skill/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.skills = user.skills.filter(
+      (skill) => !skill._id.equals(req.params.id)
+    );
+    await user.save();
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
 router.post("/experience", authorization, async (req, res) => {
   try {
     // console.log("experience route called");
@@ -445,6 +496,20 @@ router.post("/experience", authorization, async (req, res) => {
     };
     user.experiences.push(newExp);
     // console.log(newExp);
+    await user.save();
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/delete/experience/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.experiences = user.experiences.filter(
+      (experience) => !experience._id.equals(req.params.id)
+    );
     await user.save();
     res.redirect(req.get("referer"));
   } catch (error) {
@@ -470,6 +535,11 @@ router.post("/profile", authorization, (req, res) => {
         branch: req.body.branch,
         batch: req.body.batchYear,
         bio: req.body.bio,
+        socialLinks: {
+          linkedin: req.body.linkedin,
+          twitter: req.body.twitter,
+          facebook: req.body.facebook,
+        },
       }).then((result) => {
         // console.log(result);
         res.redirect("/dsc/user/profile");
@@ -492,6 +562,9 @@ router.post("/project/personal", authorization, async (req, res) => {
       role: req.body.role,
       techstack: req.body.techstack,
       githuburl: req.body.githuburl,
+      startdate: req.body.startdate,
+      enddate: req.body.enddate,
+      hosturl: req.body.hosturl,
     };
 
     user.personalProjects.push(newProject);
@@ -500,6 +573,20 @@ router.post("/project/personal", authorization, async (req, res) => {
     console.log(user);
 
     res.redirect("/dsc/user/profile");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/delete/project/personal/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.personalProjects = user.personalProjects.filter(
+      (proj) => !proj._id.equals(req.params.id)
+    );
+    await user.save();
+    res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -524,6 +611,20 @@ router.post("/achievement", authorization, async (req, res) => {
     await user.save();
     // console.log(user);
 
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/delete/achievement/:id", authorization, async (req, res) => {
+  try {
+    const user = req.dbUser;
+    user.achievements = user.achievements.filter(
+      (achievement) => !achievement._id.equals(req.params.id)
+    );
+    await user.save();
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -562,6 +663,41 @@ router.post("/project/:user", async (req, res) => {
       }
     }
   );
+});
+
+router.get("/profile", authorization, async (req, res) => {
+  try {
+    const token = req.cookies.authorization;
+    const finduser = await User.find();
+    // const userBlog = await blog.find();
+    if (token) {
+      jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
+        await req.dbUser.populate("blogs").execPopulate();
+        res.render("profile", {
+          user: req.dbUser,
+          // myblogs: req.dbuser.blogs,
+          found: finduser,
+        });
+      });
+    } else {
+      res.redirect("/dsc/user/register");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
+router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
+  try {
+    await Blog.findOneAndDelete({ _id: req.params.blog_id }, (e) => {
+      console.log(e);
+    });
+
+    res.redirect(req.get("referer"));
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
 });
 //Establish Storage for file upload
 const storage = multer.diskStorage({

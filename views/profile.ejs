@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
     <!-- Stylings Starts-->
     <link rel="stylesheet" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
@@ -117,7 +122,7 @@
         <div></div>
       </div>
       <div class="wrapper">
-        <div id="subscribeBox">
+        <div id="subscribeBox" style="justify-content: space-around">
           <h2><span class="thin"></span></h2>
           <div class="socials">
             <div class="items">
@@ -126,40 +131,59 @@
                 <img src="/upload<%= user.profileImageLocation%>" alt="" />
                 <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
               </div>
+
               <form
+                style="width: 100%; padding: 0px auto"
                 action="profile/upload/<%=user.id%>"
                 method="post"
                 enctype="multipart/form-data"
                 class="uploadImageForm"
               >
                 <div class="upload-btn-wrapper">
+                  <label style="width: 200px" class="custom-file-upload">
+                    <input
+                      type="file"
+                      name="profile-image"
+                      value=""
+                      id="fileSubmitButton"
+                    />
+                    <span> Choose Photo</span>
+                  </label>
+
                   <input
-                    name="profile-image"
-                    type="file"
-                    class="file-upload-field"
-                    value=""
-                    id="fileSubmitButton"
-                  />
-                  <input
-                    style="width: 100%; color: rgb(238, 238, 238)!important"
+                    style="
+                      width: 200px;
+                      height: 40px;
+                      color: rgb(238, 238, 238) !important;
+                    "
                     type="submit"
                     class="submit"
-                    value="Submit Photo"
+                    value="Upload"
                   />
                 </div>
               </form>
             </div>
             <div class="items link">
-              <img src="/img/logo/link.png" alt="" />
-              <a href="">Connect to Linkedin</a>
+              <nobr style="display: flex; align-items: center">
+                <img src="/img/logo/link.png" alt="" />
+                <a href=""
+                  >Connect to Linkedin <br />
+                  <span>(Feature Coming Soon)</span></a
+                >
+              </nobr>
             </div>
             <div class="items twitter">
-              <img src="/img/logo/twitter.png" alt="" />
-              <a href="">Connect to Twitter</a>
+              <nobr style="display: flex; align-items: center">
+                <img src="/img/logo/twitter.png" alt="" />
+                <a href="#"
+                  >Connect to Twitter<br />
+                  <span>(Feature Coming Soon)</span></a
+                >
+              </nobr>
             </div>
           </div>
           <p></p>
-          <!-- <img class="edill" src="/img/illustrations/editing.png" alt="" /> -->
+          <img class="edill" src="/img/illustrations/editing.png" alt="" />
         </div>
       </div>
       <div class="wrapper">
@@ -182,18 +206,7 @@
                 maxlength="30"
               />
             </div>
-            <div class="flexRow">
-              <label for="hname">DSC Handle</label>
-              <input
-                id="hname"
-                type="text"
-                value="<% if(user.dscHandle!=null){%><%=user.dscHandle%><%}%>"
-                name="hname"
-                required
-                maxlength="20"
-              />
-            </div>
-
+            <hr size="1px" />
             <div class="flexRow">
               <label for="degree">Degree</label>
               <select name="degree" id="degree" required>
@@ -227,6 +240,7 @@
                 <option value="2017-21">2017-21</option>
               </select>
             </div>
+            <hr size="1px" />
             <div class="flexRow">
               <label for="bio">Bio</label>
               <input
@@ -239,6 +253,42 @@
                 maxlength="50"
               />
             </div>
+            <div class="flexRow">
+              <label for="facebook"> Facebook </label>
+              <input
+                id="facebook"
+                type="url"
+                value="<% if(user.socialLinks['facebook']!=null){%><%=user.socialLinks['facebook']%><%}%>"
+                placeholder="Enter Your Facebook account URL"
+                name="facebook"
+                required
+                maxlength="200"
+              />
+            </div>
+            <div class="flexRow">
+              <label for="linkedin"> LinkedIn </label>
+              <input
+                id="linkedin"
+                type="url"
+                value="<% if(user.socialLinks['linkedin']!=null){%><%=user.socialLinks['linkedin']%><%}%>"
+                placeholder="Enter Your Linkedin account URL"
+                name="linkedin"
+                maxlength="200"
+              />
+            </div>
+
+            <div class="flexRow">
+              <label for="twitter"> Twitter </label>
+              <input
+                id="twitter"
+                type="url"
+                value="<% if(user.socialLinks['twitter']!=null){%><%=user.socialLinks['twitter']%><%}%>"
+                placeholder="Enter Your Twitter account URL"
+                name="twitter"
+                maxlength="200"
+              />
+            </div>
+            <hr size="1px" />
             <div class="flexRow">
               <label for="email">Email</label>
               <input
@@ -409,26 +459,35 @@
               <label for="enddate">End Date</label>
               <input id="enddate" type="date" name="enddate" required />
             </div>
+
             <div class="flexRow">
               <label for="techstack">Techstacks</label>
-              <select name="techstack" id="techstack" required>
-                <option value="NWS">HTML, Vanilla JS</option>
-                <option value="MEN">NodeJs, Mongoose, Express</option>
-                <option value="MERN">ReactJs, Mongoose, Express</option>
-                <option value="MEAN">AngularJs, Mongoose, Express</option>
-                <option value="PWS">Python, DJango, Mongoose</option>
-                <option value="NAS">Java, Firebase</option>
-                <option value="FAS">Flutter, Firebase</option>
-              </select>
+              <input
+                id="techstack"
+                placeholder="Tech Stack"
+                type="text"
+                name="techstack"
+                maxlength="30"
+                required
+              />
             </div>
             <div class="flexRow">
               <label for="githuburl">Git Hub URL</label>
               <input
                 id="githuburl"
-                type="text"
+                type="url"
                 placeholder="Your Github repository link"
                 name="githuburl"
                 required
+              />
+            </div>
+            <div class="flexRow">
+              <label for="hosturl">Hosted URL</label>
+              <input
+                id="hosturl"
+                type="url"
+                placeholder="Your Hosted  link"
+                name="hosturl"
               />
             </div>
             <div class="flexRow">
@@ -615,7 +674,7 @@
                 <div class="branchandyear">
                   <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
-                    <a href='<%= user.socialLinks["facebook"]%>'>
+                    <a href='<%=user.socialLinks["facebook"]%>'>
                       <img class="s" src="/img/logo/fb.png" alt="" />
                     </a>
                     <% }else{%>
@@ -626,7 +685,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["linkedin"]!=null){ %>
-                    <a href='<%= user.socialLinks["linkedin"]%>'>
+                    <a href='<%=user.socialLinks["linkedin"]%>'>
                       <img class="s" src="/img/logo/link.png" alt="" />
                     </a>
                     <% }else{%>
@@ -637,7 +696,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["twitter"]!=null){ %>
-                    <a href='<%= user.socialLinks["twitter"]%>'>
+                    <a href='<%=user.socialLinks["twitter"]%>'>
                       <img class="s" src="/img/logo/twitter.png" alt="" />
                     </a>
                     <% }else{%>
@@ -707,7 +766,7 @@
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
                     <div class="cards">
-                      <% myblogs.forEach(function(blog){%>
+                      <% user.blogs.forEach(function(blog){%>
                       <div class="card">
                         <div class="socialactivity">
                           <% if(user.profileImageLocation!=null){ %>
@@ -716,22 +775,30 @@
                             alt=""
                           />
                           <% }else{%>
-                          <img src="/img/logo/profile.png" alt="" /> <% }%>
-                          <!-- <div class="sharable">
-                            <p>Share on</p>
-                            <img class="s" src="/img/logo/fb.png" alt="" />
-                            <img class="s" src="/img/logo/link.png" alt="" />
-                          </div> -->
+                          <img src="/img/logo/profile.png" alt="" />
+
+                          <% }%>
+
+                          <div>
+                            <i class="fas fa-eye" style="font-size: 12px">
+                              <%= blog.views %></i
+                            >
+                            <a
+                              href="/dsc/user/blog/delete/<%= blog._id %>"
+                              style="color: red"
+                            >
+                              <i class="fas fa-trash" style="font-size: 18px">
+                              </i>
+                            </a>
+                          </div>
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
-                          <p class="description">
+                          <div class="description">
                             <%- blog.body.substring(0, 300)%>
-                            <a href="/dsc/blog/view/<%= blog.slug%>"
-                              >... Read more</a
-                            >
-                          </p>
+                          </div>
+                          <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
                               <img class="post-images" src="<%= blog.cover%>""
@@ -759,30 +826,51 @@
                         if(user.experiences){user.experiences.forEach((experience=>
                         { %>
                         <div class="row">
-                          <div class="column">
-                            <img
-                              src="/img/logo/experience-default.png"
-                              alt="lo"
-                            />
-                            <h3 class="accordion">
-                              <%= experience.role %><br />
-                              <p><%= experience.name %></p>
-                            </h3>
-
-                            <div id="mention">
-                              <b>&#9899;</b><%= experience.startdate %> - <%=
-                              experience.enddate %>
+                          <div
+                            class="column"
+                            style="
+                              width: 100%;
+                              display: flex;
+                              justify-content: space-between;
+                            "
+                          >
+                            <div
+                              style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                              "
+                            >
+                              <img
+                                src="/img/logo/experience-default.png"
+                                alt="lo"
+                              />
+                              <h3 class="accordion">
+                                <%= experience.role %><br />
+                                <p><%= experience.name %></p>
+                              </h3>
                             </div>
-                            <button>
-                              <a class="edit-exp"
-                                ><img src="/img/profile/edit.svg"
-                              /></a>
-                            </button>
-                            <button>
-                              <a class="delete-exp" href=""
+
+                            <div
+                              style="
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                              "
+                            >
+                              <div id="mention">
+                                <b>&#9899;</b><%= experience.startdate %> - <%=
+                                experience.enddate %>
+                              </div>
+
+                              <a
+                                class="delete-exp"
+                                href="/dsc/user/delete/experience/<%= experience._id %>"
                                 ><img src="/img/profile/trash.svg"
                               /></a>
-                            </button>
+                            </div>
                           </div>
                           <div class="panelexp">
                             <p><%= experience.description %></p>
@@ -817,7 +905,13 @@
                           <h4 class="skill-time"><%= skill.description%></h4>
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
+                        <a
+                          class="delete-ski"
+                          href="/dsc/user/delete/skill/<%= skill._id %>"
+                          ><img src="/img/profile/trash.svg"
+                        /></a>
                       </div>
+
                       <%})%>
                     </div>
                   </div>
@@ -845,25 +939,48 @@
                             </div>
                           </div>
                           <div class="project-name">
-                              <h4><%= project.title %></h4>
+                            <h4><%= project.title %></h4>
                           </div>
+                          <p style="margin: 0.5rem 0">
+                            <%= project.techstack %>
+                          </p>
                           <div class="git-link">
-                            <a href="https://github.com/" add target="_blank"
+                            <a
+                              href="<%= project.githuburl %>"
+                              add
+                              target="_blank"
                               ><h4>View on Github</h4></a
                             >
                           </div>
-                          <div class="project-description">
-                            <p>
-                              Lorem ipsum dolor, sit amet consectetur
-                              adipisicing elit. Placeat, omnis! Magni hic
-                              suscipit quos asperiores quis ducimus cumque
-                              aliquam illum?
-                            </p>
+                          <%if(project.hosturl){%>
+                          <div class="git-link">
+                            <a href="<%= project.hosturl %>" add target="_blank"
+                              ><h4>Visit Hosted URL</h4></a
+                            >
+                          </div>
+                          <%}%>
+
+                          <div
+                            class="project-description"
+                            style="word-wrap: anywhere"
+                          >
+                            <br />
+                            <p><%= project.description %></p>
                           </div>
                           <div class="project-duration">
-                            <h3>Aug 30 - Sept 30</h3>
+                            <h3>
+                              <%= project.startdate %> to <%= project.enddate %>
+                            </h3>
                           </div>
+                          <center>
+                            <a
+                              class="delete-prj"
+                              href="/dsc/user/delete/project/personal/<%= project._id %>"
+                              ><img src="/img/profile/trash.svg"
+                            /></a>
+                          </center>
                         </div>
+
                         <%})%>
                       </div>
                     </section>
@@ -882,24 +999,34 @@
                       <div class="card_ach">
                         <% user.achievements.forEach((ach) => {%>
                         <div class="row-ach">
-                          <div class="column-ach">
-                            <img
-                              src="/img/logo/achievement-default.png"
-                              alt="company"
-                            />
-                            <h3 class="tab-ach">
-                              <%= ach.name %><br />
-                              <p><%= ach.platform%></p>
-                            </h3>
-                            <div id="date">
-                              <b>&#9899;</b>
-                              <%= ach.date%>
+                          <div
+                            class="column-ach"
+                            style="
+                              display: flex;
+                              justify-content: space-between;
+                            "
+                          >
+                            <div style="display: flex; align-items: center">
+                              <img
+                                src="/img/logo/achievement-default.png"
+                                alt="company"
+                              />
+                              <h3 class="tab-ach">
+                                <%= ach.name %><br />
+                                <p><%= ach.platform%></p>
+                              </h3>
                             </div>
+                            <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
                               >
+                              <a
+                                class="delete-ach"
+                                href="/dsc/user/delete/achievement/<%= ach._id %>"
+                                ><img src="/img/profile/trash.svg"
+                              /></a>
                             </div>
                             <!--<div class="bookmarks">
                                      <a>

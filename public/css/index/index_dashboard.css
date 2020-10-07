@@ -170,16 +170,21 @@ body::-webkit-scrollbar-thumb {
   background-position: bottom left;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin-top: -5rem;
   background-color: var(--primary-light);
 }
 
 .header .dsclogo {
-  width: 8rem;
+  height: 50%;
   opacity: 0;
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+.header .dsclogoMobile {
+  width: 50%;
+  opacity: 0;
+  display: none;
   border-radius: 100%;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
 }
 
 .header .heading__primary {
@@ -229,8 +234,8 @@ body::-webkit-scrollbar-thumb {
 
 .header .getStarted {
   opacity: 0;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
   font-family: "Times New Roman", Times, serif;
   margin-top: 2rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
@@ -240,6 +245,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: 20;
+  height: 3rem;
   background-color: var(--Grey-dark-1);
   color: var(--primary-light);
   border-color: var(--Grey-dark-1);
@@ -274,9 +280,33 @@ body::-webkit-scrollbar-thumb {
   color: var(--white);
 }
 
-@media screen and (max-width: 1110px) {
-  .header {
-    background-image: none;
+@media screen and (max-width: 1150px) {
+  .getStarted {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .getStarted {
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .header .dsclogo {
+    width: 50%;
+    opacity: 0;
+    display: none;
+  }
+  .header .dsclogoMobile {
+    opacity: 1;
+    width: 60%;
+    display: block;
+  }
+  .header .getStarted {
+    opacity: 1;
   }
 }
 
@@ -292,6 +322,10 @@ body::-webkit-scrollbar-thumb {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .getStarted {
+    -webkit-transform: translateY(-4rem);
+            transform: translateY(-4rem);
   }
 }
 

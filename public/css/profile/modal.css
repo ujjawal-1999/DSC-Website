@@ -20,6 +20,12 @@
   top: 0;
 }
 
+#uniqueness {
+  color: #303030;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
 .modal img {
   width: 50%;
 }
@@ -40,13 +46,13 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 80vh;
+  height: auto;
   padding: 2rem;
   overflow: auto;
   width: 70vw;
   opacity: 0;
   pointer-events: none;
-  z-index: 50;
+  z-index: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,7 +80,7 @@
   transition: all 0.5s;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px), (max-height: 820px) {
   .editProfileModal,
   .addAchievementModal,
   .addExperienceModal,
@@ -134,6 +140,11 @@
   }
   .edill {
     display: none;
+  }
+  .backlogo,
+  .backlogo1 {
+    -webkit-transform: translateX(-3rem);
+            transform: translateX(-3rem);
   }
 }
 
@@ -365,6 +376,7 @@
 .addAchievementModal .submit:hover,
 .addSkillsModal .submit:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .editProfileModal .wrapper,
@@ -414,8 +426,8 @@
 .addSkillsModal #subscribeBox {
   position: relative;
   margin: 0 auto;
-  padding: 10px 0;
-  height: 80%;
+  padding: 2rem 0;
+  height: auto !important;
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,12 +601,28 @@
   background-color: #0076b4;
 }
 
+.editProfileModal .socials .link span,
+.addExperienceModal .socials .link span,
+.addProjectsModal .socials .link span,
+.addAchievementModal .socials .link span,
+.addSkillsModal .socials .link span {
+  font-size: 10px;
+}
+
 .editProfileModal .socials .twitter,
 .addExperienceModal .socials .twitter,
 .addProjectsModal .socials .twitter,
 .addAchievementModal .socials .twitter,
 .addSkillsModal .socials .twitter {
   background-color: #2ca6e0;
+}
+
+.editProfileModal .socials .twitter span,
+.addExperienceModal .socials .twitter span,
+.addProjectsModal .socials .twitter span,
+.addAchievementModal .socials .twitter span,
+.addSkillsModal .socials .twitter span {
+  font-size: 10px;
 }
 
 .editProfileModal .edill,
@@ -608,22 +636,32 @@
       align-self: center;
 }
 
-.custom-file-upload-hidden {
-  display: none;
-  visibility: hidden;
-  position: absolute;
-  left: -9999px;
-}
-
 .custom-file-upload {
-  display: block;
-  width: auto;
-  font-size: 16px;
-  margin-top: 30px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-size: 1.3em;
+  background: white;
+  border-radius: 3px;
+  color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
 }
 
-.custom-file-upload label {
-  display: block;
-  margin-bottom: 5px;
+.custom-file-upload > span {
+  color: black;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.custom-file-upload:hover {
+  opacity: 0.8;
+}
+
+#fileSubmitButton {
+  display: none;
 }
 /*# sourceMappingURL=modal.css.map */

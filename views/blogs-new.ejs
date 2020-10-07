@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DSC-Blogs</title>
-
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_logo.png"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -41,8 +45,7 @@
     <!----------------------------- Main Site Section ------------------------------>
     <main>
       <section class="cards">
-        <% var num =0 %> <% newBlogs.forEach(function(blog){%> <%if(num == 4)
-        {%> <% return false %> <%}%> <% num ++ %>
+        <% var num =0 %> <% newBlogs.forEach(function(blog){%>
         <div class="card-container">
           <div class="card-image">
             <div class="card-img">
@@ -53,12 +56,12 @@
             <div class="card-text">
               <h1><%= blog.title%></h1>
               <p>
-                <%- blog.body.substring(0, 300)%>
+                <%- blog.summary%>
                 <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
               </p>
             </div>
             <div class="card-author">
-              <img src="<%= blog.author.profileImageLocation%>" />
+              <img src="/upload/<%= blog.author.profileImageLocation%>" />
               <h3><%= blog.author.name%></h3>
               <p><%- blog.author.createdAt.toString().substring(0,16)%></p>
             </div>
@@ -99,22 +102,28 @@
         <%})%>
       </section>
       <section class="blog-search">
+        <% if(user){ %>
         <div class="inner-search">
           <div class="blog-search-row">
-            <input
-              class="blog-search-input"
-              id="search2"
-              type="text"
-              placeholder="Search.."
-            />
-            <button id="filters">Filter <i class="fas fa-filter"></i></button>
+            <a href="/dsc/blog/bookmarks" style="text-decoration: none">
+              <div class="fndp">Your Bookmarks</div></a
+            >
           </div>
-          <ul class="blog-search-results" id="search_list2">
-            <li class="collection-item2"><a>item 1</a></li>
-            <li class="collection-item2"><a>item 2</a></li>
-            <li class="collection-item2"><a>item 3</a></li>
-          </ul>
+          <div class="blog-search-row">
+            <a href="/dsc/blog/create" style="text-decoration: none">
+              <div class="fndp">Create Blog</div></a
+            >
+          </div>
         </div>
+        <% }else{ %>
+        <div class="inner-search">
+          <div class="blog-search-row">
+            <a href="/dsc/user/register?type=login" style="text-decoration: none">
+              <div class="fndp">Login to Add a Blog</div></a
+            >
+          </div>
+        </div>
+        <% } %>
       </section>
       <section class="popular">
         <% var i=1 %>
@@ -128,8 +137,7 @@
               <div class="numbering"><%= i++ %></div>
               <div class="content">
                 <span class="title"><%= blog.title%> </span><br />
-                <span class="intro"> <%- blog.body.substring(0, 150)%></span
-                ><br />
+                <span class="intro"> <%- blog.summary%></span><br />
                 <span class="date"> 20 sept, 2020 </span>
               </div>
             </div>

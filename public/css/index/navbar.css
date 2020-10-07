@@ -6,7 +6,7 @@
 
 .page-wrapper {
   width: 100%;
-  height: auto;
+  height: 80px;
   z-index: 100;
 }
 
@@ -32,9 +32,11 @@
 }
 
 .navbar img {
+  position: relative;
   justify-self: start;
-  margin-left: 50px;
-  margin-top: 10px;
+  transform: translateX(10px);
+  margin-top: 1.4rem;
+  margin-left: 3rem;
   width: 50px;
   height: 50px;
 }
@@ -104,11 +106,10 @@
 }
 
 input {
-
   border-radius: 0; /* FOR SAFARI */
   height: 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: var(--Grey-dark-1);
   color: var(--Grey-light-1);
   padding: 0.2rem 1rem;
@@ -220,6 +221,11 @@ input {
 #dropbtn {
   cursor: pointer;
 }
+.search-input:focus {
+  border: none;
+  /* border-radius: 50%; */
+}
+
 /* Mobile Devices - Phones/Tablets */
 
 @media only screen and (max-width: 760px) {
@@ -284,7 +290,6 @@ input {
       order: 1;
     } */
 
-
   .navbar li a {
     font-size: 1rem;
     border-bottom: none;
@@ -343,7 +348,7 @@ input {
     display: none;
     margin-top: 20px;
     align-items: center;
-    top: 80%!important;
+    top: 80% !important;
     right: 50%;
     width: 90%;
     height: 50vh;
@@ -436,7 +441,8 @@ input {
   display: none;
   align-items: center;
   width: 90%;
-  height: 50vh;
+  max-height: 50vh;
+  height: auto;
   top: 95%;
   left: 50%;
   /* transform: translate(-50%, -50%); */
@@ -446,12 +452,14 @@ input {
 }
 .collection-item2 {
   padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 .collection-item2 a {
   color: var(--Grey-dark-1) !important;
 }
 .collection-item2 a:hover {
-  color: white !important;
+  opacity: 0.9;
 }
 /* @media screen and (max-width: 715px) {
   #search_list1 {
@@ -477,6 +485,7 @@ input {
 }
 .type-checkbox + label {
   display: block;
+  margin-top: 8px;
   width: 80px;
   height: 45px;
   background-color: white;

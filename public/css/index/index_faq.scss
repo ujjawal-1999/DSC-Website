@@ -13,7 +13,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 40%;
+    height: 20%;
     h1 {
       color: var(--Grey-dark-1);
       font-size: 4rem;
@@ -47,16 +47,21 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 60%;
+    height: 80%;
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
     .sub {
       display: flex;
       flex-direction: column;
+      justify-content: start;
+      height: 18rem;
       margin: 1rem 2rem;
-      background-color: var(--Grey-light-2);
+      background-color: var(--Grey-light-1);
       padding: 2rem;
+      width: 20%;
+      overflow-y: scroll;
 
       h4 {
         font-family: "Times New Roman", Times, serif;
@@ -73,9 +78,9 @@
         margin: 0.8rem 0;
         font-family: Arial, Helvetica, sans-serif;
         transition: all 0.3s;
-        &:hover {
-          text-decoration: underline;
-        }
+        // &:hover {
+        //   text-decoration: underline;
+        // }
       }
     }
   }

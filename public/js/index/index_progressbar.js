@@ -1,10 +1,6 @@
-function _(el) {
-  return document.getElementById(el);
-}
-
 function uploadFile() {
-  var file = _("file1").files[0];
-
+  var file = document.getElementById("status")("file1").files[0];
+  progressBar.style.opacity = 1;
   var formdata = new FormData();
   formdata.append("file1", file);
   var ajax = new XMLHttpRequest();
@@ -16,30 +12,32 @@ function uploadFile() {
 
   ajax.send(formdata);
 }
+
 const progressBar = document.querySelector(".progress");
 function progressHandler(event) {
   progressBar.style.opacity = 1;
   var percent = (event.loaded / event.total) * 100;
-  _("status").style.fontSize = "0.8rem";
-  _("status").style.fontWeight = "200";
-  _("status").style.marginTop = "1rem";
-  _("progressBar").style.opacity = "1";
-  _("progressBar").value = Math.round(percent);
-  _("status").innerHTML = Math.round(percent) + "% uploaded";
+  document.getElementById("status").style.fontSize = "0.8rem";
+  document.getElementById("status").style.fontWeight = "200";
+  document.getElementById("status").style.marginTop = "1rem";
+  document.getElementById("progressBar").style.opacity = "1";
+  document.getElementById("progressBar").value = Math.round(percent);
+  document.getElementById("status").innerHTML =
+    Math.round(percent) + "% uploaded";
 }
 
 function completeHandler(event) {
-  // _("status").innerHTML = event.target.responseText;
-  progressBar.style.opacity = 0;
-  _("progressBar").value = "Uploaded Successfully";
+  document.getElementById("status").innerHTML = event.target.responseText;
+  progressBar.style.opacity = 1;
+  document.getElementById("progressBar").value = "Uploaded Successfully";
 }
 
 function errorHandler(event) {
-  _("status").innerHTML = "Upload Failed";
+  document.getElementById("status").innerHTML = "Upload Failed";
 }
 
 function abortHandler(event) {
-  _("status").innerHTML = "Upload Aborted";
+  document.getElementById("status").innerHTML = "Upload Aborted";
 }
 
 var file = document.getElementById("file1");
@@ -51,15 +49,15 @@ lb.addEventListener("mousedown", function () {
 });
 
 //Scroll To Top Function
-window.addEventListener("scroll", () => {
-  _("ScrolltoTop").style.display = "block";
-});
-_("ScrolltoTop").addEventListener("click", (e) => {
-  e.preventDefault();
-  window.focus();
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
+// window.addEventListener("scroll", () => {
+//   document.getElementById("ScrolltoTop").style.display = "block";
+// });
+// document.getElementById("ScrolltoTop").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   window.focus();
+//   window.scrollTo({
+//     top: 0,
+//     left: 0,
+//     behavior: "smooth",
+//   });
+// });

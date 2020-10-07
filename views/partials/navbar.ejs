@@ -8,7 +8,8 @@
           <span class="desaprobado">Dark</span>
         </label>
       </div>
-      <img src="/img/logo/DSC-trans-new.png" />
+      <a href="/dsc"> <img src="/img/logo/DSC-trans-new.png" /></a>
+
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -20,7 +21,7 @@
           <a href="/dsc/#about" class="nav-items-a">About Us</a>
         </li>
         <li class="nav-item">
-          <a href="/dsc/projects" class="nav-items-a">Projects</a>
+          <a href="/dsc/project/" class="nav-items-a">DSC Projects</a>
         </li>
         <li class="nav-item">
           <a href="/dsc/#schedule" class="nav-items-a">Events</a>
@@ -33,7 +34,10 @@
         </li> -->
         <% if(!user){ %>
         <li class="nav-item">
-          <a href="/dsc/user/register" class="nav-items-a">Log In/Sign Up</a>
+          <a href="/dsc/user/register" class="nav-items-a">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a href="/dsc/user/register?type=login" class="nav-items-a">Log In</a>
         </li>
         <% }else{ %>
         <li class="nav-item">
@@ -52,7 +56,14 @@
           <div class="search" id="srh1"></div>
           <ul class="search-view" id="search_list1">
             <% found.forEach((user)=>{ %>
-            <li class="collection-item2"><a><%= user.name%></a></li>
+            <li class="collection-item2">
+              <a
+                href="/dsc/user/public-profile/<%= user.dscHandle%> "
+                class="usersearch"
+                style="text-decoration: none"
+                ><%= user.name%></a
+              >
+            </li>
             <% }) %>
           </ul>
         </li>

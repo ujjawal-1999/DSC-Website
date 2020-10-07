@@ -1,119 +1,125 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .container {
-    display: block;
-    margin-top: 1em;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-top: 1em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form {
-    display: grid;
-    grid-template-areas: "title title btns" "img img img" "toolbar toolbar toolbar" "body body body";
+  display: grid;
+  grid-template-areas: "title title btns" "img img img" "toolbar toolbar toolbar" "body body body";
 }
 
 #title {
-    padding-left: 0.2em;
-    height: 40px;
-    width: 100%;
-    font-size: 2em;
-    font-weight: bolder;
-    border: none;
-    grid-area: title;
+  padding-left: 0.2em;
+  height: 40px;
+  width: 100%;
+  font-size: 2em;
+  font-weight: bolder;
+  border: none;
+  grid-area: title;
 }
 
 .btns {
-    grid-area: btns;
-    align-self: center;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-left: 2em;
+  grid-area: btns;
+  align-self: center;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-left: 2em;
 }
 
 .file-upload-wrapper {
-    grid-area: img;
-    width: 100%;
-    margin: 0.6em 0;
+  grid-area: img;
+  width: 100%;
+  margin: 0.6em 0;
 }
 
 .file-upload-label {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 .ql-toolbar {
-    grid-area: toolbar;
+  grid-area: toolbar;
 }
 
 .ql-container {
-    grid-area: body;
-    height: 80vh;
+  grid-area: body;
+  height: 80vh;
 }
 
 .publish {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 .publish,
 .cancel {
-    border: none;
-    border-radius: 5px;
-    width: 6em;
-    color: white;
-    height: 2.5em;
-    padding: 0.4em 0;
-    background-color: var(--loginButton);
+  border: none;
+  border-radius: 5px;
+  width: 6em;
+  color: white;
+  height: 2.5em;
+  padding: 0.4em 0;
+  background-color: var(--loginButton);
 }
 
 .cancel {
-    background-color: rgb(231, 54, 54);
+  background-color: rgb(231, 54, 54);
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
 }
 
 #category {
-    padding: 0.5em;
-    border: 1px solid #ccc;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+}
+.ql-editor {
+  word-wrap: anywhere;
 }
 
-
-/* larger screens */
+button a {
+  color: white;
+  text-decoration: none;
+}
 
 @media only screen and (min-width: 850px) {
-    form {
-        grid-template-areas: "title title btns" "img img img" "body body body";
-    }
-    .container {
-        width: 70%;
-    }
-    .ql-container {
-        height: 90vh;
-        border-top: 1px solid #ccc !important;
-    }
-    .ql-toolbar {
-        position: fixed;
-        bottom: 0%;
-        z-index: 2;
-        width: 70%;
-    }
-    .ql-snow .ql-picker.ql-expanded .ql-picker-options {
-        /* top: 100%; */
-        top: -450%;
-    }
-    #ql-picker-options-0 {
-        top: -750%;
-    }
+  form {
+    grid-template-areas: "title title btns" "img img img" "body body body";
+  }
+  .container {
+    width: 70%;
+    max-width: 70%;
+  }
+  .ql-container {
+    height: 90vh;
+    border-top: 1px solid #ccc !important;
+  }
+  .ql-toolbar {
+    position: fixed;
+    bottom: 0%;
+    z-index: 2;
+    width: 70%;
+  }
+  .ql-snow .ql-picker.ql-expanded .ql-picker-options {
+    /* top: 100%; */
+    top: -450%;
+  }
+  #ql-picker-options-0 {
+    top: -750%;
+  }
 }

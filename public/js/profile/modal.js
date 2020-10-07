@@ -1,3 +1,11 @@
+var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
+var regex = new RegExp(expression);
+var fbexp = /^(https?:\/\/){0,1}(www\.){0,1}facebook\.com/;
+var expression2 = new RegExp(fbexp);
+var linkexp = /(https?)?:?(\/\/)?(([w]{3}||\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+var expression3 = new RegExp(linkexp);
+var twitexp = /(?:http:\/\/)?(?:www\.)?twitter\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/;
+var expression4 = new RegExp(twitexp);
 // Custom Image Modal
 const images = document.querySelectorAll(".post-images");
 const full = document.querySelector(".fullview");
@@ -29,24 +37,49 @@ backBtn.addEventListener("click", () => {
 
 function editProfileModalvalidate() {
   var name = document.forms["editprofileform"]["name"].value;
-  var hname = document.forms["editprofileform"]["hname"].value;
   var bio = document.forms["editprofileform"]["bio"].value;
+  var facebook = document.forms["editprofileform"]["facebook"].value;
+  var linkedin = document.forms["editprofileform"]["linkedin"].value;
+  var twitter = document.forms["editprofileform"]["twitter"].value;
 
+  console.log(facebook.length);
+  console.log(linkedin.length);
+  console.log(twitter.length);
   if (name.length < 4) {
     alert("Full Name is too short !");
     return false;
   }
-  if (hname.length < 4) {
-    alert("DSC Handle Name is too short !");
-    return false;
-  }
+
   if (bio.length < 10) {
     alert("Bio must be more than 10 words !");
     return false;
   }
 
+  if (facebook.length != 0) {
+    if (!facebook.match(expression2)) {
+      alert("Invalid Facebook Link Format");
+      return false;
+    }
+  }
+  if (twitter.length != 0) {
+    if (!twitter.match(expression4)) {
+      alert("Invalid Twitter Link Format");
+      return false;
+    }
+  }
+  if (linkedin.length != 0) {
+    if (!linkedin.match(expression3)) {
+      alert("Invalid Linkedin Link Format");
+      return false;
+    }
+  }
+
+  // !facebook.match(expression)
+  // !linkedin.match(expression)
+  // !twitter.match(expression)
   return true;
 }
+
 // ###################################################################################
 // Experience Modal
 var addExperiencebtn = document.getElementById("addExperience");
@@ -77,6 +110,10 @@ function addExperienceModalvalidate() {
   }
   if (exp_role.length < 4) {
     alert("Job Role is too short !");
+    return false;
+  }
+  if (exp_startdate > exp_enddate) {
+    alert("Start Date cannot be ahead of End Date !");
     return false;
   }
   if (exp_description.length < 4) {
@@ -149,12 +186,28 @@ backBtn3.addEventListener("click", () => {
   addProjectModal.style.opacity = "0";
   addProjectModal.style.pointerEvents = "none";
 });
+function statusListenerProject() {
+  var prj_status = document.forms["addProjectForm"]["prj_status"].value;
+  if (prj_status == "Ongoing") {
+    document.getElementById("enddate").disabled = true;
+    document.getElementById("enddate").type = "text";
+    document.forms["addProjectForm"]["enddate"].value = "Till Now";
+  } else if (prj_status == "Scheduled") {
+    document.getElementById("enddate").disabled = true;
+    document.getElementById("enddate").type = "text";
+    document.forms["addProjectForm"]["enddate"].value = "Till Now";
+  } else {
+    document.getElementById("enddate").disabled = false;
+    document.getElementById("enddate").type = "date";
+  }
+}
 function addProjectModalvalidate() {
   var title = document.forms["addProjectForm"]["title"].value;
   var role = document.forms["addProjectForm"]["role"].value;
-  // var startdate = document.forms["addProjectForm"]["startdate"].value;
-  // var enddate = document.forms["addProjectForm"]["enddate"].value;
+  var startdate = document.forms["addProjectForm"]["startdate"].value;
+  var enddate = document.forms["addProjectForm"]["enddate"].value;
   var githuburl = document.forms["addProjectForm"]["githuburl"].value;
+  var hosturl = document.forms["addProjectForm"]["hosturl"].value;
   var description = document.forms["addProjectForm"]["description"].value;
 
   if (title.length < 4) {
@@ -169,12 +222,16 @@ function addProjectModalvalidate() {
     alert("Description is too short !");
     return false;
   }
-  if (
-    !githuburl.match(
-      "http(s)?://.)?(www.)?[-a-zA-Z0-9@:%._+~#=]{2,256}.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&=]*"
-    )
-  ) {
+  if (startdate > enddate) {
+    alert("Start Date cannot be ahead of End Date !");
+    return false;
+  }
+  if (!githuburl.match(expression)) {
     alert("Not a valid Git Repository URL !");
+    return false;
+  }
+  if (!hosturl.match(expression)) {
+    alert("Not a valid Host URL !");
     return false;
   }
   return true;

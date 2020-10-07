@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DSC Members Page</title>
     <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="/img/logo/dsc_logo.png"
+  />
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../public/css/teams/main.css" />
-    <link rel="stylesheet" href="../public/css/teams/tabs.css" />
-    <link rel="stylesheet" href="../public/css/teams/styles.css" />
+    <link rel="stylesheet" href="/css/teams/main.css" />
+    <link rel="stylesheet" href="/css/teams/tabs.css" />
+    <link rel="stylesheet" href="/css/teams/styles.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
   </head>
 
   <body>
+    <!--Navbar Starts-->
+    <%-include('partials/navbar')%>
+    <!---Navbar Ends-->
     <main>
       <div class="mainbgdsc">
-        <img src="../public/img/teams_potraits/dscmem.png" alt="" />
+        <img src="/img/teams_potraits/dscmem.png" alt="" />
       </div>
       <div class="mainone maindsc">
         <p class="discoverone">DSC Members</p>
@@ -53,7 +64,7 @@
         </div>
         <div class="lead_card">
           <img
-            src="../public/img/teams_potraits/Screenshot_2020-09-26 (1) Facebook.png"
+            src="/img/teams_potraits/Screenshot_2020-09-26 (1) Facebook.png"
             alt=""
           />
         </div>
@@ -95,7 +106,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 photo - Tukan Dutta jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 photo - Tukan Dutta jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Tukan Dutta</h3>
@@ -103,18 +114,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -130,27 +132,21 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/tukan.dutta/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/10kan-dutta">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/tukan-dutta/">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -164,7 +160,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 IMG-20200717-WA0017 - ankit srivastava jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 IMG-20200717-WA0017 - ankit srivastava jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Ankit Srivastava</h3>
@@ -172,18 +168,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -199,18 +186,14 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/ankitsri215">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/ank-21">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -219,9 +202,7 @@
                           <a
                             href="https://www.linkedin.com/in/ankit-srivastava-oa68oa/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -235,7 +216,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 my - Manish Upadhyaya jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 my - Manish Upadhyaya jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Manish Upadhyaya</h3>
@@ -243,18 +224,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -270,18 +242,14 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/manish.upadhyaya.3">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.github.com/manishupadhyaya">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -290,9 +258,7 @@
                           <a
                             href="https://www.linkedin.com/in/manish-upadhyaya-35385b165/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -314,7 +280,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 23275562_767678480109199_4823876054544912815_o - Sourav Saikia jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 23275562_767678480109199_4823876054544912815_o - Sourav Saikia jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Sourav Kumar Saikia</h3>
@@ -322,18 +288,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -351,18 +308,14 @@
                           <a
                             href="https://www.facebook.com/sourav.saikia.3939/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/sksaikia">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -371,9 +324,7 @@
                           <a
                             href="https://www.linkedin.com/in/sourav-saikia-780692160"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -388,7 +339,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 1213 - Mairing Hojai jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 1213 - Mairing Hojai jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Mairingdao Hojai</h3>
@@ -396,18 +347,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -423,18 +365,14 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/mairing">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/10xmairing">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -443,9 +381,7 @@
                           <a
                             href="https://www.linkedin.com/in/mairingdao-hojai-a4149516a/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -460,7 +396,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 LRM_EXPORT_164189034505371_20191027_222246937 - Nazimul Hoque jpeg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 LRM_EXPORT_164189034505371_20191027_222246937 - Nazimul Hoque jpeg.png"
                       alt=""
                     />
                     <h3 class="name icon">Nazimul Hoque</h3>
@@ -468,18 +404,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -497,27 +424,21 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://facebook.com/najimulx">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/najimulx">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/najimulhoque6">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -539,7 +460,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 IMG_20200924_131612 - Makarand Patil jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 IMG_20200924_131612 - Makarand Patil jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Makarand Patil</h3>
@@ -547,18 +468,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -576,18 +488,14 @@
                           <a
                             href="https://www.facebook.com/makarand.patil.7583"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Scimac">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -596,9 +504,7 @@
                           <a
                             href="https://www.linkedin.com/in/makarand-patil-1a9ab5173"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -612,7 +518,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Screenshot_2020-09-26 90760429_1464183900420551_5657670950557057024_o - Anurag Kumar jpg.png"
+                      src="/img/teams_potraits/Screenshot_2020-09-26 90760429_1464183900420551_5657670950557057024_o - Anurag Kumar jpg.png"
                       alt=""
                     />
                     <h3 class="name icon">Anurag Thapad</h3>
@@ -620,18 +526,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -647,27 +544,21 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/anurag.thapad/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/anurag-thapad">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/anurag973/">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -682,15 +573,15 @@
           </div>
         </div>
         <div id="panel02" class="tab-panel">
+          <h3 class="heading2">Web</h3>
           <div class="category_item">
             <div class="card_holder">
-              <div class="heading2">Web</div>
               <!-- Ujjawal Bhaiya  -->
               <div class="game">
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/ujjawal.jpg"
+                    src="/img/teams_potraits/ujjawal.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Ujjawal Jain</h3>
@@ -698,12 +589,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -722,9 +610,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://www.facebook.com/jainujjawal1999">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -732,9 +618,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/ujjawal-1999">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -742,9 +626,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://www.linkedin.com/in/jainujjawal1999/">
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -760,7 +642,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Anuva Bhattacharjee.jpg"
+                    src="/img/teams_potraits/Anuva Bhattacharjee.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Anuva Bhattacharjee</h3>
@@ -768,12 +650,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -794,9 +673,7 @@
                         <a
                           href="https://www.facebook.com/anuva.bhattacharjee.37/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -804,9 +681,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/anuva04">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -816,9 +691,7 @@
                         <a
                           href="https://www.linkedin.com/in/anuva-bhattacharjee-2923b5170"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -834,7 +707,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Pathikrit.jpg"
+                    src="/img/teams_potraits/Pathikrit.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Pathikrit Chanda</h3>
@@ -842,12 +715,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -866,9 +736,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://www.facebook.com/pariksht.chanda/">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -876,9 +744,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/pathikrit2407">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -888,9 +754,7 @@
                         <a
                           href="https://www.linkedin.com/in/pathikrit-chanda-396820177/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -906,7 +770,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Sameer Shrivastava.jpg"
+                    src="/img/teams_potraits/Sameer Shrivastava.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Sameer Srivastava</h3>
@@ -914,12 +778,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -938,9 +799,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://www.facebook.com/sameershrivastava46/">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -948,9 +807,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/knight-18/">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -960,9 +817,7 @@
                         <a
                           href="https://www.linkedin.com/in/sameer-shrivastava-b648a2175/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -978,7 +833,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/arshita.jpg"
+                    src="/img/teams_potraits/arshita.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Arshita Narayan</h3>
@@ -986,12 +841,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1010,9 +862,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://m.facebook.com/arshita.narayan.3">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1020,9 +870,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/arshita04">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1032,9 +880,7 @@
                         <a
                           href="https://www.linkedin.com/mwlite/in/arshita-narayan-bb427b176"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1050,7 +896,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Nabanita.jpeg"
+                    src="/img/teams_potraits/Nabanita.jpeg"
                     alt=""
                   />
                   <h3 class="name icon">Nabanita Bania</h3>
@@ -1058,12 +904,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1082,9 +925,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://www.facebook.com/payal.bania.35/">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1092,9 +933,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/nabanitabania">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1104,9 +943,7 @@
                         <a
                           href="https://www.linkedin.com/in/nabanita-bania-27b141169/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1122,7 +959,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Rahul kumar.jpg"
+                    src="/img/teams_potraits/Rahul kumar.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Rahul Kumar Gupta</h3>
@@ -1130,12 +967,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1156,9 +990,7 @@
                         <a
                           href="https://www.facebook.com/profile.php?id=100008283554587"
                         >
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1166,9 +998,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/technisRahulk">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1178,9 +1008,7 @@
                         <a
                           href="https://www.linkedin.com/in/rahul-kumar-gupta-092663176"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1196,7 +1024,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Subhra Sankha Sarma.jpg"
+                    src="/img/teams_potraits/Subhra Sankha Sarma.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Subhra Sankha Sarma</h3>
@@ -1204,12 +1032,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1230,9 +1055,7 @@
                         <a
                           href="https://www.facebook.com/profile.php?id=100011168774680"
                         >
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1240,9 +1063,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/imsubhra">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1252,9 +1073,7 @@
                         <a
                           href="https://www.linkedin.com/in/subhra-sankha-sarma-8472b0184/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1271,7 +1090,7 @@
                 <div class="front">
                   <img
                     class="thumbnail"
-                    src="../public/img/teams_potraits/Aditya Singh Sisodiya.jpg"
+                    src="/img/teams_potraits/Aditya Singh Sisodiya.jpg"
                     alt=""
                   />
                   <h3 class="name icon">Aditya Singh Sisodiya</h3>
@@ -1279,12 +1098,9 @@
                   <div class="stats">
                     <p class="viewers icon">Undergraduate</p>
                     <div class="streamers">
-                      <img
-                        src="../public/img/teams_potraits/index.png"
-                        alt=""
-                      />
-                      <img src="../public/img/teams_potraits/git.png" alt="" />
-                      <img src="../public/img/teams_potraits/link.png" alt="" />
+                      <img src="/img/teams_potraits/index.png" alt="" />
+                      <img src="/img/teams_potraits/git.webp" alt="" />
+                      <img src="/img/teams_potraits/link.png" alt="" />
                     </div>
                   </div>
                 </div>
@@ -1305,9 +1121,7 @@
                         <a
                           href="https://www.facebook.com/adityasingh.sisodiya.927/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
+                          <img src="/img/teams_potraits/index.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1315,9 +1129,7 @@
                     <div class="streamer">
                       <div class="icon">
                         <a href="https://github.com/scortier">
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
+                          <img src="/img/teams_potraits/git.webp" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1327,9 +1139,7 @@
                         <a
                           href="https://www.linkedin.com/in/aditya-singh-sisodiya-scortier/"
                         >
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
+                          <img src="/img/teams_potraits/link.png" alt=""
                         /></a>
                       </div>
                     </div>
@@ -1351,7 +1161,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Rishiraj Paul Chowdhury.jpg"
+                      src="/img/teams_potraits/Rishiraj Paul Chowdhury.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Rishiraj Paul Chaudhary</h3>
@@ -1359,24 +1169,15 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
 
                   <div class="back">
-                    <p class="about">Application developer</p>
+                    <p class="about">Android Developer</p>
 
                     <div class="streaming-info">
                       <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1391,9 +1192,7 @@
                           <a
                             href="https://www.facebook.com/adityasingh.sisodiya.927/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1401,9 +1200,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/scortier">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1413,9 +1210,7 @@
                           <a
                             href="https://www.linkedin.com/in/aditya-singh-sisodiya-scortier/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1432,7 +1227,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Yash Srivastava.jpg"
+                      src="/img/teams_potraits/Yash Srivastava.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Yash Srivastava</h3>
@@ -1440,24 +1235,15 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
 
                   <div class="back">
-                    <p class="about">Application Developer</p>
+                    <p class="about">Android Developer</p>
 
                     <div class="streaming-info">
                       <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1472,9 +1258,7 @@
                           <a
                             href="https://www.facebook.com/yash.srivastava.731/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1482,9 +1266,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/yash312312">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1494,9 +1276,7 @@
                           <a
                             href="https://www.linkedin.com/in/yash-sri-vas-tava/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1512,7 +1292,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Nandini Agarwal.jpeg"
+                      src="/img/teams_potraits/Nandini Agarwal.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Nandini Agarwal</h3>
@@ -1520,24 +1300,15 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
 
                   <div class="back">
-                    <p class="about">Application Developer</p>
+                    <p class="about">Android Developer</p>
 
                     <div class="streaming-info">
                       <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1552,9 +1323,7 @@
                           <a
                             href="https://www.facebook.com/nandini.agarwal.921"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1562,9 +1331,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Nanduag0">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1574,9 +1341,7 @@
                           <a
                             href="https://www.linkedin.com/in/nandini-agarwal-889217189/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1592,7 +1357,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Elvis Rahman.jpg"
+                      src="/img/teams_potraits/Elvis Rahman.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Elvis Rahman</h3>
@@ -1600,24 +1365,15 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
 
                   <div class="back">
-                    <p class="about">Application Developer</p>
+                    <p class="about">Android Developer</p>
 
                     <div class="streaming-info">
                       <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1630,9 +1386,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/ajanta.mathew.7">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1640,9 +1394,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/elvis902">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1652,9 +1404,7 @@
                           <a
                             href="https://www.linkedin.com/in/elvis-rahman-0304ba17a/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1670,7 +1420,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Kazi Sahariar Rahi.jpg"
+                      src="/img/teams_potraits/Kazi Sahariar Rahi.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Kazi Sahariar Rahi</h3>
@@ -1678,24 +1428,15 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
 
                   <div class="back">
-                    <p class="about">Application Developer</p>
+                    <p class="about">Android Developer</p>
 
                     <div class="streaming-info">
                       <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1708,9 +1449,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/shahriar.rahi.7">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1718,9 +1457,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/kazi123kazi">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1730,9 +1467,7 @@
                           <a
                             href="https://www.linkedin.com/in/kazi-sahariar-rahi"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1754,7 +1489,7 @@
                     <div class="front">
                       <img
                         class="thumbnail"
-                        src="../public/img/teams_potraits/Manzil Hoque.jpg"
+                        src="/img/teams_potraits/Manzil Hoque.jpg"
                         alt=""
                       />
                       <h3 class="name icon">Manzil Hoque</h3>
@@ -1762,18 +1497,9 @@
                       <div class="stats">
                         <p class="viewers icon">Undergraduate</p>
                         <div class="streamers">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
-                          />
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
-                          />
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
-                          />
+                          <img src="/img/teams_potraits/index.png" alt="" />
+                          <img src="/img/teams_potraits/git.webp" alt="" />
+                          <img src="/img/teams_potraits/link.png" alt="" />
                         </div>
                       </div>
                     </div>
@@ -1792,9 +1518,7 @@
                         <div class="streamer">
                           <div class="icon">
                             <a href="https://www.facebook.com/manzil.hoque">
-                              <img
-                                src="../public/img/teams_potraits/index.png"
-                                alt=""
+                              <img src="/img/teams_potraits/index.png" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1802,9 +1526,7 @@
                         <div class="streamer">
                           <div class="icon">
                             <a href="https://github.com/ManzilHoque">
-                              <img
-                                src="../public/img/teams_potraits/git.png"
-                                alt=""
+                              <img src="/img/teams_potraits/git.webp" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1814,9 +1536,7 @@
                             <a
                               href="https://www.linkedin.com/in/manzil-hoque-3213b8170/"
                             >
-                              <img
-                                src="../public/img/teams_potraits/link.png"
-                                alt=""
+                              <img src="/img/teams_potraits/link.png" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1832,7 +1552,7 @@
                     <div class="front">
                       <img
                         class="thumbnail"
-                        src="../public/img/teams_potraits/Srinjoy Dutta.jpg"
+                        src="/img/teams_potraits/Srinjoy Dutta.jpg"
                         alt=""
                       />
                       <h3 class="name icon">Srinjoy Dutta</h3>
@@ -1840,24 +1560,15 @@
                       <div class="stats">
                         <p class="viewers icon">Undergraduate</p>
                         <div class="streamers">
-                          <img
-                            src="../public/img/teams_potraits/index.png"
-                            alt=""
-                          />
-                          <img
-                            src="../public/img/teams_potraits/git.png"
-                            alt=""
-                          />
-                          <img
-                            src="../public/img/teams_potraits/link.png"
-                            alt=""
-                          />
+                          <img src="/img/teams_potraits/index.png" alt="" />
+                          <img src="/img/teams_potraits/git.webp" alt="" />
+                          <img src="/img/teams_potraits/link.png" alt="" />
                         </div>
                       </div>
                     </div>
 
                     <div class="back">
-                      <p class="about">Application Developer</p>
+                      <p class="about">Android Developer</p>
 
                       <div class="streaming-info">
                         <p class="game-stat">2018-22<span>Batch</span></p>
@@ -1870,9 +1581,7 @@
                         <div class="streamer">
                           <div class="icon">
                             <a href="https://www.facebook.com/prince.jack.7587">
-                              <img
-                                src="../public/img/teams_potraits/index.png"
-                                alt=""
+                              <img src="/img/teams_potraits/index.png" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1880,9 +1589,7 @@
                         <div class="streamer">
                           <div class="icon">
                             <a href="https://github.com/srinjoydutta">
-                              <img
-                                src="../public/img/teams_potraits/git.png"
-                                alt=""
+                              <img src="/img/teams_potraits/git.webp" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1892,9 +1599,7 @@
                             <a
                               href="https://www.linkedin.com/in/srinjoy-dutta-01a81b177"
                             >
-                              <img
-                                src="../public/img/teams_potraits/link.png"
-                                alt=""
+                              <img src="/img/teams_potraits/link.png" alt=""
                             /></a>
                           </div>
                         </div>
@@ -1908,7 +1613,6 @@
               </div>
             </div>
           </div>
-          2018-22
         </div>
 
         <div id="panel03" class="tab-panel">
@@ -1921,7 +1625,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Shashwat_Priyadarshy.png"
+                      src="/img/teams_potraits/Shashwat_Priyadarshy.png"
                       alt=""
                     />
                     <h3 class="name icon">Shashwat Priyadarshy</h3>
@@ -1929,18 +1633,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -1961,9 +1656,7 @@
                           <a
                             href="https://www.facebook.com/shashwat.priyadarshy.3/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1971,9 +1664,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/reverope/">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -1983,9 +1674,7 @@
                           <a
                             href="https://www.linkedin.com/in/shashwatpriyadarshy/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2000,7 +1689,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/vishal_pandey.jpg"
+                      src="/img/teams_potraits/vishal_pandey.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Vishal Pandey</h3>
@@ -2008,18 +1697,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2038,9 +1718,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/bishal.panday.9275">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2048,9 +1726,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/vishalpandeyvip">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2060,9 +1736,7 @@
                           <a
                             href="https://www.linkedin.com/in/vishal-pandey-63262b1a0/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2078,7 +1752,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Biley Roy.jpeg"
+                      src="/img/teams_potraits/Biley Roy.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Biley Roy</h3>
@@ -2086,18 +1760,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2116,9 +1781,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/biley.roy.5">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2126,9 +1789,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/biley02">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2138,9 +1799,7 @@
                           <a
                             href="https://www.linkedin.com/in/biley-roy-783595199/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2156,7 +1815,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Reeya Hazarika.jpg"
+                      src="/img/teams_potraits/Reeya Hazarika.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Reeya Hazarika</h3>
@@ -2164,18 +1823,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2194,9 +1844,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/reeya.hazarika">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2204,9 +1852,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/reeyah">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2214,9 +1860,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/reeya-hazarika">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2232,7 +1876,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Arkadeep Kashyap.jpg"
+                      src="/img/teams_potraits/Arkadeep Kashyap.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Arkadeep Kashyap</h3>
@@ -2240,18 +1884,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2270,9 +1905,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/arko.kashyap">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2280,9 +1913,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/kashyaparka">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2292,9 +1923,7 @@
                           <a
                             href="https://www.linkedin.com/in/arkadeep-kashyap-8a186b1a7"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2310,7 +1939,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Debojyoti Das.jpg"
+                      src="/img/teams_potraits/Debojyoti Das.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Debojyoti Das</h3>
@@ -2318,18 +1947,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2350,9 +1970,7 @@
                           <a
                             href="https://www.facebook.com/debojyoti.das.52206/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2360,9 +1978,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Debojyoti1915001">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2372,9 +1988,7 @@
                           <a
                             href="https://www.linkedin.com/in/debojyoti-das-84b72719a/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2390,7 +2004,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Siddhartha Das.jpeg"
+                      src="/img/teams_potraits/Siddhartha Das.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Siddartha Das</h3>
@@ -2398,18 +2012,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2430,9 +2035,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100009187882534"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2440,9 +2043,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/siddharthadas15">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2452,9 +2053,7 @@
                           <a
                             href="https://www.linkedin.com/in/siddhartha-das-673020194/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2470,7 +2069,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/profile pic - Shivam Kumar.jpg"
+                      src="/img/teams_potraits/profile pic - Shivam Kumar.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Shivam Kumar</h3>
@@ -2478,18 +2077,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2508,9 +2098,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/shiva.om.92754/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2518,9 +2106,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/shivaom02">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2530,9 +2116,7 @@
                           <a
                             href="https://www.linkedin.com/in/shivam-kumar-892b491b3"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2548,7 +2132,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Saurav das.png"
+                      src="/img/teams_potraits/Saurav das.png"
                       alt=""
                     />
                     <h3 class="name icon">Saurav Das</h3>
@@ -2556,18 +2140,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2588,9 +2163,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100006213496099"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2598,9 +2171,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Saurav1905">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2610,9 +2181,7 @@
                           <a
                             href="https://www.linkedin.com/in/saurav-das-0819591a0/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2628,7 +2197,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Nishi Sekhani.jpg"
+                      src="/img/teams_potraits/Nishi Sekhani.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Nishi Sekhani</h3>
@@ -2636,18 +2205,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2666,9 +2226,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/nishi.sekhani/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2676,9 +2234,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/nishisekhani">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2688,9 +2244,7 @@
                           <a
                             href="https://www.linkedin.com/in/nishi-sekhani-544a7a1b2/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2710,7 +2264,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Rajdeep Paul.jpg"
+                      src="/img/teams_potraits/Rajdeep Paul.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Rajdeep Paul</h3>
@@ -2718,18 +2272,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2748,9 +2293,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/11rajdeep.paul">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2758,9 +2301,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Rajdeep-Paul-117">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2770,9 +2311,7 @@
                           <a
                             href="https://www.linkedin.com/in/rajdeep-paul-20973b1a0"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2788,7 +2327,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Dhritiraj Borah.jpeg"
+                      src="/img/teams_potraits/Dhritiraj Borah.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Dhritiraj Borah</h3>
@@ -2796,18 +2335,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2826,9 +2356,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/dhriti.borah.52/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2836,9 +2364,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/phantomcoder11">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2848,9 +2374,7 @@
                           <a
                             href="https://www.linkedin.com/in/dhritiraj-borah-a0073b192"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2866,7 +2390,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Gaurav Bhattacharjee.jpg"
+                      src="/img/teams_potraits/Gaurav Bhattacharjee.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Gaurav Bhattacharjee</h3>
@@ -2874,18 +2398,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2906,9 +2421,7 @@
                           <a
                             href="https://www.facebook.com/people/Gaurav-Bhattacharjee/100010292470507"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2916,9 +2429,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/guilefoylegaurav">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2928,9 +2439,7 @@
                           <a
                             href="https://www.linkedin.com/in/gaurav-bhattacharjee-19a387a8/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2946,7 +2455,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/gaurav - Gaurav Das.jpeg"
+                      src="/img/teams_potraits/gaurav - Gaurav Das.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Gaurav Das</h3>
@@ -2954,18 +2463,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -2984,9 +2484,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/gaurav.das.338211">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -2994,9 +2492,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/gauravdas014">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3004,9 +2500,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/gauravdas014/">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3022,7 +2516,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Daniyal Mahmood.jpg"
+                      src="/img/teams_potraits/Daniyal Mahmood.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Daniyal Mahmood</h3>
@@ -3030,18 +2524,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3060,9 +2545,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/daniyalmahmood123">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3070,9 +2553,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Dphilomath">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3080,9 +2561,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/daniyal-mahmood">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3098,7 +2577,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Satyik pritam Yogi.jpg"
+                      src="/img/teams_potraits/Satyik pritam Yogi.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Satyik Pritam Yogi</h3>
@@ -3106,18 +2585,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3136,9 +2606,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/satyikpritam.yogi">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3146,9 +2614,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/satyik">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3158,9 +2624,7 @@
                           <a
                             href="https://www.linkedin.com/in/satyik-pritam-yogi-a6a49019a/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3176,7 +2640,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Aditya Agarwal.jpg"
+                      src="/img/teams_potraits/Aditya Agarwal.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Aditya Agarwal</h3>
@@ -3184,18 +2648,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3216,9 +2671,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100009177385701"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3226,9 +2679,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/aditya2712">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3238,9 +2689,7 @@
                           <a
                             href="https://www.linkedin.com/in/aditya-agarwal-1b26301a0/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3256,7 +2705,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Rishi Raj Kalita.jpg"
+                      src="/img/teams_potraits/Rishi Raj Kalita.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Rishiraj Kalita</h3>
@@ -3264,18 +2713,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3296,9 +2736,7 @@
                           <a
                             href="https://www.facebook.com/rishiraj.talukdar.1"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3306,9 +2744,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Rishi-Raj-Kalita">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3318,9 +2754,7 @@
                           <a
                             href="https://www.linkedin.com/mwlite/in/rishi-raj-5946511a0"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3336,7 +2770,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Sujata Baroi.jpg"
+                      src="/img/teams_potraits/Sujata Baroi.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Sujata Baroi</h3>
@@ -3344,18 +2778,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3374,9 +2799,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/sujata.baroi.3">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3384,9 +2807,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Sujata-Baroi">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3396,9 +2817,7 @@
                           <a
                             href="https://www.linkedin.com/in/sujata-baroi-8788a6162"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3414,7 +2833,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/pranjal das.jpg"
+                      src="/img/teams_potraits/pranjal das.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Pranjal Das</h3>
@@ -3422,18 +2841,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3454,9 +2864,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100039996093582"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3464,9 +2872,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Pranjal123123">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3476,9 +2882,7 @@
                           <a
                             href="https://www.linkedin.com/in/pranjal-das-57a8a51b5"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3494,7 +2898,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Jitul Teron.jpg"
+                      src="/img/teams_potraits/Jitul Teron.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Jitul Teron</h3>
@@ -3502,18 +2906,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3532,9 +2927,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/jitul.teron.71/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3542,9 +2935,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Jitulteron7">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3554,9 +2945,7 @@
                           <a
                             href="https://www.linkedin.com/in/jitul-teron-9a348b19a/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3572,7 +2961,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Anusha Hazarika.jpg"
+                      src="/img/teams_potraits/Anusha Hazarika.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Anusha Hazarika</h3>
@@ -3580,18 +2969,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3610,9 +2990,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/Anusha.Hazarika.1/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3620,9 +2998,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/AnushaHazarika">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3632,9 +3008,7 @@
                           <a
                             href="https://www.linkedin.com/in/anusha-h-7264bab4/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3656,7 +3030,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Sahil Sarwar.jpg"
+                      src="/img/teams_potraits/Sahil Sarwar.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Sahil Sarwar</h3>
@@ -3664,18 +3038,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3694,9 +3059,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/TheOriginalSahil">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3704,9 +3067,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/sk25469">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3716,9 +3077,7 @@
                           <a
                             href="https://www.linkedin.com/in/sahil-sarwar-4296631aa"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3735,7 +3094,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/mriganka bharali.jpg"
+                      src="/img/teams_potraits/mriganka bharali.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Mriganka Bharali</h3>
@@ -3743,18 +3102,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3775,9 +3125,7 @@
                           <a
                             href="https://www.facebook.com/mriganka.bharali.547"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3785,9 +3133,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/glitch-droid">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3797,9 +3143,7 @@
                           <a
                             href="https://www.linkedin.com/in/mriganka-bharali-4230b41a5"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3815,7 +3159,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Arjun Kumar.jpg"
+                      src="/img/teams_potraits/Arjun Kumar.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Arjun Sah</h3>
@@ -3823,18 +3167,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3853,9 +3188,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/arjunsah21/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3863,9 +3196,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/arjunsah21">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3873,9 +3204,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.linkedin.com/in/arjunsah21/">
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3891,7 +3220,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Raj Kishan.JPG"
+                      src="/img/teams_potraits/Raj Kishan.JPG"
                       alt=""
                     />
                     <h3 class="name icon">Raj Kishan</h3>
@@ -3899,18 +3228,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -3929,9 +3249,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/raj.kishan.583/">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3939,9 +3257,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Rajkishan0406">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3951,9 +3267,7 @@
                           <a
                             href="https://www.linkedin.com/in/raj-kishan-0a02491b8/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -3969,7 +3283,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Shristi Sarma.png"
+                      src="/img/teams_potraits/Shristi Sarma.png"
                       alt=""
                     />
                     <h3 class="name icon">Shristi Sarma</h3>
@@ -3977,18 +3291,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4007,9 +3312,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/ria.sarma.733">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4017,9 +3320,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/sarma923">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4029,9 +3330,7 @@
                           <a
                             href="https://www.linkedin.com/in/shristi-sarma-69619713a"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4047,7 +3346,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Jyotimoy Kashyap.jpeg"
+                      src="/img/teams_potraits/Jyotimoy Kashyap.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Jyotimoy Kashyap</h3>
@@ -4055,18 +3354,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4087,9 +3377,7 @@
                           <a
                             href="https://www.facebook.com/jyotimoy.kashyap.33"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4097,9 +3385,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/JyotimoyKashyap">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4109,9 +3395,7 @@
                           <a
                             href="https://www.linkedin.com/in/jyotimoy-kashyap-62a792190/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4127,7 +3411,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Snehashish Karmakar.jpg"
+                      src="/img/teams_potraits/Snehashish Karmakar.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Snehashish Karmakar</h3>
@@ -4135,18 +3419,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4167,9 +3442,7 @@
                           <a
                             href="https://www.facebook.com/snehashish.karmakar/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4177,9 +3450,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Snehashish2403">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4189,9 +3460,7 @@
                           <a
                             href="https://www.linkedin.com/in/snehashish-karmakar-18982112b/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4207,7 +3476,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Sanchayita Purkayastha.jpg"
+                      src="/img/teams_potraits/Sanchayita Purkayastha.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Sanchayita Purkayastha</h3>
@@ -4215,18 +3484,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4247,9 +3507,7 @@
                           <a
                             href="https://www.facebook.com/sanchayita.purkayastha/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4257,9 +3515,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/sanchayitapurkayastha">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4269,9 +3525,7 @@
                           <a
                             href="https://www.linkedin.com/in/sanchayita-purkayastha-68b62b1a0/"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4287,7 +3541,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Aman Aryan.jpg"
+                      src="/img/teams_potraits/Aman Aryan.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Aman Aryan</h3>
@@ -4295,18 +3549,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4327,9 +3572,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100040614994331"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4337,9 +3580,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/amanaryan512">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4349,9 +3590,7 @@
                           <a
                             href="https://www.linkedin.com/in/aman-aryan-92ab031a1"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4374,7 +3613,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Lovepreet Singh.jpg"
+                      src="/img/teams_potraits/Lovepreet Singh.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Lovepreet Singh</h3>
@@ -4382,18 +3621,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4412,9 +3642,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/luvprit.singh.79">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4422,9 +3650,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/LovepreetSingh12">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4434,9 +3660,7 @@
                           <a
                             href="https://www.linkedin.com/in/lovepreet-singh-b5362a1a0"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4452,7 +3676,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Sharmistha Das.jpeg"
+                      src="/img/teams_potraits/Sharmistha Das.jpeg"
                       alt=""
                     />
                     <h3 class="name icon">Sharmistha Das</h3>
@@ -4460,18 +3684,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4490,9 +3705,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/smiriti.das.798">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4500,9 +3713,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/sharmistha412">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4512,9 +3723,7 @@
                           <a
                             href="https://www.linkedin.com/in/sharmistha-das-1626311a0"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4530,7 +3739,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Milind Barman.jpg"
+                      src="/img/teams_potraits/Milind Barman.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Milind Barman</h3>
@@ -4538,18 +3747,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4568,9 +3768,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://m.facebook.com/milind.barman.7">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4578,9 +3776,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/milibar30">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4590,9 +3786,7 @@
                           <a
                             href="https://www.linkedin.com/mwlite/in/milind-barnan-729958166"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4608,7 +3802,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Nihar Jyoti Basisth.jpg"
+                      src="/img/teams_potraits/Nihar Jyoti Basisth.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Nihar Jyoti Basistha</h3>
@@ -4616,18 +3810,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4646,9 +3831,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://www.facebook.com/nihar.basisth.7">
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4656,9 +3839,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/nightfury874">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4668,9 +3849,7 @@
                           <a
                             href="https://www.linkedin.com/in/nihar-basisth-121b2319b"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4686,7 +3865,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Rishav Anand.jpg"
+                      src="/img/teams_potraits/Rishav Anand.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Rishav Anand</h3>
@@ -4694,18 +3873,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4726,9 +3896,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100010267725162"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4736,9 +3904,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/Rishav1709">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4748,9 +3914,7 @@
                           <a
                             href="https://www.linkedin.com/in/rishav-anand-156993199"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4766,7 +3930,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Soumya Ranjan Mohapatro.jpg"
+                      src="/img/teams_potraits/Soumya Ranjan Mohapatro.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Soumya Ranjan Mohapatra</h3>
@@ -4774,18 +3938,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4806,9 +3961,7 @@
                           <a
                             href="https://www.facebook.com/soumyaranjan.mohapatro.3"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4816,9 +3969,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/SoumyaCMC">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4828,9 +3979,7 @@
                           <a
                             href="https://www.linkedin.com/in/soumya-ranjan-mohapatro-47644b1a0"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4846,7 +3995,7 @@
                   <div class="front">
                     <img
                       class="thumbnail"
-                      src="../public/img/teams_potraits/Digant Pawan Dixit.jpg"
+                      src="/img/teams_potraits/Digant Pawan Dixit.jpg"
                       alt=""
                     />
                     <h3 class="name icon">Diganta Pawan Dixit</h3>
@@ -4854,18 +4003,9 @@
                     <div class="stats">
                       <p class="viewers icon">Undergraduate</p>
                       <div class="streamers">
-                        <img
-                          src="../public/img/teams_potraits/index.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/git.png"
-                          alt=""
-                        />
-                        <img
-                          src="../public/img/teams_potraits/link.png"
-                          alt=""
-                        />
+                        <img src="/img/teams_potraits/index.png" alt="" />
+                        <img src="/img/teams_potraits/git.webp" alt="" />
+                        <img src="/img/teams_potraits/link.png" alt="" />
                       </div>
                     </div>
                   </div>
@@ -4886,9 +4026,7 @@
                           <a
                             href="https://www.facebook.com/profile.php?id=100008474986315"
                           >
-                            <img
-                              src="../public/img/teams_potraits/index.png"
-                              alt=""
+                            <img src="/img/teams_potraits/index.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4896,9 +4034,7 @@
                       <div class="streamer">
                         <div class="icon">
                           <a href="https://github.com/DigantDixit">
-                            <img
-                              src="../public/img/teams_potraits/git.png"
-                              alt=""
+                            <img src="/img/teams_potraits/git.webp" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4908,9 +4044,7 @@
                           <a
                             href="https://www.linkedin.com/in/digant-pawan-dixit-8528b8199"
                           >
-                            <img
-                              src="../public/img/teams_potraits/link.png"
-                              alt=""
+                            <img src="/img/teams_potraits/link.png" alt=""
                           /></a>
                         </div>
                       </div>
@@ -4923,13 +4057,15 @@
               </div>
             </div>
           </div>
-          2019-23
         </div>
       </div>
     </div>
     <!-- Year Wise -->
+    <%-include('partials/footer')%>
   </body>
-  <script src="../node_modules/a11ytab/dist/a11ytab.js"></script>
-  <script src="../public/js/profile/profile.js"></script>
-  <script src="../public/js/a11ytab.js"></script>
+
+  <script src="/js/navbar.js"></script>  
+  <script src="/js/darkmode.js"></script>
+  <script src="/js/profile/profile.js"></script>
+  <script src="/js/a11ytab.js"></script>
 </html>

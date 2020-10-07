@@ -3,11 +3,12 @@
   flex-direction: column;
   background-color: var(--Grey-dark-4);
   color: var(--white);
+  width: 100%;
 }
 .nav_mainmenu {
   display: flex;
   flex-direction: row;
-  margin: 7vh 0;
+  padding-top: 4vh;
   justify-content: space-around;
   align-items: center;
 }
@@ -117,15 +118,20 @@
   /* height: 12rem; */
   justify-content: space-around;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 0.1rem 0;
 }
-
+.nav-banner{
+  width: 30%;
+}
 .fadedText {
   opacity: 0.6;
 }
 @media screen and (max-width: 700px) {
   .contentnav {
     margin: 1rem;
+  }
+  .nav-banner{
+    width: 50%;
   }
 }
 

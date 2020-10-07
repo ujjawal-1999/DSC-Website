@@ -23,7 +23,6 @@ body {
 
 .container {
   width: 100%;
-  min-height: 80rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,6 +570,11 @@ body {
   color: var(--Grey-dark-1);
 }
 
+.cards .card .content a {
+  color: #08c;
+  margin: 1rem 0;
+}
+
 .cards .card .content .topic {
   margin-top: 0.3rem;
   font-size: 1rem;
@@ -585,7 +589,19 @@ body {
 
 .cards .card .content .description {
   font-family: "Times New Roman", Times, serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
   width: 95%;
+}
+
+.cards .card .content p {
+  font-family: "Times New Roman", Times, serif;
+  width: 95%;
+  word-wrap: anywhere;
 }
 
 .cards .card .content .images {
