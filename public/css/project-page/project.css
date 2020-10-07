@@ -52,7 +52,9 @@ background-color: rgb(26, 25, 25);
   color: rgb(177, 177, 192);
   border-color: green;
 }
-
+.dark-mode input {
+  background-color: #333;
+}
 * {
   box-sizing: border-box;
 }
