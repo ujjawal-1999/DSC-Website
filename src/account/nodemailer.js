@@ -43,11 +43,21 @@ const contactAdmin = (data) => {
     },
   });
 
+  filesArray = data.files.split("--");
+  let image1 = filesArray[0], image2 = filesArray[1], image3 = filesArray[2], image4 = filesArray[3];
+  let mailContent = `
+  A new Report has been issued.<p>Name - ${data.name}</p><p>Email Id - ${data.email}</p><p>Subject - ${data.subject}</p><p>Message - ${data.message}</p><p>Contains Images:${data.img}
+  <div id="images">
+    <img src = "upload/${image1}" />
+    <img src = "upload/${image2}" />
+    <img src = "upload/${image3}" />
+    <img src = "upload/${image4}" />
+    </div>`;
   var mailOptions = {
     from: process.env.NODEMAILER_SECONDARYEMAIL,
     to: process.env.NODEMAILER_EMAIL,
     subject: `DSC User Issue Report`,
-    html: `A new Report has been issued.<p>Name - ${data.name}</p><p>Email Id - ${data.email}</p><p>Subject - ${data.subject}</p><p>Message - ${data.message}</p><p>Contains Images:${data.img}`,
+    html: mailContent,
   };
   console.log("mailOptions : ", mailOptions);
 
@@ -75,7 +85,6 @@ const signUpMail = (data) => {
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
     },
   });
-
   var mailOptions = {
     from: process.env.NODEMAILER_EMAIL,
     to: `${data.email}`,

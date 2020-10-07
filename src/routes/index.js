@@ -187,12 +187,14 @@ router.post("/contact", async (req, res) => {
           }
           newMail.imageLocation = location;
         }
+        console.log(newMail.imageLocation);
         contactAdmin({
           email: req.body.email,
           name: req.body.name,
           message: req.body.message,
           subject: req.body.subject,
           img: newMail.imageLocation ? "yes" : "no",
+          files: newMail.imageLocation
         });
         newMail
           .save()

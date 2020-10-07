@@ -125,11 +125,8 @@ function addExperienceModalvalidate() {
 }
 function statusListener() {
   var exp_status = document.forms["addExperienceform"]["exp_status"].value;
-  if (exp_status == "Ongoing") {
-    document.getElementById("exp_enddate").disabled = true;
-    document.getElementById("exp_enddate").type = "text";
-    document.forms["addExperienceform"]["exp_enddate"].value = "Till Now";
-  } else if (exp_status == "Scheduled") {
+  if (exp_status === "Ongoing") {
+    console.log("Ongoing")
     document.getElementById("exp_enddate").disabled = true;
     document.getElementById("exp_enddate").type = "text";
     document.forms["addExperienceform"]["exp_enddate"].value = "Till Now";
@@ -205,7 +202,7 @@ function addProjectModalvalidate() {
   var title = document.forms["addProjectForm"]["title"].value;
   var role = document.forms["addProjectForm"]["role"].value;
   var startdate = document.forms["addProjectForm"]["startdate"].value;
-  var enddate = document.forms["addProjectForm"]["enddate"].value;
+  var enddate = document.forms["addProjectForm"]["enddate"].value == "Till Now" ? "PRESENT": document.forms["addProjectForm"]["enddate"].value;
   var githuburl = document.forms["addProjectForm"]["githuburl"].value;
   var hosturl = document.forms["addProjectForm"]["hosturl"].value;
   var description = document.forms["addProjectForm"]["description"].value;
@@ -222,10 +219,13 @@ function addProjectModalvalidate() {
     alert("Description is too short !");
     return false;
   }
-  if (startdate > enddate) {
-    alert("Start Date cannot be ahead of End Date !");
-    return false;
+  if(enddate !== "PRESENT"){
+    if (startdate > enddate) {
+      alert("Start Date cannot be ahead of End Date !");
+      return false;
+    }
   }
+
   if (!githuburl.match(expression)) {
     alert("Not a valid Git Repository URL !");
     return false;

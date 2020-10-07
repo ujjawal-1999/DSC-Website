@@ -403,7 +403,8 @@ router.post("/experience", authorization, async (req, res) => {
   try {
     // console.log("experience route called");
     const user = req.dbUser;
-    // console.log(req.body);
+    console.log(req.body)
+    console.log(user);
     const newExp = {
       name: req.body.exp_name,
       role: req.body.exp_role,
@@ -413,7 +414,8 @@ router.post("/experience", authorization, async (req, res) => {
       description: req.body.exp_description,
     };
     user.experiences.push(newExp);
-    // console.log(newExp);
+    console.log(user);
+    console.log(newExp);
     await user.save();
     res.redirect(req.get("referer"));
   } catch (error) {
@@ -455,7 +457,7 @@ router.post("/profile", authorization, (req, res) => {
         bio: req.body.bio,
         socialLinks: {
           linkedin: req.body.linkedin,
-          twitter: req.body.twitter,
+          github: req.body.github,
           facebook: req.body.facebook,
         },
       }).then((result) => {

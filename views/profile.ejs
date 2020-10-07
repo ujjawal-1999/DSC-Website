@@ -67,7 +67,6 @@
               >
                 <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
-                <option value="Scheduled">Scheduled</option>
               </select>
             </div>
             <div class="flexRow">
@@ -228,7 +227,7 @@
                   ECE
                 </option>
                 <option value="Civil Engineering">CE</option>
-                <option value="Electronics & Instrumentation">ENI</option>
+                <option value="Electronics & Instrumentation">E&I</option>
               </select>
             </div>
             <div class="flexRow">
@@ -248,8 +247,7 @@
                 type="text"
                 placeholder="Something about you."
                 name="bio"
-                value="<% if(user.bio!=null){%><%=user.bio%><%}%>"
-                required
+                value="<% if(user.bio){%><%=user.bio%><%}%>"
                 maxlength="50"
               />
             </div>
@@ -258,10 +256,9 @@
               <input
                 id="facebook"
                 type="url"
-                value="<% if(user.socialLinks['facebook']!=null){%><%=user.socialLinks['facebook']%><%}%>"
+                value="<% if(user.socialLinks['facebook']){%><%=user.socialLinks['facebook']%><%}%>"
                 placeholder="Enter Your Facebook account URL"
                 name="facebook"
-                required
                 maxlength="200"
               />
             </div>
@@ -270,7 +267,7 @@
               <input
                 id="linkedin"
                 type="url"
-                value="<% if(user.socialLinks['linkedin']!=null){%><%=user.socialLinks['linkedin']%><%}%>"
+                value="<% if(user.socialLinks['linkedin']){%><%=user.socialLinks['linkedin']%><%}%>"
                 placeholder="Enter Your Linkedin account URL"
                 name="linkedin"
                 maxlength="200"
@@ -278,13 +275,13 @@
             </div>
 
             <div class="flexRow">
-              <label for="twitter"> Twitter </label>
+              <label for="github"> Github </label>
               <input
-                id="twitter"
+                id="github"
                 type="url"
-                value="<% if(user.socialLinks['twitter']!=null){%><%=user.socialLinks['twitter']%><%}%>"
-                placeholder="Enter Your Twitter account URL"
-                name="twitter"
+                value="<% if(user.socialLinks['github']){%><%=user.socialLinks['github']%><%}%>"
+                placeholder="Enter Your github profile URL"
+                name="github"
                 maxlength="200"
               />
             </div>
@@ -673,6 +670,17 @@
                 </p>
                 <div class="branchandyear">
                   <div class="collegeinfo">
+                    <% if(user.socialLinks["github"]!=null){ %>
+                    <a href='<%=user.socialLinks["github"]%>'>
+                      <img class="s" src="/img/logo/githubPng.png" alt="" />
+                    </a>
+                    <% }else{%>
+
+                    <a href="#">
+                      <img class="s" src="/img/logo/githubPng.png" alt="" /> </a
+                    ><% }%>
+                  </div>
+                  <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
                     <a href='<%=user.socialLinks["facebook"]%>'>
                       <img class="s" src="/img/logo/fb.png" alt="" />
@@ -692,17 +700,6 @@
 
                     <a href="#">
                       <img class="s" src="/img/logo/link.png" alt="" /> </a
-                    ><% }%>
-                  </div>
-                  <div class="collegeinfo">
-                    <% if(user.socialLinks["twitter"]!=null){ %>
-                    <a href='<%=user.socialLinks["twitter"]%>'>
-                      <img class="s" src="/img/logo/twitter.png" alt="" />
-                    </a>
-                    <% }else{%>
-
-                    <a href="#">
-                      <img class="s" src="/img/logo/twitter.png" alt="" /> </a
                     ><% }%>
                   </div>
                 </div>
@@ -765,6 +762,15 @@
                 </ul>
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>Timeline</h3>
+                      <div class="flexRow">
+                        <p>Want to add more Blogs ?</p>
+                        <button class="addExperience" onclick="window.location.href='/dsc/blog/create'">
+                          Click here
+                        </button>
+                      </div>
+                    </div>
                     <% if(user.blogs.length==0){%>
                     <div class="cards">
                       <div class="card">
@@ -840,6 +846,7 @@
                       <%})%>
                     </div>
                   </div>
+                </div>
                   <div id="panel02" class="tab-panel">
                     <div class="flexRow">
                       <h3>EXPERIENCE</h3>
