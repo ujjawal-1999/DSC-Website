@@ -190,7 +190,7 @@ router.get("/register", async (req, res) => {
 //post route for signup
 router.post("/register", (req, res, next) => {
   const errors = validationResult(req);
-
+  console.log(errors);
   if (!errors.isEmpty()) {
     return res.status(422).jsonp(errors.array());
   } else {

@@ -183,7 +183,7 @@ function showpasswordlogin() {
 }
 
 async function checkuniquedschandle() {
-  var hname = document.forms["signupform"]["hname"].value;
+  var hname = document.forms["signupform"]["dscHandle"].value;
   var result = document.getElementById("uniqueness");
   var urlget = "/dsc/user/verify-handle/" + hname;
   var response = await fetch(urlget, { method: "GET" });
