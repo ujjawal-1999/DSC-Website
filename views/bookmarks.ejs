@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DSC-Blogs</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_logo.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- --------- Owl-Carousel ------------------->
     <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
@@ -36,55 +27,59 @@
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
+</head>
 
-  <body id="">
+<body id="">
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
-    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-    <!----------------------------- Main Site Section ------------------------------>
-    <main class="main">
-      <!-- <h1 class="head">Welcome, <%=user.name%></h1> -->
-      <% if(bookmarks.length==0){%>
+        <!----------------------------- Main Site Section ------------------------------>
+        <main class="main">
+            <!-- <h1 class="head">Welcome,
+                <%=user.name%> here are your bookmarks
+            </h1> -->
+            <% if(bookmarks.length==0){%>
 
-      <div id="card-container" style="padding: 2rem">
-        <p style="width: 100%">
-          Your bookmarks will be shown here.<br />
-          Curently no bookmarks found. Bookmark some blogs to display here.
-        </p>
-      </div>
-      <% }%> <% bookmarks.forEach(function(blog){%>
-      <div id="card-container">
-        <div class="card-product-image">
-          <div class="card-prod-img">
-            <img src="<%= blog.cover %>" alt="Omar Dsoky" />
-          </div>
-        </div>
-        <div class="card-product-details">
-          <div>
-            <p style="font-weight: 700; font-size: 2rem"><%=blog.title%></p>
+                <div id="card-container" style="padding: 2rem">
+                    <p style="width: 100%">
+                        Your bookmarks will be shown here.<br /> Curently no bookmarks found. Bookmark some blogs to display here.
+                    </p>
+                </div>
+                <% }%>
+                    <% bookmarks.forEach(function(blog){%>
+                        <div id="card-container">
+                            <div class="card-product-image">
+                                <div class="card-prod-img">
+                                    <img src="<%= blog.cover %>" alt="Omar Dsoky" />
+                                </div>
+                            </div>
+                            <div class="card-product-details">
+                                <div style="display: flex; flex-direction: column;">
+                                    <p style="font-weight: 700; font-size: 2rem; margin-bottom: 1.4rem;">
+                                        <%=blog.title%>
+                                    </p>
 
-            <%- blog.summary%>
-            <div class="card-person">
-              <div class="card-author">
-                <% if(blog.author.profileImageLocation){ %>
-                  <img src="/upload/<%= blog.author.profileImageLocation%>" />
-                  <% }else{ %>
-                    <img src="/img/profile/person.png" />
-                  <% } %>
-              </div>
-            </div>
-            <p><%=blog.author.name%></p>
-          </div>
+                                    <%- blog.summary%>
 
-          <div>
-            <a
-              href="/dsc/blog/view/<%= blog.slug %>"
-              style="float: right; margin-right: 20px"
-              >Read More...</a
-            >
-          </div>
+                                        <a href="/dsc/blog/view/<%= blog.slug %>" style="float: right; margin-right: 20px">Read More...</a
+              >
+            
+                                        <div class="card-person" style="margin-top:1.3rem;">
+                                            <div class="card-author">
+                                                <% if(blog.author.profileImageLocation){ %>
+                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                                                    <% }else{ %>
+                                                        <img src="/img/profile/person.png" />
+                                                        <% } %>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <%=blog.author.name%>
+                                        </p>
+                                </div>
+
+
         </div>
         <button
           style="
@@ -98,41 +93,42 @@
           <a class="delete-prj" href="/dsc/blog/delete/bookmark/<%= blog._id %>"
             ><img src="/img/profile/trash.svg"
           /></a>
-        </button>
-      </div>
-      <%})%>
-    </main>
-    <!---------------x------------- Main Site Section ---------------x-------------->
+                                        </button>
+                                </div>
+                                <%})%>
+        </main>
+        <!---------------x------------- Main Site Section ---------------x-------------->
 
-    <!-- --------------------------- Footer ---------------------------------------- -->
-    <%-include('partials/footer')%>
+        <!-- --------------------------- Footer ---------------------------------------- -->
+        <%-include('partials/footer')%>
 
-    <!-- -------------x------------- Footer --------------------x------------------- -->
+            <!-- -------------x------------- Footer --------------------x------------------- -->
 
-    <!-- Jquery Library file -->
-    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+            <!-- Jquery Library file -->
+            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
 
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
+            <!-- --------- Owl-Carousel js ------------------->
+            <script src="/js/blogs/owl.carousel.min.js"></script>
 
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="/js/blogs/aos.js"></script>
+            <!-- ------------ AOS js Library  ------------------------- -->
+            <script src="/js/blogs/aos.js"></script>
 
-    <!-- Custom Javascript file -->
-    <script src="/js/navbar.js"></script>
-    <script src="/js/blogs/main.js"></script>
-    <script src="/js/darkmode.js"></script>
+            <!-- Custom Javascript file -->
+            <script src="/js/navbar.js"></script>
+            <script src="/js/blogs/main.js"></script>
+            <script src="/js/darkmode.js"></script>
 
-    <script>
-      var bodydiv = document.getElementById("bodydiv");
-      bodydiv.addEventListener("click", closeSearch);
+            <script>
+                var bodydiv = document.getElementById("bodydiv");
+                bodydiv.addEventListener("click", closeSearch);
 
-      function closeSearch() {
-        let search_list1 = document.getElementById("search_list1");
-        search_list1.style.display = "none";
-        let search_list2 = document.getElementById("search_list2");
-        search_list2.style.display = "none";
-      }
-    </script>
-  </body>
+                function closeSearch() {
+                    let search_list1 = document.getElementById("search_list1");
+                    search_list1.style.display = "none";
+                    let search_list2 = document.getElementById("search_list2");
+                    search_list2.style.display = "none";
+                }
+            </script>
+</body>
+
 </html>

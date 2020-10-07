@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DSC-Blogs</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_logo.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- --------- Owl-Carousel ------------------->
     <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
@@ -35,65 +26,70 @@
     <link rel="stylesheet" href="/css/blogs/blogs-new.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-  </head>
+</head>
 
-  <body id="">
+<body id="">
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
-    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-    <!----------------------------- Main Site Section ------------------------------>
-    <main>
-      <section class="cards">
-        <% if(newBlogs.length==0){%>
+        <!----------------------------- Main Site Section ------------------------------>
+        <main>
+            <section class="cards">
+                <% if(newBlogs.length==0){%>
 
-        <div class="card-container" style="justify-content: center">
-          <div class="card-details">
-            <div class="card-text">
-              <p>Community Blogs will be shown here.</p>
-            </div>
-          </div>
-        </div>
-        <% }%> <% var num =0 %> <% newBlogs.forEach(function(blog){%>
-        <div class="card-container">
-          <div class="card-image">
-            <div class="card-img">
-              <img src="<%=blog.cover%>" alt="Omar Dsoky" />
-            </div>
-          </div>
-          <div class="card-details">
-            <div class="card-text">
-              <h1><%= blog.title%></h1>
-              <p>
-                <%- blog.summary%>
-                <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
-              </p>
-            </div>
-            <div class="card-author">
-              <% if(blog.author.profileImageLocation){ %>
-                <img src="/upload/<%= blog.author.profileImageLocation%>" />
-                <% }else{ %>
-                  <img src="/img/profile/person.png" />
-                <% } %>
+                    <div class="card-container" style="justify-content: center">
+                        <div class="card-details">
+                            <div class="card-text">
+                                <p>Community Blogs will be shown here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <% }%>
+                        <% var num =0 %>
+                            <% newBlogs.forEach(function(blog){%>
+                                <div class="card-container">
+                                    <div class="card-image">
+                                        <div class="card-img">
+                                            <img src="<%=blog.cover%>" alt="Omar Dsoky" />
+                                        </div>
+                                    </div>
 
-              <h3 style="width: max-content"><%= blog.author.name%></h3>
-              <p><%- blog.author.createdAt.toString().substring(0,16)%></p>
-            </div>
-            <div class="card-buttons">
-              <i
-                class="fas fa-eye"
-                style="font-size: 24px; float: right; margin-right: 15px"
-              >
+                                    <div class="card-details ">
+                                        <div class="card-text">
+                                            <center>
+                                                <h2>
+                                                    <%= blog.title%>
+                                                </h2>
+                                            </center>
+                                            <p>
+                                                <%- blog.summary%>
+                                                    <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
+                                            </p>
+                                        </div>
+                                        <div class="card-author">
+                                            <% if(blog.author.profileImageLocation){ %>
+                                                <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                                                <% }else{ %>
+                                                    <img src="/img/profile/person.png" />
+                                                    <% } %>
+
+                                                        <h3 style="width: max-content">
+                                                            <%= blog.author.name%>
+                                                        </h3>
+                                                        <p>
+                                                            <%- blog.author.createdAt.toString().substring(0,16)%>
+                                                        </p>
+                                        </div>
+                                        <div class="card-buttons">
+                                            <i class="fas fa-eye" style="font-size: 24px; float: right; margin-right: 15px">
                 <%= blog.views %></i
               >
 
               <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
-              <% if (user) {%>
-              <form action="/dsc/blog/bookmark/<%= blog._id %>" method="POST">
-                <button
-                  type="submit"
-                  style="font-size: 24px; float: right; margin-right: 15px"
-                >
+                                            <% if (user) {%>
+                                                <form action="/dsc/blog/bookmark/<%= blog._id %>" method="POST">
+                                                    <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
                   <% if (user.bookmarkBlogs &&
                   user.bookmarkBlogs.includes(blog._id)) {%>
 
@@ -108,99 +104,101 @@
                   ></i>
                   <% } %>
                 </button>
-              </form>
-              <% } %>
-            </div>
-          </div>
-        </div>
-        <%})%>
-      </section>
-      <section class="blog-search">
-        <% if(user){ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a href="/dsc/blog/bookmarks" style="text-decoration: none">
-              <div class="fndp">Your Bookmarks</div></a
-            >
-          </div>
-          <div class="blog-search-row">
-            <a href="/dsc/blog/create" style="text-decoration: none">
-              <div class="fndp">Create Blog</div></a
-            >
-          </div>
-        </div>
-        <% }else{ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a
-              href="/dsc/user/register?type=login"
-              style="text-decoration: none"
-            >
-              <div class="fndp">Login to Add a Blog</div></a
-            >
-          </div>
-        </div>
-        <% } %>
-      </section>
-      <section class="popular">
-        <% var i=1 %>
-        <div id="popular-post">
-          <h2 id="heading">Popular Posts</h2>
-          <div>
-            <hr />
-            <br />
-            <% if(popularBlogs.length==0){%>
-            <div class="popular-posts">
-              <div class="content">
-                <p>Nothing to show.</p>
-              </div>
-            </div>
+                                                </form>
+                                                <% } %>
+                                        </div>
+                                    </div>
 
-            <% }%> <% popularBlogs.forEach(function(blog){%>
-            <div class="popular-posts">
-              <div class="numbering"><%= i++ %></div>
-              <div class="content">
-                <span class="title"><a href="/dsc/blog/view/<%= blog.slug%>"><%= blog.title%></a></span><br />
-                <span class="intro"> <%- blog.summary%></span><br />
-                <span class="date"> 20 sept, 2020 </span>
-              </div>
-            </div>
-            <%})%>
-          </div>
-        </div>
-      </section>
-    </main>
+                                </div>
+                                <%})%>
+            </section>
+            <section class="blog-search">
+                <% if(user){ %>
+                    <div class="inner-search">
+                        <div class="blog-search-row">
+                            <a href="/dsc/blog/bookmarks" style="text-decoration: none">
+                                <div class="fndp">Your Bookmarks</div>
+                            </a>
+                        </div>
+                        <div class="blog-search-row">
+                            <a href="/dsc/blog/create" style="text-decoration: none">
+                                <div class="fndp">Create Blog</div>
+                            </a>
+                        </div>
+                    </div>
+                    <% }else{ %>
+                        <div class="inner-search">
+                            <div class="blog-search-row">
+                                <a href="/dsc/user/register?type=login" style="text-decoration: none">
+                                    <div class="fndp">Login to Add a Blog</div>
+                                </a>
+                            </div>
+                        </div>
+                        <% } %>
+            </section>
+            <section class="popular">
+                <% var i=1 %>
+                    <div id="popular-post">
+                        <h2 id="heading">Popular Posts</h2>
+                        <div>
+                            <hr />
+                            <br />
+                            <% if(popularBlogs.length==0){%>
+                                <div class="popular-posts">
+                                    <div class="content">
+                                        <p>Nothing to show.</p>
+                                    </div>
+                                </div>
 
-    <!---------------x------------- Main Site Section ---------------x-------------->
+                                <% }%>
+                                    <% popularBlogs.forEach(function(blog){%>
+                                        <div class="popular-posts">
+                                            <div class="numbering">
+                                                <%= i++ %>
+                                            </div>
+                                            <div class="content">
+                                                <span class="title"><a href="/dsc/blog/view/<%= blog.slug%>"><%= blog.title%></a></span><br />
+                                                <span class="intro"> <%- blog.summary%></span><br />
+                                                <span class="date"> 20 sept, 2020 </span>
+                                            </div>
+                                        </div>
+                                        <%})%>
+                        </div>
+                    </div>
+            </section>
+        </main>
 
-    <!-- --------------------------- Footer ---------------------------------------- -->
-    <%-include('partials/footer')%>
+        <!---------------x------------- Main Site Section ---------------x-------------->
 
-    <!-- -------------x------------- Footer --------------------x------------------- -->
+        <!-- --------------------------- Footer ---------------------------------------- -->
+        <%-include('partials/footer')%>
 
-    <!-- Jquery Library file -->
-    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+            <!-- -------------x------------- Footer --------------------x------------------- -->
 
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
+            <!-- Jquery Library file -->
+            <script src="/js/blogs/Jquery3.4.1.min.js"></script>
 
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="/js/blogs/aos.js"></script>
+            <!-- --------- Owl-Carousel js ------------------->
+            <script src="/js/blogs/owl.carousel.min.js"></script>
 
-    <!-- Custom Javascript file -->
-    <script src="/js/navbar.js"></script>
-    <script src="/js/blogs/main.js"></script>
-    <script src="/js/darkmode.js"></script>
-    <script>
-      var bodydiv = document.getElementById("bodydiv");
-      bodydiv.addEventListener("click", closeSearch);
+            <!-- ------------ AOS js Library  ------------------------- -->
+            <script src="/js/blogs/aos.js"></script>
 
-      function closeSearch() {
-        let search_list1 = document.getElementById("search_list1");
-        search_list1.style.display = "none";
-        let search_list2 = document.getElementById("search_list2");
-        search_list2.style.display = "none";
-      }
-    </script>
-  </body>
+            <!-- Custom Javascript file -->
+            <script src="/js/navbar.js"></script>
+            <script src="/js/blogs/main.js"></script>
+            <script src="/js/darkmode.js"></script>
+            <script>
+                var bodydiv = document.getElementById("bodydiv");
+                bodydiv.addEventListener("click", closeSearch);
+
+                function closeSearch() {
+                    let search_list1 = document.getElementById("search_list1");
+                    search_list1.style.display = "none";
+                    let search_list2 = document.getElementById("search_list2");
+                    search_list2.style.display = "none";
+                }
+            </script>
+</body>
+
 </html>
