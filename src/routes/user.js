@@ -18,6 +18,14 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
 const cryptoRandomString = require("crypto-random-string");
+const {
+  contact,
+  contactAdmin,
+  signUpMail,
+  forgotPassword,
+} = require("../account/nodemailer");
+const { checkProfileImageType } = require("../config/checkType");
+const blog = require("../models/blog");
 
 //setting up methods
 router.use(bodyParser.json());
@@ -60,55 +68,52 @@ router.get("/new", (req, res) => {
   res.render("register");
 });
 
-router.get("/verify/:id", function (req, res) {
+router.get("/verify/:id", async (req, res) => {
   // console.log(req.protocol+":/"+req.get('host'));
-
-  if (req.protocol + "://" + req.get("host") == "http://" + host) {
+  if (req.protocol + "://" + req.get("host") == "http://" + req.get("host")) {
     console.log("Domain is matched. Information is from Authentic email");
 
-    User.findById(req.params.id, function (err, user) {
-      if (err) console.log(err);
-      else {
-        date2 = new Date();
-        date1 = user.created_at;
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        var diffhrs = Math.ceil(timeDiff / (1000 * 60));
-        console.log(diffhrs);
+    const user = await User.findById(req.params.id);
 
-        if (diffhrs <= 3) {
-          User.findByIdAndUpdate(user._id, { active: true }, function (
-            err,
-            user
-          ) {
-            if (err) console.log(err);
-            else {
-              console.log("email is verified");
-              // res.end("<h1>Email "+mailOptions.to+" is been Successfully verified");
-              res.render("verify");
-            }
-          });
+    if (!user) {
+      console.log("Error from /user/verify route", error);
+      req.flash("error", "Unable to find the user");
+      res.direct("/dsc");
+    } else {
+      const currDate = new Date();
+      const initialCreatedAt = user.created_at;
+      const timeDiff = Math.abs(
+        currDate.getTime() - initialCreatedAt.getTime()
+      );
+      const diffhrs = Math.ceil(timeDiff / (1000 * 60));
+      console.log(diffhrs);
+      if (diffhrs <= 3) {
+        const updatedUser = await User.findByIdAndUpdate(user._id, {
+          active: true,
+        });
+        if (!updatedUser) {
+          console.log(err);
+          res.redirect("/dsc");
         } else {
-          User.findByIdAndUpdate(
-            user._id,
-            { created_at: new Date() },
-            function (err, user) {
-              if (err) console.log(err);
-            }
-          );
-          console.log("Link has expired try logging in to get a new link");
-          // res.end("<h1>Link has expired try logging in to get a new link</h1>");
-          res.render("notverified");
+          console.log("Email Verified");
+          res.render("verify");
         }
+      } else {
+        await User.findByIdAndUpdate(user._id, { created_at: new Date() });
+        console.log("Link has expired try logging in to get a new link");
+        // res.end("<h1>Link has expired try logging in to get a new link</h1>");
+        res.render("notverified");
       }
-    });
+    }
   } else {
-    res.end("<h1>Request is from unknown source");
+    console.log("Response is from an unknown source");
   }
 });
+
 router.get("/verify/forgotpassword/:id", function (req, res) {
   // console.log(req.protocol+":/"+req.get('host'));
 
-  if (req.protocol + "://" + req.get("host") == "http://" + host) {
+  if (req.protocol + "://" + req.get("host") == "http://" + req.get("host")) {
     console.log("Domain is matched. Information is from Authentic email");
 
     User.findById(req.params.id, function (err, user) {
@@ -152,13 +157,8 @@ router.post("/changepassword/:id", function (req, res) {
 
 //==============================
 
-//Config Modules
-
-const { checkProfileImageType } = require("../config/checkType");
-const blog = require("../models/blog");
-
 //Setup a test Router for user routes
-router.get("/", (req, res) => {
+router.get("/testUser", (req, res) => {
   res.json({ message: "User routes connected" });
 });
 
@@ -188,79 +188,116 @@ router.get("/register", async (req, res) => {
 });
 
 //post route for signup
-router.post("/register", (req, res, next) => {
+router.post("/register", async (req, res, next) => {
   const errors = validationResult(req);
   console.log(errors);
   if (!errors.isEmpty()) {
     return res.status(422).jsonp(errors.array());
   } else {
-    bcrypt.hash(req.body.password, 10).then((hash) => {
-      const user = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: hash,
-      });
-      user
-        .save()
-        .then((response) => {
-          //nodemailer
-          rand = cryptoRandomString({ length: 100, type: "url-safe" });
-          host = req.get("host");
-          link =
-            "http://" +
-            req.get("host") +
-            "/dsc/user/verify/" +
-            user._id +
-            "?tkn=" +
-            rand;
-          mailOptions = {
-            from: process.env.NODEMAILER_EMAIL,
-            to: user.email,
-            subject: "Please confirm your Email account",
-            html:
-              "Hello,<br> Please Click on the link to verify your email.<br><a href=" +
-              link +
-              ">Click here to verify</a>",
-          };
-          // console.log(mailOptions);
-          transporter.sendMail(mailOptions, function (error, response) {
-            if (error) {
-              console.log(error);
-              res.end("error");
-            } else {
-              console.log("Message sent: " + response.message);
-            }
-          });
-          //nodemailer ends
-          res.locals.flashMessages = req.flash(
-            "success",
-            user.name + " Email has been sent to you for verification"
-          );
-          res.redirect("/dsc/");
-        })
-        .catch((error) => {
-          // res.status(500).json({
-          //     error: error
-          // });
-          // console.log(error);
-          res.locals.flashMessages = req.flash(
-            "error",
-            "Email already in use try logging in"
-          );
-          res.redirect("/dsc/");
-        });
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    const user = new User({
+      email: req.body.email,
+      name: req.body.name,
+      password: hashedPassword,
+      dscHandle: req.body.dscHandle,
     });
+
+    const savedUser = await user.save();
+    if (!savedUser) {
+      res.locals.flashMessages = req.flash(
+        "error",
+        "Email already in use try logging in"
+      );
+      res.redirect("/dsc/");
+      return;
+    }
+    signUpMail(savedUser);
+    res.locals.flashMessages = req.flash(
+      "success",
+      `${savedUser.name} Email has been sent to you for verification.`
+    );
+
+    res.redirect("/dsc/");
   }
 });
 
-//get route for login
+// get route for login
 router.get("/login", function (req, res) {
   res.render("register");
 });
 
 //post route for login
-router.post("/login", (req, res, next) => {
-  let getUser;
+router.post("/login", async (req, res, next) => {
+  let user = await User.findOne({
+    email: req.body.email,
+  });
+  if (!user) {
+    user = await User.findOne({
+      dscHandle: req.body.email,
+    });
+    // if (!user) {
+    //   req.flash("Error", "User not found. Try creating a new account");
+    //   res.redirect("/dsc/");
+    //   return;
+    // }
+  }
+  console.log("DEBUG LOG:",user);
+  if (!user) {
+    // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
+    req.flash("error", "User not found. Try creating a new account");
+    res.redirect("/dsc/");
+    return;
+  }
+  const checkPassword = await bcrypt.compare(req.body.password, user.password);
+  if (!checkPassword) {
+    req.flash("error", "Invalid Credentials");
+    res.redirect("/dsc/");
+    return;
+  }
+  if (user.active) {
+    const token = jwt.sign(
+      {
+        name: user.name,
+        email: user.email,
+        userId: user._id,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d",
+      }
+    );
+    res.cookie("authorization", token, {
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: false,
+    });
+
+    req.flash("success", user.name + " you are logged in");
+    res.redirect("/dsc/user/profile");
+  } else {
+    signUpMail(user);
+    req.flash(
+      "error",
+      user.name + " your email is not verified we have sent you an email"
+    );
+    res.redirect("/dsc/");
+  }
+});
+
+//get route for logging out user
+router.get("/logout", function (req, res) {
+  res.clearCookie("authorization");
+  req.flash("success", "You are successfully logged out");
+  res.redirect("/dsc/");
+});
+
+//get route for forget password
+router.get("/forgotpassword", function (req, res) {
+  res.render("forgotpassword");
+});
+
+//post route for forgotpassword
+router.post("/forgotpassword", function (req, res) {
   User.findOne({
     email: req.body.email,
   })
@@ -269,132 +306,14 @@ router.post("/login", (req, res, next) => {
         req.flash("error", "User not found try creating a new account");
         res.redirect("/dsc/");
       }
-      getUser = user;
-      return bcrypt.compare(req.body.password, user.password);
-    })
-    .then((response) => {
-      if (!response) {
-        req.flash("error", "You have entered wrong password");
-        res.redirect("/dsc/");
-      }
-      if (getUser.active) {
-        var token = jwt.sign(
-          {
-            name: getUser.name,
-            email: getUser.email,
-            userId: getUser._id,
-          },
-          process.env.JWT_SECRET,
-          {
-            expiresIn: "1d",
-          }
-        );
-        console.log(token);
-        res.cookie("authorization", token, {
-          maxAge: 24 * 60 * 60 * 1000,
-          httpOnly: false,
-        });
-      }
-      if (getUser.active) {
-        req.flash("success", getUser.name + " you are logged in");
-        res.redirect("/dsc/");
-      } else {
-        rand = cryptoRandomString({ length: 100, type: "url-safe" });
-        host = req.get("host");
-        link =
-          "http://" +
-          req.get("host") +
-          "/dsc/user/verify/" +
-          getUser._id +
-          "?tkn=" +
-          rand;
-        mailOptions = {
-          from: process.env.NODEMAILER_EMAIL,
-          to: getUser.email,
-          subject: "Please confirm your Email account",
-          html:
-            "Hello,<br> Please Click on the link to verify your email.<br><a href=" +
-            link +
-            ">Click here to verify</a>",
-        };
-        // console.log(mailOptions);
-        transporter.sendMail(mailOptions, function (error, response) {
-          if (error) {
-            console.log(error);
-            res.end("error");
-          } else {
-            console.log("Message sent: " + response.message);
-          }
-        });
-        req.flash(
-          "error",
-          getUser.name + " your email is not verified we have sent you an email"
-        );
-        res.redirect("/dsc/");
-      }
-    });
-});
-
-//checking for user
-// router.get("/user",authorization,function(req,res){
-//     res.send(req.user);
-// });
-
-//get route for logging out user
-router.get("/logout", function (req, res) {
-  res.clearCookie("authorization");
-  req.flash("success", "You are successfully logged out");
-  res.redirect("/dsc/");
-});
-//get route for forget password
-router.get("/forgotpassword", function (req, res) {
-  res.render("forgotpassword");
-});
-
-//post route for forgotpassword
-router.post("/forgotpassword", function (req, res) {
-  let getUser;
-  User.findOne({
-    email: req.body.email,
-  }).then((user) => {
-    if (!user) {
-      req.flash("error", "User not found try creating a new account");
+      forgotPassword(user);
+      req.flash(
+        "success",
+        user.name + " we sent you an email to reset your password"
+      );
       res.redirect("/dsc/");
-    }
-    getUser = user;
-    rand = cryptoRandomString({ length: 100, type: "url-safe" });
-    host = req.get("host");
-    link =
-      "http://" +
-      req.get("host") +
-      "/dsc/user/verify/forgotpassword/" +
-      getUser._id +
-      "?tkn=" +
-      rand;
-    mailOptions = {
-      from: process.env.NODEMAILER_EMAIL,
-      to: getUser.email,
-      subject: "Please confirm your Email account",
-      html:
-        "Hello,<br> Please Click on the link to verify your email.<br><a href=" +
-        link +
-        ">Click here to verify</a>",
-    };
-    // console.log(mailOptions);
-    transporter.sendMail(mailOptions, function (error, response) {
-      if (error) {
-        console.log(error);
-        res.end("error");
-      } else {
-        console.log("Message sent: " + response.message);
-      }
-    });
-    req.flash(
-      "success",
-      getUser.name + " we sent you an email to reset your password"
-    );
-    res.redirect("/dsc/");
-  });
+    })
+    .catch((err) => console.error(err));
 });
 
 // Get Route for Profile

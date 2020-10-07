@@ -137,7 +137,7 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.plugin(uniqueValidator, {
-  message: "Email already in use.",
-});
+// userSchema.plugin(uniqueValidator, {
+//   message: "Email already in use.",
+// });
 module.exports = User = mongoose.model("User", userSchema);
