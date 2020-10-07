@@ -64,8 +64,26 @@ body {
 
 }
 main {
-  padding-left: 4rem;
+  padding-left: 2rem;
+  
 }
+.dark-mode .nav-wrapper {
+  background-color: black;
+}
+.dark-mode .navbar {
+  background-color: black;
+  color:white;
+}
+@media only screen and (max-width: 760px) {
+  .dark-mode .navbar ul{
+    background-color:#1f1f1f;
+    color:white;
+  }
+}
+.dark-mode .nav-item .nav-items-a {
+  color: white;
+}
+
 .container {
   width: 100%;
   min-height: 2rem;
@@ -119,43 +137,9 @@ main {
 .fnd:hover {
   background-color: #3f3232;
 }
-.accountbar .fndp a {
-  text-decoration: none;
-  color: #030303;
-}
 
-.accountbar .fndp:hover {
-  cursor: pointer;
-  color: var(--Grey-light-1);
-  background-color: var(--Grey-dark-1);
-  border-color: var(--Grey-dark-1);
-}
 
-.accountbar input {
-  padding: 1rem 2rem !important;
-  border-radius: 1rem !important;
-  border: 1px solid var(--Grey-light-4) !important;
-  width: 10%;
-  -webkit-transition: all 0.5s ease-in-out !important;
-  transition: all 0.5s ease-in-out !important;
-  background-color: var(--Grey-light-1) !important;
-}
 
-.accountbar input:focus {
-  width: 20%;
-}
-
-.accountbar img {
-  margin: 0 1rem;
-  width: 30px;
-  border-radius: 100%;
-}
-
-.accountdetails {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
 .main-heading {
 
  margin-bottom: 10px;
