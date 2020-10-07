@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="card-details ">
+                                    <div class="card-details " style="margin-top: 1.2rem;">
                                         <div class="card-text">
                                             <center>
                                                 <h2>
@@ -67,46 +67,52 @@
                                                     <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
                                             </p>
                                         </div>
-                                        <div class="card-author">
-                                            <% if(blog.author.profileImageLocation){ %>
-                                                <img src="/upload/<%= blog.author.profileImageLocation%>" />
-                                                <% }else{ %>
-                                                    <img src="/img/profile/person.png" />
+                                        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 1.2rem;">
+                                            <div class="card-author">
+                                                <% if(blog.author.profileImageLocation){ %>
+                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                                                    <% }else{ %>
+                                                        <img src="/img/profile/person.png" />
+                                                        <% } %>
+                                                            <center>
+                                                                <h3 style="width: max-content">
+                                                                    <%= blog.author.name%>
+                                                                </h3>
+                                                                <p>
+                                                                    <%- blog.author.createdAt.toString().substring(0,16)%>
+                                                                </p>
+                                                            </center>
+
+
+                                            </div>
+                                            <div class="card-buttons" style="padding-top: 38%;">
+                                                <i class="fas fa-eye" style="font-size: 24px; float: right; margin-right: 15px">
+                    <%= blog.views %></i
+                  >
+    
+                  <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
+                                                <% if (user) {%>
+                                                    <form action="/dsc/blog/bookmark/<%= blog._id %>" method="POST">
+                                                        <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
+                      <% if (user.bookmarkBlogs &&
+                      user.bookmarkBlogs.includes(blog._id)) {%>
+    
+                      <i
+                        class="fas fa-bookmark"
+                        style="font-size: 24px; float: right; margin-right: 15px"
+                      ></i>
+                      <% } else {%>
+                      <i
+                        class="far fa-bookmark"
+                        style="font-size: 24px; float: right; margin-right: 15px"
+                      ></i>
+                      <% } %>
+                    </button>
+                                                    </form>
                                                     <% } %>
-
-                                                        <h3 style="width: max-content">
-                                                            <%= blog.author.name%>
-                                                        </h3>
-                                                        <p>
-                                                            <%- blog.author.createdAt.toString().substring(0,16)%>
-                                                        </p>
+                                            </div>
                                         </div>
-                                        <div class="card-buttons">
-                                            <i class="fas fa-eye" style="font-size: 24px; float: right; margin-right: 15px">
-                <%= blog.views %></i
-              >
 
-              <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
-                                            <% if (user) {%>
-                                                <form action="/dsc/blog/bookmark/<%= blog._id %>" method="POST">
-                                                    <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
-                  <% if (user.bookmarkBlogs &&
-                  user.bookmarkBlogs.includes(blog._id)) {%>
-
-                  <i
-                    class="fas fa-bookmark"
-                    style="font-size: 24px; float: right; margin-right: 15px"
-                  ></i>
-                  <% } else {%>
-                  <i
-                    class="far fa-bookmark"
-                    style="font-size: 24px; float: right; margin-right: 15px"
-                  ></i>
-                  <% } %>
-                </button>
-                                                </form>
-                                                <% } %>
-                                        </div>
                                     </div>
 
                                 </div>
