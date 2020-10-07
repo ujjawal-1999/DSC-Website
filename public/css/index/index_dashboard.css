@@ -310,12 +310,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (max-height: 800px) {
-  .header {
-    background-image: none;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .featurecardscontainer {
     -webkit-box-orient: vertical;

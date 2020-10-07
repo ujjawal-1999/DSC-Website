@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title><%= user.name %></title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -193,29 +193,45 @@
                       if(user.experiences){user.experiences.forEach((experience=>
                       { %>
                       <div class="row">
-                        <div class="column">
-                          <img
-                            src="/img/logo/experience-default.png"
-                            alt="lo"
-                          />
-                          <h3 class="accordion">
-                            <%= experience.role %><br />
-                            <p><%= experience.name %></p>
-                          </h3>
-                          <div id="mention">
-                            <b>&#9899;</b><%= experience.startdate %> - <%=
-                            experience.enddate %>
+                        <div
+                          class="column"
+                          style="
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
+                            <img
+                              src="/img/logo/experience-default.png"
+                              alt="lo"
+                            />
+                            <h3 class="accordion">
+                              <%= experience.role %><br />
+                              <p><%= experience.name %></p>
+                            </h3>
                           </div>
-                          <!-- <button>
-                              <a class="edit-exp"
-                                ><img src="/img/profile/edit.svg"
-                              /></a>
-                            </button>
-                            <button>
-                              <a class="delete-exp" href=""
-                                ><img src="/img/profile/trash.svg"
-                              /></a>
-                            </button> -->
+
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
+                            <div id="mention">
+                              <b>&#9899;</b><%= experience.startdate %> - <%=
+                              experience.enddate %>
+                            </div>
+                          </div>
                         </div>
                         <div class="panelexp">
                           <p><%= experience.description %></p>

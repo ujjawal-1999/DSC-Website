@@ -61,7 +61,7 @@
       background-color: var(--Grey-light-1);
       padding: 2rem;
       width: 20%;
-      overflow-y: scroll;
+      // overflow-y: scroll;
 
       h4 {
         font-family: "Times New Roman", Times, serif;
@@ -75,9 +75,11 @@
       }
       p {
         cursor: pointer;
-        margin: 0.8rem 0;
+        margin-top: 0.2rem;
         font-family: Arial, Helvetica, sans-serif;
         transition: all 0.3s;
+        line-height: 1.2rem;
+        font-size: 15px;
         // &:hover {
         //   text-decoration: underline;
         // }
@@ -85,13 +87,29 @@
     }
   }
 }
+
+@media screen and (max-height: 750px) {
+  .faq-section {
+    height: auto;
+  }
+}
+@media screen and (max-width: 1330px) {
+  .faq-section .lower .sub {
+    width: 50%;
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .faq-section .lower .sub {
+    width: 90%;
+  }
   .faq-section {
     background-image: none;
     height: auto;
   }
   .faq-section .upper {
-    height: 20rem;
+    height: 10rem;
   }
   .faq-section .upper h1 {
     font-size: 2rem;

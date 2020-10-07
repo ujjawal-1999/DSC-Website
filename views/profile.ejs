@@ -765,6 +765,16 @@
                 </ul>
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
+                    <% if(user.blogs.length==0){%>
+                    <div class="cards">
+                      <div class="card">
+                        <div class="description">
+                          Your Timeline has nothing to show. Post blogs to
+                          display some.
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
                     <div class="cards">
                       <% user.blogs.forEach(function(blog){%>
                       <div class="card">
@@ -779,17 +789,25 @@
 
                           <% }%>
 
-                          <div>
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
                             <i class="fas fa-eye" style="font-size: 12px">
                               <%= blog.views %></i
                             >
-                            <a
+
+                            <!-- <a
                               href="/dsc/user/blog/delete/<%= blog._id %>"
                               style="color: red"
                             >
                               <i class="fas fa-trash" style="font-size: 18px">
                               </i>
-                            </a>
+                            </a> -->
                           </div>
                         </div>
                         <div class="content">
@@ -806,6 +824,11 @@
                             </div>
                           </div>
                         </div>
+                        <a
+                          class="delete-exp"
+                          href="/dsc/user/blog/delete/<%= blog._id %>"
+                          ><img src="/img/profile/trash.svg"
+                        /></a>
                       </div>
                       <%})%>
                     </div>
@@ -821,6 +844,16 @@
                       </div>
                     </div>
                     <div class="cards_exp">
+                      <% if(user.experiences.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            Your Expereince Tab has nothing to show. Add Some
+                            Expereince to display here.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                       <div class="card_exp">
                         <%
                         if(user.experiences){user.experiences.forEach((experience=>
@@ -890,6 +923,16 @@
                         </button>
                       </div>
                     </div>
+                    <% if(user.skills.length==0){%>
+                    <div class="cards">
+                      <div class="card">
+                        <div class="description">
+                          Your Skills Tab has nothing to show. Add Some Skills
+                          to display here.
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
                     <div class="cards">
                       <% user.skills.forEach((skill) => {%>
                       <div class="card">
@@ -926,6 +969,16 @@
                       </div>
                     </div>
                     <section class="grid-item main">
+                      <% if(user.personalProjects.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            Your Personal Projects Tab has nothing to show. Add
+                            Some Projects to display here.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                       <div class="items">
                         <% user.personalProjects.forEach((project) => {%>
                         <div class="item item1">
@@ -996,6 +1049,16 @@
                       </div>
                     </div>
                     <div class="cards_ach">
+                      <% if(user.achievements.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            Your Achievements Tab has nothing to show. Add
+                            Some Achievements to display here.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                       <div class="card_ach">
                         <% user.achievements.forEach((ach) => {%>
                         <div class="row-ach">

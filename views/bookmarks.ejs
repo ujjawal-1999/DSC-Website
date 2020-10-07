@@ -45,9 +45,16 @@
 
     <!----------------------------- Main Site Section ------------------------------>
     <main class="main">
-      <h1 class="head">Welcome <%=user.name%>..Here are your bookmarks</h1>
+      <!-- <h1 class="head">Welcome, <%=user.name%></h1> -->
+      <% if(bookmarks.length==0){%>
 
-      <% bookmarks.forEach(function(blog){%>
+      <div id="card-container" style="padding: 2rem">
+        <p style="width: 100%">
+          Your bookmarks will be shown here.<br />
+          Curently no bookmarks found. Bookmark some blogs to display here.
+        </p>
+      </div>
+      <% }%> <% bookmarks.forEach(function(blog){%>
       <div id="card-container">
         <div class="card-product-image">
           <div class="card-prod-img">
@@ -75,7 +82,15 @@
             >
           </div>
         </div>
-        <button style="width: 3rem; border: none; background-color: none;border-radius: 50%;margin: 1rem;">
+        <button
+          style="
+            width: 3rem;
+            border: none;
+            background-color: none;
+            border-radius: 50%;
+            margin: 1rem;
+          "
+        >
           <a class="delete-prj" href="/dsc/blog/delete/bookmark/<%= blog._id %>"
             ><img src="/img/profile/trash.svg"
           /></a>

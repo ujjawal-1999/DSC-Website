@@ -230,6 +230,7 @@ body::-webkit-scrollbar-thumb {
     color: var(--white);
   }
 }
+
 @media screen and (max-width: 1150px) {
   .getStarted {
     transform: translateY(-10rem);
@@ -256,11 +257,6 @@ body::-webkit-scrollbar-thumb {
     .getStarted {
       opacity: 1;
     }
-  }
-}
-@media screen and (max-height: 800px) {
-  .header {
-    background-image: none;
   }
 }
 
