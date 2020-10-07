@@ -13,15 +13,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
     
   </head>
-<body>
+<body style="font-family: 'Roboto', sans-serif;">
   <!-- Main Content Starts -->
- 
-    
   
     <div class="page-wrapper">
     <div class="nav-wrapper">
@@ -124,7 +123,7 @@
               </div>
               <div class="datainput">
               <select id="wa_select">
-                <option hidden='hidden' selected='selected' value='default'>Project Feild</option>
+                <option hidden='hidden' selected='selected' value='default'>Project Field</option>
                 <option value="1">Android</option>
                 <option value="2">Web Development</option>
                 <option value="3">Other</option>
@@ -195,7 +194,7 @@
         </section><br>
   
         <div class="detailview">
-            <span style="position:relative; left:50px; display: none;">
+            <span style="display: none;">
         <h1 class="project-name" style="margin-bottom:0;"> </h1>
        <br><br>
         <a class="links"> </a>
@@ -218,12 +217,15 @@
                  books, and other accessories to their peers easily
                   <br>
                   <br>
-                  <h3>Tech Stacks :<h3>   
-                    <br>● Language​:  Java/Kotlin
-                    <br> ● Software​:  Android Studio 
-                    <br>● Database​:  Firebase
-                    <br> ● Other Applications​: ​GitHub, Git  
-   <br><br>
+                  <div>
+
+                    <h3>Tech Stacks :</h3>   
+                      ● Language​:  Java/Kotlin<br> 
+                      ● Software​:  Android Studio <br>
+                      ● Database​:  Firebase <br> 
+                      ● Other Applications​: ​GitHub, Git  
+                  <br><br>
+
                   <h3>Members:</h3>
               </div>
           </div>
@@ -315,41 +317,42 @@
       </section><br>
 
      <div class="detailview">
-          <span style="position:relative; left:50px;">
-      <h1 class="project-name" style="margin-bottom:0;"> </h1>
-        <br><br>
-      <a class="links"> </a>
-      <a class="links">  </a>
-   </span>
+          <span>
+              <h1 class="project-name" style="margin-bottom:0;"> </h1>
+                <br><br>
+              <a class="links"></a>
+              <a class="links"></a>
+          </span>
 
         <div class="content-box">
              <div class="image">
                 <img src="/img/Project/ats.jpg"  height="150" width="150">
             </div>
-            <div class="description">
-              ● Acts as an ​interaction bridge​ between Alumni and the present 
-              students of NIT Silchar. <br>
-              ● It is basically a multi-portal application consisting of the Admin
-               and Alumni Section.<br>
+            <div style="color:black;"class="description">
+                ● Acts as an ​interaction bridge​ between Alumni and the present 
+                  students of NIT Silchar. <br>
+                ● It is basically a multi-portal application consisting of the Admin
+                  and Alumni Section.<br>
                 ● Alumni Section consists of a user page for each registered 
-                Alumni where they can fill their personal as well as professional details.
-                 Moreover, there is a blog section where they can share their views 
-                 and experiences about the present technological needs. 
-                 Alumni will have chat rooms corresponding to their batches 
-                 and branches where they can interact. <br>
-                 ● Moreover, Alumni will get all the information
+                  Alumni where they can fill their personal as well as professional details.
+                  Moreover, there is a blog section where they can share their views 
+                  and experiences about the present technological needs. 
+                  Alumni will have chat rooms corresponding to their batches 
+                  and branches where they can interact. <br>
+                ● Moreover, Alumni will get all the information
                   about the events happening in the college and also,
-                   we will directly be able to invite them. <br>
-                   ● From the Admin Section, we can keep a check 
-                   on all the on-going activities in the application
-                    and admin can send/post important announcements in the Blog sections. 
-              <br>  
+                  we will directly be able to invite them. <br>
+                ● From the Admin Section, we can keep a check 
+                  on all the on-going activities in the application
+                  and admin can send/post important announcements in the Blog sections. 
+                <br>  
               <br>
+
               <h3>Tech Stacks ​:</h3><br>
-               ● Front-End:​ For User Interface, we are using HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript). 
-               <br>● Back-End​: For all the server and networking purposes, we are using NodeJs and ExpressJS as Frameworks and MongoDB as Database. <br>
-              ● Other Applications​: GitHub, Git, Postman. <br><br>
-                <h3>Members:</h3>
+               ● Front-End:​ For User Interface, we are using HTML (HyperText Markup Language), CSS (Cascading Style Sheets), JS (JavaScript).<br>
+               ● Back-End​: For all the server and networking purposes, we are using NodeJs and ExpressJS as Frameworks and MongoDB as Database. <br>
+               ● Other Applications​: GitHub, Git, Postman. <br><br>
+              <h3>Members:</h3>
             </div>
         </div>
       </div>
@@ -358,8 +361,8 @@
             <div class="membrs-list">
 
                 <div class="member-card" style="margin-bottom: 20px;
-    margin-left: 40%;
-    margin-top: -20px;">
+                    margin-left: 40%;
+                    margin-top: -20px;">
                   <p>● Rahul Kumar Gupta <br>● Anuva Bhattacharjee <br>● Pathikrit Chanda<br> ● Ujjwal Jain </p>
                    <!-- <img src="../public/img/Project/man.png" style="border-radius: 10px;width:45%">
                     <h3 style="line-height:0;"> Vishal Pandey </h3>
@@ -978,10 +981,6 @@ window.onclick = function(event) {
 
 $(document).on('click','.send_form', function(){
 var input_blanter = document.getElementById('wa_email');
-
-
-
-
 
 
 if("" != input_blanter.value){
