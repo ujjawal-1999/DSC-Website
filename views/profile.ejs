@@ -146,15 +146,18 @@
                       name="profile-image"
                       value=""
                       id="fileSubmitButton"
+                      onchange="didyouupload()"
                     />
                     <span> Choose Photo</span>
                   </label>
 
                   <input
+                    id="uploadphoto"
                     style="
                       width: 200px;
                       height: 40px;
                       color: rgb(238, 238, 238) !important;
+                      opacity: 0;
                     "
                     type="submit"
                     class="submit"

@@ -75,6 +75,11 @@ function editProfileModalvalidate() {
   return true;
 }
 
+function didyouupload() {
+  var uploadphotobtn = document.getElementById("uploadphoto");
+  uploadphotobtn.style.opacity = "1";
+}
+
 // ###################################################################################
 // Experience Modal
 var addExperiencebtn = document.getElementById("addExperience");
@@ -196,7 +201,10 @@ function addProjectModalvalidate() {
   var title = document.forms["addProjectForm"]["title"].value;
   var role = document.forms["addProjectForm"]["role"].value;
   var startdate = document.forms["addProjectForm"]["startdate"].value;
-  var enddate = document.forms["addProjectForm"]["enddate"].value == "Till Now" ? "PRESENT": document.forms["addProjectForm"]["enddate"].value;
+  var enddate =
+    document.forms["addProjectForm"]["enddate"].value == "Till Now"
+      ? "PRESENT"
+      : document.forms["addProjectForm"]["enddate"].value;
   var githuburl = document.forms["addProjectForm"]["githuburl"].value;
   var hosturl = document.forms["addProjectForm"]["hosturl"].value;
   var description = document.forms["addProjectForm"]["description"].value;
@@ -213,7 +221,7 @@ function addProjectModalvalidate() {
     alert("Description is too short !");
     return false;
   }
-  if(enddate !== "PRESENT"){
+  if (enddate !== "PRESENT") {
     if (startdate > enddate) {
       alert("Start Date cannot be ahead of End Date !");
       return false;
