@@ -450,7 +450,6 @@ router.post("/profile", authorization, (req, res) => {
       console.log(req.body);
       User.findByIdAndUpdate(id, {
         name: req.body.name,
-        dscHandle: req.body.hname,
         degree: req.body.degree,
         branch: req.body.branch,
         batch: req.body.batchYear,
@@ -656,16 +655,15 @@ var uploadProfileImage = multer({
 }).single("profile-image");
 
 //Post Route to update Profile Image
-router.post("/profile/upload/:id", uploadProfileImage, async (req, res) => {
+router.post("/profile/upload/:id", authorization, async (req, res) => {
   const id = req.params.id;
   let errors = [];
   let avatar;
-  console.log(req.file);
   User.findById({ _id: id })
     .then((user) => {
       if (!user) {
         errors.push({ msg: "No Records of user found at this moment" });
-        res.send({ message: "Error" });
+        res.redirect("/dsc/user/profile")
       }
       uploadProfileImage(req, res, (err) => {
         if (err) {
@@ -700,7 +698,7 @@ router.post("/profile/upload/:id", uploadProfileImage, async (req, res) => {
             }
           })
           .catch((err) => {
-            console.log("profile not updated");
+            console.log("profile not updated", err);
           });
       });
     })

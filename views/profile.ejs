@@ -134,7 +134,7 @@
 
               <form
                 style="width: 100%; padding: 0px auto"
-                action="profile/upload/<%=user.id%>"
+                action="profile/upload/<%=user._id%>"
                 method="post"
                 enctype="multipart/form-data"
                 class="uploadImageForm"
@@ -670,7 +670,7 @@
                 <div class="branchandyear">
                   <div class="collegeinfo">
                     <% if(user.socialLinks["github"]!=null){ %>
-                    <a href='<%=user.socialLinks["github"]%>'>
+                    <a href='<%=user.socialLinks["github"]%>' target="_blank">
                       <img class="s" src="/img/logo/githubPng.png" alt="" />
                     </a>
                     <% }else{%>
@@ -681,7 +681,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
-                    <a href='<%=user.socialLinks["facebook"]%>'>
+                    <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
                       <img class="s" src="/img/logo/fb.png" alt="" />
                     </a>
                     <% }else{%>
@@ -692,7 +692,7 @@
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["linkedin"]!=null){ %>
-                    <a href='<%=user.socialLinks["linkedin"]%>'>
+                    <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
                       <img class="s" src="/img/logo/link.png" alt="" />
                     </a>
                     <% }else{%>
