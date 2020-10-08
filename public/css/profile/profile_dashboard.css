@@ -264,7 +264,7 @@ body {
   right: 30rem;
   position: fixed;
   overflow: hidden;
-  font-size: 10rem;
+  font-size: 7rem;
   font-family: "Century Gothic";
   font-weight: 900;
   opacity: 0.1;
@@ -547,7 +547,8 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+ "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 
