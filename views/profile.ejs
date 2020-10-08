@@ -236,11 +236,12 @@
             </div>
             <div class="flexRow">
               <label for="batchYear">Batch Year</label>
-              <select name="batchYear" id="batchYear" required>
+              <select name="batchYear" id="batchYear">
                 <option value="2020-24">2020-24</option>
                 <option value="2019-23" selected>2019-23</option>
                 <option value="2018-22">2018-22</option>
                 <option value="2017-21">2017-21</option>
+                <option value="2016-20">2016-20</option>
               </select>
             </div>
             <hr size="1px" />
@@ -263,7 +264,6 @@
                 value="<% if(user.socialLinks['facebook']){%><%=user.socialLinks['facebook']%><%}%>"
                 placeholder="Enter Your Facebook account URL"
                 name="facebook"
-                required
                 maxlength="200"
               />
             </div>
@@ -389,7 +389,6 @@
                 type="text"
                 name="skilldescription"
                 maxlength="50"
-                required
               />
             </div>
             <br /><br />
@@ -478,7 +477,6 @@
                 type="url"
                 placeholder="Your Github repository link"
                 name="githuburl"
-                required
               />
             </div>
             <div class="flexRow">
@@ -575,7 +573,6 @@
                 placeholder="Unique Certification Number"
                 name="achievementnameserial"
                 maxlength="30"
-                required
               />
             </div>
             <div class="flexRow">
@@ -585,7 +582,6 @@
                 type="text"
                 name="projectdescription"
                 maxlength="50"
-                required
               />
             </div>
             <br /><br />
