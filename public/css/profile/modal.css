@@ -80,7 +80,7 @@
   transition: all 0.5s;
 }
 
-@media (max-width: 1000px), (max-height: 820px) {
+@media (max-width: 1000px), (max-height: 800px) {
   .editProfileModal,
   .addAchievementModal,
   .addExperienceModal,
