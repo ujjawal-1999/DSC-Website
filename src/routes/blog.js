@@ -130,7 +130,7 @@ const storage = multer.diskStorage({
     // console.log(req.body);
     const newDestination =
       __dirname + `/../../public/upload/cover/${req.user.userId}`;
-    console.log("New Destination: ", newDestination);
+    //console.log("New Destination: ", newDestination);
     var stat = null;
     try {
       stat = fs.statSync(newDestination);
@@ -298,8 +298,8 @@ router.put("/rate/:blogid", auth, async (req, res) => {
   try {
     const blogId = req.params.blogid;
     var value = req.body.rating;
-    console.log(blogId);
-    console.log(value);
+    //console.log(blogId);
+    //console.log(value);
     const userId = req.user.userId;
     if (!blogId || !value) {
       return res.status(422).json({
@@ -328,7 +328,7 @@ router.put("/rate/:blogid", auth, async (req, res) => {
         updatedBlog.ratingSum / updatedBlog.ratingCount;
       await updatedBlog.save();
 
-      console.log("Rating updated: ", value);
+      //console.log("Rating updated: ", value);
       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
       return;
@@ -342,7 +342,7 @@ router.put("/rate/:blogid", auth, async (req, res) => {
       ratedBefore.value = value;
       await ratedBefore.save();
 
-      console.log("Rating updated: ", value);
+      //console.log("Rating updated: ", value);
       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
     }

@@ -20,7 +20,7 @@ const contact = (data) => {
     subject: `DSC - ${data.subject}`,
     html: `<p>Hii ${data.name},<br>"Your Issue" - ${data.message} has been recieved and we will solve this issue soon!!</p>`,
   };
-  console.log("mailOptions : ", mailOptions);
+  // console.log("mailOptions : ", mailOptions);
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -53,7 +53,7 @@ const contactAdmin = (data) => {
     subject: `DSC User Issue Report`,
     html: mailContent
   };
-  console.log("mailOptions : ", mailOptions);
+  // console.log("mailOptions : ", mailOptions);
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -88,7 +88,7 @@ const signUpMail = (data) => {
       link +
       ">Click here to verify</a>",
   };
-  console.log("mailOptions : ", mailOptions);
+  // console.log("mailOptions : ", mailOptions);
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {

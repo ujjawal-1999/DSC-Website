@@ -49,7 +49,7 @@ router.get("/", async (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
-      console.log(user);
+      // console.log(user);
       res.render("index", { user: user, found: finduser });
     });
   } else res.render("index", { user: req.user, found: finduser });
@@ -75,7 +75,7 @@ router.get("/members", async (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
-      console.log(user);
+      // console.log(user);
       res.render("dscmemberspage", { user: user, found: finduser });
     });
   } else res.render("dscmemberspage", { user: req.user, found: finduser });
@@ -88,7 +88,7 @@ router.get("/dscwebsitedeveloper", async (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
-      console.log(user);
+      // console.log(user);
       res.render("websitedeveloper", { user: user, found: finduser });
     });
   } else res.render("websitedeveloper", { user: req.user, found: finduser });
@@ -99,7 +99,7 @@ const storage = multer.diskStorage({
     // console.log(req.body);
     const newDestination =
       __dirname + `/../../public/upload/report/${req.body.email}`;
-    console.log("New Destination: ", newDestination);
+    // console.log("New Destination: ", newDestination);
     var stat = null;
     try {
       stat = fs.statSync(newDestination);
@@ -139,21 +139,21 @@ router.post("/contact", async (req, res) => {
       upload(req, res, (err) => {
         if (err) {
           errors.push({ message: err });
-          console.log("Error: ", errors);
+          // console.log("Error: ", errors);
           avatar = [];
           cb(avatar);
         } else {
-          console.log("Files sent: ", req.files);
+          // console.log("Files sent: ", req.files);
           if (req.files.length === 0 || req.files === undefined) {
             avatar = ["admin"];
             errors.push({ message: "0 image selected" });
-            console.log("Error2 ", errors);
+            // console.log("Error2 ", errors);
             cb(avatar);
           } else {
             for (var i = 0; i < req.files.length; i++) {
               avatar[i] = `/report/${req.body.email}/${req.files[i].filename}`;
             }
-            console.log(avatar);
+            // console.log(avatar);
             cb(avatar);
           }
         }
@@ -167,7 +167,7 @@ router.post("/contact", async (req, res) => {
         );
         res.redirect("/dsc/#contactus");
       } else {
-        console.log(req.body);
+        // console.log(req.body);
         contact({
           email: req.body.email,
           name: req.body.name,
@@ -187,7 +187,7 @@ router.post("/contact", async (req, res) => {
           }
           newMail.imageLocation = location;
         }
-        console.log(newMail.imageLocation);
+        // console.log(newMail.imageLocation);
         contactAdmin({
           email: req.body.email,
           name: req.body.name,
@@ -199,7 +199,7 @@ router.post("/contact", async (req, res) => {
         newMail
           .save()
           .then((result) => {
-            console.log(result);
+            // console.log(result);
             res.locals.flashMessages = req.flash(
               "contact_success",
               "Your response has been recorded"

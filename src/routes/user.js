@@ -71,12 +71,12 @@ router.get("/new", (req, res) => {
 router.get("/verify/:id", async (req, res) => {
   // console.log(req.protocol+":/"+req.get('host'));
   if (req.protocol + "://" + req.get("host") == "http://" + req.get("host")) {
-    console.log("Domain is matched. Information is from Authentic email");
+    //console.log("Domain is matched. Information is from Authentic email");
 
     const user = await User.findById(req.params.id);
 
     if (!user) {
-      console.log("Error from /user/verify route", error);
+      // console.log("Error from /user/verify route", error);
       req.flash("error", "Unable to find the user");
       res.direct("/dsc");
     } else {
@@ -86,7 +86,7 @@ router.get("/verify/:id", async (req, res) => {
         currDate.getTime() - initialCreatedAt.getTime()
       );
       const diffhrs = Math.ceil(timeDiff / (1000 * 60));
-      console.log(diffhrs);
+      // console.log(diffhrs);
       if (diffhrs <= 3) {
         const updatedUser = await User.findByIdAndUpdate(user._id, {
           active: true,
@@ -95,18 +95,18 @@ router.get("/verify/:id", async (req, res) => {
           console.log(err);
           res.redirect("/dsc");
         } else {
-          console.log("Email Verified");
+          // console.log("Email Verified");
           res.render("verify");
         }
       } else {
         await User.findByIdAndUpdate(user._id, { created_at: new Date() });
-        console.log("Link has expired try logging in to get a new link");
+        // console.log("Link has expired try logging in to get a new link");
         // res.end("<h1>Link has expired try logging in to get a new link</h1>");
         res.render("notverified");
       }
     }
   } else {
-    console.log("Response is from an unknown source");
+    // console.log("Response is from an unknown source");
   }
 });
 
@@ -114,7 +114,7 @@ router.get("/verify/forgotpassword/:id", function (req, res) {
   // console.log(req.protocol+":/"+req.get('host'));
 
   if (req.protocol + "://" + req.get("host") == "http://" + req.get("host")) {
-    console.log("Domain is matched. Information is from Authentic email");
+    // console.log("Domain is matched. Information is from Authentic email");
 
     User.findById(req.params.id, function (err, user) {
       if (err) console.log(err);
@@ -127,7 +127,7 @@ router.get("/verify/forgotpassword/:id", function (req, res) {
           ) {
             if (err) console.log(err);
             else {
-              console.log("email is verified");
+              // console.log("email is verified");
               res.render("changepassword", { user: user });
             }
           });
@@ -181,7 +181,7 @@ router.get("/register", async (req, res) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
-      console.log(user);
+      // console.log(user);
       res.render("register", { user: user, found: finduser });
     });
   } else res.render("register", { user: req.user, found: finduser });
@@ -190,7 +190,7 @@ router.get("/register", async (req, res) => {
 //post route for signup
 router.post("/register", async (req, res, next) => {
   const errors = validationResult(req);
-  console.log(errors);
+  // console.log(errors);
   if (!errors.isEmpty()) {
     return res.status(422).jsonp(errors.array());
   } else {
@@ -397,8 +397,8 @@ router.post("/experience", authorization, async (req, res) => {
   try {
     // console.log("experience route called");
     const user = req.dbUser;
-    console.log(req.body)
-    console.log(user);
+    // console.log(req.body)
+    // console.log(user);
     const newExp = {
       name: req.body.exp_name,
       role: req.body.exp_role,
@@ -408,8 +408,8 @@ router.post("/experience", authorization, async (req, res) => {
       description: req.body.exp_description,
     };
     user.experiences.push(newExp);
-    console.log(user);
-    console.log(newExp);
+    // console.log(user);
+    // console.log(newExp);
     await user.save();
     res.redirect(req.get("referer"));
   } catch (error) {
@@ -441,7 +441,7 @@ router.post("/profile", authorization, (req, res) => {
       jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         id = user.userId;
       });
-      console.log(req.body);
+      // console.log(req.body);
       User.findByIdAndUpdate(id, {
         name: req.body.name,
         degree: req.body.degree,
@@ -458,7 +458,7 @@ router.post("/profile", authorization, (req, res) => {
         res.redirect("/dsc/user/profile");
       });
     } else {
-      console.log("Token was not found");
+      // console.log("Token was not found");
       res.redirect("/dsc");
     }
   } catch (error) {
@@ -480,12 +480,12 @@ router.post("/project/personal", authorization, async (req, res) => {
       hosturl: req.body.hosturl,
       status : req.body.status
     };
-    console.log("New Project-- ", newProject);
+    // console.log("New Project-- ", newProject);
 
     user.personalProjects.push(newProject);
     // console.log(newSkill);
     await user.save();
-    console.log(user);
+    // console.log(user);
 
     res.redirect("/dsc/user/profile");
   } catch (error) {
@@ -511,7 +511,7 @@ router.get("/delete/project/personal/:id", authorization, async (req, res) => {
 //to add new achievement
 router.post("/achievement", authorization, async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const user = req.dbUser;
     const newAchievement = {
       name: req.body.achievementname,
@@ -522,7 +522,7 @@ router.post("/achievement", authorization, async (req, res) => {
     };
 
     user.achievements.push(newAchievement);
-    console.log(newAchievement);
+    // console.log(newAchievement);
     await user.save();
     // console.log(user);
 
@@ -605,7 +605,7 @@ router.get("/profile", authorization, async (req, res) => {
 router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
   try {
     await Blog.findOneAndDelete({ _id: req.params.blog_id }, (e) => {
-      console.log(e);
+      // console.log(e);
     });
 
     res.redirect(req.get("referer"));
@@ -664,7 +664,7 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
       uploadProfileImage(req, res, (err) => {
         if (err) {
           errors.push({ message: err });
-          console.log("Error1", err);
+          // console.log("Error1", err);
           avatar = "";
         } else {
           if (req.file == undefined) {
@@ -673,7 +673,7 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
             avatar = undefined;
           } else {
             avatar = `/profile/${user._id}/${req.file.filename}`;
-            console.log("avatar", avatar);
+            // console.log("avatar", avatar);
           }
         }
         if (avatar != undefined) {
@@ -684,12 +684,12 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
         user
           .save()
           .then((user) => {
-            console.log("avatar value", avatar);
+            // console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
               res.redirect("/dsc/user/profile");
             } else {
-              console.log(" Profile not Updated!");
+              // console.log(" Profile not Updated!");
               res.redirect("/dsc/user/profile");
             }
           })
