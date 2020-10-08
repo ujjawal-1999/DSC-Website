@@ -121,8 +121,6 @@ main {
 }
 
 .cards .card-content {
-  background-color: var(--Grey-light-1) !important;
-  color: var(--Grey-dark-1);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -212,15 +210,10 @@ main {
           clip-path: circle(270% at 91.5% 75px);
 }
 
-.cards .fa {
-  color: var(--Grey-dark-1) !important;
-}
-
 .cards #dribbble .card-content,
 .cards #behance .card-content,
 .cards #linkedin .card-content,
 .cards #twitter .card-content {
-  color: var(--Grey-dark-1) !important;
   padding-right: 1rem;
 }
 
@@ -228,10 +221,11 @@ main {
 .cards #behance .card-content p,
 .cards #linkedin .card-content p,
 .cards #twitter .card-content p {
-  color: var(--Grey-dark-2) !important;
+  color: white !important;
 }
 
 .cards #dribbble .card-content {
+  background-color: #f46899;
   -webkit-clip-path: circle(0% at 76px 88%);
   clip-path: circle(0% at 50px 88%);
 }
@@ -242,6 +236,7 @@ main {
 }
 
 .cards #behance .card-content {
+  background-color: #2f98d1;
   -webkit-clip-path: circle(0% at 150px 88%);
   clip-path: circle(0% at 150px 88%);
 }
@@ -252,6 +247,7 @@ main {
 }
 
 .cards #linkedin .card-content {
+  background-color: #0076ac;
   -webkit-clip-path: circle(0% at 220px 88%);
   clip-path: circle(0% at 220px 88%);
 }
@@ -262,6 +258,7 @@ main {
 }
 
 .cards #twitter .card-content {
+  background-color: #7fd0ed;
   -webkit-clip-path: circle(0% at 292px 88%);
   clip-path: circle(0% at 292px 88%);
 }

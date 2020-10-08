@@ -99,8 +99,8 @@ main {
   }
 
   .card-content {
-    background-color: var(--Grey-light-1) !important;
-    color: var(--Grey-dark-1);
+    // background-color: var(--Grey-light-1) !important;
+    // color: var(--Grey-dark-1);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -185,25 +185,24 @@ main {
     //   background-size: contain;
     // }
   }
-  .fa {
-    color: var(--Grey-dark-1) !important;
-  }
+  // .fa {
+  //   color: var(--Grey-dark-1) !important;
+  // }
 
   #dribbble,
   #behance,
   #linkedin,
   #twitter {
     .card-content {
-      color: var(--Grey-dark-1) !important;
       padding-right: 1rem;
       p {
-        color: var(--Grey-dark-2) !important;
+        color: white !important;
       }
     }
   }
   #dribbble {
     .card-content {
-      //   background-color: #f46899;
+      background-color: #f46899;
       -webkit-clip-path: circle(0% at 76px 88%);
       clip-path: circle(0% at 50px 88%);
     }
@@ -214,7 +213,7 @@ main {
   }
   #behance {
     .card-content {
-      //   background-color: #2f98d1;
+      background-color: #2f98d1;
       -webkit-clip-path: circle(0% at 150px 88%);
       clip-path: circle(0% at 150px 88%);
     }
@@ -225,7 +224,7 @@ main {
   }
   #linkedin {
     .card-content {
-      //   background-color: #03679b;
+      background-color: #0076ac;
       -webkit-clip-path: circle(0% at 220px 88%);
       clip-path: circle(0% at 220px 88%);
     }
@@ -236,7 +235,7 @@ main {
   }
   #twitter {
     .card-content {
-      //   background-color: #7fd0ed;
+      background-color: #7fd0ed;
       -webkit-clip-path: circle(0% at 292px 88%);
       clip-path: circle(0% at 292px 88%);
     }
