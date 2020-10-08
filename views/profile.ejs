@@ -67,7 +67,6 @@
               >
                 <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
-                <option value="Scheduled">Scheduled</option>
               </select>
             </div>
             <div class="flexRow">
@@ -389,6 +388,7 @@
                 type="text"
                 name="skilldescription"
                 maxlength="50"
+                required
               />
             </div>
             <br /><br />
@@ -906,10 +906,13 @@
                                 align-items: center;
                               "
                             >
-                              <div id="mention">
-                                <b>&#9899;</b><%= experience.startdate %> - <%=
-                                experience.enddate %>
-                              </div>
+                            <div id="mention">
+                              <b>&#9899;</b><%= experience.startdate %> - <% if (experience.enddate !== undefined) {%>
+                                <%= experience.enddate %>
+                                <%} else { %>
+                                  Present
+                                <%} %>
+                            </div>
 
                               <a
                                 class="delete-exp"
