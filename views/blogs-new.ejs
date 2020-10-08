@@ -159,11 +159,16 @@
                                 <% }%>
                                     <% popularBlogs.forEach(function(blog){%>
                                         <div class="popular-posts">
-                                            <div class="numbering">
-                                                <%= i++ %>
-                                            </div>
+
                                             <div class="content">
-                                                <span class="title"><a href="/dsc/blog/view/<%= blog.slug%>"><%= blog.title%></a></span><br />
+                                                <div class="title">
+                                                    <span class="numbering">
+                                                        <%= i++ %> 
+                                                    </span>
+                                                    <a href="/dsc/blog/view/<%= blog.slug%>">
+                                                        <%= blog.title%>
+                                                    </a>
+                                                </div><br />
                                                 <span class="intro"> <%- blog.summary%></span><br />
                                                 <span class="date"> 20 sept, 2020 </span>
                                             </div>
