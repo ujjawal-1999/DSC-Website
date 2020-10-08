@@ -226,14 +226,13 @@ p {
     overflow: hidden;
     height: 30rem;
     float: left;
-    width: 250%;
+    width: 50%;
     border-radius: 30px;
     /* margin: 1rem; */
     min-width: 400px;
 }
 
 .card-img {
-    transition: transform 0.3s ease-in-out;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -245,11 +244,13 @@ p {
     text-align: center;
 }
 
-.card-img :hover {
+.card-img:hover img {
     transform: scale(1.1);
 }
 
 .card-container img {
+    transition: transform 0.5s;
+    transform: scale(1);
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -257,14 +258,6 @@ p {
 
 .card-image:hover .card-info {
     transform: translateX(0);
-}
-
-.card-image:hover img {
-    transition: all 0.8s ease-in-out;
-}
-
-.card-image:hover img {
-    transform: scale(1.2, 1.2);
 }
 
 .card-details {

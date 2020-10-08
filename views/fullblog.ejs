@@ -91,7 +91,7 @@
       <div class="content">
         <div class="card-img">
           <img src="<%=blog.cover%>" alt="Omar Dsoky" />
-          <span clas="category"><%= blog.category %></span>
+          <div class="category"><%= blog.category %></div>
         </div>
         <div
           id="editor"
@@ -100,6 +100,7 @@
             margin-bottom: 20px;
             text-align: center;
             padding-bottom: 30px;
+            font-size: 1.5rem;
           "
         >
           <%- blog.body %>
