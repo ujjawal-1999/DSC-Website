@@ -67,10 +67,10 @@
                                                     <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
                                             </p>
                                         </div>
-                                        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 12rem;">
+                                        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;">
                                             <div class="card-author">
                                                 <% if(blog.author.profileImageLocation){ %>
-                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" />
+                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" />;;
                                                     <% }else{ %>
                                                         <img src="/img/profile/person.png" />
                                                         <% } %>

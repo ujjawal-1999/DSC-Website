@@ -319,24 +319,18 @@ router.post("/forgotpassword", function (req, res) {
 
 router.get("/profile", authorization, async (req, res) => {
   try {
-    const token = req.cookies.authorization;
     const finduser = await User.find();
     // const userBlog = await blog.find();
-    if (token) {
-      jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
-        await req.dbUser.populate("blogs").execPopulate();
-        res.render("profile", {
-          user: req.dbUser,
-          // myblogs: req.dbuser.blogs,
-          found: finduser,
-        });
-      });
-    } else {
-      res.redirect("/dsc/user/register");
-    }
+    await req.dbUser.populate("blogs").execPopulate();
+    res.render("profile", {
+      user: req.dbUser,
+      found : finduser
+    })
   } catch (error) {
-    console.error(error);
-    res.status(500).send(error);
+    console.error("Error from getProfile route",error);
+    req.flash("error","Error in getting the profile");
+    res.redirect("/dsc")
+    // res.status(500).send(error);
   }
 });
 
@@ -344,7 +338,7 @@ router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
-    const userBlog = await Blog.find();
+    // const userBlog = await Blog.find();
     req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
       .populate("blogs")
       .execPopulate();
@@ -484,7 +478,9 @@ router.post("/project/personal", authorization, async (req, res) => {
       startdate: req.body.startdate,
       enddate: req.body.enddate,
       hosturl: req.body.hosturl,
+      status : req.body.status
     };
+    console.log("New Project-- ", newProject);
 
     user.personalProjects.push(newProject);
     // console.log(newSkill);
@@ -551,38 +547,38 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
   }
 });
 //Post Route to add new Project
-router.post("/project/:user", async (req, res) => {
-  var title = req.body.projectname;
-  var role = req.body.projectrole;
-  var description = req.body.projectdescription;
-  var newProject = {
-    title: title,
-    role: role,
-    description: description,
-  };
-  User.findById(
-    {
-      _id: req.params.user,
-    },
-    (err, user) => {
-      if (err) {
-        console.log(err);
-      } else {
-        Project.create(newProject, function (err, project) {
-          if (err) {
-            console.log(err);
-          } else {
-            project.save();
-            user.projects.push(project);
-            user.save();
-            console.log(user);
-            res.redirect("/dsc/user/profile");
-          }
-        });
-      }
-    }
-  );
-});
+// router.post("/project/:user", async (req, res) => {
+//   var title = req.body.projectname;
+//   var role = req.body.projectrole;
+//   var description = req.body.projectdescription;
+//   var newProject = {
+//     title: title,
+//     role: role,
+//     description: description,
+//   };
+//   User.findById(
+//     {
+//       _id: req.params.user,
+//     },
+//     (err, user) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         Project.create(newProject, function (err, project) {
+//           if (err) {
+//             console.log(err);
+//           } else {
+//             project.save();
+//             user.projects.push(project);
+//             user.save();
+//             console.log(user);
+//             res.redirect("/dsc/user/profile");
+//           }
+//         });
+//       }
+//     }
+//   );
+// });
 
 router.get("/profile", authorization, async (req, res) => {
   try {

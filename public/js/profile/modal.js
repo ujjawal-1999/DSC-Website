@@ -183,16 +183,13 @@ backBtn3.addEventListener("click", () => {
   addProjectModal.style.pointerEvents = "none";
 });
 function statusListenerProject() {
-  var prj_status = document.forms["addProjectForm"]["prj_status"].value;
-  if (prj_status == "Ongoing") {
+  var prj_status = document.forms["addProjectForm"]["status"].value;
+  console.log(prj_status);
+  if (prj_status === "Ongoing") {
     document.getElementById("enddate").disabled = true;
     document.getElementById("enddate").type = "text";
-    document.forms["addProjectForm"]["enddate"].value = "Till Now";
-  } else if (prj_status == "Scheduled") {
-    document.getElementById("enddate").disabled = true;
-    document.getElementById("enddate").type = "text";
-    document.forms["addProjectForm"]["enddate"].value = "Till Now";
-  } else {
+    document.forms["addProjectForm"]["enddate"].value = "Present";
+  }  else {
     document.getElementById("enddate").disabled = false;
     document.getElementById("enddate").type = "date";
   }

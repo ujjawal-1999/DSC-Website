@@ -89,6 +89,9 @@ const userSchema = new Schema(
         startdate: {
           type: String,
         },
+        status :{
+          type: String,
+        },
         enddate: {
           type: String,
         },

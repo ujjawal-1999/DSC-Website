@@ -451,6 +451,13 @@
               />
             </div>
             <div class="flexRow">
+              <label for="status">Project Status</label>
+              <select name="status" id="projectStatus" required onchange="statusListenerProject()">
+                <option value="Completed" selected>Completed</option>
+                <option value="Ongoing">Ongoing</option>
+              </select>
+            </div>
+            <div class="flexRow">
               <label for="startdate">Start Date</label>
               <input id="startdate" type="date" name="startdate" required />
             </div>
@@ -1038,7 +1045,12 @@
                           </div>
                           <div class="project-duration">
                             <h3>
-                              <%= project.startdate %> to <%= project.enddate %>
+                              <%= project.startdate %> to 
+                              <% if(project.enddate !== undefined) { %>
+                                 <%= project.enddate %>
+                              <% } else { %>
+                                Present
+                              <% } %>
                             </h3>
                           </div>
                           <center>
@@ -1098,9 +1110,11 @@
                             <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
+                              <% if(ach.serial !== "") {%> 
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
                               >
+                              <% } %>
                               <a
                                 class="delete-ach"
                                 href="/dsc/user/delete/achievement/<%= ach._id %>"
