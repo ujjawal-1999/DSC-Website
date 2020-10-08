@@ -268,6 +268,7 @@ p {
   justify-self: center;
   padding-bottom: 1em;
   color: var(--Grey-dark-2);
+  text-align: center;
 }
 
 .card-buttons {
