@@ -642,6 +642,20 @@ body {
           filter: brightness(80%);
 }
 
+@media (max-width: 1680px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    right: 20rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    font-size: 5rem;
+    right: 20rem;
+    top: 25rem;
+  }
+}
+
 @media (max-width: 600px) {
   .cards .card .content .images .image-container {
     width: 100%;

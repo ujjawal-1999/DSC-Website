@@ -285,9 +285,6 @@ body {
   img {
     width: 10rem;
   }
-  &:hover .upload-btn-wrapper {
-    // transform: translateY(-3rem);
-  }
 }
 .uploadImageForm {
   text-align: center;
@@ -516,6 +513,20 @@ body {
 
 // ///////////////////////////////////////////////////////////////////////////////////
 
+@media (max-width: 1680px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    right: 20rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    font-size: 5rem;
+    right: 20rem;
+    top: 25rem;
+
+  }
+}
 // Responsive
 @media (max-width: 600px) {
   .cards .card .content .images .image-container {

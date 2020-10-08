@@ -67,6 +67,7 @@
               >
                 <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
+                <option value="Scheduled">Scheduled</option>
               </select>
             </div>
             <div class="flexRow">
@@ -259,6 +260,7 @@
                 value="<% if(user.socialLinks['facebook']){%><%=user.socialLinks['facebook']%><%}%>"
                 placeholder="Enter Your Facebook account URL"
                 name="facebook"
+                required
                 maxlength="200"
               />
             </div>
@@ -362,7 +364,7 @@
             </div>
             <div class="flexRow">
               <label for="skilllevel">Skill Level</label>
-              <select name="skilllevel"id="skilllevel" required>
+              <select name="skilllevel" id="skilllevel" required>
                 <option value="Beginner" selected>Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Expert">Expert</option>
@@ -567,7 +569,7 @@
               <input
                 id="achievementnameserial"
                 type="text"
-                placeholder="Unique Certification Number" 
+                placeholder="Unique Certification Number"
                 name="achievementnameserial"
                 maxlength="30"
                 required
@@ -700,6 +702,17 @@
                       <img class="s" src="/img/logo/link.png" alt="" /> </a
                     ><% }%>
                   </div>
+                  <div class="collegeinfo">
+                    <% if(user.socialLinks["twitter"]!=null){ %>
+                    <a href='<%=user.socialLinks["twitter"]%>'>
+                      <img class="s" src="/img/logo/twitter.png" alt="" />
+                    </a>
+                    <% }else{%>
+
+                    <a href="#">
+                      <img class="s" src="/img/logo/twitter.png" alt="" /> </a
+                    ><% }%>
+                  </div>
                 </div>
               </div>
               <div class="faint">
@@ -760,21 +773,13 @@
                 </ul>
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
-                    <div class="flexRow">
-                      <h3>Timeline</h3>
-                      <div class="flexRow">
-                        <p>Want to add more Blogs ?</p>
-                        <button class="addExperience" onclick="window.location.href='/dsc/blog/create'">
-                          Click here
-                        </button>
-                      </div>
-                    </div>
                     <% if(user.blogs.length==0){%>
                     <div class="cards">
                       <div class="card">
                         <div class="description">
                           Your Timeline has nothing to show. Post blogs to
                           display some.
+                        </div>
                       </div>
                     </div>
                     <% }%>
@@ -822,8 +827,12 @@
                           <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
-                              <img class="post-images" src="<%= blog.cover%>""
-                              alt="" data-original="<%= blog.cover%>"" />
+                              <img
+                                class="post-images"
+                                src="<%= blog.cover%>"
+                                alt=""
+                                data-original="<%= blog.cover%>"
+                              />
                             </div>
                           </div>
                         </div>
@@ -836,7 +845,6 @@
                       <%})%>
                     </div>
                   </div>
-                </div>
                   <div id="panel02" class="tab-panel">
                     <div class="flexRow">
                       <h3>EXPERIENCE</h3>
@@ -1057,8 +1065,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            Your Achievements Tab has nothing to show. Add
-                            Some Achievements to display here.
+                            Your Achievements Tab has nothing to show. Add some
+                            Achievements to display here.
                           </div>
                         </div>
                       </div>
@@ -1083,8 +1091,8 @@
                                 <p><%= ach.platform%></p>
                               </h3>
                             </div>
+                            <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
-                              <div id="date"><%= ach.date%></div>
                               <img src="/img/logo/info.svg" alt="info" />
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
