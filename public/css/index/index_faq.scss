@@ -89,13 +89,13 @@
 }
 
 @media screen and (max-height: 750px) {
-  .faq-section {
-    height: auto;
-  }
 }
 @media screen and (max-width: 1330px) {
   .faq-section .lower .sub {
     width: 50%;
+    height: auto;
+  }
+  .faq-section {
     height: auto;
   }
 }
