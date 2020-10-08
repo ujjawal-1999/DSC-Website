@@ -701,17 +701,6 @@
                       <img class="s" src="/img/logo/link.png" alt="" /> </a
                     ><% }%>
                   </div>
-                  <div class="collegeinfo">
-                    <% if(user.socialLinks["twitter"]!=null){ %>
-                    <a href='<%=user.socialLinks["twitter"]%>'>
-                      <img class="s" src="/img/logo/twitter.png" alt="" />
-                    </a>
-                    <% }else{%>
-
-                    <a href="#">
-                      <img class="s" src="/img/logo/twitter.png" alt="" /> </a
-                    ><% }%>
-                  </div>
                 </div>
               </div>
               <div class="faint">
@@ -772,6 +761,19 @@
                 </ul>
                 <div class="tab-panels">
                   <div id="panel01" class="tab-panel">
+                    <div class="flexRow">
+                      <h3>TIMELINE</h3>
+                      <div class="flexRow">
+                        <p>Want to add more Blogs ? &nbsp; &nbsp;</p>
+
+                        <a
+                          style="color: var(--Grey-dark-1)"
+                          href="/dsc/blog/create"
+                        >
+                          Click here</a
+                        >
+                      </div>
+                    </div>
                     <% if(user.blogs.length==0){%>
                     <div class="cards">
                       <div class="card">
