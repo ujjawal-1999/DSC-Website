@@ -294,64 +294,64 @@ router.get("/view/:slug", async (req, res) => {
 });
 
 //route to rate a blog
-router.put("/rate/:blogid", auth, async (req, res) => {
-  try {
-    const blogId = req.params.blogid;
-    var value = req.body.rating;
-    //console.log(blogId);
-    //console.log(value);
-    const userId = req.user.userId;
-    if (!blogId || !value) {
-      return res.status(422).json({
-        error: "Empty queries received",
-      });
-    }
-    value = parseInt(value);
+// router.put("/rate/:blogid", auth, async (req, res) => {
+//   try {
+//     const blogId = req.params.blogid;
+//     var value = req.body.rating;
+//     //console.log(blogId);
+//     //console.log(value);
+//     const userId = req.user.userId;
+//     if (!blogId || !value) {
+//       return res.status(422).json({
+//         error: "Empty queries received",
+//       });
+//     }
+//     value = parseInt(value);
 
-    const ratedBefore = await Ratings.findOne({
-      userId,
-      blogId,
-    });
+//     const ratedBefore = await Ratings.findOne({
+//       userId,
+//       blogId,
+//     });
 
-    //if not rated by user previously
-    if (!ratedBefore) {
-      await new Ratings({
-        userId,
-        blogId,
-        value,
-      }).save();
-      // apply update to blog schema
-      const updatedBlog = await Blog.findById(blogId);
-      updatedBlog.ratingCount += 1;
-      updatedBlog.ratingSum += value;
-      updatedBlog.ratingAverage =
-        updatedBlog.ratingSum / updatedBlog.ratingCount;
-      await updatedBlog.save();
+//     //if not rated by user previously
+//     if (!ratedBefore) {
+//       await new Ratings({
+//         userId,
+//         blogId,
+//         value,
+//       }).save();
+//       // apply update to blog schema
+//       const updatedBlog = await Blog.findById(blogId);
+//       updatedBlog.ratingCount += 1;
+//       updatedBlog.ratingSum += value;
+//       updatedBlog.ratingAverage =
+//         updatedBlog.ratingSum / updatedBlog.ratingCount;
+//       await updatedBlog.save();
 
-      //console.log("Rating updated: ", value);
-      res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-      res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
-      return;
-    } else {
-      //set new value if already rated
-      const updatedBlog = await Blog.findById(blogId);
-      updatedBlog.ratingSum += value - ratedBefore.value;
-      updatedBlog.ratingAverage =
-        updatedBlog.ratingSum / updatedBlog.ratingCount;
-      await updatedBlog.save();
-      ratedBefore.value = value;
-      await ratedBefore.save();
+//       //console.log("Rating updated: ", value);
+//       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
+//       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
+//       return;
+//     } else {
+//       //set new value if already rated
+//       const updatedBlog = await Blog.findById(blogId);
+//       updatedBlog.ratingSum += value - ratedBefore.value;
+//       updatedBlog.ratingAverage =
+//         updatedBlog.ratingSum / updatedBlog.ratingCount;
+//       await updatedBlog.save();
+//       ratedBefore.value = value;
+//       await ratedBefore.save();
 
-      //console.log("Rating updated: ", value);
-      res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-      res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
-    }
-  } catch (e) {
-    console.log(e.message);
-    res.status(422).json({
-      error: e.message,
-    });
-  }
-});
+//       //console.log("Rating updated: ", value);
+//       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
+//       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
+//     }
+//   } catch (e) {
+//     console.log(e.message);
+//     res.status(422).json({
+//       error: e.message,
+//     });
+//   }
+// });
 
 module.exports = router;

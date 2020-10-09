@@ -546,39 +546,6 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
     res.status(500).send(error);
   }
 });
-//Post Route to add new Project
-// router.post("/project/:user", async (req, res) => {
-//   var title = req.body.projectname;
-//   var role = req.body.projectrole;
-//   var description = req.body.projectdescription;
-//   var newProject = {
-//     title: title,
-//     role: role,
-//     description: description,
-//   };
-//   User.findById(
-//     {
-//       _id: req.params.user,
-//     },
-//     (err, user) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         Project.create(newProject, function (err, project) {
-//           if (err) {
-//             console.log(err);
-//           } else {
-//             project.save();
-//             user.projects.push(project);
-//             user.save();
-//             console.log(user);
-//             res.redirect("/dsc/user/profile");
-//           }
-//         });
-//       }
-//     }
-//   );
-// });
 
 router.get("/profile", authorization, async (req, res) => {
   try {
