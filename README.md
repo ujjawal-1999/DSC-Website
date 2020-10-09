@@ -40,6 +40,12 @@ DSC Website NITS.
 
 
 
+<a href="https://github.com/ujjawal-1999/DSC-Website/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=ujjawal-1999/DSC-Website" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
+
 
 
 
