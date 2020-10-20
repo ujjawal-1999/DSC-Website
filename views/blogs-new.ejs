@@ -51,7 +51,7 @@
                                 <div class="card-container">
                                     <div class="card-image">
                                         <div class="card-img">
-                                            <img src="<%=blog.cover%>" alt="Omar Dsoky" />
+                                            <img src="<%=blog.cover%>" alt="cover image" />
                                         </div>
                                     </div>
 
@@ -70,9 +70,9 @@
                                         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;">
                                             <div class="card-author">
                                                 <% if(blog.author.profileImageLocation){ %>
-                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" />;;
+                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />;;
                                                     <% }else{ %>
-                                                        <img src="/img/profile/person.png" />
+                                                        <img src="/img/profile/person.png" alt="default avatar" />
                                                         <% } %>
                                                             <center>
                                                                 <h3 style="width: max-content">
