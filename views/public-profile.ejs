@@ -34,8 +34,8 @@
           <div class="pictureandbasic">
             <div class="photo">
               <% if(user.profileImageLocation!=null){ %>
-              <img src="/upload<%= user.profileImageLocation%>" alt="" />
-              <% }else{%> <img src="/img/logo/profile.png" alt="" /> <% }%>
+              <img src="/upload<%= user.profileImageLocation%>" alt="profile-image" />
+              <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <% }%>
             </div>
             <div class="info">
               <div class="nameandedit">
@@ -51,32 +51,32 @@
               <div class="branchandyear">
                 <div class="collegeinfo">
                   <% if(user.socialLinks["facebook"]!=null){ %>
-                  <a href='<%= user.socialLinks["facebook"]%>'>
-                    <img class="s" src="/img/logo/fb.png" alt="" />
+                  <a href='<%= user.socialLinks["facebook"]%>' target="__blank">
+                    <img class="s" src="/img/logo/fb.png" alt="facebook logo" />
                   </a>
                   <% }else{%>
-                  <a href="#">
-                    <img class="s" src="/img/logo/fb.png" alt="" /> </a
+                  <a href="#" target="__blank">
+                    <img class="s" src="/img/logo/fb.png" alt="facebook logo" /> </a
                   ><% }%>
                 </div>
                 <div class="collegeinfo">
                   <% if(user.socialLinks["linkedin"]!=null){ %>
-                  <a href='<%= user.socialLinks["linkedin"]%>'>
-                    <img class="s" src="/img/logo/link.png" alt="" />
+                  <a href='<%= user.socialLinks["linkedin"]%>' target="__blank">
+                    <img class="s" src="/img/logo/link.png" alt="linkedin logo" />
                   </a>
                   <% }else{%>
-                  <a href="#">
-                    <img class="s" src="/img/logo/link.png" alt="" /> </a
+                  <a href="#" target="__blank">
+                    <img class="s" src="/img/logo/link.png" alt="linkedin logo" /> </a
                   ><% }%>
                 </div>
                 <div class="collegeinfo">
                   <% if(user.socialLinks["twitter"]!=null){ %>
-                  <a href='<%= user.socialLinks["twitter"]%>'>
-                    <img class="s" src="/img/logo/twitter.png" alt="" />
+                  <a href='<%= user.socialLinks["twitter"]%>' target="__blank">
+                    <img class="s" src="/img/logo/twitter.png" alt="twitter logo" />
                   </a>
                   <% }else{%>
-                  <a href="#">
-                    <img class="s" src="/img/logo/twitter.png" alt="" /> </a
+                  <a href="#" target="__blank">
+                    <img class="s" src="/img/logo/twitter.png" alt="twitter logo" /> </a
                   ><% }%>
                 </div>
               </div>
@@ -146,10 +146,10 @@
                         <% if(user.profileImageLocation!=null){ %>
                         <img
                           src="/upload<%= user.profileImageLocation%>"
-                          alt=""
+                          alt="profile-image"
                         />
                         <% }else{%>
-                        <img src="/img/logo/profile.png" alt="" />
+                        <img src="/img/logo/profile.png" alt="avatar" />
 
                         <% }%>
 
@@ -169,7 +169,7 @@
                         <div class="images">
                           <div class="image-container">
                             <img class="post-images" src="<%= blog.cover%>""
-                            alt="" data-original="<%= blog.cover%>"" />
+                            alt="blog cover" data-original="<%= blog.cover%>"" />
                           </div>
                         </div>
                       </div>
@@ -211,7 +211,7 @@
                           >
                             <img
                               src="/img/logo/experience-default.png"
-                              alt="lo"
+                              alt="experience-default"
                             />
                             <h3 class="accordion">
                               <%= experience.role %><br />
@@ -257,7 +257,7 @@
                       <div class="skill-icon">
                         <img
                           src="/img/skill-icons/skill-default.png"
-                          alt=""
+                          alt="skill-default"
                           class="icon"
                         />
                       </div>
@@ -289,7 +289,7 @@
                             <img
                               class="language"
                               src="/img/logo/project-default.png"
-                              alt=""
+                              alt="project-default"
                             />
                           </div>
                         </div>
@@ -332,7 +332,7 @@
                           <div style="display: flex; align-items: center">
                             <img
                               src="/img/logo/achievement-default.png"
-                              alt="company"
+                              alt="achievement-default"
                             />
                             <h3 class="tab-ach">
                               <%= ach.name %><br />
