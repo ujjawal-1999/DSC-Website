@@ -5,7 +5,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: right bottom;
-  min-height: 90vh;
+  min-height: 100vh;
   background-size: 20% auto;
   .upper {
     display: flex;
@@ -24,6 +24,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
       font-weight: lighter;
+      margin: 2rem 0;
     }
     form {
       width: 100%;
