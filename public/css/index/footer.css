@@ -120,18 +120,27 @@
   align-items: center;
   margin: 0.1rem 0;
 }
-.nav-banner{
+.nav-banner {
   width: 30%;
 }
 .fadedText {
   opacity: 0.6;
 }
+.footimg {
+  width: 30%;
+}
 @media screen and (max-width: 700px) {
   .contentnav {
     margin: 1rem;
   }
-  .nav-banner{
+  .nav-banner {
     width: 50%;
+  }
+  .footimg {
+    width: 90%;
+  }
+  .fadedText {
+    font-size: 0.6rem!important;
   }
 }
 

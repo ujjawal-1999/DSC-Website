@@ -80,7 +80,32 @@
   transition: all 0.5s;
 }
 
-@media (max-width: 1000px), (max-height: 800px) {
+@media (max-height: 1000px) {
+  .backPart {
+    width: 10% !important;
+  }
+  .editProfileModal,
+  .addSkillsModal,
+  .addAchievementModal,
+  .addProjectsModal,
+  .addExperienceModal {
+    top: 0%;
+    left: 0%;
+    -webkit-transform: translate(0%, 80px);
+            transform: translate(0%, 80px);
+    width: 100%;
+    position: absolute;
+    overflow: auto;
+    font-size: 0.8rem !important;
+    height: auto;
+  }
+  .wrapper {
+    padding: 1rem 0;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 700px) {
   .editProfileModal,
   .addAchievementModal,
   .addExperienceModal,
@@ -108,7 +133,7 @@
     height: auto;
   }
   .wrapper {
-    padding: 2rem 0;
+    padding: 1rem 0;
     height: auto !important;
   }
   .editProfileModal,
@@ -145,6 +170,9 @@
   .backlogo1 {
     -webkit-transform: translateX(-3rem);
             transform: translateX(-3rem);
+  }
+  select {
+    padding: 12px 0 0 0;
   }
 }
 

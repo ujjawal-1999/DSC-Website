@@ -32,11 +32,11 @@
 }
 
 .navbar img {
-  position: relative;
-  justify-self: start;
+  position: absolute;
+  /* justify-self: start; */
   transform: translateX(10px);
-  margin-top: 5px;
-  margin-left: 3rem;
+  top: 18px;
+  left: 18px;
   width: 50px;
   height: 50px;
 }
@@ -241,7 +241,7 @@ input {
     width: 100%;
     height: calc(100vh - 70px);
     text-align: center;
-    overflow: hidden;
+    overflow: scroll;
     z-index: 100;
     transform: translateX(-150%);
   }
@@ -348,10 +348,10 @@ input {
     display: none;
     margin-top: 20px;
     align-items: center;
-    top: 80% !important;
+    top: 90% !important;
     right: 50%;
     width: 90%;
-    height: 50vh;
+    height: 40vh !important;
     overflow: scroll;
     background-color: var(--Grey-dark-1);
     color: var(--Grey-light-1);
@@ -469,7 +469,7 @@ input {
 
 .box {
   position: absolute;
-  top: 15px;
+  top: 12px;
   right: 18px;
 }
 @media screen and (max-width: 715px) {
@@ -490,7 +490,6 @@ input {
   height: 45px;
   background-color: white;
   border-radius: 22px;
-  box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
   transition: all 300ms cubic-bezier(0.79, -0.01, 0.36, 1);
   cursor: pointer;
@@ -499,7 +498,7 @@ input {
 .type-checkbox + label span {
   position: absolute;
   color: inherit;
-  font-size: 12px;
+  font-size: 10px;
   font-family: "Varela Round", sans-serif;
 }
 .type-checkbox + label span.aprobado {

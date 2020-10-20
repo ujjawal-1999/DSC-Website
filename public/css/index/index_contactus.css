@@ -79,16 +79,6 @@
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
-    transition: ease 0.5s;
-  transform: scale(1);
-}
-
-.custom-file-upload:hover {
-  transform: scale(1.2);
-  background-color: var(--Grey-dark-1);
-  color: var(--primary-light) ;
-  border: 1px solid;
-  border-radius: 2px;
 }
 
 .contact_us .styled-input {
@@ -109,6 +99,7 @@
 }
 
 .contact_us .styled-input label {
+  font-size: 0.5rem;
   color: var(--Grey-light-4);
   padding: 0.5rem 1rem;
   position: absolute;
@@ -199,7 +190,6 @@
   }
   .contact_us input,
   .contact_us textarea {
-    padding: 1rem 1.2rem;
     font-size: 1rem;
   }
 }

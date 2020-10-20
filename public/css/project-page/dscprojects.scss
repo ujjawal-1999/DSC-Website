@@ -300,11 +300,17 @@ form {
 }
 
 @media screen and (max-width: 1200px) {
+  main {
+    padding: 1rem;
+  }
   .cards {
     justify-content: centers;
     width: 95vw;
     height: 70vh;
-    padding: 0.5rem;
+    padding: 30px;
+  }
+  .cards .card {
+    margin-right: auto;
   }
 
   .cards .card-content .col h2 {
@@ -312,10 +318,14 @@ form {
     text-align: center;
   }
   .cards .card-content .col.left {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
     text-align: center;
     padding: 1.3rem;
     width: 100%;
+  }
+  .cards .card-content .col.right {
+    padding: 0;
   }
   .cards .card-content .row {
     display: flex;

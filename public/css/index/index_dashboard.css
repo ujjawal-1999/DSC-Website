@@ -288,13 +288,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1150px) {
-  .getStarted {
-    -webkit-transform: translateY(-10rem);
-            transform: translateY(-10rem);
-  }
-}
-
-@media screen and (max-width: 1150px) {
   .header .dsclogo {
     width: 50%;
     opacity: 0;
@@ -302,11 +295,15 @@ body::-webkit-scrollbar-thumb {
   }
   .header .dsclogoMobile {
     opacity: 1;
-    width: 60%;
+    width: 90%;
     display: block;
+    -webkit-transform: translateY(-6rem);
+            transform: translateY(-6rem);
   }
   .header .getStarted {
     opacity: 1;
+    -webkit-transform: translateY(-10rem);
+            transform: translateY(-10rem);
   }
 }
 
@@ -329,7 +326,8 @@ body::-webkit-scrollbar-thumb {
   }
   .header {
     margin-top: 0;
-    background-image: none;
+    background-size: 50%;
+    background-position: bottom center;
   }
   .header .heading__background {
     display: none;

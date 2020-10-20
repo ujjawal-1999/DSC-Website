@@ -130,6 +130,14 @@
 
 @media screen and (max-width: 768px) {
   .video {
+    height: 70vh;
+    iframe {
+      width: 10rem;
+      height: 10rem;
+    }
+    &__contain {
+      width: 100%;
+    }
     &__background {
       display: none;
     }

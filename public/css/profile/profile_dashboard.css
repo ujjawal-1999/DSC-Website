@@ -264,7 +264,7 @@ body {
   right: 30rem;
   position: fixed;
   overflow: hidden;
-  font-size: 7rem;
+  font-size: 10rem;
   font-family: "Century Gothic";
   font-weight: 900;
   opacity: 0.1;
@@ -547,8 +547,7 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
- "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 
@@ -661,9 +660,15 @@ body {
   .cards .card .content .images .image-container {
     width: 100%;
   }
+  .cards .card .content .images {
+    width: 100%;
+  }
+  .cards .card .socialactivity img {
+    width: 2rem;
+  }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 800px) {
   .dashboard__main .main__profileinfo .pictureandbasic .info p {
     width: auto !important;
     overflow: hidden;
@@ -671,6 +676,7 @@ body {
   .cards .card {
     width: 100%;
     padding: 0.8rem;
+    margin: 2rem;
   }
   .contests {
     width: 100%;
@@ -737,12 +743,14 @@ body {
             flex-direction: column;
   }
   .dashboard__main .main__profileinfo .pictureandbasic {
+    padding: 2rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .dashboard__main .main__profileinfo .pictureandbasic .info {
+    padding: 0rem;
     text-align: center;
   }
   .dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {

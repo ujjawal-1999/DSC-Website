@@ -236,26 +236,23 @@ body::-webkit-scrollbar-thumb {
     transform: translateY(-10rem);
   }
 }
-@media screen and (max-width: 1150px) {
-  .getStarted {
-    transform: translateY(-10rem);
-  }
-}
+
 @media screen and (max-width: 1150px) {
   .header {
     .dsclogo {
       width: 50%;
       opacity: 0;
       display: none;
-      // transform: translateY(-10px);
     }
     .dsclogoMobile {
       opacity: 1;
-      width: 60%;
+      width: 90%;
       display: block;
+      transform: translateY(-6rem);
     }
     .getStarted {
       opacity: 1;
+      transform: translateY(-10rem);
     }
   }
 }
@@ -275,7 +272,9 @@ body::-webkit-scrollbar-thumb {
   }
   .header {
     margin-top: 0;
-    background-image: none;
+    background-size: 50%;
+    background-position: bottom center;
+    // background-image: none;
   }
   .header .heading__background {
     display: none;

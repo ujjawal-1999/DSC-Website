@@ -5,7 +5,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: right bottom;
-  height: 90vh;
+  min-height: 90vh;
   background-size: 20% auto;
   .upper {
     display: flex;
@@ -89,6 +89,9 @@
 }
 
 @media screen and (max-height: 750px) {
+  .faq-section {
+    height: auto !important;
+  }
 }
 @media screen and (max-width: 1330px) {
   .faq-section .lower .sub {

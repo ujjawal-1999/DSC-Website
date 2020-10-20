@@ -155,6 +155,16 @@
 }
 
 @media screen and (max-width: 768px) {
+  .video {
+    height: 70vh;
+  }
+  .video iframe {
+    width: 10rem;
+    height: 10rem;
+  }
+  .video__contain {
+    width: 100%;
+  }
   .video__background {
     display: none;
   }

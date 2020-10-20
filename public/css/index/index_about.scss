@@ -33,7 +33,7 @@
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1020px) {
   .main {
     .about {
       padding: 4rem;
@@ -66,7 +66,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px), (max-height: 720px) {
   .main {
     .about {
       height: auto;

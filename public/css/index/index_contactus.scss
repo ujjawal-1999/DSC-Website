@@ -81,6 +81,7 @@
   }
 
   .styled-input label {
+    font-size: 0.5rem;
     color: var(--Grey-light-4);
     padding: 0.5rem 1rem;
     position: absolute;
@@ -181,7 +182,7 @@
 
     input,
     textarea {
-      padding: 1rem 1.2rem;
+      // padding: 1rem 1.2rem;
       font-size: 1rem;
     }
   }
