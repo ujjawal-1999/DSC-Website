@@ -78,7 +78,7 @@ router.get("/verify/:id", async (req, res) => {
     if (!user) {
       // console.log("Error from /user/verify route", error);
       req.flash("error", "Unable to find the user");
-      res.direct("/dsc");
+      res.redirect("/");
     } else {
       const currDate = new Date();
       const initialCreatedAt = user.created_at;
@@ -93,7 +93,7 @@ router.get("/verify/:id", async (req, res) => {
         });
         if (!updatedUser) {
           console.log(err);
-          res.redirect("/dsc");
+          res.redirect("/");
         } else {
           // console.log("Email Verified");
           res.render("verify");
@@ -149,7 +149,7 @@ router.post("/changepassword/:id", function (req, res) {
       if (err) console.log(err);
       else {
         req.flash("success", "Your password has been reset try logging in");
-        res.redirect("/dsc/");
+        res.redirect("/");
       }
     });
   });
@@ -209,7 +209,7 @@ router.post("/register", async (req, res, next) => {
         "error",
         "Email already in use try logging in"
       );
-      res.redirect("/dsc/");
+      res.redirect("/");
       return;
     }
     signUpMail(savedUser);
@@ -218,13 +218,13 @@ router.post("/register", async (req, res, next) => {
       `${savedUser.name} Email has been sent to you for verification.`
     );
 
-    res.redirect("/dsc/");
+    res.redirect("/");
   }
 });
 
 // get route for login
 router.get("/login", function (req, res) {
-  res.redirect("/dsc/user/register");
+  res.redirect("/user/register");
 });
 
 //post route for login
@@ -238,20 +238,20 @@ router.post("/login", async (req, res, next) => {
     });
     // if (!user) {
     //   req.flash("Error", "User not found. Try creating a new account");
-    //   res.redirect("/dsc/");
+    //   res.redirect("/");
     //   return;
     // }
   }
   if (!user) {
     // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
     req.flash("error", "User not found. Try creating a new account");
-    res.redirect("/dsc/");
+    res.redirect("/");
     return;
   }
   const checkPassword = await bcrypt.compare(req.body.password, user.password);
   if (!checkPassword) {
     req.flash("error", "Invalid Credentials");
-    res.redirect("/dsc/");
+    res.redirect("/");
     return;
   }
   if (user.active) {
@@ -272,14 +272,14 @@ router.post("/login", async (req, res, next) => {
     });
 
     req.flash("success", user.name + " you are logged in");
-    res.redirect("/dsc/user/profile");
+    res.redirect("/user/profile");
   } else {
     signUpMail(user);
     req.flash(
       "error",
       user.name + " your email is not verified we have sent you an email"
     );
-    res.redirect("/dsc/");
+    res.redirect("/");
   }
 });
 
@@ -287,7 +287,7 @@ router.post("/login", async (req, res, next) => {
 router.get("/logout", function (req, res) {
   res.clearCookie("authorization");
   req.flash("success", "You are successfully logged out");
-  res.redirect("/dsc/");
+  res.redirect("/");
 });
 
 //get route for forget password
@@ -303,14 +303,14 @@ router.post("/forgotpassword", function (req, res) {
     .then((user) => {
       if (!user) {
         req.flash("error", "User not found try creating a new account");
-        res.redirect("/dsc/");
+        res.redirect("/");
       }
       forgotPassword(user);
       req.flash(
         "success",
         user.name + " we sent you an email to reset your password"
       );
-      res.redirect("/dsc/");
+      res.redirect("/");
     })
     .catch((err) => console.error(err));
 });
@@ -329,7 +329,7 @@ router.get("/profile", authorization, async (req, res) => {
   } catch (error) {
     console.error("Error from getProfile route",error);
     req.flash("error","Error in getting the profile");
-    res.redirect("/dsc")
+    res.redirect("/")
     // res.status(500).send(error);
   }
 });
@@ -348,7 +348,7 @@ router.get("/public-profile/:handle", async (req, res) => {
         found: finduser,
       });
     } else {
-      res.redirect("/dsc/404");
+      res.redirect("/404");
     }
   } catch (error) {
     console.error(error);
@@ -455,11 +455,11 @@ router.post("/profile", authorization, (req, res) => {
         },
       }).then((result) => {
         // console.log(result);
-        res.redirect("/dsc/user/profile");
+        res.redirect("/user/profile");
       });
     } else {
       // console.log("Token was not found");
-      res.redirect("/dsc");
+      res.redirect("/");
     }
   } catch (error) {
     console.error(error);
@@ -487,7 +487,7 @@ router.post("/project/personal", authorization, async (req, res) => {
     await user.save();
     // console.log(user);
 
-    res.redirect("/dsc/user/profile");
+    res.redirect("/user/profile");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -562,7 +562,7 @@ router.get("/profile", authorization, async (req, res) => {
         });
       });
     } else {
-      res.redirect("/dsc/user/register");
+      res.redirect("/user/register");
     }
   } catch (error) {
     console.error(error);
@@ -626,7 +626,7 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
     .then((user) => {
       if (!user) {
         errors.push({ msg: "No Records of user found at this moment" });
-        res.redirect("/dsc/user/profile")
+        res.redirect("/user/profile")
       }
       uploadProfileImage(req, res, (err) => {
         if (err) {
@@ -654,10 +654,10 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
             // console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
-              res.redirect("/dsc/user/profile");
+              res.redirect("/user/profile");
             } else {
               // console.log(" Profile not Updated!");
-              res.redirect("/dsc/user/profile");
+              res.redirect("/user/profile");
             }
           })
           .catch((err) => {

@@ -71,7 +71,7 @@
                                             </center>
                                             <p>
                                                 <%- blog.summary%>
-                                                    <a href="/dsc/blog/view/<%= blog.slug%>">... Read more</a>
+                                                    <a href="/blog/view/<%= blog.slug%>">... Read more</a>
                                             </p>
                                         </div>
                                         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;">
@@ -99,7 +99,7 @@
     
                   <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
                                                 <% if (user) {%>
-                                                    <form action="/dsc/blog/bookmark/<%= blog._id %>" method="POST">
+                                                    <form action="/blog/bookmark/<%= blog._id %>" method="POST">
                                                         <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
                       <% if (user.bookmarkBlogs &&
                       user.bookmarkBlogs.includes(blog._id)) {%>
@@ -129,12 +129,12 @@
                 <% if(user){ %>
                     <div class="inner-search">
                         <div class="blog-search-row">
-                            <a href="/dsc/blog/bookmarks" style="text-decoration: none">
+                            <a href="/blog/bookmarks" style="text-decoration: none">
                                 <div class="fndp">Your Bookmarks</div>
                             </a>
                         </div>
                         <div class="blog-search-row">
-                            <a href="/dsc/blog/create" style="text-decoration: none">
+                            <a href="/blog/create" style="text-decoration: none">
                                 <div class="fndp">Create Blog</div>
                             </a>
                         </div>
@@ -142,7 +142,7 @@
                     <% }else{ %>
                         <div class="inner-search">
                             <div class="blog-search-row">
-                                <a href="/dsc/user/register?type=login" style="text-decoration: none">
+                                <a href="/user/register?type=login" style="text-decoration: none">
                                     <div class="fndp">Login to Add a Blog</div>
                                 </a>
                             </div>
@@ -172,7 +172,7 @@
                                                     <span class="numbering">
                                                         <%= i++ %> 
                                                     </span>
-                                                    <a href="/dsc/blog/view/<%= blog.slug%>">
+                                                    <a href="/blog/view/<%= blog.slug%>">
                                                         <%= blog.title%>
                                                     </a>
                                                 </div><br />

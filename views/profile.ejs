@@ -55,7 +55,7 @@
           <form
             class="subscribeForm"
             method="post"
-            action="/dsc/user/experience"
+            action="/user/experience"
             onsubmit="return addExperienceModalvalidate()"
             name="addExperienceform"
           >
@@ -202,7 +202,7 @@
           <form
             class="subscribeForm"
             method="post"
-            action="/dsc/user/profile"
+            action="/user/profile"
             onsubmit="return editProfileModalvalidate()"
             name="editprofileform"
           >
@@ -359,7 +359,7 @@
           <form
             class="subscribeForm"
             method="post"
-            action="/dsc/user/skill"
+            action="/user/skill"
             name="addSkillsForm"
             onsubmit="return addSkillsModalvalidate()"
           >
@@ -435,7 +435,7 @@
           <form
             class="subscribeForm"
             method="post"
-            action="/dsc/user/project/personal"
+            action="/user/project/personal"
             name="addProjectForm"
             onsubmit="return addProjectModalvalidate()"
           >
@@ -548,7 +548,7 @@
           <form
             class="subscribeForm"
             method="POST"
-            action="/dsc/user/achievement"
+            action="/user/achievement"
             onsubmit="return addAchievementModalvalidate()"
             name="addAchievementForm"
           >
@@ -620,7 +620,7 @@
         <p></p>
         <div class="accountbar__shortcut">
           <div class="fndp" id="editbtn">Edit Profile</div>
-          <a href="/dsc/user/logout" style="text-decoration: none">
+          <a href="/user/logout" style="text-decoration: none">
             <div class="fndp">Log Out</div></a
           >
           <!-- <div class="edit" id="editbtn" ></div> -->
@@ -784,7 +784,7 @@
 
                         <a
                           style="color: var(--Grey-dark-1)"
-                          href="/dsc/blog/create"
+                          href="/blog/create"
                         >
                           Click here</a
                         >
@@ -827,7 +827,7 @@
                             >
 
                             <!-- <a
-                              href="/dsc/user/blog/delete/<%= blog._id %>"
+                              href="/user/blog/delete/<%= blog._id %>"
                               style="color: red"
                             >
                               <i class="fas fa-trash" style="font-size: 18px">
@@ -841,7 +841,7 @@
                           <div class="description">
                             <%- blog.body.substring(0, 300)%>
                           </div>
-                          <a href="/dsc/blog/view/<%= blog.slug%>">Read more</a>
+                          <a href="/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
                               <img
@@ -855,7 +855,7 @@
                         </div>
                         <a
                           class="delete-exp"
-                          href="/dsc/user/blog/delete/<%= blog._id %>"
+                          href="/user/blog/delete/<%= blog._id %>"
                           ><img src="/img/profile/trash.svg" alt="delete icon"/></a>
                       </div>
                       <%})%>
@@ -931,7 +931,7 @@
 
                               <a
                                 class="delete-exp"
-                                href="/dsc/user/delete/experience/<%= experience._id %>"
+                                href="/user/delete/experience/<%= experience._id %>"
                                 ><img src="/img/profile/trash.svg" alt="delete icon"
                               /></a>
                             </div>
@@ -981,7 +981,7 @@
                         <p class="skill-level"><%= skill.level %></p>
                         <a
                           class="delete-ski"
-                          href="/dsc/user/delete/skill/<%= skill._id %>"
+                          href="/user/delete/skill/<%= skill._id %>"
                           ><img src="/img/profile/trash.svg" alt="delete icon"
                         /></a>
                       </div>
@@ -1064,7 +1064,7 @@
                           <center>
                             <a
                               class="delete-prj"
-                              href="/dsc/user/delete/project/personal/<%= project._id %>"
+                              href="/user/delete/project/personal/<%= project._id %>"
                               ><img src="/img/profile/trash.svg" alt="delete icon"
                             /></a>
                           </center>
@@ -1125,7 +1125,7 @@
                               <% } %>
                               <a
                                 class="delete-ach"
-                                href="/dsc/user/delete/achievement/<%= ach._id %>"
+                                href="/user/delete/achievement/<%= ach._id %>"
                                 ><img src="/img/profile/trash.svg" alt="delete icon"
                               /></a>
                             </div>

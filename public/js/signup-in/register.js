@@ -132,7 +132,7 @@ function validate() {
   var signup = document.getElementById("signupform");
   var hname = document.getElementById("hname").value;
 
-  // var urlget = "/dsc/user/verify-handle/" + hname;
+  // var urlget = "/user/verify-handle/" + hname;
   // var response = await fetch(urlget, { method: "GET" });
   // var res = await response.json();
 
@@ -185,7 +185,7 @@ function showpasswordlogin() {
 async function checkuniquedschandle() {
   var hname = document.forms["signupform"]["dscHandle"].value;
   var result = document.getElementById("uniqueness");
-  var urlget = "/dsc/user/verify-handle/" + hname;
+  var urlget = "/user/verify-handle/" + hname;
   var response = await fetch(urlget, { method: "GET" });
   var res = await response.json(); /*  */
   if (res.inUse == true) {

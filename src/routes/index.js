@@ -165,7 +165,7 @@ router.post("/contact", async (req, res) => {
           "contact_error",
           "Error: Only 4 Files upto 1Mb size can be uploaded"
         );
-        res.redirect("/dsc/#contactus");
+        res.redirect("/#contactus");
       } else {
         // console.log(req.body);
         contact({
@@ -204,7 +204,7 @@ router.post("/contact", async (req, res) => {
               "contact_success",
               "Your response has been recorded"
             );
-            res.redirect("/dsc/#contactus");
+            res.redirect("/#contactus");
           })
           .catch((err) => {
             console.log(err);
@@ -212,7 +212,7 @@ router.post("/contact", async (req, res) => {
               "contact_error",
               "Something went wrong. Please try again"
             );
-            res.redirect("/dsc/#contactus");
+            res.redirect("/#contactus");
           });
       }
     }
