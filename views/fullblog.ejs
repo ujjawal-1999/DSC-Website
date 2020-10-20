@@ -58,7 +58,7 @@
         <div class="card-person">
           <div class="card-author">
             <% if(blog.author.profileImageLocation) {%> <img src="/upload/<%=
-            blog.author.profileImageLocation%>"" /> <% } %>
+            blog.author.profileImageLocation%>"" alt="author image" /> <% } %>
 
             <div class="name"><%=blog.author.name%></div>
           </div>
@@ -90,7 +90,7 @@
       </div>
       <div class="content">
         <div class="card-img">
-          <img src="<%=blog.cover%>" alt="Omar Dsoky" />
+          <img src="<%=blog.cover%>" alt="blog cover" />
           <div class="category"><%= blog.category %></div>
         </div>
         <div
