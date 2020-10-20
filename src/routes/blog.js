@@ -21,7 +21,7 @@ router.use(
 );
 
 // blogs page home (show one full blog along with other new and popular blogs)
-// clicking any blog will redirect to view blog route (/dsc/blog/view/:slug)
+// clicking any blog will redirect to view blog route (/blog/view/:slug)
 router.get("/", async (req, res) => {
   try {
     const token = req.cookies.authorization;
@@ -117,7 +117,7 @@ router.get("/delete/bookmark/:bookmark_id", auth, async (req, res) => {
       (bookmark) => !bookmark._id.equals(req.params.bookmark_id)
     );
     await user.save();
-    res.redirect("/dsc/blog/bookmarks");
+    res.redirect("/blog/bookmarks");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -221,7 +221,7 @@ router.post("/create", auth, upload.single("cover"), async (req, res) => {
       req.dbUser.blogs = [saved];
     }
     await req.dbUser.save();
-    res.redirect("/dsc/blog");
+    res.redirect("/blog");
   } catch (e) {
     console.log(e.message);
     res.status(400).json({
@@ -330,7 +330,7 @@ router.get("/view/:slug", async (req, res) => {
 
 //       //console.log("Rating updated: ", value);
 //       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-//       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
+//       res.redirect(`/blog/view/${updatedBlog.slug}`);
 //       return;
 //     } else {
 //       //set new value if already rated
@@ -344,7 +344,7 @@ router.get("/view/:slug", async (req, res) => {
 
 //       //console.log("Rating updated: ", value);
 //       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-//       res.redirect(`/dsc/blog/view/${updatedBlog.slug}`);
+//       res.redirect(`/blog/view/${updatedBlog.slug}`);
 //     }
 //   } catch (e) {
 //     console.log(e.message);

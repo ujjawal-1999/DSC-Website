@@ -40,7 +40,7 @@ const jwt = require("jsonwebtoken");
 //   }
 // };
 
-// get route to the "/dsc/project"
+// get route to the "/project"
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
   const finduser = await User.find();
@@ -70,7 +70,7 @@ router.get("/", async (req, res) => {
   // } else res.render("projectpage", { user: req.user, found: finduser });
 });
 
-// post route for creating new project "/dsc/project/create"
+// post route for creating new project "/project/create"
 // router.post("/create", async (req, res) => {
 //   try {
 //     //verifing core members
@@ -107,7 +107,7 @@ router.get("/", async (req, res) => {
 //   }
 // });
 
-// // route to edit project "/dsc/project/edit/:id"
+// // route to edit project "/project/edit/:id"
 // router.post("/edit/:id", auth, async (req, res) => {
 //   let projects = await Projects.findById(req.params.id);
 //   if (req.body.title) projects.title = req.body.title;
@@ -122,7 +122,7 @@ router.get("/", async (req, res) => {
 //   }
 // });
 
-// // route for deleting project "/dsc/project/remove/:id"
+// // route for deleting project "/project/remove/:id"
 // router.delete("/remove/:id", auth, async (req, res) => {
 //   try {
 //     const project = await Projects.findByIdAndDelete(req.params.id);
@@ -169,7 +169,7 @@ router.get("/", async (req, res) => {
 //       projects.ongoing = req.body.ongoing
 //       try {
 //         projects = await projects.save()
-//         res.redirect(`/dsc/project`)
+//         res.redirect(`/project`)
 //       } catch (e) {
 //         res.render(`dsc/project/${path}`, { projects: projects })
 //       }

@@ -47,12 +47,12 @@ const userRoutes = require("./routes/user");
 const blogRoutes = require("./routes/blog");
 const ProjectRoutes = require("./routes/project");
 
-app.use("/dsc", indexRoutes);
-app.use("/dsc/user", userRoutes);
-app.use("/dsc/blog", blogRoutes);
-app.use("/dsc/project", ProjectRoutes);
+app.use("/", indexRoutes);
+app.use("/user", userRoutes);
+app.use("/blog", blogRoutes);
+app.use("/project", ProjectRoutes);
 
-app.get("/dsc/404", (req, res) => {
+app.get("/404", (req, res) => {
   res.render("404-page");
 });
 
