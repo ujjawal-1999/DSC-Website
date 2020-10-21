@@ -32,19 +32,6 @@
         <!-- <li id="dmodeGLOBAL" class="nav-item">
           <a href="#" class="nav-items-a">Dark Mode</a>
         </li> -->
-        <% if(!user){ %>
-        <li class="nav-item">
-          <a href="/user/register" class="nav-items-a">SignUp</a>
-        </li>
-        <li class="nav-item">
-          <a href="/user/register?type=login" class="nav-items-a">Log In</a>
-        </li>
-        <% }else{ %>
-        <li class="nav-item">
-          <a href="/user/profile" class="nav-items-a"><%=user.name%></a>
-        </li>
-        <% } %>
-
         <li class="nav-item">
           <input
             class="search-input"
@@ -67,6 +54,19 @@
             <% }) %>
           </ul>
         </li>
+        <% if(!user){ %>
+        <li class="nav-item">
+          <a href="/user/register" class="nav-items-a">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a href="/user/register?type=login" class="nav-items-a">Log In</a>
+        </li>
+        <% }else{ %>
+        <li class="nav-item">
+          <a href="/user/profile" class="nav-items-a"><%=user.name%></a>
+        </li>
+        <% } %>
+
       </ul>
     </nav>
   </div>
