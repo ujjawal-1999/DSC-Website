@@ -136,7 +136,7 @@ function validate() {
   // var response = await fetch(urlget, { method: "GET" });
   // var res = await response.json();
 
-  if (name.length < 5) {
+  if (name.length < 1) {
     alert("Name is too short !");
     return false;
   }
