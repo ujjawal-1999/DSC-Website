@@ -47,6 +47,7 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   height: auto;
+  padding-top: 0 !important;
   padding: 2rem;
   overflow: auto;
   width: 70vw;
@@ -80,6 +81,15 @@
   transition: all 0.5s;
 }
 
+@media (max-height: 800px) {
+  .editProfileModal {
+    margin-top: 10%;
+  }
+  .addProjectsModal {
+    margin-top: 10%;
+  }
+}
+
 @media (max-height: 1000px) {
   .backPart {
     width: 10% !important;
@@ -89,18 +99,15 @@
   .addAchievementModal,
   .addProjectsModal,
   .addExperienceModal {
-    top: 0%;
-    left: 0%;
-    -webkit-transform: translate(0%, 80px);
-            transform: translate(0%, 80px);
-    width: 100%;
+    top: 50%;
+    width: 70%;
     position: absolute;
     overflow: auto;
     font-size: 0.8rem !important;
     height: auto;
   }
   .wrapper {
-    padding: 1rem 0;
+    padding: 0rem;
     height: auto !important;
   }
 }
@@ -529,7 +536,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 30%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -542,7 +548,7 @@
 .addProjectsModal .socials .items,
 .addAchievementModal .socials .items,
 .addSkillsModal .socials .items {
-  width: 20rem;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -38,6 +38,7 @@
 
 .video #left-button img:hover,
 .video #right-button img:hover {
+  cursor: pointer;
   opacity: 1;
 }
 
@@ -63,7 +64,7 @@
 }
 
 .video .contain {
-  width: 80%;
+  width: 95%;
   z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -159,7 +160,7 @@
     height: 70vh;
   }
   .video iframe {
-    width: 10rem;
+    width: 6rem;
     height: 10rem;
   }
   .video__contain {
