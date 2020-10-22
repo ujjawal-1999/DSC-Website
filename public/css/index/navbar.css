@@ -224,6 +224,10 @@ input {
 #dropbtn {
   cursor: pointer;
 }
+
+.dropdown i {
+  font-size: 14px !important;
+}
 .search-input:focus {
   border: none;
   /* border-radius: 50%; */
