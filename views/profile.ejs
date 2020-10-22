@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="description"
-      content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments."
-    />
-    <meta
-      name="keywords"
-      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar"
-    />
+    projects and accomplishments." />
+    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar" />
 
     <title>DSC NITS | Profile</title>
     <link
@@ -131,12 +125,7 @@
     <div class="editProfileModal" id="editProfileModal">
       <div class="wrapper backPart">
         <div id="subscribeBox">
-          <img
-            id="backlogo"
-            class="backlogo"
-            src="/img/logo/bac.png"
-            alt="background logo"
-          />
+          <img id="backlogo" class="backlogo" src="/img/logo/bac.png" alt="background logo" />
         </div>
         <div></div>
       </div>
@@ -147,12 +136,8 @@
             <div class="items">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img
-                  src="/upload<%= user.profileImageLocation%>"
-                  alt="profile picture"
-                />
-                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <%
-                }%>
+                <img src="/upload<%= user.profileImageLocation%>" alt="profile picture" />
+                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <% }%>
               </div>
 
               <form
@@ -209,6 +194,7 @@
             </div>
           </div>
           <p></p>
+          <img class="edill" src="/img/illustrations/editing.png" alt="illustration" />
         </div>
       </div>
       <div class="wrapper">
@@ -231,7 +217,7 @@
                 maxlength="30"
               />
             </div>
-            <hr size="1px" style="opacity: 0.2" />
+            <hr size="1px" />
             <div class="flexRow">
               <label for="degree">Degree</label>
               <select name="degree" id="degree" required>
@@ -266,7 +252,7 @@
                 <option value="2016-20">2016-20</option>
               </select>
             </div>
-            <hr size="1px" style="opacity: 0.2" />
+            <hr size="1px" />
             <div class="flexRow">
               <label for="bio">Bio</label>
               <input
@@ -312,11 +298,21 @@
                 maxlength="200"
               />
             </div>
-            <hr size="1px" style="opacity: 0.2" />
+            <hr size="1px" />
             <div class="flexRow">
-              <label for="password">Email </label>
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                value="<%= user.email %>"
+                name="email"
+                disabled
+              />
+            </div>
+            <div class="flexRow">
+              <label for="password">Password </label>
               <div class="flexRow fullwidth">
-                <p style="color: black"><%= user.email %></p>
+                <!-- <p>Last Changed 2 months ago</p> -->
                 <a href="">Change Password</a>
               </div>
             </div>
@@ -334,14 +330,6 @@
           </form>
         </div>
       </div>
-      <!-- <div class="wrapper">
-        <p></p>
-        <img
-          class="edill"
-          src="/img/illustrations/editing.png"
-          alt="illustration"
-        />
-      </div> -->
     </div>
     <!-- Edit Profile Modal  -->
 
@@ -473,12 +461,7 @@
             </div>
             <div class="flexRow">
               <label for="status">Project Status</label>
-              <select
-                name="status"
-                id="projectStatus"
-                required
-                onchange="statusListenerProject()"
-              >
+              <select name="status" id="projectStatus" required onchange="statusListenerProject()">
                 <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
               </select>
@@ -684,12 +667,8 @@
             <div class="pictureandbasic">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img
-                  src="/upload<%= user.profileImageLocation%>"
-                  alt="profile image"
-                />
-                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <%
-                }%>
+                <img src="/upload<%= user.profileImageLocation%>" alt="profile image" />
+                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <% }%>
               </div>
               <div class="info">
                 <div class="nameandedit">
@@ -708,58 +687,34 @@
                   <div class="collegeinfo">
                     <% if(user.socialLinks["github"]!=null){ %>
                     <a href='<%=user.socialLinks["github"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/githubPng.png"
-                        alt="github logo"
-                      />
+                      <img class="s" src="/img/logo/githubPng.png" alt="github logo" />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img
-                        class="s"
-                        src="/img/logo/githubPng.png"
-                        alt="github logo"
-                      /> </a
+                      <img class="s" src="/img/logo/githubPng.png" alt="github logo" /> </a
                     ><% }%>
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
                     <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/fb.png"
-                        alt="facebook logo"
-                      />
+                      <img class="s" src="/img/logo/fb.png" alt="facebook logo" />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img
-                        class="s"
-                        src="/img/logo/fb.png"
-                        alt="facebook logo"
-                      /> </a
+                      <img class="s" src="/img/logo/fb.png" alt="facebook logo" /> </a
                     ><% }%>
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["linkedin"]!=null){ %>
                     <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/link.png"
-                        alt="linkedin logo"
-                      />
+                      <img class="s" src="/img/logo/link.png" alt="linkedin logo" />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img
-                        class="s"
-                        src="/img/logo/link.png"
-                        alt="linkedin logo"
-                      /> </a
+                      <img class="s" src="/img/logo/link.png" alt="linkedin logo" /> </a
                     ><% }%>
                   </div>
                 </div>
@@ -864,10 +819,10 @@
                               display: flex;
                               flex-direction: column;
                               justify-content: center;
-                              align-items: center;
+                              align-items: right;
                             "
                           >
-                            <i class="fas fa-eye" style="font-size: 12px">
+                            <i class="fas fa-eye" style="font-size: 15px">
                               <%= blog.views %></i
                             >
 
@@ -901,8 +856,7 @@
                         <a
                           class="delete-exp"
                           href="/user/blog/delete/<%= blog._id %>"
-                          ><img src="/img/profile/trash.svg" alt="delete icon"
-                        /></a>
+                          ><img src="/img/profile/trash.svg" alt="delete icon"/></a>
                       </div>
                       <%})%>
                     </div>
@@ -967,19 +921,18 @@
                                 align-items: center;
                               "
                             >
-                              <div id="mention">
-                                <b>&#9899;</b><%= experience.startdate %> - <%
-                                if (experience.enddate !== undefined) {%> <%=
-                                experience.enddate %> <%} else { %> Present <%}
-                                %>
-                              </div>
+                            <div id="mention">
+                              <b>&#9899;</b><%= experience.startdate %> - <% if (experience.enddate !== undefined) {%>
+                                <%= experience.enddate %>
+                                <%} else { %>
+                                  Present
+                                <%} %>
+                            </div>
 
                               <a
                                 class="delete-exp"
                                 href="/user/delete/experience/<%= experience._id %>"
-                                ><img
-                                  src="/img/profile/trash.svg"
-                                  alt="delete icon"
+                                ><img src="/img/profile/trash.svg" alt="delete icon"
                               /></a>
                             </div>
                           </div>
@@ -1100,18 +1053,19 @@
                           </div>
                           <div class="project-duration">
                             <h3>
-                              <%= project.startdate %> to <% if(project.enddate
-                              !== undefined) { %> <%= project.enddate %> <% }
-                              else { %> Present <% } %>
+                              <%= project.startdate %> to 
+                              <% if(project.enddate !== undefined) { %>
+                                 <%= project.enddate %>
+                              <% } else { %>
+                                Present
+                              <% } %>
                             </h3>
                           </div>
                           <center>
                             <a
                               class="delete-prj"
                               href="/user/delete/project/personal/<%= project._id %>"
-                              ><img
-                                src="/img/profile/trash.svg"
-                                alt="delete icon"
+                              ><img src="/img/profile/trash.svg" alt="delete icon"
                             /></a>
                           </center>
                         </div>
@@ -1164,7 +1118,7 @@
                             <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
-                              <% if(ach.serial !== "") {%>
+                              <% if(ach.serial !== "") {%> 
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
                               >
@@ -1172,9 +1126,7 @@
                               <a
                                 class="delete-ach"
                                 href="/user/delete/achievement/<%= ach._id %>"
-                                ><img
-                                  src="/img/profile/trash.svg"
-                                  alt="delete icon"
+                                ><img src="/img/profile/trash.svg" alt="delete icon"
                               /></a>
                             </div>
                             <!--<div class="bookmarks">

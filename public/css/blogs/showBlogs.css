@@ -65,7 +65,7 @@ i {
   font-family: Product Sans;
   font-style: normal;
   color: var(--Grey-dark-1) !important;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .card-img {
@@ -80,14 +80,20 @@ i {
 .card-img img {
   width: 70%;
   z-index: -1;
-  /* height: 60vh; */
+  height: auto;
   object-fit: contain;
   border-radius: 10px;
-  margin-left: 15%;
-    margin-right: auto;
+  margin-left: 13%;
+  margin-right: auto;
 }
+
 .category{
-  margin-left: 45%;
+  padding-top: 15px;
+  color: var(--Grey-dark-1) !important;
+  font-family: Product Sans;
+  font-style: normal;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .name {
@@ -104,7 +110,7 @@ i {
 
 @media (max-width: 800px) {
   .main {
-    margin-top: 70px;
+    /*margin-top: 70px;*/
     width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -137,6 +143,7 @@ i {
   }
   .card-img {
     height: auto;
+    width: 100%;
   }
   .author {
     display: flex;
