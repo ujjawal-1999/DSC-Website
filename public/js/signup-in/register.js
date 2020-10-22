@@ -188,7 +188,8 @@ async function checkuniquedschandle() {
   var urlget = "/user/verify-handle/" + hname;
   var response = await fetch(urlget, { method: "GET" });
   var res = await response.json(); /*  */
-  if (res.inUse == true) {
+  if(res.valid) {
+    if (res.inUse == true) {
     result.style.color = "Red";
     result.innerHTML = "Already in Use";
     cansubmit = false;
@@ -200,4 +201,11 @@ async function checkuniquedschandle() {
     cansubmit = true;
     return true;
   }
+  } else {
+    result.style.color = "Red";
+    result.innerHTML = "Invalid Handle";
+    cansubmit=false;
+    return false
+  }
+  
 }

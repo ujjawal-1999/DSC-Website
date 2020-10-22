@@ -47,7 +47,7 @@
   position: absolute;
   /* top: 0; */
   left: 50%;
-  width: 80%;
+  width: 55%;
   height: 12vh;
   align-self: center;
   align-items: center;
@@ -224,6 +224,10 @@ input {
 #dropbtn {
   cursor: pointer;
 }
+
+.dropdown i {
+  font-size: 14px !important;
+}
 .search-input:focus {
   border: none;
   /* border-radius: 50%; */
@@ -321,7 +325,9 @@ input {
     transform: translateX(-70px);
   }
 }
-
+.search-input {
+  width: 13vw;
+}
 @media screen and (max-width: 750px) {
   #search-icon {
     display: block;
@@ -336,7 +342,7 @@ input {
     display: block;
     opacity: 1;
     border-bottom: 1px solid grey;
-    transform: translateX(-10px);
+    transform: translateX(0);
     margin-bottom: 30px;
     top: 90px;
   }
@@ -347,14 +353,14 @@ input {
     overflow-x: hidden;
   }
   #search_list1 {
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, 0%) !important;
     display: none;
     margin-top: 20px;
     align-items: center;
-    top: 90% !important;
+    top: 100% !important;
     right: 50%;
-    width: 90%;
-    height: 40vh !important;
+    width: 70vw !important;
+    height: 70vh !important;
     overflow: scroll;
     background-color: var(--Grey-dark-1);
     color: var(--Grey-light-1);
@@ -381,9 +387,16 @@ input {
   }
 
   .search-input {
+    width: 35vw;
+    text-align: center;
     margin-bottom: 0;
   }
+  .estado {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
+
 /* @media screen and (max-width: 600px) {
   #search-icon {
     display: block;
@@ -466,13 +479,13 @@ input {
   position: absolute;
   display: none;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-height: 50vh;
   height: auto;
-  top: 95%;
+  top: 100%;
   left: 50%;
   /* transform: translate(-50%, -50%); */
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: var(--Grey-light-1);
   padding: 2rem;
 }
@@ -495,13 +508,13 @@ input {
 
 .box {
   position: absolute;
-  top: 12px;
+  top: 24px;
   right: 18px;
 }
 @media screen and (max-width: 715px) {
   .box {
     position: absolute;
-    top: 18px;
+    top: 24px;
     right: 50%;
     transform: translateX(50%);
   }

@@ -43,7 +43,7 @@ const jwt = require("jsonwebtoken");
 // get route to the "/project"
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find();
+  const finduser = await User.find({active : true});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -52,14 +52,14 @@ router.get("/", async (req, res) => {
     });
   } else res.render("projectpage", { user: req.user, found: finduser });
 
-  // const finduser = await User.find();
+  // const finduser = await User.find({active : true});
   // const projects = await Projects.find().sort(
   //     {createdAt: 'desc'}
   // );
   // res.json(projects);
   //res.render('projects' , {projects: projects, user: req.user, found: finduser});
   // var token = req.cookies.authorization;
-  // const finduser = await User.find();
+  // const finduser = await User.find({active : true});
   // if (token) {
   //   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
   //     if (err) console.log(err);

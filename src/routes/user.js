@@ -176,7 +176,7 @@ router.get("/verify-handle/:handle", async (req, res) => {
 //get route for signup
 router.get("/register", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find();
+  const finduser = await User.find({active : true});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -220,11 +220,6 @@ router.post("/register", async (req, res, next) => {
 
     res.redirect("/");
   }
-});
-
-// get route for login
-router.get("/login", function (req, res) {
-  res.redirect("/user/register");
 });
 
 //post route for login
@@ -319,7 +314,7 @@ router.post("/forgotpassword", function (req, res) {
 
 router.get("/profile", authorization, async (req, res) => {
   try {
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await blog.find();
     await req.dbUser.populate("blogs").execPopulate();
     res.render("profile", {
@@ -337,22 +332,32 @@ router.get("/profile", authorization, async (req, res) => {
 router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await Blog.find();
-    req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+    // req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+    const token  = req.cookies.authorization
+    let user;
+    if(token){
+      const decodedData = await jwt.verify(token, process.env.JWT_SECRET)
+      if(decodedData)
+        user = await User.findById(decodedData.userId)
+    }
+    const searchedUser = await (await User.findOne({ dscHandle: req.params.handle }))
       .populate("blogs")
       .execPopulate();
-    if (req.dbUser) {
+    if (searchedUser) {
       res.render("public-profile", {
-        user: req.dbUser,
+        searchedUser,
+        user,
         found: finduser,
       });
     } else {
-      res.redirect("/404");
+      res.render("404-page");
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    res.render('404-page')
+    // res.status(500).send(error);
   }
 });
 
@@ -550,7 +555,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
 router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await blog.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
