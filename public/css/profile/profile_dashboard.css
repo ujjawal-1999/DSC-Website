@@ -540,11 +540,6 @@ body {
   opacity: 0.5;
 }
 
-.cards .card .socialactivity .fas {
-  
-  position: relative;
-  right: -44rem;
-} 
 .cards .card .socialactivity .sharable {
   margin-top: 1rem;
 }
@@ -552,8 +547,7 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
- "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 
