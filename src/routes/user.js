@@ -77,7 +77,7 @@ router.get("/verify/:id", async (req, res) => {
 
     if (!user) {
       // console.log("Error from /user/verify route", error);
-      req.flash("error", "Unable to find the user");
+      req.flash("error", "User not found");
       res.redirect("/");
     } else {
       const currDate = new Date();
@@ -148,12 +148,33 @@ router.post("/changepassword/:id", function (req, res) {
     ) {
       if (err) console.log(err);
       else {
-        req.flash("success", "Your password has been reset try logging in");
+        req.flash("success", "Your password has been reset successfully. Try Logging in again");
         res.redirect("/");
       }
     });
   });
 });
+
+// Route to change the password from within the profile 
+
+router.post("/update-password",authorization, async (req,res)=>{
+    const oldPassword = req.body.oldPassword;
+    const checkPasword = await bcrypt.compare(oldPassword,req.user.password);
+    if(!checkPassword){
+      req.flash('error','You have entered a wrong password');
+      res.redirect('/');
+    }
+    if(req.body.newPassword !== req.body.confirmPassword){
+        req.flash('error','Password and Confirm Password does not match');
+        res.redirect('/');
+    }
+    const hash = await bcrypt.hash(req.body.newPassword,10);
+    await User.findByIdAndUpdate(req.dbUser._id,{password: hash});
+    res.clearCookie("authorization");
+    req.flash("success", "Your password has been reset successfully. Try Logging in again");
+    res.redirect("/");
+});
+
 
 //==============================
 
@@ -207,7 +228,7 @@ router.post("/register", async (req, res, next) => {
     if (!savedUser) {
       res.locals.flashMessages = req.flash(
         "error",
-        "Email already in use try logging in"
+        "Email already already registered. Try logging in again"
       );
       res.redirect("/");
       return;
@@ -215,7 +236,7 @@ router.post("/register", async (req, res, next) => {
     signUpMail(savedUser);
     res.locals.flashMessages = req.flash(
       "success",
-      `${savedUser.name} Email has been sent to you for verification.`
+      `${savedUser.name}, kindly verify the email sent to your registered email address`
     );
 
     res.redirect("/");
@@ -239,13 +260,13 @@ router.post("/login", async (req, res, next) => {
   }
   if (!user) {
     // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
-    req.flash("error", "User not found. Try creating a new account");
+    req.flash("error", "Email address is not registered. Try creating a new account");
     res.redirect("/");
     return;
   }
   const checkPassword = await bcrypt.compare(req.body.password, user.password);
   if (!checkPassword) {
-    req.flash("error", "Invalid Credentials");
+    req.flash("error", "Invalid Login Credentials");
     res.redirect("/");
     return;
   }
@@ -272,7 +293,7 @@ router.post("/login", async (req, res, next) => {
     signUpMail(user);
     req.flash(
       "error",
-      user.name + " your email is not verified we have sent you an email"
+      `${user.name}, your email is not verified yet. We have sent you a verification email`
     );
     res.redirect("/");
   }
@@ -303,7 +324,7 @@ router.post("/forgotpassword", function (req, res) {
       forgotPassword(user);
       req.flash(
         "success",
-        user.name + " we sent you an email to reset your password"
+        `${user.name}, we sent you an email to reset your password`
       );
       res.redirect("/");
     })
