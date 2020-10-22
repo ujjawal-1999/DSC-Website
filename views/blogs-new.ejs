@@ -62,8 +62,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="card-details " style="margin-top: 1.2rem; width: 50%;">
-                                        <div class="card-text">
+                                    <div class="card-details" style="margin-top: 1.2rem; ">
+                                        <div class="card-text" style="width: 100%;">
                                             <center>
                                                 <h2>
                                                     <%= blog.title%>
@@ -74,17 +74,18 @@
                                                     <a href="/blog/view/<%= blog.slug%>">... Read more</a>
                                             </p>
                                         </div>
+                                        
                                         <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;">
-                                            <div class="card-author">
+                                            <div class="card-author" style="display: inline-flex;">
                                                 <% if(blog.author.profileImageLocation){ %>
-                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />;;
+                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
                                                     <% }else{ %>
                                                         <img src="/img/profile/person.png" alt="default avatar" />
                                                         <% } %>
                                                             <center>
-                                                                <h3 style="width: max-content">
+                                                                <h4 style="width: max-content">
                                                                     <%= blog.author.name%>
-                                                                </h3>
+                                                                </h4>
                                                                 <p>
                                                                     <%- blog.author.createdAt.toString().substring(0,16)%>
                                                                 </p>
@@ -92,32 +93,33 @@
 
 
                                             </div>
-                                            <div class="card-buttons" style="padding-top: 38%;">
-                                                <i class="fas fa-eye" style="font-size: 24px; float: right; margin-right: 15px">
+                                            </div>
+                                            <div class="card-buttons" ">
+                                                <i class="fas fa-eye" style="font-size: 20px; float: right; margin-right: 15px">
                     <%= blog.views %></i
                   >
     
                   <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
                                                 <% if (user) {%>
                                                     <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-                                                        <button type="submit" style="font-size: 24px; float: right; margin-right: 15px">
+                                                        <button type="submit" style="font-size: 20px; float: right; margin-right: 15px">
                       <% if (user.bookmarkBlogs &&
                       user.bookmarkBlogs.includes(blog._id)) {%>
     
                       <i
                         class="fas fa-bookmark"
-                        style="font-size: 24px; float: right; margin-right: 15px"
+                        style="font-size: 20px; float: right; margin-right: 15px"
                       ></i>
                       <% } else {%>
                       <i
                         class="far fa-bookmark"
-                        style="font-size: 24px; float: right; margin-right: 15px"
+                        style="font-size: 20px; float: right; margin-right: 15px"
                       ></i>
                       <% } %>
                     </button>
                                                     </form>
                                                     <% } %>
-                                            </div>
+                                            
                                         </div>
 
                                     </div>
@@ -125,7 +127,7 @@
                                 </div>
                                 <%})%>
             </section>
-            <section class="blog-search">
+            <section class="blog-search" style="padding-left:0%; margin-left:0%;">
                 <% if(user){ %>
                     <div class="inner-search">
                         <div class="blog-search-row">

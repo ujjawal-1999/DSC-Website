@@ -222,11 +222,6 @@ router.post("/register", async (req, res, next) => {
   }
 });
 
-// get route for login
-router.get("/login", function (req, res) {
-  res.redirect("/user/register");
-});
-
 //post route for login
 router.post("/login", async (req, res, next) => {
   let user = await User.findOne({
@@ -339,20 +334,30 @@ router.get("/public-profile/:handle", async (req, res) => {
     // const token = req.cookies.authorization;
     const finduser = await User.find();
     // const userBlog = await Blog.find();
-    req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+    // req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
+    const token  = req.cookies.authorization
+    let user;
+    if(token){
+      const decodedData = await jwt.verify(token, process.env.JWT_SECRET)
+      if(decodedData)
+        user = await User.findById(decodedData.userId)
+    }
+    const searchedUser = await (await User.findOne({ dscHandle: req.params.handle }))
       .populate("blogs")
       .execPopulate();
-    if (req.dbUser) {
+    if (searchedUser) {
       res.render("public-profile", {
-        user: req.dbUser,
+        searchedUser,
+        user,
         found: finduser,
       });
     } else {
-      res.redirect("/404");
+      res.render("404-page");
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    res.render('404-page')
+    // res.status(500).send(error);
   }
 });
 

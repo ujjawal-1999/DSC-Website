@@ -276,9 +276,16 @@ router.get("/view/:slug", async (req, res) => {
         category: "Graphic Design",
       }),
     };
+    const token = req.cookies.authorization;
+    let user;
+    if(token){
+      const decodedToken = await jwt.verify(token,process.env.JWT_SECRET);
+      if(decodedToken)
+        user = await User.findById(decodedToken.userId);
+    }
     //render result page
     res.render("fullblog", {
-      user: req.user,
+      user,
       found: finduser,
       blog: blog,
       popularBlogs: popularBlogs || [],
