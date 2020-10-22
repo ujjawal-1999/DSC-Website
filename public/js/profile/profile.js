@@ -4,6 +4,21 @@
  * MIT License.
  */
 
+window.onload = () => {
+  handlediv = document.getElementById("faint-handle")
+  handle = handlediv.firstChild.data.trim()
+  if(handle.length > 12)
+  {
+    handlediv.style.fontSize = '3rem'
+    handlediv.style.right = '20vw'
+  }
+  if (handle.length > 15) 
+  {
+    handlediv.style.fontSize = '2rem'
+    handlediv.style.right = '20vw'
+  }
+}
+
 var A11yTab = (function () {
   "use strict";
 
