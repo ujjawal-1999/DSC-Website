@@ -152,6 +152,18 @@
               </ul>
               <div class="tab-panels">
                 <div id="panel01" class="tab-panel">
+                  <div class="flexRow">
+                    <h3>TIMELINE</h3>
+                  </div>
+                  <% if(searchedUser.blogs.length==0){%>
+                    <div class="cards">
+                      <div class="card">
+                        <div class="description">
+                          <%= searchedUser.name %> has not posted any blogs yet.
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
                   <div class="cards">
                     <% searchedUser.blogs.forEach(function(blog){%>
                     <div class="card">
@@ -201,6 +213,15 @@
                       </div> -->
                   </div>
                   <div class="cards_exp">
+                    <% if(searchedUser.experiences.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            <%= searchedUser.name %> has not added any experience yet.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                     <div class="card_exp">
                       <%
                       if(searchedUser.experiences){searchedUser.experiences.forEach((experience=>
@@ -240,10 +261,13 @@
                               align-items: center;
                             "
                           >
-                            <div id="mention">
-                              <b>&#9899;</b><%= experience.startdate %> - <%=
-                              experience.enddate %>
-                            </div>
+                          <div id="mention">
+                            <b>&#9899;</b><%= experience.startdate %> - <% if (experience.enddate !== undefined) {%>
+                              <%= experience.enddate %>
+                              <%} else { %>
+                                Present
+                              <%} %>
+                          </div>
                           </div>
                         </div>
                         <div class="panelexp">
@@ -264,6 +288,15 @@
                         </button>
                       </div> -->
                   </div>
+                  <% if(searchedUser.skills.length==0){%>
+                    <div class="cards">
+                      <div class="card">
+                        <div class="description">
+                          <%= searchedUser.name %> has not added any skills yet.
+                        </div>
+                      </div>
+                    </div>
+                    <% }%>
                   <div class="cards">
                     <% searchedUser.skills.forEach((skill) => {%>
                     <div class="card">
@@ -294,36 +327,65 @@
                       </div> -->
                   </div>
                   <section class="grid-item main">
+                    <% if(searchedUser.personalProjects.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            <%= searchedUser.name %> has not added any personal projects yet.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                     <div class="items">
                       <% searchedUser.personalProjects.forEach((project) => {%>
                       <div class="item item1">
                         <div class="project-lang">
                           <div class="lang lang1">
                             <img
-                              class="language"
-                              src="/img/logo/project-default.png"
-                              alt="project-default"
-                            />
+                                class="language"
+                                src="/img/logo/project-default.png"
+                                alt="project-default"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="project-name">
-                          <h4><%= project.title %></h4>
-                        </div>
+                          <div class="project-name">
+                            <h4><%= project.title %></h4>
+                          </div>
+                          <p style="margin: 0.5rem 0">
+                            <%= project.techstack %>
+                          </p>
                         <div class="git-link">
-                          <a href="https://github.com/" add target="_blank"
+                          <a
+                            href="<%= project.githuburl %>"
+                            add
+                            target="_blank"
                             ><h4>View on Github</h4></a
                           >
                         </div>
-                        <div class="project-description">
-                          <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Placeat, omnis! Magni hic suscipit quos
-                            asperiores quis ducimus cumque aliquam illum?
-                          </p>
+                        <%if(project.hosturl){%>
+                        <div class="git-link">
+                          <a href="<%= project.hosturl %>" add target="_blank"
+                            ><h4>Visit Hosted URL</h4></a
+                          >
                         </div>
-                        <div class="project-duration">
-                          <h3>Aug 30 - Sept 30</h3>
-                        </div>
+                        <%}%>
+                        <div
+                            class="project-description"
+                            style="word-wrap: anywhere"
+                          >
+                            <br />
+                            <p><%= project.description %></p>
+                          </div>
+                          <div class="project-duration">
+                            <h3>
+                              <%= project.startdate %> to 
+                              <% if(project.enddate !== undefined) { %>
+                                 <%= project.enddate %>
+                              <% } else { %>
+                                Present
+                              <% } %>
+                            </h3>
+                          </div>
                       </div>
 
                       <%})%>
@@ -335,6 +397,15 @@
                     <h3>ACHIEVEMENTS</h3>
                   </div>
                   <div class="cards_ach">
+                    <% if(searchedUser.achievements.length==0){%>
+                      <div class="cards">
+                        <div class="card">
+                          <div class="description">
+                            <%= searchedUser.name %> has not added any achievements yet.
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
                     <div class="card_ach">
                       <% searchedUser.achievements.forEach((ach) => {%>
                       <div class="row-ach">
@@ -355,9 +426,11 @@
                           <div id="date"><%= ach.date%></div>
                           <div class="tooltip">
                             <img src="/img/logo/info.svg" alt="info" />
+                            <% if(ach.serial !== "") {%> 
                             <span class="tooltiptext"
                               >Credential ID: <%= ach.serial%></span
                             >
+                            <% } %>
                           </div>
                           <!--<div class="bookmarks">
                                      <a>
