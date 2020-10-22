@@ -25,7 +25,7 @@ router.use(
 router.get("/", async (req, res) => {
   try {
     const token = req.cookies.authorization;
-    const finduser = await User.find();
+    const finduser = await User.find({active:true});
     let user;
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
@@ -94,7 +94,7 @@ router.post("/bookmark/:bookmark_id", auth, async (req, res) => {
 });
 
 router.get("/bookmarks", auth, async (req, res) => {
-  const finduser = await User.find();
+  const finduser = await User.find({active : true});
   const user = await User.findById(req.user.userId).populate("bookmarkBlogs");
 
   // const user = await User.findById(req.user.userId).populate('bookmarkBlogs', 'bookmarkBlogs.author')
@@ -241,7 +241,7 @@ router.get("/view/:slug", async (req, res) => {
         error: "empty query sent",
       });
 
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     const blog = await Blog.findOneAndUpdate(
       {
         slug,

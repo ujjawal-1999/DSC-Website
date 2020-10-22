@@ -176,7 +176,7 @@ router.get("/verify-handle/:handle", async (req, res) => {
 //get route for signup
 router.get("/register", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find();
+  const finduser = await User.find({active : true});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -314,7 +314,7 @@ router.post("/forgotpassword", function (req, res) {
 
 router.get("/profile", authorization, async (req, res) => {
   try {
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await blog.find();
     await req.dbUser.populate("blogs").execPopulate();
     res.render("profile", {
@@ -332,7 +332,7 @@ router.get("/profile", authorization, async (req, res) => {
 router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await Blog.find();
     // req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
     const token  = req.cookies.authorization
@@ -555,7 +555,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
 router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
-    const finduser = await User.find();
+    const finduser = await User.find({active : true});
     // const userBlog = await blog.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
