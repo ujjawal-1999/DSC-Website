@@ -33,6 +33,7 @@ section {
   background-color: var(--primary-light);
 }
 .lead {
+  height: 50vh;
   background-position: top;
   background-attachment: fixed;
   /* background-size: cover; */
@@ -68,9 +69,12 @@ section {
 .lead_card {
   display: flex;
   justify-content: center;
+  background: linear-gradient(#ff0000, #00ff00, #fffb00, #0000ff);
+  border-radius: 50%;
 }
 .lead_card img {
   /*width: 80%;*/
+  padding: 0.5rem;
   width: 400px;
   border-radius: 50%;
 }
@@ -87,7 +91,10 @@ section {
 .mainbg img {
   z-index: -10;
 }
-
+.exmod {
+  font-weight: 700;
+  color: #2579ff;
+}
 .mainbgdsc {
   position: absolute;
   width: 20%;
@@ -188,7 +195,7 @@ main .banner {
 }
 @media screen and (max-width: 1100px) {
   .lead {
-    margin-top: 5rem;
+    margin-top: 0rem;
     height: 80vh;
     justify-content: center;
     text-align: center;
