@@ -62,7 +62,9 @@
     <main class="main">
       <div class="rectangle-2">
         <h1>Lorem ipsum dolor sit amett</h1>
+       
       </div>
+      <div class="category"><%= blog.category %></div>
       <div class="author">
         <div class="card-person">
           <div class="card-author">
@@ -100,7 +102,7 @@
       <div class="content">
         <div class="card-img">
           <img src="<%=blog.cover%>" alt="blog cover" />
-          <div class="category"><%= blog.category %></div>
+          <!--<div class="category"><%= blog.category %></div>-->
         </div>
         <div
           id="editor"
@@ -109,7 +111,7 @@
             margin-bottom: 20px;
             text-align: center;
             padding-bottom: 30px;
-            font-size: 1.5rem;
+            font-size: 1rem;
           "
         >
           <%- blog.body %>
