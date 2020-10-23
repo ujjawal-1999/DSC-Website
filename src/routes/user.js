@@ -167,10 +167,9 @@ router.post("/update-password", authorization, async (req, res) => {
   }
   const hash = await bcrypt.hash(req.body.newPassword, 10);
   await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
-  // res.clearCookie("authorization");
   req.flash(
     "success",
-    "Your password has been reset successfully. Try Logging in again"
+    "Your password has been reset successfully."
   );
   res.redirect("/");
 });
