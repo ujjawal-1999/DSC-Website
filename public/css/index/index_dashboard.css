@@ -237,7 +237,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: translateY(-2rem);
           transform: translateY(-2rem);
   font-family: "Times New Roman", Times, serif;
-  margin-top: -1rem;
+  margin-top: 2rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;

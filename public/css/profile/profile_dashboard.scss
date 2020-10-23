@@ -526,6 +526,18 @@ body {
     top: 25rem;
   }
 }
+@media (max-width: 1300px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    font-size: 4rem;
+    right: 16rem;
+    top: 27rem;
+  }
+}
+@media (max-width: 900px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    right: 10rem;
+  }
+}
 // Responsive
 @media (max-width: 600px) {
   .cards .card .content .images .image-container {

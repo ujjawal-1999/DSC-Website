@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -17,17 +17,17 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: wrap;
-  -ms-flex: wrap;
-  flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
   padding: 3rem;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .contact {
@@ -58,7 +58,7 @@ main {
   z-index: 5;
   padding: 80px 50px;
   -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   border-radius: 5px;
@@ -66,7 +66,7 @@ main {
 
 .contact-form.active {
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 .contact-form .close {
@@ -80,9 +80,8 @@ main {
   margin: 3rem 1rem;
   border-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1),
-    3px 5px 20px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
   width: 40vw;
   height: 40rem;
   position: relative;
@@ -90,8 +89,8 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   padding: 30px;
 }
 
@@ -146,7 +145,7 @@ main {
   -webkit-transition: 0.2s ease 0.2s;
   transition: 0.2s ease 0.2s;
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   vertical-align: top;
 }
 
@@ -168,14 +167,14 @@ main {
 
 .cards .card-content .col.left {
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 0;
   padding-left: 50px;
 }
 
 .cards .card-content .col.right {
   -webkit-transform: translate3d(100px, 0, 0);
-  transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
   opacity: 0;
   padding-left: 30px;
   vertical-align: middle;
@@ -184,7 +183,7 @@ main {
 
 .cards .card.active .col {
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 1;
 }
 
@@ -199,7 +198,7 @@ main {
 .cards #overview .card-content {
   background-color: #efefef;
   -webkit-clip-path: circle(0% at 91.5% 75px);
-  clip-path: circle(0% at 91.5% 75px);
+          clip-path: circle(0% at 91.5% 75px);
 }
 
 .cards #overview.active .card-toggle {
@@ -208,7 +207,7 @@ main {
 
 .cards #overview.active .card-content {
   -webkit-clip-path: circle(270% at 91.5% 75px);
-  clip-path: circle(270% at 91.5% 75px);
+          clip-path: circle(270% at 91.5% 75px);
 }
 
 .cards #dribbble .card-content,
@@ -333,8 +332,8 @@ form input[type="submit"] {
   }
   .cards {
     -webkit-box-pack: centers;
-    -ms-flex-pack: centers;
-    justify-content: centers;
+        -ms-flex-pack: centers;
+            justify-content: centers;
     width: 95vw;
     height: 70vh;
     padding: 30px;
@@ -361,15 +360,15 @@ form input[type="submit"] {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .cards .card.active .col {
     display: -webkit-box;
@@ -377,25 +376,19 @@ form input[type="submit"] {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .contact {
     left: 50%;
     -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   .cards .card-content .col img {
     width: 40%;
   }
-}
-.lead-link {
-  text-decoration: none;
-  color: white;
-  display: block;
-  cursor: pointer;
 }
 /*# sourceMappingURL=dscprojects.css.map */
