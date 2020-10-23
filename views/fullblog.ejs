@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
 
     <title>DSC NITS | Blog</title>
 
@@ -26,30 +32,27 @@
     />
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="/css/blogs/all.css" />
+    <!-- <link rel="stylesheet" href="/css/blogs/all.css" /> -->
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css" />
-
     <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="/css/blogs/aos.css" />
+    <!-- <link rel="stylesheet" href="/css/blogs/aos.css" /> -->
 
     <!-- ------------ QuillJS Library ------------------------- -->
-    <link
+    <!-- <link
       href="https://cdn.quilljs.com/1.3.6/quill.bubble.css"
       rel="stylesheet"
-    />
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    /> -->
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- Custom Style   -->
+    <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
     <link rel="stylesheet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/blogs/showBlogs.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
   </head>
 
@@ -59,62 +62,77 @@
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
     <!----------------------------- Main Site Section ------------------------------>
-    <main class="main">
-      <div class="rectangle-2">
-        <h1><%= blog.title %></h1>
-       
-      </div>
-      <div class="category"><%= blog.category %></div>
-      <div class="author">
-        <div class="card-person">
-          <div class="card-author">
-            <% if(blog.author.profileImageLocation) {%> <img src="/upload/<%=
-            blog.author.profileImageLocation%>"" alt="author image" /> <% } %>
-
-            <div class="name"><%=blog.author.name%></div>
-          </div>
-          <div class="share" style="margin-top: 12px">
-            <!-- <i class="fa fa-share" style="font-size: 24px; float: right"></i> -->
-            <% if (user) {%>
-            <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-              <button
-                type="submit"
-                style="font-size: 24px; float: right; margin-right: 15px"
-              >
-                <% if (user.bookmarkBlogs &&
-                user.bookmarkBlogs.includes(blog._id)) {%>
-                <i
-                  class="fas fa-bookmark"
-                  style="font-size: 24px; float: right; margin-right: 15px"
-                ></i>
-                <% } else {%>
-                <i
-                  class="far fa-bookmark"
-                  style="font-size: 24px; float: right; margin-right: 15px"
-                ></i>
-                <% } %>
-              </button>
-            </form>
-            <% } %>
-          </div>
+    <main class="cards">
+      <div class="card">
+        <div class="socialactivity">
+          <% if(blog.author.profileImageLocation){ %>
+          <img
+            src="/upload/<%= blog.author.profileImageLocation%>"
+            alt="author image"
+          />
+          <% }else{%>
+          <img src="/img/profile/person.png" alt="default avatar" />
+          <% }%>
         </div>
-      </div>
-      <div class="content">
-        <div class="card-img">
-          <img src="<%=blog.cover%>" alt="blog cover" />
-          <!--<div class="category"><%= blog.category %></div>-->
+        <div class="content" style="width: 90%">
+          <h3 class="topic"><%= blog.title %></h3>
+          <p style="font-style: italic; margin-top: 0.5rem">
+            by <%= blog.author.name%>
+          </p>
+          <p style="font-style: italic; margin-top: 0.5rem">
+            Category : <%= blog.category%>
+          </p>
+          <p style="font-style: italic; margin: 0.7rem 0">
+            Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
+          </p>
+          <div class="images">
+            <div class="image-container">
+              <img
+                class="post-images"
+                src="<%= blog.cover%>"
+                alt="blog cover"
+                data-original="<%= blog.cover%>"
+              />
+            </div>
+          </div>
+          <div class="description"><%- blog.body %></div>
         </div>
         <div
-          id="editor"
+          class="moredetails"
           style="
-            margin-top: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-            padding-bottom: 30px;
-            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
           "
         >
-          <%- blog.body %>
+          <% if (user) {%>
+          <form action="/blog/bookmark/<%= blog._id %>" method="POST">
+            <button
+              type="submit"
+              style="background-color: transparent; border: none"
+            >
+              <% if (user.bookmarkBlogs &&user.bookmarkBlogs.includes(blog._id))
+              {%>
+              <i
+                class="fas fa-bookmark"
+                style="font-size: 20px; color: var(--Grey-dark-1)"
+              ></i>
+              <% } else {%>
+              <i
+                class="far fa-bookmark"
+                style="font-size: 20px; color: var(--Grey-dark-1)"
+              ></i>
+              <% } %>
+            </button>
+          </form>
+          <% } %>
+
+          <i
+            class="fas fa-eye"
+            style="font-size: 15px; color: var(--Grey-dark-1)"
+          >
+            <%= blog.views %></i
+          >
         </div>
       </div>
     </main>
@@ -128,9 +146,6 @@
 
     <!-- Jquery Library file -->
     <script src="/js/blogs/Jquery3.4.1.min.js"></script>
-
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
 
     <!-- ------------ AOS js Library  ------------------------- -->
     <script src="/js/blogs/aos.js"></script>
