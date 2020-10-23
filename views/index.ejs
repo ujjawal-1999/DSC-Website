@@ -672,8 +672,9 @@
                   <label for="file" id="lb" class="custom-file-upload"
                     >Upload a file</label
                   >
-                  <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
-                  <label id="file-name"></label>
+                  <div style="margin-top: 5px;" id="fileList">
+                    <label id="fileList"></label>
+                  </div>
                   <div class="styled-input wide">
                     <input
                       class="inputfile"
@@ -681,6 +682,7 @@
                       name="issues"
                       id="file1"
                       multiple
+                      onchange="javascript:updateList()"
                     /><br />
                     <!-- <center>
                       <progress
