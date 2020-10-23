@@ -119,7 +119,7 @@ router.get("/verify/forgotpassword/:id", function (req, res) {
       }
     });
   } else {
-    res.end("<h1>Request is from unknown source");
+    res.end("<h1>Request is from unknown source</h1>");
   }
 });
 //==============================
@@ -302,10 +302,17 @@ router.get("/logout", function (req, res) {
 
 //get route for forget password
 router.get("/forgotpassword", async (req, res)=> {
+  var token = req.cookies.authorization;
   const findUser = await User.find({active : true});
-  res.render("forgotpassword",{
-    found : findUser
-  });
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      // console.log(user);
+      res.render("forgotpassword", { user: user, found: findUser });
+    });
+  } 
+  else res.render("forgotpassword", { user: req.user, found: findUser });
 });
 
 //post route for forgotpassword
