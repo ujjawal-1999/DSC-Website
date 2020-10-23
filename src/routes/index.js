@@ -12,23 +12,23 @@ const flash = require("connect-flash");
 const session = require("express-session");
 
 //method Flash
-router.use(cookieParser("secret_passcode"));
-router.use(
-  session({
-    secret: "secret_passcode",
-    cookie: {
-      maxAge: 4000000,
-    },
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-router.use(flash());
+// router.use(cookieParser("secret_passcode"));
+// router.use(
+//   session({
+//     secret: "secret_passcode",
+//     cookie: {
+//       maxAge: 4000000,
+//     },
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
+// router.use(flash());
 
-router.use((req, res, next) => {
-  res.locals.flashMessages = req.flash();
-  next();
-});
+// router.use((req, res, next) => {
+//   res.locals.flashMessages = req.flash();
+//   next();
+// });
 
 //Config Modules
 const { checkType } = require("../config/checkType");

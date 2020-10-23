@@ -34,6 +34,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="/css/index/flashMessage.css">
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
@@ -56,28 +57,10 @@
     <%-include('partials/navbar')%>
     <!---Navbar Ends-->
     <!---Dashboard Section Starts-->
-    <div class="flash">
-      <% if (flashMessages) { %> <% if (flashMessages.success) { %>
-      <!-- <div class="flash success"><%= flashMessages.success %></div> -->
-      <div class="alert" id="success">
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none';"
-          >&times;</span
-        >
-        <%= flashMessages.success %>
-      </div>
-      <% } else if (flashMessages.error) { %>
-      <div class="alert" id="error">
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none';"
-          >&times;</span
-        >
-        <%= flashMessages.error %>
-      </div>
-      <% } %> <% } %>
-    </div>
+
+    <!-- Flash Message Body Start-->
+    <%-include('partials/flashMessage')%>
+    <!-- Flash Message Body End -->
 
     <header class="header">
       <img

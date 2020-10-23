@@ -1,0 +1,22 @@
+<div>
+    <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+    <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+    <div class="alert" id="success">
+      <span
+        class="closebtn"
+        onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <%= flashMessages.success %>
+    </div>
+    <% } else if (flashMessages.error) { %>
+    <div class="alert" id="error">
+      <span
+        class="closebtn"
+        onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <%= flashMessages.error %>
+    </div>
+    <% } %> <% } %>
+  </div>

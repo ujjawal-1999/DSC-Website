@@ -19,26 +19,6 @@ const session = require("express-session");
 const { signUpMail, forgotPassword } = require("../account/nodemailer");
 const { checkProfileImageType } = require("../config/checkType");
 
-//setting up methods
-router.use(bodyParser.json());
-router.use(cookieParser("secret_passcode"));
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(
-  session({
-    secret: "secret_passcode",
-    cookie: {
-      maxAge: 4000000,
-    },
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-router.use(flash());
-
-router.use((req, res, next) => {
-  res.locals.flashMessages = req.flash();
-  next();
-});
 
 /*------------------Routing Started ------------------------*/
 router.get("/new", (req, res) => {
@@ -54,7 +34,7 @@ router.get("/verify/:id", async (req, res) => {
 
     if (!user) {
       // console.log("Error from /user/verify route", error);
-      req.flash("error", "User not found");
+      res.locals.flashMessages = req.flash("error", "User not found");
       res.redirect("/");
     } else {
       const currDate = new Date();
@@ -70,6 +50,7 @@ router.get("/verify/:id", async (req, res) => {
         });
         if (!updatedUser) {
           console.log(err);
+          res.locals.flashMessages = req.flash("error","An error occured");
           res.redirect("/");
         } else {
           // console.log("Email Verified");
@@ -88,6 +69,7 @@ router.get("/verify/:id", async (req, res) => {
     }
   } else {
     // console.log("Response is from an unknown source");
+    res.redirect("/")
   }
 });
 
@@ -129,11 +111,11 @@ router.post("/changepassword/:id", function (req, res) {
     ) {
       if (err) console.log(err);
       else {
-        req.flash(
+        res.locals.flashMessages = req.flash(
           "success",
           "Your password has been reset successfully. Try Logging in again"
         );
-        res.redirect("/");
+        res.redirect("/user/register?type=login");
       }
     });
   });
@@ -155,15 +137,15 @@ router.post("/update-password", authorization, async (req, res) => {
   );
   if (!checkPassword) {
     req.flash("error", "You have entered a wrong password");
-    res.redirect("/");
+    res.redirect("/user/update-password");
   }
   if (req.body.newPassword !== req.body.confirmPassword) {
     req.flash("error", "Password and Confirm Password does not match");
-    res.redirect("/");
+    res.redirect("/user/update-password");
   }
   if (req.body.oldPassword === req.body.newPassword) {
     req.flash("error", "New Password cannot be the same as old password");
-    res.redirect("/");
+    res.redirect("/user/update-password");
   }
   const hash = await bcrypt.hash(req.body.newPassword, 10);
   await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
@@ -216,8 +198,8 @@ router.post("/register", async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const userExists = await User.find({ email: req.body.email });
     if(userExists){
-      req.locals.flashMessages = req.flash("error","Email already registered");
-      res.redirect("/");
+      res.locals.flashMessages = req.flash("error","Email already registered");
+      res.redirect("/user/register");
       return;
     }
     
@@ -234,7 +216,7 @@ router.post("/register", async (req, res, next) => {
         "error",
         "Unable to sign up. Please try again."
       );
-      res.redirect("/");
+      res.redirect("/user/register");
       return;
     }
     signUpMail(savedUser);
@@ -256,25 +238,20 @@ router.post("/login", async (req, res, next) => {
     user = await User.findOne({
       dscHandle: req.body.email,
     });
-    // if (!user) {
-    //   req.flash("Error", "User not found. Try creating a new account");
-    //   res.redirect("/");
-    //   return;
-    // }
   }
   if (!user) {
     // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
-    req.flash(
+    res.locals.flashMessages = req.flash(
       "error",
       "Email address is not registered. Try creating a new account"
     );
-    res.redirect("/");
+    res.redirect("/user/register?type=login");
     return;
   }
   const checkPassword = await bcrypt.compare(req.body.password, user.password);
   if (!checkPassword) {
-    req.flash("error", "Invalid Login Credentials");
-    res.redirect("/");
+    res.locals.flashMessages = req.flash("error", "Invalid Login Credentials");
+    res.redirect("/user/register?type=login");
     return;
   }
   if (user.active) {
@@ -293,12 +270,10 @@ router.post("/login", async (req, res, next) => {
       maxAge: 24 * 60 * 60 * 1000,
       httpOnly: false,
     });
-
-    req.flash("success", user.name + " you are logged in");
     res.redirect("/user/profile");
   } else {
     signUpMail(user);
-    req.flash(
+    res.locals.flashMessages = req.flash(
       "error",
       `${user.name}, your email is not verified yet. We have sent you a verification email`
     );
@@ -335,10 +310,10 @@ router.post("/forgotpassword", function (req, res) {
     .then((user) => {
       if (!user) {
         req.flash("error", "User not found try creating a new account");
-        res.redirect("/");
+        res.redirect("/user/register");
       }
       forgotPassword(user);
-      req.flash(
+      res.locals.flashMessages = req.flash(
         "success",
         `${user.name}, we sent you an email to reset your password`
       );
@@ -498,15 +473,21 @@ router.post("/profile", authorization, (req, res) => {
         },
       }).then((result) => {
         // console.log(result);
+        req.flash("success","Profile Update Successful");
         res.redirect("/user/profile");
+      })
+      .catch((err)=>{
+        console.log(err)
+        res.redirect("/user/profile")
       });
     } else {
-      // console.log("Token was not found");
+      req.flash("error","Something went wrong. Try again");
       res.redirect("/");
     }
   } catch (error) {
     console.error(error);
     res.status(500).send(error);
+    res.redirect("/");
   }
 });
 router.post("/project/personal", authorization, async (req, res) => {
@@ -669,6 +650,10 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
     .then((user) => {
       if (!user) {
         errors.push({ msg: "No Records of user found at this moment" });
+        res.locals.flashMessages = req.flash(
+          "error",
+          "No Records of user found at this moment"
+        );
         res.redirect("/user/profile");
       }
       uploadProfileImage(req, res, (err) => {
@@ -697,19 +682,29 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
             // console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
+              res.locals.flashMessages = req.flash(
+                "success",
+                "Profile Picture Updated!"
+              );
               res.redirect("/user/profile");
             } else {
               // console.log(" Profile not Updated!");
+              res.locals.flashMessages = req.flash(
+                "error",
+                "Profile Picture Update error!"
+              );
               res.redirect("/user/profile");
             }
           })
           .catch((err) => {
             console.log("profile not updated", err);
+            res.redirect("/user/profile");
           });
       });
     })
     .catch((err) => {
       console.log("error", err);
+      res.redirect("/user/profile");
     });
 });
 
