@@ -27,17 +27,27 @@
       </div>
       <div class="card-text">
         <div class="portada"></div>
-        <div class="title-total">
-          <div class="title">Email Verification</div>
-          <h2>Your link has been expired.</h2>
-
-          <div class="desc">
-            You may try logging in to generate a new verify link.
+        <% if(verified) { %>
+          <div class="title-total">
+            <div class="title">Email Verification</div>
+            <h2>Your Email has been verified.</h2>
+            <div class="desc">Click on the button below to log in.</div>
+            <div class="actions">
+              <button><a href="/user/login">Log In</a></button>
+            </div>
           </div>
-          <div class="actions">
-            <button><a href="/">Home</a></button>
+        <% } else { %>
+          <div class="title-total">
+            <div class="title">Email Verification</div>
+            <h2>Your link has been expired.</h2>
+            <div class="desc">
+              You may try logging in to generate a new verify link.
+            </div>
+            <div class="actions">
+              <button><a href="/">Home</a></button>
+            </div>
           </div>
-        </div>
+        <% } %>
       </div>
     </div>
   </body>

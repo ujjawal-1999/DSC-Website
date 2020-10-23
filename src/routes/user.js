@@ -96,13 +96,17 @@ router.get("/verify/:id", async (req, res) => {
           res.redirect("/");
         } else {
           // console.log("Email Verified");
-          res.render("verify");
+          res.render("verification",{
+            verified : true
+          });
         }
       } else {
         await User.findByIdAndUpdate(user._id, { created_at: new Date() });
         // console.log("Link has expired try logging in to get a new link");
         // res.end("<h1>Link has expired try logging in to get a new link</h1>");
-        res.render("notverified");
+        res.render("verification",{
+          verified : false
+        });
       }
     }
   } else {
@@ -156,10 +160,16 @@ router.post("/changepassword/:id", function (req, res) {
 });
 
 // Route to change the password from within the profile 
+router.get("/update-password",authorization, async(req,res)=>{
+    const findUser = await User.find({active : true});
+    res.render("updatepassword",{
+      user : req.user,
+      found:findUser,
+    });
+})
 
 router.post("/update-password",authorization, async (req,res)=>{
-    const oldPassword = req.body.oldPassword;
-    const checkPasword = await bcrypt.compare(oldPassword,req.user.password);
+    const checkPassword = await bcrypt.compare(req.body.oldPassword,req.dbUser.password);
     if(!checkPassword){
       req.flash('error','You have entered a wrong password');
       res.redirect('/');
@@ -168,9 +178,13 @@ router.post("/update-password",authorization, async (req,res)=>{
         req.flash('error','Password and Confirm Password does not match');
         res.redirect('/');
     }
+    if(req.body.oldPassword === req.body.newPassword){
+      req.flash("error","New Password cannot be the same as old password");
+      res.redirect("/");
+    }
     const hash = await bcrypt.hash(req.body.newPassword,10);
     await User.findByIdAndUpdate(req.dbUser._id,{password: hash});
-    res.clearCookie("authorization");
+    // res.clearCookie("authorization");
     req.flash("success", "Your password has been reset successfully. Try Logging in again");
     res.redirect("/");
 });

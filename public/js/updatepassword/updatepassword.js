@@ -1,6 +1,6 @@
 function showpasswordupdate() {
-  var ops = document.getElementById("oldPassword");
-  var nps = document.getElementById("newPassword");
+  var ops = document.getElementById("newPassword");
+  var nps = document.getElementById("confirmPassword");
 
   if (ops.type === "password") {
     ops.type = "text";
@@ -13,10 +13,10 @@ function showpasswordupdate() {
 }
 
 function updatePasswordValidate() {
-  var ops = document.getElementById("oldPassword");
-  var nps = document.getElementById("newPassword");
+  var ops = document.getElementById("newPassword");
+  var nps = document.getElementById("confirmPassword");
 
-  if (ops != nps) {
+  if (ops !== nps) {
     alert("Password doesn't match");
     return false;
   }
