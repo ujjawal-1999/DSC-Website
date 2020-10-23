@@ -55,18 +55,6 @@ router.get("/", async (req, res) => {
   } else res.render("index", { user: req.user, found: finduser });
 });
 
-// router.get('/', async(req, res)=>{
-// 	// res.render("index")
-// 	const user = await User.find({active : true});
-// 	// console.log(user)
-//     res.render('index',{
-// 		// user:req.user,
-// 		// message:msg,
-// 		// flag,
-// 		users:user
-//     });
-// });
-
 //Route for DSC Members
 router.get("/members", async (req, res) => {
   var token = req.cookies.authorization;

@@ -1,31 +1,26 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const Project = require("../models/project");
+// const Project = require("../models/project");
 const Blog = require("../models/blog");
 const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
 const fs = require("fs");
 const path = require("path");
-const async = require("async");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
-const { check, validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
-const nodemailer = require("nodemailer");
-const cryptoRandomString = require("crypto-random-string");
+// const cryptoRandomString = require("crypto-random-string");
 const {
-  contact,
-  contactAdmin,
   signUpMail,
   forgotPassword,
 } = require("../account/nodemailer");
 const { checkProfileImageType } = require("../config/checkType");
-const blog = require("../models/blog");
 
 //setting up methods
 router.use(bodyParser.json());
@@ -47,21 +42,6 @@ router.use((req, res, next) => {
   res.locals.flashMessages = req.flash();
   next();
 });
-
-//nodemailer methods
-
-var transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.NODEMAILER_EMAIL, //email id
-    pass: process.env.NODEMAILER_PASSWORD, //my gmail password
-  },
-});
-
-var rand, mailOptions, host, link;
-/*------------------SMTP Over-----------------------------*/
 
 /*------------------Routing Started ------------------------*/
 router.get("/new", (req, res) => {
@@ -321,8 +301,11 @@ router.get("/logout", function (req, res) {
 });
 
 //get route for forget password
-router.get("/forgotpassword", function (req, res) {
-  res.render("forgotpassword");
+router.get("/forgotpassword", async (req, res)=> {
+  const findUser = await User.find({active : true});
+  res.render("forgotpassword",{
+    found : findUser
+  });
 });
 
 //post route for forgotpassword

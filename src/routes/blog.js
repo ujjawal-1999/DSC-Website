@@ -7,7 +7,6 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const slugify = require("slugify");
 const User = require("../models/user");
-const Ratings = require("../models/Ratings");
 const auth = require("../middleware/auth");
 const methodOverride = require("method-override");
 const jwt = require("jsonwebtoken");
@@ -46,20 +45,9 @@ router.get("/", async (req, res) => {
       })
       .limit(10)
       .populate("author");
-    // const blogsCount = {
-    //     webDev: await Blog.countDocuments({
-    //       category: 'Web Dev'
-    //     }),
-    //     androidDev: await Blog.countDocuments({
-    //       category: 'Android Dev'
-    //     }),
-    //     graphicDesign: await Blog.countDocuments({
-    //       category: 'Graphic Design'
-    //     })
-    //   }
     // console.log(blogsCount)
     //render the blog using template
-    res.render("blogs-new", {
+    res.render("blog", {
       user: user,
       found: finduser,
       newBlogs: newBlogs || [],
@@ -299,66 +287,4 @@ router.get("/view/:slug", async (req, res) => {
     return e;
   }
 });
-
-//route to rate a blog
-// router.put("/rate/:blogid", auth, async (req, res) => {
-//   try {
-//     const blogId = req.params.blogid;
-//     var value = req.body.rating;
-//     //console.log(blogId);
-//     //console.log(value);
-//     const userId = req.user.userId;
-//     if (!blogId || !value) {
-//       return res.status(422).json({
-//         error: "Empty queries received",
-//       });
-//     }
-//     value = parseInt(value);
-
-//     const ratedBefore = await Ratings.findOne({
-//       userId,
-//       blogId,
-//     });
-
-//     //if not rated by user previously
-//     if (!ratedBefore) {
-//       await new Ratings({
-//         userId,
-//         blogId,
-//         value,
-//       }).save();
-//       // apply update to blog schema
-//       const updatedBlog = await Blog.findById(blogId);
-//       updatedBlog.ratingCount += 1;
-//       updatedBlog.ratingSum += value;
-//       updatedBlog.ratingAverage =
-//         updatedBlog.ratingSum / updatedBlog.ratingCount;
-//       await updatedBlog.save();
-
-//       //console.log("Rating updated: ", value);
-//       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-//       res.redirect(`/blog/view/${updatedBlog.slug}`);
-//       return;
-//     } else {
-//       //set new value if already rated
-//       const updatedBlog = await Blog.findById(blogId);
-//       updatedBlog.ratingSum += value - ratedBefore.value;
-//       updatedBlog.ratingAverage =
-//         updatedBlog.ratingSum / updatedBlog.ratingCount;
-//       await updatedBlog.save();
-//       ratedBefore.value = value;
-//       await ratedBefore.save();
-
-//       //console.log("Rating updated: ", value);
-//       res.locals.flashMessages = req.flash("success", "Thanks for rating!");
-//       res.redirect(`/blog/view/${updatedBlog.slug}`);
-//     }
-//   } catch (e) {
-//     console.log(e.message);
-//     res.status(422).json({
-//       error: e.message,
-//     });
-//   }
-// });
-
 module.exports = router;
