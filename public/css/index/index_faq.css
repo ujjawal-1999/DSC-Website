@@ -79,7 +79,8 @@
       -ms-flex-align: center;
           align-items: center;
   height: 80%;
-  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+ "Helvetica Neue", sans-serif;
 }
 
 .faq-section .lower .sub {
@@ -119,7 +120,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   line-height: 1.2rem;
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-height: 750px) {

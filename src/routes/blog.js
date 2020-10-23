@@ -33,18 +33,38 @@ router.get("/", async (req, res) => {
       });
     }
     if (user) user = await User.findById(user.userId);
+    const page = parseInt(req.query.page) || 1;
+    const size = parseInt(req.query.size) || 7;
+    if (page < 0 || page === 0) {
+      console.log("Page no can not be less tha or equal to 0");
+      return;
+    }
+    let query = {
+      skip : size * (page - 1),
+      limit : size
+    };
     const popularBlogs = await Blog.find()
       .sort({
         views: -1,
       })
-      .limit(10)
+      .limit(5)
       .populate("author");
-    const newBlogs = await Blog.find()
+    const newBlogs = await Blog.find({},{}, query)
       .sort({
         createdAt: -1,
       })
-      .limit(10)
       .populate("author");
+      queryNextPage = {
+        skip : size * page,
+        limit : size
+      }
+      const nextPageBlogs = await Blog.find({},{}, queryNextPage)
+      .sort({
+        createdAt: -1,
+      })
+      .populate("author");
+
+      const nextPageExists = nextPageBlogs.length
     // console.log(blogsCount)
     //render the blog using template
     res.render("blog", {
@@ -52,6 +72,8 @@ router.get("/", async (req, res) => {
       found: finduser,
       newBlogs: newBlogs || [],
       popularBlogs: popularBlogs || [],
+      page,
+      nextPageExists
       // blogsCount: blogsCount
     });
   } catch (e) {

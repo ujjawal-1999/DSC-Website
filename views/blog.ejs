@@ -196,6 +196,14 @@
           </div>
         </div>
       </section>
+      <div>
+        <% if(page !== 1) {%> 
+          <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
+        <% } %>
+        <% if (nextPageExists) { %>
+          <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
+        <% } %>
+      </div>
     </main>
 
     <!---------------x------------- Main Site Section ---------------x-------------->
