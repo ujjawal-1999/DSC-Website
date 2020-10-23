@@ -198,6 +198,7 @@ body {
     height: 80vh;
     overflow: scroll;
     height: 100vh;
+    overflow-x: hidden;
   }
   .container div.signup-form {
     height: 100vh;
@@ -262,5 +263,5 @@ body {
 }
 
 .social_logo{
-  margin-left: 3%;
+  margin-left: 1%;
 }
