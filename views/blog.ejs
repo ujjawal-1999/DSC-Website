@@ -49,6 +49,13 @@
     <link rel="stylesheet" href="/css/blogs/blogs-new.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
+    <style>
+      .pagination {
+        padding: 3rem 0;
+        text-align: center;
+        color: var(--Grey-light-1);
+      }
+    </style>
   </head>
 
   <body id="">
@@ -195,12 +202,11 @@
           </div>
         </div>
       </section>
-      <div>
-        <% if(page !== 1) {%> 
-          <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
-        <% } %>
-        <% if (nextPageExists) { %>
-          <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
+      <div class="pagination">
+        <% if(page !== 1) {%>
+        <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
+        <% } %> <% if (nextPageExists) { %>
+        <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
         <% } %>
       </div>
     </main>
