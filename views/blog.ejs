@@ -79,22 +79,6 @@
             <% }else{%>
             <img src="/img/profile/person.png" alt="default avatar" />
             <% }%>
-
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: right;
-              "
-            >
-              <i
-                class="fas fa-eye"
-                style="font-size: 15px; color: var(--Grey-dark-1)"
-              >
-                <%= blog.views %></i
-              >
-            </div>
           </div>
           <div class="content" style="width: 85%">
             <h3 class="topic"><%= blog.title %></h3>
@@ -118,27 +102,42 @@
               </div>
             </div>
           </div>
-          <% if (user) {%>
-          <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-            <button
-              type="submit"
-              style="background-color: transparent; border: none"
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            "
+          >
+            <% if (user) {%>
+            <form action="/blog/bookmark/<%= blog._id %>" method="POST">
+              <button
+                type="submit"
+                style="background-color: transparent; border: none"
+              >
+                <% if (user.bookmarkBlogs
+                &&user.bookmarkBlogs.includes(blog._id)) {%>
+                <i
+                  class="fas fa-bookmark"
+                  style="font-size: 20px; color: var(--Grey-dark-1)"
+                ></i>
+                <% } else {%>
+                <i
+                  class="far fa-bookmark"
+                  style="font-size: 20px; color: var(--Grey-dark-1)"
+                ></i>
+                <% } %>
+              </button>
+            </form>
+            <% } %>
+
+            <i
+              class="fas fa-eye"
+              style="font-size: 15px; color: var(--Grey-dark-1)"
             >
-              <% if (user.bookmarkBlogs &&user.bookmarkBlogs.includes(blog._id))
-              {%>
-              <i
-                class="fas fa-bookmark"
-                style="font-size: 20px; color: var(--Grey-dark-1)"
-              ></i>
-              <% } else {%>
-              <i
-                class="far fa-bookmark"
-                style="font-size: 20px; color: var(--Grey-dark-1)"
-              ></i>
-              <% } %>
-            </button>
-          </form>
-          <% } %>
+              <%= blog.views %></i
+            >
+          </div>
         </div>
         <%})%>
       </section>

@@ -10,188 +10,56 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-.rectangle-2 {
-  display: flex;
-  justify-content: center;
-  font-family: Product Sans;
-  font-style: normal;
-  font-weight: bold;
-  color: var(--Grey-dark-1) !important;
-  position: relative;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-
-.card-author {
-  margin-top: 10px;
-  /* width: 67px;
-    height: 67px; */
-}
-
-.card-author img {
-  border-radius: 50%;
-  /* height: inherit;
-    width: inherit; */
-  object-fit: cover;
-  width: 67px;
-  height: 67px;
-}
-
-.card-person {
-  display: flex;
-}
-
-.name {
-  color: var(--Grey-dark-1) !important;
-  float: right;
-}
-
 main {
-  width: 60%;
-  margin: 1rem 0;
+  min-height: 90vh;
+}
+.cards .card {
+  width: 55%;
+}
+.cards .card .content .topic {
+  font-size: 2rem;
+}
+.cards .card .socialactivity img{
+  width: 5rem;
+}
+.cards .card .content .images {
+  width: 100%;
+}
+.cards .card .content .images .image-container img {
+  width: 100% !important;
+}
+.cards .card .content {
+  width: 80% !important;
+}
+.cards .card .content .description {
   padding: 2rem 0;
-  background-color: var(--Grey-light-1) !important;
-  box-shadow: 0px 19px 96px -41px rgba(0, 0, 0, 0.35);
+  font-size: 1.3rem;
 }
-i {
-  color: var(--Grey-dark-1);
-}
-
-.content {
-  width: 90%;
-  margin: auto;
-  font-family: Product Sans;
-  font-style: normal;
-  color: var(--Grey-dark-1) !important;
-  font-size: 1rem;
-}
-
-.card-img {
-  overflow-y: hidden;
-  border-radius: 10px;
-}
-
-.author {
-  display: flex;
-  flex-wrap: wrap;
-}
-.card-img img {
-  width: 70%;
-  z-index: -1;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-left: 13%;
-  margin-right: auto;
-}
-
-.category{
-  padding-top: 15px;
-  color: var(--Grey-dark-1) !important;
-  font-family: Product Sans;
-  font-style: normal;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.name {
-  font-family: Product Sans;
-  font-style: normal;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.fa {
-  font-size: 30px;
-}
-
-@media (max-width: 800px) {
-  .main {
-    /*margin-top: 70px;*/
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+@media (max-width: 1300px) {
+  .cards .card {
+    width: 75%;
   }
-  .name {
-    float: none;
-    padding: 0;
+}
+@media (max-width: 700px) {
+  .cards {
+    width: 100vw;
   }
-  .main h1 {
-    font-size: 30px;
-  }
-  .card-person {
-    display: flex;
-    flex-direction: column;
+  .cards .card {
+    width: 95%;
+    flex-direction: column !important;
     justify-content: center;
-    width: 100%;
-    
+    align-items: center;
   }
-  .card-author {
-    margin: 2rem auto;
+  .cards .card p {
+    text-align: center;
   }
-  .share {
-    margin-top: 10px;
-    justify-content: center;
-    display: flex;
-  }
-  .rectangle-2 h1 {
-    margin-top: 10px;
-    padding-top: 20px;
-  }
-  .card-img {
-    height: auto;
-    width: 100%;
-  }
-  .author {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .fa {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 800px) {
-  main {
-    margin: 0;
-    padding-right: 2%;
-    padding-left: 2%;
-  }
-  .name {
-    float: right;
-    margin-top: 18px;
-  }
-  .author {
-    width: 80%;
-    margin: auto;
-  }
-  .card-person {
-    width: 80%;
-    margin-left: 45%;
-    margin: auto;
-  }
+  .cards .card .socialactivity,
   .content {
-    margin-top: 10px;
-    padding-bottom: 30px;
+    width: 86%;
+    align-items: center;
   }
-  .card-person {
-    display: flex;
-    margin-left: 45%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* justify-content: center; */
+  .moredetails {
     width: 100%;
-  }
-}
-
-@media (max-width: 1000px) {
-  main {
-    margin-left: 20%;
-    margin-right: 20%;
+    flex-direction: row !important;
   }
 }
