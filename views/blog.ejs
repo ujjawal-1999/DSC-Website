@@ -55,6 +55,15 @@
         text-align: center;
         color: var(--Grey-light-1);
       }
+      .pagination a {
+        padding: 1rem 0.8rem;
+        color: var(--primary-dark);
+        background-color: var(--Grey-dark-1);
+        transition: all 0.2s;
+      }
+      .pagination a:hover {
+        opacity: 0.8;
+      }
     </style>
   </head>
 
@@ -202,15 +211,14 @@
           </div>
         </div>
       </section>
-      <div class="pagination">
-        <% if(page !== 1) {%>
-        <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
-        <% } %> <% if (nextPageExists) { %>
-        <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
-        <% } %>
-      </div>
     </main>
-
+    <div class="pagination">
+      <% if(page !== 1) {%>
+      <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
+      <% } %> <% if (nextPageExists) { %>
+      <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
+      <% } %>
+    </div>
     <!---------------x------------- Main Site Section ---------------x-------------->
 
     <!-- --------------------------- Footer ---------------------------------------- -->
