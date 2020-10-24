@@ -76,11 +76,10 @@ router.get("/", async (req, res) => {
       nextPageExists
       // blogsCount: blogsCount
     });
-  } catch (e) {
-    res.status(400).json({
-      error: e.message,
-    });
-    return e;
+  } catch (err) {
+    console.error(err);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/");
   }
 });
 
@@ -98,8 +97,8 @@ router.post("/bookmark/:bookmark_id", auth, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.statusCode(200);
-    res.send(error);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/");
   }
 });
 
@@ -130,7 +129,7 @@ router.get("/delete/bookmark/:bookmark_id", auth, async (req, res) => {
     res.redirect("/blog/bookmarks");
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 
@@ -234,10 +233,8 @@ router.post("/create", auth, upload.single("cover"), async (req, res) => {
     res.redirect("/blog");
   } catch (e) {
     console.log(e.message);
-    res.status(400).json({
-      error: "Some error occured",
-    });
-    return e;
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/");
   }
 });
 
@@ -302,11 +299,9 @@ router.get("/view/:slug", async (req, res) => {
       blogsCount: blogsCount,
     });
   } catch (e) {
-    res.status(400).json({
-      error: "some error occured",
-    });
     console.log(e.message);
-    return e;
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/");
   }
 });
 module.exports = router;
