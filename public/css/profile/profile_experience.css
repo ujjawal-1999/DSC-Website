@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--Grey-dark-1);
 }
 .flexRow button {
@@ -59,6 +59,11 @@
 .row .column h3 {
   color: var(--Grey-dark-1) !important;
   overflow: auto;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.row .column h3 p {
+  font-family: "Times New Roman", Times;
 }
 .accordion {
   cursor: pointer;
@@ -67,10 +72,6 @@
   outline: none;
   font-size: 35px;
   transition: 0.4s;
-}
-
-.active,
-.accordion:hover {
 }
 
 .panelexp {
