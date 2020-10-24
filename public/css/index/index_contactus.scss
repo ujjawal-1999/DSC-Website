@@ -29,13 +29,14 @@
 
   .heading {
     &__primary {
+      font-family: "Open Sans", sans-serif;
       text-align: center;
       font-size: 3rem;
     }
   }
 
   h4 {
-    font-family: "Roboto", sans-serif, "arial";
+    font-family: "Times New Roman", Times;
     font-weight: 400;
     font-size: 20px;
     color: var(--Grey-light-4);
