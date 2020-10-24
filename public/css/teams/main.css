@@ -32,7 +32,7 @@ img {
   background: var(--clr-light);
   border-radius: var(--br);
   color: var(--clr-dark);
-  padding: 1em 1.5em;
+  /* padding: 1em 1.5em; */
 }
 
 .icon::before {
@@ -185,7 +185,6 @@ img {
   -webkit-transform: translateY(30%);
           transform: translateY(30%);
   pointer-events: visible;
-  padding: 10px;
 }
 
 .back .about {

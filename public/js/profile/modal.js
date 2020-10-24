@@ -78,7 +78,12 @@ function editProfileModalvalidate() {
 function didyouupload() {
   var uploadphotobtn = document.getElementById("uploadphoto");
   uploadphotobtn.style.opacity = "1";
+  document.getElementById("#file-name").textContent = this.files[0].name;
 }
+
+// function filename(){
+//   document.querySelector("#file-name").textContent = this.files[0].name;
+// }
 
 // ###################################################################################
 // Experience Modal
