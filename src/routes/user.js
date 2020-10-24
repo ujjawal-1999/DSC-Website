@@ -407,7 +407,7 @@ router.get("/delete/skill/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404");
   }
 });
 
@@ -446,7 +446,7 @@ router.get("/delete/experience/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404");
   }
 });
 
@@ -528,7 +528,7 @@ router.get("/delete/project/personal/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404");
   }
 });
 
@@ -567,7 +567,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404");
   }
 });
 
@@ -602,7 +602,7 @@ router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404");
   }
 });
 //Establish Storage for file upload
