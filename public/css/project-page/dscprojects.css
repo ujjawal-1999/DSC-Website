@@ -397,6 +397,7 @@ form input[type="submit"] {
   display:block;
   cursor:pointer;
   padding:3px;
+  font-family: "Times New Roman", Times;
 }
 .members{
   display:flex;
@@ -410,6 +411,12 @@ form input[type="submit"] {
 .more-details-heading+p{
   margin:0;
   padding:0;
+}
+h2,h3,.members, .juniors, .leads,.contact{
+  font-family: 'Open Sans', sans-serif;
+}
+p{
+  font-family: "Times New Roman", Times;
 }
 
 /*# sourceMappingURL=dscprojects.css.map */
