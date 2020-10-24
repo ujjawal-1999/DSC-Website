@@ -1,67 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const Project = require("../models/project");
+// const Project = require("../models/project");
 const Blog = require("../models/blog");
 const authorization = require("../middleware/auth");
 const multer = require("multer");
 const uuid = require("uuid");
 const fs = require("fs");
 const path = require("path");
-const async = require("async");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
-const { check, validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
-const nodemailer = require("nodemailer");
-const cryptoRandomString = require("crypto-random-string");
-const {
-  contact,
-  contactAdmin,
-  signUpMail,
-  forgotPassword,
-} = require("../account/nodemailer");
+// const cryptoRandomString = require("crypto-random-string");
+const { signUpMail, forgotPassword } = require("../account/nodemailer");
 const { checkProfileImageType } = require("../config/checkType");
-const blog = require("../models/blog");
 
-//setting up methods
-router.use(bodyParser.json());
-router.use(cookieParser("secret_passcode"));
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(
-  session({
-    secret: "secret_passcode",
-    cookie: {
-      maxAge: 4000000,
-    },
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-router.use(flash());
-
-router.use((req, res, next) => {
-  res.locals.flashMessages = req.flash();
-  next();
-});
-
-//nodemailer methods
-
-var transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.NODEMAILER_EMAIL, //email id
-    pass: process.env.NODEMAILER_PASSWORD, //my gmail password
-  },
-});
-
-var rand, mailOptions, host, link;
-/*------------------SMTP Over-----------------------------*/
 
 /*------------------Routing Started ------------------------*/
 router.get("/new", (req, res) => {
@@ -77,7 +34,7 @@ router.get("/verify/:id", async (req, res) => {
 
     if (!user) {
       // console.log("Error from /user/verify route", error);
-      req.flash("error", "User not found");
+      res.locals.flashMessages = req.flash("error", "User not found");
       res.redirect("/");
     } else {
       const currDate = new Date();
@@ -85,28 +42,34 @@ router.get("/verify/:id", async (req, res) => {
       const timeDiff = Math.abs(
         currDate.getTime() - initialCreatedAt.getTime()
       );
-      const diffhrs = Math.ceil(timeDiff / (1000 * 60));
+      // const diffhrs = Math.ceil(timeDiff / (1000 * 60));
       // console.log(diffhrs);
-      if (diffhrs <= 3) {
+      if (diffhrs <= 21600000) {
         const updatedUser = await User.findByIdAndUpdate(user._id, {
           active: true,
         });
         if (!updatedUser) {
           console.log(err);
+          res.locals.flashMessages = req.flash("error","An error occured");
           res.redirect("/");
         } else {
           // console.log("Email Verified");
-          res.render("verify");
+          res.render("verification", {
+            verified: true,
+          });
         }
       } else {
         await User.findByIdAndUpdate(user._id, { created_at: new Date() });
         // console.log("Link has expired try logging in to get a new link");
         // res.end("<h1>Link has expired try logging in to get a new link</h1>");
-        res.render("notverified");
+        res.render("verification", {
+          verified: false,
+        });
       }
     }
   } else {
     // console.log("Response is from an unknown source");
+    res.redirect("/")
   }
 });
 
@@ -135,7 +98,7 @@ router.get("/verify/forgotpassword/:id", function (req, res) {
       }
     });
   } else {
-    res.end("<h1>Request is from unknown source");
+    res.end("<h1>Request is from unknown source</h1>");
   }
 });
 //==============================
@@ -148,33 +111,50 @@ router.post("/changepassword/:id", function (req, res) {
     ) {
       if (err) console.log(err);
       else {
-        req.flash("success", "Your password has been reset successfully. Try Logging in again");
-        res.redirect("/");
+        res.locals.flashMessages = req.flash(
+          "success",
+          "Your password has been reset successfully. Try Logging in again"
+        );
+        res.redirect("/user/register?type=login");
       }
     });
   });
 });
 
-// Route to change the password from within the profile 
-
-router.post("/update-password",authorization, async (req,res)=>{
-    const oldPassword = req.body.oldPassword;
-    const checkPasword = await bcrypt.compare(oldPassword,req.user.password);
-    if(!checkPassword){
-      req.flash('error','You have entered a wrong password');
-      res.redirect('/');
-    }
-    if(req.body.newPassword !== req.body.confirmPassword){
-        req.flash('error','Password and Confirm Password does not match');
-        res.redirect('/');
-    }
-    const hash = await bcrypt.hash(req.body.newPassword,10);
-    await User.findByIdAndUpdate(req.dbUser._id,{password: hash});
-    res.clearCookie("authorization");
-    req.flash("success", "Your password has been reset successfully. Try Logging in again");
-    res.redirect("/");
+// Route to change the password from within the profile
+router.get("/update-password", authorization, async (req, res) => {
+  const findUser = await User.find({ active: true });
+  res.render("updatepassword", {
+    user: req.user,
+    found: findUser,
+  });
 });
 
+router.post("/update-password", authorization, async (req, res) => {
+  const checkPassword = await bcrypt.compare(
+    req.body.oldPassword,
+    req.dbUser.password
+  );
+  if (!checkPassword) {
+    req.flash("error", "You have entered a wrong password");
+    res.redirect("/user/update-password");
+  }
+  if (req.body.newPassword !== req.body.confirmPassword) {
+    req.flash("error", "Password and Confirm Password does not match");
+    res.redirect("/user/update-password");
+  }
+  if (req.body.oldPassword === req.body.newPassword) {
+    req.flash("error", "New Password cannot be the same as old password");
+    res.redirect("/user/update-password");
+  }
+  const hash = await bcrypt.hash(req.body.newPassword, 10);
+  await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
+  req.flash(
+    "success",
+    "Your password has been reset successfully."
+  );
+  res.redirect("/");
+});
 
 //==============================
 
@@ -197,7 +177,7 @@ router.get("/verify-handle/:handle", async (req, res) => {
 //get route for signup
 router.get("/register", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true});
+  const finduser = await User.find({ active: true });
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -216,7 +196,13 @@ router.post("/register", async (req, res, next) => {
     return res.status(422).jsonp(errors.array());
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
+    const userExists = await User.find({ email: req.body.email });
+    if(userExists){
+      res.locals.flashMessages = req.flash("error","Email already registered");
+      res.redirect("/user/register");
+      return;
+    }
+    
     const user = new User({
       email: req.body.email,
       name: req.body.name,
@@ -228,9 +214,9 @@ router.post("/register", async (req, res, next) => {
     if (!savedUser) {
       res.locals.flashMessages = req.flash(
         "error",
-        "Email already already registered. Try logging in again"
+        "Unable to sign up. Please try again."
       );
-      res.redirect("/");
+      res.redirect("/user/register");
       return;
     }
     signUpMail(savedUser);
@@ -252,22 +238,20 @@ router.post("/login", async (req, res, next) => {
     user = await User.findOne({
       dscHandle: req.body.email,
     });
-    // if (!user) {
-    //   req.flash("Error", "User not found. Try creating a new account");
-    //   res.redirect("/");
-    //   return;
-    // }
   }
   if (!user) {
     // res.locals.flashMessages = req.flash("error", "User not found. Try creating a new account");
-    req.flash("error", "Email address is not registered. Try creating a new account");
-    res.redirect("/");
+    res.locals.flashMessages = req.flash(
+      "error",
+      "Email address is not registered. Try creating a new account"
+    );
+    res.redirect("/user/register?type=login");
     return;
   }
   const checkPassword = await bcrypt.compare(req.body.password, user.password);
   if (!checkPassword) {
-    req.flash("error", "Invalid Login Credentials");
-    res.redirect("/");
+    res.locals.flashMessages = req.flash("error", "Invalid Login Credentials");
+    res.redirect("/user/register?type=login");
     return;
   }
   if (user.active) {
@@ -286,12 +270,10 @@ router.post("/login", async (req, res, next) => {
       maxAge: 24 * 60 * 60 * 1000,
       httpOnly: false,
     });
-
-    req.flash("success", user.name + " you are logged in");
     res.redirect("/user/profile");
   } else {
     signUpMail(user);
-    req.flash(
+    res.locals.flashMessages = req.flash(
       "error",
       `${user.name}, your email is not verified yet. We have sent you a verification email`
     );
@@ -307,8 +289,17 @@ router.get("/logout", function (req, res) {
 });
 
 //get route for forget password
-router.get("/forgotpassword", function (req, res) {
-  res.render("forgotpassword");
+router.get("/forgotpassword", async (req, res) => {
+  var token = req.cookies.authorization;
+  const findUser = await User.find({ active: true });
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) console.log(err);
+      else req.user = user;
+      // console.log(user);
+      res.render("forgotpassword", { user: user, found: findUser });
+    });
+  } else res.render("forgotpassword", { user: req.user, found: findUser });
 });
 
 //post route for forgotpassword
@@ -319,10 +310,10 @@ router.post("/forgotpassword", function (req, res) {
     .then((user) => {
       if (!user) {
         req.flash("error", "User not found try creating a new account");
-        res.redirect("/");
+        res.redirect("/user/register");
       }
       forgotPassword(user);
-      req.flash(
+      res.locals.flashMessages = req.flash(
         "success",
         `${user.name}, we sent you an email to reset your password`
       );
@@ -335,17 +326,17 @@ router.post("/forgotpassword", function (req, res) {
 
 router.get("/profile", authorization, async (req, res) => {
   try {
-    const finduser = await User.find({active : true});
+    const finduser = await User.find({ active: true });
     // const userBlog = await blog.find();
     await req.dbUser.populate("blogs").execPopulate();
     res.render("profile", {
       user: req.dbUser,
-      found : finduser
-    })
+      found: finduser,
+    });
   } catch (error) {
-    console.error("Error from getProfile route",error);
-    req.flash("error","Error in getting the profile");
-    res.redirect("/")
+    console.error("Error from getProfile route", error);
+    req.flash("error", "Error in getting the profile");
+    res.redirect("/");
     // res.status(500).send(error);
   }
 });
@@ -353,17 +344,18 @@ router.get("/profile", authorization, async (req, res) => {
 router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
-    const finduser = await User.find({active : true});
+    const finduser = await User.find({ active: true });
     // const userBlog = await Blog.find();
     // req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
-    const token  = req.cookies.authorization
+    const token = req.cookies.authorization;
     let user;
-    if(token){
-      const decodedData = await jwt.verify(token, process.env.JWT_SECRET)
-      if(decodedData)
-        user = await User.findById(decodedData.userId)
+    if (token) {
+      const decodedData = await jwt.verify(token, process.env.JWT_SECRET);
+      if (decodedData) user = await User.findById(decodedData.userId);
     }
-    const searchedUser = await (await User.findOne({ dscHandle: req.params.handle }))
+    const searchedUser = await (
+      await User.findOne({ dscHandle: req.params.handle })
+    )
       .populate("blogs")
       .execPopulate();
     if (searchedUser) {
@@ -377,7 +369,7 @@ router.get("/public-profile/:handle", async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.render('404-page')
+    res.render("404-page");
     // res.status(500).send(error);
   }
 });
@@ -481,15 +473,21 @@ router.post("/profile", authorization, (req, res) => {
         },
       }).then((result) => {
         // console.log(result);
+        req.flash("success","Profile Update Successful");
         res.redirect("/user/profile");
+      })
+      .catch((err)=>{
+        console.log(err)
+        res.redirect("/user/profile")
       });
     } else {
-      // console.log("Token was not found");
+      req.flash("error","Something went wrong. Try again");
       res.redirect("/");
     }
   } catch (error) {
     console.error(error);
     res.status(500).send(error);
+    res.redirect("/");
   }
 });
 router.post("/project/personal", authorization, async (req, res) => {
@@ -504,7 +502,7 @@ router.post("/project/personal", authorization, async (req, res) => {
       startdate: req.body.startdate,
       enddate: req.body.enddate,
       hosturl: req.body.hosturl,
-      status : req.body.status
+      status: req.body.status,
     };
     // console.log("New Project-- ", newProject);
 
@@ -576,7 +574,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
 router.get("/profile", authorization, async (req, res) => {
   try {
     const token = req.cookies.authorization;
-    const finduser = await User.find({active : true});
+    const finduser = await User.find({ active: true });
     // const userBlog = await blog.find();
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, async (err, user) => {
@@ -652,7 +650,11 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
     .then((user) => {
       if (!user) {
         errors.push({ msg: "No Records of user found at this moment" });
-        res.redirect("/user/profile")
+        res.locals.flashMessages = req.flash(
+          "error",
+          "No Records of user found at this moment"
+        );
+        res.redirect("/user/profile");
       }
       uploadProfileImage(req, res, (err) => {
         if (err) {
@@ -680,19 +682,29 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
             // console.log("avatar value", avatar);
             if (errors.length == 0) {
               console.log(" Profile Updated!");
+              res.locals.flashMessages = req.flash(
+                "success",
+                "Profile Picture Updated!"
+              );
               res.redirect("/user/profile");
             } else {
               // console.log(" Profile not Updated!");
+              res.locals.flashMessages = req.flash(
+                "error",
+                "Profile Picture Update error!"
+              );
               res.redirect("/user/profile");
             }
           })
           .catch((err) => {
             console.log("profile not updated", err);
+            res.redirect("/user/profile");
           });
       });
     })
     .catch((err) => {
       console.log("error", err);
+      res.redirect("/user/profile");
     });
 });
 

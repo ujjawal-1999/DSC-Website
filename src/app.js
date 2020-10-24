@@ -2,7 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const path = require("path");
-
+const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
+const session = require("express-session");
 const app = express();
 app.use(express.json());
 
@@ -35,6 +38,28 @@ app.use(
     extended: true,
   })
 );
+
+//setting up methods
+app.use(bodyParser.json());
+app.use(cookieParser("secret_passcode"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: "secret_passcode",
+    cookie: {
+      maxAge: 4000000,
+    },
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.flashMessages = req.flash();
+  next();
+});
+
 
 //Setup for rendering static pages
 //for static page

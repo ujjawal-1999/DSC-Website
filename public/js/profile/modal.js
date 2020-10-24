@@ -189,7 +189,7 @@ function statusListenerProject() {
     document.getElementById("enddate").disabled = true;
     document.getElementById("enddate").type = "text";
     document.forms["addProjectForm"]["enddate"].value = "Present";
-  }  else {
+  } else {
     document.getElementById("enddate").disabled = false;
     document.getElementById("enddate").type = "date";
   }
@@ -229,9 +229,11 @@ function addProjectModalvalidate() {
     alert("Not a valid Git Repository URL !");
     return false;
   }
-  if (!hosturl.match(expression)) {
-    alert("Not a valid Host URL !");
-    return false;
+  if (hosturl.length() != 0) {
+    if (!hosturl.match(expression)) {
+      alert("Not a valid Host URL !");
+      return false;
+    }
   }
   return true;
 }

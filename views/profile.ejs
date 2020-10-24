@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
 
     <title>DSC NITS | Profile</title>
     <link
@@ -33,6 +39,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="/css/index/flashMessage.css">
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Stylings Ends -->
@@ -40,6 +47,10 @@
   <body>
     <%-include('partials/navbar')%>
     <!-- Edit Expereince Modal  -->
+
+    <!-- Flash Message Body Start -->
+    <%-include('partials/flashMessage')%>
+    <!-- Flash Message body end -->
     <div class="addExperienceModal" id="addExperienceModal">
       <div class="wrapper backPart">
         <div id="subscribeBox">
@@ -108,7 +119,7 @@
                 id="Description"
                 type="text"
                 name="exp_description"
-                maxlength="50"
+                maxlength="100"
               />
             </div>
             <br /><br />
@@ -129,7 +140,12 @@
     <div class="editProfileModal" id="editProfileModal">
       <div class="wrapper backPart">
         <div id="subscribeBox">
-          <img id="backlogo" class="backlogo" src="/img/logo/bac.png" alt="background logo" />
+          <img
+            id="backlogo"
+            class="backlogo"
+            src="/img/logo/bac.png"
+            alt="background logo"
+          />
         </div>
         <div></div>
       </div>
@@ -140,8 +156,12 @@
             <div class="items">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img src="/upload<%= user.profileImageLocation%>" alt="profile picture" />
-                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <% }%>
+                <img
+                  src="/upload<%= user.profileImageLocation%>"
+                  alt="profile picture"
+                />
+                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <%
+                }%>
               </div>
 
               <form
@@ -162,7 +182,13 @@
                     />
                     <span> Choose Photo</span>
                   </label>
-
+                  <input
+                    id="file-upload"
+                    name="upload_cont_img"
+                    type="file"
+                    style="display: none"
+                  />
+                  <label id="file-name"></label>
                   <input
                     id="uploadphoto"
                     style="
@@ -198,7 +224,11 @@
             </div>
           </div>
           <p></p>
-          <img class="edill" src="/img/illustrations/editing.png" alt="illustration" />
+          <img
+            class="edill"
+            src="/img/illustrations/editing.png"
+            alt="illustration"
+          />
         </div>
       </div>
       <div class="wrapper">
@@ -317,7 +347,7 @@
               <label for="password">Password </label>
               <div class="flexRow fullwidth">
                 <!-- <p>Last Changed 2 months ago</p> -->
-                <a href="">Change Password</a>
+                <a href="/user/update-password">Change Password</a>
               </div>
             </div>
             <br /><br />
@@ -400,7 +430,7 @@
                 id="skilldescription"
                 type="text"
                 name="skilldescription"
-                maxlength="50"
+                maxlength="100"
                 required
               />
             </div>
@@ -450,7 +480,7 @@
                 type="text"
                 name="title"
                 required
-                maxlength="30"
+                maxlength="50"
               />
             </div>
             <div class="flexRow">
@@ -465,7 +495,12 @@
             </div>
             <div class="flexRow">
               <label for="status">Project Status</label>
-              <select name="status" id="projectStatus" required onchange="statusListenerProject()">
+              <select
+                name="status"
+                id="projectStatus"
+                required
+                onchange="statusListenerProject()"
+              >
                 <option value="Completed" selected>Completed</option>
                 <option value="Ongoing">Ongoing</option>
               </select>
@@ -514,7 +549,7 @@
                 id="description"
                 type="text"
                 name="description"
-                maxlength="60"
+                maxlength="100"
                 required
               />
             </div>
@@ -562,7 +597,7 @@
                 id="achievementname"
                 type="text"
                 name="achievementname"
-                maxlength="30"
+                maxlength="50"
                 required
               />
             </div>
@@ -572,7 +607,7 @@
                 id="achievementnameplatform"
                 type="text"
                 name="achievementnameplatform"
-                maxlength="30"
+                maxlength="40"
                 required
               />
             </div>
@@ -592,7 +627,7 @@
                 type="text"
                 placeholder="Unique Certification Number"
                 name="achievementnameserial"
-                maxlength="30"
+                maxlength="50"
               />
             </div>
             <div class="flexRow">
@@ -601,7 +636,7 @@
                 id="projectdescription"
                 type="text"
                 name="projectdescription"
-                maxlength="50"
+                maxlength="100"
               />
             </div>
             <br /><br />
@@ -671,8 +706,13 @@
             <div class="pictureandbasic">
               <div class="photo">
                 <% if(user.profileImageLocation!=null){ %>
-                <img src="/upload<%= user.profileImageLocation%>" alt="profile image" style="  height: 110%;" />
-                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <% }%>
+                <img
+                  src="/upload<%= user.profileImageLocation%>"
+                  alt="profile image"
+                  style="height: 110%"
+                />
+                <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <%
+                }%>
               </div>
               <div class="info">
                 <div class="nameandedit">
@@ -691,39 +731,63 @@
                   <div class="collegeinfo">
                     <% if(user.socialLinks["github"]!=null){ %>
                     <a href='<%=user.socialLinks["github"]%>' target="_blank">
-                      <img class="s" src="/img/logo/githubPng.png" alt="github logo" />
+                      <img
+                        class="s"
+                        src="/img/logo/githubPng.png"
+                        alt="github logo"
+                      />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img class="s" src="/img/logo/githubPng.png" alt="github logo" /> </a
+                      <img
+                        class="s"
+                        src="/img/logo/githubPng.png"
+                        alt="github logo"
+                      /> </a
                     ><% }%>
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["facebook"]!=null){ %>
                     <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
-                      <img class="s" src="/img/logo/fb.png" alt="facebook logo" />
+                      <img
+                        class="s"
+                        src="/img/logo/fb.png"
+                        alt="facebook logo"
+                      />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img class="s" src="/img/logo/fb.png" alt="facebook logo" /> </a
+                      <img
+                        class="s"
+                        src="/img/logo/fb.png"
+                        alt="facebook logo"
+                      /> </a
                     ><% }%>
                   </div>
                   <div class="collegeinfo">
                     <% if(user.socialLinks["linkedin"]!=null){ %>
                     <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
-                      <img class="s" src="/img/logo/link.png" alt="linkedin logo" />
+                      <img
+                        class="s"
+                        src="/img/logo/link.png"
+                        alt="linkedin logo"
+                      />
                     </a>
                     <% }else{%>
 
                     <a href="#">
-                      <img class="s" src="/img/logo/link.png" alt="linkedin logo" /> </a
+                      <img
+                        class="s"
+                        src="/img/logo/link.png"
+                        alt="linkedin logo"
+                      /> </a
                     ><% }%>
                   </div>
                 </div>
               </div>
-              <div id='faint-handle' class="faint">
+              <div id="faint-handle" class="faint">
                 <% if(user.dscHandle!=null){ %> <%= user.dscHandle%> <%}else{}%>
               </div>
             </div>
@@ -860,7 +924,8 @@
                         <a
                           class="delete-exp"
                           href="/user/blog/delete/<%= blog._id %>"
-                          ><img src="/img/profile/trash.svg" alt="delete icon"/></a>
+                          ><img src="/img/profile/trash.svg" alt="delete icon"
+                        /></a>
                       </div>
                       <%})%>
                     </div>
@@ -925,18 +990,19 @@
                                 align-items: center;
                               "
                             >
-                            <div id="mention">
-                              <b>&#9899;</b><%= experience.startdate %> - <% if (experience.enddate !== undefined) {%>
-                                <%= experience.enddate %>
-                                <%} else { %>
-                                  Present
-                                <%} %>
-                            </div>
+                              <div id="mention">
+                                <b>&#9899;</b><%= experience.startdate %> - <%
+                                if (experience.enddate !== undefined) {%> <%=
+                                experience.enddate %> <%} else { %> Present <%}
+                                %>
+                              </div>
 
                               <a
                                 class="delete-exp"
                                 href="/user/delete/experience/<%= experience._id %>"
-                                ><img src="/img/profile/trash.svg" alt="delete icon"
+                                ><img
+                                  src="/img/profile/trash.svg"
+                                  alt="delete icon"
                               /></a>
                             </div>
                           </div>
@@ -1057,19 +1123,18 @@
                           </div>
                           <div class="project-duration">
                             <h3>
-                              <%= project.startdate %> to 
-                              <% if(project.enddate !== undefined) { %>
-                                 <%= project.enddate %>
-                              <% } else { %>
-                                Present
-                              <% } %>
+                              <%= project.startdate %> to <% if(project.enddate
+                              !== undefined) { %> <%= project.enddate %> <% }
+                              else { %> Present <% } %>
                             </h3>
                           </div>
                           <center>
                             <a
                               class="delete-prj"
                               href="/user/delete/project/personal/<%= project._id %>"
-                              ><img src="/img/profile/trash.svg" alt="delete icon"
+                              ><img
+                                src="/img/profile/trash.svg"
+                                alt="delete icon"
                             /></a>
                           </center>
                         </div>
@@ -1122,7 +1187,7 @@
                             <div id="date"><%= ach.date%></div>
                             <div class="tooltip">
                               <img src="/img/logo/info.svg" alt="info" />
-                              <% if(ach.serial !== "") {%> 
+                              <% if(ach.serial !== "") {%>
                               <span class="tooltiptext"
                                 >Credential ID: <%= ach.serial%></span
                               >
@@ -1130,7 +1195,9 @@
                               <a
                                 class="delete-ach"
                                 href="/user/delete/achievement/<%= ach._id %>"
-                                ><img src="/img/profile/trash.svg" alt="delete icon"
+                                ><img
+                                  src="/img/profile/trash.svg"
+                                  alt="delete icon"
                               /></a>
                             </div>
                             <!--<div class="bookmarks">
@@ -1227,5 +1294,6 @@
   <!-- Navbar JS -->
   <script src="/js/a11ytab.js"></script>
   <script src="/js/profile/profile.js"></script>
+  <script src="/js/profile/profile-upload.js"></script>
   <script src="/js/profile/modal.js"></script>
 </html>

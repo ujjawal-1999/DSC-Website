@@ -1,6 +1,8 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const cryptoRandomString = require("crypto-random-string");
+const { JsonWebTokenError } = require("jsonwebtoken");
+const jwt = require("jsonwebtoken")
 
 //for sending to user
 const contact = (data) => {
@@ -68,7 +70,8 @@ const contactAdmin = (data) => {
 const signUpMail = (data) => {
   const rand = cryptoRandomString({ length: 100, type: "url-safe" });
   // const host = req.get("host");
-  const link = `http://localhost:3000/user/verify/${data._id}?tkn=${rand}`;
+  // const link = `http://localhost:3000/user/verify/${data._id}?tkn=${rand}`;
+  const link = `https://dscnitsilchar.herokuapp.com/user/verify/${data._id}?tkn=${rand}`;
 
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -102,7 +105,8 @@ const signUpMail = (data) => {
 // Email to reset password
 const forgotPassword = (data) => {
   const rand = cryptoRandomString({ length: 100, type: "url-safe" });
-  const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",

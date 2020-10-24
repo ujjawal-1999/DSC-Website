@@ -12,23 +12,23 @@ const flash = require("connect-flash");
 const session = require("express-session");
 
 //method Flash
-router.use(cookieParser("secret_passcode"));
-router.use(
-  session({
-    secret: "secret_passcode",
-    cookie: {
-      maxAge: 4000000,
-    },
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-router.use(flash());
+// router.use(cookieParser("secret_passcode"));
+// router.use(
+//   session({
+//     secret: "secret_passcode",
+//     cookie: {
+//       maxAge: 4000000,
+//     },
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
+// router.use(flash());
 
-router.use((req, res, next) => {
-  res.locals.flashMessages = req.flash();
-  next();
-});
+// router.use((req, res, next) => {
+//   res.locals.flashMessages = req.flash();
+//   next();
+// });
 
 //Config Modules
 const { checkType } = require("../config/checkType");
@@ -54,18 +54,6 @@ router.get("/", async (req, res) => {
     });
   } else res.render("index", { user: req.user, found: finduser });
 });
-
-// router.get('/', async(req, res)=>{
-// 	// res.render("index")
-// 	const user = await User.find({active : true});
-// 	// console.log(user)
-//     res.render('index',{
-// 		// user:req.user,
-// 		// message:msg,
-// 		// flag,
-// 		users:user
-//     });
-// });
 
 //Route for DSC Members
 router.get("/members", async (req, res) => {

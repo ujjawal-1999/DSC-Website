@@ -25,6 +25,7 @@
     />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/flashMessage.css">
 
     <title>DSC NITS | Login/SignUp</title>
   </head>
@@ -33,6 +34,10 @@
     <!--Navbar Starts-->
     <%-include('partials/navbar')%>
     <!---Navbar Ends-->
+
+    <!-- Flash Message Body Start -->
+    <%-include('partials/flashMessage')%>
+    <!-- Flash Message body end -->
 
     <div class="container" id="container">
       <div class="heading-block">
@@ -72,7 +77,7 @@
             maxlength="20"
             onchange="return checkuniquedschandle()"
           />
-
+          <h6 style="margin-top: -20px;margin-bottom: 10px;"> Username cannot be longer than 20 characters</h6>
           <p id="uniqueness"></p>
 
           <label for="email">Email</label
@@ -130,21 +135,21 @@
           </div>
         </form>
 
-        <p>
+        <!-- <p>
           <a href="/user/forgotpassword">Forget Password ?</a><br /><br />
           or use social account
-        </p>
+        </p> -->
 
-        <div class="social-login">
+        <!-- <div class="social-login">
           <a href="#">
-            <img src="/img/logo/fb.png" alt="facebook logo" />
+            <img src="/img/logo/fb.png" class="social_logo" alt="facebook logo" />
             Signup with facebook
           </a>
           <a href="#">
-            <img src="/img/logo/Google.png" class="google" alt="google logo" />
+            <img src="/img/logo/Google.png" class="social_logo" alt="google logo" />
             Signup with Google
           </a>
-        </div>
+        </div> -->
       </div>
 
       <div class="signup-form" id="loginform">
@@ -199,16 +204,16 @@
           or use social account
         </p>
 
-        <div class="social-login">
+        <!-- <div class="social-login">
           <a href="#">
-            <img src="/img/logo/fb.png" alt="facebook logo" />
+            <img src="/img/logo/fb.png" class="social_logo" alt="facebook logo" />
             Login with facebook
           </a>
           <a href="#">
-            <img src="/img/logo/Google.png" class="google" alt="google logo" />
+            <img src="/img/logo/Google.png" class="social_logo" alt="google logo" />
             Login with Google
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
 
