@@ -338,9 +338,9 @@ router.get("/profile", authorization, async (req, res) => {
       found: finduser,
     });
   } catch (error) {
-    console.error("Error from getProfile route", error);
-    req.flash("error", "Error in getting the profile");
-    res.redirect("/");
+    console.error("Error getting the profile", error);
+    // req.flash("error", "Error in getting the profile");
+    // res.redirect("/");
   }
 });
 

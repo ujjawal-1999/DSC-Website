@@ -700,14 +700,12 @@
             alt="UserPhoto"
           />
           <% }else{%>
-
           <img
             class="bell resone"
             src="/img/logo/profile.png"
             alt="UserPhoto"
           />
           <% }%>
-
           <img class="bell" src="/img/logo/bell.png" alt="Notification Logo" /> -->
         </div>
       </section>
@@ -759,7 +757,8 @@
                 </p>
                 <div class="branchandyear">
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["github"].length !== 0 || user.socialLinks["github"] !== undefined){ %>
+                    <% if(user.socialLinks["github"]!== undefined) { %> 
+                      <% if(user.socialLinks["github"].length !== 0){ %>
                     <a href='<%=user.socialLinks["github"]%>' target="_blank">
                       <img
                         class="s"
@@ -768,9 +767,11 @@
                       />
                     </a>
                     <% } %>
+                    <% } %>
                   </div>
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["facebook"].length !== 0 || user.socialLinks["facebook] !== undefined){ %>
+                    <% if(user.socialLinks["facebook"]!== undefined) { %> 
+                      <% if(user.socialLinks["facebook"].length !== 0){ %>
                     <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
                       <img
                         class="s"
@@ -779,9 +780,11 @@
                       />
                     </a>
                     <% } %>
+                    <% } %>
                   </div>
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["linkedin"].length !== 0 || user.socialLinks["linkedin"] !== undefined){ %>
+                    <% if(user.socialLinks["linkedin"]!== undefined) { %>
+                      <% if(user.socialLinks["linkedin"].length !== 0){ %>
                     <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
                       <img
                         class="s"
@@ -789,6 +792,7 @@
                         alt="linkedin logo"
                       />
                     </a>
+                    <% } %>
                     <% } %>
                   </div>
                 </div>
@@ -888,9 +892,7 @@
                           />
                           <% }else{%>
                           <img src="/img/logo/profile.png" alt="avatar" />
-
                           <% }%>
-
                           <div
                             style="
                               display: flex;
@@ -902,7 +904,6 @@
                             <i class="fas fa-eye" style="font-size: 15px">
                               <%= blog.views %></i
                             >
-
                             <!-- <a
                               href="/user/blog/delete/<%= blog._id %>"
                               style="color: red"
@@ -990,7 +991,6 @@
                                 <p><%= experience.name %></p>
                               </h3>
                             </div>
-
                             <div
                               style="
                                 display: flex;
@@ -1005,7 +1005,6 @@
                                 experience.enddate %> <%} else { %> Present <%}
                                 %>
                               </div>
-
                               <a
                                 class="delete-exp"
                                 href="/user/delete/experience/<%= experience._id %>"
@@ -1064,7 +1063,6 @@
                           ><img src="/img/profile/trash.svg" alt="delete icon"
                         /></a>
                       </div>
-
                       <%})%>
                     </div>
                   </div>
@@ -1122,7 +1120,6 @@
                             >
                           </div>
                           <%}%>
-
                           <div
                             class="project-description"
                             style="word-wrap: anywhere"
@@ -1147,7 +1144,6 @@
                             /></a>
                           </center>
                         </div>
-
                         <%})%>
                       </div>
                     </section>

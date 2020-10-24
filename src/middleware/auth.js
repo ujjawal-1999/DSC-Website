@@ -8,14 +8,16 @@ module.exports = async(req, res, next) => {
     const token = req.cookies.authorization;
     // console.log(token);
     jwt.verify(token, process.env.JWT_SECRET, async(err, user) => {
-      if (err)
-        console.log(err);
+      if (err){
+        res.redirect("/");
+        next();
+      }
       else {
         req.user = user;
         req.dbUser = await User.findById(user.userId)
+        next();
       }
       // console.log(req.user);
-      next();
     });
 
   } catch (error) {
