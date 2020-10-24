@@ -179,9 +179,7 @@ body {
             height: 15rem;
             justify-content: space-evenly;
             p {
-              // width: 75%;
-
-              line-height: 1.2rem;
+              font-family: "Times New Roman", Times;
             }
             .nameandedit {
               display: flex;
@@ -198,7 +196,7 @@ body {
                 width: 1rem;
               }
               font-size: 3rem;
-              font-family: sans-serif;
+              font-family: "Open Sans", sans-serif;
             }
             h3 {
               font-family: sans-serif;
@@ -320,9 +318,7 @@ body {
   background-color: var(--primary-light);
   color: var(--Grey-dark-1);
   padding: 0.9rem;
-  font-family: sans-serif;
-
-  font-size: 0.8rem;
+  font-family: "Times New Roman", Times;
 
   h1 {
     opacity: 0.6;
@@ -359,12 +355,13 @@ body {
       }
 
       .topic {
+        font-family: "Open Sans", sans-serif;
         font-weight: 600;
         font-size: 1.2rem;
       }
       .details {
         margin: 0.3rem 0;
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
       .timings {
         width: 100%;
@@ -385,7 +382,7 @@ body {
         border: 1px solid;
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
-        font-family: sans-serif;
+        font-family: "Open Sans", sans-serif;
         border-radius: 3px;
         transition: all 0.2s;
         background-color: var(--Grey-light-1);

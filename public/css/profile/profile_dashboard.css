@@ -226,7 +226,7 @@ body {
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .info p {
-  line-height: 1.2rem;
+  font-family: "Times New Roman", Times;
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .info .nameandedit {
@@ -248,7 +248,7 @@ body {
 
 .dashboard__main .main__profileinfo .pictureandbasic .info h2 {
   font-size: 3rem;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .dashboard__main .main__profileinfo .pictureandbasic .info h2 img {
@@ -371,8 +371,7 @@ body {
   background-color: var(--primary-light);
   color: var(--Grey-dark-1);
   padding: 0.9rem;
-  font-family: sans-serif;
-  font-size: 0.8rem;
+  font-family: "Times New Roman", Times;
 }
 
 .contests h1 {
@@ -426,13 +425,14 @@ body {
 }
 
 .contests .container .card .topic {
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
 }
 
 .contests .container .card .details {
   margin: 0.3rem 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .contests .container .card .timings {
@@ -470,7 +470,7 @@ body {
   border: 1px solid;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-radius: 3px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
