@@ -191,7 +191,7 @@
   display: flex;
 }
 
-/* .editProfileModal,
+.editProfileModal,
 .addExperienceModal,
 .addProjectsModal,
 .addAchievementModal,
@@ -199,6 +199,7 @@
   /* Top-level Styling */
   /* Div Layout Styling */
   /* Text Styling for h2, p, a */
+}
 
 .editProfileModal label,
 .addExperienceModal label,
@@ -697,10 +698,17 @@
 #fileSubmitButton {
   display: none;
 }
-.footnote{
+
+.footnote {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: -0.6rem;
   margin-bottom: 1rem;
 }

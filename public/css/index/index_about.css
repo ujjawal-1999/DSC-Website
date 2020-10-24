@@ -36,7 +36,6 @@
 
 @media screen and (max-width: 1020px) {
   .main .about {
-    /* padding: 4rem; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -65,8 +64,7 @@
     height: auto;
   }
   .main .about .content .heading__primary {
-    /* padding: 0 5rem 0 5rem; */
-    padding : 0rem;
+    padding: 0rem;
   }
   .main .about .content .heading__secondary {
     padding: 0 !important;
@@ -75,7 +73,6 @@
 
 @media screen and (max-width: 350px) {
   .main .about .content .heading__primary {
-    /* padding: 0 5rem 0 5rem; */
     padding: 0rem;
   }
   .main .about .content .heading__secondary {
