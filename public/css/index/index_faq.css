@@ -90,14 +90,11 @@
   height: 80%;
   font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
  "Helvetica Neue", sans-serif;
-<<<<<<< HEAD
  background-color: rgba(138, 138, 138, 0.2);
  margin: 5px;
  border-radius: 13px;
 padding-top: 10px;
 z-index: -1;
-=======
->>>>>>> 5bae5935b660710e38a1d8ebb7bbffd0a07f79da
 }
 
 .faq-section .lower .sub {
@@ -155,13 +152,9 @@ z-index: -1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   line-height: 1.2rem;
-<<<<<<< HEAD
   font-size: 13px;
   margin-bottom: 0.1rem;
   text-align: center;
-=======
-  font-size: 0.9rem;
->>>>>>> 5bae5935b660710e38a1d8ebb7bbffd0a07f79da
 }
 
 @media screen and (max-height: 750px) {
