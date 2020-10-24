@@ -8,7 +8,7 @@ body {
 }
 
 .head {
-    font-family: sans-serif;
+    font-family: "Times New Roman", Times;
     margin: 1rem 0;
     text-align: center;
     margin-top: 10px;
@@ -48,12 +48,12 @@ body {
     overflow: hidden;
     padding: 30px;
     width: 40%;
-    font-family: sans-serif;
+    font-family: "Times New Roman", Times;
     font-size: 20px;
 }
 
 #card-container .card-product-details>p {
-    font-family: sans-serif;
+    font-family: "Times New Roman", Times;
     text-align: center;
     /*  font-size: 20px;*/
     color: #7d7d7d;
@@ -174,7 +174,7 @@ body {
             display: flex;
         }
         .card-product-details p {
-            font-family: "Farsan", "cursive";
+            font-family: "Times New Roman", Times;
             font-style: normal;
             font-weight: bold;
             font-size: 25px;

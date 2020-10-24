@@ -15,8 +15,8 @@ body {
   --white: #ffffff;
   --midnight: #104f55;
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  --blogfont: "Arial", "Sans-serif";
-}
+  --blogfont: "Open Sans", sans-serif;
+} 
 
 /* ---------------- Global Classes ---------------*/
 
@@ -135,8 +135,11 @@ p {
 .content .date {
   color: #717171;
   font-size: 0.8em;
+  font-family: "Times New Roman", Times;
 }
-
+.content .topic {
+  font-family: "Open Sans", sans-serif;
+}
 .content span {
   color: var(--Grey-dark-1) !important;
 }
