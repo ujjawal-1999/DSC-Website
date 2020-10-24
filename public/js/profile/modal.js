@@ -75,9 +75,14 @@ function editProfileModalvalidate() {
   return true;
 }
 
+var uploadImageBtn = document.getElementById("uploadphoto")
+if(uploadImageBtn.style["opacity"] == 0){
+  uploadImageBtn.style["cursor"] = "default"
+}
 function didyouupload() {
   var uploadphotobtn = document.getElementById("uploadphoto");
   uploadphotobtn.style.opacity = "1";
+  uploadImageBtn.style["cursor"] = "pointer"
   document.getElementById("#file-name").textContent = this.files[0].name;
 }
 
