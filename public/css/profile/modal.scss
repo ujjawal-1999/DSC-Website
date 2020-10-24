@@ -166,6 +166,7 @@
 .addAchievementModal,
 .addSkillsModal {
   label {
+    font-family: "Open Sans", sans-serif;
     width: 25%;
     font-size: 0.8rem;
     color: black;
@@ -184,7 +185,8 @@
     letter-spacing: 0.01em;
     font-style: normal;
     font-weight: 300;
-    font-family: sans-serif;
+    font-family: "Times New Roman", Times;
+
     width: 100%;
     border-radius: 2px;
     option {
