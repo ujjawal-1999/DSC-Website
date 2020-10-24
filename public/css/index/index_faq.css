@@ -95,6 +95,8 @@
  border-radius: 13px;
 padding-top: 10px;
 z-index: -1;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+ "Helvetica Neue", sans-serif;
 }
 
 .faq-section .lower .sub {
@@ -155,6 +157,7 @@ z-index: -1;
   font-size: 13px;
   margin-bottom: 0.1rem;
   text-align: center;
+  font-size: 15px;
 }
 
 @media screen and (max-height: 750px) {
