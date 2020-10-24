@@ -2,11 +2,14 @@
   display: flex;
   flex-direction: column;
   background-image: url(../../img/illustrations/faq.png);
+  z-index: 1;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: right bottom;
   min-height: 100vh;
   background-size: 20% auto;
+  margin: 20px;
+  overflow: visible;
   .upper {
     display: flex;
     flex-direction: column;
@@ -16,16 +19,18 @@
     height: 20%;
     h1 {
       color: var(--Grey-dark-1);
-      font-size: 4rem;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 3.5rem;
+      font-family: "Open Sans", sans-serif;
     }
 
     h3 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+      font-family: "Times New Roman", Times;
+      font-size: 20px;
       font-weight: lighter;
-      margin: 2rem 0;
+      margin: 20px 0;
+      color: rgb(52, 143, 91);
     }
+
     form {
       width: 100%;
       text-align: center;
@@ -51,6 +56,11 @@
     flex-wrap: wrap;
     align-items: center;
     height: 80%;
+    background-color: rgba(138, 138, 138, 0.2);
+    margin: 5px;
+    border-radius: 13px;
+    padding-top: 10px;
+    z-index: -1;
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
     .sub {
@@ -62,28 +72,40 @@
       background-color: var(--Grey-light-1);
       padding: 2rem;
       width: 20%;
+      border-radius: 10px;
       // overflow-y: scroll;
 
       h4 {
-        font-family: "Times New Roman", Times, serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: 100;
         font-family: 1rem;
         color: var(--greany);
-        margin-bottom: 1rem;
+        margin-bottom: 0px;
+        text-align: center;
       }
+      .fa {
+        color: aqua;
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        right: -90px;
+        top: 0;
+      }
+
       .more {
         opacity: 0.6;
       }
       p {
         cursor: pointer;
-        margin-top: 0.2rem;
-        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 4px;
+        font-family: "Times New Roman", Times;
+        -webkit-transition: all 0.3s;
         transition: all 0.3s;
         line-height: 1.2rem;
+        font-size: 13px;
+        margin-bottom: 0.1rem;
+        text-align: center;
         font-size: 15px;
-        // &:hover {
-        //   text-decoration: underline;
-        // }
       }
     }
   }
@@ -106,17 +128,19 @@
 
 @media screen and (max-width: 768px) {
   .faq-section .lower .sub {
-    width: 90%;
+    width: 100%;
   }
   .faq-section {
     background-image: none;
     height: auto;
+    width: 90%;
   }
   .faq-section .upper {
     height: 10rem;
   }
   .faq-section .upper h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    text-align: center;
   }
 
   .faq-section .upper input {
@@ -129,5 +153,19 @@
   }
   .faq-section .lower {
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 900px) {
+  .faq-section .upper h3 {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 900px) {
+  .faq-section .lower .sub i {
+    position: relative;
+    right: -70px !important;
+    top: 0;
+    align-items: center;
   }
 }

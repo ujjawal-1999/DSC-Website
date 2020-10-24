@@ -14,13 +14,16 @@ const userSchema = new Schema(
       lowercase: true,
       required: true,
       match: [/([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/, "is invalid"],
+      trim : true
     },
     email: {
       type: String,
       unique: true,
+      trim: true
     },
     password: {
       type: String,
+      trim: true
     },
     branch: {
       type: String,
@@ -61,10 +64,22 @@ const userSchema = new Schema(
       type: String,
     },
     socialLinks: {
-      linkedin: String,
-      github: String,
-      facebook: String,
-      twitter: String,
+      linkedin: {
+        type: String,
+        trim : true
+      },
+      github: {
+        type : String,
+        trim : true
+      },
+      facebook: {
+        type : String,
+        trim : true
+      },
+      twitter: {
+        type: String,
+        trim : true
+      }
     },
     achievements: [
       {
