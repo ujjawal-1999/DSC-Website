@@ -36,7 +36,7 @@
 @media screen and (max-width: 1020px) {
   .main {
     .about {
-      padding: 4rem;
+      // padding: 4rem;
       flex-direction: column;
       // height: 80vh;
 
@@ -47,7 +47,7 @@
       }
 
       .content {
-        padding-bottom: 3rem;
+        padding-bottom: 0rem;
         .heading {
           &__primary {
             padding: 0 3rem 0 3rem;
@@ -73,7 +73,7 @@
       .content {
         .heading {
           &__primary {
-            padding: 0 5rem 0 5rem;
+            padding: 0rem;
           }
           &__secondary {
             padding: 0 !important;
@@ -89,7 +89,7 @@
       .content {
         .heading {
           &__primary {
-            padding: 0 5rem 0 5rem;
+            padding: 0rem;
           }
           &__secondary {
             line-height: 1.4rem;

@@ -62,7 +62,18 @@
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
+    transition: ease 0.5s;
+    transform: scale(1);
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      background-color: var(--Grey-dark-1);
+      color: var(--primary-light);
+      border: 1px solid;
+      border-radius: 2px;
+    }
   }
+
   .styled-input {
     float: left;
     width: 293px;
@@ -81,7 +92,7 @@
   }
 
   .styled-input label {
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: var(--Grey-light-4);
     padding: 0.5rem 1rem;
     position: absolute;
@@ -195,5 +206,11 @@
   input[type="checkbox"]:checked + label {
     color: var(--color-primary);
     font-style: normal;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact_us .heading__primary {
+    text-align: center;
+    font-size: 2rem;
   }
 }

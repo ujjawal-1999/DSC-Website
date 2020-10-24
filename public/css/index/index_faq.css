@@ -45,14 +45,9 @@
   font-size: 20px;
   font-weight: lighter;
   margin: 20px 0;
-  color: rgb(52, 143, 91);
+  color: #348f5b;
 }
-@media (max-width: 900px) {
-  .faq-section .upper h3 {
-    padding: 0;
-    margin: 0;
-  }
-}
+
 .faq-section .upper form {
   width: 100%;
   text-align: center;
@@ -88,15 +83,12 @@
       -ms-flex-align: center;
           align-items: center;
   height: 80%;
-  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
- "Helvetica Neue", sans-serif;
- background-color: rgba(138, 138, 138, 0.2);
- margin: 5px;
- border-radius: 13px;
-padding-top: 10px;
-z-index: -1;
-  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
- "Helvetica Neue", sans-serif;
+  background-color: rgba(138, 138, 138, 0.2);
+  margin: 5px;
+  border-radius: 13px;
+  padding-top: 10px;
+  z-index: -1;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .faq-section .lower .sub {
@@ -126,21 +118,14 @@ z-index: -1;
   margin-bottom: 0px;
   text-align: center;
 }
+
 .faq-section .lower .sub .fa {
   color: aqua;
   width: 2rem;
   height: 2rem;
   position: relative;
   right: -90px;
-  top:0;
-}
-@media (max-width:900px) {
-  .faq-section .lower .sub i {
-  position: relative;
-  right: -70px !important;
-  top:0;
-  align-items: center;
-}
+  top: 0;
 }
 
 .faq-section .lower .sub .more {
@@ -183,7 +168,7 @@ z-index: -1;
   .faq-section {
     background-image: none;
     height: auto;
-    width:90%;
+    width: 90%;
   }
   .faq-section .upper {
     height: 10rem;
@@ -203,6 +188,24 @@ z-index: -1;
   .faq-section .lower {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-section .upper h3 {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-section .lower .sub i {
+    position: relative;
+    right: -70px !important;
+    top: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=index_faq.css.map */

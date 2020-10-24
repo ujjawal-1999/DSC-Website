@@ -50,12 +50,7 @@
   text-align: center;
   font-size: 3rem;
 }
-@media screen and (max-width:768px){
-  .contact_us .heading__primary {
-    text-align: center;
-    font-size: 2rem;
-  }
-}
+
 .contact_us h4 {
   font-family: "Roboto", sans-serif, "arial";
   font-weight: 400;
@@ -84,15 +79,18 @@
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.custom-file-upload:hover {
-  transform: scale(1.2);
+.contact_us .custom-file-upload:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   cursor: pointer;
   background-color: var(--Grey-dark-1);
-  color: var(--primary-light) ;
+  color: var(--primary-light);
   border: 1px solid;
   border-radius: 2px;
 }
@@ -170,6 +168,7 @@
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   font-family: "Times New Roman", Times, serif;
+  margin-top: 2rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;
@@ -217,5 +216,12 @@
 .contact_us input[type="checkbox"]:checked + label {
   color: var(--color-primary);
   font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .contact_us .heading__primary {
+    text-align: center;
+    font-size: 2rem;
+  }
 }
 /*# sourceMappingURL=index_contactus.css.map */
