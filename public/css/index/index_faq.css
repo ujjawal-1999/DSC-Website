@@ -47,7 +47,7 @@
   margin: 20px 0;
   color: rgb(52, 143, 91);
 }
-@media (max-width: 900px;) {
+@media (max-width: 900px) {
   .faq-section .upper h3 {
     padding: 0;
     margin: 0;
@@ -188,7 +188,8 @@ z-index: -1;
     height: 10rem;
   }
   .faq-section .upper h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    text-align: center;
   }
   .faq-section .upper input {
     width: 90%;
