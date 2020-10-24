@@ -67,7 +67,7 @@
     </style>
   </head>
 
-  <body id="">
+  <body style='font-family: "Times New Roman", Times;'>
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
@@ -98,10 +98,10 @@
           </div>
           <div class="content" style="width: 85%">
             <h3 class="topic"><%= blog.title %></h3>
-            <p style="font-style: italic; margin-top: 0.2rem">
+            <p style="margin-top: 0.2rem">
               by <%= blog.author.name%>
             </p>
-            <p class="place" style="font-style: italic">
+            <p class="place" style="">
               <%- blog.author.createdAt.toString().substring(0,16)%>
             </p>
 
@@ -200,7 +200,7 @@
               <div class="content">
                 <div class="title">
                   <span class="numbering"> <%= i++ %> </span>
-                  <a href="/blog/view/<%= blog.slug%>"> <%= blog.title%> </a>
+                  <a style= "font-family: 'Open Sans', sans-serif;" href="/blog/view/<%= blog.slug%>"> <%= blog.title%> </a>
                 </div>
                 <br />
                 <span class="intro"> <%- blog.summary%></span><br />
