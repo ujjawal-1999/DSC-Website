@@ -397,6 +397,7 @@ form input[type="submit"] {
   display: block;
   cursor: pointer;
   padding: 3px;
+
 }
 
 .members {
@@ -411,6 +412,12 @@ form input[type="submit"] {
   text-align: center;
   margin: 0;
   padding: 0;
+}
+h2,h3,.members, .juniors, .leads,.contact{
+  font-family: 'Open Sans', sans-serif;
+}
+p{
+  font-family: "Times New Roman", Times;
 }
 
 .more-details-heading + p {

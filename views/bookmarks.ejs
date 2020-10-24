@@ -39,7 +39,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body id="">
+<body style='font-family: "Times New Roman", Times;'>
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
         <!-- ------------x---------------  Navigation --------------------------x------------------- -->
@@ -50,61 +50,57 @@
                 <%=user.name%> here are your bookmarks
             </h1> -->
             <% if(bookmarks.length==0){%>
-
                 <div id="card-container" style="padding: 2rem">
                     <p style="width: 100%">
                         Your bookmarks will be shown here.<br /> Curently no bookmarks found. Bookmark some blogs to display here.
                     </p>
                 </div>
-                <% }%>
-                    <% bookmarks.forEach(function(blog){%>
-                        <div id="card-container">
-                            <div class="card-product-image">
-                                <div class="card-prod-img">
-                                    <img src="<%= blog.cover %>" alt="blog cover" />
+            <% }%>
+
+            <% bookmarks.forEach(function(blog){%>
+                <div id="card-container">
+                    <div class="card-product-image">
+                        <div class="card-prod-img">
+                            <img src="<%= blog.cover %>" alt="blog cover" />
+                        </div>
+                    </div>
+                    <div class="card-product-details">
+                        <div style="display: flex; flex-direction: column;">
+                            <p style="font-weight: 700;font-family: 'Open Sans', sans-serif; font-size: 2rem; margin-bottom: 1.4rem;">
+                                <%=blog.title%>
+                            </p>
+                            <%- blog.summary%>
+                             <a href="/blog/view/<%= blog.slug %>" style="float: right; margin-right: 20px">
+                             Read More...</a>
+            
+                            <div class="card-person" style="margin-top:1.3rem;">
+                                <div class="card-author">
+                                    <% if(blog.author.profileImageLocation){ %>
+                                        <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
+                                        <% }else{ %>
+                                            <img src="/img/profile/person.png" alt="default avatar" />
+                                            <% } %>
                                 </div>
                             </div>
-                            <div class="card-product-details">
-                                <div style="display: flex; flex-direction: column;">
-                                    <p style="font-weight: 700; font-size: 2rem; margin-bottom: 1.4rem;">
-                                        <%=blog.title%>
-                                    </p>
+                            <p>
+                                <%=blog.author.name%>
+                            </p>
+                        </div>
+                    </div>
+                    <button
+                      style="
+                        width: 3rem;
+                        border: none;
+                        background-color: none;
+                        border-radius: 50%;
+                        margin: 1rem;">
 
-                                    <%- blog.summary%>
-
-                                        <a href="/blog/view/<%= blog.slug %>" style="float: right; margin-right: 20px">Read More...</a
-              >
-            
-                                        <div class="card-person" style="margin-top:1.3rem;">
-                                            <div class="card-author">
-                                                <% if(blog.author.profileImageLocation){ %>
-                                                    <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
-                                                    <% }else{ %>
-                                                        <img src="/img/profile/person.png" alt="default avatar" />
-                                                        <% } %>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            <%=blog.author.name%>
-                                        </p>
-                                </div>
-
-
-        </div>
-        <button
-          style="
-            width: 3rem;
-            border: none;
-            background-color: none;
-            border-radius: 50%;
-            margin: 1rem;
-          "
-        >
-          <a class="delete-prj" href="/blog/delete/bookmark/<%= blog._id %>"
-            ><img src="/img/profile/trash.svg" alt="delete button"/></a>
-                                        </button>
-                                </div>
-                                <%})%>
+                        <a class="delete-prj" href="/blog/delete/bookmark/<%= blog._id %>">
+                            <img src="/img/profile/trash.svg" alt="delete button"/>
+                        </a>
+                    </button>
+                </div>
+            <%})%>
         </main>
         <!---------------x------------- Main Site Section ---------------x-------------->
 

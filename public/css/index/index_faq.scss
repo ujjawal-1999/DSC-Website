@@ -20,11 +20,11 @@
     h1 {
       color: var(--Grey-dark-1);
       font-size: 3.5rem;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Open Sans", sans-serif;
     }
 
     h3 {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Times New Roman", Times;
       font-size: 20px;
       font-weight: lighter;
       margin: 20px 0;
@@ -76,7 +76,7 @@
       // overflow-y: scroll;
 
       h4 {
-        font-family: "Times New Roman", Times, serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: 100;
         font-family: 1rem;
         color: var(--greany);
@@ -98,7 +98,7 @@
       p {
         cursor: pointer;
         margin-top: 4px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Times New Roman", Times;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         line-height: 1.2rem;
