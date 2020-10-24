@@ -176,7 +176,7 @@ body {
             padding: 0 4rem;
             display: flex;
             flex-direction: column;
-            height: 15rem;
+            height: 20rem;
             justify-content: space-evenly;
             p {
               font-family: "Times New Roman", Times;
@@ -195,6 +195,7 @@ body {
               img {
                 width: 1rem;
               }
+
               font-size: 3rem;
               font-family: "Open Sans", sans-serif;
             }
@@ -204,11 +205,12 @@ body {
             }
           }
           .faint {
-            top: 40%;
-            right: 30rem;
-            position: absolute;
-            overflow: hidden;
-            font-size: 5rem;
+            // top: 40%;
+            // right: 30rem;
+            // position: absolute;
+            // overflow: hidden;
+
+            font-size: 5em;
             font-family: "Century Gothic";
             font-weight: 900;
             opacity: 0.1;
@@ -280,6 +282,9 @@ body {
   // overflow: hidden;
   width: 10rem;
   height: 10rem;
+  overflow: hidden;
+  object-fit: contain;
+  border-radius: 10px;
   img {
     width: 10rem;
   }
@@ -512,30 +517,32 @@ body {
 
 @media (max-width: 1680px) {
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
-    right: 20rem;
+    font-size: 4.5em;
   }
 }
 
 @media (max-width: 1500px) {
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
-    font-size: 5rem;
-    right: 20rem;
-    top: 25rem;
+    font-size: 4.5em;
+    letter-spacing: 0.6rem;
   }
 }
 @media (max-width: 1300px) {
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
-    font-size: 4rem;
-    right: 16rem;
-    top: 27rem;
+    font-size: 4em;
+    letter-spacing: 0.4rem;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .dashboard__main .main__profileinfo .pictureandbasic .faint {
-    right: 10rem;
+    font-size: 3.5em;
   }
 }
-// Responsive
+@media (max-width: 1100px) {
+  .dashboard__main .main__profileinfo .pictureandbasic .faint {
+    font-size: 3em;
+  }
+}
 @media (max-width: 600px) {
   .cards .card .content .images .image-container {
     width: 100%;
