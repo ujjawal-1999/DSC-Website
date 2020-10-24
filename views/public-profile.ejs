@@ -60,10 +60,10 @@
                 <%= searchedUser.branch %> <% }else{%><%
                 }%>
               </p>
-              <p><% if(searchedUser.bio!=null){ %> <%= searchedUser.bio%> <% }else{%> <% }%></p>
+              <p><% if(searchedUser.bio!=null){ %> <%= searchedUser.bio %> <% }else{%> <% }%></p>
               <div class="branchandyear">
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["github"].length !== 0){ %>
+                  <% if(searchedUser.socialLinks["github"] !== null || searchedUser.socialLinks["github"].length !== 0){ %>
                   <a href='<%=searchedUser.socialLinks["github"]%>' target="_blank">
                     <img
                       class="s"
@@ -74,7 +74,7 @@
                   <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["facebook"].length !== 0){ %>
+                  <% if(searchedUser.socialLinks["facebook"] !== null || searchedUser.socialLinks["facebook"].length !== 0){ %>
                   <a href='<%=searchedUser.socialLinks["facebook"]%>' target="_blank">
                     <img
                       class="s"
@@ -85,7 +85,7 @@
                   <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["linkedin"].length !== 0){ %>
+                  <% if(searchedUser.socialLinks["linkedin"] !== null || searchedUser.socialLinks["linkedin"].length !== 0){ %>
                   <a href='<%=searchedUser.socialLinks["linkedin"]%>' target="_blank">
                     <img
                       class="s"

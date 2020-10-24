@@ -759,7 +759,7 @@
                 </p>
                 <div class="branchandyear">
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["github"].length !== 0){ %>
+                    <% if(user.socialLinks["github"].length !== 0 || user.socialLinks["github"] !== undefined){ %>
                     <a href='<%=user.socialLinks["github"]%>' target="_blank">
                       <img
                         class="s"
@@ -770,7 +770,7 @@
                     <% } %>
                   </div>
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["facebook"].length !== 0){ %>
+                    <% if(user.socialLinks["facebook"].length !== 0 || user.socialLinks["facebook] !== undefined){ %>
                     <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
                       <img
                         class="s"
@@ -781,7 +781,7 @@
                     <% } %>
                   </div>
                   <div class="collegeinfo">
-                    <% if(user.socialLinks["linkedin"].length !== 0){ %>
+                    <% if(user.socialLinks["linkedin"].length !== 0 || user.socialLinks["linkedin"] !== undefined){ %>
                     <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
                       <img
                         class="s"

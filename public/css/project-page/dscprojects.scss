@@ -356,7 +356,8 @@ form {
 }
 .members {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items : center; 
 }
 .more-details-heading {
   text-align: center;
