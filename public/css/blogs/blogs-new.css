@@ -16,7 +16,7 @@ body {
   --midnight: #104f55;
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   --blogfont: "Open Sans", sans-serif;
-} 
+}
 
 /* ---------------- Global Classes ---------------*/
 
@@ -240,7 +240,9 @@ p {
     margin-left: 1em;
   }
 }
-
+.cards .card .content .images .image-container img {
+  width: 100% !important;
+}
 @media (max-width: 800px) {
   .card-container {
     width: 100%;
