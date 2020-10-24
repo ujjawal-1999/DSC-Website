@@ -62,7 +62,9 @@ ul::-webkit-scrollbar-thumb {
   position: absolute;
   /* justify-self: start; */
   transform: translateX(10px);
+
   top: 1rem;
+
   left: 4rem;
   width: 50px;
   height: 50px;
@@ -538,7 +540,9 @@ input {
 
 .box {
   position: absolute;
+
   top: 1.5rem;
+
   right: 4rem;
 }
 @media screen and (max-width: 715px) {

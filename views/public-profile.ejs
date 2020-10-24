@@ -63,34 +63,25 @@
               <p><% if(searchedUser.bio!=null){ %> <%= searchedUser.bio%> <% }else{%> <% }%></p>
               <div class="branchandyear">
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["facebook"]!=null){ %>
+                  <% if(searchedUser.socialLinks["facebook"]!== undefined || searchedUser.socialLinks["facebook"]!== ""){ %>
                   <a href='<%= searchedUser.socialLinks["facebook"]%>' target="__blank">
                     <img class="s" src="/img/logo/fb.png" alt="facebook logo" />
                   </a>
-                  <% }else{%>
-                  <a href="#" target="__blank">
-                    <img class="s" src="/img/logo/fb.png" alt="facebook logo" /> </a
-                  ><% }%>
+                  <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["linkedin"]!=null){ %>
+                  <% if(searchedUser.socialLinks["linkedin"]!== undefined || searchedUser.socialLinks["linkedin"]!== ""){ %>
                   <a href='<%= searchedUser.socialLinks["linkedin"]%>' target="__blank">
                     <img class="s" src="/img/logo/link.png" alt="linkedin logo" />
                   </a>
-                  <% }else{%>
-                  <a href="#" target="__blank">
-                    <img class="s" src="/img/logo/link.png" alt="linkedin logo" /> </a
-                  ><% }%>
+                  <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["twitter"]!=null){ %>
+                  <% if(searchedUser.socialLinks["twitter"]!== undefined || searchedUser.socialLinks["twitter"]!== ""){ %>
                   <a href='<%= searchedUser.socialLinks["twitter"]%>' target="__blank">
                     <img class="s" src="/img/logo/twitter.png" alt="twitter logo" />
                   </a>
-                  <% }else{%>
-                  <a href="#" target="__blank">
-                    <img class="s" src="/img/logo/twitter.png" alt="twitter logo" /> </a
-                  ><% }%>
+                  <% } %>
                 </div>
               </div>
             </div>
