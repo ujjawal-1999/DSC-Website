@@ -129,6 +129,9 @@
 .footimg {
   width: 30%;
 }
+.footer-image{
+  width: 30%;
+}
 @media screen and (max-width: 700px) {
   .contentnav {
     margin: 1rem;
@@ -141,6 +144,9 @@
   }
   .fadedText {
     font-size: 0.6rem!important;
+  }
+  .footer-image{
+    width: 55%;
   }
 }
 

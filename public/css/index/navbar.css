@@ -30,6 +30,12 @@ ul::-webkit-scrollbar-thumb {
   height: 80px;
   z-index: 100;
 }
+@media screen and (min-width: 789px){
+  .page-wrapper{
+    position: sticky;
+    top:0px;
+  }
+}
 
 .nav-wrapper {
   width: 100%;
@@ -269,7 +275,7 @@ input {
     width: 100%;
     height: calc(100vh - 70px);
     text-align: center;
-    overflow: scroll;
+    overflow: hidden;
     z-index: 100;
     transform: translateX(-150%);
   }
