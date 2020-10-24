@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: hidden;
 
   .cu {
     padding: 3rem;
@@ -93,7 +94,7 @@
 
   .styled-input label {
     font-size: 1rem;
-    color: var(--Grey-light-4);
+    // color: var(--Grey-light-4);
     padding: 0.5rem 1rem;
     position: absolute;
     left: 0;
@@ -118,6 +119,7 @@
   }
   .full {
     width: 100%;
+    border: 1px solid lightgray;
   }
 
   input:focus,

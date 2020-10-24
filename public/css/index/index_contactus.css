@@ -14,6 +14,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-x: hidden;
+  overflow-y: hidden;
   /* ///// inputs /////*/
 }
 
@@ -114,7 +115,6 @@
 
 .contact_us .styled-input label {
   font-size: 1rem;
-  color: var(--Grey-light-4);
   padding: 0.5rem 1rem;
   position: absolute;
   left: 0;
@@ -140,6 +140,7 @@
 
 .contact_us .full {
   width: 100%;
+  border: 1px solid lightgray;
 }
 
 .contact_us input:focus,
