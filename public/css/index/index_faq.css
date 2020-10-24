@@ -7,11 +7,14 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-image: url(../../img/illustrations/faq.png);
+  z-index: 1;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: right bottom;
   min-height: 100vh;
   background-size: 20% auto;
+  margin: 32px;
+  overflow: visible;
 }
 
 .faq-section .upper {
@@ -33,17 +36,23 @@
 
 .faq-section .upper h1 {
   color: var(--Grey-dark-1);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .faq-section .upper h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: lighter;
-  margin: 2rem 0;
+  margin: 20px 0;
+  color: rgb(52, 143, 91);
 }
-
+@media (max-width: 900px;) {
+  .faq-section .upper h3 {
+    padding: 0;
+    margin: 0;
+  }
+}
 .faq-section .upper form {
   width: 100%;
   text-align: center;
@@ -79,7 +88,13 @@
       -ms-flex-align: center;
           align-items: center;
   height: 80%;
-  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+ "Helvetica Neue", sans-serif;
+ background-color: rgba(138, 138, 138, 0.2);
+ margin: 5px;
+ border-radius: 13px;
+padding-top: 10px;
+z-index: -1;
 }
 
 .faq-section .lower .sub {
@@ -98,6 +113,7 @@
   background-color: var(--Grey-light-1);
   padding: 2rem;
   width: 20%;
+  border-radius: 10px;
 }
 
 .faq-section .lower .sub h4 {
@@ -105,7 +121,24 @@
   font-weight: 100;
   font-family: 1rem;
   color: var(--greany);
-  margin-bottom: 1rem;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.faq-section .lower .sub .fa {
+  color: aqua;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  right: -90px;
+  top:0;
+}
+@media (max-width:900px) {
+  .faq-section .lower .sub i {
+  position: relative;
+  right: -70px !important;
+  top:0;
+  align-items: center;
+}
 }
 
 .faq-section .lower .sub .more {
@@ -114,12 +147,14 @@
 
 .faq-section .lower .sub p {
   cursor: pointer;
-  margin-top: 0.2rem;
+  margin-top: 4px;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   line-height: 1.2rem;
-  font-size: 15px;
+  font-size: 13px;
+  margin-bottom: 0.1rem;
+  text-align: center;
 }
 
 @media screen and (max-height: 750px) {
