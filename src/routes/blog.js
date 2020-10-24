@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
     }
     if (user) user = await User.findById(user.userId);
     const page = parseInt(req.query.page) || 1;
-    const size = parseInt(req.query.size) || 7;
+    const size = parseInt(req.query.size) || 5;
     if (page < 0 || page === 0) {
       console.log("Page no can not be less tha or equal to 0");
       return;

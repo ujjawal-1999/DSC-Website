@@ -63,23 +63,35 @@
               <p><% if(searchedUser.bio!=null){ %> <%= searchedUser.bio%> <% }else{%> <% }%></p>
               <div class="branchandyear">
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["facebook"]!== undefined || searchedUser.socialLinks["facebook"]!== ""){ %>
-                  <a href='<%= searchedUser.socialLinks["facebook"]%>' target="__blank">
-                    <img class="s" src="/img/logo/fb.png" alt="facebook logo" />
+                  <% if(searchedUser.socialLinks["github"].length !== 0){ %>
+                  <a href='<%=searchedUser.socialLinks["github"]%>' target="_blank">
+                    <img
+                      class="s"
+                      src="/img/logo/githubPng.png"
+                      alt="github logo"
+                    />
                   </a>
                   <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["linkedin"]!== undefined || searchedUser.socialLinks["linkedin"]!== ""){ %>
-                  <a href='<%= searchedUser.socialLinks["linkedin"]%>' target="__blank">
-                    <img class="s" src="/img/logo/link.png" alt="linkedin logo" />
+                  <% if(searchedUser.socialLinks["facebook"].length !== 0){ %>
+                  <a href='<%=searchedUser.socialLinks["facebook"]%>' target="_blank">
+                    <img
+                      class="s"
+                      src="/img/logo/fb.png"
+                      alt="facebook logo"
+                    />
                   </a>
                   <% } %>
                 </div>
                 <div class="collegeinfo">
-                  <% if(searchedUser.socialLinks["twitter"]!== undefined || searchedUser.socialLinks["twitter"]!== ""){ %>
-                  <a href='<%= searchedUser.socialLinks["twitter"]%>' target="__blank">
-                    <img class="s" src="/img/logo/twitter.png" alt="twitter logo" />
+                  <% if(searchedUser.socialLinks["linkedin"].length !== 0){ %>
+                  <a href='<%=searchedUser.socialLinks["linkedin"]%>' target="_blank">
+                    <img
+                      class="s"
+                      src="/img/logo/link.png"
+                      alt="linkedin logo"
+                    />
                   </a>
                   <% } %>
                 </div>
