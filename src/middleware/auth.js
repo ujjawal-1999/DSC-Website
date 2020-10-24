@@ -6,7 +6,10 @@ module.exports = async(req, res, next) => {
 
     // console.log('authorization: ', req.cookies);
     const token = req.cookies.authorization;
-    // console.log(token);
+    // console.log(token);\
+    if(!token){
+      throw new Error("User is not logged in")
+    }
     jwt.verify(token, process.env.JWT_SECRET, async(err, user) => {
       if (err){
         res.redirect("/");
@@ -22,6 +25,6 @@ module.exports = async(req, res, next) => {
 
   } catch (error) {
     // res.status(401).json({ message: "Authentication failed!" });
-    res.redirect("/login");
+    res.redirect("/user/register?type=login");
   }
 };
