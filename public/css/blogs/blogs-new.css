@@ -1,5 +1,5 @@
 @import url("../public/css/blogs/fonts.css");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 html,
 body {
   margin: 0%;
@@ -102,7 +102,7 @@ p {
 }
 
 #heading {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.6em;
   text-align: center;
   color: #4e4e4e;
@@ -176,7 +176,7 @@ p {
   background-color: var(--Grey-light-1) !important;
   overflow: auto;
 }
-@media (max-width: 800px;) {
+@media (max-width: 800px) {
   .card-details {
     font-size: 0.7rem !important;
   }
@@ -505,7 +505,7 @@ ul.blog-search-results li {
     grid-template-areas: "search" "cards" "popular";
   }
   .popular {
-    width: 100%;
+    width: 100vw;
   }
   #popular-post {
     width: 90%;
