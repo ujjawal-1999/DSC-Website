@@ -59,7 +59,7 @@
 .video__instruction {
   font-size: 0.8rem;
   color: var(--Grey-light-4);
-  margin-top: -5rem;
+  margin-top: -2rem;
   font-weight: 200;
 }
 
@@ -174,7 +174,7 @@
   }
   .video__instruction {
     font-size: 0.8rem;
-    margin-top: -5rem;
+    margin-top: -2rem;
   }
 }
 /*# sourceMappingURL=index_videos.css.map */

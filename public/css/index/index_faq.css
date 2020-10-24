@@ -13,7 +13,7 @@
   background-position: right bottom;
   min-height: 100vh;
   background-size: 20% auto;
-  margin: 32px;
+  margin: 20px;
   overflow: visible;
 }
 
@@ -178,11 +178,12 @@ z-index: -1;
 
 @media screen and (max-width: 768px) {
   .faq-section .lower .sub {
-    width: 90%;
+    width: 100%;
   }
   .faq-section {
     background-image: none;
     height: auto;
+    width:90%;
   }
   .faq-section .upper {
     height: 10rem;

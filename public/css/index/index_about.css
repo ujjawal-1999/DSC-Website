@@ -65,7 +65,8 @@
     height: auto;
   }
   .main .about .content .heading__primary {
-    padding: 0 5rem 0 5rem;
+    /* padding: 0 5rem 0 5rem; */
+    padding : 0rem;
   }
   .main .about .content .heading__secondary {
     padding: 0 !important;
@@ -74,7 +75,8 @@
 
 @media screen and (max-width: 350px) {
   .main .about .content .heading__primary {
-    padding: 0 5rem 0 5rem;
+    /* padding: 0 5rem 0 5rem; */
+    padding: 0rem;
   }
   .main .about .content .heading__secondary {
     line-height: 1.4rem;
