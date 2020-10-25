@@ -51,7 +51,7 @@
 .video__secondary {
   margin-top: -2rem;
   font-weight: 200;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 4rem;
   font-weight: 600;
 }
@@ -59,7 +59,7 @@
 .video__instruction {
   font-size: 0.8rem;
   color: var(--Grey-light-4);
-  margin-top: -5rem;
+  margin-top: -2rem;
   font-weight: 200;
 }
 
@@ -160,8 +160,8 @@
     height: 70vh;
   }
   .video iframe {
-    width: 6rem;
-    height: 10rem;
+    width: 20rem;
+    height: 15rem;
   }
   .video__contain {
     width: 100%;
@@ -174,7 +174,7 @@
   }
   .video__instruction {
     font-size: 0.8rem;
-    margin-top: -5rem;
+    margin-top: -2rem;
   }
 }
 /*# sourceMappingURL=index_videos.css.map */

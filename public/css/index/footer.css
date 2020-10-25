@@ -46,7 +46,7 @@
 }
 
 .nav_heading {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem !important;
   padding: 0.5rem 0;
   margin-bottom: 2rem;
@@ -56,7 +56,7 @@
 }
 .x {
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times;  
   font-size: 1rem !important;
   padding: 0.5rem 0;
   margin-bottom: 1rem;
@@ -71,7 +71,7 @@
 
 .nav_column a:link,
 .nav_column a:visited {
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times;
   padding: 0.5rem 0;
   text-decoration: none !important;
   font-size: 1rem !important;
@@ -146,7 +146,7 @@
     font-size: 0.6rem!important;
   }
   .footer-image{
-    width: 55%;
+    width: 60%;
   }
 }
 

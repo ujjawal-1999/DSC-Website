@@ -22,13 +22,13 @@
 
 .main .about .content .heading__primary {
   font-size: 2rem;
-  font-family: sans-serif !important;
+  font-family: "Open Sans", sans-serif;
 }
 
 .main .about .content .heading__secondary {
   margin-top: 2rem;
   font-weight: 200;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times;
   font-size: 1.2rem;
   line-height: 2rem;
   opacity: 0.9;
@@ -36,7 +36,6 @@
 
 @media screen and (max-width: 1020px) {
   .main .about {
-    padding: 4rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -46,7 +45,7 @@
     display: none;
   }
   .main .about .content {
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
   }
   .main .about .content .heading__primary {
     padding: 0 3rem 0 3rem;
@@ -65,7 +64,7 @@
     height: auto;
   }
   .main .about .content .heading__primary {
-    padding: 0 5rem 0 5rem;
+    padding: 0rem;
   }
   .main .about .content .heading__secondary {
     padding: 0 !important;
@@ -74,7 +73,7 @@
 
 @media screen and (max-width: 350px) {
   .main .about .content .heading__primary {
-    padding: 0 5rem 0 5rem;
+    padding: 0rem;
   }
   .main .about .content .heading__secondary {
     line-height: 1.4rem;

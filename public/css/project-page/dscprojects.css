@@ -338,7 +338,6 @@ form input[type="submit"] {
     height: 80vh;
     padding: 30px;
   }
-
   .cards .card {
     margin-right: auto;
   }
@@ -349,7 +348,6 @@ form input[type="submit"] {
   .cards .card-content .col.left {
     font-size: 0.8rem;
     line-height: 1.1rem;
-    text-align: center;
     padding: 1.3rem;
     width: 100%;
   }
@@ -392,25 +390,35 @@ form input[type="submit"] {
     width: 40%;
   }
 }
-.lead-link{
-  text-decoration:none;
-  color:white;
-  display:block;
-  cursor:pointer;
-  padding:3px;
-}
-.members{
-  display:flex;
-  justify-content: space-around;
-}
-.more-details-heading{
-  text-align: center;
-  margin:0;
-  padding:0;
-}
-.more-details-heading+p{
-  margin:0;
-  padding:0;
+
+.lead-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  cursor: pointer;
+  padding: 3px;
 }
 
+.members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.more-details-heading {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.more-details-heading + p {
+  margin: 0;
+  padding: 0;
+}
 /*# sourceMappingURL=dscprojects.css.map */

@@ -3,7 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Times New Roman", Times;
 }
 
 section {
@@ -237,7 +237,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: translateY(-2rem);
           transform: translateY(-2rem);
   font-family: "Times New Roman", Times, serif;
-  margin-top: 2rem;
+  margin-top: 0rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;

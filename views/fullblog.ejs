@@ -28,7 +28,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
+      href="/img/logo/dsc_logo.png" 
     />
 
     <!-- Font Awesome Icons -->
@@ -76,13 +76,13 @@
         </div>
         <div class="content" style="width: 90%">
           <h3 class="topic"><%= blog.title %></h3>
-          <p style="font-style: italic; margin-top: 0.5rem">
+          <p style="margin-top: 0.5rem">
             by <%= blog.author.name%>
           </p>
-          <p style="font-style: italic; margin-top: 0.5rem">
+          <p style="margin-top: 0.5rem">
             Category : <%= blog.category%>
           </p>
-          <p style="font-style: italic; margin: 0.7rem 0">
+          <p style="margin: 0.7rem 0">
             Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
           </p>
           <div class="images">

@@ -14,7 +14,7 @@ require("dotenv").config();
 
 //setting up configuration for flash
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 //Mongoose connection
 mongoose
   .connect(process.env.MONGODB_URL, {

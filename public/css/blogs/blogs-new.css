@@ -1,4 +1,5 @@
 @import url("../public/css/blogs/fonts.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 html,
 body {
   margin: 0%;
@@ -14,7 +15,7 @@ body {
   --white: #ffffff;
   --midnight: #104f55;
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  --blogfont: "Arial", "Sans-serif";
+  --blogfont: "Open Sans", sans-serif;
 }
 
 /* ---------------- Global Classes ---------------*/
@@ -97,12 +98,11 @@ p {
   width: 25vw;
   background-color: var(--primary-light) !important;
   padding: 2rem;
-  font-family: "Fira Sans", sans-serif;
   border-radius: 20px;
 }
 
 #heading {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.6em;
   text-align: center;
   color: #4e4e4e;
@@ -112,6 +112,7 @@ p {
 
 .popular-posts .content {
   justify-content: flex-end;
+  font-family: "Times New Roman", Times;
 }
 
 .popular-posts {
@@ -127,13 +128,18 @@ p {
 
 .content .intro {
   color: #717171;
+  font-family: "Times New Roman", Times;
+  font-size: 1.1em;
 }
 
 .content .date {
   color: #717171;
   font-size: 0.8em;
+  font-family: "Times New Roman", Times;
 }
-
+.content .topic {
+  font-family: "Open Sans", sans-serif;
+}
 .content span {
   color: var(--Grey-dark-1) !important;
 }
@@ -173,7 +179,7 @@ p {
   background-color: var(--Grey-light-1) !important;
   overflow: auto;
 }
-@media (max-width: 800px;) {
+@media (max-width: 800px) {
   .card-details {
     font-size: 0.7rem !important;
   }
@@ -234,7 +240,9 @@ p {
     margin-left: 1em;
   }
 }
-
+.cards .card .content .images .image-container img {
+  width: 100% !important;
+}
 @media (max-width: 800px) {
   .card-container {
     width: 100%;
@@ -295,6 +303,7 @@ p {
 
 .card-text {
   grid-area: text;
+  font-family: "Times New Roman", Times;
 }
 
 .card-author {
@@ -382,6 +391,7 @@ p {
   justify-self: center;
   padding: 1rem;
   margin-top: 3rem;
+  font-family: "Times New Roman", Times;
 }
 
 #popular-post .intro {
@@ -500,7 +510,7 @@ ul.blog-search-results li {
     grid-template-areas: "search" "cards" "popular";
   }
   .popular {
-    width: 100%;
+    width: 100vw;
   }
   #popular-post {
     width: 90%;

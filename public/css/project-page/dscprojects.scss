@@ -306,7 +306,7 @@ form {
   .cards {
     justify-content: centers;
     width: 95vw;
-    height: 70vh;
+    height: 80vh;
     padding: 30px;
   }
   .cards .card {
@@ -320,7 +320,7 @@ form {
   .cards .card-content .col.left {
     font-size: 0.8rem;
     line-height: 1.1rem;
-    text-align: center;
+    // text-align: center;
     padding: 1.3rem;
     width: 100%;
   }
@@ -346,4 +346,25 @@ form {
   .cards .card-content .col img {
     width: 40%;
   }
+}
+.lead-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  cursor: pointer;
+  padding: 3px;
+}
+.members {
+  display: flex;
+  justify-content: space-evenly;
+  align-items : center; 
+}
+.more-details-heading {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.more-details-heading + p {
+  margin: 0;
+  padding: 0;
 }

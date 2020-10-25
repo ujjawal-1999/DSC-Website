@@ -29,10 +29,10 @@ img {
 .btn {
   cursor: pointer;
   border: 0;
+  padding: 1rem;
   background: var(--clr-light);
   border-radius: var(--br);
   color: var(--clr-dark);
-  /* padding: 1em 1.5em; */
 }
 
 .icon::before {

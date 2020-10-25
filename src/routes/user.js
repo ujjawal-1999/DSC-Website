@@ -193,7 +193,8 @@ router.post("/register", async (req, res, next) => {
   const errors = validationResult(req);
   // console.log(errors);
   if (!errors.isEmpty()) {
-    return res.status(422).jsonp(errors.array());
+    res.status(422).jsonp(errors.array());
+    res.redirect("/");
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const userExists = await User.find({ email: req.body.email });
@@ -319,7 +320,10 @@ router.post("/forgotpassword", function (req, res) {
       );
       res.redirect("/");
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      res.render("404-page");
+    });
 });
 
 // Get Route for Profile
@@ -334,10 +338,9 @@ router.get("/profile", authorization, async (req, res) => {
       found: finduser,
     });
   } catch (error) {
-    console.error("Error from getProfile route", error);
-    req.flash("error", "Error in getting the profile");
-    res.redirect("/");
-    // res.status(500).send(error);
+    console.error("Error getting the profile", error);
+    // req.flash("error", "Error in getting the profile");
+    // res.redirect("/");
   }
 });
 
@@ -370,7 +373,6 @@ router.get("/public-profile/:handle", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.render("404-page");
-    // res.status(500).send(error);
   }
 });
 
@@ -393,7 +395,8 @@ router.post("/skill", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/user/profile");
   }
 });
 
@@ -407,7 +410,7 @@ router.get("/delete/skill/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 
@@ -432,7 +435,8 @@ router.post("/experience", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/user/profile");
   }
 });
 
@@ -446,7 +450,7 @@ router.get("/delete/experience/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 
@@ -486,7 +490,6 @@ router.post("/profile", authorization, (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
     res.redirect("/");
   }
 });
@@ -514,7 +517,8 @@ router.post("/project/personal", authorization, async (req, res) => {
     res.redirect("/user/profile");
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/user/profile");
   }
 });
 
@@ -528,7 +532,7 @@ router.get("/delete/project/personal/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 
@@ -553,7 +557,8 @@ router.post("/achievement", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    req.flash("error","Something went wrong. Try again");
+    res.redirect("/user/profile");
   }
 });
 
@@ -567,7 +572,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 
@@ -590,7 +595,7 @@ router.get("/profile", authorization, async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    res.render("/");
   }
 });
 router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
@@ -602,7 +607,7 @@ router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    res.status(500).send(error);
+    res.render("404-page");
   }
 });
 //Establish Storage for file upload
