@@ -88,7 +88,7 @@
   border-radius: 13px;
   padding-top: 10px;
   z-index: -1;
-  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .faq-section .lower .sub {
@@ -124,7 +124,10 @@
   width: 2rem;
   height: 2rem;
   position: relative;
-  right: -90px;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   top: 0;
 }
 
@@ -201,7 +204,9 @@
 @media (max-width: 900px) {
   .faq-section .lower .sub i {
     position: relative;
-    right: -70px !important;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     top: 0;
     -webkit-box-align: center;
         -ms-flex-align: center;

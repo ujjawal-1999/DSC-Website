@@ -4,13 +4,13 @@ const leftBtn = document.querySelector("#left-button");
 
 rightBtn.addEventListener("click", function (event) {
   const conent = document.querySelector("#row");
-  conent.scrollLeft += 325;
+  conent.scrollLeft += 320;
   event.preventDefault();
 });
 
 leftBtn.addEventListener("click", function (event) {
   const conent = document.querySelector("#row");
-  conent.scrollLeft -= 325;
+  conent.scrollLeft -= 320;
   event.preventDefault();
 });
 

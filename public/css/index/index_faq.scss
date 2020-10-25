@@ -88,7 +88,9 @@
         width: 2rem;
         height: 2rem;
         position: relative;
-        right: -90px;
+        // right: -90px;
+        text-align: center;
+        align-self: center;
         top: 0;
       }
 
@@ -164,7 +166,8 @@
 @media (max-width: 900px) {
   .faq-section .lower .sub i {
     position: relative;
-    right: -70px !important;
+    // right: -70px !important;
+    align-self: center;
     top: 0;
     align-items: center;
   }
