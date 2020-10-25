@@ -44,7 +44,7 @@ router.get("/verify/:id", async (req, res) => {
       );
       // const diffhrs = Math.ceil(timeDiff / (1000 * 60));
       // console.log(diffhrs);
-      if (diffhrs <= 21600000) {
+      if (timeDiff <= 21600000) {
         const updatedUser = await User.findByIdAndUpdate(user._id, {
           active: true,
         });
@@ -193,11 +193,12 @@ router.post("/register", async (req, res, next) => {
   const errors = validationResult(req);
   // console.log(errors);
   if (!errors.isEmpty()) {
-    res.status(422).jsonp(errors.array());
+    // res.status(422).jsonp(errors.array());
+    req.flash("Something went wrong. Try again");
     res.redirect("/");
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const userExists = await User.find({ email: req.body.email });
+    const userExists = await User.findOne({ email: req.body.email });
     if(userExists){
       res.locals.flashMessages = req.flash("error","Email already registered");
       res.redirect("/user/register");
@@ -220,7 +221,7 @@ router.post("/register", async (req, res, next) => {
       res.redirect("/user/register");
       return;
     }
-    signUpMail(savedUser);
+    signUpMail(savedUser, req.protocol, req.hostname);
     res.locals.flashMessages = req.flash(
       "success",
       `${savedUser.name}, kindly verify the email sent to your registered email address`
@@ -273,7 +274,7 @@ router.post("/login", async (req, res, next) => {
     });
     res.redirect("/user/profile");
   } else {
-    signUpMail(user);
+    signUpMail(user, req.protocol, req.hostname);
     res.locals.flashMessages = req.flash(
       "error",
       `${user.name}, your email is not verified yet. We have sent you a verification email`
@@ -313,7 +314,7 @@ router.post("/forgotpassword", function (req, res) {
         req.flash("error", "User not found try creating a new account");
         res.redirect("/user/register");
       }
-      forgotPassword(user);
+      forgotPassword(user, req.protocol, req.hostname);
       res.locals.flashMessages = req.flash(
         "success",
         `${user.name}, we sent you an email to reset your password`

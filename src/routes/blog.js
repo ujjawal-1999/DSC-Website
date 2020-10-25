@@ -206,10 +206,10 @@ router.post("/create", auth, upload.single("cover"), async (req, res) => {
   try {
     const blog = req.body;
     // console.log(blog)
-    if (!blog)
-      return res.status(400).json({
-        error: "empty query sent",
-      });
+    if (!blog){
+      req.flash("Something went wrong");
+      res.redirect("/");
+    }
 
     const saved = await new Blog({
       title: blog.title,
@@ -243,10 +243,9 @@ router.get("/view/:slug", async (req, res) => {
   try {
     //find the corresponding blog in db
     let slug = req.params.slug;
-    if (!slug)
-      return res.status(400).json({
-        error: "empty query sent",
-      });
+    if (!slug){
+      res.render("404-page");
+    }
 
     const finduser = await User.find({active : true});
     const blog = await Blog.findOneAndUpdate(
@@ -262,10 +261,9 @@ router.get("/view/:slug", async (req, res) => {
         new: true,
       }
     ).populate("author");
-    if (!blog)
-      return res.status(404).json({
-        error: "Wrong Query! This blog doesn't exist",
-      });
+    if (!blog){
+        res.render("404-page");
+    }
     const popularBlogs = await Blog.find()
       .sort({
         views: -1,

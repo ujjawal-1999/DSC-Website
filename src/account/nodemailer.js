@@ -67,12 +67,13 @@ const contactAdmin = (data) => {
 };
 
 //for sending to admin
-const signUpMail = (data) => {
+const signUpMail = (data, protocol, host) => {
   const rand = cryptoRandomString({ length: 100, type: "url-safe" });
   // const host = req.get("host");
   // const link = `http://localhost:3000/user/verify/${data._id}?tkn=${rand}`;
-  const link = `https://dscnitsilchar.herokuapp.com/user/verify/${data._id}?tkn=${rand}`;
-
+  // const link = `https://dscnitsilchar.herokuapp.com/user/verify/${data._id}?tkn=${rand}`;
+  const PORT = process.env.PORT  || 8080
+  const link = `${protocol}://${host}:${PORT}/user/verify/${data._id}?tkn=${rand}`
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -103,10 +104,12 @@ const signUpMail = (data) => {
 };
 
 // Email to reset password
-const forgotPassword = (data) => {
+const forgotPassword = (data, protocol, host) => {
   const rand = cryptoRandomString({ length: 100, type: "url-safe" });
   // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
-  const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  // const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  const PORT = process.env.PORT  || 8080
+  const link = `${protocol}://${host}:${PORT}/user/verify/forgotpassword/${data._id}?tkn=${rand}`
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -133,7 +136,7 @@ const forgotPassword = (data) => {
       console.log(error);
       return;
     } else {
-      console.log("Message sent: " + response.message);
+      console.log("Message sent for forgot Password." );
     }
   });
 };
