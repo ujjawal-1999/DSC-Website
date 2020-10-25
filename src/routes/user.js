@@ -193,7 +193,8 @@ router.post("/register", async (req, res, next) => {
   const errors = validationResult(req);
   // console.log(errors);
   if (!errors.isEmpty()) {
-    res.status(422).jsonp(errors.array());
+    // res.status(422).jsonp(errors.array());
+    req.flash("Something went wrong. Try again");
     res.redirect("/");
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
