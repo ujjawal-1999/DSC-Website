@@ -19,7 +19,6 @@ const session = require("express-session");
 const { signUpMail, forgotPassword } = require("../account/nodemailer");
 const { checkProfileImageType } = require("../config/checkType");
 
-
 /*------------------Routing Started ------------------------*/
 router.get("/new", (req, res) => {
   res.render("register");
@@ -50,7 +49,7 @@ router.get("/verify/:id", async (req, res) => {
         });
         if (!updatedUser) {
           console.log(err);
-          res.locals.flashMessages = req.flash("error","An error occured");
+          res.locals.flashMessages = req.flash("error", "An error occured");
           res.redirect("/");
         } else {
           // console.log("Email Verified");
@@ -69,7 +68,7 @@ router.get("/verify/:id", async (req, res) => {
     }
   } else {
     // console.log("Response is from an unknown source");
-    res.redirect("/")
+    res.redirect("/");
   }
 });
 
@@ -131,29 +130,35 @@ router.get("/update-password", authorization, async (req, res) => {
 });
 
 router.post("/update-password", authorization, async (req, res) => {
-  const checkPassword = await bcrypt.compare(
-    req.body.oldPassword,
-    req.dbUser.password
-  );
-  if (!checkPassword) {
-    req.flash("error", "You have entered a wrong password");
-    res.redirect("/user/update-password");
+  try {
+    const checkPassword = await bcrypt.compare(
+      req.body.oldPassword,
+      req.dbUser.password
+    );
+    console.log("Debug-Check Password:", checkPassword);
+    if (!checkPassword) {
+      req.flash("error", "You have entered a wrong password");
+      res.redirect("/user/update-password");
+      return
+    }
+    if (req.body.newPassword !== req.body.confirmPassword) {
+      req.flash("error", "Password and Confirm Password does not match");
+      res.redirect("/user/update-password");
+      return
+    }
+    if (req.body.oldPassword === req.body.newPassword) {
+      req.flash("error", "New Password cannot be the same as old password");
+      res.redirect("/user/update-password");
+      return
+    }
+    const hash = await bcrypt.hash(req.body.newPassword, 10);
+    await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
+    req.flash("success", "Your password has been reset successfully.");
+    res.redirect("/");
+  } catch (error) {
+    console.log("Error : ", error);
+    res.redirect("/")
   }
-  if (req.body.newPassword !== req.body.confirmPassword) {
-    req.flash("error", "Password and Confirm Password does not match");
-    res.redirect("/user/update-password");
-  }
-  if (req.body.oldPassword === req.body.newPassword) {
-    req.flash("error", "New Password cannot be the same as old password");
-    res.redirect("/user/update-password");
-  }
-  const hash = await bcrypt.hash(req.body.newPassword, 10);
-  await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
-  req.flash(
-    "success",
-    "Your password has been reset successfully."
-  );
-  res.redirect("/");
 });
 
 //==============================
@@ -199,12 +204,12 @@ router.post("/register", async (req, res, next) => {
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const userExists = await User.findOne({ email: req.body.email });
-    if(userExists){
-      res.locals.flashMessages = req.flash("error","Email already registered");
+    if (userExists) {
+      res.locals.flashMessages = req.flash("error", "Email already registered");
       res.redirect("/user/register");
       return;
     }
-    
+
     const user = new User({
       email: req.body.email,
       name: req.body.name,
@@ -396,7 +401,7 @@ router.post("/skill", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    req.flash("error","Something went wrong. Try again");
+    req.flash("error", "Something went wrong. Try again");
     res.redirect("/user/profile");
   }
 });
@@ -436,7 +441,7 @@ router.post("/experience", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    req.flash("error","Something went wrong. Try again");
+    req.flash("error", "Something went wrong. Try again");
     res.redirect("/user/profile");
   }
 });
@@ -476,17 +481,18 @@ router.post("/profile", authorization, (req, res) => {
           github: req.body.github,
           facebook: req.body.facebook,
         },
-      }).then((result) => {
-        // console.log(result);
-        req.flash("success","Profile Update Successful");
-        res.redirect("/user/profile");
       })
-      .catch((err)=>{
-        console.log(err)
-        res.redirect("/user/profile")
-      });
+        .then((result) => {
+          // console.log(result);
+          req.flash("success", "Profile Update Successful");
+          res.redirect("/user/profile");
+        })
+        .catch((err) => {
+          console.log(err);
+          res.redirect("/user/profile");
+        });
     } else {
-      req.flash("error","Something went wrong. Try again");
+      req.flash("error", "Something went wrong. Try again");
       res.redirect("/");
     }
   } catch (error) {
@@ -518,7 +524,7 @@ router.post("/project/personal", authorization, async (req, res) => {
     res.redirect("/user/profile");
   } catch (error) {
     console.log(error);
-    req.flash("error","Something went wrong. Try again");
+    req.flash("error", "Something went wrong. Try again");
     res.redirect("/user/profile");
   }
 });
@@ -558,7 +564,7 @@ router.post("/achievement", authorization, async (req, res) => {
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
-    req.flash("error","Something went wrong. Try again");
+    req.flash("error", "Something went wrong. Try again");
     res.redirect("/user/profile");
   }
 });
