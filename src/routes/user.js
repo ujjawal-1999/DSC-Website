@@ -197,7 +197,7 @@ router.post("/register", async (req, res, next) => {
     res.redirect("/");
   } else {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const userExists = await User.find({ email: req.body.email });
+    const userExists = await User.findOne({ email: req.body.email });
     if(userExists){
       res.locals.flashMessages = req.flash("error","Email already registered");
       res.redirect("/user/register");
