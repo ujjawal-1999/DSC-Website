@@ -19,9 +19,9 @@ main {
 }
 .cards .card .content .topic {
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-.cards .card .socialactivity img{
+.cards .card .socialactivity img {
   width: 5rem;
 }
 .cards .card .content .images {
@@ -39,6 +39,17 @@ main {
   font-size: 1.3rem;
   font-family: "Times New Roman", Times;
 }
+
+.ql-syntax {
+  width: 95%;
+  word-wrap: anywhere;
+  content: counters;
+  white-space: pre-wrap;
+  background: var(--Grey-light-2);
+  margin: 1em 0;
+  padding: 5px;
+}
+
 @media (max-width: 1300px) {
   .cards .card {
     width: 75%;
