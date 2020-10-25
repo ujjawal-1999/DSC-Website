@@ -74,7 +74,7 @@ ul::-webkit-scrollbar-thumb {
   list-style: none;
   display: flex;
   position: absolute;
-  /* top: 0; */
+  top: -0.5rem;
   left: 50%;
   width: 55%;
   height: 12vh;
@@ -541,7 +541,7 @@ input {
 .box {
   position: absolute;
 
-  top: 1.5rem;
+  top: 1.2rem;
 
   right: 4rem;
 }
