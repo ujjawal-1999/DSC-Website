@@ -313,12 +313,12 @@ nav {
 }
 
 .fa-moon {
-  font-size: 12px!important;
+  font-size: 12px !important;
   color: #f1c40f;
 }
 
 .fa-sun {
-  font-size: 12px!important;
+  font-size: 12px !important;
   color: #f39c12;
 }
 
@@ -420,22 +420,33 @@ nav {
     margin-top: 1rem;
   }
   .label i {
-    font-size: 10px!important;
+    font-size: 10px !important;
   }
   .label .ball {
     font-size: 10px;
     height: 15px;
     width: 15px;
-    top:3px;
+    top: 3px;
   }
   .checkbox:checked + .label .ball {
     transform: translateX(22px);
   }
   .dropdown {
     width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   .mobilenavname {
     margin: 1rem 0;
+  }
+  .dropdown-content {
+    display: block;
+    position: relative;
+    width: 150%;
+    z-index: 1;
+    box-shadow: none;
+    top: 0;
   }
 }
 
