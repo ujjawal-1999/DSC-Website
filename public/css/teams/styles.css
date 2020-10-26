@@ -22,7 +22,7 @@ main {
 }
 
 section {
-  margin: 10rem 0;
+  margin: 20rem 0;
   height: 80vh;
   color: var(--Grey-dark-1);
   background-color: var(--primary-light);
@@ -190,8 +190,6 @@ main .banner {
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
-  margin-top: 3rem;
-  padding: 6rem 0;
 }
 @media screen and (max-width: 1100px) {
   .lead {

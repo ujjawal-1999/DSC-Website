@@ -105,6 +105,12 @@
   border-radius: 4px;
 }
 
+
+  ul {
+    list-style: none;
+  }
+
+
 @media only screen and (max-width: 768px) {
   .contact_us .styled-input {
     width: 100%;
@@ -170,7 +176,6 @@
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   font-family: "Times New Roman", Times, serif;
-  margin-top: 2rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;
