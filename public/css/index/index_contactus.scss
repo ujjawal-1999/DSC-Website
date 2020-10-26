@@ -109,6 +109,10 @@
     max-width: 100%;
   }
 
+  ul {
+    list-style: none;
+  }
+
   input,
   textarea {
     padding: 30px;
@@ -148,7 +152,6 @@
   .submit-btn {
     transform: translateY(-10px);
     font-family: "Times New Roman", Times, serif;
-    margin-top: 2rem;
     padding: 0.8em 1.5rem 0.8em 1.5rem;
     border: 1px solid;
     border-radius: 2px;

@@ -47,7 +47,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   position: absolute;
-  top: 65%;
+  top: 55%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -80,7 +80,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
-  overflow-y: scroll;
   /* height: 100%; */
   /* justify-content: space-around; */
   padding: 1.5rem;
