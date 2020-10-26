@@ -315,7 +315,10 @@ form {
     margin-right: auto;
   }
   .cards .card-content {
-    padding: 30px 0;
+    padding-top: 5rem 0;
+    .details {
+      padding-top: 1rem;
+    }
   }
   .cards .card-content .col h2 {
     font-size: 1.2rem;
