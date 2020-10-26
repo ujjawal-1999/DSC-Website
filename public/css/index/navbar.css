@@ -195,9 +195,7 @@ nav {
   width: 40%;
   transition: all 0.2s;
 }
-.nav-warapper input:focus {
-  /* background-color: var(--Grey-light-2); */
-}
+
 /* MOBILE MENU & ANIMATION */
 
 .menu-toggle .bar {
@@ -418,6 +416,17 @@ nav {
   }
   .label {
     margin-top: 1rem;
+  }
+  .label i {
+    font-size: 10px;
+  }
+  .label .ball {
+    font-size: 10px;
+    height: 14px;
+    width: 14px;
+  }
+  .checkbox:checked + .label .ball {
+    transform: translateX(22px);
   }
   .dropdown {
     width: 100%;

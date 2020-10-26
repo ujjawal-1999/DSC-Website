@@ -41,11 +41,15 @@ body {
   position: fixed;
   height: 100vh;
   width: 100%;
-  // background-color: #131417;
+  background-color: #ffffff;
   z-index: 20;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-80px);
+  img {
+    width: 10rem;
+  }
 }
 
 body::-webkit-scrollbar-thumb {
