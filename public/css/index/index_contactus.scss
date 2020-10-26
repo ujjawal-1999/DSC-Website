@@ -1,7 +1,7 @@
 .contact_us {
-  height: 110vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   overflow-x: hidden;
@@ -32,7 +32,7 @@
     &__primary {
       font-family: "Open Sans", sans-serif;
       text-align: center;
-      font-size: 3rem;
+      font-size: 4rem;
     }
   }
 
