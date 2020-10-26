@@ -17,7 +17,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 div::-webkit-scrollbar {
-    width: 0.3em;
+    width: 0.2em;
 }
 
 div::-webkit-scrollbar-track {
@@ -83,7 +83,7 @@ body {
 
 .container div.heading-block {
     height: 100%;
-    width: 40%;
+    width: 45%;
     padding: 2rem;
     display: flex;
     background-image: url("../../img/illustrations/loginillus.png");
@@ -100,7 +100,7 @@ body {
 .container div.signup-form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 55%;
     /* height: 100%; */
     /* justify-content: space-around; */
     padding: 1.5rem;
