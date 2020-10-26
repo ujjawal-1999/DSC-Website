@@ -369,3 +369,9 @@ form {
   margin: 0;
   padding: 0;
 }
+.members-container{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
