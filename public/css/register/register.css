@@ -74,8 +74,11 @@ body {
 
 #container {
     margin: 20px 0 0 0;
-    border-right: 2px solid;
-    border-color: #262626;
+    /* border: 3px solid;
+    border-color: #CCCCCC; */
+    box-shadow: 3px 5px #CCCCCC;
+    height: 75%;
+    scrollbar-width: 0.1rem;
 }
 
 .container div.heading-block {
@@ -106,6 +109,7 @@ body {
 .heading-block {
     background-color: #3bb9ff;
     color: white;
+    width: 40%;
 }
 
 .heading-block h1 {
@@ -115,6 +119,13 @@ body {
     font-size: 3em;
     letter-spacing: -2px;
     transform: translateY(20px);
+}
+
+.signup-form {
+    display: flex;
+    width: 50%;
+    overflow-y: scroll;
+    scrollbar-width: 0.1rem;
 }
 
 .signup-form p {
@@ -267,7 +278,7 @@ body {
         height: 80vh;
         overflow: scroll;
         height: 100vh;
-        top: 70%;
+        /* top: 70%; */
         overflow-x: hidden;
     }
     .container div.signup-form {
