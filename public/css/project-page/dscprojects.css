@@ -82,7 +82,7 @@ main {
   overflow: hidden;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 3px 5px 20px rgba(0, 0, 0, 0.2);
-  width: 40vw;
+  width: 30vw;
   height: 40rem;
   position: relative;
   display: -webkit-box;
@@ -132,10 +132,14 @@ main {
   border-radius: 5px;
 }
 
+.cards .card-content p {
+  padding: 0 2rem;
+}
+
 .cards .card-content .row {
   display: table;
   width: 100%;
-  height: 100%;
+  height: 40%;
 }
 
 .cards .card-content .col {
@@ -331,15 +335,18 @@ form input[type="submit"] {
     padding: 1rem;
   }
   .cards {
-    -webkit-box-pack: centers;
-        -ms-flex-pack: centers;
-            justify-content: centers;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 95vw;
-    height: 80vh;
+    height: 100vh;
     padding: 30px;
   }
   .cards .card {
     margin-right: auto;
+  }
+  .cards .card-content {
+    padding: 30px 0;
   }
   .cards .card-content .col h2 {
     font-size: 1.2rem;
@@ -348,7 +355,7 @@ form input[type="submit"] {
   .cards .card-content .col.left {
     font-size: 0.8rem;
     line-height: 1.1rem;
-    padding: 1.3rem;
+    padding: 0.5rem 0;
     width: 100%;
   }
   .cards .card-content .col.right {
@@ -368,6 +375,8 @@ form input[type="submit"] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    height: 25%;
+    margin-top: 2rem;
   }
   .cards .card.active .col {
     display: -webkit-box;
