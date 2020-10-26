@@ -333,7 +333,7 @@ form input[type="submit"] {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
 }
 .members-container div {
   padding: 0px 30px;
