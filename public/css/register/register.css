@@ -91,7 +91,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
-  overflow-y: scroll;
   /* height: 100%; */
   /* justify-content: space-around; */
   padding: 1.5rem;
@@ -346,4 +345,8 @@ body {
 
 .closebtn:hover {
   color: black;
+}
+
+.nav_main {
+  margin-top: 100vh;
 }
