@@ -14,7 +14,7 @@
   background-size: 27% auto;
   margin: 0px;
   overflow: visible;
- background-color: aqua;
+
 }
 
 .faq-section .upper {
@@ -163,6 +163,7 @@
   }
   .faq-section {
     height: auto;
+    margin-left: 20px;
   }
 }
 
