@@ -300,7 +300,7 @@ nav {
   background-color: var(--Grey-dark-2);
   border-radius: 50%;
   position: absolute;
-  top: 2.5px;
+  top: 1px;
   left: 2px;
   height: 20px;
   width: 20px;
@@ -313,10 +313,12 @@ nav {
 }
 
 .fa-moon {
+  font-size: 12px!important;
   color: #f1c40f;
 }
 
 .fa-sun {
+  font-size: 12px!important;
   color: #f39c12;
 }
 
@@ -418,12 +420,13 @@ nav {
     margin-top: 1rem;
   }
   .label i {
-    font-size: 10px;
+    font-size: 10px!important;
   }
   .label .ball {
     font-size: 10px;
-    height: 14px;
-    width: 14px;
+    height: 15px;
+    width: 15px;
+    top:3px;
   }
   .checkbox:checked + .label .ball {
     transform: translateX(22px);
