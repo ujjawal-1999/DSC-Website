@@ -52,19 +52,19 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    margin: 0;
-    width: 50%;
-    height: 90%;
-    background-color: rgb(250, 250, 250);
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 50%;
+  height: 90%;
+  background-color: rgb(250, 250, 250);
+  overflow: hidden;
 }
 
 .container div {
@@ -89,13 +89,12 @@ body {
 }
 
 .container div.signup-form {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    overflow-y: scroll;
-    /* height: 100%; */
-    /* justify-content: space-around; */
-    padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  /* height: 100%; */
+  /* justify-content: space-around; */
+  padding: 1.5rem;
 }
 
 .heading-block {
