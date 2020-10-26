@@ -30,7 +30,6 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
-    <link rel="stylesheet" href="/css/index/font-awesome.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -67,7 +66,7 @@
     </style>
   </head>
 
-  <body style='font-family: "Times New Roman", Times;'>
+  <body style="font-family: 'Times New Roman', Times">
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
@@ -98,11 +97,9 @@
           </div>
           <div class="content" style="width: 85%">
             <h3 class="topic"><%= blog.title %></h3>
-            <p style="margin-top: 0.2rem">
-              by <%= blog.author.name%>
-            </p>
-            <p class="place" style='font-family: "Times New Roman", Times;'> 
-            <%- blog.author.createdAt.toString().substring(0,16)%>
+            <p style="margin-top: 0.2rem">by <%= blog.author.name%></p>
+            <p class="place" style="font-family: 'Times New Roman', Times">
+              <%- blog.author.createdAt.toString().substring(0,16)%>
             </p>
 
             <div class="description"><%- blog.summary%></div>
@@ -202,7 +199,12 @@
               <div class="content">
                 <div class="title">
                   <span class="numbering"> <%= i++ %> </span>
-                  <a style= "font-family: 'Open Sans', sans-serif;" href="/blog/view/<%= blog.slug%>"> <%= blog.title%> </a>
+                  <a
+                    style="font-family: 'Open Sans', sans-serif"
+                    href="/blog/view/<%= blog.slug%>"
+                  >
+                    <%= blog.title%>
+                  </a>
                 </div>
                 <br />
                 <span class="intro"> <%- blog.summary%></span><br />
