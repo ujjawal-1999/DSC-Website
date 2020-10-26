@@ -119,6 +119,11 @@ to {
 		align-items: center;
 		height: 10vh;
 	}
+	.header {
+		svg {
+			fill: black;
+		}
+	}
 	@media {
 		screen {
 			and {
@@ -221,12 +226,13 @@ to {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-color: var(--primary-light);
-	background-blend-mode: overlay;
+	background-blend-mode: multiply;
 	margin-top: 0;
 	background-size: 50%;
 	background-position: bottom center;
-	svg {
-		fill:#333;
+	.dscdesign {
+		align-items: center;
+		margin-left: 4rem;
 	}
 	.dsclogo {
 		height: 50%;
@@ -315,6 +321,29 @@ to {
 		}
 	}
 }
+@media {
+	(max-width {
+		&: {
+			1300px;) {
+				.header {
+  background-image: none;
+			}
+		}
+	}
+	screen {
+		and {
+			(max-width {
+				&: {
+					1150px) {
+						.getStarted {
+    -webkit-transform: translateY(-10rem);
+						transform: translateY(-10rem);
+					}
+				}
+			}
+		}
+	}
+}
 #ScrolltoTop {
 	position: fixed;
 	right: 10px;
@@ -334,21 +363,6 @@ to {
 	}
 	i {
 		color: var(--white);
-	}
-}
-@media {
-	screen {
-		and {
-			(max-width {
-				&: {
-					1150px) {
-						.getStarted {
-    -webkit-transform: translateY(-10rem);
-						transform: translateY(-10rem);
-					}
-				}
-			}
-		}
 	}
 }
 .getStarted {

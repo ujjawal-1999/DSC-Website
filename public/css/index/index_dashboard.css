@@ -181,6 +181,15 @@ body::-webkit-scrollbar-thumb {
   background-blend-mode: multiply;
  
 }
+@media (max-width: 1300px;) {
+  .header {
+  background-image: none;
+  }
+  .header .dscdesign {
+    align-items: center;
+    margin-left: 4rem;
+  }
+}
  .header svg {
    fill: black;
  }
