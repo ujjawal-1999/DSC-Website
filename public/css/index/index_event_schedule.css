@@ -52,6 +52,14 @@
       EVENTS
   ===========================================================*/
 
+  .events-wrapper {
+    background-image:url(../../img/illustrations/frame.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    padding-right: 2rem ;
+    background-position-x: 54rem;
+  }
 .event .event-content p.cont {
   margin-right: 350px;
   text-align: justify;
@@ -63,7 +71,7 @@
 }
 
 .event + .event {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .event:after {
