@@ -181,7 +181,7 @@ body::-webkit-scrollbar-thumb {
   background-blend-mode: multiply;
  
 }
-@media (max-width: 1300px;) {
+@media (max-width: 1300px) {
   .header {
   background-image: none;
   }
