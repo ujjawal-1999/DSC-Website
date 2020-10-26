@@ -1,5 +1,5 @@
 const dmode = document.getElementById("dmodeGLOBAL");
-const toogler = document.getElementById("toogle");
+const toogler = document.getElementById("chk");
 // Initial Settings
 var themestart = localStorage.getItem("theme");
 if (themestart == "Light") {
