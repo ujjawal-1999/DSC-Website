@@ -1,79 +1,79 @@
 <div class="nav_main">
-  <div class="nav_mainmenu">
-    <div class="nav_column">
-      <div class="contentnav">
-        <p class="nav_heading">Navigation</p>
-        <a href="/">Home</a>
-        <a href="/#about" class="nav-items-a">About Us</a>
-        <a href="/#schedule" class="nav-items-a">Events</a>
-        <a href="/blog/?page=1" class="nav-items-a">Blogs</a>
-        <!-- <a href="/#features">Features</a> -->
-      </div>
-      <% if(user){ %>
-      <div class="divider"></div>
-      <div class="contentnav">
-        <p class="nav_heading">Actions</p>
-        <a href="/user/profile">Dashboard</a>
-        <a href="/user/logout">Log Out</a>
-        <!-- <a href="/user/profile/#panel01">Timeline</a>
+    <div class="nav_mainmenu">
+        <div class="nav_column">
+            <div class="contentnav">
+                <p class="nav_heading">Navigation</p>
+                <a href="/">Home</a>
+                <a href="/#about" class="nav-items-a">About Us</a>
+                <a href="/#schedule" class="nav-items-a">Events</a>
+                <a href="/blog/?page=1" class="nav-items-a">Blogs</a>
+                <!-- <a href="/#features">Features</a> -->
+            </div>
+            <% if(user){ %>
+                <div class="divider"></div>
+                <div class="contentnav">
+                    <p class="nav_heading">Actions</p>
+                    <a href="/user/profile">Dashboard</a>
+                    <a href="/user/logout">Log Out</a>
+                    <!-- <a href="/user/profile/#panel01">Timeline</a>
         <a href="/user/profile/#panel02">Experience</a>
         <a href="/user/profile/#panel03">Skills</a>
         <a href="/user/profile/#panel04">Projects</a>
         <a href="/user/profile/#panel05">Achievement</a> -->
-      </div>
-      <% } %> <% if(!user){ %>
-      <div class="contentnav">
-        <p class="nav_heading">Actions</p>
-        <a href="/user/register">Sign Up</a>
-        <a href="/user/register?type=login">Login</a>
-      </div>
-      <% } %>
-      <div class="divider"></div>
-      <div class="contentnav">
-        <p class="nav_heading">Community</p>
-        <a href="/blog" class="nav-items-a">Blogs</a>
-        <a href="/project/" class="nav-items-a">DSC Projects</a>
-        <!-- <a href="/">Trendings</a> -->
-        <a href="https://dsc.community.dev/national-institute-of-technology-silchar/"
-          target="__blank">DSC NIT Silchar Chapter</a
+                </div>
+                <% } %>
+                    <% if(!user){ %>
+                        <div class="divider"></div>
+                        <div class="contentnav">
+                            <p class="nav_heading">Actions</p>
+                            <a href="/user/register">Sign Up</a>
+                            <a href="/user/register?type=login">Login</a>
+                        </div>
+                        <% } %>
+                            <div class="divider"></div>
+                            <div class="contentnav">
+                                <p class="nav_heading">Community</p>
+                                <a href="/blog" class="nav-items-a">Blogs</a>
+                                <a href="/project/" class="nav-items-a">DSC Projects</a>
+                                <!-- <a href="/">Trendings</a> -->
+                                <a href="https://dsc.community.dev/national-institute-of-technology-silchar/" target="__blank">DSC NIT Silchar Chapter</a
         >
       </div>
+      <div class="divider"></div>
       <div class="contentnav">
         <p class="nav_heading">Contact-Us</p>
         <a href="http://www.nits.ac.in/" target="__blank">Visit Institute Website</a>
-        <a href="https://www.facebook.com/dscnits" target="__blank">Follow on Facebook</a>
-        <a href="https://www.instagram.com/dsc_nits/" target="__blank">Follow on Instagram</a>
-        <a href="https://www.linkedin.com/mwlite/company/dsc-nit-silchar" target="__blank">Follow on Linkedin</a>
-      </div>
-      <div class="divider"></div>
-      <div class="contentnav">
-        <p class="nav_heading">Team and Developers</p>
-        <a href="/members">DSC Members</a>
-        <a href="/dscwebsitedeveloper">Website Developers</a>
-      </div>
+                                <a href="https://www.facebook.com/dscnits" target="__blank">Follow on Facebook</a>
+                                <a href="https://www.instagram.com/dsc_nits/" target="__blank">Follow on Instagram</a>
+                                <a href="https://www.linkedin.com/mwlite/company/dsc-nit-silchar" target="__blank">Follow on Linkedin</a>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="contentnav">
+                                <p class="nav_heading">Team and Developers</p>
+                                <a href="/members">DSC Members</a>
+                                <a href="/dscwebsitedeveloper">Website Developers</a>
+                            </div>
 
-      <div class="divider"></div>
-      <div class="contentnav">
-        <p class="nav_heading">Address</p>
+                            <div class="divider"></div>
+                            <div class="contentnav">
+                                <p class="nav_heading">Address</p>
 
-        <p class="x">Developer Student Club, NIT Silchar</p>
-        <p class="x">
-          NIT Silchar, NIT Road, Fakiratilla,<br />
-          Silchar, Assam 788010
-        </p>
-        <p class="x">Faculty Advisor: Dr. Wasim Arif(8918815912)</p>
-        <p class="x">DSC Lead: Rishiraj Paul Chowdhury(9706262131) </p>
-        <p class="x">Mail Us At: <strong>dscnits@gmail.com</strong></p>
-      </div>
+                                <p class="x">Developer Student Club, NIT Silchar</p>
+                                <p class="x">
+                                    NIT Silchar, NIT Road, Fakiratilla,<br /> Silchar, Assam 788010
+                                </p>
+                                <p class="x">Faculty Advisor: Dr. Wasim Arif(8918815912)</p>
+                                <p class="x">DSC Lead: Rishiraj Paul Chowdhury(9706262131) </p>
+                                <p class="x">Mail Us At: <strong>dscnits@gmail.com</strong></p>
+                            </div>
+        </div>
     </div>
-  </div>
-  <div class="nav_google">
-    <img src="/official-logo/dsc-footer.png" class="footer-image" alt="official-logo" />
-  </div>
-  <div class="nav_google">
-    <p class="nav_heading fadedText" style="text-align: center">
-      Made by the developers, of the developers and for the developers.<br /><br />
-      Copyright © 2020 DSC NIT Silchar. All Rights Reserved.
-    </p>
-  </div>
+    <div class="nav_google">
+        <img src="/official-logo/dsc-footer.png" class="footer-image" alt="official-logo" />
+    </div>
+    <div class="nav_google">
+        <p class="nav_heading fadedText" style="text-align: center">
+            Made by the developers, of the developers and for the developers.<br /> Copyright © 2020 DSC NIT Silchar. All Rights Reserved.
+        </p>
+    </div>
 </div>
