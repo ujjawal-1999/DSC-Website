@@ -34,6 +34,8 @@ nav {
   width: 100vw;
   position: fixed;
   z-index: 10;
+  background-color: var(--Grey-light-1);
+  height: 80px;
 }
 .wrap {
   top: 0;
