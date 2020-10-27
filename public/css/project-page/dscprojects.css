@@ -225,6 +225,7 @@ main {
 .cards #linkedin .card-content p,
 .cards #twitter .card-content p {
   color: white !important;
+  font-size: 0.9rem;
 }
 
 .cards #dribbble .card-content {
@@ -362,7 +363,7 @@ form input[type="submit"] {
     margin-right: auto;
   }
   .card-content .details {
-    font-size: 0.67em;
+    font-size: 0.7em;
     position: relative;
     top: -80px;
   }
