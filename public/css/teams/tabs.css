@@ -182,4 +182,13 @@ kbd {
   padding-left: 0.2em;
   padding-right: 0.2em;
 }
+
+@media (max-width: 360px) {
+  .tab-container {
+    padding-top: 2rem;
+  }
+  .tab-panel {
+    margin-top: 3rem;
+  }
+}
 /*# sourceMappingURL=tabs.css.map */

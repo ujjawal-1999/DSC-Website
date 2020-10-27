@@ -1,7 +1,6 @@
 /*----------------------------*\
 	Section
 \*----------------------------*/
-
 .section {
   position: relative;
   padding: 90px 0px;
@@ -22,7 +21,6 @@
   margin-bottom: 60px;
 }
 
-
 .section-title .title {
   position: relative;
   text-transform: capitalize;
@@ -33,37 +31,37 @@
 }
 
 /* .section-title .title>span {
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-    display: inline-block;
-    z-index: 10;
-    -webkit-transition: 0.6s;
-    transition: 0.6s;
-  }
-  
-  .section-title .title>span.appear {
-    -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
-  } */
-
+      -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      transform: translateY(100%);
+      display: inline-block;
+      z-index: 10;
+      -webkit-transition: 0.6s;
+      transition: 0.6s;
+    }
+    
+    .section-title .title>span.appear {
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+    } */
 /*=========================================================
-      EVENTS
-  ===========================================================*/
+        EVENTS
+    ===========================================================*/
+.events-wrapper {
+  background-image: url(../../img/illustrations/frame.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  padding-right: 2rem;
+  background-position-x: 54rem;
+}
 
-  .events-wrapper {
-    background-image:url(../../img/illustrations/frame.svg);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    padding-right: 2rem ;
-    background-position-x: 54rem;
-  }
 .event .event-content p.cont {
   margin-right: 350px;
   text-align: justify;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .event {
@@ -102,7 +100,6 @@
 
 .event .event-day {
   position: relative;
-
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -122,7 +119,6 @@
   background: #3bb9ff;
   z-index: 10;
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -133,7 +129,6 @@
   right: 0;
   text-align: center;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   padding-top: 10px;
 }
@@ -171,14 +166,13 @@
 }
 
 /*=========================================================
-      RESPONSIVE
-  ===========================================================*/
+        RESPONSIVE
+    ===========================================================*/
 @media only screen and (max-width: 768px) {
   .section {
     position: relative;
     padding: 90px 0px;
   }
-
   .section-bg {
     position: absolute;
     left: 0;
@@ -188,12 +182,10 @@
     background-size: cover;
     z-index: 1;
   }
-
   .section-title {
     text-align: center;
     margin-bottom: 60px;
   }
-
   .section-title .title {
     position: relative;
     text-transform: capitalize;
@@ -202,26 +194,22 @@
     margin-top: -10px;
     overflow: hidden;
   }
-
   /*=========================================================
-      EVENTS
-  ===========================================================*/
-
+        EVENTS
+    ===========================================================*/
   .event .event-content p.cont {
     /* display: flex; */
     margin-right: 60px;
     /* text-align:justify; */
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-
   .event {
     position: relative;
   }
-
   .event + .event {
     margin-top: 60px;
   }
-
   .event:after {
     /*line part*/
     content: "";
@@ -233,11 +221,9 @@
     /* background-color: #2b65ec; */
     background-color: #3bb9ff;
   }
-
   .event:last-child:after {
     height: 60px;
   }
-
   .event + .event:before {
     /*line part*/
     content: "";
@@ -249,11 +235,9 @@
     background-color: #3bb9ff;
     /* background-color: #2B65EC; */
   }
-
   .event .event-day {
     /*Circular area*/
     position: relative;
-
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -261,7 +245,6 @@
     background-color: #3bb9ff;
     z-index: 1;
   }
-
   .event .event-hour {
     /*small circle*/
     position: relative;
@@ -273,10 +256,8 @@
     background: #3bb9ff;
     z-index: 10;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-
   .event .event-day {
     /* large Circular area*/
     position: absolute;
@@ -285,11 +266,9 @@
     right: 0;
     text-align: center;
     -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     padding-top: 0;
   }
-
   .event .event-day .day {
     display: block;
     color: #fff;
@@ -298,42 +277,38 @@
     font-size: 30px;
     line-height: 50px;
   }
-
   .event .event-day .year {
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;
   }
-
   .event .event-content {
     padding-left: 170px;
     min-height: 120px;
   }
-
   .event .event-time {
     font-size: 15px;
   }
-
   .event .event-time i {
     color: #2b65ec;
   }
-
   .event .event-content a {
     color: #2b65ec;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .event .event-content p.cont {
     font-size: 0.8rem;
     text-align: start;
   }
 }
+
 @media only screen and (max-width: 375px) {
   .section {
     position: relative;
     padding: 90px 0px;
   }
-
   .section-bg {
     position: absolute;
     left: 0;
@@ -343,12 +318,10 @@
     background-size: cover;
     z-index: 1;
   }
-
   .section-title {
     text-align: center;
     margin-bottom: 60px;
   }
-
   .section-title .title {
     position: relative;
     text-transform: capitalize;
@@ -357,26 +330,21 @@
     margin-top: -10px;
     overflow: hidden;
   }
-
   /*=========================================================
-    EVENTS
-===========================================================*/
-
+      EVENTS
+  ===========================================================*/
   .event .event-content p.cont {
     /* display: flex; */
     margin-right: 20px;
     /* text-align:justify; */
     /* flex-wrap: wrap; */
   }
-
   .event {
     position: relative;
   }
-
   .event + .event {
     margin-top: 60px;
   }
-
   .event:after {
     /*line part*/
     content: "";
@@ -388,11 +356,9 @@
     /* background-color: #2b65ec; */
     background-color: #3bb9ff;
   }
-
   .event:last-child:after {
     height: 60px;
   }
-
   .event + .event:before {
     /*line part*/
     content: "";
@@ -404,11 +370,9 @@
     background-color: #3bb9ff;
     /* background-color: #2B65EC; */
   }
-
   .event .event-day {
     /*Circular area*/
     position: relative;
-
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -416,7 +380,6 @@
     background-color: #3bb9ff;
     z-index: 1;
   }
-
   .event .event-hour {
     /*small circle*/
     position: relative;
@@ -428,10 +391,8 @@
     background: #3bb9ff;
     z-index: 10;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-
   .event .event-day {
     /* large Circular area*/
     position: absolute;
@@ -440,12 +401,10 @@
     right: 0;
     text-align: center;
     -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 70px;
     height: 70px;
   }
-
   .event .event-day .day {
     display: block;
     color: #fff;
@@ -454,28 +413,24 @@
     font-size: 15px;
     line-height: 40px;
   }
-
   .event .event-day .year {
     color: #fff;
     text-transform: uppercase;
     font-size: 10px;
   }
-
   .event .event-content {
     padding-left: 122px;
     min-height: 120px;
     line-height: 20px;
   }
-
   .event .event-time {
     font-size: 0.8rem;
   }
-
   .event .event-time i {
     color: #2b65ec;
   }
-
   .event .event-content a {
     color: #2b65ec;
   }
 }
+/*# sourceMappingURL=index_event_schedule.css.map */

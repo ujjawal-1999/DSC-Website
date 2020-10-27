@@ -3,7 +3,6 @@ let srh1 = document.getElementById("srh1");
 var flag1 = 1;
 
 window.addEventListener("keydown", (e) => {
-  console.log(document.getElementById("search1").value.length);
   if (document.getElementById("search1").value.toUpperCase().length == 0) {
     document.getElementById("search_list1").style.display = "none";
   }
@@ -30,24 +29,28 @@ function filternames1() {
   let ul1 = document.getElementById("search_list1");
   //get lis from ul
   let li1 = ul1.querySelectorAll("li.collection-item1");
-  if (filterValue1.length > 0) {
+  if (filterValue1.trim().length > 0 && filterValue1.trim() !== "") {
     ul1.style.display = "block";
   }
   //loop through collection item lis
-
+  let count  = 0; 
   for (let i = 0; i < li1.length; i++) {
     let a1 = li1[i].getElementsByTagName("a")[0];
     //if matched
 
-    if (
-      a1.innerHTML.toUpperCase().indexOf(filterValue1) > -1 &&
-      filterValue1 != ""
-    ) {
+    if (a1.innerHTML.toUpperCase().trim().indexOf(filterValue1.trim()) > -1 &&
+      filterValue1.trim() !== "" && filterValue1.trim().length > 1) 
+    {
+      ul1.style.display = "block";
       li1[i].style.display = "block";
-    } else {
+      count++;
+    } 
+    else {
       li1[i].style.display = "none";
     }
   }
+  if(count === 0)
+    ul1.style.display = "none";
 }
 // #################################################################################
 let filterInput2 = document.getElementById("search2");
@@ -55,7 +58,7 @@ let srh2 = document.getElementById("srh2");
 var flag2 = 1;
 
 window.addEventListener("keydown", (e) => {
-  console.log(document.getElementById("search2").value.length);
+  // console.log(document.getElementById("search2").value.length);
   if (document.getElementById("search2").value.toUpperCase().length == 0) {
     document.getElementById("search_list2").style.display = "none";
   }
@@ -82,24 +85,28 @@ function filtername2() {
   let ul2 = document.getElementById("search_list2");
   //get lis from ul
   let li2 = ul2.querySelectorAll("li.collection-item2");
-  if (filterValue2.length > 0) {
+  if (filterValue2.trim().length > 0 && filterValue2.trim() !== "") {
     ul2.style.display = "block";
   }
   //loop through collection item lis
-
+  let count  = 0; 
   for (let i = 0; i < li2.length; i++) {
     let a2 = li2[i].getElementsByTagName("a")[0];
     //if matched
 
     if (
-      a2.innerHTML.toUpperCase().indexOf(filterValue2) > -1 &&
-      filterValue2 != ""
+      a2.innerHTML.toUpperCase().trim().indexOf(filterValue2.trim()) > -1 &&
+      filterValue2.trim() !== "" && filterValue2.trim().length > 1
     ) {
+      ul2.style.display = "block";
       li2[i].style.display = "block";
+      count++;
     } else {
       li2[i].style.display = "none";
     }
   }
+  if(count === 0)
+    ul2.style.display = "none";
 }
 // #####
 /*
