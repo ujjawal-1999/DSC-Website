@@ -26,7 +26,7 @@ main {
   background-blend-mode: multiply;
   background-image: url("../../img/illustrations/members.svg");
   background-attachment: fixed;
-  background-size: 70%;
+  background-size: 60%;
   background-position: bottom center;
   background-repeat: no-repeat;
 }
@@ -294,7 +294,7 @@ main .banner {
   }
   .discoverone {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     align-self: center;
   }
   .discovertwo {

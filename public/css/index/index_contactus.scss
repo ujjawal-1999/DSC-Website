@@ -1,12 +1,12 @@
 .contact_us {
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: hidden;
-
+  padding-bottom: 2rem;
   .cu {
     padding: 3rem;
     background-color: var(--Grey-light-1);

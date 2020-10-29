@@ -42,6 +42,20 @@
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <style>
+      .pointer{
+        cursor: pointer;
+      }
+      .clapper {
+        width: 30px !important;
+      }
+      @media screen and (max-width: 740px) {
+        .clapper {
+          width: 20px !important;
+        }
+        .cards .card .socialactivity {
+          padding: 15px;
+        }
+      }
       .cards .card .content .images .image-container img {
         width: 100%;
       }
@@ -108,11 +122,11 @@
             >
               <% if (user) {%> <% if (user.likes &&
               user.likes.includes(blog._id)) {%>
-              <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/clap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } else {%>
-              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } %>
             </button>
           </div>
@@ -146,13 +160,13 @@
                 >
                   <% if (user.bookmarkBlogs
                   &&user.bookmarkBlogs.includes(blog._id)) {%>
-                  <i
-                    class="fas fa-bookmark"
+                  <i 
+                    class="fas fa-bookmark pointer"
                     style="font-size: 20px; color: var(--Grey-dark-1)"
                   ></i>
                   <% } else {%>
                   <i
-                    class="far fa-bookmark"
+                    class="far fa-bookmark pointer"
                     style="font-size: 20px; color: var(--Grey-dark-1)"
                   ></i>
                   <% } %>
