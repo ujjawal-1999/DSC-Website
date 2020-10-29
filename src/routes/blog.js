@@ -24,6 +24,7 @@ router.use(
 // clicking any blog will redirect to view blog route (/blog/view/:slug)
 router.get("/", async(req, res) => {
     try {
+        const filterThreshold = process.env.BLOG_FILTER_THREHOLD || 7
         const token = req.cookies.authorization;
         const finduser = await User.find({
             active: true
@@ -50,13 +51,13 @@ router.get("/", async(req, res) => {
             skip: size * (page - 1),
             limit: size
         };
-        const popularBlogs = await Blog.find({"reportCount": {$lt: 5}})
+        const popularBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}})
             .sort({
                 views: -1,
             })
             .limit(5)
             .populate("author");
-        const newBlogs = await Blog.find({"reportCount": {$lt: 5}}, {}, query)
+        const newBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}}, {}, query)
             .sort({
                 createdAt: -1,
             })
@@ -65,7 +66,7 @@ router.get("/", async(req, res) => {
             skip: size * page,
             limit: size
         }
-        const nextPageBlogs = await Blog.find({"reportCount": {$lt: 5}}, {}, queryNextPage)
+        const nextPageBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}}, {}, queryNextPage)
             .sort({
                 createdAt: -1,
             })
@@ -342,6 +343,8 @@ router.get("/view/:slug", async(req, res) => {
 
 router.post('/report/:id',auth, async(req, res) => {
   try {
+    const warnThershold = process.env.BLOG_WARN_THRESHOLD || 5
+    const reportThreshold = process.env.BLOG_REPORT_THRESHOLD || 7
     // Find the blog and populate the author
     const blog = await Blog.findById(req.params.id).populate('author')
     if(blog) {
@@ -366,11 +369,11 @@ router.post('/report/:id',auth, async(req, res) => {
       // Save the blog, this will trigger the pre('save') method and about the blog.reportCount
       blog.save()
       // If the blog has more than or equal to 5 reports, send a warning to the author 
-      if(blog.reportCount >= 5) {
+      if(blog.reportCount >= warnThershold) {
         blogReportWarning(blog, req.protocol, req.hostname)
       }
       // If the blog has more than or equal to 7 reports, send a report to the admin
-      if(blog.reportCount >= 7) {
+      if(blog.reportCount >= reportThreshold) {
         reportBlogToAdmin(blog, req.protocol, req.hostname)
       }
       req.flash("success", "Blog was successfully reported")
