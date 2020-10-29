@@ -234,7 +234,6 @@
   padding: 1%;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: var(--Grey-light-1) !important;
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 300;
@@ -259,6 +258,24 @@
 .addSkillsModal textarea option,
 .addSkillsModal select option {
   border-radius: 2px;
+}
+
+.editProfileModal input:focus,
+.editProfileModal textarea:focus,
+.editProfileModal select:focus,
+.addExperienceModal input:focus,
+.addExperienceModal textarea:focus,
+.addExperienceModal select:focus,
+.addProjectsModal input:focus,
+.addProjectsModal textarea:focus,
+.addProjectsModal select:focus,
+.addAchievementModal input:focus,
+.addAchievementModal textarea:focus,
+.addAchievementModal select:focus,
+.addSkillsModal input:focus,
+.addSkillsModal textarea:focus,
+.addSkillsModal select:focus {
+  border: 2px solid black;
 }
 
 .editProfileModal select,
