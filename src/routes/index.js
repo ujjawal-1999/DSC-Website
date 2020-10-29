@@ -44,7 +44,7 @@ router.use(cookieParser());
 //Route for Homepage
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true});
+  const finduser = await User.find({active : true}, null, {sort:{name:1}});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -58,7 +58,7 @@ router.get("/", async (req, res) => {
 //Route for DSC Members
 router.get("/members", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true});
+  const finduser = await User.find({active : true}, null, {sort:{name:1}});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -71,7 +71,7 @@ router.get("/members", async (req, res) => {
 
 router.get("/dscwebsitedeveloper", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active: true});
+  const finduser = await User.find({active : true}, null, {sort:{name:1}});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);

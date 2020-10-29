@@ -190,8 +190,8 @@ nav {
 .nav-warapper input {
   border-radius: 0;
   height: 2rem;
-  border: none;
-  border-radius: 0px;
+  border: 2px solid var(--Grey-dark-4);
+  border-radius: 3px;
   background-color: var(--primary-dark);
   color: var(--Grey-dark-2);
   padding: 0.2rem 1rem;
