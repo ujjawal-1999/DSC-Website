@@ -21,7 +21,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
+      href="/img/logo/dsc_trans_logo.png"
     />
     <link
       rel="stylesheet"
@@ -35,31 +35,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css" />
-
-    <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="/css/blogs/aos.css" />
-
     <!-- Custom Style   -->
     <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
     <link rel="stylesheet" href="/css/index/colors.css" />
-    <link rel="stylesheet" href="/css/blogs/blogs-new.css" />
+    <link rel="stylesheet" href="/css/blogs/blogs.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <style>
+      .cards .card .content .images .image-container img {
+        width: 100%;
+      }
+      .cards .card .content .images {
+        width: 90%;
+      }
       .pagination {
         padding: 3rem 0;
         text-align: center;
         color: var(--Grey-light-1);
       }
+
       .pagination a {
         padding: 1rem 0.8rem;
         color: var(--primary-dark);
         background-color: var(--Grey-dark-1);
         transition: all 0.2s;
       }
+
       .pagination a:hover {
         opacity: 0.8;
       }
@@ -79,7 +80,9 @@
         <div class="card-container" style="justify-content: center">
           <div class="card-details">
             <div class="card-text">
-              <p>Community Blogs will be shown here.</p>
+              <p style="text-align: center">
+                Community Blogs will be shown here.
+              </p>
             </div>
           </div>
         </div>
@@ -94,15 +97,33 @@
             <% }else{%>
             <img src="/img/profile/person.png" alt="default avatar" />
             <% }%>
+
+            <button
+              type="submit"
+              style="
+                border: none;
+                background-color: transparent;
+                color: var(--Grey-dark-1);
+              "
+            >
+              <% if (user) {%> <% if (user.likes &&
+              user.likes.includes(blog._id)) {%>
+              <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } else {%>
+              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %>
+            </button>
           </div>
-          <div class="content" style="width: 85%">
+          <div class="content">
             <h3 class="topic"><%= blog.title %></h3>
             <p style="margin-top: 0.2rem">by <%= blog.author.name%></p>
             <p class="place" style="font-family: 'Times New Roman', Times">
               <%- blog.author.createdAt.toString().substring(0,16)%>
             </p>
 
-            <div class="description"><%- blog.summary%></div>
+            <div class="description"><%- blog.summary%>...</div>
             <a href="/blog/view/<%= blog.slug%>">Read more</a>
             <div class="images">
               <div class="image-container">
@@ -115,35 +136,29 @@
               </div>
             </div>
           </div>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              width: 15%;
-              align-items: center;
-            "
-          >
+          <div class="sidebarblog">
             <% if (user) {%>
-            <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-              <button
-                type="submit"
-                style="background-color: transparent; border: none"
-              >
-                <% if (user.bookmarkBlogs
-                &&user.bookmarkBlogs.includes(blog._id)) {%>
-                <i
-                  class="fas fa-bookmark"
-                  style="font-size: 20px; color: var(--Grey-dark-1)"
-                ></i>
-                <% } else {%>
-                <i
-                  class="far fa-bookmark"
-                  style="font-size: 20px; color: var(--Grey-dark-1)"
-                ></i>
-                <% } %>
-              </button>
-            </form>
+            <div class="moreblogoption">
+              <form action="/blog/bookmark/<%= blog._id %>" method="POST">
+                <button
+                  type="submit"
+                  style="background-color: transparent; border: none"
+                >
+                  <% if (user.bookmarkBlogs
+                  &&user.bookmarkBlogs.includes(blog._id)) {%>
+                  <i
+                    class="fas fa-bookmark"
+                    style="font-size: 20px; color: var(--Grey-dark-1)"
+                  ></i>
+                  <% } else {%>
+                  <i
+                    class="far fa-bookmark"
+                    style="font-size: 20px; color: var(--Grey-dark-1)"
+                  ></i>
+                  <% } %>
+                </button>
+              </form>
+            </div>
             <% } %>
 
             <i
@@ -207,7 +222,9 @@
                   </a>
                 </div>
                 <br />
-                <span class="intro"> <%- blog.summary%></span><br />
+                <span class="intro"> <%- blog.summary%>...</span>
+                <a href="/blog/view/<%= blog.slug%>">Read more</a>
+                <br />
                 <span class="date"> 20 sept, 2020 </span>
               </div>
             </div>

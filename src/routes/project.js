@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 // get route to the "/project"
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true});
+  const finduser = await User.find({active : true}, null, {sort:{name:1}});
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);

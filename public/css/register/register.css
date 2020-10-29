@@ -73,12 +73,11 @@ body {
 }
 
 #container {
-    margin: 20px 0 0 0;
+    margin: 90px 0 0 0;
     /* border: 3px solid;
     border-color: #CCCCCC; */
     box-shadow: 3px 5px #CCCCCC;
-    height: 75%;
-    scrollbar-width: 0.1rem;
+
 }
 
 .container div.heading-block {

@@ -3,161 +3,148 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
-  {
+const userSchema = new Schema({
     name: {
-      type: String,
+        type: String,
     },
     dscHandle: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true,
-      match: [/([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/, "is invalid"],
-      trim : true
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
+        match: [/([a-z\.]{2,6})([\%\?\=\/\w \.-]*)*\/?$/, "is invalid"],
+        trim: true
     },
     email: {
-      type: String,
-      unique: true,
-      trim: true
+        type: String,
+        unique: true,
+        trim: true
     },
     password: {
-      type: String,
-      trim: true
+        type: String,
+        trim: true
     },
     branch: {
-      type: String,
+        type: String,
     },
-    badge : {
-      type: Number,
-      default: 0    /* 1 - Founding Members, 2 - Core Members, 3 - Members*/
+    badge: {
+        type: Number,
+        default: 0 /* 1 - Founding Members, 2 - Core Members, 3 - Members*/
     },
     degree: {
-      type: String,
+        type: String,
     },
     batch: {
-      type: String,
+        type: String,
     },
     active: {
-      type: Boolean,
-      default: false,
+        type: Boolean,
+        default: false,
     },
     created_at: {
-      type: Date,
-      required: true,
-      default: Date.now,
+        type: Date,
+        required: true,
+        default: Date.now,
     },
     phone: {
-      type: String,
+        type: String,
     },
     bio: {
-      type: String,
+        type: String,
     },
     college: {
-      type: String,
+        type: String,
     },
-    skills: [
-      {
+    skills: [{
         name: String,
         level: String,
         duration: Number,
         description: String,
-      },
-    ],
+    }, ],
     profileImageLocation: {
-      type: String,
+        type: String,
     },
     socialLinks: {
-      linkedin: {
-        type: String,
-        trim : true
-      },
-      github: {
-        type : String,
-        trim : true
-      },
-      facebook: {
-        type : String,
-        trim : true
-      },
-      twitter: {
-        type: String,
-        trim : true
-      }
+        linkedin: {
+            type: String,
+            trim: true
+        },
+        github: {
+            type: String,
+            trim: true
+        },
+        facebook: {
+            type: String,
+            trim: true
+        },
+        twitter: {
+            type: String,
+            trim: true
+        }
     },
-    achievements: [
-      {
+    achievements: [{
         name: String,
         platform: String,
         date: String,
         serial: String,
         description: String,
-      },
-    ],
-    personalProjects: [
-      {
+    }, ],
+    personalProjects: [{
         title: {
-          type: String,
+            type: String,
         },
         description: {
-          type: String,
+            type: String,
         },
         role: {
-          type: String,
+            type: String,
         },
         startdate: {
-          type: String,
+            type: String,
         },
-        status :{
-          type: String,
+        status: {
+            type: String,
         },
         enddate: {
-          type: String,
+            type: String,
         },
         techstack: {
-          type: String,
+            type: String,
         },
         githuburl: {
-          type: String,
+            type: String,
         },
         hosturl: {
-          type: String,
+            type: String,
         },
-      },
-    ],
-    experiences: [
-      {
+    }, ],
+    experiences: [{
         name: String,
         role: String,
         startdate: String,
         enddate: String,
         status: String,
         description: String,
-      },
-    ],
-    projects: [
-      {
+    }, ],
+    projects: [{
         type: Schema.Types.ObjectId,
         ref: "Project",
-      },
-    ],
-    bookmarkBlogs: [
-      {
+    }, ],
+    bookmarkBlogs: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
-      },
-    ],
-    blogs: [
-      {
+    }, ],
+    likes: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
-      },
-    ],
-  },
-  {
+    }, ],
+    blogs: [{
+        type: Schema.Types.ObjectId,
+        ref: "Blog",
+    }, ],
+}, {
     timestamps: true,
-  }
-);
+});
 
 // userSchema.plugin(uniqueValidator, {
 //   message: "Email already in use.",

@@ -68,6 +68,7 @@
         type="text"
         placeholder="Search Developers"
         autofocus
+        style=" border-top:0 ; border-left:0; border-right: 0; border-radius:0 ; "
       />
       <div class="search" id="srh1">
         <ul class="search-view" id="search_list1">
@@ -106,7 +107,7 @@
       <li class="nav-item rightbox" style="width: 70%">
         <div class="dropdown" id="dropper">
           <!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
-          <a href="#" class="mobilenavname"> <%- user.name.split(' ')[0]%></a>
+          <a href="/user/profile" class="mobilenavname"> <%- user.name.split(' ')[0]%></a>
           <div class="dropdown-content" id="dropdown-content">
             <a href="/user/profile">Profile</a>
             <a href="/user/logout">Logout</a>

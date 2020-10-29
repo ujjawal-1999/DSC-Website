@@ -84,6 +84,7 @@ nav {
 .nav-warapper .logodscmainnav {
   width: 50px !important;
   height: 50px !important;
+  margin-top: 6px;
 }
 .nav-warapper .search {
   position: absolute;
@@ -189,9 +190,9 @@ nav {
 .nav-warapper input {
   border-radius: 0;
   height: 2rem;
-  border: none;
+  border-bottom: 2px solid var(--Grey-dark-3);
   border-radius: 0px;
-  background-color: var(--primary-dark);
+  background-color: var(--Grey-light-1);
   color: var(--Grey-dark-2);
   padding: 0.2rem 1rem;
   width: 40%;
@@ -331,12 +332,13 @@ nav {
   transform: translateX(-50%);
   display: none;
   width: 50%;
+  border:0%;
 }
 
 .mobilesearch input {
   border-radius: 0;
   height: 2rem;
-  border: none;
+  border-bottom: 1px !important;
   border-radius: 0px;
   background-color: var(--Grey-dark-1);
   color: var(--Grey-light-1);
@@ -376,6 +378,9 @@ nav {
 
   nav {
     z-index: 10;
+  }
+  .nav-warapper:last-child {
+  margin-bottom: -40px;
   }
   .logodscmainnavmobile {
     display: block;

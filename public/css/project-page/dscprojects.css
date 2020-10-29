@@ -140,7 +140,6 @@ main {
   width: 100%;
   /*  height: 100%;*/
 }
-
 .cards .card-content .col {
   width: 50%;
   height: 100%;
@@ -225,6 +224,7 @@ main {
 .cards #linkedin .card-content p,
 .cards #twitter .card-content p {
   color: white !important;
+  font-size: 0.9rem;
 }
 
 .cards #dribbble .card-content {
@@ -350,8 +350,8 @@ form input[type="submit"] {
     -ms-flex-pack: centers;
     justify-content: centers;
     width: 95vh;
-    height: 75vh;
-    padding: 30px;
+    height: 85vh;
+    padding: 30px 20px;
     margin: 3rem 0.5rem;
   }
   .card-content {
@@ -362,7 +362,7 @@ form input[type="submit"] {
     margin-right: auto;
   }
   .card-content .details {
-    font-size: 0.67em;
+    font-size: 0.7em;
     position: relative;
     top: -80px;
   }
@@ -424,6 +424,12 @@ form input[type="submit"] {
     top: 5px;
     padding: 5px;
   }
+  .more-details {
+    line-height: 1.5em;
+    position: relative;
+    top: -20px;
+    width: 105%;
+  }
   .cards .card-content .col img {
     width: 30%;
   }
@@ -467,4 +473,28 @@ form input[type="submit"] {
 .more-details-heading + p {
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .cards #dribbble .card-content p,
+  .cards #behance .card-content p,
+  .cards #linkedin .card-content p,
+  .cards #twitter .card-content p {
+    color: white !important;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards #dribbble .card-content p,
+  .cards #behance .card-content p,
+  .cards #linkedin .card-content p,
+  .cards #twitter .card-content p {
+    color: white !important;
+    font-size: 0.65rem;
+  }
+  .card-content .details {
+    font-size: 0.65em;
+    position: relative;
+    top: -80px;
+  }
 }

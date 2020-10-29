@@ -19,8 +19,18 @@ main {
   justify-content: center;
   color: var(--Grey-dark-1);
   background-color: var(--primary-light);
+  background-blend-mode: multiply;
+  background-image: url("../../img/illustrations/members.svg");
+  background-attachment: fixed;
+  background-size: 70%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 }
-
+@media screen and (max-width: 750px) {
+  main {
+    background-size: 100%;
+  }
+}
 section {
   margin: 20rem 0;
   height: 80vh;
@@ -71,6 +81,7 @@ section {
   justify-content: center;
   background: linear-gradient(#ff0000, #00ff00, #fffb00, #0000ff);
   border-radius: 50%;
+  margin-bottom: 60px;
 }
 .lead_card img {
   /*width: 80%;*/
