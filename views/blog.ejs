@@ -94,7 +94,11 @@
             <form action="/blog/appreciate/<%=blog._id%>" method="POST">
               <button
                 type="submit"
-                style="border: none; background-color: transparent"
+                style="
+                  border: none;
+                  background-color: transparent;
+                  color: var(--Grey-dark-1);
+                "
               >
                 <% if (user) {%> <% if (user.likes &&
                 user.likes.includes(blog._id)) {%>
