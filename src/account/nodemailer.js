@@ -73,7 +73,7 @@ const signUpMail = (data, protocol, host) => {
   // const link = `http://localhost:3000/user/verify/${data._id}?tkn=${rand}`;
   // const link = `https://dscnitsilchar.herokuapp.com/user/verify/${data._id}?tkn=${rand}`;
   const PORT = process.env.PORT  || 8080
-  const link = `${protocol}://${host}:${PORT}/user/verify/${data._id}?tkn=${rand}`
+  const link = `${protocol}://${host}/user/verify/${data._id}?tkn=${rand}`
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -109,7 +109,7 @@ const forgotPassword = (data, protocol, host) => {
   // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   // const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   const PORT = process.env.PORT  || 8080
-  const link = `${protocol}://${host}:${PORT}/user/verify/forgotpassword/${data._id}?tkn=${rand}`
+  const link = `${protocol}://${host}/user/verify/forgotpassword/${data._id}?tkn=${rand}`
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
