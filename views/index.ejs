@@ -1,181 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="DSC NIT Silchar is under Developer Students Club, which is a
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments."
-    />
-    <meta
-      name="keywords"
-      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
-    />
-    <title>Developer Students Club | NIT Silchar</title>
-    <!-- ######################################################################## -->
-    <!-- Stylings -->
-    <link rel="stylesheet" href="/css/index/colors.css" />
-    <link rel="stylesheet" href="/css/index/index_animation.css" />
-    <link rel="stylesheet" href="/css/index/index_dashboard.css" />
-    <link rel="stylesheet" href="/css/index/index_about.css" />
-    <link rel="stylesheet" href="/css/index/index_videos.css" />
-    <link rel="stylesheet" href="/css/index/index_contactus.css" />
-    <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link rel="stylesheet" href="/css/index/index_faq.css" />
-    <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
-    <link rel="stylesheet" href="/css/index/index_feature.css" />
-    <link rel="stylesheet" href="/css/index/footer.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+    projects and accomplishments." />
+  <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
+  <title>Developer Students Club | NIT Silchar</title>
+  <!-- ######################################################################## -->
+  <!-- Stylings -->
+  <link rel="stylesheet" href="/css/index/colors.css" />
+  <link rel="stylesheet" href="/css/index/index_animation.css" />
+  <link rel="stylesheet" href="/css/index/index_dashboard.css" />
+  <link rel="stylesheet" href="/css/index/index_about.css" />
+  <link rel="stylesheet" href="/css/index/index_videos.css" />
+  <link rel="stylesheet" href="/css/index/index_contactus.css" />
+  <link rel="stylesheet" href="/css/index/font-awesome.css" />
+  <link rel="stylesheet" href="/css/index/index_faq.css" />
+  <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
+  <link rel="stylesheet" href="/css/index/index_feature.css" />
+  <link rel="stylesheet" href="/css/index/footer.css" />
+  <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
-    <link rel="stylesheet" href="/css/index/flashMessage.css" />
-    <!-- ######################################################################## -->
+  <link rel="stylesheet" href="/css/index/flashMessage.css" />
+  <!-- ######################################################################## -->
 
-    <!---Icons Import-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- JQuery for navbar -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
-  <body id="bodydiv">
-    <div class="loaderr">
-      <img src="img/loaderanimation/whiteloader.gif" alt="" />
-    </div>
-    <!--Navbar Starts-->
-    <%-include('partials/navbar')%>
-    <!---Navbar Ends-->
-    <!---Dashboard Section Starts-->
+  <!---Icons Import-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- JQuery for navbar -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 
-    <!-- Flash Message Body Start-->
-    <%-include('partials/flashMessage')%>
-    <!-- Flash Message Body End -->
-    
-    <header class="header">
-      
-      <img
-        src="/official-logo/DSC3(T).png"
-        alt="dsc logo"
-        class="dsclogo"
-        id="dsclogo"
-      />
-      <img
-        src="/official-logo/DSC1(T).png"
-        alt="dsc logo"
-        class="dsclogoMobile"
-        style="
+<body id="bodydiv">
+  <div class="loaderr">
+    <img src="img/loaderanimation/whiteloader.gif" alt="" />
+  </div>
+  <!--Navbar Starts-->
+  <%-include('partials/navbar')%>
+  <!---Navbar Ends-->
+  <!---Dashboard Section Starts-->
+
+  <!-- Flash Message Body Start-->
+  <%-include('partials/flashMessage')%>
+  <!-- Flash Message Body End -->
+
+  <header class="header">
+
+    <img src="/official-logo/DSC3(T).png" alt="dsc logo" class="dsclogo" id="dsclogo" />
+    <img src="/official-logo/DSC1(T).png" alt="dsc logo" class="dsclogoMobile" style="
         position: relative;
         bottom: -1rem;
-        ;"
-        
-      />
-      <img
-      src="/img/illustrations/dashboards.png"
-      alt="design"
-      class="dscdesign" 
-      style="
+        ;" />
+    <img src="/img/illustrations/dashboards.png" alt="design" class="dscdesign" style="
       height: 13rem;
       width: 15rem;
       position: relative; 
       bottom: 4rem;  
-      left:-26%;"
-    />
-    
-      
-      <!-- <h2 class="heading__secondary intersect" id="heading__secondary">
+      left:-26%;" />
+
+
+    <!-- <h2 class="heading__secondary intersect" id="heading__secondary">
         Developer Students Clubs
       </h2>
       <h1 class="heading__primary" id="heading__primary">
         <span class="bold">NIT</span> Silchar
       </h1> -->
-      <% if(!user){ %>
-      <a href="/user/register" style="margin-top: -12rem;"
-        ><input
-          type="button"
-          class="getStarted"
-          id="getStarted"
-          value="Get Started"
-      /></a>
-      <% } %>
-    </header>
-    <!-- <button id="ScrolltoTop" class="ScrolltoTop">
+    <% if(!user){ %>
+    <a href="/user/register" style="margin-top: -12rem;"><input type="button" class="getStarted" id="getStarted"
+        value="Get Started" /></a>
+    <% } %>
+  </header>
+  <!-- <button id="ScrolltoTop" class="ScrolltoTop">
         <i class="material-icons">arrow_upward</i>
       </button> -->
 
-    <!---Dashboard Section Ends-->
-    <!--About Us Section Starts-->
-    <main class="main">
-      <section class="about" id="about">
-        <div class="background">
-          <img
-            src="/img/illustrations/about.png"
-            alt="about us"
-            class="background__image"
-          />
-        </div>
-        <div class="content">
-          <h1 class="heading__primary intersect">About Us</h1>
-          <h3 class="heading__secondary">
-            The DSC NITS website is open for all student developers, who wish to
-            improve their skills. Each user has separate profile page, where one
-            can add his/her skills, projects and accomplishments. Doubts can be
-            cleared with the help of doubt forums and blogs posted by other
-            developers.
-            <br />
-            <br />
-            Users will receive badges based on their contributions to the club
-            and the community. Developers can view each other's profiles on the
-            website and select developers for one's project. One can also
-            participate in any on going project with other developers by raising
-            hand.<br /><br />
-            The DSC NITS website, built
-            <i>"by the developers, of the developers and for the developers"</i>
-            , is a great platform for a better developer community and
-            development of the society.
-          </h3>
-        </div>
-      </section>
-      <!--About Us Section Ends-->
+  <!---Dashboard Section Ends-->
+  <!--About Us Section Starts-->
+  <main class="main">
+    <section class="about" id="about">
+      <div class="background">
+        <img src="/img/illustrations/about.png" alt="about us" class="background__image" />
+      </div>
+      <div class="content">
+        <h1 class="heading__primary intersect">About Us</h1>
+        <h3 class="heading__secondary">
+          The DSC NITS website is open for all student developers, who wish to
+          improve their skills. Each user has separate profile page, where one
+          can add his/her skills, projects and accomplishments. Doubts can be
+          cleared with the help of doubt forums and blogs posted by other
+          developers.
+          <br />
+          <br />
+          Users will receive badges based on their contributions to the club
+          and the community. Developers can view each other's profiles on the
+          website and select developers for one's project. One can also
+          participate in any on going project with other developers by raising
+          hand.<br /><br />
+          The DSC NITS website, built
+          <i>"by the developers, of the developers and for the developers"</i>
+          , is a great platform for a better developer community and
+          development of the society.
+        </h3>
+      </div>
+    </section>
+    <!--About Us Section Ends-->
 
-      <!--About DSC Section Starts-->
-      <section class="about">
-        <div class="content">
-          <h1 class="heading__primary intersect">About DSC</h1>
-          <h3 class="heading__secondary">
-            DSC NIT Silchar is under Developer Students Club, which is a
-            worldwide developers community initiated by Google. Our DSC
-            prioritizes solving real life problems that we as part of a society
-            face in our daily lives. Solving such problems brings opportunities
-            for the budding developer communities to showcase their talents and,
-            improve and gain new skillsets. <br /><br />
-            Our members and moderators are skilled as Designers, Web, Android
-            and Cloud developers.<br /><br />
-            DSC NITS is not bounded to NITS itself. Our main aim is to empower
-            developers of North-East India and also to have a national and
-            international presence.
-          </h3>
-        </div>
-        <div class="background">
-          <img
-            src="/img/illustrations/aboutdsc.jpg"
-            alt="about dsc nits"
-            class="background__image"
-          />
-        </div>
-      </section>
-      <!--About DSC Section Ends-->
-      <!-- Feature Section -->
-      <!-- <section class="features" id="features">
+    <!--About DSC Section Starts-->
+    <section class="about">
+      <div class="content">
+        <h1 class="heading__primary intersect">About DSC</h1>
+        <h3 class="heading__secondary">
+          DSC NIT Silchar is under Developer Students Club, which is a
+          worldwide developers community initiated by Google. Our DSC
+          prioritizes solving real life problems that we as part of a society
+          face in our daily lives. Solving such problems brings opportunities
+          for the budding developer communities to showcase their talents and,
+          improve and gain new skillsets. <br /><br />
+          Our members and moderators are skilled as Designers, Web, Android
+          and Cloud developers.<br /><br />
+          DSC NITS is not bounded to NITS itself. Our main aim is to empower
+          developers of North-East India and also to have a national and
+          international presence.
+        </h3>
+      </div>
+      <div class="background">
+        <img src="/img/illustrations/aboutdsc.jpg" alt="about dsc nits" class="background__image" />
+      </div>
+    </section>
+    <!--About DSC Section Ends-->
+    <!-- Feature Section -->
+    <!-- <section class="features" id="features">
         <h1 class="heading_primary">Features</h1>
         <div class="featurecardscontainer">
           <div class="containerf">
@@ -326,384 +286,316 @@
           </div>
         </div>
       </section> -->
-      <!-- Features End -->
-      <!-- ##############################EVENT SCHEDULE#################################### -->
+    <!-- Features End -->
+    <!-- ##############################EVENT SCHEDULE#################################### -->
 
-      <section id="schedule" class="section">
-        <!-- container -->
-        <div class="container">
-          <!-- row -->
-          <div class="row">
-            <!-- section title -->
-            <div class="section-title">
-              <h1 class="video__secondary intersect">Event Schedule</h1>
-            </div>
-            <!-- /section title -->
-
-            <div class="col-md-8 col-md-offset-2">
-              <div class="events-wrapper">
-                <!-- event -->
-                <div class="event">
-                  <div class="event-day">
-                    <div>
-                      <span class="day">1</span>
-                      <span class="year">Oct, 2020</span>
-                    </div>
-                  </div>
-                  <div class="event-content">
-                    <h3 class="event-time">30 days of Google Cloud</h3>
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 1st Oct 2020
-                    </p>
-                    <br />
-                    <h3 class="event-title">Start Day</h3>
-                    <p class="cont"></p>
-                    <h3 class="event-time">Start of the quest at Qwiklabs</h3>
-                  </div>
-                </div>
-                <!-- /event -->
-
-                <div class="event">
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 5th Nov, 2020
-                    </p>
-                    <h3 class="event-title">End day</h3>
-                    <p class="cont">
-                      Last Day to complete the quest to be eligible for goodies.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- /event -->
-
-                <div class="event">
-                  <div class="event-day">
-                    <div>
-                      <span class="day">31</span>
-                      <span class="year">Oct, 2020</span>
-                    </div>
-                  </div>
-                  <div class="event-content">
-                    <h3 class="event-title">Amazon Web Services Workshop</h3>
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 31st Oct 2020
-                    </p>
-                    <h3 class="event-title">Day 1</h3>
-                    <p class="cont">Introduction to AWS Cloud Platform</p>
-                  </div>
-                </div>
-
-                <!-- event 1-->
-                <div class="event">
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 1st Nov, 2020
-                    </p>
-                    <h3 class="event-title">Day 2</h3>
-                    <p class="cont">Hands-on Tutorial for AWS</p>
-                  </div>
-                </div>
-                <!-- /event1 -->
-              </div>
-              
-            </div>
+    <section id="schedule" class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <!-- section title -->
+          <div class="section-title">
+            <h1 class="video__secondary intersect">Event Schedule</h1>
           </div>
-          <!-- /row -->
+          <!-- /section title -->
+
+          <div class="col-md-8 col-md-offset-2">
+            <div class="events-wrapper">
+              <!-- event -->
+              <div class="event">
+                <div class="event-day">
+                  <div>
+                    <span class="day">1</span>
+                    <span class="year">Oct, 2020</span>
+                  </div>
+                </div>
+                <div class="event-content">
+                  <h3 class="event-time">30 days of Google Cloud</h3>
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 1st Oct 2020
+                  </p>
+                  <br />
+                  <h3 class="event-title">Start Day</h3>
+                  <p class="cont"></p>
+                  <h3 class="event-time">Start of the quest at Qwiklabs</h3>
+                </div>
+              </div>
+              <!-- /event -->
+
+              <div class="event">
+                <div class="event-hour"></div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 5th Nov, 2020
+                  </p>
+                  <h3 class="event-title">End day</h3>
+                  <p class="cont">
+                    Last Day to complete the quest to be eligible for goodies.
+                  </p>
+                </div>
+              </div>
+
+              <!-- /event -->
+
+              <div class="event">
+                <div class="event-day">
+                  <div>
+                    <span class="day">31</span>
+                    <span class="year">Oct, 2020</span>
+                  </div>
+                </div>
+                <div class="event-content">
+                  <h3 class="event-title">Amazon Web Services Workshop</h3>
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 31st Oct 2020
+                  </p>
+                  <h3 class="event-title">Day 1</h3>
+                  <p class="cont">Introduction to AWS Cloud Platform</p>
+                </div>
+              </div>
+
+              <!-- event 1-->
+              <div class="event">
+                <div class="event-hour"></div>
+                <div class="event-content">
+                  <p class="event-time">
+                    <i class="fa fa-clock-o"></i> 1st Nov, 2020
+                  </p>
+                  <h3 class="event-title">Day 2</h3>
+                  <p class="cont">Hands-on Tutorial for AWS</p>
+                </div>
+              </div>
+              <!-- /event1 -->
+            </div>
+
+          </div>
         </div>
-        <!-- /container -->
-      </section>
-      <!-- ################################/Event Schedule #####################################-->
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </section>
+    <!-- ################################/Event Schedule #####################################-->
 
-      <!--Video Gallery Section Starts-->
-      <section class="video">
-        <h1 class="video__secondary intersect">Video Gallery</h1>
-        <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
-        <div class="contain">
-          <button id="left-button">
-            <img src="/img/logo/left.svg" alt="left arrow" class="" />
-          </button>
-          <div class="row" id="row">
-            <div class="row__inner">
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/GAoWVb_a9_M"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+    <!--Video Gallery Section Starts-->
+    <section class="video">
+      <h1 class="video__secondary intersect">Video Gallery</h1>
+      <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
+      <div class="contain">
+        <button id="left-button">
+          <img src="/img/logo/left.svg" alt="left arrow" class="" />
+        </button>
+        <div class="row" id="row">
+          <div class="row__inner">
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/GAoWVb_a9_M" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/xMBkZRCA_Lo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            </div>
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/xMBkZRCA_Lo" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/YL8amQAXD2A"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            </div>
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/YL8amQAXD2A" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
+            </div>
 
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/V6s5vp4l4WE"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/V6s5vp4l4WE" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/P3-Btcdwzbs"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            </div>
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/P3-Btcdwzbs" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/1-uwfWc3v-4"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
+            </div>
+            <div class="tile">
+              <div class="tile__media">
+                <iframe src="https://www.youtube.com/embed/1-uwfWc3v-4" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
             </div>
           </div>
-          <button id="right-button">
-            <img src="/img/logo/left.svg" alt="left arrow" class="inv" />
-          </button>
         </div>
-      </section>
-      <!---Video Gallery Section Ends-->
+        <button id="right-button">
+          <img src="/img/logo/left.svg" alt="left arrow" class="inv" />
+        </button>
+      </div>
+    </section>
+    <!---Video Gallery Section Ends-->
 
-      <!-- faq starts -->
-      <section class="faq-section" id="faq-section">
-        <div class="upper">
-          <h1>How can we help you?</h1>
-          <h3>
-            You can also browse the topics below to find what you are looking
-            for.
-          </h3>
-          <!--           <form action="">
+    <!-- faq starts -->
+    <section class="faq-section" id="faq-section">
+      <div class="upper">
+        <h1>How can we help you?</h1>
+        <h3>
+          You can also browse the topics below to find what you are looking
+          for.
+        </h3>
+        <!--           <form action="">
             <input
               type="text"
               class="faqinput"
               placeholder="Type keywords to find answers"
             />
           </form> -->
+      </div>
+      <div class="lower">
+        <div class="sub">
+          <i class="fa fa-pencil-square-o" aria-hidden="true" style="padding-bottom: 0.5rem"></i>
+          <h4>How to add, edit or delete details from the profile?</h4>
+          <br />
+          <p></p>
+          <p>
+            Go to the respective tabs on the profile page. You will find an
+            option stating 'Click here' from where you can add a new detail.
+            Also, every skill, experience, project or achievement will have an
+            delete button to help you with the same.
+          </p>
+          <!-- <p class="more">View all questions</p> -->
         </div>
-        <div class="lower">
-          <div class="sub">
-            <i
-              class="fa fa-pencil-square-o"
-              aria-hidden="true"
-              style="padding-bottom: 0.5rem"
-            ></i>
-            <h4>How to add, edit or delete details from the profile?</h4>
-            <br />
-            <p></p>
-            <p>
-              Go to the respective tabs on the profile page. You will find an
-              option stating 'Click here' from where you can add a new detail.
-              Also, every skill, experience, project or achievement will have an
-              delete button to help you with the same.
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
-          <div class="sub">
-            <i
-              class="fa fa-plus-circle"
-              aria-hidden="true"
-              style="padding-bottom: 0.5rem"
-            ></i>
-            <h4>How do I create a blog?</h4>
-            <br />
-            <p></p>
-            <p>
-              To create a blog, you first need to signin to your account and
-              then go to the 'Blog' page. On the right hand corner, you'll find
-              the option to create a new blog and also you can see all your
-              bookmarked blogs there.
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
-          <div class="sub">
-            <i
-              class="fa fa-user"
-              aria-hidden="true"
-              style="padding-bottom: 0.6rem"
-            ></i>
-            <h4>How to check any other profile?</h4>
-            <br />
-            <p></p>
-            <p>
-              Click on the search button present on the navigation bar at the
-              top of each page. Type the name of the user you want to search and
-              then click on the names that appear. You will be redirected to the
-              profile of that user.
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
-          <div class="sub">
-            <i
-              class="fa fa-users"
-              aria-hidden="true"
-              style="padding-bottom: 0.5rem"
-            ></i>
-            <h4>
-              How to view the DSC Member Page and Website Developer page?
-            </h4>
-            <br />
-            <p></p>
-            <p>
-              Go to the footer section, on Team and Developers you can find DSC
-              Member page and Website Developers page.
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
-          <div class="sub">
-            <i
-              class="fa fa-eye"
-              aria-hidden="true"
-              style="padding-bottom: 0.5rem"
-            ></i>
-            <h4>How are views on Blogs counted?</h4>
-            <br />
-            <p></p>
-            <p>
-              Whenever a user visits a blog, the view count is incremented by
-              one and displayed
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
-          <div class="sub">
-            <i
-              class="fa fa-unlock-alt"
-              aria-hidden="true"
-              style="padding-bottom: 0.6rem"
-            ></i>
-            <h4>How do I login if I forgot my password?</h4>
-            <br />
-            <p></p>
-            <p>
-              Just click on the forgot password option given on the Login Page.
-              You have to enter your email and then a mail will be sent to your
-              registered email address. Click on that link before it expires and
-              update your password
-            </p>
-            <!-- <p class="more">View all questions</p> -->
-          </div>
+        <div class="sub">
+          <i class="fa fa-plus-circle" aria-hidden="true" style="padding-bottom: 0.5rem"></i>
+          <h4>How do I create a blog?</h4>
+          <br />
+          <p></p>
+          <p>
+            To create a blog, you first need to signin to your account and
+            then go to the 'Blog' page. On the right hand corner, you'll find
+            the option to create a new blog and also you can see all your
+            bookmarked blogs there.
+          </p>
+          <!-- <p class="more">View all questions</p> -->
         </div>
-      </section>
+        <div class="sub">
+          <i class="fa fa-user" aria-hidden="true" style="padding-bottom: 0.6rem"></i>
+          <h4>How to check any other profile?</h4>
+          <br />
+          <p></p>
+          <p>
+            Click on the search button present on the navigation bar at the
+            top of each page. Type the name of the user you want to search and
+            then click on the names that appear. You will be redirected to the
+            profile of that user.
+          </p>
+          <!-- <p class="more">View all questions</p> -->
+        </div>
+        <div class="sub">
+          <i class="fa fa-users" aria-hidden="true" style="padding-bottom: 0.5rem"></i>
+          <h4>
+            How to view the DSC Member Page and Website Developer page?
+          </h4>
+          <br />
+          <p></p>
+          <p>
+            Go to the footer section, on Team and Developers you can find DSC
+            Member page and Website Developers page.
+          </p>
+          <!-- <p class="more">View all questions</p> -->
+        </div>
+        <div class="sub">
+          <i class="fa fa-eye" aria-hidden="true" style="padding-bottom: 0.5rem"></i>
+          <h4>How are views on Blogs counted?</h4>
+          <br />
+          <p></p>
+          <p>
+            Whenever a user visits a blog, the view count is incremented by
+            one and displayed
+          </p>
+          <!-- <p class="more">View all questions</p> -->
+        </div>
+        <div class="sub">
+          <i class="fa fa-unlock-alt" aria-hidden="true" style="padding-bottom: 0.6rem"></i>
+          <h4>How do I login if I forgot my password?</h4>
+          <br />
+          <p></p>
+          <p>
+            Just click on the forgot password option given on the Login Page.
+            You have to enter your email and then a mail will be sent to your
+            registered email address. Click on that link before it expires and
+            update your password
+          </p>
+          <!-- <p class="more">View all questions</p> -->
+        </div>
+      </div>
+    </section>
 
-      <!-- faq ends -->
-      <!---Contact Us Section Starts-->
-      <section class="contact_us" id="contactus">
-        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
-        <div>
-          <% if (flashMessages) { %> <% if (flashMessages.contact_success) { %>
-          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
-          <div class="alert" id="success">
-            <span
-              class="closebtn"
-              onclick="this.parentElement.style.display='none';"
-              >&times;</span
-            >
-            <%= flashMessages.contact_success %>
-          </div>
-          <% } else if (flashMessages.contact_error) { %>
-          <div class="alert" id="error">
-            <span
-              class="closebtn"
-              onclick="this.parentElement.style.display='none';"
-              >&times;</span
-            >
-            <%= flashMessages.contact_error %>
-          </div>
-          <% } %> <% } %>
+    <!-- faq ends -->
+    <!---Contact Us Section Starts-->
+    <section class="contact_us" id="contactus">
+      <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+      <div>
+        <% if (flashMessages) { %> <% if (flashMessages.contact_success) { %>
+        <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+        <div class="alert" id="success">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <%= flashMessages.contact_success %>
         </div>
-        <div class="row" style="padding-top: 2rem;">
-          <h2 class="heading__primary intersect" style="padding-top: 2rem;">Contact Us</h2>
+        <% } else if (flashMessages.contact_error) { %>
+        <div class="alert" id="error">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <%= flashMessages.contact_error %>
+        </div>
+        <% } %> <% } %>
+      </div>
+      <div class="row" style="padding-top: 2rem;">
+        <h2 class="heading__primary intersect" style="padding-top: 2rem;">Contact Us</h2>
 
-          <h4 style="text-align: center">We'd love to hear from you!</h4>
-        </div>
-        <form
-          action="/contact"
-          method="post"
-          id="upload_form"
-          enctype="multipart/form-data"
-        >
-          <div class="container">
-            <div class="row input-container">
+        <h4 style="text-align: center">We'd love to hear from you!</h4>
+      </div>
+      <form action="/contact" method="post" id="upload_form" enctype="multipart/form-data">
+        <div class="container">
+          <div class="row input-container">
+            <div class="col-xs-12">
+              <div class="styled-input wide">
+                <input type="email" class="full" name="email" required />
+                <label>Email</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="styled-input">
+                <input type="text" class="full" name="name" required />
+                <label>Name</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="styled-input" style="float: right">
+                <input type="text" class="full" name="subject" required />
+                <label>Subject</label>
+              </div>
+            </div>
+
+            <div class="col-xs-12">
+              <div class="styled-input wide">
+                <input type="text" class="message full" name="message" required />
+                <label>Message</label>
+              </div>
+            </div>
+            <center>
               <div class="col-xs-12">
+                <label for="file" id="lb" class="custom-file-upload">Upload a file</label>
+                <div style="margin-top: 5px" id="fileList">
+                  <label id="fileList"></label>
+                </div>
                 <div class="styled-input wide">
-                  <input type="email" class="full" name="email" required />
-                  <label>Email</label>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="styled-input">
-                  <input type="text" class="full" name="name" required />
-                  <label>Name</label>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="styled-input" style="float: right">
-                  <input type="text" class="full" name="subject" required />
-                  <label>Subject</label>
-                </div>
-              </div>
-
-              <div class="col-xs-12">
-                <div class="styled-input wide">
-                  <input
-                    type="text"
-                    class="message full"
-                    name="message"
-                    required
-                  />
-                  <label>Message</label>
-                </div>
-              </div>
-              <center>
-                <div class="col-xs-12">
-                  <label for="file" id="lb" class="custom-file-upload"
-                    >Upload a file</label
-                  >
-                  <div style="margin-top: 5px" id="fileList">
-                    <label id="fileList"></label>
-                  </div>
-                  <div class="styled-input wide">
-                    <input
-                      class="inputfile"
-                      type="file"
-                      name="issues"
-                      id="file1"
-                      multiple
-                      onchange="javascript:updateList()"
-                    /><br />
-                    <!-- <center>
+                  <input class="inputfile" type="file" name="issues" id="file1" multiple
+                    onchange="javascript:updateList()" /><br />
+                  <!-- <center>
                       <progress
                         class="progress"
                         id="progressBar"
@@ -713,33 +605,33 @@
                       ></progress>
                     </center> -->
 
-                    <h3 id="status" class="status"></h3>
-                    <p id="loaded_n_total" class="loaded_n_total"></p>
-                  </div>
+                  <h3 id="status" class="status"></h3>
+                  <p id="loaded_n_total" class="loaded_n_total"></p>
                 </div>
+              </div>
 
-                <div class="col-xs-12">
-                  <button class="btn-lrg submit-btn" onclick="uploadFile()">
-                    Send Message
-                  </button>
-                </div>
-              </center>
-            </div>
+              <div class="col-xs-12">
+                <button class="btn-lrg submit-btn" onclick="uploadFile()">
+                  Send Message
+                </button>
+              </div>
+            </center>
           </div>
-        </form>
-      </section>
-    </main>
-    <%-include('partials/footer')%>
-    <!---Contact Us Section Ends-->
-    <script src="/js/darkmode.js"></script>
-    <script src="/js/loader.js"></script>
-    <script src="/js/index/index_progressbar.js"></script>
-    <script src="/js/index/index_faq.js"></script>
-    <script src="/js/index/index_feature.js"></script>
-    <script src="/js/index/index.js"></script>
-    <script src="/js/index/index_contactus.js"></script>
-    <script src="/js/navbar.js"></script>
-    <script>
+        </div>
+      </form>
+    </section>
+  </main>
+  <%-include('partials/footer')%>
+  <!---Contact Us Section Ends-->
+  <script src="/js/darkmode.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/index/index_progressbar.js"></script>
+  <script src="/js/index/index_faq.js"></script>
+  <script src="/js/index/index_feature.js"></script>
+  <script src="/js/index/index.js"></script>
+  <script src="/js/index/index_contactus.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script>
       // var bodydiv = document.getElementById("bodydiv");
       // bodydiv.addEventListener("click", closeSearch);
       // function closeSearch() {
@@ -748,6 +640,7 @@
       //   let search_list2 = document.getElementById("search_list2");
       //   search_list2.style.display = "none";
       // }
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
