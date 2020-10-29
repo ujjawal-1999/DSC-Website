@@ -50,9 +50,22 @@
   </head>
 
   <style>
+    .pointer {
+      cursor: pointer;
+    }
+    .clapper {
+      width: 30px !important;
+      cursor: pointer;
+    }
     @media screen and (max-width: 740px) {
-      .cards .card .content p {
-        font-size: 16px;
+      .clapper {
+        margin-top: 10px;
+        width: 20px !important;
+      }
+      @media screen and (max-width: 740px) {
+        .cards .card .content p {
+          font-size: 16px;
+        }
       }
     }
   </style>
@@ -90,11 +103,11 @@
             >
               <% if (user) {%> <% if (user.likes &&
               user.likes.includes(blog._id)) {%>
-              <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/clap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } else {%>
-              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
               <br /><%= blog.appreciateCount || 0%> <% } %>
             </button>
           </form>
@@ -129,12 +142,12 @@
                 <% if (user.bookmarkBlogs
                 &&user.bookmarkBlogs.includes(blog._id)) {%>
                 <i
-                  class="fas fa-bookmark"
+                  class="fas fa-bookmark pointer"
                   style="font-size: 16px; color: var(--Grey-dark-1)"
                 ></i>
                 <% } else {%>
                 <i
-                  class="far fa-bookmark"
+                  class="far fa-bookmark pointer"
                   style="font-size: 16px; color: var(--Grey-dark-1)"
                 ></i>
                 <% } %>

@@ -35,6 +35,29 @@
     <link rel="stylesheet" href="/css/profile/profile_projects.css" />
     <link rel="stylesheet" href="/css/profile/modal.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <style>
+       .clapper {
+        width: 30px!important;
+      }
+      @media screen and (max-width: 740px) {
+        .clapper {
+          width: 20px !important;
+        }
+        .cards .card .socialactivity {
+          padding: 15px!important;
+        }
+      }
+      
+      .sidebarblog {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15%;
+        align-items: center;
+        padding: 1rem;
+      }
+      
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -877,25 +900,25 @@
                           <% }else{%>
                           <img src="/img/logo/profile.png" alt="avatar" />
                           <% }%>
-                          <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: right;
-                            "
-                          >
-                            <i class="fas fa-eye" style="font-size: 15px">
-                              <%= blog.views %></i
-                            >
-                            <!-- <a
-                              href="/user/blog/delete/<%= blog._id %>"
-                              style="color: red"
-                            >
-                              <i class="fas fa-trash" style="font-size: 18px">
-                              </i>
-                            </a> -->
-                          </div>
+                          <button
+                          type="submit"
+                          
+                          style="
+                            display: block;
+                            border: none;
+                            background-color: transparent;
+                            color: var(--Grey-dark-1);
+                          "
+                        >
+                          <% if (user) {%> <% if (user.likes &&
+                          user.likes.includes(blog._id)) {%>
+                          <img src="/img/logo/clap.png" class="clapper" alt="" />
+                          <br /><%= blog.appreciateCount || 0%> <% } else {%>
+                          <img src="/img/logo/noclap.png" class="clapper" alt="" />
+                          <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+                          <img src="/img/logo/noclap.png" class="clapper" alt="" />
+                          <br /><%= blog.appreciateCount || 0%> <% } %>
+                        </button> 
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
@@ -915,11 +938,19 @@
                             </div>
                           </div>
                         </div>
+                        <div class="sidebarblog">
                         <a
                           class="delete-exp"
                           href="/user/blog/delete/<%= blog._id %>"
                           ><img src="/img/profile/trash.svg" alt="delete icon"
                         /></a>
+                        <i
+                        class="fas fa-eye"
+                        style="font-size: 15px; color: var(--Grey-dark-1)"
+                      >
+                        <%= blog.views %></i
+                      ></div>
+                        
                       </div>
                       <%})%>
                     </div>

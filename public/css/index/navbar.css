@@ -90,7 +90,7 @@ nav {
   position: absolute;
   top: 80px;
   right: 0;
-  width: 25%;
+  width: 100%;
 }
 
 .nav-item {
@@ -194,8 +194,8 @@ nav {
   border-radius: 0px;
   background-color: var(--Grey-light-1);
   color: var(--Grey-dark-2);
-  padding: 0.2rem 1rem;
-  width: 40%;
+  padding: 0.2rem 0.1rem;
+  width: 60%;
   transition: all 0.2s;
 }
 
