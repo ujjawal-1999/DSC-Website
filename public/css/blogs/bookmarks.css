@@ -142,7 +142,8 @@ body {
 
 @media (max-width: 800px) {
     .card-product-details {
-        width: 90%;
+        width: 95%;
+        padding: 10px;
         text-align: center;
         align-content: center;
         margin: auto;
