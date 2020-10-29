@@ -489,12 +489,6 @@ ul.blog-search-results li {
   border-color: var(--Grey-dark-1);
 }
 
-#search2 {
-  border-radius: 45px;
-  height: 2em;
-  padding-left: 1em;
-}
-
 .blog-search-row {
   display: flex;
   justify-content: space-between;
