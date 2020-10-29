@@ -42,6 +42,12 @@
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <style>
+      .cards .card .content .images .image-container img {
+        width: 100%;
+      }
+      .cards .card .content .images {
+        width: 90%;
+      }
       .pagination {
         padding: 3rem 0;
         text-align: center;
@@ -91,25 +97,24 @@
             <% }else{%>
             <img src="/img/profile/person.png" alt="default avatar" />
             <% }%>
-            <form action="/blog/appreciate/<%=blog._id%>" method="POST">
-              <button
-                type="submit"
-                style="
-                  border: none;
-                  background-color: transparent;
-                  color: var(--Grey-dark-1);
-                "
-              >
-                <% if (user) {%> <% if (user.likes &&
-                user.likes.includes(blog._id)) {%>
-                <img src="/img/logo/clap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } else {%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %>
-              </button>
-            </form>
+
+            <button
+              type="submit"
+              style="
+                border: none;
+                background-color: transparent;
+                color: var(--Grey-dark-1);
+              "
+            >
+              <% if (user) {%> <% if (user.likes &&
+              user.likes.includes(blog._id)) {%>
+              <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } else {%>
+              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+              <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %>
+            </button>
           </div>
           <div class="content">
             <h3 class="topic"><%= blog.title %></h3>
