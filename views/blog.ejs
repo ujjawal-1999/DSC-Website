@@ -91,20 +91,19 @@
             <% }else{%>
             <img src="/img/profile/person.png" alt="default avatar" />
             <% }%>
-            <form action="">
+            <form action="/blog/appreciate/<%=blog._id%>" method="POST">
               <button
                 type="submit"
                 style="border: none; background-color: transparent"
               >
-                <i
-                  class="fa fa-heart"
-                  style="
-                    cursor: pointer;
-                    font-size: 16px;
-                    color: var(--Grey-dark-1);
-                  "
-                  ><br />12</i
-                >
+                <% if (user) {%> <% if (user.likes &&
+                user.likes.includes(blog._id)) {%>
+                <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } else {%>
+                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } %>
               </button>
             </form>
           </div>

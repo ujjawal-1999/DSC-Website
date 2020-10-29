@@ -114,16 +114,18 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
     try {
         let user = await User.findById(req.user.userId);
         let likesArr = user.likes || [];
+        let blog = await Blog.findById(req.params.blog_id);
         if (likesArr.includes(req.params.blog_id)) {
-
+            likesArr.remove(req.params.blog_id);
+            blog.appreciateCount = blog.appreciateCount - 1;
         } else {
             likesArr.push(req.params.blog_id);
-            let blog = await Blog.findById(req.params.blog_id);
             blog.appreciateCount = blog.appreciateCount + 1;
-            user.likes = likesArr;
-            await blog.save();
-            await user.save();
+
         }
+        user.likes = likesArr;
+        await blog.save();
+        await user.save();
         console.log(likesArr);
         res.redirect(req.get("referer"));
     } catch (error) {
