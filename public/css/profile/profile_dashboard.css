@@ -4,6 +4,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -344,9 +345,8 @@ body {
 .photo {
   width: 10rem;
   height: 10rem;
-  overflow: hidden;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 10px;
 }
 
@@ -526,7 +526,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .cards .card .socialactivity img {
@@ -547,7 +547,7 @@ body {
 .cards .card .socialactivity .sharable p {
   color: var(--Grey-dark-4) !important;
   font-size: 0.8rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   opacity: 0.2;
 }
 

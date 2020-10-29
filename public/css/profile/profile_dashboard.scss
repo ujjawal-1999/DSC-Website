@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   display: flex;
@@ -282,8 +283,7 @@ body {
   // overflow: hidden;
   width: 10rem;
   height: 10rem;
-  overflow: hidden;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 10px;
   img {
     width: 10rem;
@@ -421,7 +421,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 1rem 0.5rem;
+      padding: 1rem;
       img {
         width: 3rem;
         border-radius: 100%;
