@@ -1,89 +1,125 @@
-<div class="page-wrapper">
-  <div class="nav-wrapper">
-    <nav class="navbar">
-      <div class="box">
-        <input
-          class="search-input"
-          id="search1"
-          type="text"
-          placeholder="Search Developers"
-          autofocus
-        />
-        <div class="search" id="srh1"></div>
+<link rel="stylesheet" href="/css/index/font-awesome.css" />
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+/>
+<nav>
+  <a href="/">
+    <img
+      class="logodscmainnavmobile"
+      src="/img/logo/DSC-trans-new.png"
+      alt="favicon"
+  /></a>
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <div class="mobilesearch">
+    <input
+      class="search-input"
+      id="search2"
+      type="text"
+      placeholder="Search Developers"
+      autofocus
+    />
+    <div class="search" id="srh2">
+      <ul class="search-view" id="search_list2">
+        <% found.forEach((user)=>{ %>
+        <li id="collection-item2" class="collection-item2">
+          <a
+            href="/user/public-profile/<%= user.dscHandle%> "
+            class="usersearch"
+            style="text-decoration: none; display: block"
+          >
+            <p><%= user.name%></p></a
+          >
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap" id="navwrap">
+    <div class="nav-warapper">
+      <a href="/">
+        <img
+          class="logodscmainnav"
+          src="/img/logo/DSC-trans-new.png"
+          alt="favicon"
+      /></a>
+      <li class="nav-item"><a href="/" class="nav-items-a">Home</a></li>
+      <li class="nav-item">
+        <a href="/#about" class="nav-items-a">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a href="/project/" class="nav-items-a">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="/#schedule" class="nav-items-a">Events</a>
+      </li>
+      <li class="nav-item">
+        <a href="/blog?page=1" class="nav-items-a">Blogs</a>
+      </li>
+    </div>
+    <div class="nav-warapper">
+      <input
+        class="search-input"
+        id="search1"
+        type="text"
+        placeholder="Search Developers"
+        autofocus
+      />
+      <div class="search" id="srh1">
         <ul class="search-view" id="search_list1">
           <% found.forEach((user)=>{ %>
-          <li class="collection-item2">
+          <li id="collection-item1" class="collection-item1">
             <a
               href="/user/public-profile/<%= user.dscHandle%> "
               class="usersearch"
               style="text-decoration: none; display: block"
-              ><%= user.name%></a
+            >
+              <% if(user.profileImageLocation!=null){ %>
+              <img
+                src="/upload<%= user.profileImageLocation%>"
+                alt="Profile Image"
+              />
+              <% }else{%> <img src="/img/logo/profile.png" alt="avatar" /> <%
+              }%>
+              <p><%= user.name%></p></a
             >
           </li>
           <% }) %>
         </ul>
       </div>
-      <a href="/"> <img src="/img/logo/DSC-trans-new.png" alt="favicon" /></a>
 
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav no-search">
-        <li class="nav-item"><a href="/" class="nav-items-a">Home</a></li>
-        <li class="nav-item">
-          <a href="/#about" class="nav-items-a">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a href="/project/" class="nav-items-a">DSC Projects</a>
-        </li>
-        <li class="nav-item">
-          <a href="/#schedule" class="nav-items-a">Events</a>
-        </li>
-        <li class="nav-item">
-          <a href="/blog?page=1" class="nav-items-a">Blogs</a>
-        </li>
-        <!-- <li id="dmodeGLOBAL" class="nav-item">
-          <a href="#" class="nav-items-a">Dark Mode</a>
-        </li> -->
-
-        <% if(!user){ %>
-        <li class="nav-item">
-          <a href="/user/register" class="nav-items-a">SignUp</a>
-        </li>
-        <li class="nav-item">
-          <a href="/user/register?type=login" class="nav-items-a">Log In</a>
-        </li>
-        <% }else{ %>
-        <li class="nav-item">
-          <div class="dropdown">
-            <a href="/user/profile" class="nav-items-a dropbtn"
-              ><%=user.name%> <i class="fa fa-caret-down" aria-hidden="true"></i
-            ></a>
-
-            <div class="dropdown-content">
-              <a href="/user/profile">My Profile</a>
-              <a href="/user/logout">Logout</a>
-            </div>
+      <% if(!user){ %>
+      <li class="nav-item rightbox">
+        <a href="/user/register?type=login" class="nav-items-a signupnav">Login</a>
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </li>
+      <% }else{ %>
+      <li class="nav-item rightbox" style="width: 70%">
+        <div class="dropdown" id="dropper">
+          <!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+          <a href="#" class="mobilenavname"> <%- user.name.split(' ')[0]%></a>
+          <div class="dropdown-content" id="dropdown-content">
+            <a href="/user/profile">Profile</a>
+            <a href="/user/logout">Logout</a>
           </div>
-        </li>
-        <% } %>
-        <li class="nav-item">
-          <input
-            class="type-checkbox"
-            id="toogle"
-            type="checkbox"
-            name="name"
-          />
-          <label class="estado" for="toogle">
-            <span class="aprobado">Light</span>
-            <span class="desaprobado">Dark</span>
-          </label>
-        </li>
-      </ul>
-    </nav>
+        </div>
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </li>
+      <% } %>
+    </div>
   </div>
-
-  <script></script>
-</div>
+</nav>

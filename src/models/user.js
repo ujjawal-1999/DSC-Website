@@ -28,6 +28,10 @@ const userSchema = new Schema(
     branch: {
       type: String,
     },
+    badge : {
+      type: Number,
+      default: 0    /* 1 - Founding Members, 2 - Core Members, 3 - Members*/
+    },
     degree: {
       type: String,
     },

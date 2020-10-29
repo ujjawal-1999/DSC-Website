@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -14,48 +15,35 @@
     Profile, Forum, Events, Developers, NIT Silchar" />
 
     <link rel="stylesheet" href="/css/register/register.css" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/flashMessage.css">
 
     <title>DSC NITS | Login/SignUp</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <!--Navbar Starts-->
     <%-include('partials/navbar')%>
-    <!---Navbar Ends-->
+        <!---Navbar Ends-->
 
-    <!-- Flash Message Body Start -->
-    <%-include('partials/flashMessage')%>
-    <!-- Flash Message body end -->
+        <!-- Flash Message Body Start -->
+        <%-include('partials/flashMessage')%>
+            <!-- Flash Message body end -->
 
-    <div class="container" id="container">
-      <div class="heading-block">
-        <h1 id="label">
-          SignUp
-          <span style="color: #0f1923"></span>
-        </h1>
-      </div>
-      <div class="signup-form" id="signupform">
-        <h1 class="mobileheading">Sign Up</h1>
-        <form
-          action="/user/register"
-          method="POST"
-          onsubmit="return validate()"
-          name="signupform"
-          id="signupform"
-        >
-          <label for="codename">Full name</label
+            <div class="container" id="container">
+                <div class="heading-block" style="width:45% !important;">
+                    <h1 id="label">
+                        SignUp
+                        <span style="color: #0f1923"></span>
+                    </h1>
+                </div>
+                <div class="signup-form" id="signupform">
+                    <h1 class="mobileheading">Sign Up</h1>
+                    <form action="/user/register" method="POST" onsubmit="return validate()" name="signupform" id="signupform">
+                        <label for="codename">Full name</label
           ><input
             type="text"
             name="name"
@@ -68,19 +56,11 @@
 
           <label for="hname">Username</label>
 
-          <input
-            id="hname"
-            type="text"
-            placeholder="Username"
-            name="dscHandle"
-            required
-            maxlength="20"
-            onchange="return checkuniquedschandle()"
-          />
-          <h6 style="margin-top: -20px;margin-bottom: 10px;"> Username cannot be longer than 20 characters</h6>
-          <p id="uniqueness"></p>
+                        <input id="hname" type="text" placeholder="Username" name="dscHandle" required maxlength="20" onchange="return checkuniquedschandle()" />
+                        <h6 style="margin-top: -20px;margin-bottom: 10px;"> Username cannot be longer than 20 characters</h6>
+                        <p id="uniqueness"></p>
 
-          <label for="email">Email</label
+                        <label for="email">Email</label
           ><input
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
             type="email"
@@ -89,58 +69,46 @@
             required
           />
           <label for="sidearm">Password</label>
-          <input
-            type="password"
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
+                        <input type="password" id="password" type="password" name="password" placeholder="Password" required />
 
-          <label for="sidearm">Confirm Password</label>
-          <input
-            type="password"
-            id="cpassword"
-            type="password"
-            name="cpassword"
-            placeholder="Retype Password"
-            required
-          />
-          <br />
-          <div
-            class="flexRow"
-            style="
+                        <label for="sidearm">Confirm Password</label>
+                        <input type="password" id="cpassword" type="password" name="cpassword" placeholder="Retype Password" required />
+                        <br />
+                        <div class="flexRow" style="
               display: flex;
               align-items: center;
               height: auto;
               margin: -18px;
-            "
-          >
-            <input
-              onclick="showpasswordsignup()"
-              type="checkbox"
-              style="width: auto; margin: 0"
-            />&nbsp&nbsp Show Password
-          </div>
-          <div class="button-box">
-            <div class="button-mask button-mask-slide" style="padding: 0">
-              <input type="submit" value="SignUp" id="" style="padding: 20px" onclick="ValidateEmail(document.signupform.text1)" />
-            </div>
-          </div>
-          <div class="button-box">
-            <div class="button-mask button-mask-slide" id="switchtologin">
-              <span>Already have an account ? Login</span>
-            </div>
-          </div>
-        </form>
+              padding: 0;
+              padding-left: 20px;
+            ">
+                            <input onclick="showpasswordsignup()" type="checkbox" style="width: auto; margin: 0" />&nbsp&nbsp Show Password
+                        </div>
+                        <div>
+                            <center>
+                                <div class="button-box" id="btn-1">
+                                    <div class="button-mask button-mask-slide" style="padding: 0">
+                                        <input type="submit" value="SignUp" id="" style="padding: 20px" onclick="ValidateEmail(document.signupform.text1)" />
+                                    </div>
+                                </div>
+                                <br><br> Already have an account ?
 
-        <!-- <p>
+                                <div class="button-mask button-mask-slide" id="switchtologin" style="cursor: pointer; display: inline-block;"> Login</div>
+
+                            </center>
+                        </div>
+
+
+
+
+                    </form>
+
+                    <!-- <p>
           <a href="/user/forgotpassword">Forget Password ?</a><br /><br />
           or use social account
         </p> -->
 
-        <!-- <div class="social-login">
+                    <!-- <div class="social-login">
           <a href="#">
             <img src="/img/logo/fb.png" class="social_logo" alt="facebook logo" />
             Signup with facebook
@@ -150,12 +118,12 @@
             Signup with Google
           </a>
         </div> -->
-      </div>
+                </div>
 
-      <div class="signup-form" id="loginform">
-        <h1 class="mobileheading">Login</h1>
-        <form action="/user/login" method="POST">
-          <label for="email">Email/Username</label
+                <div class="signup-form" id="loginform">
+                    <h1 class="mobileheading">Login</h1>
+                    <form action="/user/login" method="POST" id="login-form">
+                        <label for="email">Email/Username</label
           ><input
             type="text"
             name="email"
@@ -163,49 +131,38 @@
             required
           />
           <label for="sidearm">Password</label>
-          <input
-            type="password"
-            id="loginpassword"
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <br />
-          <div
-            class="flexRow"
-            style="
+                        <input type="password" id="loginpassword" type="password" name="password" placeholder="Password" required />
+                        <br />
+                        <div class="flexRow" style="
               display: flex;
               align-items: center;
               height: auto;
               margin: -18px;
-            "
-          >
-            <input
-              onclick="showpasswordlogin()"
-              type="checkbox"
-              style="width: auto; margin: 0"
-            />&nbsp&nbsp Show Password
-          </div>
-          <div class="button-box">
-            <div class="button-mask button-mask-slide" style="padding: 0">
-              <input type="submit" value="Login" id="" style="padding: 20px" />
-            </div>
-          </div>
-          <div class="button-box">
-            <div class="button-mask button-mask-slide" id="switchtosignup">
-              <span>Don't have an account ? SignUp</span>
-            </div>
-          </div>
-        </form>
+            ">
+                            <input onclick="showpasswordlogin()" type="checkbox" style="width: auto; margin: 0" />&nbsp&nbsp Show Password
+                        </div>
+                        <div>
+                            <center>
+                                <div class="button-box" id="btn-1">
+                                    <div class="button-mask button-mask-slide" style="padding: 0; ">
+                                        <input type="submit" value="Login" id="" style="padding: 20px" />
+                                    </div>
+                                </div>
+                                <br><br>Don't have an account ?
+                                <div class="button-mask button-mask-slide" id="switchtosignup" style="display: inline-block; cursor: pointer;">SignUp
+                                </div>
+                            </center>
 
-        <p>
-          <a href="/user/forgotpassword">Forget Password ?</a><br />
-          <!-- <br />
-          or use social account -->
-        </p>
 
-        <!-- <div class="social-login">
+                        </div>
+                    </form>
+
+                    <p>
+                        <a href="/user/forgotpassword" style="color: #0f1923; text-decoration: none; ">Forgot Password ?</a><br />
+
+                    </p>
+
+                    <!-- <div class="social-login">
           <a href="#">
             <img src="/img/logo/fb.png" class="social_logo" alt="facebook logo" />
             Login with facebook
@@ -215,17 +172,14 @@
             Login with Google
           </a>
         </div> -->
-      </div>
-    </div>
+                </div>
+            </div>
+            <%-include('partials/footer')%>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/darkmode.js"></script>
+<script src="/js/anime.js"></script>
+<script src="/js/signup-in/register.js"></script>
 
-    <div class="bg-text-stroke">
-      <span>Welcome to</span>
-      <span>DSC Website</span>
-    </div>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/js/navbar.js"></script>
-  <script src="/js/darkmode.js"></script>
-  <script src="/js/anime.js"></script>
-  <script src="/js/signup-in/register.js"></script>
 </html>

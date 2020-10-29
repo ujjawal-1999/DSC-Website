@@ -1,11 +1,10 @@
 .contact_us {
-  height: 110vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -16,6 +15,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   /* ///// inputs /////*/
+  margin-top: 1rem;
 }
 
 .contact_us .cu {
@@ -50,7 +50,7 @@
 .contact_us .heading__primary {
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .contact_us h4 {
@@ -105,12 +105,6 @@
   border-radius: 4px;
 }
 
-
-  ul {
-    list-style: none;
-  }
-
-
 @media only screen and (max-width: 768px) {
   .contact_us .styled-input {
     width: 100%;
@@ -133,6 +127,10 @@
 .contact_us .styled-input.wide {
   width: 650px;
   max-width: 100%;
+}
+
+.contact_us ul {
+  list-style: none;
 }
 
 .contact_us input,

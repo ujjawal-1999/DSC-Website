@@ -40,7 +40,8 @@ body {
 .loaderr {
   position: fixed;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  background-color: #ffffff;
   z-index: 20;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,6 +52,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+.loaderr img {
+  width: 10rem;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -165,14 +172,27 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-image: url(../../img/illustrations/dashboards.png);
-  background-size: 24%;
-  background-position: bottom left;
+  background-image: url(../../img/illustrations/4.svg);
+  background-size: 100%;
+  background-position: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--primary-light);
+  background-blend-mode: multiply;
+ 
 }
-
+@media (max-width: 1300px) {
+  .header {
+  background-image: none;
+  }
+  .header .dscdesign {
+    align-items: center;
+    margin-left: 12rem;
+  }
+}
+ .header svg {
+   fill: black;
+ }
 .header .dsclogo {
   height: 50%;
   opacity: 0;

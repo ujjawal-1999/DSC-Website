@@ -1,174 +1,225 @@
 .faq-section {
-  display: flex;
-  flex-direction: column;
-  background-image: url(../../img/illustrations/faq.png);
-  z-index: 1;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  min-height: 100vh;
-  background-size: 20% auto;
-  margin: 20px;
-  overflow: visible;
-  .upper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 20%;
-    h1 {
-      color: var(--Grey-dark-1);
-      font-size: 3.5rem;
-      font-family: "Open Sans", sans-serif;
-    }
-
-    h3 {
-      font-family: "Times New Roman", Times;
-      font-size: 20px;
-      font-weight: lighter;
-      margin: 20px 0;
-      color: rgb(52, 143, 91);
-    }
-
-    form {
-      width: 100%;
-      text-align: center;
-    }
-    input {
-      background: var(--Grey-dark-1);
-      border: 1px solid transparent;
-      border-radius: 50px;
-      width: 30%;
-      height: 4rem;
-      color: var(--greany);
-      font-size: 1.3rem;
-      outline: none;
-      padding: 1rem 1.5rem;
-      text-align: center;
-    }
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background-image: url(../../img/faq/faq2.png);
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: 103% 92%;
+	min-height: 100vh;
+	background-size: 27% auto;
+	margin: 0px;
+	overflow: visible;
+  
+	.upper {
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -ms-flex-direction: column;
+	  flex-direction: column;
+	  -ms-flex-pack: distribute;
+	  justify-content: space-around;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  width: 100%;
+	  height: 20%;
+  
+	  h1 {
+		color: var(--Grey-dark-1);
+		font-size: 3.5rem;
+		font-family: "Open Sans", sans-serif;
+		margin: 1rem;
+	  }
+  
+	  h3 {
+		font-family: "Times New Roman", Times;
+		font-size: 20px;
+		font-weight: lighter;
+		margin: 15px 0;
+		color: #348f5b;
+	  }
+  
+	  form {
+		width: 100%;
+		text-align: center;
+	  }
+  
+	  input {
+		background: var(--Grey-dark-1);
+		border: 1px solid transparent;
+		border-radius: 50px;
+		width: 30%;
+		height: 4rem;
+		color: var(--greany);
+		font-size: 1.3rem;
+		outline: none;
+		padding: 1rem 1.5rem;
+		text-align: center;
+	  }
+	}
+  
+	.lower {
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: horizontal;
+	  -webkit-box-direction: normal;
+	  -ms-flex-direction: row;
+	  flex-direction: row;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  justify-content: center;
+	  -ms-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  height: 80%;
+	  background-color: rgba(138, 138, 138, 0.2);
+	  margin: 35px;
+	  border-radius: 13px;
+	  padding-top: 10px;
+	  z-index: -1;
+	  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+	  .sub {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: start;
+		height: 18rem;
+		margin: 15px 25px;
+		background-color: var(--Grey-light-1);
+		padding: 2rem;
+		width: 20%;
+		border-radius: 10px;
+  
+		h4 {
+		  font-family: "Open Sans", sans-serif;
+		  font-weight: 100;
+		  font-family: 1rem;
+		  color: var(--greany);
+		  margin-bottom: 0px;
+		  text-align: center;
+		}
+  
+		.fa {
+		  color: aqua;
+		  width: 2rem;
+		  height: 2rem;
+		  position: relative;
+		  text-align: center;
+		  -ms-flex-item-align: center;
+		  -ms-grid-row-align: center;
+		  align-self: center;
+		  top: 0;
+		}
+  
+		.more {
+		  opacity: 0.6;
+		}
+  
+		p {
+		  cursor: pointer;
+		  margin-top: 4px;
+		  font-family: "Times New Roman", Times;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+		  line-height: 1.2rem;
+		  font-size: 13px;
+		  margin-bottom: 0.1rem;
+		  text-align: center;
+		  font-size: 15px;
+		}
+	  }
+	}
   }
-
-  .lower {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 80%;
-    background-color: rgba(138, 138, 138, 0.2);
-    margin: 5px;
-    border-radius: 13px;
-    padding-top: 10px;
-    z-index: -1;
-    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
-    .sub {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      height: 18rem;
-      margin: 1rem 2rem;
-      background-color: var(--Grey-light-1);
-      padding: 2rem;
-      width: 20%;
-      border-radius: 10px;
-      // overflow-y: scroll;
-
-      h4 {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 100;
-        font-family: 1rem;
-        color: var(--greany);
-        margin-bottom: 0px;
-        text-align: center;
-      }
-      .fa {
-        color: aqua;
-        width: 2rem;
-        height: 2rem;
-        position: relative;
-        // right: -90px;
-        text-align: center;
-        align-self: center;
-        top: 0;
-      }
-
-      .more {
-        opacity: 0.6;
-      }
-      p {
-        cursor: pointer;
-        margin-top: 4px;
-        font-family: "Times New Roman", Times;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        line-height: 1.2rem;
-        font-size: 13px;
-        margin-bottom: 0.1rem;
-        text-align: center;
-        font-size: 15px;
-      }
-    }
+  
+  @media screen and (max-height: 750px) {
+	.faq-section {
+	  height: auto !important;
+	}
   }
-}
-
-@media screen and (max-height: 750px) {
-  .faq-section {
-    height: auto !important;
+  
+  @media screen and (max-width: 1330px) {
+	.faq-section {
+	  .lower .sub {
+		width: 50%;
+		height: auto;
+	  }
+  
+	  height: auto;
+	  margin-left: 20px;
+	}
   }
-}
-@media screen and (max-width: 1330px) {
-  .faq-section .lower .sub {
-    width: 50%;
-    height: auto;
+  
+  @media screen and (max-width: 768px) {
+	.faq-section {
+	  .lower .sub {
+		width: 100%;
+	  }
+  
+	  background-image: none;
+	  height: auto;
+	  width: 90%;
+  
+	  .upper {
+		height: 10rem;
+  
+		h1 {
+		  font-size: 1.9rem;
+		  text-align: center;
+		}
+  
+		input {
+		  width: 90%;
+		  font-size: 1rem;
+		}
+  
+		h3 {
+		  text-align: center;
+		  font-size: 0.7rem;
+		}
+	  }
+  
+	  .lower {
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	  }
+	}
   }
-  .faq-section {
-    height: auto;
+  
+  @media (max-width: 900px) {
+	.faq-section .upper h3 {
+	  padding: 0;
+	  margin: 0;
+	}
   }
-}
-
-@media screen and (max-width: 768px) {
-  .faq-section .lower .sub {
-    width: 100%;
+  
+  @media (max-width: 900px) {
+	.faq-section .lower .sub i {
+	  position: relative;
+	  -ms-flex-item-align: center;
+	  -ms-grid-row-align: center;
+	  align-self: center;
+	  top: 0;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	}
   }
-  .faq-section {
-    background-image: none;
-    height: auto;
-    width: 90%;
-  }
-  .faq-section .upper {
-    height: 10rem;
-  }
-  .faq-section .upper h1 {
-    font-size: 1.9rem;
-    text-align: center;
-  }
-
-  .faq-section .upper input {
-    width: 90%;
-    font-size: 1rem;
-  }
-  .faq-section .upper h3 {
-    text-align: center;
-    font-size: 0.7rem;
-  }
-  .faq-section .lower {
-    flex-wrap: wrap;
-  }
-}
-@media (max-width: 900px) {
-  .faq-section .upper h3 {
-    padding: 0;
-    margin: 0;
-  }
-}
-@media (max-width: 900px) {
-  .faq-section .lower .sub i {
-    position: relative;
-    // right: -70px !important;
-    align-self: center;
-    top: 0;
-    align-items: center;
-  }
-}
+  
+  /*# sourceMappingURL=index_faq.css.map */

@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -30,11 +36,8 @@
     <link rel="stylesheet" href="/css/index/index_feature.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="/css/index/flashMessage.css">
+
+    <link rel="stylesheet" href="/css/index/flashMessage.css" />
     <!-- ######################################################################## -->
 
     <!---Icons Import-->
@@ -47,11 +50,7 @@
   </head>
   <body id="bodydiv">
     <div class="loaderr">
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
+      <img src="img/loaderanimation/whiteloader.gif" alt="" />
     </div>
     <!--Navbar Starts-->
     <%-include('partials/navbar')%>
@@ -61,8 +60,9 @@
     <!-- Flash Message Body Start-->
     <%-include('partials/flashMessage')%>
     <!-- Flash Message Body End -->
-
+    
     <header class="header">
+      
       <img
         src="/official-logo/DSC3(T).png"
         alt="dsc logo"
@@ -73,7 +73,25 @@
         src="/official-logo/DSC1(T).png"
         alt="dsc logo"
         class="dsclogoMobile"
+        style="
+        position: relative;
+        bottom: -1rem;
+        ;"
+        
       />
+      <img
+      src="/img/illustrations/dashboards.png"
+      alt="design"
+      class="dscdesign" 
+      style="
+      height: 13rem;
+      width: 15rem;
+      position: relative; 
+      bottom: 4rem;  
+      left:-26%;"
+    />
+    
+      
       <!-- <h2 class="heading__secondary intersect" id="heading__secondary">
         Developer Students Clubs
       </h2>
@@ -81,7 +99,7 @@
         <span class="bold">NIT</span> Silchar
       </h1> -->
       <% if(!user){ %>
-      <a href="/user/register"
+      <a href="/user/register" style="margin-top: -12rem;"
         ><input
           type="button"
           class="getStarted"
@@ -108,11 +126,11 @@
         <div class="content">
           <h1 class="heading__primary intersect">About Us</h1>
           <h3 class="heading__secondary">
-            The DSC NITS website is open for
-            all student developers, who wish to improve their skills.
-            Each user has separate profile page, where one can add his/her skills,
-            projects and accomplishments. Doubts can be cleared with the help of
-            doubt forums and blogs posted by other developers.
+            The DSC NITS website is open for all student developers, who wish to
+            improve their skills. Each user has separate profile page, where one
+            can add his/her skills, projects and accomplishments. Doubts can be
+            cleared with the help of doubt forums and blogs posted by other
+            developers.
             <br />
             <br />
             Users will receive badges based on their contributions to the club
@@ -140,8 +158,8 @@
             face in our daily lives. Solving such problems brings opportunities
             for the budding developer communities to showcase their talents and,
             improve and gain new skillsets. <br /><br />
-            Our members and moderators are skilled as Designers, Web, Android and Cloud
-            developers.<br /><br />
+            Our members and moderators are skilled as Designers, Web, Android
+            and Cloud developers.<br /><br />
             DSC NITS is not bounded to NITS itself. Our main aim is to empower
             developers of North-East India and also to have a national and
             international presence.
@@ -390,6 +408,7 @@
                 </div>
                 <!-- /event1 -->
               </div>
+              
             </div>
           </div>
           <!-- /row -->
@@ -496,7 +515,11 @@
         </div>
         <div class="lower">
           <div class="sub">
-            <i class="fa fa-pencil" aria-hidden="true" style="padding-bottom: 0.5rem;"></i>
+            <i
+              class="fa fa-pencil-square-o"
+              aria-hidden="true"
+              style="padding-bottom: 0.5rem"
+            ></i>
             <h4>How to add, edit or delete details from the profile?</h4>
             <br />
             <p></p>
@@ -509,7 +532,11 @@
             <!-- <p class="more">View all questions</p> -->
           </div>
           <div class="sub">
-            <i class="fa fa-paragraph" aria-hidden="true" style="padding-bottom: 0.5rem;"></i>
+            <i
+              class="fa fa-plus-circle"
+              aria-hidden="true"
+              style="padding-bottom: 0.5rem"
+            ></i>
             <h4>How do I create a blog?</h4>
             <br />
             <p></p>
@@ -522,7 +549,11 @@
             <!-- <p class="more">View all questions</p> -->
           </div>
           <div class="sub">
-            <i class="fa fa-user" aria-hidden="true" style="padding-bottom: 0.6rem;"></i>
+            <i
+              class="fa fa-user"
+              aria-hidden="true"
+              style="padding-bottom: 0.6rem"
+            ></i>
             <h4>How to check any other profile?</h4>
             <br />
             <p></p>
@@ -535,17 +566,28 @@
             <!-- <p class="more">View all questions</p> -->
           </div>
           <div class="sub">
-            <i class="fa fa-circle-o" aria-hidden="true" style="padding-bottom: 0.5rem;"></i>
-            <h4>How are view the DSC Member Page and Website Developer page?</h4>
+            <i
+              class="fa fa-users"
+              aria-hidden="true"
+              style="padding-bottom: 0.5rem"
+            ></i>
+            <h4>
+              How to view the DSC Member Page and Website Developer page?
+            </h4>
             <br />
             <p></p>
             <p>
-              Go to the footer section, on Team and Developers you can find DSC Member page and Website Developers page. 
+              Go to the footer section, on Team and Developers you can find DSC
+              Member page and Website Developers page.
             </p>
             <!-- <p class="more">View all questions</p> -->
           </div>
           <div class="sub">
-            <i class="fa fa-eye" aria-hidden="true" style="padding-bottom: 0.5rem;"></i>
+            <i
+              class="fa fa-eye"
+              aria-hidden="true"
+              style="padding-bottom: 0.5rem"
+            ></i>
             <h4>How are views on Blogs counted?</h4>
             <br />
             <p></p>
@@ -556,7 +598,11 @@
             <!-- <p class="more">View all questions</p> -->
           </div>
           <div class="sub">
-            <i class="fa fa-unlock-alt" aria-hidden="true" style="padding-bottom: 0.6rem;"></i>
+            <i
+              class="fa fa-unlock-alt"
+              aria-hidden="true"
+              style="padding-bottom: 0.6rem"
+            ></i>
             <h4>How do I login if I forgot my password?</h4>
             <br />
             <p></p>
@@ -597,7 +643,11 @@
           </div>
           <% } %> <% } %>
         </div>
-        <h2 class="heading__primary intersect">Contact Us</h2>
+        <div class="row" style="padding-top: 2rem;">
+          <h2 class="heading__primary intersect" style="padding-top: 2rem;">Contact Us</h2>
+
+          <h4 style="text-align: center">We'd love to hear from you!</h4>
+        </div>
         <form
           action="/contact"
           method="post"
@@ -605,20 +655,17 @@
           enctype="multipart/form-data"
         >
           <div class="container">
-            <div class="row">
-              <h4 style="text-align: center">We'd love to hear from you!</h4>
-            </div>
             <div class="row input-container">
               <div class="col-xs-12">
                 <div class="styled-input wide">
-                  <input type="text" class="full" name="name" required />
-                  <label>Name</label>
+                  <input type="email" class="full" name="email" required />
+                  <label>Email</label>
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="styled-input">
-                  <input type="text" class="full" name="email" required />
-                  <label>Email</label>
+                  <input type="text" class="full" name="name" required />
+                  <label>Name</label>
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
@@ -644,7 +691,7 @@
                   <label for="file" id="lb" class="custom-file-upload"
                     >Upload a file</label
                   >
-                  <div style="margin-top: 5px;" id="fileList">
+                  <div style="margin-top: 5px" id="fileList">
                     <label id="fileList"></label>
                   </div>
                   <div class="styled-input wide">
