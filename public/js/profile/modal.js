@@ -29,6 +29,8 @@ var editProfileModal = document.getElementById("editProfileModal");
 editProfilebtn.addEventListener("click", () => {
   editProfileModal.style.opacity = "1";
   editProfileModal.style.pointerEvents = "all";
+    document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
 backBtn.addEventListener("click", () => {
   editProfileModal.style.opacity = "0";
@@ -98,6 +100,8 @@ var addExperienceModal = document.getElementById("addExperienceModal");
 addExperiencebtn.addEventListener("click", () => {
   addExperienceModal.style.opacity = "1";
   addExperienceModal.style.pointerEvents = "all";
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
 backBtn1.addEventListener("click", () => {
   addExperienceModal.style.opacity = "0";
@@ -152,6 +156,8 @@ var addSkillModal = document.getElementById("addSkillsModal");
 addSkillbtn.addEventListener("click", () => {
   addSkillModal.style.opacity = "1";
   addSkillModal.style.pointerEvents = "all";
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
 backBtn2.addEventListener("click", () => {
   addSkillModal.style.opacity = "0";
@@ -187,6 +193,8 @@ var addProjectModal = document.getElementById("addProjectsModal");
 addProjectbtn.addEventListener("click", () => {
   addProjectModal.style.opacity = "1";
   addProjectModal.style.pointerEvents = "all";
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });
 backBtn3.addEventListener("click", () => {
   addProjectModal.style.opacity = "0";
@@ -255,6 +263,9 @@ var addAchievementModal = document.getElementById("addAchievementModal");
 addAchievementbtn.addEventListener("click", () => {
   addAchievementModal.style.opacity = "1";
   addAchievementModal.style.pointerEvents = "all";
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+
 });
 backBtn4.addEventListener("click", () => {
   addAchievementModal.style.opacity = "0";

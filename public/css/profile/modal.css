@@ -19,7 +19,9 @@
   transition: all 0.2s;
   top: 0;
 }
-
+body{
+  scroll-behavior:smooth;
+}
 #uniqueness {
   color: #303030;
   text-align: center;
