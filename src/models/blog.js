@@ -41,8 +41,24 @@ const blogSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    reports: [{
+        type: ObjectId,
+        ref: "User",
+        required: true,
+    }],
+    reportCount: {
+        type: Number,
+        default: 0
+    }
 }, {
     timestamps: true,
 });
+
+blogSchema.pre('save', (next) => {
+    if(this.isModified("reports")) {
+        this.reportCount = this.reports.length() || 0
+    }
+    next();
+})
 
 module.exports = mongoose.model("Blog", blogSchema);

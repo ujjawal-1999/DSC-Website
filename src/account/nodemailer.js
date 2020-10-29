@@ -141,9 +141,83 @@ const forgotPassword = (data, protocol, host) => {
   });
 };
 
+const blogReportWarning = (blog, protocol, host) => {
+  const rand = cryptoRandomString({ length: 100, type: "url-safe" });
+  // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  // const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  const PORT = process.env.PORT  || 8080
+  const link = `${protocol}://${host}:${PORT}/blog/view/${blog._id}`
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.NODEMAILER_EMAIL, //email id
+      pass: process.env.NODEMAILER_PASSWORD, //my gmail password
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.NODEMAILER_EMAIL,
+    to: blog.author.email,
+    subject: "Reported Blog Warning",
+    html:
+      "Hello,<br>This is to inform you that one of your blogs, " + blog.name +", has been reported multiple times and maybe deleted if reports continue.<br><a href=" +
+      link +
+      ">View Blog</a>",
+  };
+  // console.log(mailOptions);
+  transporter.sendMail(mailOptions, function (error, response) {
+    if (error) {
+      console.log(error);
+      return;
+    } else {
+      console.log("Message sent for forgot Password." );
+    }
+  });
+};
+
+//for sending to admin
+const reportBlogToAdmin = (blog, protocol, host) => {
+  var transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.NODEMAILER_EMAIL, //email id
+      pass: process.env.NODEMAILER_PASSWORD, //my gmail password
+    },
+  });
+
+  const link = `${protocol}://${host}:${PORT}/blog/view/${blog._id}`
+
+  // filesArray = data.files.split("--");
+
+  let mailContent = `
+  A new Blog Report has been issued.<p>Name - ${data.name}</p><p>Link: ${link}</p>`;
+  var mailOptions = {
+    from: process.env.NODEMAILER_SECONDARYEMAIL,
+    to: process.env.NODEMAILER_EMAIL,
+    subject: `DSC Blog Issue Report`,
+    html: mailContent
+  };
+  // console.log("mailOptions : ", mailOptions);
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+};
+
 module.exports = {
   contact,
   contactAdmin,
   signUpMail,
   forgotPassword,
+  reportBlogToAdmin,
+  blogReportWarning
 };
