@@ -1,76 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
     projects and accomplishments." />
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+  <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
     Profile, Forum, Events, Developers, NIT Silchar" />
-    
-    <title>DSC NITS | Create Blog</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_logo.png"
-    />
-    <script src="/js/blogs/quill.min.js"></script>
-    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
 
-    <link rel="stylesheet" href="/css/index/colors.css" />
-    <link rel="stylesheet" href="/css//blogs/create-blog.css" />
-  </head>
-  <body>
-    <div class="container">
-      <form
-        id="create-form"
-        method="post"
-        enctype="multipart/form-data"
-        action="/blog/create"
-      >
-        <!-- Create the editor container -->
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Title"
-          required="true"
-        />
-        <input type="hidden" name="body" />
-        <input type="hidden" name="summary" />
-        <div class="btns">
-          <button type="button" class="btn cancel"><a href="/blog">Cancel</a></button>
-          <input type="submit" class="btn publish" value="Publish" />
-        </div>
-        <div class="file-upload-wrapper">
-          <select name="category" id="category">
-            <option value="Web Dev">Web Dev</option>
-            <option value="Android Dev">Android Dev</option>
-            <option value="Graphic Design">Graphic Design</option>
-            <option value="Cloud">Cloud </option>
-            <option value="Machine Learning"> Machine Learning</option>
-            <option value="Artificial Intelligence">Artificial Intelligence</option>
-            <option value="other">Other</option>
-          </select>
-          <label for="file" class="file-upload-label"
-            ><span id="file-label">Select Cover Image</span>
-            <input
-              name="cover"
-              type="file"
-              class="file-upload-field"
-              value=""
-              id="file"
-            />
-          </label>
-        </div>
-        <div id="editor"></div>
-      </form>
-    </div>
-    <script src="/js/blogs/create-blog.js"></script>
-  </body>
+  <title>DSC NITS | Create Blog</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
+  <script src="/js/blogs/quill.min.js"></script>
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
+
+  <link rel="stylesheet" href="/css/index/colors.css" />
+  <link rel="stylesheet" href="/css//blogs/create-blog.css" />
+</head>
+
+<body>
+  <div class="container">
+    <form id="create-form" method="post" enctype="multipart/form-data" action="/blog/create">
+      <!-- Create the editor container -->
+      <input type="text" name="title" id="title" placeholder="Title" required="true" />
+      <input type="hidden" name="body" />
+      <input type="hidden" name="summary" />
+      <div class="btns">
+        <button type="button" class="btn cancel"><a href="/blog">Cancel</a></button>
+        <input type="submit" class="btn publish" value="Publish" />
+      </div>
+      <div class="file-upload-wrapper">
+        <select name="category" id="category">
+          <option value="Web Dev">Web Dev</option>
+          <option value="Android Dev">Android Dev</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Cloud">Cloud </option>
+          <option value="Machine Learning"> Machine Learning</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="file" class="file-upload-label"><span id="file-label">Select Cover Image</span>
+          <input name="cover" type="file" class="file-upload-field" value="" id="file" />
+        </label>
+      </div>
+      <div id="editor"></div>
+    </form>
+  </div>
+  <script src="/js/blogs/create-blog.js"></script>
+</body>
+
 </html>

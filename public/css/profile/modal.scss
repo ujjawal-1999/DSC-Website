@@ -181,7 +181,7 @@
     padding: 1%;
     font-size: 1.2em;
     line-height: 1.5em;
-    color: var(--Grey-light-1) !important;
+    // color: var(--Grey-light-1) !important;
     letter-spacing: 0.01em;
     font-style: normal;
     font-weight: 300;
@@ -191,6 +191,9 @@
     border-radius: 2px;
     option {
       border-radius: 2px;
+    }
+    &:focus {
+      border: 2px solid black;
     }
   }
   select {

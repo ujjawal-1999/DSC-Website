@@ -344,9 +344,8 @@ body {
 .photo {
   width: 10rem;
   height: 10rem;
-  overflow: hidden;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 10px;
 }
 
@@ -526,7 +525,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .cards .card .socialactivity img {
