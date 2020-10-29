@@ -84,6 +84,7 @@ nav {
 .nav-warapper .logodscmainnav {
   width: 50px !important;
   height: 50px !important;
+  margin-top: 6px;
 }
 .nav-warapper .search {
   position: absolute;
