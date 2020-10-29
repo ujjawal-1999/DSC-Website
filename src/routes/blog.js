@@ -50,13 +50,13 @@ router.get("/", async(req, res) => {
             skip: size * (page - 1),
             limit: size
         };
-        const popularBlogs = await Blog.find()
+        const popularBlogs = await Blog.find({"reportCount": {$lt: 5}})
             .sort({
                 views: -1,
             })
             .limit(5)
             .populate("author");
-        const newBlogs = await Blog.find({}, {}, query)
+        const newBlogs = await Blog.find({"reportCount": {$lt: 5}}, {}, query)
             .sort({
                 createdAt: -1,
             })
@@ -65,7 +65,7 @@ router.get("/", async(req, res) => {
             skip: size * page,
             limit: size
         }
-        const nextPageBlogs = await Blog.find({}, {}, queryNextPage)
+        const nextPageBlogs = await Blog.find({"reportCount": {$lt: 5}}, {}, queryNextPage)
             .sort({
                 createdAt: -1,
             })
