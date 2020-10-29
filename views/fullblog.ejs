@@ -1,133 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-  <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
-  <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
 
-  <title>DSC NITS | Blog</title>
+    <title>DSC NITS | Blog</title>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
-
-  <!-- Font Awesome Icons -->
-  <!-- <link rel="stylesheet" href="/css/blogs/all.css" /> -->
-  <link rel="stylesheet" href="/css/index/font-awesome.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-  <!-- ------------ AOS Library ------------------------- -->
-  <!-- <link rel="stylesheet" href="/css/blogs/aos.css" /> -->
-
-  <!-- ------------ QuillJS Library ------------------------- -->
-  <!-- <link
-      href="https://cdn.quilljs.com/1.3.6/quill.bubble.css"
+    <link
       rel="stylesheet"
-    /> -->
-  <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
-  <!-- Custom Style   -->
-  <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
-  <link rel="stylesheet" href="/css/index/colors.css" />
-  <link rel="stylesheet" href="/css/blogs/showBlogs.css" />
-  <link rel="stylesheet" href="/css/index/navbar.css" />
-  <link rel="stylesheet" href="/css/index/footer.css" />
-</head>
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_trans_logo.png"
+    />
 
-<body id="">
-  <!-- ----------------------------  Navigation ---------------------------------------------- -->
-  <%-include('partials/navbar')%>
-  <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+    <!-- Font Awesome Icons -->
+    <!-- <link rel="stylesheet" href="/css/blogs/all.css" /> -->
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <!----------------------------- Main Site Section ------------------------------>
-  <main class="cards">
-    <div class="card">
-      <div class="socialactivity">
-        <% if(blog.author.profileImageLocation){ %>
-        <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
-        <% }else{%>
-        <img src="/img/profile/person.png" alt="default avatar" />
-        <% }%>
-      </div>
-      <div class="content" style="width: 90%">
-        <h3 class="topic"><%= blog.title %></h3>
-        <p style="margin-top: 0.5rem">
-          by <%= blog.author.name%>
-        </p>
-        <p style="margin-top: 0.5rem">
-          Category : <%= blog.category%>
-        </p>
-        <p style="margin: 0.7rem 0">
-          Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
-        </p>
-        <div class="images">
-          <div class="image-container">
-            <img class="post-images" src="<%= blog.cover%>" alt="blog cover" data-original="<%= blog.cover%>" />
-          </div>
-        </div>
-        <div class="description"><%- blog.body %></div>
-      </div>
-      <div class="moredetails" style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-          ">
-        <% if (user) {%>
-        <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-          <button type="submit" style="background-color: transparent; border: none">
-            <% if (user.bookmarkBlogs &&user.bookmarkBlogs.includes(blog._id))
-              {%>
-            <i class="fas fa-bookmark" style="font-size: 20px; color: var(--Grey-dark-1)"></i>
-            <% } else {%>
-            <i class="far fa-bookmark" style="font-size: 20px; color: var(--Grey-dark-1)"></i>
-            <% } %>
-          </button>
-        </form>
-        <% } %>
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/blogs/showBlogs.css" />
+    <link rel="stylesheet" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/index/flashMessage.css" />
+  </head>
 
-        <i class="fas fa-eye" style="font-size: 15px; color: var(--Grey-dark-1)">
-          <%= blog.views %></i>
-      </div>
-    </div>
-  </main>
-
-  <!---------------x------------- Main Site Section ---------------x-------------->
-
-  <!-- --------------------------- Footer ---------------------------------------- -->
-  <%-include('partials/footer')%>
-
-  <!-- -------------x------------- Footer --------------------x------------------- -->
-
-  <!-- Jquery Library file -->
-  <script src="/js/blogs/Jquery3.4.1.min.js"></script>
-
-  <!-- ------------ AOS js Library  ------------------------- -->
-  <script src="/js/blogs/aos.js"></script>
-
-  <!-- Custom Javascript file -->
-  <script src="/js/darkmode.js"></script>
-  <script src="/js/navbar.js"></script>
-  <script src="/js/blogs/main.js"></script>
-  <script></script>
-  <script>
-    var bodydiv = document.getElementById("bodydiv");
-    bodydiv.addEventListener("click", closeSearch);
-
-    function closeSearch() {
-      let search_list1 = document.getElementById("search_list1");
-      search_list1.style.display = "none";
-      let search_list2 = document.getElementById("search_list2");
-      search_list2.style.display = "none";
+  <style>
+    .pointer {
+      cursor: pointer;
     }
-  </script>
-  <script src="/js/blogs/fullblog.js"></script>
-</body>
+    .clapper {
+      width: 30px !important;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 740px) {
+      .clapper {
+        margin-top: 10px;
+        width: 20px !important;
+      }
+      @media screen and (max-width: 740px) {
+        .cards .card .content p {
+          font-size: 16px;
+        }
+      }
+    }
+    @media (max-width: 700px) {
+      .cards .card {
+        margin: 1rem 0;
+      }
+    }
+  </style>
 
+  <body id="">
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+    <%-include('partials/navbar')%>
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!-- Flash Message Body Start-->
+    <%-include('partials/flashMessage')%>
+    <!-- Flash Message Body End -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+    <main class="cards">
+      <div class="card">
+        <div class="socialactivity">
+          <% if(blog.author.profileImageLocation){ %>
+          <img
+            src="/upload/<%= blog.author.profileImageLocation%>"
+            alt="author image"
+          />
+          <% }else{%>
+          <img src="/img/profile/person.png" alt="default avatar" />
+          <% }%>
+          <form action="/blog/appreciate/<%=blog._id%>" method="POST">
+            <button
+              type="submit"
+              style="
+                border: none;
+                background-color: transparent;
+                font-size: 18px;
+                color: var(--Grey-dark-1);
+              "
+            >
+              <% if (user) {%> <% if (user.likes &&
+              user.likes.includes(blog._id)) {%>
+              <img src="/img/logo/clap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } else {%>
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %>
+            </button>
+          </form>
+        </div>
+        <div class="content" style="width: 90%">
+          <h3 class="topic"><%= blog.title %></h3>
+          <p style="margin-top: 0.5rem">by <%= blog.author.name%></p>
+          <p style="margin-top: 0.5rem">Category : <%= blog.category%></p>
+          <p style="margin: 0.7rem 0">
+            Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
+          </p>
+          <div class="images">
+            <div class="image-container">
+              <img
+                class="post-images"
+                src="<%= blog.cover%>"
+                alt="blog cover"
+                data-original="<%= blog.cover%>"
+              />
+            </div>
+          </div>
+          <div class="description"><%- blog.body %></div>
+        </div>
+        <div class="sidebarblog">
+          <% if (user) {%>
+          <div class="moreblogoption">
+            <form action="/blog/bookmark/<%= blog._id %>" method="POST">
+              <button
+                type="submit"
+                style="background-color: transparent; border: none"
+              >
+                <% if (user.bookmarkBlogs
+                &&user.bookmarkBlogs.includes(blog._id)) {%>
+                <i
+                  class="fas fa-bookmark pointer"
+                  style="font-size: 16px; color: var(--Grey-dark-1)"
+                ></i>
+                <% } else {%>
+                <i
+                  class="far fa-bookmark pointer"
+                  style="font-size: 16px; color: var(--Grey-dark-1)"
+                ></i>
+                <% } %>
+              </button>
+            </form>
+            <div class="dropdownblog">
+              <i
+                class="fa fa-ellipsis-h"
+                style="font-size: 16px; color: var(--Grey-dark-2)"
+              ></i>
+              <div class="dropdownblog-content">
+                <form action="/blog/report/<%=blog._id%>" method="POST">
+                  <button
+                    style="
+                      background-color: transparent;
+                      border: none;
+                      color: var(--Grey-dark-2);
+                      cursor: pointer;
+                    "
+                    type="submit"
+                  >
+                    Report this post
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% } %>
+
+          <i
+            class="fas fa-eye"
+            style="font-size: 16px; color: var(--Grey-dark-1)"
+          >
+            <br />
+            <%= blog.views %></i
+          >
+        </div>
+      </div>
+    </main>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+    <%-include('partials/footer')%>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="/js/blogs/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/blogs/main.js"></script>
+    <script></script>
+    <script>
+      var bodydiv = document.getElementById("bodydiv");
+      bodydiv.addEventListener("click", closeSearch);
+
+      function closeSearch() {
+        let search_list1 = document.getElementById("search_list1");
+        search_list1.style.display = "none";
+        let search_list2 = document.getElementById("search_list2");
+        search_list2.style.display = "none";
+      }
+    </script>
+    <script src="/js/blogs/fullblog.js"></script>
+  </body>
 </html>

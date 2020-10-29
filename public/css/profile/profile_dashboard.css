@@ -4,6 +4,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -525,7 +526,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .cards .card .socialactivity img {
@@ -629,7 +630,7 @@ body {
 }
 
 .cards .card .content .images .image-container img {
-  width: 30rem;
+  width: 100%;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }

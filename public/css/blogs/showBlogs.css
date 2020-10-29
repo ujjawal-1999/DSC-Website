@@ -1,7 +1,7 @@
 @import url("../public/css/blogs/fonts.css");
 @import url("../public/css/blogs/Style.css");
 @import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 body {
   background-color: var(--primary-light) !important;
   padding: 0;
@@ -76,5 +76,71 @@ main {
   .moredetails {
     width: 100%;
     flex-direction: row !important;
+  }
+}
+.sidebarblog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15%;
+  align-items: center;
+  padding: 1rem;
+}
+.moreblogoption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 5rem;
+}
+.dropdownblog {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownblog-content {
+  display: none;
+  position: absolute;
+  background-color: inherit;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 1;
+  right: -200%;
+}
+.dropdownblog-content a {
+  font-size: 12px;
+  color: var(--Grey-dark-2);
+  padding: 6px 0;
+}
+.dropdownblog:hover .dropdownblog-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.fa-heart {
+  transition: all 0.2s;
+}
+
+.fa-heart:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 750px) {
+  .cards .card .content {
+    width: 70%;
+  }
+  .moreblogoption {
+    width: 66%;
+  }
+  .cards .card .socialactivity {
+    height: 10rem;
+  }
+  .dropdownblog-content {
+    right: -424%;
+  }
+  .sidebarblog {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
 }

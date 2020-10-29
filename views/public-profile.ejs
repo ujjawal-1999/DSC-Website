@@ -43,11 +43,88 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Stylings Ends -->
   </head>
+  <style>
+    .clapper {
+      width: 30px !important;
+    }
+    @media screen and (max-width: 740px) {
+      .clapper {
+        width: 20px !important;
+      }
+      .cards .card .socialactivity {
+        padding: 15px !important;
+      }
+    }
 
+    .sidebarblog {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 15%;
+      align-items: center;
+      padding: 1rem;
+    }
+    .moreblogoption {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 5rem;
+    }
+    .dropdownblog {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdownblog-content {
+      display: none;
+      position: absolute;
+      background-color: inherit;
+      min-width: 160px;
+      padding: 12px 16px;
+      z-index: 1;
+      right: -300%;
+    }
+    .dropdownblog-content a {
+      font-size: 12px;
+      color: var(--Grey-dark-2);
+      padding: 6px 0;
+    }
+    .dropdownblog:hover .dropdownblog-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .fa-heart {
+      transition: all 0.2s;
+    }
+
+    .fa-heart:hover {
+      opacity: 0.6;
+    }
+    @media (max-width: 800px) {
+      .cards .card {
+        margin: 1rem 5px;
+      }
+    }
+    @media (max-width: 750px) {
+      .cards .card .content {
+        width: 70%;
+      }
+      .moreblogoption {
+        width: auto;
+        flex-direction: column;
+      }
+      .dropdownblog-content {
+        right: -200%;
+        min-width: 90px;
+      }
+    }
+  </style>
   <body>
     <%-include('partials/navbar')%>
 
-    <div class="container" style="padding: 2rem;">
+    <div class="container">
       <section class="accountdetails">
         <section class="dashboard__main">
           <section class="main__profileinfo">
@@ -68,8 +145,9 @@
                 <p>
                   <% if(searchedUser.branch!=null||searchedUser.batch!=null){ %>
                   <%= searchedUser.degree %> | <%= searchedUser.batch %> <br />
-                  <%= searchedUser.branch %> <% }else{%> Your profile details
-                  are empty. <% }%>
+                  <%= searchedUser.branch %> <% }else{%> <%=
+                  searchedUser.name.split(' ')[0] %>'s profile details are
+                  empty. <% }%>
                 </p>
                 <p>
                   <% if(searchedUser.bio!=null){ %> <%= searchedUser.bio%> <%
@@ -191,7 +269,8 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          User Timeline has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s timeline has
+                          nothing to show.
                         </div>
                       </div>
                     </div>
@@ -208,31 +287,43 @@
                           <% }else{%>
                           <img src="/img/logo/profile.png" alt="avatar" />
                           <% }%>
-                          <div
+                          <button
+                            type="submit"
                             style="
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: right;
+                              display: block;
+                              border: none;
+                              background-color: transparent;
+                              color: var(--Grey-dark-1);
                             "
                           >
-                            <i class="fas fa-eye" style="font-size: 15px">
-                              <%= blog.views %></i
-                            >
-                            <!-- <a
-                              href="/searchedUser/blog/delete/<%= blog._id %>"
-                              style="color: red"
-                            >
-                              <i class="fas fa-trash" style="font-size: 18px">
-                              </i>
-                            </a> -->
-                          </div>
+                            <% if (user) {%> <% if (user.likes &&
+                            user.likes.includes(blog._id)) {%>
+                            <img
+                              src="/img/logo/clap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } else {%>
+                            <img
+                              src="/img/logo/noclap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } %> <% }
+                            else{%>
+                            <img
+                              src="/img/logo/noclap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } %>
+                          </button>
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
                           <div class="description">
-                            <%- blog.body.substring(0, 300)%>
+                            <%- blog.summary%>
                           </div>
                           <a href="/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
@@ -246,11 +337,74 @@
                             </div>
                           </div>
                         </div>
-                        <a
-                          class="delete-exp"
-                          href="/searchedUser/blog/delete/<%= blog._id %>"
-                          ><img src="/img/profile/trash.svg" alt="delete icon"
-                        /></a>
+                        <div class="sidebarblog">
+                          <div class="moreblogoption">
+                            <form
+                              action="/blog/bookmark/<%= blog._id %>"
+                              method="POST"
+                            >
+                              <button
+                                type="submit"
+                                style="
+                                  background-color: transparent;
+                                  border: none;
+                                "
+                              >
+                                <% if (user.bookmarkBlogs
+                                &&user.bookmarkBlogs.includes(blog._id)) {%>
+                                <i
+                                  class="fas fa-bookmark pointer"
+                                  style="
+                                    font-size: 20px;
+                                    color: var(--Grey-dark-1);
+                                  "
+                                ></i>
+                                <% } else {%>
+                                <i
+                                  class="far fa-bookmark pointer"
+                                  style="
+                                    font-size: 20px;
+                                    color: var(--Grey-dark-1);
+                                  "
+                                ></i>
+                                <% } %>
+                              </button>
+                            </form>
+                            <div class="dropdownblog">
+                              <i
+                                class="fa fa-ellipsis-h"
+                                style="
+                                  font-size: 16px;
+                                  color: var(--Grey-dark-2);
+                                "
+                              ></i>
+                              <div class="dropdownblog-content">
+                                <form
+                                  action="/blog/report/<%=blog._id%>"
+                                  method="POST"
+                                >
+                                  <button
+                                    style="
+                                      background-color: transparent;
+                                      border: none;
+                                      color: var(--Grey-dark-2);
+                                      cursor: pointer;
+                                    "
+                                    type="submit"
+                                  >
+                                    Report this post
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <i
+                            class="fas fa-eye"
+                            style="font-size: 15px; color: var(--Grey-dark-1)"
+                          >
+                            <%= blog.views %></i
+                          >
+                        </div>
                       </div>
                       <%})%>
                     </div>
@@ -264,7 +418,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Expereince Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Experience
+                            Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -339,7 +494,8 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          User Skills Tab has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s Skills Tab
+                          has nothing to show.
                         </div>
                       </div>
                     </div>
@@ -377,7 +533,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Personal Projects Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Personal
+                            Projects Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -458,7 +615,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Achievements Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s
+                            Achievements Tab has nothing to show.
                           </div>
                         </div>
                       </div>

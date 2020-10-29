@@ -20,7 +20,7 @@ main {
   flex: wrap;
   padding: 3rem;
   -webkit-box-pack: center;
-  -ms-flex-pack: center; 
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -424,11 +424,11 @@ form input[type="submit"] {
     top: 5px;
     padding: 5px;
   }
-  .more-details{
-    line-height:1.5em;
-    position:relative;
-    top:-20px;
-    width:105%;
+  .more-details {
+    line-height: 1.5em;
+    position: relative;
+    top: -20px;
+    width: 105%;
   }
   .cards .card-content .col img {
     width: 30%;
@@ -473,4 +473,28 @@ form input[type="submit"] {
 .more-details-heading + p {
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .cards #dribbble .card-content p,
+  .cards #behance .card-content p,
+  .cards #linkedin .card-content p,
+  .cards #twitter .card-content p {
+    color: white !important;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards #dribbble .card-content p,
+  .cards #behance .card-content p,
+  .cards #linkedin .card-content p,
+  .cards #twitter .card-content p {
+    color: white !important;
+    font-size: 0.65rem;
+  }
+  .card-content .details {
+    font-size: 0.65em;
+    position: relative;
+    top: -80px;
+  }
 }

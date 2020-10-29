@@ -10,7 +10,11 @@ section {
   background-color: var(--primary-light) !important;
 }
 
-h1, h2, h3, p, label {
+h1,
+h2,
+h3,
+p,
+label {
   color: var(--Grey-dark-1);
 }
 
@@ -170,7 +174,6 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   background-image: url(../../img/illustrations/4.svg);
   background-size: 100%;
-  background-position: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--primary-light);
@@ -241,9 +244,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header .getStarted {
-  opacity: 0;
-  -webkit-transform: translateY(-2rem);
-  transform: translateY(-2rem);
+  opacity: 1;
+  -webkit-transform: translateY(-8rem);
+          transform: translateY(-8rem);
   font-family: "Times New Roman", Times, serif;
   margin-top: 0rem;
   padding: 0.8em 1.5rem 0.8em 1.5rem;
@@ -264,15 +267,20 @@ body::-webkit-scrollbar-thumb {
   color: var(--Grey-dark-1);
 }
 
-@media (max-width: 1300px) {
+.dscdesign {
+  position: absolute;
+  bottom: 0%;
+  width: 50%;
+  display: none;
+}
+
+@media (max-width: 600px) {
   .header {
-    background-image: none;
+    background-position: top !important;
+    background-size: cover !important;
   }
   .header .dscdesign {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 12rem;
+    display: block;
   }
 }
 
@@ -355,7 +363,8 @@ body::-webkit-scrollbar-thumb {
   .header .heading__illustration {
     opacity: 0.15;
   }
-  .heading_primary, .header .heading__secondary {
+  .heading_primary,
+  .header .heading__secondary {
     font-size: 2rem;
   }
 }

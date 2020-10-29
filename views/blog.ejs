@@ -1,141 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
     <title>DSC NITS | Blogs</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_trans_logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/css/blogs/owl.theme.default.min.css" />
-
-    <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="/css/blogs/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- Custom Style   -->
     <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
     <link rel="stylesheet" href="/css/index/colors.css" />
-    <link rel="stylesheet" href="/css/blogs/blogs-new.css" />
+    <link rel="stylesheet" href="/css/blogs/blogs.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <style>
-        .pagination {
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--Grey-light-1);
+      .pointer{
+        cursor: pointer;
+      }
+      .clapper {
+        width: 30px !important;
+      }
+      @media screen and (max-width: 740px) {
+        .clapper {
+          width: 20px !important;
         }
-        
-        .pagination a {
-            padding: 1rem 0.8rem;
-            color: var(--primary-dark);
-            background-color: var(--Grey-dark-1);
-            transition: all 0.2s;
+        .cards .card .socialactivity {
+          padding: 15px;
         }
-        
-        .pagination a:hover {
-            opacity: 0.8;
-        }
-    </style>
-</head>
+      }
+      .cards .card .content .images .image-container img {
+        width: 100%;
+      }
+      .cards .card .content .images {
+        width: 90%;
+      }
+      .pagination {
+        padding: 3rem 0;
+        text-align: center;
+        color: var(--Grey-light-1);
+      }
 
-<body style="font-family: 'Times New Roman', Times">
+      .pagination a {
+        padding: 1rem 0.8rem;
+        color: var(--primary-dark);
+        background-color: var(--Grey-dark-1);
+        transition: all 0.2s;
+      }
+
+      .pagination a:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body style="font-family: 'Times New Roman', Times">
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
-        <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
-        <!----------------------------- Main Site Section ------------------------------>
-        <main>
-            <section class="cards">
-                <% if(newBlogs.length==0){%>
+    <!----------------------------- Main Site Section ------------------------------>
+    <main>
+      <section class="cards">
+        <% if(newBlogs.length==0){%>
 
-                    <div class="card-container" style="justify-content: center">
-                        <div class="card-details">
-                            <div class="card-text">
-                                <p style="text-align: center;">Community Blogs will be shown here.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <% }%>
-                        <% var num =0 %>
-                            <% newBlogs.forEach(function(blog){%>
-                                <div class="card">
-                                    <div class="socialactivity">
-                                        <% if(blog.author.profileImageLocation){ %>
-                                            <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
-                                            <% }else{%>
-                                                <img src="/img/profile/person.png" alt="default avatar" />
-                                                <% }%>
-                                    </div>
-                                    <div class="content" style="width: 85%">
-                                        <h3 class="topic">
-                                            <%= blog.title %>
-                                        </h3>
-                                        <p style="margin-top: 0.2rem">by
-                                            <%= blog.author.name%>
-                                        </p>
-                                        <p class="place" style="font-family: 'Times New Roman', Times">
-                                            <%- blog.author.createdAt.toString().substring(0,16)%>
-                                        </p>
+        <div class="card-container" style="justify-content: center">
+          <div class="card-details">
+            <div class="card-text">
+              <p style="text-align: center">
+                Community Blogs will be shown here.
+              </p>
+            </div>
+          </div>
+        </div>
+        <% }%> <% var num =0 %> <% newBlogs.forEach(function(blog){%>
+        <div class="card">
+          <div class="socialactivity">
+            <% if(blog.author.profileImageLocation){ %>
+            <img
+              src="/upload/<%= blog.author.profileImageLocation%>"
+              alt="author image"
+            />
+            <% }else{%>
+            <img src="/img/profile/person.png" alt="default avatar" />
+            <% }%>
 
-                                        <div class="description">
-                                            <%- blog.summary%>...
-                                        </div>
-                                        <a href="/blog/view/<%= blog.slug%>">Read more</a>
-                                        <div class="images">
-                                            <div class="image-container">
-                                                <img class="post-images" src="<%= blog.cover%>" alt="blog cover" data-original="<%= blog.cover%>" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style="
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              width: 15%;
-              align-items: center;
-            ">
-                                        <% if (user) {%>
-                                            <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-                                                <button type="submit" style="background-color: transparent; border: none">
-                <% if (user.bookmarkBlogs
-                &&user.bookmarkBlogs.includes(blog._id)) {%>
-                <i
-                  class="fas fa-bookmark"
-                  style="font-size: 20px; color: var(--Grey-dark-1)"
-                ></i>
-                <% } else {%>
-                <i
-                  class="far fa-bookmark"
-                  style="font-size: 20px; color: var(--Grey-dark-1)"
-                ></i>
-                <% } %>
-              </button>
-                                            </form>
-                                            <% } %>
+            <button
+              type="submit"
+              style="
+                border: none;
+                background-color: transparent;
+                color: var(--Grey-dark-1);
+              "
+            >
+              <% if (user) {%> <% if (user.likes &&
+              user.likes.includes(blog._id)) {%>
+              <img src="/img/logo/clap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } else {%>
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+              <img src="/img/logo/noclap.png" class="clapper" alt="" />
+              <br /><%= blog.appreciateCount || 0%> <% } %>
+            </button>
+          </div>
+          <div class="content">
+            <h3 class="topic"><%= blog.title %></h3>
+            <p style="margin-top: 0.2rem">by <%= blog.author.name%></p>
+            <p class="place" style="font-family: 'Times New Roman', Times">
+              <%- blog.author.createdAt.toString().substring(0,16)%>
+            </p>
 
-                                                <i class="fas fa-eye" style="font-size: 15px; color: var(--Grey-dark-1)">
+            <div class="description"><%- blog.summary%>...</div>
+            <a href="/blog/view/<%= blog.slug%>">Read more</a>
+            <div class="images">
+              <div class="image-container">
+                <img
+                  class="post-images"
+                  src="<%= blog.cover%>"
+                  alt="blog cover"
+                  data-original="<%= blog.cover%>"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="sidebarblog">
+            <% if (user) {%>
+            <div class="moreblogoption">
+              <form action="/blog/bookmark/<%= blog._id %>" method="POST">
+                <button
+                  type="submit"
+                  style="background-color: transparent; border: none"
+                >
+                  <% if (user.bookmarkBlogs
+                  &&user.bookmarkBlogs.includes(blog._id)) {%>
+                  <i 
+                    class="fas fa-bookmark pointer"
+                    style="font-size: 20px; color: var(--Grey-dark-1)"
+                  ></i>
+                  <% } else {%>
+                  <i
+                    class="far fa-bookmark pointer"
+                    style="font-size: 20px; color: var(--Grey-dark-1)"
+                  ></i>
+                  <% } %>
+                </button>
+              </form>
+            </div>
+            <% } %>
+
+            <i
+              class="fas fa-eye"
+              style="font-size: 15px; color: var(--Grey-dark-1)"
+            >
               <%= blog.views %></i
             >
           </div>
         </div>
         <%})%>
       </section>
-      <section class="blog-search" style="padding-left: 0%; margin-left: 0%">
+      <section class="blog-search">
         <% if(user){ %>
         <div class="inner-search">
           <div class="blog-search-row">
