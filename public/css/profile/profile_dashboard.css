@@ -630,7 +630,7 @@ body {
 }
 
 .cards .card .content .images .image-container img {
-  width: 30rem;
+  width: 100%;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }

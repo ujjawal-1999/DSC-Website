@@ -224,6 +224,7 @@ ul.blog-search-results li {
 }
 
 .blog-search .inner-search {
+  width: 95%;
   display: flex;
   margin-top: 1rem;
   padding: 2em;

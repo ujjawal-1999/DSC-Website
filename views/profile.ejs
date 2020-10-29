@@ -36,18 +36,18 @@
     <link rel="stylesheet" href="/css/profile/modal.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
     <style>
-       .clapper {
-        width: 30px!important;
+      .clapper {
+        width: 30px !important;
       }
       @media screen and (max-width: 740px) {
         .clapper {
           width: 20px !important;
         }
         .cards .card .socialactivity {
-          padding: 15px!important;
+          padding: 15px !important;
         }
       }
-      
+
       .sidebarblog {
         display: flex;
         flex-direction: column;
@@ -56,7 +56,6 @@
         align-items: center;
         padding: 1rem;
       }
-      
     </style>
     <link
       rel="stylesheet"
@@ -270,75 +269,47 @@
               />
             </div>
             <hr size="1px" />
-           <div class="flexRow">
-            <label for="degree">Degree</label>
-            <select name="degree" id="degree">
-              <%
-                  var options = [ "", "Bachelor of Technology", "Master of Technology", "PHD"];
-                  options.forEach(option=>{
-                      let selected = (user.degree === option) ? "selected" : "";
-                    %><option value="<%=option %>" <%=selected %>>
-                <% if(option === "") { %>
-                Select
-                <% } else { %>
-                <%= option %>
-                <% } %>
-              </option><%
-                  })
-                %>
-            </select>
-          </div>
-          <div class="flexRow">
-            <label for="branch">Branch</label>
-            <select name="branch" id="branch">
-              <%
-                  var options = [
-                   "", 
-                   "Computer Science and Engineering", 
-                   "Electronics and Communication Engineering", 
-                   "Electrical Engineering",
-                   "Electronics & Instrumentation",
-                   "Mechanical Engineering",
-                   "Civil Engineering"
-                  ];
-                  options.forEach(option=>{
-                      let selected = (user.branch === option) ? "selected" : "";
-                    %><option value="<%=option %>" <%=selected %>>
-                <% if(option === "") { %>
-                Select
-                <% } else { %>
-                <%= option %>
-                <% } %>
-              </option><%
-                  })
-                %>
-            </select>
-          </div>
-          <div class="flexRow">
-            <label for="batchYear">Batch Year</label>
-            <select name="batchYear" id="batchYear">
-              <%
-                var options = [
-                 "", 
-                 "2020", 
-                 "2021", 
-                 "2022",
-                 "2023",
-                 "2024"
-                ];
-                options.forEach(option=>{
-                    let selected = (user.batch === option) ? "selected" : "";
-                  %><option value="<%=option %>" <%=selected %>>
-                <% if(option === "") { %>
-                Select
-                <% } else { %>
-                <%= option %>
-                <% } %>
-              </option><%
-                })
-              %>
-            </select>
-          </div>
+            <div class="flexRow">
+              <label for="degree">Degree</label>
+              <select name="degree" id="degree">
+                <% var options = [ "", "Bachelor of Technology", "Master of
+                Technology", "PHD"]; options.forEach(option=>{ let selected =
+                (user.degree === option) ? "selected" : ""; %>
+                <option value="<%=option %>" <%="selected" %>
+                  > <% if(option === "") { %> Select <% } else { %> <%= option
+                  %> <% } %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="branch">Branch</label>
+              <select name="branch" id="branch">
+                <% var options = [ "", "Computer Science and Engineering",
+                "Electronics and Communication Engineering", "Electrical
+                Engineering", "Electronics & Instrumentation", "Mechanical
+                Engineering", "Civil Engineering" ]; options.forEach(option=>{
+                let selected = (user.branch === option) ? "selected" : ""; %>
+                <option value="<%=option %>" <%="selected" %>
+                  > <% if(option === "") { %> Select <% } else { %> <%= option
+                  %> <% } %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="flexRow">
+              <label for="batchYear">Batch Year</label>
+              <select name="batchYear" id="batchYear">
+                <% var options = [ "", "2020", "2021", "2022", "2023", "2024" ];
+                options.forEach(option=>{ let selected = (user.batch === option)
+                ? "selected" : ""; %>
+                <option value="<%=option %>" <%="selected" %>
+                  > <% if(option === "") { %> Select <% } else { %> <%= option
+                  %> <% } %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
             <h5 class="footnote">Please select the expected year of passing</h5>
             <hr size="1px" />
             <div class="flexRow">
@@ -901,31 +872,41 @@
                           <img src="/img/logo/profile.png" alt="avatar" />
                           <% }%>
                           <button
-                          type="submit"
-                          
-                          style="
-                            display: block;
-                            border: none;
-                            background-color: transparent;
-                            color: var(--Grey-dark-1);
-                          "
-                        >
-                          <% if (user) {%> <% if (user.likes &&
-                          user.likes.includes(blog._id)) {%>
-                          <img src="/img/logo/clap.png" class="clapper" alt="" />
-                          <br /><%= blog.appreciateCount || 0%> <% } else {%>
-                          <img src="/img/logo/noclap.png" class="clapper" alt="" />
-                          <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-                          <img src="/img/logo/noclap.png" class="clapper" alt="" />
-                          <br /><%= blog.appreciateCount || 0%> <% } %>
-                        </button> 
+                            type="submit"
+                            style="
+                              display: block;
+                              border: none;
+                              background-color: transparent;
+                              color: var(--Grey-dark-1);
+                            "
+                          >
+                            <% if (user) {%> <% if (user.likes &&
+                            user.likes.includes(blog._id)) {%>
+                            <img
+                              src="/img/logo/clap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } else {%>
+                            <img
+                              src="/img/logo/noclap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } %> <% }
+                            else{%>
+                            <img
+                              src="/img/logo/noclap.png"
+                              class="clapper"
+                              alt=""
+                            />
+                            <br /><%= blog.appreciateCount || 0%> <% } %>
+                          </button>
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
-                          <div class="description">
-                            <%- blog.body.substring(0, 300)%>
-                          </div>
+                          <div class="description"><%- blog.summary%></div>
                           <a href="/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
                             <div class="image-container">
@@ -939,18 +920,20 @@
                           </div>
                         </div>
                         <div class="sidebarblog">
-                        <a
-                          class="delete-exp"
-                          href="/user/blog/delete/<%= blog._id %>"
-                          ><img src="/img/profile/trash.svg" alt="delete icon"
-                        /></a>
-                        <i
-                        class="fas fa-eye"
-                        style="font-size: 15px; color: var(--Grey-dark-1)"
-                      >
-                        <%= blog.views %></i
-                      ></div>
-                        
+                          <a
+                            class="delete-exp"
+                            href="/user/blog/delete/<%= blog._id %>"
+                            ><img
+                              src="/img/profile/trash.svg"
+                              alt="delete icon"
+                          /></a>
+                          <i
+                            class="fas fa-eye"
+                            style="font-size: 15px; color: var(--Grey-dark-1)"
+                          >
+                            <%= blog.views %></i
+                          >
+                        </div>
                       </div>
                       <%})%>
                     </div>

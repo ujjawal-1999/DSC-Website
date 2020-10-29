@@ -102,7 +102,11 @@
     .fa-heart:hover {
       opacity: 0.6;
     }
-
+    @media (max-width: 800px) {
+      .cards .card {
+        margin: 1rem 5px;
+      }
+    }
     @media (max-width: 750px) {
       .cards .card .content {
         width: 70%;
@@ -120,7 +124,7 @@
   <body>
     <%-include('partials/navbar')%>
 
-    <div class="container" style="padding: 2rem">
+    <div class="container">
       <section class="accountdetails">
         <section class="dashboard__main">
           <section class="main__profileinfo">
@@ -141,8 +145,9 @@
                 <p>
                   <% if(searchedUser.branch!=null||searchedUser.batch!=null){ %>
                   <%= searchedUser.degree %> | <%= searchedUser.batch %> <br />
-                  <%= searchedUser.branch %> <% }else{%> <%= searchedUser.name.split(' ')[0] %>'s profile details
-                  are empty. <% }%>
+                  <%= searchedUser.branch %> <% }else{%> <%=
+                  searchedUser.name.split(' ')[0] %>'s profile details are
+                  empty. <% }%>
                 </p>
                 <p>
                   <% if(searchedUser.bio!=null){ %> <%= searchedUser.bio%> <%
@@ -264,7 +269,8 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          <%= searchedUser.name.split(' ')[0] %>'s timeline has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s timeline has
+                          nothing to show.
                         </div>
                       </div>
                     </div>
@@ -317,7 +323,7 @@
                           <h3 class="topic"><%= blog.title %></h3>
                           <p class="place"></p>
                           <div class="description">
-                            <%- blog.body.substring(0, 300)%>
+                            <%- blog.summary%>
                           </div>
                           <a href="/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">
@@ -412,7 +418,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            <%= searchedUser.name.split(' ')[0] %>'s Experience Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Experience
+                            Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -487,7 +494,8 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          <%= searchedUser.name.split(' ')[0] %>'s Skills Tab has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s Skills Tab
+                          has nothing to show.
                         </div>
                       </div>
                     </div>
@@ -525,7 +533,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            <%= searchedUser.name.split(' ')[0] %>'s Personal Projects Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Personal
+                            Projects Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -606,7 +615,8 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            <%= searchedUser.name.split(' ')[0] %>'s Achievements Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s
+                            Achievements Tab has nothing to show.
                           </div>
                         </div>
                       </div>
