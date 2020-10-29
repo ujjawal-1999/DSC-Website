@@ -10,7 +10,7 @@ const User = require("../models/user");
 const auth = require("../middleware/auth");
 const methodOverride = require("method-override");
 const jwt = require("jsonwebtoken");
-const {blogReportWarning, reportBlog: reportBlogToAdmin} = require('../account/nodemailer')
+const {blogReportWarning, reportBlogToAdmin} = require('../account/nodemailer')
 
 router.use(methodOverride("_method"));
 router.use(bodyParser.json());
@@ -124,7 +124,6 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
             await user.save();
         }
         console.log(likesArr);
-
         res.redirect(req.get("referer"));
     } catch (error) {
         console.log(error);
@@ -341,10 +340,10 @@ router.get("/view/:slug", async(req, res) => {
     }
 });
 
-router.get('/report/:id',auth, async(req, res) => {
+router.post('/report/:id',auth, async(req, res) => {
   try {
     // Find the blog and populate the author
-    const blog = Blog.findById(req.params.id).populate('author')
+    const blog = await Blog.findById(req.params.id).populate('author')
     if(blog) {
       // Push the current user into the array
       if(blog.reports){
@@ -355,8 +354,10 @@ router.get('/report/:id',auth, async(req, res) => {
           blog.reports.push(req.dbUser)
         // Else flash error
           else {
-          req.flash("error", "You cannot report the same blog twice")
+            console.log("user already reported")
+          res.locals.flashMessages = req.flash("error", "You cannot report the same blog twice")
           res.redirect(req.get("referer"));
+          return
         }
       } else {
         // If the array doesn't exist, make it
@@ -365,11 +366,11 @@ router.get('/report/:id',auth, async(req, res) => {
       // Save the blog, this will trigger the pre('save') method and about the blog.reportCount
       blog.save()
       // If the blog has more than or equal to 5 reports, send a warning to the author 
-      if(blog.reportCount >= process.env.BLOG_WARNING_THRESHOLD || 5) {
+      if(blog.reportCount >= 5) {
         blogReportWarning(blog, req.protocol, req.hostname)
       }
       // If the blog has more than or equal to 7 reports, send a report to the admin
-      if(blog.reportCount >= process.env.BLOG_REPORT_THRESHOLD || 7) {
+      if(blog.reportCount >= 7) {
         reportBlogToAdmin(blog, req.protocol, req.hostname)
       }
       req.flash("success", "Blog was successfully reported")

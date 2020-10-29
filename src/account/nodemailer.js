@@ -173,7 +173,7 @@ const blogReportWarning = (blog, protocol, host) => {
       console.log(error);
       return;
     } else {
-      console.log("Message sent for forgot Password." );
+      console.log("Message sent for Report Warning." );
     }
   });
 };

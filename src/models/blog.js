@@ -54,9 +54,10 @@ const blogSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-blogSchema.pre('save', (next) => {
-    if(this.isModified("reports")) {
-        this.reportCount = this.reports.length() || 0
+blogSchema.pre('save', function(next) {
+    const blog = this
+    if(blog.isModified("reports")) {
+        blog.reportCount = blog.reports.length || 0
     }
     next();
 })
