@@ -194,7 +194,7 @@ addProjectbtn.addEventListener("click", () => {
   addProjectModal.style.opacity = "1";
   addProjectModal.style.pointerEvents = "all";
   document.body.scrollTop = 0;
-  document.documentElement.scrollTop = -20;
+  document.documentElement.scrollTop = 0;
 });
 backBtn3.addEventListener("click", () => {
   addProjectModal.style.opacity = "0";
