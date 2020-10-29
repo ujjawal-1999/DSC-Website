@@ -247,47 +247,75 @@
               />
             </div>
             <hr size="1px" />
-            <div class="flexRow">
-              <label for="degree">Degree</label>
-              <select name="degree" id="degree">
-                <% var options = [ "", "Bachelor of Technology", "Master of
-                Technology", "PHD"]; options.forEach(option=>{ let selected =
-                (user.degree === option) ? "selected" : ""; %>
-                <option value="<%=option %>" <%="selected" %>
-                  > <% if(option === "") { %> Select <% } else { %> <%= option
-                  %> <% } %>
-                </option>
-                <% }) %>
-              </select>
-            </div>
-            <div class="flexRow">
-              <label for="branch">Branch</label>
-              <select name="branch" id="branch">
-                <% var options = [ "", "Computer Science and Engineering",
-                "Electronics and Communication Engineering", "Electrical
-                Engineering", "Electronics & Instrumentation", "Mechanical
-                Engineering", "Civil Engineering" ]; options.forEach(option=>{
-                let selected = (user.branch === option) ? "selected" : ""; %>
-                <option value="<%=option %>" <%="selected" %>
-                  > <% if(option === "") { %> Select <% } else { %> <%= option
-                  %> <% } %>
-                </option>
-                <% }) %>
-              </select>
-            </div>
-            <div class="flexRow">
-              <label for="batchYear">Batch Year</label>
-              <select name="batchYear" id="batchYear">
-                <% var options = [ "", "2020", "2021", "2022", "2023", "2024" ];
-                options.forEach(option=>{ let selected = (user.batch === option)
-                ? "selected" : ""; %>
-                <option value="<%=option %>" <%="selected" %>
-                  > <% if(option === "") { %> Select <% } else { %> <%= option
-                  %> <% } %>
-                </option>
-                <% }) %>
-              </select>
-            </div>
+           <div class="flexRow">
+            <label for="degree">Degree</label>
+            <select name="degree" id="degree">
+              <%
+                  var options = [ "", "Bachelor of Technology", "Master of Technology", "PHD"];
+                  options.forEach(option=>{
+                      let selected = (user.degree === option) ? "selected" : "";
+                    %><option value="<%=option %>" <%=selected %>>
+                <% if(option === "") { %>
+                Select
+                <% } else { %>
+                <%= option %>
+                <% } %>
+              </option><%
+                  })
+                %>
+            </select>
+          </div>
+          <div class="flexRow">
+            <label for="branch">Branch</label>
+            <select name="branch" id="branch">
+              <%
+                  var options = [
+                   "", 
+                   "Computer Science and Engineering", 
+                   "Electronics and Communication Engineering", 
+                   "Electrical Engineering",
+                   "Electronics & Instrumentation",
+                   "Mechanical Engineering",
+                   "Civil Engineering"
+                  ];
+                  options.forEach(option=>{
+                      let selected = (user.branch === option) ? "selected" : "";
+                    %><option value="<%=option %>" <%=selected %>>
+                <% if(option === "") { %>
+                Select
+                <% } else { %>
+                <%= option %>
+                <% } %>
+              </option><%
+                  })
+                %>
+            </select>
+          </div>
+          <div class="flexRow">
+            <label for="batchYear">Batch Year</label>
+            <select name="batchYear" id="batchYear">
+              <%
+                var options = [
+                 "", 
+                 "2020", 
+                 "2021", 
+                 "2022",
+                 "2023",
+                 "2024"
+                ];
+                options.forEach(option=>{
+                    let selected = (user.batch === option) ? "selected" : "";
+                  %><option value="<%=option %>" <%=selected %>>
+                <% if(option === "") { %>
+                Select
+                <% } else { %>
+                <%= option %>
+                <% } %>
+              </option><%
+                })
+              %>
+            </select>
+          </div>
             <h5 class="footnote">Please select the expected year of passing</h5>
             <hr size="1px" />
             <div class="flexRow">

@@ -1,327 +1,338 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "Century Gothic";
+  font-family: "Century Gothic";
 }
 
 body {
-    scroll-behavior: smooth;
-    color: var(--Grey-dark-1);
-    background-color: var(--primary-light);
+  scroll-behavior: smooth;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
 }
 
 main {
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-around;
-    color: var(--Grey-dark-1);
-    background-color: var(--primary-light);
-    transform: translateY(-80px);
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
+  transform: translateY(-80px);
+  background-blend-mode: multiply;
+  background-image: url("../../img/illustrations/members.svg");
+  background-attachment: fixed;
+  background-size: 70%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 750px) {
+  main {
+    background-size: 100%;
+  }
 }
 
 main .centered {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 section {
-    margin: 10rem 0;
-    height: 80vh;
-    color: var(--Grey-dark-1);
-    background-color: var(--primary-light);
+  margin: 10rem 0;
+  height: 80vh;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
 }
 
 .tab-panel {
-    color: var(--Grey-dark-1);
-    background-color: var(--primary-light);
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
 }
 
 .lead {
-    height: 0vh;
+  height: 0vh;
 }
 
 .lead {
-    background-position: top;
-    background-attachment: fixed;
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-    /* background-image: url(../../img/teams_potraits/tile.jpg); */
+  background-position: top;
+  background-attachment: fixed;
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-image: url(../../img/teams_potraits/tile.jpg); */
 }
 
 .lead .lead_container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    color: var(--Grey-dark-1);
-    background-color: var(--primary-light);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--Grey-dark-1);
+  background-color: var(--primary-light);
 }
 
 .lead_title {
-    text-align: center;
-    width: 60%;
+  text-align: center;
+  width: 60%;
 }
 
 .lead_title h1 {
-    font-size: 8rem;
-    line-height: 8rem;
-    font-weight: 900;
+  font-size: 8rem;
+  line-height: 8rem;
+  font-weight: 900;
 }
 
 .lead_title p {
-    font-family: "Times New Roman", Times, serifs;
-    font-size: 2rem;
-    /* transform: translateY(50px); */
+  font-family: "Times New Roman", Times, serifs;
+  font-size: 2rem;
+  /* transform: translateY(50px); */
 }
 
 .lead_container .lead_about {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .lead_card {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .lead_card img {
-    width: 80%;
-    border-radius: 50%;
+  width: 80%;
+  border-radius: 50%;
 }
 
 .firstleadname {
-    font-weight: 100;
-    font-size: 6rem;
+  font-weight: 100;
+  font-size: 6rem;
 }
 
 .mainbg {
-    position: absolute;
-    width: 20%;
-    bottom: 0%;
-    left: 0%;
+  position: absolute;
+  width: 20%;
+  bottom: 0%;
+  left: 0%;
 }
 
 .mainbg img {
-    z-index: -10;
+  z-index: -10;
 }
 
 .mainbgdsc {
-    position: relative;
-    width: 20%;
-    bottom: 0%;
-    align-self: center;
+  position: relative;
+  width: 20%;
+  bottom: 0%;
+  align-self: center;
 }
 
 .mainbgdsc img {
-    z-index: -10;
+  z-index: -10;
 }
 
 .mainone {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .maindsc {
-    /* margin-top: -10rem; */
+  /* margin-top: -10rem; */
 }
 
 .discoverone {
-    display: flex;
-    font-size: 4.5rem;
-    font-family: "Montserrat";
-    font-weight: 600;
-    padding: 1.2rem;
-    text-align: center;
-    align-self: baseline;
-    /* font-style: italic; */
+  display: flex;
+  font-size: 4.5rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+  padding: 1.2rem;
+  text-align: center;
+  align-self: baseline;
+  /* font-style: italic; */
 }
 
 .discovertwo {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.2rem;
-    padding: 1rem;
-    width: 50%;
-    align-self: center;
-    text-align: start;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 50%;
+  align-self: center;
+  text-align: start;
 }
 
 .first {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 2rem;
-    order: 1;
-    /* text-align: start; */
-    font-weight: 300;
-    width: 100%;
-    justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  order: 1;
+  /* text-align: start; */
+  font-weight: 300;
+  width: 100%;
+  justify-content: center;
 }
 
 main .banner {
-    font-size: 15rem;
-    opacity: 0.08;
-    font-weight: bolder;
+  font-size: 15rem;
+  opacity: 0.08;
+  font-weight: bolder;
 }
 
 .heading {
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    letter-spacing: 3px;
-    text-align: center;
-    color: #333;
-    position: relative;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #333;
+  position: relative;
 }
 
 .heading2 {
-    text-transform: uppercase;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    text-align: center;
-    color: var(--Grey-dark-1);
-    position: relative;
-    margin-right: 100vw;
-    transform: rotate(90deg) translateY(-100%);
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  color: var(--Grey-dark-1);
+  position: relative;
+  margin-right: 100vw;
+  transform: rotate(90deg) translateY(-100%);
 }
 
 .heading2::after {
-    content: "";
-    width: 10rem;
-    height: 0.8rem;
-    background-color: #45e19f;
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    border-radius: 2rem;
+  content: "";
+  width: 10rem;
+  height: 0.8rem;
+  background-color: #45e19f;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  border-radius: 2rem;
 }
 
 .category_item {
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
 }
 
 .card_holder {
-    align-self: center;
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch;
-    margin-top: 3rem;
-    /* padding: 6rem 0; */
-    padding-bottom: 6rem;
+  align-self: center;
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 3rem;
+  /* padding: 6rem 0; */
+  padding-bottom: 6rem;
 }
 
 @media screen and (max-width: 1100px) {
-    .lead {
-        margin-top: 5rem;
-        height: 80vh;
-        justify-content: center;
-        text-align: center;
-        padding: 0.5rem;
-    }
-    .firstleadname {
-        font-size: 3rem;
-        text-align: center;
-    }
-    .lead .lead_container {
-        flex-direction: column !important;
-    }
-    .lead_title {
-        width: 100%;
-        text-align: center;
-    }
-    .lead_title h1 {
-        width: auto;
-        line-height: normal;
-        font-size: 3rem !important;
-    }
-    .lead_title p {
-        font-family: "Times New Roman", Times, serifs;
-        font-size: 2rem;
-        /* transform: translateY(50px); */
-    }
-    .lead_container .lead_about {
-        font-size: 1.2rem;
-    }
-    .lead_card {
-        order: -1;
-    }
-    .lead_card img {
-        width: 15rem;
-        border-radius: 50%;
-    }
+  .lead {
+    margin-top: 5rem;
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  .firstleadname {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .lead .lead_container {
+    flex-direction: column !important;
+  }
+  .lead_title {
+    width: 100%;
+    text-align: center;
+  }
+  .lead_title h1 {
+    width: auto;
+    line-height: normal;
+    font-size: 3rem !important;
+  }
+  .lead_title p {
+    font-family: "Times New Roman", Times, serifs;
+    font-size: 2rem;
+    /* transform: translateY(50px); */
+  }
+  .lead_container .lead_about {
+    font-size: 1.2rem;
+  }
+  .lead_card {
+    order: -1;
+  }
+  .lead_card img {
+    width: 15rem;
+    border-radius: 50%;
+  }
 }
 
 @media screen and (max-height: 750px) {
-    .mainbgdsc {
-        display: none;
-    }
+  .mainbgdsc {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    main {
-        justify-content: center;
-        flex-direction: column;
-    }
-    .mainone {
-        flex-direction: column;
-        align-content: center;
-    }
-    .first {
-        font-size: 2rem !important;
-        order: 0;
-    }
-    .discoverone {
-        text-align: center;
-        font-size: 3.5rem;
-        align-self: center;
-    }
-    .discovertwo {
-        text-align: center;
-        width: 100%;
-    }
-    .mainbg {
-        pointer-events: none;
-        opacity: 0;
-    }
-    .mainbgdsc {
-        display: none;
-    }
-    .maindsc {
-        margin-top: 0;
-    }
-    .heading2 {
-        margin: 0;
-        font-size: 2rem;
-        transform: rotate(0) translateY(0);
-    }
-    .heading2::after {
-        opacity: 0;
-    }
-    .game {
-        margin: 4rem 0;
-        width: 90%;
-    }
-    section {
-        margin-bottom: 8rem;
-    }
-    .card_holder {
-        padding: 0 0;
-    }
-    .game:hover .background {
-        transform: scale(1.1, 1.2) translateY(1%);
-    }
-    .game:hover .rank {
-        transform: translate(35%, -70%);
-    }
+  main {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .mainone {
+    flex-direction: column;
+    align-content: center;
+  }
+  .first {
+    font-size: 2rem !important;
+    order: 0;
+  }
+  .discoverone {
+    text-align: center;
+    font-size: 3.5rem;
+    align-self: center;
+  }
+  .discovertwo {
+    text-align: center;
+    width: 100%;
+  }
+  .mainbg {
+    pointer-events: none;
+    opacity: 0;
+  }
+  .mainbgdsc {
+    display: none;
+  }
+  .maindsc {
+    margin-top: 0;
+  }
+  .heading2 {
+    margin: 0;
+    font-size: 2rem;
+    transform: rotate(0) translateY(0);
+  }
+  .heading2::after {
+    opacity: 0;
+  }
+  .game {
+    margin: 4rem 0;
+    width: 90%;
+  }
+  section {
+    margin-bottom: 8rem;
+  }
+  .card_holder {
+    padding: 0 0;
+  }
+  .game:hover .background {
+    transform: scale(1.1, 1.2) translateY(1%);
+  }
+  .game:hover .rank {
+    transform: translate(35%, -70%);
+  }
 }
