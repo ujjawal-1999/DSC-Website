@@ -379,6 +379,9 @@ nav {
   nav {
     z-index: 10;
   }
+  .nav-warapper:last-child {
+  margin-bottom: -40px;
+  }
   .logodscmainnavmobile {
     display: block;
   }
