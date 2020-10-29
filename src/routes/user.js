@@ -33,7 +33,7 @@ router.get("/verify/:id", async (req, res) => {
 
     if (!user) {
       // console.log("Error from /user/verify route", error);
-      res.locals.flashMessages = req.flash("error", "User not found");
+      res.locals.flashMessages = req.flash("error", "No such user exists");
       res.redirect("/");
     } else {
       const currDate = new Date();
@@ -49,7 +49,7 @@ router.get("/verify/:id", async (req, res) => {
         });
         if (!updatedUser) {
           console.log(err);
-          res.locals.flashMessages = req.flash("error", "An error occured");
+          res.locals.flashMessages = req.flash("error", "An error occured. Please try again!");
           res.redirect("/");
         } else {
           // console.log("Email Verified");
@@ -153,7 +153,7 @@ router.post("/update-password", authorization, async (req, res) => {
     }
     const hash = await bcrypt.hash(req.body.newPassword, 10);
     await User.findByIdAndUpdate(req.dbUser._id, { password: hash });
-    req.flash("success", "Your password has been reset successfully.");
+    req.flash("success", "Your password has been reset successfully. Try loggin in again!");
     res.redirect("/");
   } catch (error) {
     console.log("Error : ", error);
@@ -316,13 +316,13 @@ router.post("/forgotpassword", function (req, res) {
   })
     .then((user) => {
       if (!user) {
-        req.flash("error", "User not found try creating a new account");
+        req.flash("error", "User does not exist. Try creating a new account");
         res.redirect("/user/register");
       }
       forgotPassword(user, req.protocol, req.hostname);
       res.locals.flashMessages = req.flash(
         "success",
-        `${user.name}, we sent you an email to reset your password`
+        `${user.name}, we have sent you an email to reset your password`
       );
       res.redirect("/");
     })
@@ -484,12 +484,12 @@ router.post("/profile", authorization, (req, res) => {
       })
         .then((result) => {
           // console.log(result);
-          req.flash("success", "Profile Update Successful");
+          req.flash("success", "Profile Updated Successfully");
           res.redirect("/user/profile");
         })
         .catch((err) => {
           console.log(err);
-          res.redirect("/user/profile");
+          res.redirect("/user/profile");ly
         });
     } else {
       req.flash("error", "Something went wrong. Try again");
@@ -664,7 +664,7 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
         errors.push({ msg: "No Records of user found at this moment" });
         res.locals.flashMessages = req.flash(
           "error",
-          "No Records of user found at this moment"
+          "No record of user found at this moment"
         );
         res.redirect("/user/profile");
       }
@@ -696,14 +696,14 @@ router.post("/profile/upload/:id", authorization, async (req, res) => {
               console.log(" Profile Updated!");
               res.locals.flashMessages = req.flash(
                 "success",
-                "Profile Picture Updated!"
+                "Profile Picture Updated Successfully!"
               );
               res.redirect("/user/profile");
             } else {
               // console.log(" Profile not Updated!");
               res.locals.flashMessages = req.flash(
                 "error",
-                "Profile Picture Update error!"
+                "Error! Profile Picture not updated"
               );
               res.redirect("/user/profile");
             }

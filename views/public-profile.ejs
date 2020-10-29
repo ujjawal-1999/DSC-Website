@@ -68,7 +68,7 @@
                 <p>
                   <% if(searchedUser.branch!=null||searchedUser.batch!=null){ %>
                   <%= searchedUser.degree %> | <%= searchedUser.batch %> <br />
-                  <%= searchedUser.branch %> <% }else{%> Your profile details
+                  <%= searchedUser.branch %> <% }else{%> <%= searchedUser.name.split(' ')[0] %>'s profile details
                   are empty. <% }%>
                 </p>
                 <p>
@@ -191,7 +191,7 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          User Timeline has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s timeline has nothing to show.
                         </div>
                       </div>
                     </div>
@@ -264,7 +264,7 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Expereince Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Experience Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -339,7 +339,7 @@
                     <div class="cards">
                       <div class="card">
                         <div class="description">
-                          User Skills Tab has nothing to show.
+                          <%= searchedUser.name.split(' ')[0] %>'s Skills Tab has nothing to show.
                         </div>
                       </div>
                     </div>
@@ -377,7 +377,7 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Personal Projects Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Personal Projects Tab has nothing to show.
                           </div>
                         </div>
                       </div>
@@ -458,7 +458,7 @@
                       <div class="cards">
                         <div class="card">
                           <div class="description">
-                            User Achievements Tab has nothing to show.
+                            <%= searchedUser.name.split(' ')[0] %>'s Achievements Tab has nothing to show.
                           </div>
                         </div>
                       </div>
