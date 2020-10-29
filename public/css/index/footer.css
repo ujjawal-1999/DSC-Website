@@ -127,6 +127,8 @@
 }
 
 .fadedText {
+    padding-top: 1rem;
+    font-size: 1em!important;
     opacity: 0.6;
 }
 

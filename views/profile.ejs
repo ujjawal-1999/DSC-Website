@@ -507,7 +507,7 @@
           <div class="pictureandbasic">
             <div class="photo">
               <% if(user.profileImageLocation!=null){ %>
-              <img src="/upload<%= user.profileImageLocation%>" alt="profile image" style="height: 110%" />
+              <img src="/upload<%= user.profileImageLocation%>" alt="profile image" />
               <% }else{%> <img src="/img/logo/profile.png" alt="avatar" />
               <%
                 }%>
@@ -568,10 +568,8 @@
                 <%}else{}%>
 
               </div>
-
-
-
             </div>
+           </div> 
         </section>
         <section class="main__detailedinfo">
           <div class="panel-body">
