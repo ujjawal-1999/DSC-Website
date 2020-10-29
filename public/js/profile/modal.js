@@ -327,3 +327,84 @@ window.addEventListener("keyup", (e) => {
     }
   }
 });
+
+function isDescendant(parent, child) {
+     var node = child.parentNode;
+     while (node != null) {
+         if (node == parent) {
+             return true;
+         }
+         node = node.parentNode;
+     }
+     return false;
+}
+
+// Close experience modal if clicked outside it if (element2.hasParent(element1)) 
+window.addEventListener("click", (e) => {
+  var isChild = isDescendant(document.getElementById("addExperienceModal"),e.target)
+
+  if (!isChild && (e.target != document.getElementById("addExperienceModal")) ) {
+    document.getElementById("addExperienceModal").style.display = "none";
+  }
+  if (
+    e.target == document.getElementById("addExperience")
+  ) {
+    document.getElementById("addExperienceModal").style.display = "block";
+  }
+});
+
+// Close Skill modal if clicked outside it
+window.addEventListener("click", (e) => {
+  var isChild = isDescendant(document.getElementById("addSkillsModal"),e.target)
+
+  if (!isChild && (e.target != document.getElementById("addSkillsModal")) ) {
+    document.getElementById("addSkillsModal").style.display = "none";
+  }
+  if (
+    e.target == document.getElementById("addSkills")
+  ) {
+    document.getElementById("addSkillsModal").style.display = "block";
+  }
+});
+
+// Close Projects modal if clicked outside it
+window.addEventListener("click", (e) => {
+  var isChild = isDescendant(document.getElementById("addProjectsModal"),e.target)
+
+  if (!isChild && (e.target != document.getElementById("addProjectsModal")) ) {
+    document.getElementById("addProjectsModal").style.display = "none";
+  }
+  if (
+    e.target == document.getElementById("addProject")
+  ) {
+    document.getElementById("addProjectsModal").style.display = "block";
+  }
+});
+
+// Close Achievement modal if clicked outside it
+window.addEventListener("click", (e) => {
+  var isChild = isDescendant(document.getElementById("addAchievementModal"),e.target)
+
+  if (!isChild && (e.target != document.getElementById("addAchievementModal")) ) {
+    document.getElementById("addAchievementModal").style.display = "none";
+  }
+  if (
+    e.target == document.getElementById("addAchievement")
+  ) {
+    document.getElementById("addAchievementModal").style.display = "block";
+  }
+});
+
+// edit profile modal
+// window.addEventListener("click", (e) => {
+//   var isChild = isDescendant(document.getElementById("editProfileModal"),e.target)
+//   if (!isChild && (e.target != document.getElementById("editProfileModal")) ) {
+//     document.getElementById("editProfileModal").style.display = "none";
+//   }
+//   if (
+//     e.target == document.getElementById("editbtn")
+//   ) {
+//     document.getElementById("editProfileModal").style.display = "block";
+//   }
+// });
+

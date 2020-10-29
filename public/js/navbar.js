@@ -48,6 +48,7 @@ function filternames1() {
     else {
       li1[i].style.display = "none";
     }
+
   }
   if(count === 0)
     ul1.style.display = "none";

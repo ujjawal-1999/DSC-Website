@@ -147,6 +147,7 @@
   .backlogo,
   .backlogo1 {
     transform: translateX(-3rem);
+    cursor:pointer;
   }
 
   select {
@@ -321,6 +322,7 @@
     .backlogo1 {
       width: 3rem;
       height: 3rem;
+      cursor:pointer;
     }
   }
   #subscribeBox {
