@@ -525,7 +525,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .cards .card .socialactivity img {
