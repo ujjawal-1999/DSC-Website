@@ -54,6 +54,17 @@ form {
   padding: 6px 12px;
   cursor: pointer;
 }
+.tags-upload-label
+{
+  /* grid-area: btns; */
+  /* width: 100%; */
+  /* margin: 0.6em 0; */
+  /* display: flex;
+  padding: 0.10em; */
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+}
 
 .ql-toolbar {
   grid-area: toolbar;

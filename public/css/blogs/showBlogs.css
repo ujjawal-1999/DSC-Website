@@ -39,7 +39,16 @@ main {
   font-size: 1.1rem;
   font-family: "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,sans-serif";
 }
-
+.display-tags
+{
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-family: var(--blogfont);
+  cursor: pointer;
+  
+}
 .ql-syntax {
   width: 95%;
   word-wrap: anywhere;
