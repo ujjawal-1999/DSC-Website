@@ -146,6 +146,12 @@
           <div class="content">
             <h3 class="topic"><%= blog.title %></h3>
             <p style="margin-top: 0.2rem">by <%= blog.author.name%></p>
+            <p>
+              Tags: 
+              <% for(var i=0;i<blog.tags.length;i++){ %>
+                <button class="display-tags"><%= blog.tags[i] %></button>
+                <% } %>
+            </p>
             <p class="place" style="font-family: 'Times New Roman', Times">
               <%- blog.author.createdAt.toString().substring(0,16)%>
             </p>

@@ -14,6 +14,7 @@ body {
   --bg-color: #0f0f0f;
   --white: #ffffff;
   --midnight: #104f55;
+  --yellow-tags:#f8e682;
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   --blogfont: "Open Sans", sans-serif;
 }
@@ -139,7 +140,16 @@ p {
 .content span {
   color: var(--Grey-dark-1) !important;
 }
+.display-tags
+{
+  border: none;
+  border-radius: 6rem;
+  margin-top: 0.75rem;
+  padding: 0.15rem 1.5rem ;
+  font-size: 1rem;
+  font-family: var(--blogfont);
 
+}
 .numbering {
   font-style: normal;
   font-weight: bolder;
