@@ -15,7 +15,7 @@ main {
   min-height: 90vh;
 }
 .cards .card {
-  width: 55%;
+  width: 65%;
 }
 .cards .card .content .topic {
   font-size: 2rem;

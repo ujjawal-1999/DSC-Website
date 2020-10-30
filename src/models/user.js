@@ -60,7 +60,7 @@ const userSchema = new Schema({
         level: String,
         duration: Number,
         description: String,
-    }, ],
+    }],
     profileImageLocation: {
         type: String,
     },
@@ -88,7 +88,7 @@ const userSchema = new Schema({
         date: String,
         serial: String,
         description: String,
-    }, ],
+    }],
     personalProjects: [{
         title: {
             type: String,
@@ -117,7 +117,7 @@ const userSchema = new Schema({
         hosturl: {
             type: String,
         },
-    }, ],
+    }],
     experiences: [{
         name: String,
         role: String,
@@ -125,23 +125,23 @@ const userSchema = new Schema({
         enddate: String,
         status: String,
         description: String,
-    }, ],
+    }],
     projects: [{
         type: Schema.Types.ObjectId,
         ref: "Project",
-    }, ],
+    }],
     bookmarkBlogs: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
-    }, ],
+    }],
     likes: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
-    }, ],
+    }],
     blogs: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
-    }, ],
+    }],
 }, {
     timestamps: true,
 });
