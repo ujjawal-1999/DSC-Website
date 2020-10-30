@@ -350,8 +350,8 @@
                                   border: none;
                                 "
                               >
-                                <% if (user.bookmarkBlogs
-                                &&user.bookmarkBlogs.includes(blog._id)) {%>
+                                <% if (user && user.bookmarkBlogs
+                                && user.bookmarkBlogs.includes(blog._id)) {%>
                                 <i
                                   class="fas fa-bookmark pointer"
                                   style="
