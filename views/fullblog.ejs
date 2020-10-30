@@ -130,6 +130,12 @@
           <h3 class="topic"><%= blog.title %></h3>
           <p style="margin-top: 0.5rem">by <%= blog.author.name%></p>
           <p style="margin-top: 0.5rem">Category : <%= blog.category%></p>
+          <p>
+            Tags: 
+            <% for(var i=0;i<blog.tags.length;i++){ %>
+              <button class=" display-tags"><%= blog.tags[i] %></button>
+              <% } %>
+          </p>
           <p style="margin: 0.7rem 0">
             Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
           </p>

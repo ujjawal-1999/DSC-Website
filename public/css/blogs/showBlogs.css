@@ -47,8 +47,8 @@ main {
   padding: 0.15rem 1.5rem ;
   font-size: 1rem;
   font-family: var(--blogfont);
-
 }
+
 .ql-syntax {
   width: 95%;
   word-wrap: anywhere;
