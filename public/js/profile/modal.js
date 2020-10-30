@@ -349,7 +349,7 @@ window.addEventListener("click", (e) => {
   if (
     e.target == document.getElementById("addExperience")
   ) {
-    document.getElementById("addExperienceModal").style.display = "block";
+    document.getElementById("addExperienceModal").style.display = "flex";
   }
 });
 
@@ -363,7 +363,7 @@ window.addEventListener("click", (e) => {
   if (
     e.target == document.getElementById("addSkills")
   ) {
-    document.getElementById("addSkillsModal").style.display = "block";
+    document.getElementById("addSkillsModal").style.display = "flex";
   }
 });
 
@@ -377,7 +377,7 @@ window.addEventListener("click", (e) => {
   if (
     e.target == document.getElementById("addProject")
   ) {
-    document.getElementById("addProjectsModal").style.display = "block";
+    document.getElementById("addProjectsModal").style.display = "flex";
   }
 });
 
@@ -391,7 +391,7 @@ window.addEventListener("click", (e) => {
   if (
     e.target == document.getElementById("addAchievement")
   ) {
-    document.getElementById("addAchievementModal").style.display = "block";
+    document.getElementById("addAchievementModal").style.display = "flex";
   }
 });
 
