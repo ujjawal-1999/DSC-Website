@@ -75,7 +75,7 @@ main {
     align-items: center;
   }
   .cards .card p {
-    text-align: center;
+    text-align: justify;
   }
   .cards .card .socialactivity,
   .content {
