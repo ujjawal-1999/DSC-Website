@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <style>
-      .pointer{
+      .pointer {
         cursor: pointer;
       }
       .clapper {
@@ -81,7 +81,12 @@
     </style>
   </head>
 
-  <body style="font-family: 'Times New Roman', Times">
+  <body
+    style="
+      font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,
+        sans-serif;
+    "
+  >
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
@@ -104,31 +109,39 @@
         <div class="card">
           <div class="socialactivity">
             <% if(blog.author.profileImageLocation){ %>
-            <img
-              src="/upload/<%= blog.author.profileImageLocation%>"
-              alt="author image"
-            />
+            <a href="/user/public-profile/<%= blog.author.dscHandle %>">
+              <img
+                src="/upload/<%= blog.author.profileImageLocation%>"
+                alt="author image"
+                style="cursor: pointer"
+              />
+            </a>
             <% }else{%>
             <img src="/img/profile/person.png" alt="default avatar" />
             <% }%>
 
-            <button
-              type="submit"
-              style="
-                border: none;
-                background-color: transparent;
-                color: var(--Grey-dark-1);
-              "
-            >
-              <% if (user) {%> <% if (user.likes &&
-              user.likes.includes(blog._id)) {%>
-              <img src="/img/logo/clap.png" class="clapper" alt="" />
-              <br /><%= blog.appreciateCount || 0%> <% } else {%>
-              <img src="/img/logo/noclap.png" class="clapper" alt="" />
-              <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-              <img src="/img/logo/noclap.png" class="clapper" alt="" />
-              <br /><%= blog.appreciateCount || 0%> <% } %>
-            </button>
+            <form action="/blog/appreciate/<%=blog._id%>" method="POST">
+              <button
+                type="submit"
+                style="
+                  border: none;
+                  outline: none !important;
+                  cursor: pointer;
+                  background-color: transparent;
+                  font-size: 18px;
+                  color: var(--Grey-dark-1);
+                "
+              >
+                <% if (user) {%> <% if (user.likes &&
+                user.likes.includes(blog._id)) {%>
+                <img src="/img/logo/clap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } else {%>
+                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
+                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
+                <br /><%= blog.appreciateCount || 0%> <% } %>
+              </button>
+            </form>
           </div>
           <div class="content">
             <h3 class="topic"><%= blog.title %></h3>
@@ -156,11 +169,16 @@
               <form action="/blog/bookmark/<%= blog._id %>" method="POST">
                 <button
                   type="submit"
-                  style="background-color: transparent; border: none"
+                  style="
+                    background-color: transparent;
+                    border: none;
+                    outline: none !important;
+                    cursor: pointer;
+                  "
                 >
                   <% if (user.bookmarkBlogs
                   &&user.bookmarkBlogs.includes(blog._id)) {%>
-                  <i 
+                  <i
                     class="fas fa-bookmark pointer"
                     style="font-size: 20px; color: var(--Grey-dark-1)"
                   ></i>

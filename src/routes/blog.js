@@ -248,7 +248,9 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
             req.flash("Something went wrong");
             res.redirect("/");
         }
-
+        var tagsArray = [];
+        if(blog.tags)
+            tagsArray = blog.tags.split(" ");
         const saved = await new Blog({
             title: blog.title,
             slug: (
@@ -261,6 +263,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
             cover: cover,
             summary: blog.summary,
             body: blog.body,
+            tags: (tagsArray.length===0) ? [] : tagsArray
         }).save();
         if (req.dbUser.blogs) {
             req.dbUser.blogs.push(saved);

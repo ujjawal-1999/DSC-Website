@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
     all student developers, who wish to improve their skills.
     Each user has separate profile page, where one can add his/her skills,
-    projects and accomplishments." />
+    projects and accomplishments."
+    />
 
-    <meta name="keywords" content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
-    Profile, Forum, Events, Developers, NIT Silchar" />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
 
     <title>DSC NITS | Bookmarks</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_trans_logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/blogs/all.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- --------- Owl-Carousel ------------------->
     <link rel="stylesheet" href="/css/blogs/owl.carousel.min.css" />
@@ -37,74 +52,87 @@
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+  </head>
 
-<body style='font-family: "Times New Roman", Times;'>
+  <body style="font-family: 'Times New Roman', Times">
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
     <!----------------------------- Main Site Section ------------------------------>
     <main class="main">
-        <!-- <h1 class="head">Welcome,
+      <!-- <h1 class="head">Welcome,
                 <%=user.name%> here are your bookmarks
             </h1> -->
-        <% if(bookmarks.length==0){%>
-        <div id="card-container" style="padding: 2rem">
-            <p style="width: 100%">
-                Your bookmarks will be shown here.<br /> Curently no bookmarks found. Bookmark some blogs to display
-                here.
+      <% if(bookmarks.length==0){%>
+      <div id="card-container" style="padding: 2rem">
+        <p style="width: 100%">
+          Your bookmarks will be shown here.<br />
+          Curently no bookmarks found. Bookmark some blogs to display here.
+        </p>
+      </div>
+      <% }%> <% bookmarks.forEach(function(blog){%>
+      <div id="card-container">
+        <div class="card-product-image">
+          <div class="card-prod-img">
+            <img
+              src="<%= blog.cover %>"
+              alt="blog cover"
+              style="object-fit: contain"
+            />
+          </div>
+        </div>
+        <div class="card-product-details">
+          <div style="display: flex; flex-direction: column">
+            <p
+              style="
+                font-weight: 700;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 2rem;
+                margin-bottom: 1.4rem;
+              "
+            >
+              <%=blog.title%>
             </p>
-        </div>
-        <% }%>
+            <p style="font-size: 0.9em"><%- blog.summary%></p>
 
-        <% bookmarks.forEach(function(blog){%>
-        <div id="card-container">
-            <div class="card-product-image">
-                <div class="card-prod-img">
-                    <img src="<%= blog.cover %>" alt="blog cover" style="object-fit: contain;" />
-                </div>
+            <a
+              href="/blog/view/<%= blog.slug %>"
+              style="float: right; margin-right: 20px; color: var(--Gray)"
+            >
+              Read More...</a
+            >
+
+            <div class="card-person" style="margin-top: 1.3rem">
+              <div class="card-author">
+                <% if(blog.author.profileImageLocation){ %>
+                <img
+                  src="/upload/<%= blog.author.profileImageLocation%>"
+                  alt="author image"
+                />
+                <% }else{ %>
+                <img src="/img/profile/person.png" alt="default avatar" />
+                <% } %>
+              </div>
             </div>
-            <div class="card-product-details">
-                <div style="display: flex; flex-direction: column;">
-                    <p
-                        style="font-weight: 700;font-family: 'Open Sans', sans-serif; font-size: 2rem; margin-bottom: 1.4rem;">
-                        <%=blog.title%>
-                    </p>
-                    <p style="font-size: 0.9em;">
-                        <%- blog.summary%>
-                    </p>
-
-                    <a href="/blog/view/<%= blog.slug %>" style="float: right; margin-right: 20px">
-                        Read More...</a>
-
-                    <div class="card-person" style="margin-top:1.3rem;">
-                        <div class="card-author">
-                            <% if(blog.author.profileImageLocation){ %>
-                            <img src="/upload/<%= blog.author.profileImageLocation%>" alt="author image" />
-                            <% }else{ %>
-                            <img src="/img/profile/person.png" alt="default avatar" />
-                            <% } %>
-                        </div>
-                    </div>
-                    <p>
-                        <%=blog.author.name%>
-                    </p>
-                </div>
-            </div>
-            <button style="
-                        width: 3rem;
-                        border: none;
-                        background-color: none;
-                        border-radius: 50%;
-                        margin: 1rem;">
-
-                <a class="delete-prj" href="/blog/delete/bookmark/<%= blog._id %>">
-                    <img src="/img/profile/trash.svg" alt="delete button" />
-                </a>
-            </button>
+            <p><%=blog.author.name%></p>
+          </div>
         </div>
-        <%})%>
+        <button
+          style="
+            width: 3rem;
+            border: none;
+            background-color: none;
+            border-radius: 50%;
+            margin: 1rem;
+          "
+        >
+          <a class="delete-prj" href="/blog/delete/bookmark/<%= blog._id %>">
+            <img src="/img/profile/trash.svg" alt="delete button" />
+          </a>
+        </button>
+      </div>
+      <%})%>
     </main>
     <!---------------x------------- Main Site Section ---------------x-------------->
 
@@ -128,16 +156,15 @@
     <script src="/js/darkmode.js"></script>
 
     <script>
-        var bodydiv = document.getElementById("bodydiv");
-        bodydiv.addEventListener("click", closeSearch);
+      var bodydiv = document.getElementById("bodydiv");
+      bodydiv.addEventListener("click", closeSearch);
 
-        function closeSearch() {
-            let search_list1 = document.getElementById("search_list1");
-            search_list1.style.display = "none";
-            let search_list2 = document.getElementById("search_list2");
-            search_list2.style.display = "none";
-        }
+      function closeSearch() {
+        let search_list1 = document.getElementById("search_list1");
+        search_list1.style.display = "none";
+        let search_list2 = document.getElementById("search_list2");
+        search_list2.style.display = "none";
+      }
     </script>
-</body>
-
+  </body>
 </html>

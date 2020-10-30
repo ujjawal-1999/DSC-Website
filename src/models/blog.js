@@ -41,6 +41,9 @@ const blogSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    tags : [{
+        type: String
+    }],
     reports: [{
         type: ObjectId,
         ref: "User",

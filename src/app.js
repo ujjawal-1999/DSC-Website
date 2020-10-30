@@ -85,7 +85,7 @@ app.get("*", (req, res) => {
   res.render("404-page");
 });
 
-//Start the server
+// Start the server
 app.listen(PORT, () => {
   console.log("Server listening on port", PORT);
 });

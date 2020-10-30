@@ -73,6 +73,10 @@
         margin: 1rem 0;
       }
     }
+    .cards .card .content p {
+      font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial,
+        sans-serif;
+    }
   </style>
 
   <body id="">
@@ -89,10 +93,13 @@
       <div class="card">
         <div class="socialactivity">
           <% if(blog.author.profileImageLocation){ %>
-          <img
-            src="/upload/<%= blog.author.profileImageLocation%>"
-            alt="author image"
-          />
+          <a href="/user/public-profile/<%= blog.author.dscHandle %>">
+            <img
+              src="/upload/<%= blog.author.profileImageLocation%>"
+              alt="author image"
+              style="cursor: pointer"
+            />
+          </a>
           <% }else{%>
           <img src="/img/profile/person.png" alt="default avatar" />
           <% }%>
@@ -101,6 +108,8 @@
               type="submit"
               style="
                 border: none;
+                outline: none !important;
+                cursor: pointer;
                 background-color: transparent;
                 font-size: 18px;
                 color: var(--Grey-dark-1);
@@ -142,7 +151,12 @@
             <form action="/blog/bookmark/<%= blog._id %>" method="POST">
               <button
                 type="submit"
-                style="background-color: transparent; border: none"
+                style="
+                  background-color: transparent;
+                  border: none;
+                  outline: none !important;
+                  cursor: pointer;
+                "
               >
                 <% if (user.bookmarkBlogs
                 &&user.bookmarkBlogs.includes(blog._id)) {%>
@@ -170,6 +184,7 @@
                       background-color: transparent;
                       border: none;
                       color: var(--Grey-dark-2);
+                      outline: none !important;
                       cursor: pointer;
                     "
                     type="submit"

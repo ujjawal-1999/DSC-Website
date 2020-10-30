@@ -130,7 +130,7 @@ nav {
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.1);
   z-index: 1;
   right: 0%;
-  top: 4rem;
+  top: 2.2rem;
 }
 .dropdown-content a {
   color: var(--Grey-dark-4);
@@ -197,6 +197,10 @@ nav {
   padding: 0.2rem 0.1rem;
   width: 60%;
   transition: all 0.2s;
+  outline: none !important;
+}
+.nav-warapper input:focus {
+  border-bottom: 3px solid var(--Grey-dark-3);
 }
 
 /* MOBILE MENU & ANIMATION */

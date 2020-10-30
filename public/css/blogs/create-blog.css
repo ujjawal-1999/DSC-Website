@@ -13,6 +13,7 @@ body {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1rem;
 }
 
 form {
@@ -28,6 +29,8 @@ form {
   font-weight: bolder;
   border: none;
   grid-area: title;
+  outline: none !important;
+  border-bottom: 1px solid gray;
 }
 
 .btns {

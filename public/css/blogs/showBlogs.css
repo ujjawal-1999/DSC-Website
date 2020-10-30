@@ -32,12 +32,12 @@ main {
 }
 .cards .card .content {
   width: 80% !important;
-  font-family: "Times New Roman", Times;
+  font-family: "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,sans-serif";
 }
 .cards .card .content .description {
   padding: 2rem 0;
-  font-size: 1.3rem;
-  font-family: "Times New Roman", Times;
+  font-size: 1.1rem;
+  font-family: "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,sans-serif";
 }
 
 .ql-syntax {
@@ -96,6 +96,7 @@ main {
 .dropdownblog {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .dropdownblog-content {
