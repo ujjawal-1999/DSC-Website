@@ -94,6 +94,7 @@
           class="getStarted"
           id="getStarted"
           value="Get Started"
+          style="cursor: pointer"
       /></a>
       <% } %>
     </header>
@@ -690,6 +691,7 @@
                       id="file1"
                       multiple
                       onchange="javascript:updateList()"
+                      style="cursor: pointer"
                     /><br />
                     <!-- <center>
                       <progress
@@ -707,7 +709,11 @@
                 </div>
 
                 <div class="col-xs-12">
-                  <button class="btn-lrg submit-btn" onclick="uploadFile()">
+                  <button
+                    class="btn-lrg submit-btn"
+                    onclick="uploadFile()"
+                    style="cursor: pointer"
+                  >
                     Send Message
                   </button>
                 </div>

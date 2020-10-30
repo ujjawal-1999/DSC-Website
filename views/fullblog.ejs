@@ -104,7 +104,9 @@
             />
           </a>
           <% }else{%>
-          <img src="/img/profile/person.png" alt="default avatar" />
+            <a href="/user/public-profile/<%= blog.author.dscHandle %>">
+          <img src="/img/profile/person.png" alt="default avatar" style="cursor: pointer"/>
+        </a>
           <% }%>
           <form action="/blog/appreciate/<%=blog._id%>" method="POST">
             <button
@@ -131,7 +133,7 @@
         </div>
         <div class="content" style="width: 90%">
           <h3 class="topic"><%= blog.title %></h3>
-          <p style="margin-top: 0.5rem">by <%= blog.author.name%></p>
+          <p style="margin-top: 0.5rem">by <a href="/user/public-profile/<%= blog.author.dscHandle %>" style="color:inherit;text-decoration: none !important;outline: none !important;"><%= blog.author.name%></a></p>
           <p style="margin-top: 0.5rem">Category : <%= blog.category%></p>
           <p>
             Tags: 
