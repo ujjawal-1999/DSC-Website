@@ -143,12 +143,13 @@ p {
 .display-tags
 {
   border: none;
-  border-radius: 2rem;
-  padding: 0.5rem 2rem;
+  border-radius: 6rem;
+  margin-top: 0.75rem;
+  padding: 0.15rem 1.5rem ;
   font-size: 1rem;
   font-family: var(--blogfont);
-  cursor: pointer;
 }
+
 .numbering {
   font-style: normal;
   font-weight: bolder;
