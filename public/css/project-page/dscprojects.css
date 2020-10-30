@@ -117,6 +117,21 @@ main {
   transition: 0.2s ease;
 }
 
+.cards .card-toggle-link {
+  z-index: 4;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
 .cards .card-toggle.active {
   color: white;
   border-color: white;
