@@ -1,5 +1,0 @@
-MONGODB_URL="mongodb+srv://dscnits20:dscnits2020@cluster0-wi7dd.mongodb.net/test?retryWrites=true&w=majority"
-NODEMAILER_EMAIL = help.dsc.nits.2020@gmail.com
-NODEMAILER_SECONDARYEMAIL = jainujjawal1999@gmail.com
-NODEMAILER_PASSWORD = dscnits@20
-JWT_SECRET = "longer-secret-is-better"
