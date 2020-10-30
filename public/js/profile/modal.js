@@ -396,15 +396,16 @@ window.addEventListener("click", (e) => {
 });
 
 // edit profile modal
-// window.addEventListener("click", (e) => {
-//   var isChild = isDescendant(document.getElementById("editProfileModal"),e.target)
-//   if (!isChild && (e.target != document.getElementById("editProfileModal")) ) {
-//     document.getElementById("editProfileModal").style.display = "none";
-//   }
-//   if (
-//     e.target == document.getElementById("editbtn")
-//   ) {
-//     document.getElementById("editProfileModal").style.display = "block";
-//   }
-// });
+window.addEventListener("click", (e) => {
+  var isChild = isDescendant(document.getElementById("editProfileModal"),e.target)
+
+  if (!isChild && (e.target != document.getElementById("editProfileModal")) ) {
+    document.getElementById("editProfileModal").style.display = "none";
+  }
+  if (
+    e.target == document.getElementById("editbtn")
+  ) {
+    document.getElementById("editProfileModal").style.display = "flex";
+  }
+});
 
