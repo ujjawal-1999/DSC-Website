@@ -89,3 +89,13 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log("Server listening on port", PORT);
 });
+// const User = require('./models/user')
+
+// const fun = async()=>{
+//     const user = await User.find();
+//     user.forEach(async(data)=>{
+//       console.log(data.name, '-', data.dscHandle);
+//     })
+// }
+
+// fun()

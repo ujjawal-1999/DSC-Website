@@ -370,7 +370,7 @@ router.get("/public-profile/:handle", async (req, res) => {
     )
       .populate({path: "blogs", match: {reportCount: {$lt: filterThreshold}}})
       .execPopulate();
-    searchedUser.populate("personalProjects").execPopulate();
+    await searchedUser.populate("personalProjects").execPopulate();
     if (searchedUser) {
       res.render("public-profile", {
         searchedUser,

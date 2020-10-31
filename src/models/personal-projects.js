@@ -30,7 +30,6 @@ const PersonalProjectsSchema = new mongoose.Schema({
         },
         askCollaboration:{
             type: Boolean,
-            default : true
         },
         hosturl: {
             type: String,
