@@ -653,10 +653,17 @@
           <div class="containersss">
             <div class="row input-container">
               <div class="col-xs-12">
+                <% if(!user) { %>
                 <div class="styled-input wide">
                   <input type="email" class="full" name="email" required />
                   <label>Email</label>
                 </div>
+                <% } else {%>
+                  <div class="styled-input wide">
+                    <input type="email" value="<%= user.email %>" class="full" name="email" disabled />
+                    <!-- <label>Email</label> -->
+                  </div>
+                <% } %>
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="styled-input">

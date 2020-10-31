@@ -194,7 +194,7 @@ const storage = multer.diskStorage({
             );
         }
         if (stat && !stat.isDirectory())
-            throw new Error("Directory Couldnt be created");
+            throw new Error("Directory Couldn't be created");
         cb(null, newDestination);
     },
     filename: function(req, file, cb) {
