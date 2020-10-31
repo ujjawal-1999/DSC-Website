@@ -57,6 +57,9 @@
       width: 30px !important;
       cursor: pointer;
     }
+    .cards .card .content .images .image-container{
+      max-height: unset;
+    }
     @media screen and (max-width: 740px) {
       .clapper {
         margin-top: 10px;
@@ -73,9 +76,8 @@
         margin: 1rem 0;
       }
     }
+
     .cards .card .content p {
-      font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial,
-        sans-serif;
       width: 100%;
     }
     .description p{
@@ -141,11 +143,21 @@
           <p style="margin-top: 0.5rem">by <a href="/user/public-profile/<%= blog.author.dscHandle %>" style="color:inherit;text-decoration: none !important;outline: none !important;"><%= blog.author.name%></a></p>
           <p style="margin-top: 0.5rem">Category : <%= blog.category%></p>
           <p>
-            Tags: 
-            <% for(var i=0;i<blog.tags.length;i++){ %>
-              <button class=" display-tags"><%= blog.tags[i] %></button>
-              <% } %>
+            <% if(blog.tags.length!=0){%>
+            <div class="tagsss">
+             <% for(var i=0;i<blog.tags.length;i++){ %>
+              <button class="display-tags"><%= blog.tags[i] %></button>
+             <% } %>
+           </div>
+           <%}else{%>
+            <br>
+            <button class="display-tags"> <%- blog.category.split(' ')[0]%></button>
+           <% } %>
           </p>
+          <p class="place">
+            <%- blog.author.createdAt.toString().substring(0,16)%>
+          </p>
+
           <p style="margin: 0.7rem 0">
             Uploaded on <%- blog.author.createdAt.toString().substring(0,16)%>
           </p>

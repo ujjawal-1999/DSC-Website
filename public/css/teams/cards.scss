@@ -103,7 +103,7 @@ img {
   }
 
   .name {
-    font-family: "Times New Roman", Times, serif;
+    font-family: var(--global-font);
     margin: 0.75em 0;
     font-size: 2rem;
   }
@@ -154,8 +154,7 @@ img {
   pointer-events: visible;
 
   .about {
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
+    font-family: var(--global-font);
     height: 4em;
   }
 

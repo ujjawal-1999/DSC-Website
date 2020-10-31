@@ -33,25 +33,24 @@ function filternames1() {
     ul1.style.display = "block";
   }
   //loop through collection item lis
-  let count  = 0; 
+  let count = 0;
   for (let i = 0; i < li1.length; i++) {
     let a1 = li1[i].getElementsByTagName("a")[0];
     //if matched
 
-    if (a1.innerHTML.toUpperCase().trim().indexOf(filterValue1.trim()) > -1 &&
-      filterValue1.trim() !== "" && filterValue1.trim().length > 1) 
-    {
+    if (
+      a1.innerHTML.toUpperCase().trim().indexOf(filterValue1.trim()) > -1 &&
+      filterValue1.trim() !== "" &&
+      filterValue1.trim().length > 1
+    ) {
       ul1.style.display = "block";
       li1[i].style.display = "block";
       count++;
-    } 
-    else {
+    } else {
       li1[i].style.display = "none";
     }
-
   }
-  if(count === 0)
-    ul1.style.display = "none";
+  if (count === 0) ul1.style.display = "none";
 }
 // #################################################################################
 let filterInput2 = document.getElementById("search2");
@@ -90,14 +89,15 @@ function filtername2() {
     ul2.style.display = "block";
   }
   //loop through collection item lis
-  let count  = 0; 
+  let count = 0;
   for (let i = 0; i < li2.length; i++) {
     let a2 = li2[i].getElementsByTagName("a")[0];
     //if matched
 
     if (
       a2.innerHTML.toUpperCase().trim().indexOf(filterValue2.trim()) > -1 &&
-      filterValue2.trim() !== "" && filterValue2.trim().length > 1
+      filterValue2.trim() !== "" &&
+      filterValue2.trim().length > 1
     ) {
       ul2.style.display = "block";
       li2[i].style.display = "block";
@@ -106,8 +106,7 @@ function filtername2() {
       li2[i].style.display = "none";
     }
   }
-  if(count === 0)
-    ul2.style.display = "none";
+  if (count === 0) ul2.style.display = "none";
 }
 // #####
 /*
@@ -130,7 +129,7 @@ $(".menu-toggle").click(function () {
   $("#navwrap").toggleClass("uparneeche");
 });
 
-$("#dropper").click(function (e) {
+$("#dropper").hover(function (e) {
   $(".dropdown-content").toggleClass("block");
 });
 

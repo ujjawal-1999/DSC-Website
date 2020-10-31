@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 /*Variables */
 .left-section .inner-content {
   position: absolute;
@@ -17,7 +16,7 @@ body {
 }
 
 body {
-  font-family: "Fira Sans", sans-serif;
+  font-family: var(--global-font);
   display: flex;
   justify-content: center;
   align-items: center;

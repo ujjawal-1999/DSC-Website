@@ -1,5 +1,3 @@
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700); */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -7,8 +5,7 @@
 
 body {
   background-color: var(--primary-light) !important;
-  /* font-family: sans-serif; */
-  font-family: 'Roboto';
+  font-family: var(--global-font);
   font-weight: 300;
   line-height: 1.8;
 }

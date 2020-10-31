@@ -24,7 +24,7 @@ form {
 #title {
   padding-left: 0.2em;
   height: 40px;
-  width: 100%;
+  width: 50rem;
   font-size: 2em;
   font-weight: bolder;
   border: none;
@@ -63,9 +63,14 @@ form {
   padding: 0.10em; */
   border: 1px solid #ccc;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 4px 8px;
 }
-
+.tags-upload-field {
+  margin: 3px;
+  margin-left: 2px;
+  width: 15rem;
+  height:18px;
+}
 .ql-toolbar {
   grid-area: toolbar;
 }
@@ -135,5 +140,11 @@ button a {
   }
   #ql-picker-options-0 {
     top: -750%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #title {
+    width: 100%;
   }
 }

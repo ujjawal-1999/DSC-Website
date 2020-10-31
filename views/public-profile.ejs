@@ -60,7 +60,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 15%;
+      width: 10%;
       align-items: center;
       padding: 1rem;
     }
@@ -321,7 +321,18 @@
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
-                          <p class="place"></p>
+                          <p>
+                            <% if(blog.tags.length!=0){%>
+                            <div class="tagsss">
+                             <% for(var i=0;i<blog.tags.length;i++){ %>
+                              <button class="display-tags"><%= blog.tags[i] %></button>
+                             <% } %>
+                           </div>
+                           <%}else{%>
+                            <br>
+                            <button class="display-tags"> <%- blog.category.split(' ')[0]%></button>
+                           <% } %>
+                          </p>
                           <div class="description">
                             <%- blog.summary%>
                           </div>

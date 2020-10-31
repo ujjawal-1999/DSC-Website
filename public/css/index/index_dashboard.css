@@ -3,7 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
 }
 
 section {
@@ -204,7 +204,7 @@ body::-webkit-scrollbar-thumb {
   margin: 1rem;
   font-size: 2rem;
   color: var(--Grey-dark-2);
-  font-family: "Century Gothic";
+  font-family: var(--global-font);
   font-weight: 400;
   letter-spacing: 0.5rem;
   -webkit-transform: translateY(-10px);
@@ -216,7 +216,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 5rem;
   margin: 0.5rem;
   color: var(--Grey-dark-1);
-  font-family: sans-serif;
+  font-family: var(--global-font);
   font-weight: 500;
   z-index: 20;
   background: transparent;
@@ -226,7 +226,7 @@ body::-webkit-scrollbar-thumb {
 
 .header .heading__background {
   background: transparent;
-  font-family: sans-serif;
+  font-family: var(--global-font);
   position: fixed;
   font-size: 18rem;
   -webkit-transform: rotate(270deg) translateY(80vh);
@@ -242,13 +242,14 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   background: transparent;
 }
-
+.header .getStartedAHref {
+  -webkit-transform: translateY(-8rem);
+  transform: translateY(-8rem);
+  margin-top: 3rem;
+}
 .header .getStarted {
   opacity: 1;
-  -webkit-transform: translateY(-8rem);
-          transform: translateY(-8rem);
-  font-family: "Times New Roman", Times, serif;
-  margin-top: 3rem;
+  font-family: var(--global-font);
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;
@@ -273,7 +274,11 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   display: none;
 }
-
+@media (min-width: 660px) {
+  .getStartedAHref {
+    margin-top: 3rem;
+  }
+}
 @media (max-width: 600px) {
   .header {
     background-position: top !important;
@@ -309,7 +314,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1150px) {
-  .getStarted {
+  .getStartedAHref {
     -webkit-transform: translateY(-10rem);
     transform: translateY(-10rem);
   }
@@ -328,7 +333,7 @@ body::-webkit-scrollbar-thumb {
     -webkit-transform: translateY(-6rem);
     transform: translateY(-6rem);
   }
-  .header .getStarted {
+  .header .getStartedAHref {
     opacity: 1;
     -webkit-transform: translateY(-10rem);
     transform: translateY(-10rem);
@@ -342,6 +347,7 @@ body::-webkit-scrollbar-thumb {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
   .header {
     background-image: url(../../img/illustrations/4-mobile.svg);
     background-size: 100%;
@@ -350,7 +356,8 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--primary-light);
     background-blend-mode: multiply;
   }
-  .getStarted {
+
+  .getStartedAHref {
     -webkit-transform: translateY(-4rem);
     transform: translateY(-4rem);
   }
@@ -383,7 +390,7 @@ body::-webkit-scrollbar-thumb {
   .header .heading__secondary {
     font-size: 2rem;
   }
-  .getStarted {
+  .getStartedAHref {
     margin-top: 1rem;
   }
 }

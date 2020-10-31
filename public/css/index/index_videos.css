@@ -4,15 +4,15 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 76vh;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-         
+  -ms-flex-pack: space-evenly;
+
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-image: url(../../img/illustrations/video_transparent.png);
   background-size: 50rem;
   background-position: center;
@@ -45,21 +45,21 @@
 .video #left-button .inv,
 .video #right-button .inv {
   -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .video__secondary {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 200;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
   font-size: 4rem;
   font-weight: 600;
 }
 
 .video__instruction {
   font-size: 0.8rem;
-  color: var(--Grey-dark-1: #333;);
+  color: var(--Grey-dark-1);
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 200;
@@ -68,11 +68,11 @@
   .video__secondary {
     margin-top: 3rem;
     font-weight: 200;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--global-font);
     font-size: 4rem;
     font-weight: 600;
   }
-  
+
   .video__instruction {
     font-size: 0.8rem;
     color: var(--Grey-light-4);
@@ -88,8 +88,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .video .row {
@@ -131,7 +131,7 @@
 
 .video .tile {
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   position: relative;
   display: inline-block;
   margin-right: 3px;
@@ -170,7 +170,7 @@
 
 .video .tile:hover ~ .tile {
   -webkit-transform: translate3d(80px, 0, 0);
-          transform: translate3d(80px, 0, 0);
+  transform: translate3d(80px, 0, 0);
 }
 
 @media screen and (max-width: 768px) {
@@ -192,7 +192,6 @@
   }
   .video__instruction {
     font-size: 0.8rem;
-   
   }
 }
 /*# sourceMappingURL=index_videos.css.map */

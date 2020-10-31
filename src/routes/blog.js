@@ -24,7 +24,7 @@ router.use(
 // clicking any blog will redirect to view blog route (/blog/view/:slug)
 router.get("/", async(req, res) => {
     try {
-        const filterThreshold = process.env.BLOG_FILTER_THREHOLD || 7
+        const filterThreshold = process.env.BLOG_FILTER_THRESHOLD || 7
         const token = req.cookies.authorization;
         const finduser = await User.find({
             active: true
@@ -281,6 +281,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
 
 //route to display blog
 router.get("/view/:slug", async(req, res) => {
+    const filterThreshold = process.env.BLOG_FILTER_THRESHOLD || 7
     try {
         //find the corresponding blog in db
         let slug = req.params.slug;
@@ -307,7 +308,12 @@ router.get("/view/:slug", async(req, res) => {
         if (!blog) {
             res.render("404-page");
         }
-        const popularBlogs = await Blog.find()
+        console.log(blog.reportCount)
+        if(blog.reportCount >= filterThreshold) {
+            res.redirect('/404')
+            return;
+        }
+        const popularBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}})
             .sort({
                 views: -1,
             })
@@ -362,7 +368,6 @@ router.post('/report/:id',auth, async(req, res) => {
           blog.reports.push(req.dbUser)
         // Else flash error
           else {
-            console.log("user already reported")
           res.locals.flashMessages = req.flash("error", "You cannot report the same blog twice")
           res.redirect(req.get("referer"));
           return

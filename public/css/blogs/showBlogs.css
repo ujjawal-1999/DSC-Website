@@ -1,7 +1,6 @@
 @import url("../public/css/blogs/fonts.css");
 @import url("../public/css/blogs/Style.css");
-@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
   background-color: var(--primary-light) !important;
   padding: 0;
@@ -19,7 +18,7 @@ main {
 }
 .cards .card .content .topic {
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto";
 }
 .cards .card .socialactivity img {
   width: 5rem;
@@ -32,19 +31,18 @@ main {
 }
 .cards .card .content {
   width: 80% !important;
-  font-family: "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,sans-serif";
+  font-family: "Roboto";
 }
 .cards .card .content .description {
   padding: 2rem 0;
   font-size: 1.1rem;
-  font-family: "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,sans-serif";
+  font-family: "Roboto";
 }
-.display-tags
-{
+.display-tags {
   border: none;
   border-radius: 6rem;
   margin-top: 0.75rem;
-  padding: 0.15rem 1.5rem ;
+  padding: 0.15rem 1.5rem;
   font-size: 1rem;
   font-family: var(--blogfont);
 }

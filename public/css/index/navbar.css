@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +72,7 @@ nav {
   display: block;
   color: var(--Grey-dark-1);
   font-size: 15px;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: var(--global-font) !important;
   font-weight: 500;
   height: auto;
   /* padding: 0.8em 0.5em; */
@@ -102,6 +103,7 @@ nav {
   position: relative;
   display: inline-block;
   width: 40%;
+  padding: 18px 0px;
 }
 .dropdown img {
   width: 24px;
@@ -126,11 +128,11 @@ nav {
   display: none;
   position: absolute;
   background-color: var(--Grey-light-1);
-  width: 150%;
+  width: 10em;
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.1);
   z-index: 1;
   right: 0%;
-  top: 2.2rem;
+  top: 3rem;
 }
 .dropdown-content a {
   color: var(--Grey-dark-4);
@@ -199,7 +201,7 @@ nav {
   transition: all 0.2s;
   outline: none !important;
 }
-.nav-warapper input:focus {
+.nav-warapper inputocus {
   border-bottom: 3px solid var(--Grey-dark-3);
 }
 
@@ -336,7 +338,7 @@ nav {
   transform: translateX(-50%);
   display: none;
   width: 50%;
-  border:0%;
+  border: 0%;
 }
 
 .mobilesearch input {
@@ -384,7 +386,7 @@ nav {
     z-index: 10;
   }
   .nav-warapper:last-child {
-  margin-bottom: -40px;
+    margin-bottom: -40px;
   }
   .logodscmainnavmobile {
     display: block;
