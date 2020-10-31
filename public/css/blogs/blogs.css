@@ -299,7 +299,7 @@ ul.blog-search-results li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 15%;
+  width: 10%;
   align-items: center;
   padding: 1rem;
 }
