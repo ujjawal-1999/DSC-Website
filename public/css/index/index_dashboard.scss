@@ -242,13 +242,11 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   background: transparent;
 }
-
 .header .getStartedAHref {
   -webkit-transform: translateY(-8rem);
   transform: translateY(-8rem);
   margin-top: 3rem;
 }
-
 .header .getStarted {
   opacity: 1;
   font-family: var(--global-font);
@@ -276,13 +274,11 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   display: none;
 }
-
 @media (min-width: 660px) {
   .getStartedAHref {
     margin-top: 3rem;
   }
 }
-
 @media (max-width: 600px) {
   .header {
     background-position: top !important;
