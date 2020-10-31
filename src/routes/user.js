@@ -354,6 +354,7 @@ router.get("/public-profile/:handle", async (req, res) => {
   try {
     // const token = req.cookies.authorization;
     const finduser = await User.find({active : true}, null, {sort:{name:1}});
+    const filterThreshold = process.env.BLOG_FILTER_THRESHOLD || 7
     // const userBlog = await Blog.find();
     // req.dbUser = await (await User.findOne({ dscHandle: req.params.handle }))
     const token = req.cookies.authorization;
@@ -365,7 +366,7 @@ router.get("/public-profile/:handle", async (req, res) => {
     const searchedUser = await (
       await User.findOne({ dscHandle: req.params.handle })
     )
-      .populate("blogs")
+      .populate({path: "blogs", match: {reportCount: {$lt: filterThreshold}}})
       .execPopulate();
     if (searchedUser) {
       res.render("public-profile", {
