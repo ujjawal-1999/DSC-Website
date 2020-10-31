@@ -938,7 +938,18 @@
                         </div>
                         <div class="content">
                           <h3 class="topic"><%= blog.title %></h3>
-                          <p class="place"></p>
+                          <p>
+                            <% if(blog.tags.length!=0){%>
+                            <div class="tagsss">
+                             <% for(var i=0;i<blog.tags.length;i++){ %>
+                              <button class="display-tags"><%= blog.tags[i] %></button>
+                             <% } %>
+                           </div>
+                           <%}else{%>
+                            <br>
+                            <button class="display-tags"> <%- blog.category.split(' ')[0]%></button>
+                           <% } %>
+                          </p>
                           <div class="description"><%- blog.summary%></div>
                           <a href="/blog/view/<%= blog.slug%>">Read more</a>
                           <div class="images">

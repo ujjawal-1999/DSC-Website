@@ -140,14 +140,6 @@ p {
 .content span {
   color: var(--Grey-dark-1) !important;
 }
-.display-tags {
-  border: none;
-  border-radius: 6rem;
-  margin-top: 0.75rem;
-  padding: 0.15rem 1.5rem;
-  font-size: 1rem;
-  font-family: var(--blogfont);
-}
 
 .numbering {
   font-style: normal;
