@@ -39,6 +39,13 @@
       .clapper {
         width: 30px !important;
       }
+      .fullwidth{
+        width: 100%;
+      }
+      #askCollaboration
+      {       
+        visibility: visible;
+      }
       @media screen and (max-width: 740px) {
         .clapper {
           width: 20px !important;
@@ -608,13 +615,15 @@
               />
             </div>
             <div class="flexRow">
+              <label for="description" class="fullwidth" >Do you need Collaboration in this project? </label>
               <input
-                id="askCollaboration"
-                type="checkbox"
-                name="askCollaboration"
-                value="Do you need Collaboration in this project?"
-                marked
-              />
+              id="askCollaboration"
+              type="checkbox"
+              name="askCollaboration"        
+              marked
+            /> 
+              
+                            
             </div>
             <br /><br />
             <div class="flexRow fullwidth">

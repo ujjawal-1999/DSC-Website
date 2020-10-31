@@ -27,7 +27,42 @@
   opacity: 1 !important;
   pointer-events: all;
 }
+.flexRow {
+  input[type="checkbox"] {
+    padding: 0;
+    margin: 0;
+    width: 80px;
+    height: 40px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #c3c3c3;
+    border-radius: 20px;
+    box-shadow: inset -2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+  }
 
+  input[type="checkbox"]:before {
+    padding: 0;
+    margin: 0;
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+  }
+
+  input:checked[type="checkbox"] {
+    background-color: #00aacc;
+  }
+  input:checked[type="checkbox"]:before {
+    transform: scale(0.9) translateX(38px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -3px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
 // Edit Profile Modal
 .editProfileModal,
 .addSkillsModal,

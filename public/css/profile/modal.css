@@ -35,6 +35,49 @@
   pointer-events: all;
 }
 
+.flexRow input[type="checkbox"] {
+  padding: 0;
+  margin: 0;
+  width: 80px;
+  height: 40px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #c3c3c3;
+  border-radius: 20px;
+  -webkit-box-shadow: inset -2px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: inset -2px 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.flexRow input[type="checkbox"]:before {
+  padding: 0;
+  margin: 0;
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.flexRow input:checked[type="checkbox"] {
+  background-color: #00aacc;
+}
+
+.flexRow input:checked[type="checkbox"]:before {
+  -webkit-transform: scale(0.9) translateX(38px);
+          transform: scale(0.9) translateX(38px);
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -3px 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -3px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .editProfileModal,
 .addSkillsModal,
 .addProjectsModal,
