@@ -2,7 +2,7 @@
   border-bottom-color: rgba(186, 190, 189, 0.2);
   border-bottom-style: groove;
   border-bottom-width: 0.04rem;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
   padding: 1rem;
   margin: 1rem;
   background-color: rgba(221, 220, 220, 0.297);
@@ -30,7 +30,7 @@
 }
 .row-ach .column-ach {
   display: flex;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
 }
 .row-ach .column-ach h3 {
   color: var(--Grey-dark-1);
@@ -86,7 +86,7 @@
   font-size: 10px;
   color: var(--Grey-dark-2);
   font-size: 15px;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
 }
 #date {
   color: var(--Grey-dark-1);

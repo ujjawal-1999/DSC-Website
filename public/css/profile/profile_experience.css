@@ -14,7 +14,7 @@
   border: none;
   margin: 1rem;
   font-size: 0.8rem;
-  font-family: sans-serif;
+  font-family: var(--global-font);
   transition: all 0.2s;
   padding: 0.5rem;
   text-decoration: underline;
@@ -31,7 +31,7 @@
   border-bottom-color: rgba(186, 190, 189, 0.2);
   border-bottom-style: groove;
   border-bottom-width: 0.04rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--global-font);
   padding: 1rem;
   margin: 1rem;
   color: var(--Grey-dark-1) !important;
@@ -54,16 +54,16 @@
 }
 .row .column {
   display: -webkit-inline-flex;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--global-font);
 }
 .row .column h3 {
   color: var(--Grey-dark-1) !important;
   overflow: auto;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: var(--global-font);
 }
 
 .row .column h3 p {
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
 }
 .accordion {
   cursor: pointer;
@@ -138,7 +138,7 @@
   font-size: 15px;
 
   color: rgb(124, 120, 120);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--global-font);
 }
 .column button {
   border: none;

@@ -113,7 +113,7 @@ body {
 
 .heading-block h1 {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--global-font);
     text-transform: uppercase;
     font-size: 3em;
     letter-spacing: -2px;
@@ -148,7 +148,7 @@ body {
 }
 
 .signup-form form * {
-    font-family: "Times New Roman", Times;
+    font-family: var(--global-font);
 }
 
 .signup-form label,
@@ -170,7 +170,7 @@ body {
     height: 40px;
     margin-bottom: 18px;
     padding: 0 8px;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--global-font);
     opacity: 0.8;
     background-color: var(--Grey-light-1);
     color: var(--Grey-dark-1);
@@ -183,7 +183,7 @@ body {
     height: 48px;
     margin-bottom: 30px;
     padding: 0 8px;
-    font: 400 18px "Rajdhani", sans-serif;
+    font-family: var(--global-font);
 }
 
 .buttons-button-box {
@@ -233,7 +233,7 @@ body {
     color: inherit;
     cursor: pointer;
     outline: none !important;
-    font-family: "Times New Roman", Times;
+    font-family: var(--global-font);
 }
 
 .signup-form div.button-box:hover {

@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: "Century Gothic";
+  font-family: var(--global-font);
 }
 body {
   scroll-behavior: smooth;
@@ -69,7 +69,7 @@ section {
   font-weight: 900;
 }
 .lead_title p {
-  font-family: "Times New Roman", Times, serifs;
+  font-family: var(--global-font);
   font-size: 2rem;
   /* transform: translateY(50px); */
 }
@@ -128,7 +128,7 @@ section {
 .discoverone {
   display: flex;
   font-size: 5rem;
-  font-family: "Montserrat";
+  font-family: var(--global-font);
   font-weight: 600;
   padding: 1rem;
   text-align: center;
@@ -137,16 +137,16 @@ section {
 }
 
 .discovertwo {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--global-font);
   font-size: 1.2rem;
   padding: 1rem;
-  width: 50%;
+  width: 60%;
   align-self: center;
   text-align: center;
 }
 
 .first {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--global-font);
   font-size: 2rem;
   order: 1;
 }
@@ -233,7 +233,7 @@ main .banner {
     font-size: 3rem !important;
   }
   .lead_title p {
-    font-family: "Times New Roman", Times, serifs;
+    font-family: var(--global-font);
     font-size: 2rem;
     /* transform: translateY(50px); */
   }

@@ -138,12 +138,12 @@
 }
 
 .project-name {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
   padding: 10px;
   font-size: 30px;
 }
 p {
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
 }
 
 .project-name > a {
