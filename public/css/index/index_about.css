@@ -22,13 +22,13 @@
 
 .main .about .content .heading__primary {
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
 }
 
 .main .about .content .heading__secondary {
   margin-top: 2rem;
   font-weight: 200;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
   font-size: 1.2rem;
   line-height: 2rem;
   opacity: 0.9;

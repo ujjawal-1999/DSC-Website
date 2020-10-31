@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   --color-primary: #ff184a;
   --white: #ffffff;
@@ -15,5 +16,6 @@
   --Grey-dark-4: rgb(27, 27, 27);
   --Grey-dark-5: rgb(61, 61, 61);
   --loginButton: #2b65ec;
+  --global-font: "Roboto";
 }
 /*# sourceMappingURL=colors.css.map */

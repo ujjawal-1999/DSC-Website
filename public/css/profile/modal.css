@@ -207,7 +207,7 @@
 .addProjectsModal label,
 .addAchievementModal label,
 .addSkillsModal label {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
   width: 25%;
   font-size: 0.8rem;
   color: black;
@@ -238,7 +238,7 @@
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 300;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
   width: 100%;
   border-radius: 2px;
 }
@@ -419,7 +419,7 @@
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 300;
-  font-family: sans-serif;
+  font-family: var(--global-font);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }

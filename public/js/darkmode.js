@@ -17,6 +17,7 @@ toogler.addEventListener("click", () => {
 });
 
 function setTheme(theme) {
+  document.documentElement.style.setProperty("--global-font", "Roboto");
   if (theme == null) {
     localStorage.setItem("theme", "Light");
   }

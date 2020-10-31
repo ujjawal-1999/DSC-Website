@@ -48,13 +48,13 @@
 }
 
 .contact_us .heading__primary {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
   text-align: center;
   font-size: 4rem;
 }
 
 .contact_us h4 {
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
   font-weight: 400;
   font-size: 20px;
   color: var(--Grey-light-4);
@@ -173,7 +173,7 @@
 .contact_us .submit-btn {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--global-font);
   padding: 0.8em 1.5rem 0.8em 1.5rem;
   border: 1px solid;
   border-radius: 2px;

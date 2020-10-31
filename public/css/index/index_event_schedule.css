@@ -30,21 +30,6 @@
   overflow: hidden;
 }
 
-/* .section-title .title>span {
-      -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-      transform: translateY(100%);
-      display: inline-block;
-      z-index: 10;
-      -webkit-transition: 0.6s;
-      transition: 0.6s;
-    }
-    
-    .section-title .title>span.appear {
-      -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      transform: translateY(0%);
-    } */
 /*=========================================================
         EVENTS
     ===========================================================*/

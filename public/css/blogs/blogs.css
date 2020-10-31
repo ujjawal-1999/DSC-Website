@@ -1,5 +1,5 @@
 @import url("../public/css/blogs/fonts.css");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html,
 body {
   margin: 0%;
@@ -14,9 +14,9 @@ body {
   --bg-color: #0f0f0f;
   --white: #ffffff;
   --midnight: #104f55;
-  --yellow-tags:#f8e682;
+  --yellow-tags: #f8e682;
   --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  --blogfont: "Open Sans", sans-serif;
+  --blogfont: "Roboto";
 }
 
 /* ---------------- Global Classes ---------------*/
@@ -109,7 +109,7 @@ p {
 
 .popular-posts .content {
   justify-content: flex-end;
-  font-family: "Times New Roman", Times;
+  font-family: "Roboto";
 }
 
 .popular-posts {
@@ -125,27 +125,26 @@ p {
 
 .content .intro {
   color: #717171;
-  font-family: "Times New Roman", Times;
+  font-family: "Roboto";
   font-size: 1.1em;
 }
 
 .content .date {
   color: #717171;
   font-size: 0.8em;
-  font-family: "Times New Roman", Times;
+  font-family: "Roboto";
 }
 .content .topic {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto";
 }
 .content span {
   color: var(--Grey-dark-1) !important;
 }
-.display-tags
-{
+.display-tags {
   border: none;
   border-radius: 6rem;
   margin-top: 0.75rem;
-  padding: 0.15rem 1.5rem ;
+  padding: 0.15rem 1.5rem;
   font-size: 1rem;
   font-family: var(--blogfont);
 }
@@ -175,7 +174,7 @@ p {
   justify-self: center;
   padding: 1rem;
   margin-top: 3rem;
-  font-family: "Times New Roman", Times;
+  font-family: "Roboto";
 }
 
 #popular-post .intro {
@@ -259,7 +258,7 @@ ul.blog-search-results li {
   border: 1px solid;
   padding: 0.5rem;
   font-size: 0.8rem;
-  font-family: sans-serif;
+  font-family: "Roboto";
   border-radius: 3px;
   width: fit-content;
   transition: all 0.2s;

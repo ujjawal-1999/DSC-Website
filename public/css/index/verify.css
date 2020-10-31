@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 body {
-  font-family: Roboto, sans-serif;
+  font-family: var(--global-font);
   margin: 0;
   height: 100vh;
   display: grid;
   align-items: center;
   justify-items: center;
-  background-color:#ecfbfc;
+  background-color: #ecfbfc;
 }
 .card {
   background: #fff;
@@ -25,7 +24,7 @@ body {
 .card .title {
   padding: 1rem;
   text-align: right;
-  color: #0052D4;
+  color: #0052d4;
   font-weight: bold;
   font-size: 12px;
 }
@@ -45,7 +44,7 @@ body {
   margin: 0 auto;
 }
 
-.img-avatar img{
+.img-avatar img {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -78,40 +77,38 @@ path {
   height: 100%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: #65C7F7;
+  background-color: #65c7f7;
   /* background-image: url("https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg");
   background-position: bottom center; */
   background-size: cover;
 }
 
 button {
-
   font-size: 20px;
- border: none;
- background: none;
+  border: none;
+  background: none;
   color: #8bc34a;
   cursor: pointer;
-  transition:.5s;
-  
+  transition: 0.5s;
 }
 
-button a{
-    padding: 12px; 
-    text-align: center; 
-    border: #0052D4 1px solid;
-    border-radius: 45px;
-    width: 100px; 
-    color: #0052D4; 
-    text-decoration: none; 
-    text-transform: uppercase; 
-    font-weight: bold; 
-    letter-spacing: 2px; 
-    font-size: 14px; 
-    display: block; 
-    margin: 0 auto;
+button a {
+  padding: 12px;
+  text-align: center;
+  border: #0052d4 1px solid;
+  border-radius: 45px;
+  width: 100px;
+  color: #0052d4;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
 }
 
-button a:hover{
-    color: #fff; 
-    background-color: #035aa6;
+button a:hover {
+  color: #fff;
+  background-color: #035aa6;
 }

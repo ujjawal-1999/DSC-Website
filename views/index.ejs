@@ -39,13 +39,6 @@
 
     <link rel="stylesheet" href="/css/index/flashMessage.css" />
     <!-- ######################################################################## -->
-    <style>
-      @media screen and (min-width: 660px){
-        .getStarted{
-          margin-top: 3rem;
-        }
-      }
-    </style>
     <!---Icons Import-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -94,15 +87,15 @@
         <span class="bold">NIT</span> Silchar
       </h1> -->
       <% if(!user){ %>
-      <a href="/user/register"
+      <a href="/user/register" class="getStartedAHref"
         ><input
           type="button"
           class="getStarted"
           id="getStarted"
           value="Get Started"
           style="cursor: pointer"
-      />
-    </a>
+        />
+      </a>
       <% } %>
     </header>
     <!-- <button id="ScrolltoTop" class="ScrolltoTop">

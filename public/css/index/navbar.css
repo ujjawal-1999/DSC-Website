@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +72,7 @@ nav {
   display: block;
   color: var(--Grey-dark-1);
   font-size: 15px;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: var(--global-font) !important;
   font-weight: 500;
   height: auto;
   /* padding: 0.8em 0.5em; */
@@ -336,7 +337,7 @@ nav {
   transform: translateX(-50%);
   display: none;
   width: 50%;
-  border:0%;
+  border: 0%;
 }
 
 .mobilesearch input {
@@ -384,7 +385,7 @@ nav {
     z-index: 10;
   }
   .nav-warapper:last-child {
-  margin-bottom: -40px;
+    margin-bottom: -40px;
   }
   .logodscmainnavmobile {
     display: block;

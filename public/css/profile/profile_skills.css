@@ -10,19 +10,19 @@
 .cards .card .skill-name {
   font-weight: bold;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
 }
 
 .cards .card .skill-time {
   font-weight: lighter;
   margin-top: 10px;
-  font-family: "Times New Roman", Times;
+  font-family: var(--global-font);
 }
 
 .cards .card .skill-level {
   line-height: -7px;
   align-self: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--global-font);
   /* position: absolute; */
 }
 
