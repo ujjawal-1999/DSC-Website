@@ -242,13 +242,11 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   background: transparent;
 }
-
 .header .getStartedAHref {
   -webkit-transform: translateY(-8rem);
   transform: translateY(-8rem);
   margin-top: 3rem;
 }
-
 .header .getStarted {
   opacity: 1;
   font-family: var(--global-font);
@@ -276,13 +274,11 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   display: none;
 }
-
 @media (min-width: 660px) {
   .getStartedAHref {
     margin-top: 3rem;
   }
 }
-
 @media (max-width: 600px) {
   .header {
     background-position: top !important;
@@ -351,6 +347,16 @@ body::-webkit-scrollbar-thumb {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
+  .header {
+    background-image: url(../../img/illustrations/4-mobile.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--primary-light);
+    background-blend-mode: multiply;
+  }
+
   .getStartedAHref {
     -webkit-transform: translateY(-4rem);
     transform: translateY(-4rem);
@@ -360,6 +366,14 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 600px) {
   .main .about .content {
     width: 100% !important;
+  }
+  .header {
+    background-image: url(../../img/illustrations/4-mobile.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--primary-light);
+    background-blend-mode: multiply;
   }
   .header {
     margin-top: 0;
@@ -384,6 +398,14 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 400) {
   .header .heading__secondary {
     font-size: 1rem !important;
+  }
+  .header {
+    background-image: url(../../img/illustrations/4-mobile.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--primary-light);
+    background-blend-mode: multiply;
   }
 }
 
