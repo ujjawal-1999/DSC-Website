@@ -625,9 +625,14 @@ router.get("/profile", authorization, async (req, res) => {
 });
 router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
   try {
+    const user = req.dbUser;
+    user.blogs = user.blogs.filter(
+      (blog) => !blog._id.equals(req.params.id)
+    );
     await Blog.findOneAndDelete({ _id: req.params.blog_id }, (e) => {
       // console.log(e);
     });
+    await user.save();
     req.flash("success", "Your blog has been deleted");
     res.redirect(req.get("referer"));
   } catch (error) {

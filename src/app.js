@@ -92,10 +92,12 @@ app.listen(PORT, () => {
 // const User = require('./models/user')
 
 // const fun = async()=>{
-//     const user = await User.find();
-//     user.forEach(async(data)=>{
-//       console.log(data.name, '-', data.dscHandle);
-//     })
+//     const user = await User.find({email:'shatish123456789@gmail.com'});
+//     // user.forEach(async(data)=>{
+//     //   if(data.personalProjects.length > 0)
+//     //       console.log(data.name, '-', data.dscHandle);
+//     // })
+//     console.log(user);
 // }
 
 // fun()
