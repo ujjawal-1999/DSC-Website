@@ -152,14 +152,14 @@
                 id="submit_experience"
                 class="submit"
                 type="submit"
-                value="Save Changes"
+                value="Add Experience"
               />
             </div>
           </form>
         </div>
       </div>
     </div>
-    <!-- Edit Expereince Modal  -->
+    <!-- Edit Experience Modal  -->
     <!-- Edit Profile Modal  -->
     <div class="editProfileModal" id="editProfileModal">
       <div class="wrapper backPart">
@@ -187,8 +187,7 @@
                 />
                 <% }else{%> <img src="/img/logo/profile.png" alt="avatar" />
                 <% }%>
-              </div>
-
+                </div>
               <form
                 style="width: 100%; padding: 0px auto"
                 action="profile/upload/<%=user._id%>"
@@ -608,13 +607,22 @@
                 required
               />
             </div>
+            <div class="flexRow">
+              <input
+                id="askCollaboration"
+                type="checkbox"
+                name="askCollaboration"
+                value="Do you need Collaboration in this project?"
+                marked
+              />
+            </div>
             <br /><br />
             <div class="flexRow fullwidth">
               <input
                 id="submit_project"
                 class="submit"
                 type="submit"
-                value="Save Changes"
+                value="Add Project"
               />
             </div>
           </form>
@@ -692,7 +700,7 @@
                 id="submit_achievement"
                 class="submit"
                 type="submit"
-                value="Save Changes"
+                value="Add Achievement"
               />
             </div>
           </form>
@@ -1133,6 +1141,9 @@
                           </div>
                           <div class="project-name">
                             <h4><%= project.title %></h4>
+                          </div>
+                          <div class="project-name" style="font-size: 0.9rem;">
+                            <h4><%= project.role %></h4>
                           </div>
                           <p style="margin: 0.5rem 0">
                             <%= project.techstack %>

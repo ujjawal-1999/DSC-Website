@@ -18,6 +18,7 @@ const session = require("express-session");
 // const cryptoRandomString = require("crypto-random-string");
 const { signUpMail, forgotPassword } = require("../account/nodemailer");
 const { checkProfileImageType } = require("../config/checkType");
+const personalProjects = require('../models/personal-projects');
 
 /*------------------Routing Started ------------------------*/
 router.get("/new", (req, res) => {
@@ -339,6 +340,7 @@ router.get("/profile", authorization, async (req, res) => {
     const finduser = await User.find({active : true}, null, {sort:{name:1}});
     // const userBlog = await blog.find();
     await req.dbUser.populate("blogs").execPopulate();
+    await req.dbUser.populate("personalProjects").execPopulate();
     res.render("profile", {
       user: req.dbUser,
       found: finduser,
@@ -367,6 +369,7 @@ router.get("/public-profile/:handle", async (req, res) => {
     )
       .populate("blogs")
       .execPopulate();
+    searchedUser.populate("personalProjects").execPopulate();
     if (searchedUser) {
       res.render("public-profile", {
         searchedUser,
@@ -397,7 +400,7 @@ router.post("/skill", authorization, async (req, res) => {
     user.skills.push(newSkill);
     // console.log(newSkill);
     await user.save();
-
+    req.flash("success", "New Skill has been added");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -413,6 +416,7 @@ router.get("/delete/skill/:id", authorization, async (req, res) => {
       (skill) => !skill._id.equals(req.params.id)
     );
     await user.save();
+    req.flash("success", "You skill has been removed");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -438,6 +442,7 @@ router.post("/experience", authorization, async (req, res) => {
     // console.log(user);
     // console.log(newExp);
     await user.save();
+    req.flash("success", "New Experience has been added");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -453,6 +458,7 @@ router.get("/delete/experience/:id", authorization, async (req, res) => {
       (experience) => !experience._id.equals(req.params.id)
     );
     await user.save();
+    req.flash("success", "An experience has been removed");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -503,7 +509,10 @@ router.post("/profile", authorization, (req, res) => {
 router.post("/project/personal", authorization, async (req, res) => {
   try {
     const user = req.dbUser;
-    const newProject = {
+    let collaboration = false;
+    if(req.body.askCollaboration)
+        collaboration = true;
+    const newProject = await new personalProjects({
       title: req.body.title,
       description: req.body.description,
       role: req.body.role,
@@ -513,14 +522,17 @@ router.post("/project/personal", authorization, async (req, res) => {
       enddate: req.body.enddate,
       hosturl: req.body.hosturl,
       status: req.body.status,
-    };
-    // console.log("New Project-- ", newProject);
-
-    user.personalProjects.push(newProject);
-    // console.log(newSkill);
+      member: req.user.userId,
+      askCollaboration : collaboration
+    }).save();
+    if(user.personalProjects){
+        user.personalProjects.push(newProject);
+    }
+    else{
+        user.personalProjects = [newProject];
+    }
     await user.save();
-    // console.log(user);
-
+    req.flash("success", "New Project Added");
     res.redirect("/user/profile");
   } catch (error) {
     console.log(error);
@@ -535,7 +547,11 @@ router.get("/delete/project/personal/:id", authorization, async (req, res) => {
     user.personalProjects = user.personalProjects.filter(
       (proj) => !proj._id.equals(req.params.id)
     );
+    await personalProjects.findOneAndDelete({ _id: req.params.id }, (e) => {
+      // console.log(e);
+    });
     await user.save();
+    req.flash("success", "A Project has been removed");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -560,7 +576,7 @@ router.post("/achievement", authorization, async (req, res) => {
     // console.log(newAchievement);
     await user.save();
     // console.log(user);
-
+    req.flash("success", "New Achievement has been added");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -576,6 +592,7 @@ router.get("/delete/achievement/:id", authorization, async (req, res) => {
       (achievement) => !achievement._id.equals(req.params.id)
     );
     await user.save();
+    req.flash("success", "An achievement has been removed");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);
@@ -610,7 +627,7 @@ router.get("/blog/delete/:blog_id", authorization, async (req, res) => {
     await Blog.findOneAndDelete({ _id: req.params.blog_id }, (e) => {
       // console.log(e);
     });
-
+    req.flash("success", "Your blog has been deleted");
     res.redirect(req.get("referer"));
   } catch (error) {
     console.log(error);

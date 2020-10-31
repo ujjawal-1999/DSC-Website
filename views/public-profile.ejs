@@ -469,13 +469,6 @@
                                 experience.enddate %> <%} else { %> Present <%}
                                 %>
                               </div>
-                              <a
-                                class="delete-exp"
-                                href="/searchedUser/delete/experience/<%= experience._id %>"
-                                ><img
-                                  src="/img/profile/trash.svg"
-                                  alt="delete icon"
-                              /></a>
                             </div>
                           </div>
                           <div class="panelexp">
@@ -515,11 +508,6 @@
                           <h4 class="skill-time"><%= skill.description%></h4>
                         </div>
                         <p class="skill-level"><%= skill.level %></p>
-                        <a
-                          class="delete-ski"
-                          href="/searchedUser/delete/skill/<%= skill._id %>"
-                          ><img src="/img/profile/trash.svg" alt="delete icon"
-                        /></a>
                       </div>
                       <%})%>
                     </div>
@@ -554,6 +542,9 @@
                           </div>
                           <div class="project-name">
                             <h4><%= project.title %></h4>
+                          </div>
+                          <div class="project-name" style="font-size: 0.9rem;">
+                            <h4><%= project.role %></h4>
                           </div>
                           <p style="margin: 0.5rem 0">
                             <%= project.techstack %>
@@ -593,13 +584,6 @@
                             </h3>
                           </div>
                           <center>
-                            <a
-                              class="delete-prj"
-                              href="/searchedUser/delete/project/personal/<%= project._id %>"
-                              ><img
-                                src="/img/profile/trash.svg"
-                                alt="delete icon"
-                            /></a>
                           </center>
                         </div>
                         <%})%>
@@ -649,13 +633,6 @@
                                 >Credential ID: <%= ach.serial%></span
                               >
                               <% } %>
-                              <a
-                                class="delete-ach"
-                                href="/searchedUser/delete/achievement/<%= ach._id %>"
-                                ><img
-                                  src="/img/profile/trash.svg"
-                                  alt="delete icon"
-                              /></a>
                             </div>
                           </div>
                         </div>

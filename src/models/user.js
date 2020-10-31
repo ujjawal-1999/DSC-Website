@@ -89,34 +89,9 @@ const userSchema = new Schema({
         serial: String,
         description: String,
     }],
-    personalProjects: [{
-        title: {
-            type: String,
-        },
-        description: {
-            type: String,
-        },
-        role: {
-            type: String,
-        },
-        startdate: {
-            type: String,
-        },
-        status: {
-            type: String,
-        },
-        enddate: {
-            type: String,
-        },
-        techstack: {
-            type: String,
-        },
-        githuburl: {
-            type: String,
-        },
-        hosturl: {
-            type: String,
-        },
+    personalProjects :[{
+        type: Schema.Types.ObjectId,
+        ref: 'personalProjects'
     }],
     experiences: [{
         name: String,
@@ -125,10 +100,6 @@ const userSchema = new Schema({
         enddate: String,
         status: String,
         description: String,
-    }],
-    projects: [{
-        type: Schema.Types.ObjectId,
-        ref: "Project",
     }],
     bookmarkBlogs: [{
         type: Schema.Types.ObjectId,
