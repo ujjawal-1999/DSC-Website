@@ -24,7 +24,7 @@ form {
 #title {
   padding-left: 0.2em;
   height: 40px;
-  width: 100%;
+  width: 50rem;
   font-size: 2em;
   font-weight: bolder;
   border: none;
@@ -140,5 +140,11 @@ button a {
   }
   #ql-picker-options-0 {
     top: -750%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #title {
+    width: 100%;
   }
 }
