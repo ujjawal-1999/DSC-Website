@@ -126,7 +126,7 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
         user.likes = likesArr;
         await blog.save();
         await user.save();
-        console.log(likesArr);
+        // console.log(likesArr);
         res.redirect(req.get("referer"));
     } catch (error) {
         console.log(error);
@@ -308,7 +308,7 @@ router.get("/view/:slug", async(req, res) => {
         if (!blog) {
             res.render("404-page");
         }
-        console.log(blog.reportCount)
+        // console.log(blog.reportCount)
         if(blog.reportCount >= filterThreshold) {
             res.redirect('/404')
             return;

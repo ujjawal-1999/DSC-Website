@@ -92,12 +92,15 @@ app.listen(PORT, () => {
 // const User = require('./models/user')
 
 // const fun = async()=>{
-//     const user = await User.find({email:'shatish123456789@gmail.com'});
-//     // user.forEach(async(data)=>{
-//     //   if(data.personalProjects.length > 0)
-//     //       console.log(data.name, '-', data.dscHandle);
-//     // })
-//     console.log(user);
+//     const users = await User.find({ });
+//     users.forEach(async (user) =>{
+//       if(user.profileImageLocation){
+//         user.profileImageLocation = null;
+//         await user.save();
+//         console.log(`${user.name} ${user.profileImageLocation}`);
+//       }
+//     })
+//     console.log("Done");
 // }
 
 // fun()
