@@ -265,15 +265,15 @@
   display: flex;
 }
 
-.editProfileModal,
+/* .editProfileModal,
 .addExperienceModal,
 .addProjectsModal,
 .addAchievementModal,
 .addSkillsModal {
-  /* Top-level Styling */
-  /* Div Layout Styling */
-  /* Text Styling for h2, p, a */
-}
+  Top-level Styling
+  Div Layout Styling
+  Text Styling for h2, p, a
+} */
 
 .editProfileModal label,
 .RegisterModal label,
