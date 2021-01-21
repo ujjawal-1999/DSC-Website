@@ -88,9 +88,22 @@ function didyouupload() {
   document.getElementById("#file-name").textContent = this.files[0].name;
 }
 
-// function filename(){
-//   document.querySelector("#file-name").textContent = this.files[0].name;
-// }
+function filename(){
+  document.querySelector("#file-name").textContent = this.files[0].name;
+}
+// ###################################################################################
+
+editProfilebtn.addEventListener("click", () => {
+  editProfileModal.style.opacity = "1";
+  editProfileModal.style.pointerEvents = "all";
+    document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+backBtn.addEventListener("click", () => {
+  editProfileModal.style.opacity = "0";
+  editProfileModal.style.pointerEvents = "none";
+});
+
 
 // ###################################################################################
 // Experience Modal

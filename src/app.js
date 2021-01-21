@@ -71,11 +71,13 @@ var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
 const blogRoutes = require("./routes/blog");
 const ProjectRoutes = require("./routes/project");
+const webBlitzRouter = require('./routes/web-blitz')
 
 app.use("/", indexRoutes);
 app.use("/user", userRoutes);
 app.use("/blog", blogRoutes);
 app.use("/project", ProjectRoutes);
+app.use('/web-blitz', webBlitzRouter)
 
 app.get("/404", (req, res) => {
   res.render("404-page");
