@@ -467,8 +467,8 @@ nav {
 .button-style {
   border: none;
   background: transparent;
-  color: #eeeeee;
-  font: 15px Roboto;
+  font: 16px Roboto;
+  color : var(--Grey-dark-1);;
   outline: none !important;
   cursor: pointer;
 }
