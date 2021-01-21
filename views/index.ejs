@@ -51,6 +51,19 @@
     />
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .thin{
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .fullwidth{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+    </style>
   </head>
 
   <body id="bodydiv">
@@ -94,19 +107,19 @@
           >
             <div class="flexRow">
               <label for="reg_name">Name</label>
-              <input id="reg_name" type="text" name="name" />
+              <input id="reg_name" type="text" name="name" required />
             </div>
             <div class="flexRow">
               <label for="reg_phone">Phone Number</label>
-              <input id="reg_phone" type="text" name="phone" />
+              <input id="reg_phone" type="text" name="phone" required/>
             </div>
             <div class="flexRow">
               <label for="reg_email">Email ID</label>
-              <input id="reg_email" type="text" name="email" />
+              <input id="reg_email" type="text" name="email" required/>
             </div>
             <div class="flexRow">
               <label for="reg_scholar">Scholar ID</label>
-              <input id="reg_scholar" type="text" name="scholar_id" />
+              <input id="reg_scholar" type="text" name="scholar_id" required/>
             </div>
             <br /><br />
             <div class="flexRow fullwidth">

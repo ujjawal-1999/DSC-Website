@@ -4,10 +4,10 @@ const WebBlitzParticipant = require("../models/web-blitz-participants")
 router.post('/register', async (req, res) => {
     try {
         const participant = await WebBlitzParticipant.create(req.body)
-        res.status(201).json(participant)
+        res.render("web-blitz");
     } catch (error) {
         console.log(error)
-        res.status(500).send(error.message)
+        res.render("404-page");
     }
 })
 
