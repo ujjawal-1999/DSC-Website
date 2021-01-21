@@ -94,7 +94,11 @@ function filename(){
 // ###################################################################################
 // Register Modal
 // var registerbtn = document.getElementById("register");
-// var backBtn5 = document.getElementById("backlogo5");
+function closeModal() {
+  RegisterModal.style.opacity = "0";
+  RegisterModal.style.pointerEvents = "none";
+  console.log("hiesadf");
+}
 // var RegisterModal = document.getElementById("RegisterModal");
 // registerbtn.addEventListener("click", () => {
 //   RegisterModal.style.opacity = "1";
@@ -105,6 +109,7 @@ function filename(){
 // backBtn5.addEventListener("click", () => {
 //   RegisterModal.style.opacity = "0";
 //   RegisterModal.style.pointerEvents = "none";
+//   RegisterModal.display = 'none';
 // });
 // function RegisterModalvalidate() {
 //   var reg_name = document.forms["registerform"]["exp_name"].value;
