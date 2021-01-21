@@ -52,13 +52,13 @@
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-      .thin{
+      .thin {
         font-weight: 600;
         font-size: 22px;
         text-align: center;
         letter-spacing: 1px;
       }
-      .fullwidth{
+      .fullwidth {
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
@@ -88,38 +88,39 @@
             class="backlogo1"
             src="/img/logo/bac.png"
             alt="background logo"
-            style="cursor: pointer;"
-            onclick="closeModal()"
+            style="cursor: pointer"
           />
         </div>
         <div></div>
       </div>
       <div class="wrapper">
         <div id="subscribeBox">
-          <h2 style="color: black;"><span class="thin">Web Blitz Registration</span></h2>
+          <h2 style="color: black">
+            <span class="thin">Web Blitz Registration</span>
+          </h2>
 
           <form
             class="subscribeForm"
             method="post"
             action="/web-blitz/register"
-            onsubmit="return addExperienceModalvalidate()"
+            onsubmit="return checkRegistrationForm()"
             name="registerform"
           >
             <div class="flexRow">
-              <label for="reg_name">Name</label>
-              <input id="reg_name" type="text" name="name" required />
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" required />
             </div>
             <div class="flexRow">
-              <label for="reg_phone">Phone Number</label>
-              <input id="reg_phone" type="text" name="phone" required/>
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="text" name="phone" required />
             </div>
             <div class="flexRow">
-              <label for="reg_email">Email ID</label>
-              <input id="reg_email" type="text" name="email" required/>
+              <label for="email">Email ID</label>
+              <input id="email" type="email" name="email" required />
             </div>
             <div class="flexRow">
-              <label for="reg_scholar">Scholar ID</label>
-              <input id="reg_scholar" type="text" name="scholar_id" required/>
+              <label for="scholar_id">Scholar ID (XXYYZZZ)</label>
+              <input id="scholar_id" type="text" name="scholar_id" required />
             </div>
             <br /><br />
             <div class="flexRow fullwidth">
@@ -803,6 +804,42 @@
     </main>
     <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->
+    <script>
+      function checkRegistrationForm() {
+        var name = document.forms["registerform"]["name"].value;
+        var email = document.forms["registerform"]["email"].value;
+        var phone = document.forms["registerform"]["phone"].value;
+        var scholarId = document.forms["registerform"]["scholar_id"].value;
+
+        if (name.trim().length == 0) {
+          alert("Full Name is too short !");
+          return false;
+        }
+
+        if (email.length < 5) {
+          alert("Enter a valid email");
+          return false;
+        }
+        if (phone.trim().length < 10) {
+          alert("Enter a valid Phone Number");
+          return false;
+        }
+        return true;
+      }
+      var RegisterBtn = document.getElementById("registerEvent");
+      var backBtn5 = document.getElementById("backlogo5");
+      var RegisterModal = document.getElementById("RegisterModal");
+      RegisterBtn.addEventListener("click", () => {
+        RegisterModal.style.opacity = "1";
+        RegisterModal.style.pointerEvents = "all";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+      backBtn5.addEventListener("click", () => {
+        RegisterModal.style.opacity = "0";
+        RegisterModal.style.pointerEvents = "none";
+      });
+    </script>
     <script src="/js/darkmode.js"></script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>

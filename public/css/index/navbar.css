@@ -464,3 +464,11 @@ nav {
 .uparneeche {
   transform: translateY(0%);
 }
+.button-style {
+  border: none;
+  background: transparent;
+  color: #eeeeee;
+  font: 15px Roboto;
+  outline: none !important;
+  cursor: pointer;
+}
