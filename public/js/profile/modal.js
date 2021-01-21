@@ -88,9 +88,50 @@ function didyouupload() {
   document.getElementById("#file-name").textContent = this.files[0].name;
 }
 
-// function filename(){
-//   document.querySelector("#file-name").textContent = this.files[0].name;
+function filename(){
+  document.querySelector("#file-name").textContent = this.files[0].name;
+}
+// ###################################################################################
+// Register Modal
+// var registerbtn = document.getElementById("register");
+// var backBtn5 = document.getElementById("backlogo5");
+// var RegisterModal = document.getElementById("RegisterModal");
+// registerbtn.addEventListener("click", () => {
+//   RegisterModal.style.opacity = "1";
+//   RegisterModal.style.pointerEvents = "all";
+//   document.body.scrollTop = 0;
+//   document.documentElement.scrollTop = 0;
+// });
+// backBtn5.addEventListener("click", () => {
+//   RegisterModal.style.opacity = "0";
+//   RegisterModal.style.pointerEvents = "none";
+// });
+// function RegisterModalvalidate() {
+//   var reg_name = document.forms["registerform"]["exp_name"].value;
+//   var reg_phone = document.forms["registerform"]["exp_role"].value;
+//   var reg_email = document.forms["registerform"]["exp_role"].value;
+//   var reg_scholar = document.forms["registerform"]["exp_role"].value;
+
+//   if (reg_name.length == 0) {
+//     alert("Name is too short !");
+//     return false;
+//   }
+//   if (reg_phone.length == 0) {
+//     alert("Phone is too short !");
+//     return false;
+//   }
+//   if (reg_email.length == 0) {
+//     alert("Phone is too short !");
+//     return false;
+//   }
+//   if (reg_scholar.length == 0) {
+//     alert("Phone is too short !");
+//     return false;
+//   }
+
+//   return true;
 // }
+
 
 // ###################################################################################
 // Experience Modal

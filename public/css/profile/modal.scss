@@ -85,7 +85,28 @@
   display: flex;
   transition: all 0.5s;
 }
-.addExperienceModal {
+
+.RegisterModal{
+  opacity: 100;
+  width: 40%;
+  border: 1px solid;
+  background-color: var(--white);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 70vw;
+  pointer-events: none;
+  z-index: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.addExperienceModal, {
   border: 1px solid;
   background-color: var(--white);
   position: fixed;
@@ -112,11 +133,19 @@
   .backPart {
     width: 10% !important;
   }
+  .RegisterModal{
+    top: 50%;
+    width: 35%;
+    position: absolute;
+    overflow: auto;
+    font-size: 0.8rem !important;
+    height: auto;
+  }
   .editProfileModal,
   .addSkillsModal,
   .addAchievementModal,
   .addProjectsModal,
-  .addExperienceModal {
+  .addExperienceModal,.RegisterModal {
     top: 50%;
     width: 70%;
     position: absolute;
@@ -142,7 +171,7 @@
   .addSkillsModal,
   .addAchievementModal,
   .addProjectsModal,
-  .addExperienceModal {
+  .addExperienceModal,.RegisterModal{
     top: 0%;
     left: 0%;
     transform: translate(0%, 80px);
@@ -200,7 +229,7 @@
 .addExperienceModal,
 .addProjectsModal,
 .addAchievementModal,
-.addSkillsModal {
+.addSkillsModal, .RegisterModal {
   label {
     font-family: var(--global-font);
     width: 25%;

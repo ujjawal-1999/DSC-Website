@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
     <link rel="stylesheet" href="/css/index/index_feature.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/profile/modal.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
     <link rel="stylesheet" href="/css/index/flashMessage.css" />
@@ -65,6 +66,61 @@
     <%-include('partials/flashMessage')%>
     <!-- Flash Message Body End -->
 
+    <!-- Register Modal -->
+    <div class="RegisterModal" id="RegisterModal">
+      <div class="wrapper backPart">
+        <div id="subscribeBox">
+          <img
+            id="backlogo5"
+            class="backlogo1"
+            src="/img/logo/bac.png"
+            alt="background logo"
+            style="cursor: pointer;"
+          />
+        </div>
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div id="subscribeBox">
+          <h2><span class="thin">Web Blitz Registration</h2>
+
+          <form
+            class="subscribeForm"
+            method="post"
+            action="/user/experience"
+            onsubmit="return addExperienceModalvalidate()"
+            name="registerform"
+          >
+            <div class="flexRow">
+              <label for="reg_name">Name</label>
+              <input id="reg_name" type="text" name="reg_name" />
+            </div>
+            <div class="flexRow">
+              <label for="reg_phone">Phone Number</label>
+              <input id="reg_phone" type="text" name="reg_phone" />
+            </div>
+            <div class="flexRow">
+              <label for="reg_email">Email ID</label>
+              <input id="reg_email" type="text" name="reg_email" />
+            </div>
+            <div class="flexRow">
+              <label for="reg_scholar">Scholar ID</label>
+              <input id="reg_scholar" type="text" name="reg_scholar" />
+            </div>
+            <br /><br />
+            <div class="flexRow fullwidth">
+              <input
+                id="submit_experience"
+                class="submit"
+                type="submit"
+                value="Register"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End of Register Modal -->
     <header class="header">
       <img
         src="/official-logo/DSC3(T).png"
@@ -741,6 +797,7 @@
     <script src="/js/index/index.js"></script>
     <script src="/js/index/index_contactus.js"></script>
     <script src="/js/navbar.js"></script>
+    <script src="/js/profile/modal.js"></script>
     <script>
       // var bodydiv = document.getElementById("bodydiv");
       // bodydiv.addEventListener("click", closeSearch);
